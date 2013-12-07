@@ -1,0 +1,108 @@
+//Base Font Stack
+$base-font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif
+
+// Font weights
+$light: 100
+$regular: 400
+$bold: 600
+
+// Fixed Font
+$fixed-font-family: monospace
+$fixed-font-size: 85%
+$fixed-line-height: $base-line-height
+
+// Headings
+$header-font-weight: $bold
+
+html
+  font-family: $base-font-family
+  font-size: 62.5%
+body
+  // font-size: 100%
+  +font-size(14)
+  color: $basefontcolor
+
+a
+  text-decoration: none
+  // border-bottom: 1px solid
+  color: $linkcolor
+  cursor: pointer
+  &:hover, &:visited
+    color: adjust-color($linkcolor, $lightness: -10%, $saturation: -5%)
+  &:focus
+    color: adjust-color($linkcolor, $lightness: -20%, $saturation: 0%)
+
+h1,h2,h3,h4,h5,h6
+  font-weight: normal
+
+
+// Default header styles 
+h1, h2, h3, h4, h5, h6
+  font-family: $base-font-family
+  font-weight: 300
+  font-style: normal
+  color: #222222
+  text-rendering: optimizeLegibility
+  margin-top: 0.2rem
+  margin-bottom: 0.5rem
+  line-height: 1.4
+  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small
+    font-size: 60%
+    color: #6f6f6f
+    line-height: 0
+
+h1
+  font-size: 2.125rem
+
+h2
+  font-size: 1.6875rem
+
+h3
+  font-size: 1.375rem
+
+h4
+  font-size: 1.125rem
+
+h5
+  font-size: 1.125rem
+
+h6
+  font-size: 1rem
+
+hr
+  border: solid #dddddd
+  border-width: 1px 0 0
+  clear: both
+  margin: 1.25rem 0 1.1875rem
+  height: 0
+
+// Helpful Typography Defaults 
+em,
+i
+  font-style: italic
+  line-height: inherit
+
+strong,
+b
+  font-weight: bold
+  line-height: inherit
+
+small
+  font-size: 60%
+  line-height: inherit
+
+code
+  font-family: Consolas, "Liberation Mono", Courier, monospace
+  font-weight: bold
+  color: #bb260d
+
+//SIDEBAR
+.sidebar
+  .heading
+    +truncate()
+    +font-size(18)
+    padding: 0 10px
+    height: 4rem
+    line-height: 3.89rem
+    margin: 0
+    border-bottom: 1px solid adjust-color($basecolor, $lightness: 30%, $saturation: -45%)

@@ -1,0 +1,14 @@
+/%script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
+/ :javascript
+/   window.jQuery || document.write('<script src="javascripts/jquery-1.9.1.min.js"><\/script>')
+= javascript_include_tag "vendor/jquery-1.9.1.min"
+= javascript_include_tag "plugins"
+= javascript_include_tag "app"
+
+:javascript
+  Modernizr.load({
+    test: Modernizr.mq,
+    yep : '',
+    nope: 'javascripts/libs/respond.min.js'
+  });
+

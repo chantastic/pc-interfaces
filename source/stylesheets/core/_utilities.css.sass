@@ -1,0 +1,58 @@
+//Nothing in the modules directory should output css directly. 
+//This directory is reserved for variables, placeholders etc.
+
+=font-size($font-size: 16)
+  font-size: #{$font-size}px
+  font-size: #{$font-size / 10}rem
+
+%clearfix
+  *zoom: 1
+  &:before,
+  &:after
+    display: table
+    content: ""
+  &:after
+    clear: both
+
+%inline-block
+  display: inline-block
+  *display: inline
+  *zoom: 1
+
+=truncate
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+//==== CSS triangles
+//==== Example: +triangle("up", #fff, 10px)
+
+=triangle($direction, $color, $size)
+
+  @if $direction == "left"
+    border-bottom: $size solid transparent
+    border-right: $size solid $color
+    border-top: $size solid transparent
+  
+  @else if $direction == "right"
+    border-bottom: $size solid transparent
+    border-left: $size solid $color
+    border-top: $size solid transparent
+  
+  @else if $direction == "up" 
+    border-bottom: $size solid $color
+    border-left: $size solid transparent
+    border-right: $size solid transparent
+    top: -10px
+    left: 50%
+    margin-left: -10px
+  
+  @else if $direction == "down"
+    border-right: $size solid transparent
+    border-left: $size solid transparent
+    border-top: $size solid $color
+  
+  content: ''
+  position: absolute
+  height: 0
+  width: 0

@@ -1,0 +1,39 @@
+// Invisible to all
+.hidden
+  display: none !important
+  visibility: hidden
+
+// Invisible to all below the specified breakpoint
+.hide-from-mobile
+  +breakpoint(lte_tablet_ls)
+    display: none !important
+
+//Float it right
+.right
+  float: right !important
+
+//Float it left
+.left
+  float: right !important
+
+//Text Alignment
+.align-left
+  text-align: left
+.align-right
+  text-align: right
+.align-center
+  text-align: center
+
+.dib
+  display: inline-block
+
+.truncate
+  +truncate()
+
+/*.togglehelper has some JS that will listen for it to be clicked then toggle an .alt-state class on it*/
+.js-togglehelper
+  cursor: pointer
+  .js-toggletarget
+    display: none
+  &.alt-state .js-toggletarget, &.alt-state .js-toggletarget .popover
+    display: block 

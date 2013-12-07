@@ -1,0 +1,211 @@
+//======================================================
+// All rules pertaining to screens greater than 47.95em or ~767px
+//======================================================
+@media (min-width: 47.95em)
+  .top-bar
+    line-height: 50px
+    .lefty
+      float: left
+    .righty
+      float: right 
+
+    .top-nav-options
+      padding-right: 0
+      background: transparent
+      overflow: visible
+      height: auto
+
+    .top-nav-options ul li
+      float: left
+      > a
+        padding: 0 15px
+        height: 50px
+        &:hover
+          background: adjust-color($basecolor, $lightness: -12%, $saturation: -5%)    
+
+  .title-area
+    float: left    
+
+  .top-bar-section .divider
+    border: 0
+    clear: none
+    width: 0
+    height: 50px
+    border-left: 1px solid adjust-color($basecolor, $lightness: -20%, $saturation: -15%)   
+
+  .app-switcher-wrap
+    padding-left: 10px
+    margin: 0
+    width: 209px
+    background: adjust-color($basecolor, $lightness: -25%, $saturation: -90%)
+
+  .app-switcher
+    position: absolute
+    left: 0
+    top: 0
+    .chevron
+      position: absolute
+      display: block
+      top: 6px
+      left: 6px
+      border-top: 5px solid #fff
+      border-left: solid 4px transparent
+      border-right: solid 4px transparent
+      border-left-style: inset
+      border-right-style: inset
+    .toggle-btn
+      display: block
+    .menu-wrap
+      top: 5px
+      left: 5px
+      width: 199px
+      +border-top-radius(3px)       
+
+  .menu-icon
+    display: none      
+
+  //======================================Account Info
+  .top-bar .top-bar-section .account-info
+    width: 200px
+    height: 50px
+    border-left: 1px solid adjust-color($basecolor, $lightness: -20%, $saturation: -15%)  
+    > ul li
+      border: 0
+    a:hover
+      background: transparent
+    .avatar
+      display: block
+      float: left
+      height: 26px
+      width: 26px
+      margin: 11px 8px 5px 8px
+      background: #3a511e
+      border: 1px solid #3a511e
+      img
+        display: block
+    .identity 
+      li
+        line-height: 1
+        a
+          line-height: 1
+
+      .section-heading
+        +truncate
+        +font-size(10)
+        border-bottom: 0
+        margin: 10px 0 3px 0
+        color: adjust-color($basecolor, $lightness: -49%, $saturation: -45%)
+        span
+          display: inline-block
+          width: 1px
+          height: 10px
+          margin: 0 4px
+          position: relative
+          top: 2px
+          background: adjust-color($basecolor, $lightness: 22%, $saturation: 1%)
+        a
+          font-size: inherit
+          color: #fff
+          height: auto
+          min-height: 5px
+          padding: 0
+
+    .utilities
+      line-height: 1
+      li
+        display: inline-block
+      a
+        display: inline-block
+        line-height: 1
+        height: auto
+        min-height: 5px
+        padding: 0
+        +font-size(10)
+      .dropdown
+        > li
+          display: block
+      .section-heading
+        position: relative
+        padding: 10px 0 0 0
+        line-height: 1.2
+        .a
+          display: block
+          padding: 0 40px 10px 10px
+        a
+          color: $linkcolor
+        .log
+          position: absolute
+          top: 10px
+          right: 8px
+          +border-radius(2px)
+          border: 1px solid $dangercolor
+          color: $dangercolor
+          padding: .15rem .35rem .35rem .35rem 
+        .unlink
+          display: block
+          padding: 5px
+          padding: 0 7px
+          height: 30px
+          line-height: 30px
+          +font-size(12)
+          background: adjust-color($basecolor, $lightness: 42%, $saturation: -40%)
+          &:hover
+            background: adjust-color($basecolor, $lightness: 40%, $saturation: -30%)
+          .outline
+            +border-radius(3px)
+            min-width: 60px
+            border: 1px solid
+            color: adjust-color($basecolor, $lightness: -5%, $saturation: 0%)
+            position: relative
+            top: 6px
+            margin: 0 .75rem 0 0
+            padding: 0.15rem 0.5rem 0.25rem            
+            min-width: 60px
+            text-align: center
+            +font-size(11)
+            line-height: 1
+            float: left
+
+    //DROPDOWN CONTENTS
+    .accounts
+      a
+        display: block
+        overflow: hidden
+        padding: 0 7px
+        height: 30px
+        line-height: 30px
+        color: $basefontcolor
+        border-top: 1px solid adjust-color($lightgray, $lightness: 10%)
+        +font-size(12)
+        &:first-child
+          border-top: 0
+        &:last-child
+          +border-radius(0 0 3px 3px)
+        &:hover
+          background: adjust-color($basecolor, $lightness: 50%, $saturation: -10%)
+      .badge
+        position: relative
+        top: 6px
+        margin-top: 0
+        padding: 0.15rem 0.5rem 0.25rem
+
+  //Acct Dropdown
+  .top-bar
+    .has-acct-dropdown.expanded .dropdown
+      display: block
+
+    .has-acct-dropdown .dropdown
+      width: auto
+      min-width: 310px
+      max-width: 420px
+      right: 5px
+      top: 27px    
+      overflow: visible
+      position: absolute
+      display: none
+      background: #fff
+      +border-radius(3px)
+      +box-shadow(0 1px 6px rgba(adjust-color($basecolor, $lightness: -70%, $saturation: -70%) , 0.8))
+
+      &:after
+        right: 24px

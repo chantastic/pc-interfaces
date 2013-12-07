@@ -1,0 +1,239 @@
+//SEE modules > colors for color variables
+$buttonborderwidth: 1px
+$buttonborderstyle: solid
+
+.button
+  cursor: pointer
+  font-weight: normal
+  line-height: normal
+  margin: 0 0 1.25rem
+  position: relative
+  text-decoration: none
+  text-align: center
+  display: inline-block
+  padding: 1rem 2rem 1.0625rem 2rem
+  +font-size(14)
+  background-color: $basecolor
+  border-color: adjust-color($basecolor, $lightness: -10%, $saturation: -5%)
+  border-style: solid
+  border-width: 1px
+  color: white
+  +transition(background-color 300ms ease-out)
+  -webkit-appearance: none
+  +border-radius(3px)
+  font-weight: normal !important
+
+  &:hover, &:focus
+    background-color: adjust-color($basecolor, $lightness: -10%, $saturation: -5%)
+    color: white
+  &:visited
+    color: white
+  &.outline, &.outline:visited
+    background: transparent
+    border-width: $buttonborderwidth
+    border-style: $buttonborderstyle
+    color: $basecolor
+    &:hover, &:focus
+      color: adjust-color($basecolor, $lightness: -15%, $saturation: 15%)
+
+
+.button.secondary
+  background-color: $lightgray
+  border-color: adjust-color($lightgray, $lightness: -10%)
+  color: $darkgray
+
+  &:hover, &:focus
+    background-color: adjust-color($lightgray, $lightness: -10%)
+    color: adjust-color($darkgray, $lightness: -10%)
+  &:visited
+    color: adjust-color($darkgray, $lightness: -10%)
+  &.outline, &.outline:visited
+    background: transparent
+    border-width: $buttonborderwidth 
+    color: $darkgray
+    &:hover, &:focus
+      color: adjust-color($darkgray, $lightness: 10%, $saturation: 15%)
+
+
+.button.success
+  background-color: $successcolor
+  border-color: adjust-color($successcolor, $lightness: -10%)
+  color: white
+
+  &:hover, &:focus
+    background-color: adjust-color($successcolor, $lightness: -10%)
+    color: white
+  &:visited
+    color: white
+  &.outline, &.outline:visited
+    background: transparent
+    border-width: $buttonborderwidth 
+    color: $successcolor
+    &:hover, &:focus
+      color: adjust-color($successcolor, $lightness: -15%, $saturation: 15%)
+
+
+.button.danger
+  background-color: $dangercolor
+  border-color: adjust-color($dangercolor, $lightness: -10%)
+  color: white
+
+  &:hover, &:focus
+    background-color: adjust-color($dangercolor, $lightness: -10%)
+    color: white
+  &:visited
+    color: white
+  &.outline, &.outline:visited
+    background: transparent
+    border-width: $buttonborderwidth 
+    color: $dangercolor
+    &:hover, &:focus
+      color: adjust-color($dangercolor, $lightness: -15%, $saturation: 10%)
+
+
+
+
+//=======================================SIZES
+.button.large
+  padding: 1.125rem 2.25rem 1.1875rem 2.25rem
+  +font-size(16.5)
+
+.button.small
+  padding: 0.875rem 1.75rem 0.9375rem 1.75rem
+  +font-size(12)
+
+.button.tiny
+  padding: 0.625rem 1.25rem 0.6875rem 1.25rem
+  +font-size(10)
+
+.button.micro
+  padding: 0.185rem .75rem 0.25rem .75rem
+  +font-size(10)
+
+.button.expand
+  padding-right: 0
+  padding-left: 0
+  width: 100%
+
+.button.left-align
+  text-align: left
+  text-indent: 0.75rem
+
+.button.right-align
+  text-align: right
+  padding-right: 0.75rem
+
+.button.round
+  +border-radius(1000px)
+
+.button
+  &.disabled, &[disabled]
+    background-color: #008cba
+    border-color: #0079a1
+    color: white
+    cursor: default
+    opacity: 0.7
+    -webkit-box-shadow: none
+    box-shadow: none
+    &:hover, &:focus
+      background-color: #0079a1
+      color: white
+
+.button
+  &.disabled.secondary, &[disabled].secondary
+    background-color: #e7e7e7
+    border-color: #dadada
+    color: #333333
+    cursor: default
+    opacity: 0.7
+    -webkit-box-shadow: none
+    box-shadow: none
+    &:hover, &:focus
+      background-color: #dadada
+      color: #333333
+
+
+.button
+  &.disabled.success, &[disabled].success
+    background-color: #43ac6a
+    border-color: #3c9a5f
+    color: white
+    cursor: default
+    opacity: 0.7
+    -webkit-box-shadow: none
+    box-shadow: none
+    &:hover, &:focus
+      background-color: #3c9a5f
+      color: white
+
+.button
+  &.disabled.alert, &[disabled].alert
+    background-color: #f04124
+    border-color: #ea2f10
+    color: white
+    cursor: default
+    opacity: 0.7
+    -webkit-box-shadow: none
+    box-shadow: none
+    &:hover, &:focus
+      background-color: #ea2f10
+      color: white
+
+
+//===========================================================BADGES
+.badge
+  cursor: pointer
+  font-weight: normal
+  line-height: normal
+  margin: 0
+  position: relative
+  text-align: center
+  display: inline-block
+  padding: .5rem .75rem .525rem
+  +font-size(14)
+  background-color: $basecolor
+  border-color: adjust-color($basecolor, $lightness: -10%, $saturation: -5%)
+  color: white
+  +transition(background-color 300ms ease-out)
+  -webkit-appearance: none
+  border: none
+  +border-radius(3px)
+  font-weight: normal !important
+  &.outline
+    background: transparent
+    border-width: $buttonborderwidth
+    border-style: $buttonborderstyle
+    color: $basecolor
+
+
+.badge.success
+  background-color: $successcolor
+  border-color: adjust-color($successcolor, $lightness: -10%)
+  color: #fff
+  &.outline
+    background: transparent
+    border-width: $buttonborderwidth 
+    color: $successcolor
+
+
+// BUTTON GROUPS
+.button-group 
+  list-style: none
+  margin: 0
+  *zoom: 1 
+  @extend %clearfix
+  > * 
+    margin: 0
+    float: left 
+    > * .button 
+      border-right: 1px solid
+      border-color: rgba(255, 255, 255, 0.5) 
+  .button
+    +border-radius(0)
+    margin-left: 1px
+  > *:first-child .button
+    +border-radius(3px 0 0 3px)
+    margin-left: 0
+  > *:last-child .button
+    +border-radius(0 3px 3px 0)    
+
