@@ -41,10 +41,6 @@
     height: 1px
     width: 100%  
 
-  //Set the bar's height to auto when expanded in mobile view
-  &.expanded, &.expanded .top-nav-options
-    height: auto
-
   .top-nav-options ul li
     > a
       color: #fff
@@ -58,6 +54,10 @@
       &:hover
         color: #fff
         background: adjust-color($basecolor, $lightness: -42%, $saturation: -30%)
+  
+//Set the bar's height to auto when expanded in mobile view
+.top-bar.expanded, .top-bar.expanded .top-nav-options
+  height: auto        
 
 //=================================================[ APP SWITCHER ]  
 
