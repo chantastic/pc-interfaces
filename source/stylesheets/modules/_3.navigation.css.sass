@@ -1,13 +1,15 @@
 .side-nav
   display: block
   margin: 0
-  padding: 0.77778rem 0
+  // padding: 0.77778rem 0
+  padding: 0
   list-style-type: none
   list-style-position: inside
   li
   a
-    +font-size(13)
+    +font-size(12)
     display: block
-    padding: 0.53333rem 10px
+    padding: 0.6rem 10px
+    border-bottom: 1px solid adjust-color($sidebgcolor, $lightness: -5%)
     &:hover
-      background: adjust-color($basecolor, $lightness: 30%, $saturation: -5%)
+      background: adjust-color($basecolor, $lightness: 42%, $saturation: -30%)

@@ -1,8 +1,10 @@
 // Invisible to all
-.hidden
+.hide
   display: none !important
-  visibility: hidden
 
+//If children are floated, add this to the parent to clear the floats
+.clearfix
+  @extend %clearfix
 
 //Float it right
 .right
@@ -13,12 +15,14 @@
   float: right !important
 
 //Text Alignment
-.align-left
+.text-left
   text-align: left
-.align-right
+.text-right
   text-align: right
-.align-center
+.text-center
   text-align: center
+.text-justify
+  text-align: justify  
 
 .dib
   display: inline-block
@@ -31,5 +35,6 @@
   cursor: pointer
   .js-toggletarget
     display: none
-  &.alt-state .js-toggletarget, &.alt-state .js-toggletarget .popover
+  &.alt-state .js-toggletarget, 
+  &.alt-state .js-toggletarget .popover
     display: block 

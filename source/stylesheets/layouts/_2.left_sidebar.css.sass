@@ -7,8 +7,6 @@
 .main-wrap
   min-height: 100%
   height: auto !important
-  +breakpoint(bp_2)
-    margin: 0px 0px -25px 0px
 
 .main-content-block
   height: 100%
@@ -32,7 +30,8 @@
   top: 50px
   left: 0
   bottom: 0
-  background: adjust-color($basecolor, $lightness: 45%, $saturation: -45%)
+  background: $sidebgcolor
+  border-right: 1px solid adjust-color($sidebgcolor, $lightness: -2%)
   width: 85%
   display: block
   margin-left: -85%
@@ -52,19 +51,3 @@
   overflow-x: hidden
   width: 100%
 
-+breakpoint(bp_2)
-  .main-wrap .main-section
-    margin-left: 210px
-    margin-right: 0
-    width: auto
-    padding: 20px
-    float: none
-  .left-off-canvas
-    width: 210px
-    bottom: 25px
-    margin: 0
-  .site-footer
-    display: block
-    height: 25px
-    clear: both
-    background: adjust-color($basecolor, $lightness: 40%, $saturation: -45%)
