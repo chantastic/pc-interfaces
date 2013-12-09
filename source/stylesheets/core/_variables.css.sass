@@ -1,23 +1,33 @@
 //Nothing in the modules directory should output css directly. 
 //This directory is reserved for variables, placeholders etc.
+
+//===============
+//  ICON FONT
+//===============
+$fontname: accounts !default
+
+//===============
+//  COLORS
+//===============
 $basecolor:        #4573ad !default
 $bgcolor:          #ffffff !default
 $sidebgcolor:      #f1f1f1 !default
 $basefontcolor:    #333333 !default
 $accentcolor1:     #4573ad !default
+
+
+// Buttons and other alerts
 $successcolor:     #6FB454 !default
 $dangercolor:      #d65440 !default
 
-//Buttons and other alerts
-
 
 // Links
-// color: saturate(darken($linkcolor, 7), 4)
 $linkcolor: $basecolor !default
 $linkcolorhover: saturate(darken($linkcolor, 7), 4) !default
 $linkcolorfocus: saturate(darken($linkcolor, 15), 5) !default
 
-// grayscale
+
+// Grayscale
 $black: rgb(0, 0, 0) !default
 $darkgray: lighten($black, 25%) !default
 $gray: lighten($black, 50%) !default
