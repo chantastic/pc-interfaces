@@ -35,3 +35,45 @@ title: Sup PiCO
     %a.button{href: "#"} Button 2
   %li
     %a.button{href: "#"} Button 3
+
+%form
+  .form-group
+    %label Input Label
+    %input{placeholder: "Yo Homie. I'm Full width", type: "text"}
+  .form-group
+    .col.col--onethird
+      %label Input Label
+      %input{placeholder: "Yo Homie. I'm 33.33 ad infinitum", type: "text"}
+    .col.col--onethird
+      %label Input Label
+      %input{placeholder: "Yo Homie. I'm 33.33 ad infinitum", type: "text"}
+    .col.col--onethird
+      %label Input Label
+      %input{placeholder: "Yo Homie. I'm 33.33 ad infinitum", type: "text"}
+
+  .form-group
+    %label Select Box
+    %select
+      %option{value: "capicola"} Capicola
+      %option{value: "prosciutto"} Prosciutto
+      %option{value: "kielbasa"} Kielbasa
+      %option{value: "salami"} Salami
+
+  .form-group
+    .col.col--half
+      %label Choose Your Favorite
+      %input#meaty1{name: "meaty", type: "radio", value: "Pastrami"}
+      %label{for: "meaty1"} Pastrami
+      %input#meaty2{name: "meaty", type: "radio", value: "Pork belly"}
+      %label{for: "meaty2"} Pork belly
+
+    .col.col--half
+      %label Check these out
+      %input#checkbox1{type: "checkbox"}
+      %label{for: "checkbox1"} Checkbox 1
+      %input#checkbox2{type: "checkbox"}
+      %label{for: "checkbox2"} Checkbox 2
+  
+  .form-group
+    %label Textarea Label
+    %textarea{placeholder: "Yo Homie. I'm Full width"}    
