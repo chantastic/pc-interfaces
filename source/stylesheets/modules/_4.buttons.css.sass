@@ -14,17 +14,19 @@ $buttonborderstyle: solid
   padding: 1rem 2rem 1.0625rem 2rem
   +font-size(14)
   background-color: $basecolor
+  +background-image(linear-gradient(top, adjust-color($basecolor, $lightness: 6%), $basecolor))
   border-color: adjust-color($basecolor, $lightness: -10%, $saturation: -5%)
   border-style: solid
   border-width: 1px
   color: white
-  +transition(background-color 300ms ease-out)
+  // +transition(all 300ms ease-out)
   -webkit-appearance: none
   +border-radius(3px)
   font-weight: normal !important
 
   &:hover, &:focus
     background-color: adjust-color($basecolor, $lightness: -10%, $saturation: -5%)
+    +background-image(linear-gradient(top, $basecolor, adjust-color($basecolor, $lightness: -5%)))
     color: white
   &:visited
     color: white
@@ -36,15 +38,16 @@ $buttonborderstyle: solid
     &:hover, &:focus
       color: adjust-color($basecolor, $lightness: -15%, $saturation: 15%)
 
-.btn.secondary
 
 .btn.btn-secondary
   background-color: $lightgray
+  +background-image(linear-gradient(top, adjust-color($lightgray, $lightness: 6%), $lightgray))
   border-color: adjust-color($lightgray, $lightness: -10%)
   color: $darkgray
 
   &:hover, &:focus
     background-color: adjust-color($lightgray, $lightness: -10%)
+    +background-image(linear-gradient(top, $lightgray, adjust-color($lightgray, $lightness: -5%)))
     color: adjust-color($darkgray, $lightness: -10%)
   &:visited
     color: adjust-color($darkgray, $lightness: -10%)
@@ -58,11 +61,13 @@ $buttonborderstyle: solid
 
 .btn.btn-success
   background-color: $successcolor
+  +background-image(linear-gradient(top, adjust-color($successcolor, $lightness: 6%), $successcolor))
   border-color: adjust-color($successcolor, $lightness: -10%)
   color: white
 
   &:hover, &:focus
     background-color: adjust-color($successcolor, $lightness: -10%)
+    +background-image(linear-gradient(top, $successcolor, adjust-color($successcolor, $lightness: -5%)))
     color: white
   &:visited
     color: white
@@ -76,11 +81,13 @@ $buttonborderstyle: solid
 
 .btn.btn-danger
   background-color: $dangercolor
+  +background-image(linear-gradient(top, adjust-color($dangercolor, $lightness: 6%), $dangercolor))
   border-color: adjust-color($dangercolor, $lightness: -10%)
   color: white
 
   &:hover, &:focus
     background-color: adjust-color($dangercolor, $lightness: -10%)
+    +background-image(linear-gradient(top, $dangercolor, adjust-color($dangercolor, $lightness: -5%)))
     color: white
   &:visited
     color: white
@@ -128,7 +135,7 @@ $buttonborderstyle: solid
   +border-radius(1000px)
 
 .btn.disabled
-  background-color: #008cba
+  background: #008cba
   border-color: #0079a1
   color: white
   cursor: default
@@ -136,11 +143,11 @@ $buttonborderstyle: solid
   -webkit-box-shadow: none
   box-shadow: none
   &:hover, &:focus
-    background-color: #0079a1
+    background: #0079a1
     color: white
 
 .btn.disabled.secondary
-  background-color: #e7e7e7
+  background: #e7e7e7
   border-color: #dadada
   color: #333333
   cursor: default
@@ -148,12 +155,12 @@ $buttonborderstyle: solid
   -webkit-box-shadow: none
   box-shadow: none
   &:hover, &:focus
-    background-color: #dadada
+    background: #dadada
     color: #333333
 
 
 .btn.disabled.success
-  background-color: #43ac6a
+  background: #43ac6a
   border-color: #3c9a5f
   color: white
   cursor: default
@@ -161,11 +168,11 @@ $buttonborderstyle: solid
   -webkit-box-shadow: none
   box-shadow: none
   &:hover, &:focus
-    background-color: #3c9a5f
+    background: #3c9a5f
     color: white
 
 .btn.disabled.alert
-  background-color: #f04124
+  background: #f04124
   border-color: #ea2f10
   color: white
   cursor: default
