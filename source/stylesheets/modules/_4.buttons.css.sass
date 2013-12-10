@@ -195,8 +195,8 @@ $buttonborderstyle: solid
   display: inline-block
   padding: .5rem .75rem .525rem
   +font-size(14)
-  background-color: $base-color
-  border-color: adjust-color($base-color, $lightness: -10%, $saturation: -5%)
+  background-color: $primary-btn-color
+  border-color: adjust-color($primary-btn-color, $lightness: -10%, $saturation: -5%)
   color: white
   +transition(background-color 300ms ease-out)
   -webkit-appearance: none
@@ -207,7 +207,7 @@ $buttonborderstyle: solid
     background: transparent
     border-width: $buttonborderwidth
     border-style: $buttonborderstyle
-    color: $base-color
+    color: $primary-btn-color
 
 
 .badge.success
