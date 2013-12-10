@@ -13,9 +13,9 @@ $buttonborderstyle: solid
   display: inline-block
   padding: 1rem 2rem 1.0625rem 2rem
   +font-size(14)
-  background-color: $basecolor
-  +background-image(linear-gradient(top, adjust-color($basecolor, $lightness: 6%), $basecolor))
-  border-color: adjust-color($basecolor, $lightness: -10%, $saturation: -5%)
+  background-color: $primarybtncolor
+  +background-image(linear-gradient(top, adjust-color($primarybtncolor, $lightness: 6%), $primarybtncolor))
+  border-color: adjust-color($primarybtncolor, $lightness: -10%, $saturation: -5%)
   border-style: solid
   border-width: 1px
   color: white
@@ -25,8 +25,8 @@ $buttonborderstyle: solid
   font-weight: normal !important
 
   &:hover, &:focus
-    background-color: adjust-color($basecolor, $lightness: -10%, $saturation: -5%)
-    +background-image(linear-gradient(top, $basecolor, adjust-color($basecolor, $lightness: -5%)))
+    background-color: adjust-color($primarybtncolor, $lightness: -10%, $saturation: -5%)
+    +background-image(linear-gradient(top, $primarybtncolor, adjust-color($primarybtncolor, $lightness: -5%)))
     color: white
   &:visited
     color: white
@@ -36,7 +36,7 @@ $buttonborderstyle: solid
     border-style: $buttonborderstyle
     color: $basecolor
     &:hover, &:focus
-      color: adjust-color($basecolor, $lightness: -15%, $saturation: 15%)
+      color: adjust-color($primarybtncolor, $lightness: -15%, $saturation: 15%)
 
 
 .btn.btn-secondary

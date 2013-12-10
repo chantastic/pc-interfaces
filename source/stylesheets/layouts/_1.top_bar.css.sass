@@ -224,10 +224,10 @@
 
 //Acct Dropdown
 .top-bar
-  .has-acct-dropdown.active-state .dropdown
+  .has-acct-dropdown.active-state .acct-dropdown
     height: auto
 
-  .has-acct-dropdown .dropdown
+  .has-acct-dropdown .acct-dropdown
     position: relative
     height: 0
     background: adjust-color($basecolor, $lightness: -49%, $saturation: -45%)
@@ -237,11 +237,11 @@
       line-height: 20px
       display: block
 
-      &:after
-        content: ''
-        position: absolute
-        top: -5px
-        right: 24px
-        border-bottom: 5px solid #fff
-        border-left: solid 5px transparent
-        border-right: solid 5px transparent
+    &:after
+      content: ''
+      position: absolute
+      top: -5px
+      right: 24px
+      border-bottom: 5px solid #fff
+      border-left: solid 5px transparent
+      border-right: solid 5px transparent

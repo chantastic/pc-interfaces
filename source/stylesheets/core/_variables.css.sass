@@ -9,15 +9,19 @@ $fontname: accounts !default
 //===============
 //  COLORS
 //===============
-$basecolor:        #4573ad !default
-$bgcolor:          #ffffff !default
-$sidebgcolor:      #f1f1f1 !default
-$basefontcolor:    #333333 !default
-$accentcolor1:     #4573ad !default
-$formcolor:        $basecolor !default
+//this is the main headr color for the app
+$basecolor:          #a1311e !default
+$bgcolor:            #ffffff !default
+$sidebgcolor:        #f1f1f1 !default
+$basefontcolor:      #333333 !default
+$accentcolor1:       #4573ad !default
+//override this for tighter control over form focus states
+$formcolor:          $basecolor !default
+$formcolor:          #d1a035
 
 
 // Buttons and other alerts
+$primarybtncolor:  $basecolor !default
 $successcolor:     #6FB454 !default
 $dangercolor:      #d65440 !default
 
@@ -27,6 +31,9 @@ $linkcolor: $basecolor !default
 $linkcolorhover: saturate(darken($linkcolor, 7), 4) !default
 $linkcolorfocus: saturate(darken($linkcolor, 15), 5) !default
 
+//NAV Highlights
+$highlightedbgcolor:  saturate(lighten($linkcolor, 47), 1) !default
+$highlightedcolor:    $linkcolorhover !default
 
 // Grayscale
 $black: rgb(0, 0, 0) !default

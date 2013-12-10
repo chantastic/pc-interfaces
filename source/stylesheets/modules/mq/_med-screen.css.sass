@@ -81,7 +81,8 @@
     display: block
     height: 25px
     clear: both
-    background: adjust-color($basecolor, $lightness: 40%, $saturation: -45%)
+    border-top: 1px solid adjust-color($basecolor, $lightness: 45%, $saturation: -90%)
+    background: adjust-color($basecolor, $lightness: 50%, $saturation: -90%)
 
 
   //======================================Account Info
@@ -132,7 +133,7 @@
 
     .utilities
       line-height: 1
-      li
+      > li
         display: inline-block
       a
         display: inline-block
@@ -202,7 +203,8 @@
         &:last-child
           +border-radius(0 0 3px 3px)
         &:hover
-          background: adjust-color($basecolor, $lightness: 50%, $saturation: -10%)
+          color: $highlightedcolor
+          background: $highlightedbgcolor
       .badge
         position: relative
         top: 6px
@@ -211,10 +213,10 @@
 
   //Acct Dropdown
   .top-bar
-    .has-acct-dropdown.expanded .dropdown
+    .has-acct-dropdown.active-state .acct-dropdown
       display: block
 
-    .has-acct-dropdown .dropdown
+    .has-acct-dropdown .acct-dropdown
       width: auto
       min-width: 310px
       max-width: 420px
