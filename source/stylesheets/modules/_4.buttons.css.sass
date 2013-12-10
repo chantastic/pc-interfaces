@@ -2,11 +2,11 @@
 $buttonborderwidth: 1px
 $buttonborderstyle: solid
 
-.button
+.btn
   cursor: pointer
   font-weight: normal
   line-height: normal
-  margin: 0 0 1.25rem
+  margin: 0
   position: relative
   text-decoration: none
   text-align: center
@@ -28,7 +28,7 @@ $buttonborderstyle: solid
     color: white
   &:visited
     color: white
-  &.outline, &.outline:visited
+  &.btn-outline, &.btn-outline:visited
     background: transparent
     border-width: $buttonborderwidth
     border-style: $buttonborderstyle
@@ -36,8 +36,9 @@ $buttonborderstyle: solid
     &:hover, &:focus
       color: adjust-color($basecolor, $lightness: -15%, $saturation: 15%)
 
+.btn.secondary
 
-.button.secondary
+.btn.btn-secondary
   background-color: $lightgray
   border-color: adjust-color($lightgray, $lightness: -10%)
   color: $darkgray
@@ -47,7 +48,7 @@ $buttonborderstyle: solid
     color: adjust-color($darkgray, $lightness: -10%)
   &:visited
     color: adjust-color($darkgray, $lightness: -10%)
-  &.outline, &.outline:visited
+  &.btn-outline, &.btn-outline:visited
     background: transparent
     border-width: $buttonborderwidth 
     color: $darkgray
@@ -55,7 +56,7 @@ $buttonborderstyle: solid
       color: adjust-color($darkgray, $lightness: 10%, $saturation: 15%)
 
 
-.button.success
+.btn.btn-success
   background-color: $successcolor
   border-color: adjust-color($successcolor, $lightness: -10%)
   color: white
@@ -65,7 +66,7 @@ $buttonborderstyle: solid
     color: white
   &:visited
     color: white
-  &.outline, &.outline:visited
+  &.btn-outline, &.btn-outline:visited
     background: transparent
     border-width: $buttonborderwidth 
     color: $successcolor
@@ -73,7 +74,7 @@ $buttonborderstyle: solid
       color: adjust-color($successcolor, $lightness: -15%, $saturation: 15%)
 
 
-.button.danger
+.btn.btn-danger
   background-color: $dangercolor
   border-color: adjust-color($dangercolor, $lightness: -10%)
   color: white
@@ -83,7 +84,7 @@ $buttonborderstyle: solid
     color: white
   &:visited
     color: white
-  &.outline, &.outline:visited
+  &.btn-outline, &.btn-outline:visited
     background: transparent
     border-width: $buttonborderwidth 
     color: $dangercolor
@@ -94,90 +95,86 @@ $buttonborderstyle: solid
 
 
 //=======================================SIZES
-.button.large
+.btn.large
   padding: 1.125rem 2.25rem 1.1875rem 2.25rem
   +font-size(16.5)
 
-.button.small
+.btn.small
   padding: 0.875rem 1.75rem 0.9375rem 1.75rem
   +font-size(12)
 
-.button.tiny
+.btn.tiny
   padding: 0.625rem 1.25rem 0.6875rem 1.25rem
   +font-size(10)
 
-.button.micro
+.btn.micro
   padding: 0.185rem .75rem 0.25rem .75rem
   +font-size(10)
 
-.button.expand
+.btn.expand
   padding-right: 0
   padding-left: 0
   width: 100%
 
-.button.left-align
+.btn.left-align
   text-align: left
   text-indent: 0.75rem
 
-.button.right-align
+.btn.right-align
   text-align: right
   padding-right: 0.75rem
 
-.button.round
+.btn.round
   +border-radius(1000px)
 
-.button
-  &.disabled, &[disabled]
-    background-color: #008cba
-    border-color: #0079a1
+.btn.disabled
+  background-color: #008cba
+  border-color: #0079a1
+  color: white
+  cursor: default
+  opacity: 0.7
+  -webkit-box-shadow: none
+  box-shadow: none
+  &:hover, &:focus
+    background-color: #0079a1
     color: white
-    cursor: default
-    opacity: 0.7
-    -webkit-box-shadow: none
-    box-shadow: none
-    &:hover, &:focus
-      background-color: #0079a1
-      color: white
 
-.button
-  &.disabled.secondary, &[disabled].secondary
-    background-color: #e7e7e7
-    border-color: #dadada
+.btn.disabled.secondary
+  background-color: #e7e7e7
+  border-color: #dadada
+  color: #333333
+  cursor: default
+  opacity: 0.7
+  -webkit-box-shadow: none
+  box-shadow: none
+  &:hover, &:focus
+    background-color: #dadada
     color: #333333
-    cursor: default
-    opacity: 0.7
-    -webkit-box-shadow: none
-    box-shadow: none
-    &:hover, &:focus
-      background-color: #dadada
-      color: #333333
 
 
-.button
-  &.disabled.success, &[disabled].success
-    background-color: #43ac6a
-    border-color: #3c9a5f
+.btn.disabled.success
+  background-color: #43ac6a
+  border-color: #3c9a5f
+  color: white
+  cursor: default
+  opacity: 0.7
+  -webkit-box-shadow: none
+  box-shadow: none
+  &:hover, &:focus
+    background-color: #3c9a5f
     color: white
-    cursor: default
-    opacity: 0.7
-    -webkit-box-shadow: none
-    box-shadow: none
-    &:hover, &:focus
-      background-color: #3c9a5f
-      color: white
 
-.button
-  &.disabled.alert, &[disabled].alert
-    background-color: #f04124
-    border-color: #ea2f10
+.btn.disabled.alert
+  background-color: #f04124
+  border-color: #ea2f10
+  color: white
+  cursor: default
+  opacity: 0.7
+  -webkit-box-shadow: none
+  box-shadow: none
+  &:hover, &:focus
+    background-color: #ea2f10
     color: white
-    cursor: default
-    opacity: 0.7
-    -webkit-box-shadow: none
-    box-shadow: none
-    &:hover, &:focus
-      background-color: #ea2f10
-      color: white
 
 
 //===========================================================BADGES
@@ -217,7 +214,7 @@ $buttonborderstyle: solid
 
 
 // BUTTON GROUPS
-.button-group 
+.btn-group 
   list-style: none
   margin: 0
   *zoom: 1 
@@ -228,12 +225,23 @@ $buttonborderstyle: solid
     > * .button 
       border-right: 1px solid
       border-color: rgba(255, 255, 255, 0.5) 
-  .button
+  .btn
     +border-radius(0)
-    margin-left: 1px
-  > *:first-child .button
+    margin-left: -1px
+  > *:first-child .btn
     +border-radius(3px 0 0 3px)
     margin-left: 0
-  > *:last-child .button
+  > *:last-child .btn
     +border-radius(0 3px 3px 0)    
+
+//Split Button
+.btn-dropdown
+  position: relative
+  padding-right: 35px
+  .dropdown-indicator
+    +abs-pos(0, 0, 0, auto)
+    width: 35px
+  .caret
+    +abs-pos(50%, 50%, auto, auto)
+    margin: -3px -3px
 

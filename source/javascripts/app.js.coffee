@@ -6,12 +6,13 @@ $ =>
     $(this).toggleClass("alt-state")
 
   ########### Toggle the top menu bar for mobile
-  $(document).on "click", ".js-toggleancestor", (event) ->
-    $(this).closest(".js-toggletarget").toggleClass("expanded")
+  $(document).on "click", ".js-toptoggle", (event) ->
+    $(this).closest(".js-topwrap").toggleClass("active-state")
 
-  ########### Toggle dropdowns
-  $(document).on "click", ".toggle_ancestor", (event) ->
-    $(this).closest(".js-toggletarget").toggleClass("expanded") 
+  ########### Toggle the dropdown menus
+  $(document).on "click", ".dropdown-toggle", (event) ->
+    $(this).closest(".dropdown").toggleClass("active-state")    
+
 
   ########### LEFT OFF-CANVAS SIDEBAR
   $(document).on "click", "#toggle-sidebar", (event) ->

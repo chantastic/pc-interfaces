@@ -56,7 +56,7 @@
         background: adjust-color($basecolor, $lightness: -42%, $saturation: -30%)
   
 //Set the bar's height to auto when expanded in mobile view
-.top-bar.expanded, .top-bar.expanded .top-nav-options
+.top-bar.active-state, .top-bar.active-state .top-nav-options
   height: auto        
 
 //=================================================[ APP SWITCHER ]  
@@ -224,7 +224,7 @@
 
 //Acct Dropdown
 .top-bar
-  .has-acct-dropdown.expanded .dropdown
+  .has-acct-dropdown.active-state .dropdown
     height: auto
 
   .has-acct-dropdown .dropdown

@@ -5,6 +5,18 @@
   font-size: #{$font-size}px
   font-size: #{$font-size / 10}rem
 
+=truncate
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+=abs-pos($top: auto, $right: auto, $bottom: auto, $left: auto)
+  top: $top
+  right: $right
+  bottom: $bottom
+  left: $left
+  position: absolute
+
 %clearfix
   *zoom: 1
   &:before,
@@ -19,10 +31,6 @@
   *display: inline
   *zoom: 1
 
-=truncate
-  white-space: nowrap
-  overflow: hidden
-  text-overflow: ellipsis
 
 //==== CSS triangles
 //==== Example: +triangle("up", #fff, 10px)

@@ -1,15 +1,43 @@
-.side-nav
+%nav-base
   display: block
   margin: 0
-  // padding: 0.77778rem 0
   padding: 0
   list-style-type: none
   list-style-position: inside
-  li
+
+
+.side-nav
+  @extend %nav-base
   a
-    +font-size(12)
     display: block
     padding: 0.6rem 10px
+    +font-size(12)
     border-bottom: 1px solid adjust-color($sidebgcolor, $lightness: -5%)
     &:hover
       background: adjust-color($basecolor, $lightness: 42%, $saturation: -30%)
+
+.dropdown__menu
+  @extend %nav-base
+  padding: .75rem 0
+  li, a
+    display: block
+    +font-size(12)
+  li
+    &:first-child a
+      +border-radius(3px 3px 0 0)
+    &:last-child a
+      +border-radius(0 0 3px 3px) 
+  a
+    padding: 0.4rem 1rem 0.7rem
+    white-space: nowrap
+    // border-bottom: 1px solid adjust-color($basefontcolor, $lightness: 65%)     
+    &:hover
+      background: adjust-color($basecolor, $lightness: 48%, $saturation: -20%)
+  .dropdown__header
+    padding: 0.4rem 1rem 0.7rem
+    color: adjust-color($basefontcolor, $lightness: 35%)
+  .divider
+    height: 1px
+    margin: 9px 0
+    overflow: hidden
+    background-color: adjust-color($basefontcolor, $lightness: 65%)   

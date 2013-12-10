@@ -1,4 +1,4 @@
-%nav.top-bar.js-toggletarget{"role" => "menubar", :title => "Main Site Navigation"}
+%nav.top-bar.js-dropwrap{"role" => "menubar", :title => "Main Site Navigation"}
   .title-area
     / Title Area
     .app-switcher-wrap.js-togglehelper
@@ -39,7 +39,7 @@
         %span.title Sidebar
         %span.icon-cog{"aria-hidden" => "true"}
 
-    #toggle-topbar.js-toggleancestor.menu-icon.show-for-mobile
+    #toggle-topbar.js-droptoggle.menu-icon.show-for-mobile
       %a{href: "#"}
         %span.title Menu
         %span.icon-menu{"aria-hidden" => "true"}                                            
@@ -82,8 +82,8 @@
             %a.dialogify{href: "/help", width: "600"}
               %span.icon-help>
               help
-          %li.js-toggletarget.has-acct-dropdown
-            %a.js-toggleancestor
+          %li.js-dropwrap.has-acct-dropdown
+            %a.js-droptoggle
               %span.icon-drop-caret
               accounts
             %ul.dropdown.acct-dropdown

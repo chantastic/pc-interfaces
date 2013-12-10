@@ -8,34 +8,52 @@ title: Sup PiCO
 /   Hello world! This is HTML5 
 /   %span.hide-from-mobile
 /     Boilerplate.
+%h2.section-header Buttons
 %p
-  %a.button{href: ""}
+  %a.btn{href: ""}
     Button
-  %a.button.secondary{href: ""}
+  %a.btn.btn-secondary{href: ""}
     Button 2
-  %a.button.success{href: ""}
+  %a.btn.btn-success{href: ""}
     Button Success
-  %a.button.danger{href: ""}
+  %a.btn.btn-danger{href: ""}
     Button  
 %p
-  %a.button.outline{href: ""}
+  %a.btn.outline{href: ""}
     Button
-  %a.button.outline.secondary{href: ""}
+  %a.btn.btn-outline.btn-secondary{href: ""}
     Button 2
-  %a.button.outline.success{href: ""}
+  %a.btn.btn-outline.btn-success{href: ""}
     Button Success
-  %a.button.outline.danger{href: ""}
+  %a.btn.btn-outline.btn-danger{href: ""}
     Button  
 
-%h1 Button Groups
-%ul.button-group
+%h3 Button Groups
+%ul.btn-group
   %li
-    %a.button{href: "#"} Button 1
+    %a.btn{href: "#"} Button 1
   %li
-    %a.button{href: "#"} Button 2
+    %a.btn{href: "#"} Button 2
   %li
-    %a.button{href: "#"} Button 3
+    %a.btn{href: "#"} Button 3
 
+%h3 Split Button / Dropdown
+.dropdown
+  %a.btn.btn-dropdown.dropdown-toggle{href: "#"}
+    Dropdown Button
+    %span.dropdown-indicator
+      %i.caret{"aria-hidden" => "true"} 
+  %ul.dropdown__menu{"data-dropdown-content" => ""}
+    / %li.dropdown__header This is an example of a header
+    %li
+      %a{href: "#"} This is a link
+    / %li.divider
+    %li
+      %a{href: "#"} This is another great link
+    %li
+      %a{href: "#"} Yet another    
+
+%h2.section-header Meaty Forms
 %form
   .form-group
     %label Input Label
@@ -76,4 +94,4 @@ title: Sup PiCO
   
   .form-group
     %label Textarea Label
-    %textarea{placeholder: "Yo Homie. I'm Full width"}    
+    %textarea{placeholder: "Yo Homie. I'm Full width"}
