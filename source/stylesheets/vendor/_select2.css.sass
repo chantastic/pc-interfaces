@@ -16,9 +16,9 @@
     padding: 0 0 0 8px
     overflow: hidden
     position: relative
-    border: 1px solid adjust-color($lightgray, $lightness: -6%)
+    border: 1px solid adjust-color($light-gray, $lightness: -6%)
     white-space: nowrap
-    color: adjust-color($basefontcolor, $lightness: 9%)
+    color: adjust-color($base-font-color, $lightness: 9%)
     text-decoration: none
     border-radius: 4px
     background-clip: padding-box
@@ -27,8 +27,8 @@
     -moz-user-select: none
     -ms-user-select: none
     user-select: none
-    background-color: adjust-color($lightergray, $lightness: 9%)
-    +background-image(linear-gradient(top, adjust-color($lightergray, $lightness: 9%), adjust-color($lightergray, $lightness: 5%)))
+    background-color: adjust-color($lighter-gray, $lightness: 9%)
+    +background-image(linear-gradient(top, adjust-color($lighter-gray, $lightness: 9%), adjust-color($lighter-gray, $lightness: 5%)))
   &.select2-drop-above .select2-choice
     border-bottom-color: #aaa
     border-radius: 0 0 4px 4px
@@ -103,8 +103,8 @@
   +box-shadow(0 -4px 5px rgba(0, 0, 0, 0.15))
 
 .select2-drop-active
-  border-color: adjust-color($formcolor, $lightness: 15%, $saturation: 5%)
-  +box-shadow(0 0 8px rgba(adjust-color($basecolor, $lightness: 10%, $saturation: -15%), 0.6))
+  border-color: adjust-color($form-color, $lightness: 15%, $saturation: 5%)
+  +box-shadow(0 0 8px rgba(adjust-color($base-color, $lightness: 10%, $saturation: -15%), 0.6))
   border-top: none
 
 .select2-drop.select2-drop-above.select2-drop-active
@@ -120,8 +120,8 @@
   border-left: 1px solid #aaa
   border-radius: 0 4px 4px 0
   background-clip: padding-box
-  background-color: adjust-color($lightergray, $lightness: 6%)
-  +background-image(linear-gradient(top, adjust-color($lightergray, $lightness: 6%), adjust-color($lightergray, $lightness: 3%)))
+  background-color: adjust-color($lighter-gray, $lightness: 6%)
+  +background-image(linear-gradient(top, adjust-color($lighter-gray, $lightness: 6%), adjust-color($lighter-gray, $lightness: 3%)))
   b
     display: block
     width: 100%
@@ -146,7 +146,7 @@
     outline: 0
     font-family: sans-serif
     font-size: 1em
-    border: 1px solid adjust-color($lightgray, $lightness: -6%)
+    border: 1px solid adjust-color($light-gray, $lightness: -6%)
     +box-shadow(none)
     &:focus
       +box-shadow(none !important)
@@ -161,8 +161,8 @@
 .select2-container-active
   .select2-choice, .select2-choices
     outline: none
-    border: 1px solid adjust-color($formcolor, $lightness: 15%, $saturation: 5%)
-    +box-shadow(0 0 8px rgba(adjust-color($formcolor, $lightness: 10%, $saturation: -15%), 0.6))
+    border: 1px solid adjust-color($form-color, $lightness: 15%, $saturation: 5%)
+    +box-shadow(0 0 8px rgba(adjust-color($form-color, $lightness: 10%, $saturation: -15%), 0.6))
 
 .select2-dropdown-open
   .select2-choice
@@ -171,8 +171,8 @@
     box-shadow: 0 1px 0 #fff inset
     border-bottom-left-radius: 0
     border-bottom-right-radius: 0
-    background-color: adjust-color($lightergray, $lightness: 6%)
-    +background-image(linear-gradient(top, adjust-color($lightergray, $lightness: 6%), adjust-color($lightergray, $lightness: 3%)))
+    background-color: adjust-color($lighter-gray, $lightness: 6%)
+    +background-image(linear-gradient(top, adjust-color($lighter-gray, $lightness: 6%), adjust-color($lighter-gray, $lightness: 3%)))
   &.select2-drop-above
     .select2-choice, .select2-choices
       border: 1px solid #5897fb

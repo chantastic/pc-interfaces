@@ -21,7 +21,7 @@
         padding: 0 15px
         height: 50px
         &:hover
-          background: adjust-color($basecolor, $lightness: -12%, $saturation: -5%)    
+          background: adjust-color($base-color, $lightness: -12%, $saturation: -5%)    
 
   .title-area
     float: left    
@@ -31,13 +31,13 @@
     clear: none
     width: 0
     height: 50px
-    border-left: 1px solid adjust-color($basecolor, $lightness: -20%, $saturation: -15%)   
+    border-left: 1px solid adjust-color($base-color, $lightness: -20%, $saturation: -15%)   
 
   .app-switcher-wrap
     padding-left: 10px
     margin: 0
     width: 209px
-    background: adjust-color($basecolor, $lightness: -25%, $saturation: -90%)
+    background: adjust-color($base-color, $lightness: -25%, $saturation: -90%)
 
   .app-switcher
     position: absolute
@@ -81,15 +81,15 @@
     display: block
     height: 25px
     clear: both
-    border-top: 1px solid adjust-color($basecolor, $lightness: 45%, $saturation: -90%)
-    background: adjust-color($basecolor, $lightness: 50%, $saturation: -90%)
+    border-top: 1px solid adjust-color($base-color, $lightness: 45%, $saturation: -90%)
+    background: adjust-color($base-color, $lightness: 50%, $saturation: -90%)
 
 
   //======================================Account Info
   .top-bar .top-bar-section .account-info
     width: 200px
     height: 50px
-    border-left: 1px solid adjust-color($basecolor, $lightness: -20%, $saturation: -15%)  
+    border-left: 1px solid adjust-color($base-color, $lightness: -20%, $saturation: -15%)  
     > ul li
       border: 0
     a:hover
@@ -115,7 +115,7 @@
         +font-size(10)
         border-bottom: 0
         margin: 10px 0 3px 0
-        color: adjust-color($basecolor, $lightness: -49%, $saturation: -45%)
+        color: adjust-color($base-color, $lightness: -49%, $saturation: -45%)
         span
           display: inline-block
           width: 1px
@@ -123,7 +123,7 @@
           margin: 0 4px
           position: relative
           top: 2px
-          background: adjust-color($basecolor, $lightness: 22%, $saturation: 1%)
+          background: adjust-color($base-color, $lightness: 22%, $saturation: 1%)
         a
           font-size: inherit
           color: #fff
@@ -153,14 +153,14 @@
           display: block
           padding: 0 40px 10px 10px
         a
-          color: $linkcolor
+          color: $link-color
         .log
           position: absolute
           top: 10px
           right: 8px
           +border-radius(2px)
-          border: 1px solid $dangercolor
-          color: $dangercolor
+          border: 1px solid $danger-color
+          color: $danger-color
           padding: .15rem .35rem .35rem .35rem 
         .unlink
           display: block
@@ -169,14 +169,14 @@
           height: 30px
           line-height: 30px
           +font-size(12)
-          background: adjust-color($basecolor, $lightness: 42%, $saturation: -40%)
+          background: adjust-color($base-color, $lightness: 42%, $saturation: -40%)
           &:hover
-            background: adjust-color($basecolor, $lightness: 40%, $saturation: -30%)
+            background: adjust-color($base-color, $lightness: 40%, $saturation: -30%)
           .outline
             +border-radius(3px)
             min-width: 60px
             border: 1px solid
-            color: adjust-color($basecolor, $lightness: -5%, $saturation: 0%)
+            color: adjust-color($base-color, $lightness: -5%, $saturation: 0%)
             position: relative
             top: 6px
             margin: 0 .75rem 0 0
@@ -195,16 +195,16 @@
         padding: 0 7px
         height: 30px
         line-height: 30px
-        color: $basefontcolor
-        border-top: 1px solid adjust-color($lightgray, $lightness: 10%)
+        color: $base-font-color
+        border-top: 1px solid adjust-color($light-gray, $lightness: 10%)
         +font-size(12)
         &:first-child
           border-top: 0
         &:last-child
           +border-radius(0 0 3px 3px)
         &:hover
-          color: $highlightedcolor
-          background: $highlightedbgcolor
+          color: $highlighted-color
+          background: $highlighted-bg-color
       .badge
         position: relative
         top: 6px
@@ -227,7 +227,7 @@
       display: none
       background: #fff
       +border-radius(3px)
-      +box-shadow(0 1px 6px rgba(adjust-color($basecolor, $lightness: -70%, $saturation: -70%) , 0.8))
+      +box-shadow(0 1px 6px rgba(adjust-color($base-color, $lightness: -70%, $saturation: -70%) , 0.8))
 
       &:after
         right: 24px

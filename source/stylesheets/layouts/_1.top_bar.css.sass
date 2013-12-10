@@ -10,15 +10,15 @@
   overflow: visible
   height: 50px  
   margin: 0 auto
-  background: $basecolor
+  background: $base-color
   min-height: 50px
-  border-bottom: 1px solid adjust-color($basecolor, $lightness: -40%, $saturation: -25%)
+  border-bottom: 1px solid adjust-color($base-color, $lightness: -40%, $saturation: -25%)
   ul
     margin-bottom: 0
   .top-nav-options
     height: 0
     overflow: hidden
-    background: adjust-color($basecolor, $lightness: -31%, $saturation: -48%)
+    background: adjust-color($base-color, $lightness: -31%, $saturation: -48%)
 
 .title-area
   position: relative
@@ -36,7 +36,7 @@
   position: relative
   width: auto
   .divider
-    border-bottom: solid 1px adjust-color($basecolor, $lightness: -37%, $saturation: -35%)
+    border-bottom: solid 1px adjust-color($base-color, $lightness: -37%, $saturation: -35%)
     clear: both
     height: 1px
     width: 100%  
@@ -53,7 +53,7 @@
       +font-size(12)
       &:hover
         color: #fff
-        background: adjust-color($basecolor, $lightness: -42%, $saturation: -30%)
+        background: adjust-color($base-color, $lightness: -42%, $saturation: -30%)
   
 //Set the bar's height to auto when expanded in mobile view
 .top-bar.active-state, .top-bar.active-state .top-nav-options
@@ -78,7 +78,7 @@
     display: none
     top: 17px
     left: 174px
-    background: adjust-color($basecolor, $lightness: -35%, $saturation: -85%)
+    background: adjust-color($base-color, $lightness: -35%, $saturation: -85%)
   .toggle-btn-cover
     top: 13px
     right: 13px
@@ -143,12 +143,12 @@
       padding: 8px 15px 10px 47px
       font-size: 16px
       font-weight: normal
-      color: lighten($darkgray, 5)
+      color: lighten($dark-gray, 5)
       border: 0
     
     a:hover
-      color: darken($linkcolorhover, 10)
-      background: lighten($lightergray, 2)
+      color: darken($link-color-hover, 10)
+      background: lighten($lighter-gray, 2)
     .icon, em, a, .a
       display: block
     em
@@ -171,10 +171,10 @@
   text-align: center
   &#toggle-topbar
     right: 0
-    border-left: 1px solid adjust-color($basecolor, $lightness: -20%, $saturation: -15%)   
+    border-left: 1px solid adjust-color($base-color, $lightness: -20%, $saturation: -15%)   
   &#toggle-sidebar
     left: 0
-    border-right: 1px solid adjust-color($basecolor, $lightness: -20%, $saturation: -15%)
+    border-right: 1px solid adjust-color($base-color, $lightness: -20%, $saturation: -15%)
   .title
     height: 1
     width: 1
@@ -203,7 +203,7 @@
     display: none
   .identity
     li
-      border-bottom: 1px solid adjust-color($basecolor, $lightness: -49%, $saturation: -45%)
+      border-bottom: 1px solid adjust-color($base-color, $lightness: -49%, $saturation: -45%)
     a
       display: inline-block
 
@@ -230,7 +230,7 @@
   .has-acct-dropdown .acct-dropdown
     position: relative
     height: 0
-    background: adjust-color($basecolor, $lightness: -49%, $saturation: -45%)
+    background: adjust-color($base-color, $lightness: -49%, $saturation: -45%)
     +border-radius(4px)
     overflow: hidden 
     li

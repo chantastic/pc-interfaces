@@ -12,9 +12,9 @@
     display: block
     padding: 0.6rem 10px
     +font-size(12)
-    border-bottom: 1px solid adjust-color($sidebgcolor, $lightness: -5%)
+    border-bottom: 1px solid adjust-color($sidebar-bg-color, $lightness: -5%)
     &:hover
-      background: adjust-color($basecolor, $lightness: 42%, $saturation: -30%)
+      background: adjust-color($base-color, $lightness: 42%, $saturation: -30%)
 
 .dropdown__menu
   @extend %nav-base
@@ -30,14 +30,14 @@
   a
     padding: 0.4rem 1rem 0.7rem
     white-space: nowrap
-    // border-bottom: 1px solid adjust-color($basefontcolor, $lightness: 65%)     
+    // border-bottom: 1px solid adjust-color($base-font-color, $lightness: 65%)     
     &:hover
       @extend %highlighted-state
   .dropdown__header
     padding: 0.4rem 1rem 0.7rem
-    color: adjust-color($basefontcolor, $lightness: 35%)
+    color: adjust-color($base-font-color, $lightness: 35%)
   .divider
     height: 1px
     margin: 9px 0
     overflow: hidden
-    background-color: adjust-color($basefontcolor, $lightness: 65%)   
+    background-color: adjust-color($base-font-color, $lightness: 65%)   

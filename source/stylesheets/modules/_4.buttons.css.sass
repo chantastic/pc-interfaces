@@ -13,9 +13,9 @@ $buttonborderstyle: solid
   display: inline-block
   padding: 1rem 2rem 1.0625rem 2rem
   +font-size(14)
-  background-color: $primarybtncolor
-  +background-image(linear-gradient(top, adjust-color($primarybtncolor, $lightness: 6%), $primarybtncolor))
-  border-color: adjust-color($primarybtncolor, $lightness: -10%, $saturation: -5%)
+  background-color: $primary-btn-color
+  +background-image(linear-gradient(top, adjust-color($primary-btn-color, $lightness: 6%), $primary-btn-color))
+  border-color: adjust-color($primary-btn-color, $lightness: -10%, $saturation: -5%)
   border-style: solid
   border-width: 1px
   color: white
@@ -25,8 +25,8 @@ $buttonborderstyle: solid
   font-weight: normal !important
 
   &:hover, &:focus
-    background-color: adjust-color($primarybtncolor, $lightness: -10%, $saturation: -5%)
-    +background-image(linear-gradient(top, $primarybtncolor, adjust-color($primarybtncolor, $lightness: -5%)))
+    background-color: adjust-color($primary-btn-color, $lightness: -10%, $saturation: -5%)
+    +background-image(linear-gradient(top, $primary-btn-color, adjust-color($primary-btn-color, $lightness: -5%)))
     color: white
   &:visited
     color: white
@@ -34,69 +34,69 @@ $buttonborderstyle: solid
     background: transparent
     border-width: $buttonborderwidth
     border-style: $buttonborderstyle
-    color: $basecolor
+    color: $base-color
     &:hover, &:focus
-      color: adjust-color($primarybtncolor, $lightness: -15%, $saturation: 15%)
+      color: adjust-color($primary-btn-color, $lightness: -15%, $saturation: 15%)
 
 
 .btn.btn-secondary
-  background-color: $lightgray
-  +background-image(linear-gradient(top, adjust-color($lightgray, $lightness: 6%), $lightgray))
-  border-color: adjust-color($lightgray, $lightness: -10%)
-  color: $darkgray
+  background-color: $light-gray
+  +background-image(linear-gradient(top, adjust-color($light-gray, $lightness: 6%), $light-gray))
+  border-color: adjust-color($light-gray, $lightness: -10%)
+  color: $dark-gray
 
   &:hover, &:focus
-    background-color: adjust-color($lightgray, $lightness: -10%)
-    +background-image(linear-gradient(top, $lightgray, adjust-color($lightgray, $lightness: -5%)))
-    color: adjust-color($darkgray, $lightness: -10%)
+    background-color: adjust-color($light-gray, $lightness: -10%)
+    +background-image(linear-gradient(top, $light-gray, adjust-color($light-gray, $lightness: -5%)))
+    color: adjust-color($dark-gray, $lightness: -10%)
   &:visited
-    color: adjust-color($darkgray, $lightness: -10%)
+    color: adjust-color($dark-gray, $lightness: -10%)
   &.btn-outline, &.btn-outline:visited
     background: transparent
     border-width: $buttonborderwidth 
-    color: $darkgray
+    color: $dark-gray
     &:hover, &:focus
-      color: adjust-color($darkgray, $lightness: 10%, $saturation: 15%)
+      color: adjust-color($dark-gray, $lightness: 10%, $saturation: 15%)
 
 
 .btn.btn-success
-  background-color: $successcolor
-  +background-image(linear-gradient(top, adjust-color($successcolor, $lightness: 6%), $successcolor))
-  border-color: adjust-color($successcolor, $lightness: -10%)
+  background-color: $success-color
+  +background-image(linear-gradient(top, adjust-color($success-color, $lightness: 6%), $success-color))
+  border-color: adjust-color($success-color, $lightness: -10%)
   color: white
 
   &:hover, &:focus
-    background-color: adjust-color($successcolor, $lightness: -10%)
-    +background-image(linear-gradient(top, $successcolor, adjust-color($successcolor, $lightness: -5%)))
+    background-color: adjust-color($success-color, $lightness: -10%)
+    +background-image(linear-gradient(top, $success-color, adjust-color($success-color, $lightness: -5%)))
     color: white
   &:visited
     color: white
   &.btn-outline, &.btn-outline:visited
     background: transparent
     border-width: $buttonborderwidth 
-    color: $successcolor
+    color: $success-color
     &:hover, &:focus
-      color: adjust-color($successcolor, $lightness: -15%, $saturation: 15%)
+      color: adjust-color($success-color, $lightness: -15%, $saturation: 15%)
 
 
 .btn.btn-danger
-  background-color: $dangercolor
-  +background-image(linear-gradient(top, adjust-color($dangercolor, $lightness: 6%), $dangercolor))
-  border-color: adjust-color($dangercolor, $lightness: -10%)
+  background-color: $danger-color
+  +background-image(linear-gradient(top, adjust-color($danger-color, $lightness: 6%), $danger-color))
+  border-color: adjust-color($danger-color, $lightness: -10%)
   color: white
 
   &:hover, &:focus
-    background-color: adjust-color($dangercolor, $lightness: -10%)
-    +background-image(linear-gradient(top, $dangercolor, adjust-color($dangercolor, $lightness: -5%)))
+    background-color: adjust-color($danger-color, $lightness: -10%)
+    +background-image(linear-gradient(top, $danger-color, adjust-color($danger-color, $lightness: -5%)))
     color: white
   &:visited
     color: white
   &.btn-outline, &.btn-outline:visited
     background: transparent
     border-width: $buttonborderwidth 
-    color: $dangercolor
+    color: $danger-color
     &:hover, &:focus
-      color: adjust-color($dangercolor, $lightness: -15%, $saturation: 10%)
+      color: adjust-color($danger-color, $lightness: -15%, $saturation: 10%)
 
 
 
@@ -195,8 +195,8 @@ $buttonborderstyle: solid
   display: inline-block
   padding: .5rem .75rem .525rem
   +font-size(14)
-  background-color: $basecolor
-  border-color: adjust-color($basecolor, $lightness: -10%, $saturation: -5%)
+  background-color: $base-color
+  border-color: adjust-color($base-color, $lightness: -10%, $saturation: -5%)
   color: white
   +transition(background-color 300ms ease-out)
   -webkit-appearance: none
@@ -207,17 +207,17 @@ $buttonborderstyle: solid
     background: transparent
     border-width: $buttonborderwidth
     border-style: $buttonborderstyle
-    color: $basecolor
+    color: $base-color
 
 
 .badge.success
-  background-color: $successcolor
-  border-color: adjust-color($successcolor, $lightness: -10%)
+  background-color: $success-color
+  border-color: adjust-color($success-color, $lightness: -10%)
   color: #fff
   &.outline
     background: transparent
     border-width: $buttonborderwidth 
-    color: $successcolor
+    color: $success-color
 
 
 // BUTTON GROUPS
