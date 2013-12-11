@@ -19,4 +19,9 @@ $ =>
     $('body').toggleClass("left-off-canvas-active") 
 
 
-  $("select").select2();
+  $("select").select2({
+    minimumResultsForSearch: 12
+    });  
+  $(".select2--nosearch").select2({
+    minimumResultsForSearch: 999
+    });  

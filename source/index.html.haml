@@ -70,12 +70,28 @@ title: Sup PiCO
       %input{placeholder: "Yo Homie. I'm 33.33 ad infinitum", type: "text"}
 
   .form-group
-    %label Select Box
-    %select
-      %option{value: "capicola"} Capicola
-      %option{value: "prosciutto"} Prosciutto
-      %option{value: "kielbasa"} Kielbasa
-      %option{value: "salami"} Salami
+    .col.col--half
+      %label Select2 Box
+      %select
+        %option{value: "capicola"} Capicola
+        %option{value: "prosciutto"} Prosciutto
+        %option{value: "kielbasa"} Kielbasa
+        %option{value: "salami"} Salami
+        %option{value: "capicola"} Strip steak
+        %option{value: "prosciutto"} Tenderloin
+        %option{value: "kielbasa"} Venison
+        %option{value: "salami"} Ttri-tip
+        %option{value: "capicola"} Sirloin
+        %option{value: "prosciutto"} Bacon
+        %option{value: "kielbasa"} Biltong
+        %option{value: "salami"} Frankfurter
+    .col.col--half
+      %label Select2 Box No Search Input
+      %select.select2--nosearch
+        %option{value: "capicola"} Capicola
+        %option{value: "prosciutto"} Prosciutto
+        %option{value: "kielbasa"} Kielbasa
+        %option{value: "salami"} Salami      
 
   .form-group
     .col.col--half
