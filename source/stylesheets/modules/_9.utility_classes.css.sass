@@ -24,11 +24,21 @@
 .text-justify
   text-align: justify  
 
+//Block manipulation
 .dib
   display: inline-block
 
+//Single line that will truncate with ellipsis
 .truncate
   +truncate()
+//100% width 1px high line
+.hr
+  +horizontal-divider($lighter-gray)
+
+.mar-btm-baseline
+  margin-bottom: 1.11111rem !important
+
+
 
 /*.togglehelper has some JS that will listen for it to be clicked then toggle an .alt-state class on it*/
 .js-togglehelper
