@@ -94,6 +94,22 @@ title: Sup PiCO
         %option{value: "salami"} Salami      
 
   .form-group
+    %label Select2 Multi Select
+    %select{ "multiple" => "" }
+      %option{value: "capicola"} Capicola
+      %option{value: "prosciutto"} Prosciutto
+      %option{value: "kielbasa"} Kielbasa
+      %option{value: "salami"} Salami
+      %option{value: "capicola"} Strip steak
+      %option{value: "prosciutto"} Tenderloin
+      %option{value: "kielbasa"} Venison
+      %option{value: "salami"} Ttri-tip
+      %option{value: "capicola"} Sirloin
+      %option{value: "prosciutto"} Bacon
+      %option{value: "kielbasa"} Biltong
+      %option{value: "salami"} Frankfurter
+
+  .form-group
     .col.col--half
       %label Choose Your Favorite
       %input#meaty1{name: "meaty", type: "radio", value: "Pastrami"}
@@ -111,3 +127,16 @@ title: Sup PiCO
   .form-group
     %label Textarea Label
     %textarea{placeholder: "Yo Homie. I'm Full width"}
+
+%h2.section-header Modals
+%p
+  %a.btn{href: "", "data-reveal-id" => "exModal"}
+    Launch a Modal
+//==============
+//MODAL    
+//==============
+#exModal.reveal-modal{"data-reveal" => ""}
+  %h2 Awesome. I have it.
+  %p.lead Your couch.  It is mine.
+  %p Im a cool paragraph that lives inside of an even cooler modal. Wins
+  %a.close-reveal-modal ×
