@@ -131,19 +131,41 @@ title: Sup PiCO
 %h2.section-header Modals
 %p
   %a.btn{href: "", "data-reveal-id" => "exModal"}
-    Launch a Modal
+    Default Modal
+  %a.btn{href: "", "data-reveal-id" => "exModalmed"}
+    Med-sized Modal
 //==============
 //MODAL    
 //==============
 #exModal.reveal-modal{"data-reveal" => ""}
-  .reveal-modal__header
-    %h2 Awesome. I have it.
+  .modal__header
+    %h2.modal-title Awesome. I have it.
     / %a.close-reveal-modal ×
-  .reveal-modal__body
-    %p.lead Your couch.  It is mine.
+  .modal__body
+    %p.lead This is a standard sized modal.
     %p Im a cool paragraph that lives inside of an even cooler modal. Wins
-  .reveal-modal__footer
-    %a.btn.btn-danger.close-reveal-modal.outline{href: ""}
+  .modal__footer
+    %a.btn.btn-secondary.left{href: "", "data-reveal-id" => "exModalmed"}
+      Launch 2nd Modal  
+    %a.btn.btn-danger.btn-outline.close-reveal-modal{href: ""}
       Cancel
-    %a.btn.btn-success{href: "", "data-reveal-id" => "exModal"}
+    %a.btn.btn-success{href: ""}
+      Accept
+
+#exModalmed.reveal-modal.medium{"data-reveal" => ""}
+  .modal__header
+    %h2.modal-title I am modified with a class of .medium
+    / %a.close-reveal-modal ×
+  .modal__body
+    %p.lead The dialogs are responsive by default. If you need to you can modify the size with the following classes: (This modal has been modified to be smaller than the default elastic width.)
+    %ul
+      %li small: Set the width to 30%
+      %li medium: Set the width to 40%
+      %li large: Set the width to 60%
+      %li xlarge: Set the width to 70%
+      %li expand: Set the width to 95%
+  .modal__footer
+    %a.btn.btn-danger.btn-outline.close-reveal-modal{href: ""}
+      Cancel
+    %a.btn.btn-success{href: ""}
       Accept
