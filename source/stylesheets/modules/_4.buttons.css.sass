@@ -14,7 +14,7 @@ $buttonborderstyle: solid
   padding: 1rem 2rem 1.0625rem 2rem
   +font-size(14)
   background-color: $primary-btn-color
-  +background-image(linear-gradient(top, adjust-color($primary-btn-color, $lightness: 6%), $primary-btn-color))
+  +background-image(linear-gradient(top, adjust-color($primary-btn-color, $lightness: 5%), $primary-btn-color))
   border-color: adjust-color($primary-btn-color, $lightness: -10%, $saturation: -5%)
   border-style: solid
   border-width: 1px
@@ -41,7 +41,7 @@ $buttonborderstyle: solid
 
 .btn.btn-secondary
   background-color: $light-gray
-  +background-image(linear-gradient(top, adjust-color($light-gray, $lightness: 6%), $light-gray))
+  +background-image(linear-gradient(top, adjust-color($light-gray, $lightness: 5%), $light-gray))
   border-color: adjust-color($light-gray, $lightness: -10%)
   color: $dark-gray
 
@@ -61,7 +61,7 @@ $buttonborderstyle: solid
 
 .btn.btn-success
   background-color: $success-color
-  +background-image(linear-gradient(top, adjust-color($success-color, $lightness: 6%), $success-color))
+  +background-image(linear-gradient(top, adjust-color($success-color, $lightness: 5%), $success-color))
   border-color: adjust-color($success-color, $lightness: -10%)
   color: white
 
@@ -81,7 +81,7 @@ $buttonborderstyle: solid
 
 .btn.btn-danger
   background-color: $danger-color
-  +background-image(linear-gradient(top, adjust-color($danger-color, $lightness: 6%), $danger-color))
+  +background-image(linear-gradient(top, adjust-color($danger-color, $lightness: 5%), $danger-color))
   border-color: adjust-color($danger-color, $lightness: -10%)
   color: white
 
@@ -134,6 +134,11 @@ $buttonborderstyle: solid
 .btn.round
   +border-radius(1000px)
 
+.reveal-modal__footer .btn
+  padding: 0.65rem 1.5rem 0.9375rem 1.5rem
+  +font-size(12)
+
+//===============================STATES
 .btn.disabled
   background: #008cba
   border-color: #0079a1

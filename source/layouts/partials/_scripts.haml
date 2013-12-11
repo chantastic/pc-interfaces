@@ -5,7 +5,7 @@
 = javascript_include_tag "plugins"
 = javascript_include_tag "vendor/select2.min"
 = javascript_include_tag "vendor/placeholder"
-= javascript_include_tag "vendor/foundation"
+= javascript_include_tag "vendor/foundation.min"
 = javascript_include_tag "vendor/foundation.reveal"
 = javascript_include_tag "app"
 
@@ -18,4 +18,9 @@
   });
 /Initialize Zurb Foundation
 :javascript
-  $(document).foundation();
+  $(document).foundation(
+  'reveal', {
+    animation: 'fadeAndPop',
+    animation_speed: 250
+  });
+
