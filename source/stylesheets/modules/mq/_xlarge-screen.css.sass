@@ -5,10 +5,25 @@
   body
     background: adjust-color($sidebar-bg-color, $lightness: -10%, $saturation: -5%)
 
+  .top-bar
+    background: adjust-color($base-color, $lightness: -10%, $saturation: -90%)
+
+  .top-bar__contents
+    background: $base-color
+
   .top-bar__contents,
   .main-content-block
     max-width: 120em
     margin: 0 auto
 
+  .app-switcher-wrap
+    width: 259px
+    .toggle-btn
+      left: 225px
+
   .main-content-block
     background: $bg-color
+    .main-section
+      margin-left: 260px
+    .left-off-canvas
+      width: 260px
