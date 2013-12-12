@@ -2,20 +2,13 @@
 / :javascript
 /   window.jQuery || document.write('<script src="javascripts/jquery-1.9.1.min.js"><\/script>')
 = javascript_include_tag "vendor/jquery-1.9.1.min"
+= javascript_include_tag "vendor/foundation.min"
+=# javascript_include_tag "vendor/foundation.reveal"
 = javascript_include_tag "plugins"
 = javascript_include_tag "vendor/select2.min"
 = javascript_include_tag "vendor/placeholder"
-= javascript_include_tag "vendor/foundation.min"
-= javascript_include_tag "vendor/foundation.reveal"
 = javascript_include_tag "app"
 
-/Initialize Modernizr
-:javascript
-  Modernizr.load({
-    test: Modernizr.mq,
-    yep : '',
-    nope: 'javascripts/libs/respond.min.js'
-  });
 /Initialize Zurb Foundation
 :javascript
   $(document).foundation(
@@ -23,3 +16,4 @@
     animation: 'fadeAndPop',
     animation_speed: 250
   });
+
