@@ -1,0 +1,49 @@
+%block
+  margin-bottom: 20px
+  background-color: #fff
+  border: 1px solid transparent
+  +border-radius(4px)
+  +box-shadow(0 1px 2px -1px rgba($dark-gray,0.3))
+
+.panel
+  *:last-child, .panel__body *:last-child
+    margin-bottom: 0 !important
+
+.panel--default
+  @extend %block
+  border-color: adjust-color($lighter-gray, $lightness: -1%)
+  
+  
+.panel__header, .panel__footer, .panel__body
+  @extend %clearfix
+
+.panel__header
+  padding: .75rem 1.25rem .9rem
+  +border-top-radius(3px)
+  background: adjust-color($lighter-gray, $lightness: 5%)
+  +background-image(linear-gradient(top, adjust-color($lighter-gray, $lightness: 5%), adjust-color($lighter-gray, $lightness: 3%)))
+  border-bottom: solid 1px adjust-color($lighter-gray, $lightness: -1%)
+
+.panel__body
+  padding: 1.25rem 1.5rem
+
+.panel__footer
+  padding: .75rem 1.25rem .9rem
+  +border-bottom-radius(3px)
+  background: adjust-color($lighter-gray, $lightness: 7%)
+  +background-image(linear-gradient(top, adjust-color($lighter-gray, $lightness: 7%), adjust-color($lighter-gray, $lightness: 5%)))
+  border-top: solid 1px adjust-color($lighter-gray, $lightness: -1%)
+
+.panel-title
+  margin: 0
+  +truncate()
+  +font-size(18)
+  color: inherit
+
+.panel
+  .block-list
+    margin: 0px
+  .block-list__item
+    border-width: 1px 0
+  .block-list__item:last-child
+    border-bottom: 0
