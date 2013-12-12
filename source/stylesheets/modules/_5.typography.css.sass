@@ -114,14 +114,35 @@ li
   text-align: -webkit-match-parent
 
 //SIDEBAR
-.sidebar-heading
+%sb-heading
   +truncate()
-  +font-size(18)
   padding: 0 10px
-  height: 4rem
-  line-height: 3.89rem
-  margin: 0
+  margin: -1px 0 0 0
+  
+.sb-heading1
+  @extend %sb-heading
+  +font-size(18)
+  height: 4.15rem
+  line-height: 4.1rem
   border-bottom: 1px solid adjust-color($sidebar-bg-color, $lightness: -12%)
+
+.sb-heading2
+  @extend %sb-heading
+  +font-size(14)
+  height: 3.4rem
+  line-height: 3.29rem
+  background: adjust-color($sidebar-bg-color, $lightness: -10%)
+  border-top: 1px solid adjust-color($sidebar-bg-color, $lightness: -14%)  
+
+.sb-heading3
+  @extend %sb-heading
+  +font-size(13)
+  height: 3rem
+  line-height: 2.89rem
+  color: #fff
+  background: adjust-color($sidebar-bg-color, $lightness: -29%)
+  // border-bottom: 1px solid adjust-color($sidebar-bg-color, $lightness: -12%)  
+
 
 //Main content area
 .section-header

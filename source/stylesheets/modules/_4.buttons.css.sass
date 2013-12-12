@@ -25,35 +25,42 @@ $buttonborderstyle: solid
   -webkit-appearance: none
   +border-radius(3px)
   font-weight: normal !important
-
-  &:hover, &:focus
+  &:hover
     background-color: adjust-color($primary-btn-color, $lightness: -10%, $saturation: -5%)
     +background-image(linear-gradient(top, $primary-btn-color, adjust-color($primary-btn-color, $lightness: -5%)))
     color: white
+  &:focus, &:active, .active-state &
+    +box-shadow(0 1px 2px rgba(0,0,0,0.2) inset)
+    background-color: adjust-color($primary-btn-color, $lightness: -10%, $saturation: -5%)
+    +background-image(linear-gradient(top, adjust-color($primary-btn-color, $lightness: -7%), adjust-color($primary-btn-color, $lightness: -10%)))
   &:visited
     color: white
+
   &.btn-outline, &.btn-outline:visited
     background: transparent
     border-color: adjust-color($primary-btn-color, $lightness: -10%, $saturation: -5%)
     color: adjust-color($primary-btn-color, $lightness: -15%, $saturation: 15%)
-    &:hover, &:focus
+    &:hover, &:focus, &:active
       color: adjust-color($primary-btn-color, $lightness: -25%, $saturation: 15%)
 
 
 .btn.btn-secondary
   background-color: $light-gray
-  +background-image(linear-gradient(top, adjust-color($lighter-gray, $lightness: 5%), $lighter-gray))
+  +background-image(linear-gradient(top, adjust-color($lighter-gray, $lightness: 4%), adjust-color($lighter-gray, $lightness: 2%)))
   border-color: adjust-color($lighter-gray, $lightness: -15%)
   border-top-color: adjust-color($lighter-gray, $lightness: -10%)
   border-bottom-color: adjust-color($lighter-gray, $lightness: -20%)
   color: $dark-gray
-
-  &:hover, &:focus
+  &:hover
     background-color: adjust-color($lighter-gray, $lightness: -10%)
-    +background-image(linear-gradient(top, $lighter-gray, adjust-color($lighter-gray, $lightness: -5%)))
+    +background-image(linear-gradient(top, adjust-color($lighter-gray, $lightness: 0%), adjust-color($lighter-gray, $lightness: -2%)))
     color: adjust-color($dark-gray, $lightness: -10%)
+  &:focus, &:active, .active-state &
+    background-color: adjust-color($lighter-gray, $lightness: -18%)
+    +background-image(linear-gradient(top, adjust-color($lighter-gray, $lightness: -7%), adjust-color($lighter-gray, $lightness: -10%)))
   &:visited
     color: adjust-color($dark-gray, $lightness: -10%)
+
   &.btn-outline, &.btn-outline:visited
     background: transparent
     border-width: $buttonborderwidth
@@ -70,13 +77,16 @@ $buttonborderstyle: solid
   border-top-color: adjust-color($success-color, $lightness: -5%)
   border-bottom-color: adjust-color($success-color, $lightness: -15%)
   color: white
-
-  &:hover, &:focus
+  &:hover
     background-color: adjust-color($success-color, $lightness: -10%)
     +background-image(linear-gradient(top, $success-color, adjust-color($success-color, $lightness: -5%)))
     color: white
+  &:focus, &:active, .active-state &
+    background-color: adjust-color($success-color, $lightness: -15%)
+    +background-image(linear-gradient(top, adjust-color($success-color, $lightness: -5%), adjust-color($success-color, $lightness: -10%)))  
   &:visited
     color: white
+
   &.btn-outline, &.btn-outline:visited
     background: transparent
     border-width: $buttonborderwidth
@@ -93,11 +103,13 @@ $buttonborderstyle: solid
   border-top-color: adjust-color($danger-color, $lightness: -5%)
   border-bottom-color: adjust-color($danger-color, $lightness: -15%)
   color: white
-
-  &:hover, &:focus
+  &:hover
     background-color: adjust-color($danger-color, $lightness: -10%)
     +background-image(linear-gradient(top, $danger-color, adjust-color($danger-color, $lightness: -5%)))
     color: white
+  &:focus, &:active, .active-state &
+    background-color: adjust-color($danger-color, $lightness: -10%)
+    +background-image(linear-gradient(top, adjust-color($danger-color, $lightness: -7%), adjust-color($danger-color, $lightness: -10%)))
   &:visited
     color: white
   &.btn-outline, &.btn-outline:visited
@@ -235,18 +247,19 @@ $buttonborderstyle: solid
     color: $success-color
 
 
-// BUTTON GROUPS
-.btn-group 
+//=========================================================== BUTTON GROUPS
+%btn-group
   list-style: none
   margin: 0
   *zoom: 1 
   @extend %clearfix
+
+.btn-group
+  @extend %btn-group
   > * 
     margin: 0
     float: left 
-    > * .button 
-      border-right: 1px solid
-      border-color: rgba(255, 255, 255, 0.5) 
+
   .btn
     +border-radius(0)
     margin-left: -1px
@@ -254,7 +267,25 @@ $buttonborderstyle: solid
     +border-radius(3px 0 0 3px)
     margin-left: 0
   > *:last-child .btn
-    +border-radius(0 3px 3px 0)    
+    +border-radius(0 3px 3px 0)   
+
+//Vertical Button Group (used a bunch in resources sidebar)
+.btn-group-vertical
+  @extend %btn-group
+  > * 
+    margin: 0
+  .btn
+    +border-radius(0)
+    margin-top: -1px
+    display: block
+    text-align: left
+    padding: 0.875rem 1.25rem 0.9375rem 1.25rem
+    +font-size(13)    
+  > *:first-child .btn
+    +border-top-radius(3px)
+    margin-top: 0
+  > *:last-child .btn
+    +border-bottom-radius(3px)
 
 //Split Button
 .btn-dropdown
