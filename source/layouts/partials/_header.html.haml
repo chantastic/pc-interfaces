@@ -1,105 +1,106 @@
-%nav.top-bar.js-dropwrap{"role" => "menubar", :title => "Main Site Navigation"}
-  .title-area
-    / Title Area
-    .app-switcher-wrap.js-togglehelper
-      =# link_to '<span class="icon-accounts-logo" aria-hidden="true"></span>'.html_safe, '/', id: 'logo', class: 'bookmark', :title => "Link to Planning Center Accounts Home", :tabindex => "1"
-      #logo.icon-accounts-logo.bookmark{"aria-hidden" => "true"} 
-      / - if current_organization.subscribed_apps.any?
-      .app-switcher
-        .toggle-btn
-          .chevron
-        .menu-wrap
-          .toggle-btn-cover
-            %span.pco-ui-remove.pco-ui-close
-          %ul
-            %li.accounts
-              %a{href: "http://accounts.planningcenteronline.com"}
-                %span.icon{"aria-hidden" => "true"}
-                %em planning center
-                Accounts
-            %li.services
-              %a{href: "http://services.pco.dev"}
-                %span.icon{"aria-hidden" => "true"}
-                %em planning center
-                Services
-            %li.resources
-              %a{href: "http://resources.pco.dev"}
-                %span.icon{"aria-hidden" => "true"}
-                %em planning center
-                Resources
-            //LOOP used in the apps
-            / - current_organization.subscribed_apps.each do |app|
-            /   %li{"class" => "#{app.name.downcase}"}
-            /     %a{:href => app.url}
-            /       %span.icon{"aria-hidden" => "true"}
-            /       %em planning center
-            /       = app.name
-    #toggle-sidebar.menu-icon.show-for-mobile
-      %a{href: "#"}
-        %span.title Sidebar
-        %span.icon-cog{"aria-hidden" => "true"}
-
-    #toggle-topbar.js-droptoggle.menu-icon.show-for-mobile
-      %a{href: "#"}
-        %span.title Menu
-        %span.icon-menu{"aria-hidden" => "true"}                                            
-
-  %section.top-bar-section
-    / Main Navi Area
-    .top-nav-options
-      .global-nav.lefty
-        %ul
-          %li.divider
-          %li
-            = link_to "Organization", "/organization", :class => "" 
-          %li.divider
-          %li
-            = link_to "Applications", "/subscriptions", :class => ""
-          %li.divider
-          %li
-            = link_to "Payment Options", "/payment_method", :class => ""        
-          %li.divider
-
-      %div.account-info.righty
-        %span.avatar
-          %a.photo{href: "/people/1"}
-            %img{alt: "Missing", height: "24", src: "https://www.planningcenteronline.com/photos/icon/missing.png", width: "24"}
-        %ul.identity
-          %li.section-heading
-            %a{href: "/people/1"} PiCO Das Robot
-            %span |
-            First Church Of Carlsbad
-        %ul.utilities
-          %li
-            %a{href: "http://accounts.pco.dev/administration"}
-              %span.icon-admin>
-              admin
-          %li
-            %a{href: "/organization"}
-              %span.icon-settings>
-              settings
-          %li
-            %a.dialogify{href: "/help", width: "600"}
-              %span.icon-help>
-              help
-          %li.js-dropwrap.has-acct-dropdown
-            %a.js-droptoggle
-              %span.icon-drop-caret
-              accounts
-            %ul.acct-dropdown
-              %li.account-options.section-heading
-                %span.a
-                  Account Options
-                %a.log{href: "http://accounts.pco.dev/logout"}
-                  %span.icon.logout>
-                  logout
-                %a.unlink{"data-confirm" => "Are you sure you want to unlink these accounts?", href: "http://accounts.pco.dev/unlink"}
-                  %span.outline Unlink 
-                  the following accounts
+.top-bar.js-dropwrap
+  .top-bar__contents
+    .title-area
+      / Title Area
+      .app-switcher-wrap.js-togglehelper
+        =# link_to '<span class="icon-accounts-logo" aria-hidden="true"></span>'.html_safe, '/', id: 'logo', class: 'bookmark', :title => "Link to Planning Center Accounts Home", :tabindex => "1"
+        #logo.icon-accounts-logo.bookmark{"aria-hidden" => "true"} 
+        / - if current_organization.subscribed_apps.any?
+        .app-switcher
+          .toggle-btn
+            .chevron
+          .menu-wrap
+            .toggle-btn-cover
+              %span.pco-ui-remove.pco-ui-close
+            %ul
               %li.accounts
-                %a.acct{href: "http://accounts.pco.dev/link/new?to=1"}
-                  %span.current.badge.success Current
-                  .desc.truncate First Church Of Carlsbad
-                %a.acct.last{href: "http://accounts.pco.dev/link/new?to=4"}
-                  %span.switch.badge Switch to
-                  .desc.truncate Second Church Of Carlsbad        
+                %a{href: "http://accounts.planningcenteronline.com"}
+                  %span.icon{"aria-hidden" => "true"}
+                  %em planning center
+                  Accounts
+              %li.services
+                %a{href: "http://services.pco.dev"}
+                  %span.icon{"aria-hidden" => "true"}
+                  %em planning center
+                  Services
+              %li.resources
+                %a{href: "http://resources.pco.dev"}
+                  %span.icon{"aria-hidden" => "true"}
+                  %em planning center
+                  Resources
+              //LOOP used in the apps
+              / - current_organization.subscribed_apps.each do |app|
+              /   %li{"class" => "#{app.name.downcase}"}
+              /     %a{:href => app.url}
+              /       %span.icon{"aria-hidden" => "true"}
+              /       %em planning center
+              /       = app.name
+      #toggle-sidebar.menu-icon.show-for-mobile
+        %a{href: "#"}
+          %span.title Sidebar
+          %span.pco-ui-cog{"aria-hidden" => "true"}
+
+      #toggle-topbar.js-droptoggle.menu-icon.show-for-mobile
+        %a{href: "#"}
+          %span.title Menu
+          %span.pco-ui-menu{"aria-hidden" => "true"}                                            
+
+    %section.top-bar-section
+      / Main Navi Area
+      .top-nav-options
+        %nav.global-nav.lefty{"role" => "menubar", :title => "Main Site Navigation"}
+          %ul
+            %li.divider
+            %li
+              = link_to "Organization", "/organization", :class => "" 
+            %li.divider
+            %li
+              = link_to "Applications", "/subscriptions", :class => ""
+            %li.divider
+            %li
+              = link_to "Payment Options", "/payment_method", :class => ""        
+            %li.divider
+
+        %div.account-info.righty
+          %span.avatar
+            %a.photo{href: "/people/1"}
+              %img{alt: "Missing", height: "24", src: "https://www.planningcenteronline.com/photos/icon/missing.png", width: "24"}
+          %ul.identity
+            %li.section-heading
+              %a{href: "/people/1"} PiCO Das Robot
+              %span |
+              First Church Of Carlsbad
+          %ul.utilities
+            %li
+              %a{href: "http://accounts.pco.dev/administration"}
+                %span.icon-admin>
+                admin
+            %li
+              %a{href: "/organization"}
+                %span.icon-settings>
+                settings
+            %li
+              %a.dialogify{href: "/help", width: "600"}
+                %span.icon-help>
+                help
+            %li.js-dropwrap.has-acct-dropdown
+              %a.js-droptoggle
+                %span.icon-drop-caret
+                accounts
+              %ul.acct-dropdown
+                %li.account-options.section-heading
+                  %span.a
+                    Account Options
+                  %a.log{href: "http://accounts.pco.dev/logout"}
+                    %span.icon.logout>
+                    logout
+                  %a.unlink{"data-confirm" => "Are you sure you want to unlink these accounts?", href: "http://accounts.pco.dev/unlink"}
+                    %span.outline Unlink 
+                    the following accounts
+                %li.accounts
+                  %a.acct{href: "http://accounts.pco.dev/link/new?to=1"}
+                    %span.current.badge.success Current
+                    .desc.truncate First Church Of Carlsbad
+                  %a.acct.last{href: "http://accounts.pco.dev/link/new?to=4"}
+                    %span.switch.badge Switch to
+                    .desc.truncate Second Church Of Carlsbad        

@@ -1,6 +1,14 @@
 //======================================================
-// All rules pertaining to screens greater than 75em or ~1200px
+// All rules pertaining to screens greater than 100em or ~1600px
 //======================================================
-@media (min-width: 75.1em)
+@media (min-width: 100em)
+  body
+    background: adjust-color($sidebar-bg-color, $lightness: -10%, $saturation: -5%)
 
+  .top-bar__contents,
+  .main-content-block
+    max-width: 120em
+    margin: 0 auto
 
+  .main-content-block
+    background: $bg-color

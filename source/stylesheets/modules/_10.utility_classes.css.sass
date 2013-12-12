@@ -1,0 +1,60 @@
+// Invisible to all
+.hide
+  display: none !important
+
+//If children are floated, add this to the parent to clear the floats
+.clearfix
+  @extend %clearfix
+
+//Float it right
+.right
+  float: right !important
+
+//Float it left
+.left
+  float: left !important
+
+//Text Alignment
+.text-left
+  text-align: left
+.text-right
+  text-align: right
+.text-center
+  text-align: center
+.text-justify
+  text-align: justify  
+
+//Block manipulation
+.dib
+  display: inline-block
+
+//Single line that will truncate with ellipsis
+.truncate
+  +truncate()
+//100% width 1px high line
+.hr
+  +horizontal-divider($lighter-gray)
+
+.mar-btm-baseline
+  margin-bottom: 1.11111rem !important
+
+
+
+/*.togglehelper has some JS that will listen for it to be clicked then toggle an .alt-state class on it*/
+.js-togglehelper
+  cursor: pointer
+  .js-toggletarget
+    display: none
+  &.alt-state .js-toggletarget, 
+  &.alt-state .js-toggletarget .popover
+    display: block 
+
+.caret
+  display: inline-block
+  width: 0
+  height: 0
+  margin-left: 2px
+  vertical-align: middle
+  border-top: 4px solid
+  border-right: 4px solid transparent
+  border-left: 4px solid transparent

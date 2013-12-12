@@ -1,0 +1,50 @@
+//=======================================DEAFAULT TABLE STRUCTURE
+.table
+  width: 100%
+
+.table>thead:first-child>tr:first-child>th, 
+.table>thead:first-child>tr:first-child>td
+  border-top: 0
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, 
+.table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td
+  padding: 8px
+  line-height: 1.428571429
+  vertical-align: top
+  border-top: 1px solid adjust-color($light-gray, $lightness: 15%)
+
+.table>thead>tr>th
+  vertical-align: bottom
+  text-align: left
+  border-bottom: 2px solid adjust-color($light-gray, $lightness: 15%)
+
+//=======================================ZEBRA STRIPED TABLES
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th
+  background-color: adjust-color($lighter-gray, $lightness: 8%)
+//reset the background color so first stripe is 2nd row offset from header
+.table-striped.table-th-fill>tbody>tr>td, 
+.table-striped.table-th-fill>tbody>tr>th
+  background-color: transparent
+.table-striped.table-th-fill>tbody>tr:nth-child(even)>td, 
+.table-striped.table-th-fill>tbody>tr:nth-child(even)>th
+  background-color: adjust-color($lighter-gray, $lightness: 8%)  
+
+//=======================================BORDERED TABLES
+.table-bordered
+  border: 1px solid adjust-color($light-gray, $lightness: 15%)
+  >thead>tr>th
+    border-bottom-width: 1px
+
+//=======================================TABLE HOVER ROWS
+.table-hover>tbody>tr:hover>td, 
+.table-hover>tbody>tr:hover>th
+  color: $highlighted-color
+  background: adjust-color($highlighted-bg-color, $lightness: 5%)
+
+//=======================================TABLE TH FILLED IN
+.table-th-fill>thead>tr>th
+  border-bottom-width: 1px
+  background-color: adjust-color($lighter-gray, $lightness: 6%)
+  +background-image(linear-gradient(top, adjust-color($lighter-gray, $lightness: 5%), adjust-color($lighter-gray, $lightness: 3%)))
+

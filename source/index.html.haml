@@ -1,13 +1,7 @@
 ---
 title: Sup PiCO
 ---
-/ %h1 This is an h1
-/ %h2 This is an h2
-/ %h3 This is an h3
-/ %p
-/   Hello world! This is HTML5 
-/   %span.hide-from-mobile
-/     Boilerplate.
+
 %h2.section-header Buttons
 %p
   %a.btn{href: ""}
@@ -105,7 +99,7 @@ title: Sup PiCO
       %option{value: "capicola"} Strip steak
       %option{value: "prosciutto"} Tenderloin
       %option{value: "kielbasa"} Venison
-      %option{value: "salami"} Ttri-tip
+      %option{value: "salami"} Tri-tip
       %option{value: "capicola"} Sirloin
       %option{value: "prosciutto"} Bacon
       %option{value: "kielbasa"} Biltong
@@ -173,3 +167,107 @@ title: Sup PiCO
       Cancel
     %a.btn.btn-success{href: ""}
       Accept
+
+
+.hr
+
+%h2.section-header Tables
+%h3.section-sub-header Default table (.table)
+%table.table
+  %thead
+    %tr
+      %th Rank
+      %th Cut Name
+      %th Animal
+      %th Flavor Index
+  %tbody
+    %tr
+      %td 1
+      %td Prosciutto
+      %td Swine
+      %td +++++
+    %tr
+      %td 2
+      %td Sirloin
+      %td Bovine
+      %td +++++      
+    %tr
+      %td 3
+      %td Salami
+      %td ???
+      %td ++++
+.page-section      
+  .col.col--half
+    %h3.section-sub-header Table with Zebra Striping
+    %table.table.table-striped
+      %thead
+        %tr
+          %th Rank
+          %th Cut Name
+          %th Animal
+          %th Flavor Index
+      %tbody
+        %tr
+          %td 1
+          %td Prosciutto
+          %td Swine
+          %td +++++
+        %tr
+          %td 2
+          %td Sirloin
+          %td Bovine
+          %td +++++      
+        %tr
+          %td 3
+          %td Salami
+          %td ???
+          %td ++++  
+  .col.col--half
+    %h3.section-sub-header Bordered, Hoverable, and TH .th-fill
+    %table.table-th-fill.table.table-bordered.table-hover
+      %thead
+        %tr
+          %th Rank
+          %th Cut Name
+          %th Animal
+          %th Flavor Index
+      %tbody
+        %tr
+          %td 1
+          %td Prosciutto
+          %td Swine
+          %td +++++
+        %tr
+          %td 2
+          %td Sirloin
+          %td Bovine
+          %td +++++      
+        %tr
+          %td 3
+          %td Salami
+          %td ???
+          %td ++++    
+%h3.section-sub-header Add All the Styles
+%table.table-th-fill.table.table-bordered.table-striped.table-hover.table-radius{"cellspacing" => "0"}
+  %thead
+    %tr
+      %th Rank
+      %th Cut Name
+      %th Animal
+      %th Flavor Index
+  %tbody
+    %tr
+      %td 1
+      %td Prosciutto
+      %td Swine
+      %td +++++
+    %tr
+      %td 2
+      %td Sirloin
+      %td Bovine
+      %td +++++      
+    %tr
+      %td 3
+      %td Salami
+      %td ???
+      %td ++++
