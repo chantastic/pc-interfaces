@@ -1,0 +1,61 @@
+/*//SEE modules > colors for color variables*/
+$badge-border-width: 1px
+$badge-border-style: solid
+
+// @mixins ================================================
+
+// =Badge variants
+//
+// Quickly scaffold out new badge styles with additional `outline` variant.
+//
+// +badge-variant([$text-color:white], [$background-color:lightgray], [$border-color:$background-color])
+//
+// Usage:
+//
+// +badge-variant()                      - badge modifier with defaults
+// +badge-variant(black)                 - badge modifier with defaults and black text
+// +badge-variant(black, pink)           - badge modifier with black text and pink background/border
+// +badge-variant(black, pick, fuchsia)  - badge modifier with black text, pink background, and fuchsia border
+@mixin badge-variant($color:white, $background-color:lightgray, $border-color:$background-color)
+  // display
+  border: $badge-border-width $badge-border-style $border-color
+
+  // other
+  background-color: $background-color
+  color: $color
+
+  &.badge--outline
+    background: transparent
+    color: $border-color
+
+// badge ==================================================
+.badge
+  // @extends
+  @extend %badge
+
+  // mixins
+  +badge-variant(white, $base-color)
+  +border-radius(3px)
+  +font-size(14)
+  +transition(background-color 300ms ease-out)
+  +user-select(none)
+
+  // position
+  position: relative
+
+  // display
+  display: inline-block
+  margin: 0
+  padding: .5rem .75rem .525rem
+  cursor: pointer
+
+  // other
+  line-height: normal // collision with `.top-bar .top-bar-section .account-info .accounts a`
+  font-weight: normal
+  text-align: center
+
+  -webkit-appearance: none
+
+  // variants
+  &.badge--success
+    +badge-variant(white, $success-color)

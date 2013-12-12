@@ -28,6 +28,10 @@ $ =>
     modal = $(this)
     $(".main-wrap").addClass("blur")
 
-  $(document).on "closed", "[data-reveal]", ->
-    modal = $(this)
-    $(".main-wrap").removeClass("blur")
+  $("select").select2();
+
+  # generic demo toggle
+  $('.code-sample-button').on 'click', (e) ->
+    e.preventDefault(); e.stopPropagation()
+
+    $(this).siblings('.code-sample').toggle()

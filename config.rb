@@ -36,14 +36,31 @@
 # activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
-# activate :livereload
+activate :livereload
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def code_sample(&block)
+    '' + yield +
+    '<div>' +
+      '<p class="code-sample-button">Show sample code</p>' +
+      '<pre class="code-sample">' +
+        '<code>' +
+          samplify(yield) +
+        '</code>' +
+      '</pre>' +
+    '</div>'
+  end
+
+  def samplify(markup)
+    lines = markup.split("\n");
+    html_escape(lines[0])
+
+    # lines.each do |line|
+    #   html_escape(line.to_s)
+    # end
+  end
+end
 
 #Framework
 set :css_dir, 'stylesheets'

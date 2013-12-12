@@ -1,300 +1,265 @@
-//SEE modules > colors for color variables
-$buttonborderwidth: 1px
-$buttonborderstyle: solid
+/*//SEE modules > colors for color variables*/
+$button-border-width: 1px
+$button-border-style: solid
+
+// upgrade out of buttons
+
+// User select
+// For selecting text on the page
+@mixin user-select($select)
+  -webkit-user-select: $select
+  -moz-user-select: $select
+  -ms-user-select: $select // IE10+
+  -o-user-select: $select
+  user-select: $select
+
+
+//demo only-styles
+.pco-demo--btn
+  .btn
+    margin-right: 10px
+
+.code-sample-button
+  cursor: pointer
+  font:
+    size: 90%
+    style: italic
+  text-decoration: underline
+
+.code-sample
+  // display
+  display: none
+  border: 1px solid #ddd
+  border-radius: 3px
+  padding: 20px
+
+  // other
+  background: #eee
+
+// @mixins ================================================
+
+// =Button variants
+// -------------------------
+// Quickly scaffold out new button styles with :hover, :focus, and `disabled` options.
+// Button variant also generates an `outline` style modifier
+//
+// +button-variant([$text-color:white], [$background-color:lightgray], [$border-color:adjust-color($background-color]))
+//
+// Usage:
+//
+// +button-variant()                      - button modifier with defaults
+// +button-variant(black)                 - button modifier with defaults and black text
+// +button-variant(black, pink)           - button modifier with black text and pink background/border
+// +button-variant(black, pick, fuchsia)  - button modifier with black text, pink background, and fuchsia border
+@mixin button-variant($color:white, $background-color:lightgray, $border-color:adjust-color($background-color, $lightness: -10%, $saturation: -5%), $is-link:false)
+  @if $is-link
+
+  @else
+    // mixins
+    +_pseudo-classes($color, $background-color, $border-color)
+    +background-image(linear-gradient(top, adjust-color($background-color, $lightness: 6%), $background-color))
+
+    // display
+    border: $button-border-width $button-border-style $border-color
+
+    // other
+    color: $color
+
+    // modifiers
+    &.btn--outline
+      +_button-outline-variant($border-color)
+
+
+// PRIVATE _pseudo-classes
+@mixin _pseudo-classes($color, $background-color, $border-color)
+  &:hover,
+  &:focus
+    background-color: $border-color
+    +background-image(linear-gradient(top, $background-color, adjust-color($background-color, $lightness: -5%)))
+
+  &:active
+    // inverse of :hover
+    background-color: $border-color
+    +background-image(linear-gradient(bottom, $background-color, adjust-color($background-color, $lightness: -5%)))
+
+  // explicitely define disabled class prevent disabled:hover
+  &[disabled]
+    background-image: none
+    background-color: $background-color
+    color: $color
+    opacity: 0.7
+
+@mixin _button-outline-variant($border-color)
+  background: none
+  color: $border-color
+
+  &:hover
+    border-color: darken($border-color, 15%)
+    color: darken($border-color, 15%)
+
+  // explicitely define disabled class prevent disabled:hover
+  &[disabled]
+    border-color: $border-color
+    color: $border-color
+
+// button =================================================
+%btn
+  // mixins
+  +user-select(none)
+
+  // display
+  cursor: pointer
+
+  // attr
+  &[disabled]
+    cursor: default
 
 .btn
-  cursor: pointer
-  font-weight: normal
-  line-height: normal
-  margin: 0
-  position: relative
-  text-decoration: none
-  text-align: center
+  // @extends
+  @extend %btn
+
+  // mixins
+  +button-variant($dark-gray)
+  +font-size(14)
+  +border-radius(3px)
+
+  // positioning
+  vertical-align: middle
+  /*position: relative*/
+
+  // display
   display: inline-block
+  margin: 0
+  border-style: solid
   padding: 1rem 2rem 1.0625rem 2rem
-  +font-size(14)
-  background-color: $primary-btn-color
-  +background-image(linear-gradient(top, adjust-color($primary-btn-color, $lightness: 5%), $primary-btn-color))
-  border-color: adjust-color($primary-btn-color, $lightness: -10%, $saturation: -5%)
-  border-top-color: adjust-color($primary-btn-color, $lightness: -5%, $saturation: -5%)
-  border-bottom-color: adjust-color($primary-btn-color, $lightness: -15%, $saturation: -5%)
-  border-width: $buttonborderwidth
-  border-style: $buttonborderstyle
-  color: white
-  // +transition(all 300ms ease-out)
-  -webkit-appearance: none
-  +border-radius(3px)
-  font-weight: normal !important
-  &:hover
-    background-color: adjust-color($primary-btn-color, $lightness: -10%, $saturation: -5%)
-    +background-image(linear-gradient(top, $primary-btn-color, adjust-color($primary-btn-color, $lightness: -5%)))
-    color: white
-  &:focus, &:active, .active-state &
-    +box-shadow(0 1px 2px rgba(0,0,0,0.2) inset)
-    background-color: adjust-color($primary-btn-color, $lightness: -10%, $saturation: -5%)
-    +background-image(linear-gradient(top, adjust-color($primary-btn-color, $lightness: -7%), adjust-color($primary-btn-color, $lightness: -10%)))
-  &:visited
-    color: white
 
-  &.btn-outline, &.btn-outline:visited
-    background: transparent
-    border-color: adjust-color($primary-btn-color, $lightness: -10%, $saturation: -5%)
-    color: adjust-color($primary-btn-color, $lightness: -15%, $saturation: 15%)
-    &:hover, &:focus, &:active
-      color: adjust-color($primary-btn-color, $lightness: -25%, $saturation: 15%)
-
-
-.btn.btn-secondary
-  background-color: $light-gray
-  +background-image(linear-gradient(top, adjust-color($lighter-gray, $lightness: 4%), adjust-color($lighter-gray, $lightness: 2%)))
-  border-color: adjust-color($lighter-gray, $lightness: -15%)
-  border-top-color: adjust-color($lighter-gray, $lightness: -10%)
-  border-bottom-color: adjust-color($lighter-gray, $lightness: -20%)
-  color: $dark-gray
-  &:hover
-    background-color: adjust-color($lighter-gray, $lightness: -10%)
-    +background-image(linear-gradient(top, adjust-color($lighter-gray, $lightness: 0%), adjust-color($lighter-gray, $lightness: -2%)))
-    color: adjust-color($dark-gray, $lightness: -10%)
-  &:focus, &:active, .active-state &
-    background-color: adjust-color($lighter-gray, $lightness: -18%)
-    +background-image(linear-gradient(top, adjust-color($lighter-gray, $lightness: -7%), adjust-color($lighter-gray, $lightness: -10%)))
-  &:visited
-    color: adjust-color($dark-gray, $lightness: -10%)
-
-  &.btn-outline, &.btn-outline:visited
-    background: transparent
-    border-width: $buttonborderwidth
-    border-color: adjust-color($lighter-gray, $lightness: -15%)
-    color: adjust-color($dark-gray, $lightness: 10%, $saturation: 15%)
-    &:hover, &:focus
-      color: adjust-color($dark-gray, $lightness: 1%, $saturation: 15%)
-
-
-.btn.btn-success
-  background-color: $success-color
-  +background-image(linear-gradient(top, adjust-color($success-color, $lightness: 5%), $success-color))
-  border-color: adjust-color($success-color, $lightness: -10%)
-  border-top-color: adjust-color($success-color, $lightness: -5%)
-  border-bottom-color: adjust-color($success-color, $lightness: -15%)
-  color: white
-  &:hover
-    background-color: adjust-color($success-color, $lightness: -10%)
-    +background-image(linear-gradient(top, $success-color, adjust-color($success-color, $lightness: -5%)))
-    color: white
-  &:focus, &:active, .active-state &
-    background-color: adjust-color($success-color, $lightness: -15%)
-    +background-image(linear-gradient(top, adjust-color($success-color, $lightness: -5%), adjust-color($success-color, $lightness: -10%)))  
-  &:visited
-    color: white
-
-  &.btn-outline, &.btn-outline:visited
-    background: transparent
-    border-width: $buttonborderwidth
-    border-color: adjust-color($success-color, $lightness: -5%)
-    color: adjust-color($success-color, $lightness: -15%, $saturation: 15%)
-    &:hover, &:focus
-      color: adjust-color($success-color, $lightness: -20%, $saturation: 15%)
-
-
-.btn.btn-danger
-  background-color: $danger-color
-  +background-image(linear-gradient(top, adjust-color($danger-color, $lightness: 5%), $danger-color))
-  border-color: adjust-color($danger-color, $lightness: -10%)
-  border-top-color: adjust-color($danger-color, $lightness: -5%)
-  border-bottom-color: adjust-color($danger-color, $lightness: -15%)
-  color: white
-  &:hover
-    background-color: adjust-color($danger-color, $lightness: -10%)
-    +background-image(linear-gradient(top, $danger-color, adjust-color($danger-color, $lightness: -5%)))
-    color: white
-  &:focus, &:active, .active-state &
-    background-color: adjust-color($danger-color, $lightness: -10%)
-    +background-image(linear-gradient(top, adjust-color($danger-color, $lightness: -7%), adjust-color($danger-color, $lightness: -10%)))
-  &:visited
-    color: white
-  &.btn-outline, &.btn-outline:visited
-    background: transparent
-    border-width: $buttonborderwidth
-    border-color: adjust-color($danger-color, $lightness: -10%)
-    color: adjust-color($danger-color, $lightness: -15%, $saturation: 10%)
-    &:hover, &:focus
-      color: adjust-color($danger-color, $lightness: -25%, $saturation: 10%)
-
-
-
-
-//=======================================SIZES
-.btn.large
-  padding: 1.125rem 2.25rem 1.1875rem 2.25rem
-  +font-size(16.5)
-
-.btn.small
-  padding: 0.875rem 1.75rem 0.9375rem 1.75rem
-  +font-size(12)
-
-.btn.tiny
-  padding: 0.625rem 1.25rem 0.6875rem 1.25rem
-  +font-size(10)
-
-.btn.micro
-  padding: 0.185rem .75rem 0.25rem .75rem
-  +font-size(10)
-
-.btn.expand
-  padding-right: 0
-  padding-left: 0
-  width: 100%
-
-.btn.left-align
-  text-align: left
-  text-indent: 0.75rem
-
-.btn.right-align
-  text-align: right
-  padding-right: 0.75rem
-
-.btn.round
-  +border-radius(1000px)
-
-.modal__footer .btn
-  padding: 0.65rem 1.5rem 0.9375rem 1.5rem
-  +font-size(12)
-
-//===============================STATES
-.btn.disabled
-  background: #008cba
-  border-color: #0079a1
-  color: white
-  cursor: default
-  opacity: 0.7
-  -webkit-box-shadow: none
-  box-shadow: none
-  &:hover, &:focus
-    background: #0079a1
-    color: white
-
-.btn.disabled.secondary
-  background: #e7e7e7
-  border-color: #dadada
-  color: #333333
-  cursor: default
-  opacity: 0.7
-  -webkit-box-shadow: none
-  box-shadow: none
-  &:hover, &:focus
-    background: #dadada
-    color: #333333
-
-
-.btn.disabled.success
-  background: #43ac6a
-  border-color: #3c9a5f
-  color: white
-  cursor: default
-  opacity: 0.7
-  -webkit-box-shadow: none
-  box-shadow: none
-  &:hover, &:focus
-    background: #3c9a5f
-    color: white
-
-.btn.disabled.alert
-  background: #f04124
-  border-color: #ea2f10
-  color: white
-  cursor: default
-  opacity: 0.7
-  -webkit-box-shadow: none
-  box-shadow: none
-  &:hover, &:focus
-    background-color: #ea2f10
-    color: white
-
-
-//===========================================================BADGES
-.badge
-  cursor: pointer
+  // other
+  background-image: none // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
   font-weight: normal
   line-height: normal
-  margin: 0
-  position: relative
   text-align: center
-  display: inline-block
-  padding: .5rem .75rem .525rem
-  +font-size(14)
-  background-color: $primary-btn-color
-  border-color: adjust-color($primary-btn-color, $lightness: -10%, $saturation: -5%)
-  color: white
-  +transition(background-color 300ms ease-out)
+  text-decoration: none
+  white-space: nowrap
+
   -webkit-appearance: none
-  border: none
-  +border-radius(3px)
-  font-weight: normal !important
-  &.outline
-    background: transparent
-    border-width: $buttonborderwidth
-    border-style: $buttonborderstyle
-    color: $primary-btn-color
 
 
-.badge.success
-  background-color: $success-color
-  border-color: adjust-color($success-color, $lightness: -10%)
-  color: #fff
-  &.outline
-    background: transparent
-    border-width: $buttonborderwidth 
-    color: $success-color
+  // size
+  &.btn--small
+    +font-size(12)
+    padding: 0.875rem 1.75rem 0.9375rem 1.75rem
+
+  &.btn--large
+    +font-size(16.5)
+    padding: 1.125rem 2.25rem 1.1875rem 2.25rem
+
+  &.btn--tiny
+    +font-size(10)
+    padding: 0.625rem 1.25rem 0.6875rem 1.25rem
+
+  &.btn--micro
+    +font-size(10)
+    padding: 0.185rem .75rem 0.25rem .75rem
+
+  &.btn--expand
+    padding-right: 0
+    padding-left: 0
+    width: 100%
 
 
-//=========================================================== BUTTON GROUPS
-%btn-group
-  list-style: none
-  margin: 0
-  *zoom: 1 
+  // variants
+  &.btn--primary
+    +button-variant(white, $primary-btn-color)
+
+  &.btn--secondary
+    +button-variant($dark-gray, $light-gray)
+
+  &.btn--success
+    +button-variant(white, $success-color)
+
+  &.btn--danger
+    +button-variant(white, $danger-color)
+
+  &.btn--link
+    +button-variant($primary-btn-color, nil, nil, true)
+
+    &,
+    &:hover,
+    &[disabled]
+      background: none
+      border-color: transparent
+
+  // pending implementation
+
+  /*&.btn--left-align*/
+  /*  text-align: left*/
+  /*  text-indent: 0.75rem*/
+
+  /*&.btn--right-align*/
+  /*  text-align: right*/
+  /*  padding-right: 0.75rem*/
+
+  /*&.btn--round*/
+  /*  +border-radius(1000px)*/
+
+
+
+// button group ===========================================
+.btn-group
   @extend %clearfix
 
-.btn-group
-  @extend %btn-group
-  > * 
-    margin: 0
-    float: left 
+  list-style: none
+  margin: 0
+  *zoom: 1
 
   .btn
     +border-radius(0)
-    margin-left: -1px
-  > *:first-child .btn
-    +border-radius(3px 0 0 3px)
-    margin-left: 0
-  > *:last-child .btn
-    +border-radius(0 3px 3px 0)   
 
-//Vertical Button Group (used a bunch in resources sidebar)
-.btn-group-vertical
-  @extend %btn-group
-  > * 
+    float: left
+
     margin: 0
+    margin-left: -1px
+
+  > :first-child .btn
+    +border-radius(3px 0 0 3px)
+
+  > :last-child .btn
+    // IE9+ only
+    +border-radius(0 3px 3px 0)
+
+.btn-group-vertical
+  /*@extend .btn-group*/
+
+  > *
+    margin: 0
+
   .btn
     +border-radius(0)
     margin-top: -1px
     display: block
     text-align: left
     padding: 0.875rem 1.25rem 0.9375rem 1.25rem
-    +font-size(13)    
+    +font-size(13)
+
   > *:first-child .btn
     +border-top-radius(3px)
     margin-top: 0
+
   > *:last-child .btn
     +border-bottom-radius(3px)
 
-//Split Button
-.btn-dropdown
-  position: relative
-  padding-right: 35px
-  .dropdown-indicator
-    +abs-pos(0, 0, 0, auto)
-    width: 35px
-  .caret
-    +abs-pos(50%, 50%, auto, auto)
-    margin: -3px -3px
 
+// button dropdown ===========================================
+
+// pending implementation
+/*.btn-dropdown*/
+/*  position: relative*/
+/*  padding-right: 35px*/
+/**/
+/*  .btn-dropdown__indicator*/
+/*    +abs-pos(0, 0, 0, auto)*/
+/*    width: 35px*/
+/**/
+/*  .btn-dropdown__caret*/
+/*    +abs-pos(50%, 50%, auto, auto)*/
+/*    margin: -3px -3px*/

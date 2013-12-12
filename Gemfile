@@ -29,6 +29,9 @@ gem 'nokogiri'
 gem 'rack-rewrite'
 gem 'rack-google_analytics'
 
+# Templates
+gem 'slim'
+
 group :development do
   gem 'foreman'
 end
