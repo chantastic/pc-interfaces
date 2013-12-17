@@ -2,34 +2,67 @@
 // All rules pertaining to screens greater than 100em or ~1600px
 //======================================================
 @media (min-width: 100em)
+  $sidebar-width: 260px
+
+  html, body
+    height: auto
+
   body
-    background: adjust-color($sidebar-bg-color, $lightness: -10%, $saturation: -5%)
+    min-height: 100%
+    background: adjust-color($sidebar-bg-color, $lightness: -15%, $saturation: -5%)
+    &:before
+      content: ''
+      position: absolute
+      height: 50px
+      left: 0
+      right: 0
+      background: adjust-color($sidebar-bg-color, $lightness: -35%, $saturation: -15%) 
 
   .top-bar
     background: adjust-color($base-color, $lightness: -10%, $saturation: -90%)
     position: relative
-    z-index: 1
+    z-index: 4
 
   .top-bar__contents
     background: $base-color
 
   .top-bar__contents,
-  .main-content-block
+  .main-wrap
     max-width: 120em
     margin: 0 auto
-
   .app-switcher-wrap
-    width: 259px
+    width: $sidebar-width
     .toggle-btn
       left: 225px
+  
+  .app-switcher .menu-wrap
+    top: 3px
+    left: 3px
+    width: 255px
 
-  .sidebar
+  //======================================Layout
+  .main-wrap
+    background: #fff
+    &:before
+      z-index: 1
+      top: 50px
+      bottom: 0
+      width: $sidebar-width
+
+    .main-section__inner
+      margin-left: $sidebar-width
+
+  .left-off-canvas
+    width: $sidebar-width
+    margin: 0 0 0 -260px
+    left: $sidebar-width
 
   .main-content-block
-    background: $bg-color
     position: relative
-    .main-section
-      margin-left: 260px
-    .left-off-canvas
-      width: 260px
-      top: 75px
+    z-index: 3
+  .site-footer
+    position: relative
+    z-index: 3
+
+
+ 

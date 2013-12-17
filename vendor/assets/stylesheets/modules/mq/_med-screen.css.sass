@@ -67,18 +67,30 @@
   //======================================Layout
   .main-wrap 
     margin: 0px 0px -25px 0px
+    position: relative
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 25px
+      width: 15em
+      background: $sidebar-bg-color
     .main-section
-      margin-left: 210px
-      margin-right: 0
-      width: auto
-      padding: 20px 20px 45px //compensate for footer height
-      float: none
+      width: 100%
+      float: right
+      padding: 0
+    .main-section__inner
+      padding: 20px 20px 45px
+      margin-left: 15em
+
   .left-off-canvas
     position: relative
     float: left
-    width: 210px
-    bottom: auto
-    margin: 0  
+    width: 15em
+    margin: 0 0 0 -15em
+    left: 15em
+
   .site-footer
     display: block
     height: 25px
