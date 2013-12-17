@@ -4,6 +4,13 @@
 @media (max-width: 47.95em)
   .main-content-block
     overflow-x: hidden
+
+  .left-off-canvas-active .main-wrap
+    +background-image(linear-gradient(left, $sidebar-bg-color 85%, $bg-color 85%))
+
+  .main-section
+    background: $bg-color
+
   .top-bar .top-nav-options .account-info
     .accounts a
       border-top: solid 1px adjust-color($base-color, $lightness: -70%, $saturation: -70%)   
@@ -37,6 +44,21 @@
         +truncate()
         &.unlink
           margin-left: 0
+
+  //sidebar
+  .left-off-canvas
+    position: absolute
+    top: 50px
+    // bottom: 0
+    left: 0
+    overflow-y: auto
+    background: $sidebar-bg-color
+    border-right: 1px solid adjust-color($sidebar-bg-color, $lightness: -2%)
+    width: 85%
+    display: block
+    margin-left: -85%
+    padding-bottom: 20px
+
   //responsive tables
   .table-responsive
     width: 100%

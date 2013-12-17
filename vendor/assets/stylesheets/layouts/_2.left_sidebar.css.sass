@@ -5,13 +5,11 @@
 ///============================================================================
 
 .main-wrap
+  height: auto
   min-height: 100%
-  height: auto !important
 
 .main-content-block
-  position: relative
-  height: 100%
-  @extend %clearfix
+  // height: 100%
 
 .site-footer
   overflow: hidden
@@ -23,18 +21,6 @@
 
 .main-section, .left-off-canvas
   +transition(all 0.09s linear)
-
-//sidebar
-.left-off-canvas
-  position: absolute
-  top: 0
-  left: 0
-  bottom: 0
-  background: $sidebar-bg-color
-  border-right: 1px solid adjust-color($sidebar-bg-color, $lightness: -2%)
-  width: 85%
-  display: block
-  margin-left: -85%
 
 //When to show the sidebar
 .left-off-canvas-active
@@ -50,7 +36,7 @@
   padding: 20px
   // overflow-x: hidden
   width: 100%
-
+  @extend %clearfix
   .page-section
     margin: 2.5rem auto
     @extend %clearfix

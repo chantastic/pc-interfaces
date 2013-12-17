@@ -7,6 +7,8 @@
 
   .top-bar
     background: adjust-color($base-color, $lightness: -10%, $saturation: -90%)
+    position: relative
+    z-index: 1
 
   .top-bar__contents
     background: $base-color
@@ -21,9 +23,13 @@
     .toggle-btn
       left: 225px
 
+  .sidebar
+
   .main-content-block
     background: $bg-color
+    position: relative
     .main-section
       margin-left: 260px
     .left-off-canvas
       width: 260px
+      top: 75px
