@@ -4,9 +4,30 @@
 @media (max-width: 47.95em)
   .main-content-block
     overflow-x: hidden
-
-  .left-off-canvas-active .main-wrap
-    +background-image(linear-gradient(left, $sidebar-bg-color 85%, $bg-color 85%))
+    height: 100%
+    margin-top: -50px
+    padding-top: 50px
+  
+  .left-off-canvas-active 
+    .main-wrap
+      +background-image(linear-gradient(left, $sidebar-bg-color 85%, $bg-color 85%))
+    .main-content-block
+      +background-image(linear-gradient(left, $sidebar-bg-color 85%, $bg-color 85%))
+    //   position: relative
+    //   overflow-x: hidden
+    //   height: 100%
+    //   margin-top: -50px
+    //   padding-top: 50px
+    //   &:before
+    //     content: ''
+    //     position: absolute
+    //     top: 0
+    //     left: 0
+    //     bottom: 0
+    //     padding-bottom: 45px
+    //     height: 100%
+    //     width: 85%
+    //     background: $sidebar-bg-color      
 
   .main-section
     background: $bg-color

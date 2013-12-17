@@ -5,7 +5,7 @@
   $sidebar-width: 260px
 
   html, body
-    height: auto
+    height: 100%
 
   body
     min-height: 100%
@@ -20,8 +20,6 @@
 
   .top-bar
     background: adjust-color($base-color, $lightness: -10%, $saturation: -90%)
-    position: relative
-    z-index: 4
 
   .top-bar__contents
     background: $base-color
@@ -41,16 +39,17 @@
     width: 255px
 
   //======================================Layout
+
   .main-wrap
-    background: #fff
+    background: $bg-color
     &:before
       z-index: 1
       top: 50px
       bottom: 0
-      width: $sidebar-width
-
-    .main-section__inner
-      margin-left: $sidebar-width
+      width: $sidebar-width    
+    .main-section
+      // +background-image(linear-gradient(left, $sidebar-bg-color 262px, $bg-color 262.2px))
+      border-left-width: $sidebar-width
 
   .left-off-canvas
     width: $sidebar-width
@@ -60,9 +59,8 @@
   .main-content-block
     position: relative
     z-index: 3
-  .site-footer
-    position: relative
-    z-index: 3
 
+  .site-footer
+    margin-top: -25px
 
  
