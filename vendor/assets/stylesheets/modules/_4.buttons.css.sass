@@ -57,7 +57,7 @@ $button-border-style: solid
   @else
     // mixins
     +_pseudo-classes($color, $background-color, $border-color)
-    +background-image(linear-gradient(top, adjust-color($background-color, $lightness: 6%), $background-color))
+    +background-image(linear-gradient(top, adjust-color($background-color, $lightness: 4%), $background-color))
 
     // display
     border: $button-border-width $button-border-style $border-color
@@ -172,7 +172,7 @@ $button-border-style: solid
     +button-variant(white, $primary-btn-color)
 
   &.btn--secondary
-    +button-variant($dark-gray, $light-gray)
+    +button-variant($dark-gray, $lighter-gray)
 
   &.btn--success
     +button-variant(white, $success-color)
