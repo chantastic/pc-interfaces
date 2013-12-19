@@ -27,6 +27,10 @@ $ =>
   $(document).on "opened", "[data-reveal]", ->
     modal = $(this)
     $(".main-wrap").addClass("blur")
+    
+  $(document).on "closed", "[data-reveal]", ->
+    modal = $(this)
+    $(".main-wrap").removeClass("blur")    
 
   ########### INII SELECT 2
   $("select").select2();
