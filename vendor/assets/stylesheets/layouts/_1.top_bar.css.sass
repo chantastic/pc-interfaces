@@ -33,11 +33,11 @@
   display: block
 
 //=================================================[ NAVIGATION ]
+
 .top-bar-section
   position: relative
   width: auto
   .divider
-    border-bottom: solid 1px adjust-color($base-color, $lightness: -37%, $saturation: -35%)
     clear: both
     height: 1px
     width: 100%  
@@ -52,6 +52,7 @@
       min-height: 20px
       padding: 15px
       +font-size(12)
+      line-height: 1.75
       &:hover
         color: #fff
         background: adjust-color($base-color, $lightness: -42%, $saturation: -30%)
@@ -196,17 +197,13 @@
 
 
 //======================================Account Info
+
 .top-bar .top-bar-section .account-info
   li
     float: none
     display: block
   .avatar
     display: none
-  .identity
-    li
-      border-bottom: 1px solid adjust-color($base-color, $lightness: -49%, $saturation: -45%)
-    a
-      display: inline-block
 
   .utilities
     position: relative         
@@ -222,27 +219,9 @@
       +font-size(11)
       float: left
 
+  .identity a
+    display: inline-block
 
-//Acct Dropdown
-.top-bar
-  .has-acct-dropdown.active-state .acct-dropdown
-    height: auto
-
-  .has-acct-dropdown .acct-dropdown
-    position: relative
-    height: 0
-    background: adjust-color($base-color, $lightness: -49%, $saturation: -45%)
-    +border-radius(4px)
-    overflow: hidden 
-    li
-      line-height: 20px
-      display: block
-
-    &:after
-      content: ''
-      position: absolute
-      top: -5px
-      right: 24px
-      border-bottom: 5px solid #fff
-      border-left: solid 5px transparent
-      border-right: solid 5px transparent
+//Acct dropdown med screens
+#toggle-account-details
+  display: none
