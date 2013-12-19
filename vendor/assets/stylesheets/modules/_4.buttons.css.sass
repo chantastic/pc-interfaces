@@ -57,7 +57,7 @@ $button-border-style: solid
   @else
     // mixins
     +_pseudo-classes($color, $background-color, $border-color)
-    +background-image(linear-gradient(top, adjust-color($background-color, $lightness: 4%), $background-color))
+    +background-image(linear-gradient(top, adjust-color($background-color, $lightness: 3%), $background-color))
 
     // display
     border: $button-border-width $button-border-style $border-color
@@ -75,12 +75,12 @@ $button-border-style: solid
   &:hover,
   &:focus
     background-color: $border-color
-    +background-image(linear-gradient(top, $background-color, adjust-color($background-color, $lightness: -5%)))
+    +background-image(linear-gradient(top, $background-color, adjust-color($background-color, $lightness: -3%)))
 
   &:active
     // inverse of :hover
     background-color: $border-color
-    +background-image(linear-gradient(bottom, $background-color, adjust-color($background-color, $lightness: -5%)))
+    +background-image(linear-gradient(bottom, adjust-color($background-color, $lightness: -4%), adjust-color($background-color, $lightness: -6%)))
 
   // explicitely define disabled class prevent disabled:hover
   &[disabled]

@@ -28,8 +28,30 @@ $ =>
     modal = $(this)
     $(".main-wrap").addClass("blur")
 
+  ########### INII SELECT 2
   $("select").select2();
 
+  ########### ACCORDIONS
+  $(document).on "click", ".acc__trigger", (event) ->
+
+    myPanel       = $(this).next(".acc__panel")
+    myPanelHeader = $(this)
+
+    myPanel.slideToggle()
+    
+    if (myPanel.hasClass("active-state") || myPanelHeader.hasClass("active-state"))
+      myPanel.removeClass("active-state")
+      myPanelHeader.removeClass("active-state")
+    else (
+      myPanel.addClass("active-state")
+      myPanelHeader.addClass("active-state")
+      )
+
+
+
+
+
+  ##DEMO CODE BELOW THIS LINE
   # generic demo toggle
   $('.code-sample-button').on 'click', (e) ->
     e.preventDefault(); e.stopPropagation()
