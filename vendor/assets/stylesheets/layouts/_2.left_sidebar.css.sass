@@ -26,6 +26,12 @@
 
 .main-section, .left-off-canvas
   +transition(all 0.09s linear)
+  -webkit-backface-visibility: hidden
+  -webkit-transform: translate3d(0,0,0)
+  -moz-transform: translate3d(0,0,0)
+  -ms-transform: translate3d(0,0,0)
+  -o-transform: translate3d(0,0,0)
+  transform: translate3d(0,0,0)
 
 //When to show the sidebar
 .left-off-canvas-active

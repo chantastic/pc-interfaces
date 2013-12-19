@@ -164,7 +164,7 @@
       width: auto
       min-width: 310px
       max-width: 420px
-      right: 5px
+      right: 0
       top: 27px    
       overflow: visible
       position: absolute
@@ -172,9 +172,95 @@
       background: #fff
       +border-radius(3px)
       +box-shadow(0 1px 6px $dropdown-shadow)
-
       &:after
+        +triangle("up", #fff, 6px)
         right: 24px
+
+  #account-details
+    .utilities
+      > li
+        padding-left: 3px
+        &:first-child
+          padding-left: 0
+      > li span
+        position: relative
+        top: .1rem
+        margin-right: .1rem 
+        color: adjust-color($base-color, $lightness: -19%, $saturation: -38%)
+      .dropdown
+        > li
+          display: block
+      .section-heading
+        position: relative
+        padding: 10px 0 0 0
+        line-height: 1.2
+        .a
+          display: block
+          padding: 0 40px 10px 10px
+        a
+          color: $link-color
+        .log
+          position: absolute
+          top: 10px
+          right: 8px
+          +border-radius(2px)
+          border: 1px solid $danger-color
+          color: $danger-color
+          padding: .15rem .35rem .35rem .35rem
+          line-height: 1
+          height: auto
+          &:hover
+            background: transparent
+        .unlink
+          display: block
+          padding: 5px
+          padding: 0 7px
+          height: 30px
+          line-height: 30px
+          +font-size(12)
+          background: adjust-color($base-color, $lightness: 56%, $saturation: -60%)
+          &:hover
+            background: adjust-color($base-color, $lightness: 55%, $saturation: -60%)
+          .outline
+            +border-radius(3px)
+            min-width: 60px
+            border: 1px solid
+            color: adjust-color($base-color, $lightness: -5%, $saturation: 0%)
+            position: relative
+            top: 6px
+            margin: 0 .75rem 0 0
+            padding: 0.15rem 0.5rem 0.25rem            
+            min-width: 60px
+            text-align: center
+            +font-size(11)
+            line-height: 1
+            float: left    
+    
+
+    //DROPDOWN CONTENTS
+    .accounts
+      a
+        display: block
+        overflow: hidden
+        padding: 0 7px
+        height: 30px
+        line-height: 30px
+        color: $base-font-color
+        border-top: 1px solid adjust-color($light-gray, $lightness: 10%)
+        +font-size(12)
+        &:first-child
+          border-top: 0
+        &:last-child
+          +border-radius(0 0 3px 3px)
+        &:hover
+          color: $highlighted-color
+          background: $highlighted-bg-color
+      .badge
+        position: relative
+        top: 6px
+        color: #fff
+        margin: 0 5px 0 0
+        padding: 0.15rem 0.5rem 0.25rem             
 
   //UTILITIES
   .showformobile
@@ -236,54 +322,6 @@
         &:hover
           color: $highlighted-color
           background: $highlighted-bg-color
-      .dropdown
-        > li
-          display: block
-      .section-heading
-        position: relative
-        padding: 10px 0 0 0
-        line-height: 1.2
-        .a
-          display: block
-          padding: 0 40px 10px 10px
-        a
-          color: $link-color
-        .log
-          position: absolute
-          top: 10px
-          right: 8px
-          +border-radius(2px)
-          border: 1px solid $danger-color
-          color: $danger-color
-          padding: .15rem .35rem .35rem .35rem
-          line-height: 1
-          height: auto
-          &:hover
-            background: transparent
-        .unlink
-          display: block
-          padding: 5px
-          padding: 0 7px
-          height: 30px
-          line-height: 30px
-          +font-size(12)
-          background: adjust-color($base-color, $lightness: 56%, $saturation: -60%)
-          &:hover
-            background: adjust-color($base-color, $lightness: 55%, $saturation: -60%)
-          .outline
-            +border-radius(3px)
-            min-width: 60px
-            border: 1px solid
-            color: adjust-color($base-color, $lightness: -5%, $saturation: 0%)
-            position: relative
-            top: 6px
-            margin: 0 .75rem 0 0
-            padding: 0.15rem 0.5rem 0.25rem            
-            min-width: 60px
-            text-align: center
-            +font-size(11)
-            line-height: 1
-            float: left    
     
     .has-acct-dropdown
       position: relative
@@ -300,27 +338,3 @@
         right: 0
         &:after
           display: none
-
-    //DROPDOWN CONTENTS
-    .accounts
-      a
-        display: block
-        overflow: hidden
-        padding: 0 7px
-        height: 30px
-        line-height: 30px
-        color: $base-font-color
-        border-top: 1px solid adjust-color($light-gray, $lightness: 10%)
-        +font-size(12)
-        &:first-child
-          border-top: 0
-        &:last-child
-          +border-radius(0 0 3px 3px)
-        &:hover
-          color: $highlighted-color
-          background: $highlighted-bg-color
-      .badge
-        position: relative
-        top: 6px
-        margin-top: 0
-        padding: 0.15rem 0.5rem 0.25rem              
