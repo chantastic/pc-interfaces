@@ -61,7 +61,7 @@
   +font-size(14)
   height: 3.4rem
   line-height: 3.29rem
-  background: adjust-color($sidebar-bg-color, $lightness: -10%)
+  // background: adjust-color($sidebar-bg-color, $lightness: -10%)
   border-top: 1px solid adjust-color($sidebar-bg-color, $lightness: -14%)
   cursor: pointer
   +user-select(none)
@@ -84,13 +84,20 @@
   transform: translate3d(0,0,0)
   -webkit-transform: translate3d(0,0,0)
   &.active-state
+    border-bottom: 1px solid adjust-color($sidebar-bg-color, $lightness: -14%)
 
 
 .acc__panel__inner
   padding: 20px
 
-.sidebar .acc__panel__inner
-  padding: 10px
+.sidebar 
+  .acc__trigger
+    margin-top: -1px
+    border-width: 1px 0 1px 0
+    border-style: solid
+    border-color: adjust-color($sidebar-bg-color, $lightness: -14%)
+  .acc__panel__inner
+    padding: 10px 12px 12px 12px
 
 
 //====================================SIDEBAR
