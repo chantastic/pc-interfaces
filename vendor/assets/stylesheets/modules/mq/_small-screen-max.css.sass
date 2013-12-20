@@ -2,8 +2,11 @@
 // All rules pertaining to screens less than 47.95em or ~767px
 //=============================================================
 @media (max-width: 47.95em)
-  .main-content-block
+  .main-wrap
     overflow-x: hidden
+    position: relative
+  .main-content-block
+    position: relative
     height: 100%
     margin-top: -50px
     padding-top: 50px
@@ -15,11 +18,29 @@
       +background-image(linear-gradient(left, $sidebar-bg-color 85%, $bg-color 85%))  
 
   .main-section
-    background: $bg-color
+    // background: $bg-color
 
-  //=================================================[ Top Bar ]
-  //Acct Dropdown Services
+  //=================================================[ ACCOUNTS ]
   .top-bar
+    .top-bar-section .account-info
+      .identity
+        li
+          clear: both
+          background: adjust-color($base-color, $lightness: -17%, $saturation: -50%)
+          border-bottom: 1px solid adjust-color($base-color, $lightness: -49%, $saturation: -50%)
+          border-top: 1px solid adjust-color($base-color, $lightness: -49%, $saturation: -50%)
+          +truncate()
+
+    .top-bar-section
+      .divider
+        display: none
+
+      .utilities > li
+        border-top: solid 1px adjust-color($base-color, $lightness: -37%, $saturation: -35%)
+      
+      .utilities li:first-child
+        border-top: 0
+
     .has-acct-dropdown.active-state .acct-dropdown
       height: auto
 
@@ -33,28 +54,6 @@
         line-height: 20px
         display: block
 
-      &:after
-        content: ''
-        position: absolute
-        top: -5px
-        right: 24px
-        border-bottom: 5px solid #fff
-        border-left: solid 5px transparent
-        border-right: solid 5px transparent
-
-    .top-bar-section .account-info
-      .identity
-        li
-          background: adjust-color($base-color, $lightness: -17%, $saturation: -50%)
-          border-bottom: 1px solid adjust-color($base-color, $lightness: -49%, $saturation: -50%)
-
-    .top-bar-section
-      .divider, .utilities > li
-        border-top: solid 1px adjust-color($base-color, $lightness: -37%, $saturation: -35%)
-      
-      .utilities li:first-child
-        border-top: 0
-
     .top-nav-options .account-info
       .accounts a
         border-top: solid 1px adjust-color($base-color, $lightness: -70%, $saturation: -70%)   
@@ -62,7 +61,6 @@
         border-top: solid 1px adjust-color($base-color, $lightness: -47%, $saturation: -45%)
         &:first-child
           border-top: 0
-
 
       .section-heading
         line-height: 30px
@@ -96,6 +94,29 @@
             color: #fff
           &.unlink
             margin-left: 0
+
+  //=================================================[ACCOUNTS]
+  .global-nav
+    li
+      display: block
+      float: left
+      +grid(3,1)
+      padding: 10px
+    a
+      display: block
+      +border-radius(3px)
+      background: adjust-color($base-color, $lightness: -25%, $saturation: -70%)
+      text-align: center
+
+      span
+        display: block
+      .icon
+        +font-size(36)
+        margin-bottom: .85rem
+      .btn-label
+        +font-size(10)
+        +truncate()
+
 
   //sidebar
   .left-off-canvas
