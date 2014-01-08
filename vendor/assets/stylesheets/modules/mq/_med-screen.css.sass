@@ -2,7 +2,6 @@
 // All rules pertaining to screens greater than 47.95em or ~767px
 //======================================================
 @media (min-width: 47.95em)
-  $sidebar-width: 15em
   // html, body
   //   height: auto
   .top-bar
@@ -47,7 +46,7 @@
   .app-switcher-wrap
     padding-left: 10px
     margin: 0
-    width: $sidebar-width
+    width: $sidebar-width-big-screen
     background: adjust-color($base-color, $lightness: -20%, $saturation: -90%)
 
   .app-switcher
@@ -86,7 +85,7 @@
       left: 0
       bottom: 0
       padding-bottom: 45px
-      width: $sidebar-width
+      width: $sidebar-width-big-screen
       background: $sidebar-bg-color
     .main-content-block
       background: $bg-color
@@ -96,17 +95,17 @@
       padding: 0
       // +background-image(linear-gradient(left, $sidebar-bg-color 262px, $bg-color 262.2px))
       background: $bg-color
-      border-left: $sidebar-width solid $sidebar-bg-color      
+      border-left: $sidebar-width-big-screen solid $sidebar-bg-color      
     .main-section__inner
       padding: 20px 20px 45px
 
   .left-off-canvas
     position: relative
     float: left
-    width: $sidebar-width
+    width: $sidebar-width-big-screen
     background: $sidebar-bg-color
-    margin: 0 0 0 -15em
-    left: $sidebar-width
+    margin: 0 0 0 $sidebar-width-big-screen * -1
+    left: $sidebar-width-big-screen
 
   .site-footer
     position: relative

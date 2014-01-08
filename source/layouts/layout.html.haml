@@ -3,15 +3,16 @@
 %html.no-js{:lang => "en"}
   = partial 'layouts/partials/head'
   %body  
-    .main-wrap
-      = partial "layouts/partials/header"
-      -#content
-      .main-content-block
-        %section.main-section
-          .main-section__inner
-            = yield
-        %aside.sidebar.left-off-canvas
-          = partial "layouts/partials/sidebar"    
+    .off-canvas-wrap
+      .main-wrap
+        = partial "layouts/partials/header"
+        -#content
+        .main-content-block.inner-wrap
+          %section.main-section
+            .main-section__inner
+              = yield
+          %aside.sidebar.left-off-canvas
+            = partial "layouts/partials/sidebar"    
 
     -#End content
     = partial "layouts/partials/footer"

@@ -8,10 +8,10 @@
 //=================================================[ TOP BAR ]
 .top-bar
   overflow: visible
-  height: 50px  
+  height: $topbar-height  
   margin: 0 auto
   background: $base-color
-  min-height: 50px
+  min-height: $topbar-height
   border-bottom: 1px solid adjust-color($base-color, $lightness: -40%, $saturation: -25%)
   ul
     margin: 0
@@ -26,9 +26,9 @@
 
 .bookmark, .bookmark:before
   display: block
-  height: 50px
+  height: $topbar-height
   font-size: 12.75rem
-  line-height: 50px
+  line-height: $topbar-height
   color: #fff
   display: block
 
@@ -100,7 +100,7 @@
     height: 16px
     width: 100%
   .menu-wrap
-    top: 50px
+    top: $topbar-height
     left: 5px
     right: 5px
     +border-bottom-radius(3px)
@@ -158,7 +158,7 @@
 
 .app-switcher-wrap
   width: 32px
-  height: 50px
+  height: $topbar-height
   cursor: pointer
   overflow: hidden
   margin: 0 auto

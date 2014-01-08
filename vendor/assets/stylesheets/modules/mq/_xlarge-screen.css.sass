@@ -2,7 +2,6 @@
 // All rules pertaining to screens greater than 100em or ~1600px
 //======================================================
 @media (min-width: 100em)
-  $sidebar-width: 260px
 
   html, body
     height: 100%
@@ -29,7 +28,7 @@
     max-width: 120em
     margin: 0 auto
   .app-switcher-wrap
-    width: $sidebar-width
+    width: $sidebar-width-big-screen
     .toggle-btn
       left: 225px
   
@@ -46,15 +45,15 @@
       z-index: 1
       top: 50px
       bottom: 0
-      width: $sidebar-width    
+      width: $sidebar-width-big-screen    
     .main-section
       // +background-image(linear-gradient(left, $sidebar-bg-color 262px, $bg-color 262.2px))
-      border-left-width: $sidebar-width
+      border-left-width: $sidebar-width-big-screen
 
   .left-off-canvas
-    width: $sidebar-width
-    margin: 0 0 0 -260px
-    left: $sidebar-width
+    width: $sidebar-width-big-screen
+    margin: 0 0 0 $sidebar-width-big-screen * -1
+    left: $sidebar-width-big-screen
 
   .main-content-block
     position: relative
