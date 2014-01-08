@@ -14,16 +14,17 @@
   height: 100%
 
 .inner-wrap,
-.main-wrap:before
+.main-wrap:before,
   -webkit-backface-visibility: hidden
   position: relative
   width: 100%
-  -webkit-transition: -webkit-transform 300ms ease
-  -moz-transition: -moz-transform 300ms ease
-  -ms-transition: -ms-transform 300ms ease
-  -o-transition: -o-transform 300ms ease
-  transition: transform 300ms ease  
+  +transition(transform 300ms ease)
   @extend %clearfix
+
+#toggle-sidebar .pco-ui-cog
+  -webkit-backface-visibility: hidden
+  position: relative
+  +transition(transform 300ms ease)
 
 //When to show the sidebar
 .left-off-canvas-active 
@@ -31,6 +32,8 @@
     +translate3d(260px, 0, 0)
   .main-wrap:before
     +translate3d(0, 0, 0)
+  #toggle-sidebar .pco-ui-cog
+    +rotate(610deg)
 
 
 .main-content-block
