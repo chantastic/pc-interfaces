@@ -1,0 +1,7 @@
+require 'compass-rails'
+require 'sass-rails'
+require 'slim-rails'
+require 'haml-rails'
+require 'high_voltage'
+require 'interfaces/engine'
+require 'interfaces/high_voltage'
