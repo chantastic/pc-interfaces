@@ -12,6 +12,7 @@
 
 .main-wrap
   height: 100%
+  background: $bg-color
 
 .inner-wrap,
 .main-wrap:before,
@@ -74,7 +75,11 @@
 
 //===========================================================[ IF NO SIDEBAR == FULLSCREEN add .fullwidth to body]
 .fullwidth
-  .main-section
-    border: 0
-    float: none
-    background: transparent
+  .main-wrap 
+    &:before
+      display: none
+    .main-section
+      padding: 40px
+      border: 0
+      float: none
+      background: transparent
