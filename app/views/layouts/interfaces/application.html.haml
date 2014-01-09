@@ -1,0 +1,18 @@
+!!!5
+
+%html.no-js{:lang => "en"}
+  = render 'layouts/interfaces/partials/head'
+  %body
+    .off-canvas-wrap
+      .main-wrap
+        = render "layouts/interfaces/partials/header"
+        -#content
+        .main-content-block.inner-wrap
+          %section.main-section
+            .main-section__inner
+              = yield
+          %aside.sidebar.left-off-canvas
+            = render "layouts/interfaces/partials/sidebar"
+
+    -#End content
+    = render "layouts/interfaces/partials/footer"
