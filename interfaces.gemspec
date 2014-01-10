@@ -20,9 +20,9 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'compass-rails'
   spec.add_dependency 'haml-rails'
   spec.add_dependency 'high_voltage'
-  spec.add_dependency 'rails', '~> 4.0.2'
   spec.add_dependency 'sass-rails'
   spec.add_dependency 'slim-rails'
 
   spec.add_development_dependency 'sqlite3'
+  spec.add_development_dependency 'rails', '~> 4.0.2'
 end
