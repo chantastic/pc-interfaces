@@ -1,63 +1,83 @@
 //==================================
-// PANELS, WELLS, AND ACCORDIONS
+// PANES, WELLS, AND ACCORDIONS
 //==================================
-$default-panel-radius: 4px
+$default-pane-radius: 4px
+
+.split--half
+  width: 50%
+.split--third
+  width: 33%
+.split--quarter
+  width: 25%
 
 %block
   margin-bottom: 20px
   background-color: #fff
   border: 1px solid transparent
-  +border-radius($default-panel-radius)
+  +border-radius($default-pane-radius)
   +box-shadow(0 1px 2px -1px rgba($dark-gray,0.3))
 
-.panel
-  *:last-child, .panel__body *:last-child
+.pane
+  *:last-child, .pane__body *:last-child
     margin-bottom: 0 !important
 
-.panel--default,
-.panel--naked
+.pane--default, .pane--naked
   @extend %block
   border-color: adjust-color($lighter-gray, $lightness: -1%)
-  
-.panel--naked
+
+.pane--naked
   background: transparent
 
-.panel--split
-  +border-radius(0 $default-panel-radius $default-panel-radius 0)
-  margin-left: -1px
-  width: 50%
-  display: inline-block
+.pane-group
+  display: table
+  margin-bottom: 20px
+
+.pane--split
+  +border-radius(0)
+  display: table-cell
+  border-right-width: 0
+  padding-bottom: 1px // to show the bottom border under panel__footer
   &:first-child
-    margin-left: 0
-    +border-radius($default-panel-radius 0 0 $default-panel-radius) //use first-child as it's supported in IE7 and 8
+    +border-radius($default-pane-radius 0 0 $default-pane-radius)
+    .pane__footer
+      +border-bottom-left-radius(3px)
+  &:last-child,
+  &.last-child
+    +border-radius(0 $default-pane-radius $default-pane-radius 0)
+    border-right-width: 1px
+    .pane__footer
+      +border-bottom-right-radius(3px)
+  .pane__footer
+    +border-bottom-radius(0)
+
   
-.panel__header, .panel__footer, .panel__body
+.pane__header, .pane__footer, .pane__body
   @extend %clearfix
 
-.panel__header
+.pane__header
   padding: .75rem 1.25rem .9rem
   +border-top-radius(3px)
   background: adjust-color($lighter-gray, $lightness: 5%)
   +background-image(linear-gradient(top, adjust-color($lighter-gray, $lightness: 5%), adjust-color($lighter-gray, $lightness: 3%)))
   border-bottom: solid 1px adjust-color($lighter-gray, $lightness: -1%)
 
-.panel__body
+.pane__body
   padding: 1.25rem 1.5rem
 
-.panel__footer
+.pane__footer
   padding: .75rem 1.25rem .9rem
   +border-bottom-radius(3px)
   background: adjust-color($lighter-gray, $lightness: 7%)
   +background-image(linear-gradient(top, adjust-color($lighter-gray, $lightness: 7%), adjust-color($lighter-gray, $lightness: 5%)))
   border-top: solid 1px adjust-color($lighter-gray, $lightness: -1%)
 
-.panel-title
+.pane-title
   margin: 0
   +truncate()
   +font-size(18)
   color: inherit
 
-.panel
+.pane
   .block-list
     margin: 0px
   .block-list__item
