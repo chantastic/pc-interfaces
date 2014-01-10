@@ -17,7 +17,7 @@ $default-panel-radius: 4px
 .panel--default,
 .panel--naked
   @extend %block
-  border-color: adjust-color($lighter-gray, $lightness: -1%)
+  border-color: $border-color
   
 .panel--naked
   background: transparent
@@ -35,11 +35,11 @@ $default-panel-radius: 4px
   @extend %clearfix
 
 .panel__header
-  padding: .75rem 1.25rem .9rem
+  padding: .7rem 1.25rem .85rem
   +border-top-radius(3px)
-  background: adjust-color($lighter-gray, $lightness: 5%)
-  +background-image(linear-gradient(top, adjust-color($lighter-gray, $lightness: 5%), adjust-color($lighter-gray, $lightness: 3%)))
-  border-bottom: solid 1px adjust-color($lighter-gray, $lightness: -1%)
+  background: $panel-header-bg
+  +background-image($panel-header-bg)
+  border-bottom: solid 1px adjust-color($border-color, $lightness: -1%)
 
 .panel__body
   padding: 1.25rem 1.5rem
