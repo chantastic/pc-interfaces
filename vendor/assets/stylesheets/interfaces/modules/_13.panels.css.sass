@@ -25,7 +25,7 @@ $default-pane-radius: 4px
   @extend %block
   border-color: $border-color
   
-.panel--naked
+.pane--naked
   background: transparent
 
 .pane-group
@@ -36,7 +36,7 @@ $default-pane-radius: 4px
   +border-radius(0)
   display: table-cell
   border-right-width: 0
-  padding-bottom: 1px // to show the bottom border under panel__footer
+  padding-bottom: 1px // to show the bottom border under pane__footer
   &:first-child
     +border-radius($default-pane-radius 0 0 $default-pane-radius)
     .pane__footer
@@ -57,8 +57,8 @@ $default-pane-radius: 4px
 .pane__header
   padding: .75rem .75rem .75rem 1.25rem
   +border-top-radius(3px)
-  background: $panel-header-bg
-  +background-image($panel-header-bg)
+  background: $pane-header-bg
+  +background-image($pane-header-bg)
   border-bottom: solid 1px adjust-color($border-color, $lightness: -1%)
 
 .pane__body
