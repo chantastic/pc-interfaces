@@ -12,6 +12,7 @@ $font-name: accounts !default
 //===============
 $base-font-family:        "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif !default
 $base-font-color:         #333333 !default
+$base-heading-color:      #616161 !important
 
 //===============
 //  COLORS
@@ -53,7 +54,11 @@ $light-gray:             lighten($black, 75%) !default
 $lighter-gray:           lighten($black, 90%) !default
 
 //MISC
-$dropdown-shadow: rgba(adjust-color($base-color, $lightness: -10, $saturation: -49), 0.45)
+$dropdown-shadow:          rgba(adjust-color($base-color, $lightness: -10, $saturation: -49), 0.45)
 $topbar-height:            50px !default
 $sidebar-width-big-screen: 260px !default
 $sidebar-width-med-screen: 225px !default
+
+//PANELS
+$border-color:             adjust-color($bg-color, $lightness: -10%) !default
+$panel-header-bg:          linear-gradient(top, adjust-color($lighter-gray, $lightness: 5%), adjust-color($lighter-gray, $lightness: 3%)) !default

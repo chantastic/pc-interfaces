@@ -23,9 +23,9 @@ $default-pane-radius: 4px
 
 .pane--default, .pane--naked
   @extend %block
-  border-color: adjust-color($lighter-gray, $lightness: -1%)
-
-.pane--naked
+  border-color: $border-color
+  
+.panel--naked
   background: transparent
 
 .pane-group
@@ -55,11 +55,11 @@ $default-pane-radius: 4px
   @extend %clearfix
 
 .pane__header
-  padding: .75rem 1.25rem .9rem
+  padding: .75rem .75rem .75rem 1.25rem
   +border-top-radius(3px)
-  background: adjust-color($lighter-gray, $lightness: 5%)
-  +background-image(linear-gradient(top, adjust-color($lighter-gray, $lightness: 5%), adjust-color($lighter-gray, $lightness: 3%)))
-  border-bottom: solid 1px adjust-color($lighter-gray, $lightness: -1%)
+  background: $panel-header-bg
+  +background-image($panel-header-bg)
+  border-bottom: solid 1px adjust-color($border-color, $lightness: -1%)
 
 .pane__body
   padding: 1.25rem 1.5rem

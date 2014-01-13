@@ -6,7 +6,6 @@ PATH
       compass-rails
       haml-rails
       high_voltage
-      rails (~> 4.0.2)
       sass-rails
       slim-rails
 
@@ -129,4 +128,5 @@ PLATFORMS
 
 DEPENDENCIES
   interfaces!
+  rails (~> 4.0.2)
   sqlite3
