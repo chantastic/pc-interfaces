@@ -15,4 +15,9 @@
             = render "layouts/interfaces/partials/sidebar"
 
     -#End content
-    = render "layouts/interfaces/partials/footer"
+    = interfaces_footer do
+      %span Designed in CA \
+      %span.pco-ui-pco{ "aria-hidden" => "true"} \
+      %span Copyright 2013
+
+    = render "layouts/interfaces/partials/scripts"
