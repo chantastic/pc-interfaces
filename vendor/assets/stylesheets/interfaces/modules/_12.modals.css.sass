@@ -53,12 +53,15 @@
   +border-bottom-radius(4px)
   //background: adjust-color($modal-window-bg-color, $lightness: -3%)
   border-top: solid 1px adjust-color($modal-window-bg-color, $lightness: -10%, $saturation: -5%)
+  .btn
+    margin-bottom: 0
 
 .modal-title
   margin: 0
   +truncate()
   +font-size(19)
-  color: inherit
+  // color: inherit
+  color: #fff
 
 @media only screen and (min-width: 47.95em)
   .reveal-modal
