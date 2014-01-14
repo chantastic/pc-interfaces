@@ -1,64 +1,66 @@
 h3.section-header Panels &amp; Wells
-.page-section
-  .col.col--half
-    h3.section-sub-header Default Panel
-    .pane.pane--default
+= code_sample do
+  .page-section
+    .col.col--half
+      h3.section-sub-header Default Panel
+      .pane.pane--default
+        .pane__body
+          h3 This is a basic panel with some content. Nothing fancy, just a header and some paragraph text.
+          p Bacon ipsum dolor sit amet pastrami ham tongue jerky. Corned beef short ribs short loin ham doner t-bone beef ribs pork chop brisket pancetta chuck flank chicken. Corned beef venison jerky strip steak hamburger ribeye. Bacon filet mignon ham meatball pig.
+
+    .col.col--half
+      h3.section-sub-header Default Panel with options
+      .pane.pane--default
+        .pane__header
+          h4.pane-title
+            This is the panel title
+        .pane__body
+          h4 This is another panel with some content, a title, and a footer.
+          p Bacon ipsum dolor sit amet pastrami ham tongue jerky. Corned beef short ribs short loin ham doner t-bone beef ribs pork chop brisket pancetta chuck flank chicken. Corned beef venison jerky strip steak hamburger ribeye. Bacon filet mignon ham meatball pig.
+        .pane__footer
+          This is the panel footer
+
+h3.section-sub-header Split and naked panels
+= code_sample do
+  .pane-group
+    .pane.pane--default.pane--split.split--quarter
+      .pane__header
+        h4.pane-title
+          This is a default split panel
       .pane__body
         h3 This is a basic panel with some content. Nothing fancy, just a header and some paragraph text.
         p Bacon ipsum dolor sit amet pastrami ham tongue jerky. Corned beef short ribs short loin ham doner t-bone beef ribs pork chop brisket pancetta chuck flank chicken. Corned beef venison jerky strip steak hamburger ribeye. Bacon filet mignon ham meatball pig.
 
-  .col.col--half
-    h3.section-sub-header Default Panel with options
-    .pane.pane--default
+    .pane.pane--naked.pane--split.split--half
       .pane__header
         h4.pane-title
-          This is the panel title
+          This is a naked split panel
       .pane__body
-        h4 This is another panel with some content, a title, and a footer.
-        p Bacon ipsum dolor sit amet pastrami ham tongue jerky. Corned beef short ribs short loin ham doner t-bone beef ribs pork chop brisket pancetta chuck flank chicken. Corned beef venison jerky strip steak hamburger ribeye. Bacon filet mignon ham meatball pig.
-      .pane__footer
-        This is the panel footer
-
-h3.section-sub-header Split and naked panels
-
-.pane-group
-  .pane.pane--default.pane--split.split--quarter
-    .pane__header
-      h4.pane-title
-        This is a default split panel
-    .pane__body
-      h3 This is a basic panel with some content. Nothing fancy, just a header and some paragraph text.
-      p Bacon ipsum dolor sit amet pastrami ham tongue jerky. Corned beef short ribs short loin ham doner t-bone beef ribs pork chop brisket pancetta chuck flank chicken. Corned beef venison jerky strip steak hamburger ribeye. Bacon filet mignon ham meatball pig.
-
-  .pane.pane--naked.pane--split.split--half
-    .pane__header
-      h4.pane-title
-        This is a naked split panel
-    .pane__body
-      h3 This is a basic panel with some content. Nothing fancy, just a header and some paragraph text.
-      p Bacon ipsum dolor sit amet pastrami ham tongue jerky. Corned beef short ribs short loin ham doner t-bone beef ribs pork chop brisket pancetta chuck flank chicken. Corned beef venison jerky strip steak hamburger ribeye. Bacon filet mignon ham meatball pig.    
-  .pane.pane--naked.pane--split.split--quarter
-    .pane__header
-      h4.pane-title
-        This is a naked split panel
-    .pane__body
-      h3 This is a basic panel with some content. Nothing fancy, just a header and some paragraph text.
-      p Bacon ipsum dolor sit amet pastrami ham tongue jerky. Corned beef short ribs short loin ham doner t-bone beef ribs pork chop brisket pancetta chuck flank chicken. Corned beef venison jerky strip steak hamburger ribeye. Bacon filet mignon ham meatball pig.    
+        h3 This is a basic panel with some content. Nothing fancy, just a header and some paragraph text.
+        p Bacon ipsum dolor sit amet pastrami ham tongue jerky. Corned beef short ribs short loin ham doner t-bone beef ribs pork chop brisket pancetta chuck flank chicken. Corned beef venison jerky strip steak hamburger ribeye. Bacon filet mignon ham meatball pig.    
+    .pane.pane--naked.pane--split.split--quarter
+      .pane__header
+        h4.pane-title
+          This is a naked split panel
+      .pane__body
+        h3 This is a basic panel with some content. Nothing fancy, just a header and some paragraph text.
+        p Bacon ipsum dolor sit amet pastrami ham tongue jerky. Corned beef short ribs short loin ham doner t-bone beef ribs pork chop brisket pancetta chuck flank chicken. Corned beef venison jerky strip steak hamburger ribeye. Bacon filet mignon ham meatball pig.    
 
 
 h3.section-sub-header Default Panel with a Block List
-.pane.pane--default
-  .pane__header
-    h4.pane-title
-      This panel has a block-list
-  .pane__body
-    h4 This is another panel with some content, a title, and a block-list.
-    p Bacon ipsum dolor sit amet pastrami ham tongue jerky. Corned beef short ribs short loin ham doner t-bone beef ribs pork chop brisket pancetta chuck flank chicken. Corned beef venison jerky strip steak hamburger ribeye. Bacon filet mignon ham meatball pig.
-  ul.block-list
-    li.block-list__item T-bone chicken
-    li.block-list__item Leberkas pork belly
-    li.block-list__item Ball tip chicken meatball
-    li.block-list__item Boudin brisket pig
-    li.block-list__item Hamburger pork chop filet mignon  
-  .pane__footer
-    This is the panel footer
+= code_sample do
+  .pane.pane--default
+    .pane__header
+      h4.pane-title
+        This panel has a block-list
+    .pane__body
+      h4 This is another panel with some content, a title, and a block-list.
+      p Bacon ipsum dolor sit amet pastrami ham tongue jerky. Corned beef short ribs short loin ham doner t-bone beef ribs pork chop brisket pancetta chuck flank chicken. Corned beef venison jerky strip steak hamburger ribeye. Bacon filet mignon ham meatball pig.
+    ul.block-list
+      li.block-list__item T-bone chicken
+      li.block-list__item Leberkas pork belly
+      li.block-list__item Ball tip chicken meatball
+      li.block-list__item Boudin brisket pig
+      li.block-list__item Hamburger pork chop filet mignon  
+    .pane__footer
+      This is the panel footer
