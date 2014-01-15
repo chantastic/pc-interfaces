@@ -11,7 +11,7 @@
             .chevron
           .menu-wrap
             .toggle-btn-cover
-              %span.pco-ui-remove.pco-ui-close
+              %span.interfaces-remove.interfaces-close
             %ul
               %li.accounts
                 %a{href: "http://accounts.planningcenteronline.com"}
@@ -39,12 +39,12 @@
       #toggle-sidebar.menu-icon.show-for-mobile
         %a{href: "#"}
           %span.title Sidebar
-          %span.pco-ui-cog{"aria-hidden" => "true"}
+          %span.interfaces-cog{"aria-hidden" => "true"}
 
       #toggle-topbar.js-droptoggle.menu-icon.show-for-mobile
         %a{href: "#"}
           %span.title Menu
-          %span.pco-ui-menu{"aria-hidden" => "true"}                                            
+          %span.interfaces-menu{"aria-hidden" => "true"}                                            
 
     %section.top-bar-section
       / Main Navi Area
@@ -76,7 +76,7 @@
             %a.photo{href: "/people/1"}
               %img{alt: "Missing", height: "24", src: "https://www.planningcenteronline.com/photos/icon/missing.png", width: "24"}
           #toggle-account-details.js-droptoggle
-            %span.pco-ui-caret{ "aria-hidden" => "true"}
+            %span.interfaces-caret{ "aria-hidden" => "true"}
           #account-details
             %ul.identity
               %li.section-heading
@@ -86,19 +86,19 @@
             %ul.utilities
               %li
                 %a{href: "http://accounts.pco.dev/administration"}
-                  %span.pco-ui-admin
+                  %span.interfaces-admin
                   admin
               %li
                 %a{href: "/organization"}
-                  %span.pco-ui-cog
+                  %span.interfaces-cog
                   settings
               %li
                 %a.dialogify{href: "/help", width: "600"}
-                  %span.pco-ui-faq
+                  %span.interfaces-faq
                   help
               %li.js-dropwrap.has-acct-dropdown
                 %a.js-droptoggle
-                  %span.pco-ui-enclosed-caret
+                  %span.interfaces-enclosed-caret
                   accounts
                 %ul.acct-dropdown
                   %li.account-options.section-heading
