@@ -1,30 +1,47 @@
-// Modules and Variables
-//Rename this file to pco-assets
-@import "modules/1.core"
+// mixin dependencies
+@import "compass/css3/box-sizing"
+@import "compass/css3/box-shadow"
+@import "compass/css3/border-radius"
+@import "compass/css3/images"
+@import "compass/css3/transition"
+@import "compass/css3/transform"
 
-//Third Party
+// variable dependencies
+@import "compass/typography/vertical_rhythm"
+
+// core
+@import "core/variables"
+@import "core/utilities"
+@import "core/queries"
+@import "core/grid"
+
+// layout
+@import "layouts/top_bar"
+@import "layouts/default_layout"
+
+// modules
+@import "modules/navigation"
+@import "modules/buttons"
+@import "modules/typography"
+@import "modules/tables"
+@import "modules/grid"
+@import "modules/forms"
+@import "modules/icons"
+@import "modules/utility_classes"
+@import "modules/dropdowns"
+@import "modules/modals"
+@import "modules/panels"
+@import "modules/badges"
+
+// vendor
+@import "vendor/normalize"
 @import "vendor/select2"
 @import "vendor/demo"
 @import "vendor/prism"
 
-// MODULES
-@import "modules/2.normalize"
-@import "modules/3.navigation"
-@import "modules/4.buttons"
-@import "modules/5.typography"
-@import "modules/6.tables"
-@import "modules/7.grid"
-@import "modules/8.forms"
-@import "modules/9.icons"
-@import "modules/10.utility_classes"
-@import "modules/11.dropdowns"
-@import "modules/12.modals"
-@import "modules/13.panels"
-@import "modules/11.badges"
-
-//LAYOUTS
-@import "layouts/_1.top_bar"
-@import "layouts/_2.default_layout"
-
-//Media Queries
-@import "modules/mq/all-mq"
+// media queries
+@import "modules/mq/small-screen"
+@import "modules/mq/med-screen"
+@import "modules/mq/large-screen"
+@import "modules/mq/xlarge-screen"
+@import "modules/mq/small-screen-max"
