@@ -21,8 +21,12 @@
       > a
         padding: 0 15px
         height: 50px
-        &:hover
-          background: adjust-color($base-color, $lightness: -12%, $saturation: -5%)    
+        &:hover, &.active
+          background: adjust-color($base-color, $lightness: -12%, $saturation: -5%)
+          .icon
+            color: #fff
+        .icon
+          color: adjust-color($base-color, $lightness: -30%, $saturation: -15%)          
 
   .title-area
     float: left    
@@ -186,7 +190,7 @@
         position: relative
         top: .1rem
         margin-right: .1rem 
-        color: adjust-color($base-color, $lightness: -17%, $saturation: -35%)
+        color: adjust-color($base-color, $lightness: -30%, $saturation: -15%)
       .dropdown
         > li
           display: block
