@@ -20,7 +20,6 @@ $default-pane-radius: 4px
   +box-shadow(0 1px 2px -1px rgba($dark-gray,0.3))
 
 .pane
-  overflow: hidden
   *:last-child, .pane__body *:last-child
     margin-bottom: 0 !important
 
@@ -32,9 +31,9 @@ $default-pane-radius: 4px
   background: transparent
 
 .pane--muted
-  background: adjust-color($lighter-gray, $lightness: 8%)
+  background: $pane-muted-bg
   .pane__header
-    background: adjust-color($lighter-gray, $lightness: 7%)
+    background: $pane-muted-header-bg
 
 .pane-group
   display: table
@@ -70,6 +69,7 @@ $default-pane-radius: 4px
   background: $pane-header-bg
   +background-image($pane-header-bg)
   border-bottom: solid 1px adjust-color($border-color, $lightness: -1%)
+  height: 44px
   &:not(:first-child)
     border-top: solid 1px adjust-color($border-color, $lightness: -1%)
     +border-top-radius(0)
@@ -159,4 +159,3 @@ $default-pane-radius: 4px
 
 .sb-well--padded
   padding: 10px
-
