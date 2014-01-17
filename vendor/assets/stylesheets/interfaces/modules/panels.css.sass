@@ -70,9 +70,16 @@ $default-pane-radius: 4px
   +background-image($pane-header-bg)
   border-bottom: solid 1px adjust-color($border-color, $lightness: -1%)
   height: 44px
+
+  // when you have multiple headers in a pane, remove the rounded top corners
   &:not(:first-child)
     border-top: solid 1px adjust-color($border-color, $lightness: -1%)
     +border-top-radius(0)
+
+  // buttons inside the pane header do not need bottom margins, yo.
+  .btn
+    margin-bottom: 0
+
 
 .pane__body
   padding: 1.25rem 1.5rem
@@ -93,16 +100,11 @@ $default-pane-radius: 4px
 
 .pane
   .block-list
-    margin: 0px
+    margin: -1px 0
   .block-list__item
     border-width: 1px 0
-  .block-list__item:last-child
-    border-bottom: 0
-
-.pane__header
-  & + .block-list
-    .block-list__item:first-child
-      border-width: 0
+    +font-size(14)
+    line-height: 1.6
 
 
 //====================================ACCORDIONS
