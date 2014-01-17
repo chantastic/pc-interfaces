@@ -2,6 +2,7 @@
 // PANES, WELLS, AND ACCORDIONS
 //==================================
 $default-pane-radius: 4px
+$default-pane-header-radius: (4px - 1px)
 
 .split--three-quarters
   width: 75%
@@ -45,9 +46,9 @@ $default-pane-radius: 4px
     .pane__header
       +border-radius(0)  
     &:first-of-type .pane__header
-      +border-top-left-radius($default-pane-radius)
+      +border-top-left-radius($default-pane-header-radius)
     &:last-of-type .pane__header
-      +border-top-right-radius($default-pane-radius)      
+      +border-top-right-radius($default-pane-header-radius)      
 
 .pane--split
   +border-radius(0)
