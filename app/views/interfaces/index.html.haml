@@ -77,6 +77,9 @@
 
 %h2.section-header Modals
 %p
+  = modal_trigger 'exModal' do
+    Default Modal
+
   %a.btn{href: "", "data-reveal-id" => "exModal"}
     Default Modal
   %a.btn{href: "", "data-reveal-id" => "exModalmed"}
@@ -84,7 +87,7 @@
 //==============
 //MODAL    
 //==============
-#exModal.reveal-modal{"data-reveal" => ""}
+= modal 'exModal' do
   .modal__header
     %h2.modal-title Awesome. I have it.
     / %a.close-reveal-modal ×
@@ -99,7 +102,7 @@
     %a.btn.btn-success{href: ""}
       Accept
 
-#exModalmed.reveal-modal.medium{"data-reveal" => ""}
+= modal 'exModalmed', { class: "medium" } do
   .modal__header
     %h2.modal-title I am modified with a class of .medium
     / %a.close-reveal-modal ×
