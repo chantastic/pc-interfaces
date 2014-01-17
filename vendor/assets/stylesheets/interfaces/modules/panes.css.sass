@@ -41,6 +41,14 @@ $default-pane-radius: 4px
   width: 100%
   clear: both
 
+  .pane--split
+    .pane__header
+      +border-radius(0)  
+    &:first-of-type .pane__header
+      +border-top-left-radius($default-pane-radius)
+    &:last-of-type .pane__header
+      +border-top-right-radius($default-pane-radius)      
+
 .pane--split
   +border-radius(0)
   display: table-cell
