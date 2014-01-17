@@ -1,0 +1,83 @@
+h3 Footer
+div style="margin-top: 25px"
+  = interfaces_footer do
+    | Designed in CA Copyright 2013
+
+  pre.code-sample.code-sample--visible
+    code.language-ruby
+      | = interfaces do
+          | Designed in CA Copyright 2013
+
+h3 Simple Modal
+
+div
+  = modal_trigger 'simpleModal', { tag: "button", class: "btn btn--primary" } do
+    | Default Modal
+
+  = modal 'simpleModal' do
+    .modal__header
+      | Vizzini to The Man in Black
+    .modal__body
+      | But it's so simple. All I have to do is divine from what I know of you: are you the sort of man who would put the poison into his own goblet or his enemy's? Now, a clever man would put the poison into his own goblet, because he would know that only a great fool would reach for what he was given. I am not a great fool, so I can clearly not choose the wine in front of you. But you must have known I was not a great fool, you would have counted on it, so I can clearly not choose the wine in front of me.
+    .modal__footer
+      button.close-reveal-modal.btn.btn--outline.btn--link
+        | Nope, Nope, Nope
+      button.close-reveal-modal.btn.btn--outline.btn--danger
+        | I'm like TOTALLY sure
+
+  pre.code-sample.code-sample--visible
+    code.language-ruby
+      | / slim template
+      br: i
+      | = modal_trigger 'simpleModal', { tag: "button", class: "btn btn--primary" } do
+          | Default Modal
+      br: i
+      | = modal 'simpleModal' do
+          .modal__header
+            | Vizzini to The Man in Black
+          .modal__body
+            | But it's so simple...
+          .modal__footer
+            button.close-reveal-modal.btn.btn--outline.btn--link
+              | Nope, Nope, Nope
+            button.close-reveal-modal.btn.btn--outline.btn--danger
+              | I'm like TOTALLY sure
+
+h3 Complex/Multi Modal
+
+div
+  = modal_trigger 'complexModal', { tag: "button", class: "btn btn--primary" } do
+    | Complex Modal
+
+  = modal 'complexModal', { class: "medium" } do
+    .modal__header
+      | Vizzini last words to The Man in Black
+    .modal__body
+      | You only think I guessed wrong! That's what's so funny! I switched glasses when your back was turned! Ha ha! You fool! You fell victim to one of the classic blunders - The most famous of which is "never get involved in a land war in Asia" - but only slightly less well-known is this: "Never go in against a Sicilian when death is on the line"! Ha ha ha ha ha ha ha! Ha ha ha ha ha ha ha! Ha ha ha...  [Vizzini stops suddenly, his smile frozen on his face and falls to the ground dead]
+    .modal__footer
+      = modal_trigger 'simpleModal', { tag: "button", class: "btn btn--outline btn--primary left" } do
+        | Hot Modals on Modals Action
+      button.close-reveal-modal.btn.btn--outline.btn--link
+        | Nope, Nope, Nope
+      button.close-reveal-modal.btn.btn--outline.btn--danger
+        | I'm like TOTALLY sure
+
+  pre.code-sample.code-sample--visible
+    code.language-ruby
+      | / slim template
+      br: i
+      | = modal_trigger 'complexModal', { tag: "button", class: "btn btn--primary" } do
+          | Complex Modal
+      br: i
+      | = modal 'complexModal', { class: "medium" } do
+          .modal__header
+            | Vizzini last words to The Man in Black
+          .modal__body
+            | You only think I guessed wrong! ...
+          .modal__footer
+            = modal_trigger 'simpleModal', { tag: "button", class: "btn btn--outline btn--primary left" } do
+              | Hot Modals on Modals Action
+            button.close-reveal-modal.btn.btn--outline.btn--link
+              | Nope, Nope, Nope
+            button.close-reveal-modal.btn.btn--outline.btn--danger
+              | I'm like TOTALLY sure

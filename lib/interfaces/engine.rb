@@ -13,6 +13,7 @@ module Interfaces
     initializer 'Interfaces.action_controller' do |app|
       ActiveSupport.on_load :action_controller do
         helper Interfaces::CodeSampleHelper
+        helper Interfaces::ApplicationHelper
       end
     end
   end

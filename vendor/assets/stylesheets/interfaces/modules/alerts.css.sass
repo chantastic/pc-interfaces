@@ -1,0 +1,68 @@
+/*//SEE modules > colors for color variables*/
+$alert-border-width: 1px
+$alert-border-style: solid
+
+// @mixins ================================================
+
+// =Alert variants
+//
+// Quickly scaffold out new alert styles with additional `outline` variant.
+//
+// +alert-variant([$text-color:white], [$background-color:lightgray], [$border-color:$background-color])
+//
+// Usage:
+//
+// +alert-variant()                      - alert modifier with defaults
+// +alert-variant(black)                 - alert modifier with defaults and black text
+// +alert-variant(black, pink)           - alert modifier with black text and pink background/border
+// +alert-variant(black, pick, fuchsia)  - alert modifier with black text, pink background, and fuchsia border
+@mixin alert-variant($color:white, $background-color:lightgray, $border-color:$background-color)
+  // display
+  border: $alert-border-width $alert-border-style $border-color
+
+  // other
+  background-color: $background-color
+  color: $color
+
+  &.alert--outline
+    background: transparent
+    color: $border-color
+
+// alert ==================================================
+.alert
+  // @extends
+  @extend %alert
+
+  // mixins
+  +alert-variant(white, $base-color)
+  +border-radius(3px)
+  +font-size(14)
+  +transition(background-color 300ms ease-out)
+  +user-select(none)
+
+  // position
+  position: relative
+
+  // display
+  display: block
+  margin: 0 0 1.5em 0
+  padding: 1.15em
+
+  // other
+  // line-height: normal // collision with `.top-bar .top-bar-section .account-info .accounts a`
+  line-height: 1
+  vertical-align: middle
+  font-weight: normal
+  text-align: left
+
+  -webkit-appearance: none
+
+  +clearfix
+
+  // variants
+  &.alert--success
+    +alert-variant(white, $success-color)
+  &.alert--danger
+    +alert-variant(white, $danger-color)
+  &.alert--subtle
+    +alert-variant($base-font-color, adjust-color($bg-color, $lightness: -7%))

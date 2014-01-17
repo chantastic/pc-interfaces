@@ -23,15 +23,6 @@ $ =>
   $("select").select2 minimumResultsForSearch: 12
   $(".select2--nosearch").select2 minimumResultsForSearch: 999
 
-  ########### BIND THE BLUR CLASS ON DIALOG TRIGGER
-  $(document).on "opened", "[data-reveal]", ->
-    modal = $(this)
-    $(".main-wrap").addClass("blur")
-    
-  $(document).on "closed", "[data-reveal]", ->
-    modal = $(this)
-    $(".main-wrap").removeClass("blur")    
-
   ########### INII SELECT 2
   $("select").select2();
 
