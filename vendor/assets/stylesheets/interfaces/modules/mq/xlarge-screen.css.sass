@@ -40,21 +40,18 @@
 
   //======================================Layout
 
-  .main-wrap
-    background: $bg-color
-    &:before
-      z-index: 1
-      top: 50px
-      bottom: 0
-      width: $sidebar-width-big-screen    
-    .main-section
-      // +background-image(linear-gradient(left, $sidebar-bg-color 262px, $bg-color 262.2px))
-      border-left-width: $sidebar-width-big-screen
-
   .left-off-canvas
     width: $sidebar-width-big-screen
     margin: 0 0 0 $sidebar-width-big-screen * -1
     left: $sidebar-width-big-screen
+
+  .main-wrap .main-section
+    border-left-width: $sidebar-width-big-screen    
+
+  .off-canvas-wrap
+    +box-shadow($sidebar-width-big-screen 0 0 $sidebar-bg-color inset)
+  .fullwidth .off-canvas-wrap
+    +box-shadow(none)    
 
   .main-content-block
     position: relative
