@@ -24,6 +24,7 @@ $default-pane-header-radius: (4px - 1px)
   *:last-child, .pane__body *:last-child
     margin-bottom: 0 !important
 
+
 .pane--default, .pane--naked, .pane--muted
   @extend %block
   border-color: $border-color
@@ -36,13 +37,20 @@ $default-pane-header-radius: (4px - 1px)
   .pane__header
     background: $pane-muted-header-bg
 
+.pane--full
+  width: 100%
+  display: table
+  margin-bottom: 20px  
+
 .pane-group
   display: table
   margin-bottom: 20px
+  +box-shadow(0 1px 2px -1px rgba($dark-gray,0.3))
   width: 100%
   clear: both
 
   .pane--split
+    +box-shadow(0)
     .pane__header
       +border-radius(0)  
     &:first-of-type .pane__header
@@ -54,17 +62,19 @@ $default-pane-header-radius: (4px - 1px)
   +border-radius(0)
   display: table-cell
   border-right-width: 0
-  padding-bottom: 1px // to show the bottom border under pane__footer
-  &:first-child
+  //padding-bottom: 1px // to show the bottom border under pane__footer @secrest, this was adding too much for me
+  &:first-of-type
     +border-radius($default-pane-radius 0 0 $default-pane-radius)
     .pane__footer
-      +border-bottom-left-radius(3px)
-  &:last-child,
+      position: relative
+      top: 0
+      +border-bottom-left-radius($default-pane-header-radius)
+  &:last-of-type,
   &.last-child
     +border-radius(0 $default-pane-radius $default-pane-radius 0)
     border-right-width: 1px
     .pane__footer
-      +border-bottom-right-radius(3px)
+      +border-bottom-right-radius($default-pane-header-radius)
   .pane__footer
     +border-bottom-radius(0)
 
