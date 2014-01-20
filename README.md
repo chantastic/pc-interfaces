@@ -27,15 +27,25 @@ re-bundle, powder restart rain-dance.
 
 ## Usage
 
-Usage is pretty straight forward.  Once included in you Gemfile, simply add this
-your `application.css` manifest:
+Usage is pretty straight forward.  Once included in you Gemfile, simply add the
+following lines to your corresponding manifest files:
 
 ```css
-*= require interfaces/interfaces
+/*  application.css
+ *= require interfaces/interfaces
 ```
 
-This will make all of the out-of-the-box styles available in your app.  If
-that's good enough, you're done!
+```javascript
+//  application.js
+//= require interfaces/interfaces
+```
+
+This will make all of the out-of-the-box styles and interaction available in
+your app.  Keep in mind that this is the firehose approach.  You're getting
+everything.  If you'd like to keep lean, you can identify only the modules you
+need and include those.  e.g. require interfaces/core/variables
+
+If that's good enough, you're done!
 
 But... that's probably not good enough.  Chances are, you're going to need to
 customize a bit.  To start customizing Interfaces, keep reading...
