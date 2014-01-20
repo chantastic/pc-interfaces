@@ -36,6 +36,7 @@ $default-pane-header-radius: (4px - 1px)
   background: $pane-muted-bg
   .pane__header
     background: $pane-muted-header-bg
+    border-bottom-color: #dddddd
 
 .pane--full
   width: 100%
@@ -89,6 +90,8 @@ $default-pane-header-radius: (4px - 1px)
   +background-image($pane-header-bg)
   border-bottom: solid 1px adjust-color($border-color, $lightness: -1%)
   height: 44px
+  position: relative
+  z-index: 10
 
   // when you have multiple headers in a pane, remove the rounded top corners
   &:not(:first-child)
@@ -120,8 +123,6 @@ $default-pane-header-radius: (4px - 1px)
 .pane
   .block-list
     margin: -1px 0
-  .block-list__item
-    border-width: 1px 0
 
 
 //====================================ACCORDIONS
