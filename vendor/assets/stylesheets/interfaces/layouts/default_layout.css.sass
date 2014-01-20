@@ -20,7 +20,7 @@
   position: relative
   width: 100%
   +transition(transform 300ms ease)
-  @extend %clearfix
+  +clearfix
 
 #toggle-sidebar .pco-ui-cog
   -webkit-backface-visibility: hidden
@@ -38,7 +38,7 @@
 
 
 .main-content-block
-  @extend %clearfix
+  +clearfix
 
 .top-bar
   line-height: 50px
@@ -59,10 +59,10 @@
 //main content area
 .main-section
   padding: 20px
-  @extend %clearfix
+  +clearfix
   .page-section
     margin: 2.5rem auto
-    @extend %clearfix
+    +clearfix
 
 
 //===========================================================[ IF NO SIDEBAR == FULLSCREEN add .fullwidth to body]
