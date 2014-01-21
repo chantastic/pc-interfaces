@@ -168,6 +168,9 @@ $button-border-style: solid
       background: none
       border-color: transparent
 
+  &.btn--shadow
+    +box-shadow(0 3px 7px -3px rgba(0,0,0,0.7))
+
   // pending implementation
 
   /*&.btn--left-align*/
@@ -190,6 +193,9 @@ $button-border-style: solid
   list-style: none
   margin: 0
   *zoom: 1
+
+  li
+    display: inline
 
   .btn
     +border-radius(0)

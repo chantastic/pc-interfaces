@@ -64,5 +64,7 @@ $alert-border-style: solid
     +alert-variant(white, $success-color)
   &.alert--danger
     +alert-variant(white, $danger-color)
+  &.alert--warning
+    +alert-variant(adjust-color($warning-color, $lightness: -49%, $saturation: -35%), $warning-color, adjust-color($warning-color, $lightness: -1%, $saturation: 0%))    
   &.alert--subtle
     +alert-variant($base-font-color, adjust-color($bg-color, $lightness: -7%))
