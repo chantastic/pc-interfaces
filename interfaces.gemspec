@@ -16,12 +16,23 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
+  # dependencies for sample application
+  spec.add_dependency 'jquery-rails'
   spec.add_dependency 'coffee-rails'
   spec.add_dependency 'compass-rails'
   spec.add_dependency 'haml-rails'
   spec.add_dependency 'high_voltage'
   spec.add_dependency 'sass-rails'
   spec.add_dependency 'slim-rails'
+
+  # dependencies for host application
+  spec.add_dependency 'select2-rails'
+  spec.add_dependency 'foundation-rails'
+  spec.add_dependency 'es5-shim-rails'
+  spec.add_dependency 'html5shiv-rails'
+  spec.add_dependency 'selectivizr-rails'
+  spec.add_dependency 'placeholder-gem'
+  spec.add_dependency 'modernizr-rails'
 
   spec.add_development_dependency 'sqlite3'
   spec.add_development_dependency 'rails', '~> 4.0.2'

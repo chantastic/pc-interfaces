@@ -1,7 +1,6 @@
 # Place all the behaviors and hooks related to site-wide utilities and helpers here
 
 $ =>
-
   ########### Generic toggle helper
   $(document).on "click", ".js-togglehelper:not(.disabled)", (event) ->
     $(this).toggleClass("alt-state")
