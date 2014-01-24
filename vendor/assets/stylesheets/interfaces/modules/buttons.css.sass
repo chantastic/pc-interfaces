@@ -159,6 +159,10 @@ $button-border-style: solid
   &.btn--danger
     +button-variant(white, $danger-color)
 
+  &.btn--warning
+    +button-variant(adjust-color($warning-color, $lightness: -47%, $saturation: -25%), adjust-color($warning-color, $lightness: -15%, $saturation: 2%), $border-color:adjust-color($warning-color, $lightness: -30%, $saturation: -8%))
+    &:hover
+      color: adjust-color($warning-color, $lightness: -47%, $saturation: -25%)
   &.btn--link
     +button-variant($primary-btn-color, nil, nil, true)
 
