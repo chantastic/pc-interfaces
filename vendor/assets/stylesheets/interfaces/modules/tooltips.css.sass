@@ -1,6 +1,6 @@
 $tip-background-color: #111
 $tip-color: #fff
-$tip-font-size: 80%
+$tip-font-size: 12px
 $tip-padding: 5px
 $tip-border-radius: 2px
 $tip-z-index: 99
@@ -30,6 +30,8 @@ $tip-visible-opacity: 0.8
 // default
 .has-tip
   position: relative
+  line-height: ($tip-font-size + 1)
+  display: inline-block
 
   &:before,
   &:after
@@ -47,14 +49,14 @@ $tip-visible-opacity: 0.8
   &:before
     content: ""
 
-    border-color: rgba(0,0,0,0) transparent
+    border-color: $tip-background-color transparent
 
   &:after
     padding: $tip-padding ($tip-padding * 3)
 
     content: attr(data-tip)
 
-    background-color: rgba(0,0,0,0)
+    background-color: $tip-background-color
     white-space: nowrap
     +border-radius($tip-border-radius)
 
@@ -91,9 +93,9 @@ $tip-visible-opacity: 0.8
       left:   auto
 
     &:before
-      top:    auto
+      top:    -($tip-font-size / 3)
       right:  50%
-      bottom: (($tip-caret-height * 2) - 1)
+      bottom: auto
       left:   auto
 
   // bottom
@@ -112,7 +114,7 @@ $tip-visible-opacity: 0.8
     &:before
       top:    auto
       right:  50%
-      bottom: 0
+      bottom: -($tip-font-size / 3)
       left:   auto
       border-width: 0 $tip-caret-height $tip-caret-height $tip-caret-height
 
