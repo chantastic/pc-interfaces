@@ -1,0 +1,163 @@
+$tip-background-color: #111
+$tip-color: #fff
+$tip-font-size: 80%
+$tip-padding: 5px
+$tip-border-radius: 2px
+$tip-z-index: 99
+$tip-caret-height: 6px
+$tip-transition-duration: 0.3s
+$tip-visible-opacity: 0.8
+
+// no implementation
+.has-tip:not([data-tip])
+  &:after
+    content: "WARNING: You need to add a `data-tip` attribute"
+
+  &:hover
+    &:before
+      border-color: red transparent
+
+    &:after
+      background-color: red
+
+// no content
+.has-tip[data-tip=""]
+  &:hover
+    &:before,
+    &:after
+      visibility: hidden
+
+// default
+.has-tip
+  position: relative
+
+  &:before,
+  &:after
+    position: absolute
+
+    z-index: $tip-z-index
+    display: block
+    visibility: hidden
+    +opacity(0)
+
+    font-size: $tip-font-size
+
+    +transition(opacity $tip-transition-duration ease)
+
+  &:before
+    content: ""
+
+    border-color: rgba(0,0,0,0) transparent
+
+  &:after
+    padding: $tip-padding ($tip-padding * 3)
+
+    content: attr(data-tip)
+
+    background-color: rgba(0,0,0,0)
+    white-space: nowrap
+    +border-radius($tip-border-radius)
+
+  &:hover
+    text-decoration: none
+
+    &:before,
+    &:after
+      visibility: visible
+      +opacity($tip-visible-opacity)
+
+    &:after
+      background-color: $tip-background-color
+      color: $tip-color
+
+    &:before
+      border-style: solid
+      border-color: $tip-background-color transparent
+      border-width: $tip-caret-height $tip-caret-height 0 $tip-caret-height
+
+
+  // top, default
+  &.tip--top,
+  &[data-tip-options*=top],
+  &
+    &:before,
+    &:after
+      +translate(50%, -100%)
+
+    &:after
+      top:    auto
+      right:  50%
+      bottom: 0
+      left:   auto
+
+    &:before
+      top:    auto
+      right:  50%
+      bottom: (($tip-caret-height * 2) - 1)
+      left:   auto
+
+  // bottom
+  &.tip--bottom,
+  &[data-tip-options*=bottom]
+    &:before,
+    &:after
+      +translate(50%, 100%)
+
+    &:after
+      top:    0
+      right:  50%
+      bottom: auto
+      left:   auto
+
+    &:before
+      top:    auto
+      right:  50%
+      bottom: 0
+      left:   auto
+      border-width: 0 $tip-caret-height $tip-caret-height $tip-caret-height
+
+  // right
+  &.tip--right,
+  &[data-tip-options*=right]
+    &:before,
+    &:after
+      +translate(100%, 0)
+
+    &:after
+      top:    -($tip-caret-height / 2)
+      right:  -($tip-caret-height * 2)
+      bottom: auto
+      left:   auto
+
+    &:before
+      top:     ($tip-caret-height / 3)
+      right:  -($tip-caret-height)
+      bottom: auto
+      left:   auto
+      border-width: $tip-caret-height $tip-caret-height $tip-caret-height 0
+
+    &:hover:before
+      border-color: transparent $tip-background-color
+
+  // left
+  &.tip--left,
+  &[data-tip-options*=left]
+    &:before,
+    &:after
+      +translate(-100%, 0)
+
+    &:after
+      top:    -($tip-caret-height / 2)
+      right:  auto
+      bottom: auto
+      left:   -($tip-caret-height * 2)
+
+    &:before
+      top:    ($tip-caret-height / 3)
+      right:  auto
+      bottom: auto
+      left:   -($tip-caret-height)
+      border-width: $tip-caret-height 0 $tip-caret-height $tip-caret-height
+
+    &:hover:before
+      border-color: transparent $tip-background-color

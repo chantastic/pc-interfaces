@@ -1,0 +1,82 @@
+section
+  h2 Tooltip implementation
+  p
+    ' There are two pieces required to implement a successful tooltip:
+    ul style="margin-left: 20px"
+      li
+        ' Add the
+        code .has-tip
+        '  class to your element
+      li
+        ' Add a
+        code "data-tip"
+        '  attribute to your element
+
+  div
+    =code_sample_inline_static
+      a.has-tip href="#" data-tip=".has-tip" SUCH TIPS!
+
+  div
+    a.has-tip href="#" MUCH WARNING
+    ' : You'll get a warning if you forget to add your `data-tip` attribute
+
+  br
+
+  div
+    a.has-tip href="#" data-tip="" SUCH EMPTY (no tip)
+    ' : Don't worry about leaving
+    code "data-tip"
+    '  empty.  It will not show if the attribute is left empty.  This is handy for tooltips on dynamically generated content.
+hr
+
+section
+  h2 Positioning by class
+  p Class modifiers are an order of magnitude more performant than their data-attr counterparts.  Use these unless it is more communicative to the `data-options` version.
+
+  div
+    a.has-tip.tip--top href="#" data-tip="tip--top" .tip--top
+
+  div
+    a.has-tip.tip--right href="#" data-tip=".tip--right" .tip--right
+
+  div
+    a.has-tip.tip--bottom href="#" data-tip=".tip--bottom" .tip--bottom
+
+  div
+    a.has-tip.tip--left href="#" data-tip=".tip--left" .tip--left
+
+  br
+  div
+    ' Tooltip positions, added by class:
+    =code_sample_inline_static
+      a.has-tip.tip--top href="#" data-tip="tip--top" .tip--top
+
+hr
+
+section
+  h2 Position by data-attr
+  p data-* selectors are the slowest of all selectors.  I've added these, for communication sake.  You should only use them when there are VERY few tips an your page AND you feel it better communicates your intent.
+
+  div
+    a.has-tip href="#" data-tip="data-tip-options=top" data-tip-options="top" [data-tip-options="top"]
+  div
+    a.has-tip href="#" data-tip="data-tip-options=right" data-tip-options="right" [data-tip-options="right"]
+  div
+    a.has-tip href="#" data-tip="data-tip-options=bottom" data-tip-options="bottom" [data-tip-options="bottom"]
+  div
+    a.has-tip href="#" data-tip="data-tip-options=left" data-tip-options="left" [data-tip-options="left"]
+
+  br
+  div
+    ' Tooltip positions, added by data-attr:
+    =code_sample_inline_static
+      a.has-tip href="#" data-tip="data-tooltip-option=top" data-tip-options="top" "data-tip-options=top"
+
+hr
+
+section
+  h3 TODO:
+  ul style="margin-left: 20px"
+    li IE8 fallback
+    li Add additive 'disable' without regressing the api
+    li moderizr .touch exlusion option
