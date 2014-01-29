@@ -64,7 +64,6 @@ $default-pane-header-radius: (4px - 1px)
   display: table-cell
   vertical-align: top
   border-right-width: 0
-  //padding-bottom: 1px // to show the bottom border under pane__footer @secrest, this was adding too much for me
   &:first-of-type
     +border-radius($default-pane-radius 0 0 $default-pane-radius)
     .pane__footer
@@ -125,6 +124,19 @@ $default-pane-header-radius: (4px - 1px)
 .pane
   .block-list
     margin: -1px 0
+
+// responsive panes
++breakpoint(lte_tablet_ls)
+  .pane-group
+    +box-shadow(none)
+    margin: -1px auto 0 auto
+    .pane, .pane__header, .pane__footer
+      +border-radius(0)
+    .pane
+      width: auto
+      display: block
+      margin-bottom: 0
+      border-right-width: 1px
 
 
 //====================================ACCORDIONS

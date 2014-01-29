@@ -1,0 +1,100 @@
+section
+  h2 Tooltip implementation
+  p
+    ' There are two pieces required to implement a successful tooltip:
+    ul style="margin-left: 20px"
+      li
+        ' Add the
+        code .has-tip
+        '  class to your element
+      li
+        ' Add a
+        code "data-tip"
+        '  attribute to your element
+
+  div
+    =code_sample_inline_static
+      a.has-tip href="#" data-tip=".has-tip" SUCH TIPS!
+
+  div
+    a.has-tip href="#" MUCH WARNING
+    ' : You'll get a warning if you forget to add your `data-tip` attribute
+
+  br
+
+  div
+    a.has-tip href="#" data-tip="" SUCH EMPTY (no tip)
+    ' : Don't worry about leaving
+    code "data-tip"
+    '  empty.  It will not show if the attribute is left empty.  This is handy for tooltips on dynamically generated content.
+hr
+
+section
+  h2 Positioning
+  p Class modifiers are an order of magnitude more performant than their data-attr counterparts.  Use these unless it is more communicative to the `data-options` version.
+
+  div
+    a.has-tip.tip--top href="#" data-tip="tip--top" .tip--top
+
+  div
+    a.has-tip.tip--right href="#" data-tip=".tip--right" .tip--right
+
+  div
+    a.has-tip.tip--bottom href="#" data-tip=".tip--bottom" .tip--bottom
+
+  div
+    a.has-tip.tip--left href="#" data-tip=".tip--left" .tip--left
+
+  br
+  div
+    ' Tooltip positions, added by class:
+    =code_sample_inline_static
+      a.has-tip.tip--top href="#" data-tip="tip--top" .tip--top
+
+hr
+
+section
+  h2 Anchoring
+  p Class modifiers are an order of magnitude more performant than their data-attr counterparts.  Use these unless it is more communicative to the `data-options` version.
+
+  div
+    a.has-tip.tip--top.tip--anchor-right href="#" data-tip="tip--anchor-right" .tip--anchor-right
+
+  div
+    a.has-tip.tip--top.tip--anchor-left href="#" data-tip="tip--anchor-left" .tip--anchor-left
+
+  div
+    a.has-tip.tip--bottom.tip--anchor-right href="#" data-tip="tip--anchor-right" .tip--anchor-right
+
+  div
+    a.has-tip.tip--bottom.tip--anchor-left href="#" data-tip="tip--anchor-left" .tip--anchor-left
+
+  br
+  div
+    ' Tooltip positions, added by class:
+    =code_sample_inline_static
+      a.has-tip.tip--top.tip--anchor-right href="#" data-tip="tip--anchor-right" .tip--anchor-right
+
+section
+  h2 Additional uses
+
+  h3 Paragraph
+
+  p
+    a.has-tip.tip--top href="#" data-tip="data-tip-options=top" data-tip-options="top" top
+    '  and
+    a.has-tip.tip--right href="#" data-tip="data-tip-options=right" data-tip-options="right" right
+    '  and
+    a.has-tip.tip--bottom href="#" data-tip="data-tip-options=bottom" data-tip-options="bottom" bottom
+    '  and
+    a.has-tip.tip--left href="#" data-tip="data-tip-options=left" data-tip-options="left" left
+    '  OH, MY!
+
+hr
+
+section
+  h3 TODO:
+  ul style="margin-left: 20px"
+    li IE8 fallback
+    li Add additive 'disable' without regressing the api
+    li moderizr .touch exlusion option

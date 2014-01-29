@@ -1,3 +1,35 @@
+h3 Header
+div style="margin-top: 25px"
+  = interfaces_header do
+    li.divider
+    li
+      a href="#"
+        span.icon.interfaces-services aria-hidden="true"
+        span.btn-label Organization
+    li.divider
+    li
+      a href="#"
+        span.icon.interfaces-resources aria-hidden="true"
+        span.btn-label Applications
+    li.divider
+    li
+      a href="#"
+        span.icon.interfaces-projector aria-hidden="true"
+        span.btn-label Payment Options
+    li.divider
+
+
+  pre.code-sample.code-sample--visible
+    code.language-ruby
+      | = interfaces_header
+          li.divider
+          li
+            a href="#"
+              span.icon.interfaces-services aria-hidden="true"
+              span.btn-label Organization
+          li.divider
+
+
 h3 Footer
 div style="margin-top: 25px"
   = interfaces_footer do
@@ -5,7 +37,7 @@ div style="margin-top: 25px"
 
   pre.code-sample.code-sample--visible
     code.language-ruby
-      | = interfaces do
+      | = interfaces_footer do
           | Designed in CA Copyright 2013
 
 h3 Simple Modal
