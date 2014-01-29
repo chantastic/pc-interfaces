@@ -122,9 +122,14 @@
   +background-image(linear-gradient(top, adjust-color($lighter-gray, $lightness: 6%), adjust-color($lighter-gray, $lightness: 3%)))
   b
     +abs-pos(50%, 50%, auto, auto)
-    margin: -0.5rem -0.4rem auto auto
-    color: adjust-color($light-gray, $lightness: -45%)
-    +font-size(10)
+    margin: -0.4rem -0.5rem auto auto
+    color: adjust-color($light-gray, $lightness: -30%)
+    +font-size(9)
+    line-height: 1
+    &:before
+      font-family: 'interfaces'
+      content: "\e60d"
+
 
 
 
@@ -137,17 +142,22 @@
   position: relative
   z-index: 10000
   white-space: nowrap
+  &:before
+    font-family: 'interfaces'
+    content: "\e601"
+    +abs-pos(50%, 14px, auto, auto)
+    z-index: 1
+    +font-size(14)
+    margin-top: -0.5rem
+    color: adjust-color($base-font-color, $lightness: 30%)
   input
+    position: relative
     height: auto !important
     min-height: 26px
     padding-right: 30px !important
     outline: 0
     &:focus
       +box-shadow(none !important)
-  i
-    +abs-pos(50%, 12px, auto, auto)
-    margin-top: -0.4rem
-    color: adjust-color($base-font-color, $lightness: 30%)
 
 .select2-drop.select2-drop-above .select2-search input
   margin-top: 4px
@@ -179,8 +189,9 @@
     background: transparent
     border-left: none
     filter: none
-    b
-      background-position: -18px 1px
+    b:before
+      font-family: 'interfaces'
+      content: "\e60e"
 
 /* results*/
 
