@@ -30,7 +30,7 @@ section
 hr
 
 section
-  h2 Positioning by class
+  h2 Positioning
   p Class modifiers are an order of magnitude more performant than their data-attr counterparts.  Use these unless it is more communicative to the `data-options` version.
 
   div
@@ -54,25 +54,26 @@ section
 hr
 
 section
-  h2 Position by data-attr
-  p data-* selectors are the slowest of all selectors.  I've added these, for communication sake.  You should only use them when there are VERY few tips an your page AND you feel it better communicates your intent.
+  h2 Anchoring
+  p Class modifiers are an order of magnitude more performant than their data-attr counterparts.  Use these unless it is more communicative to the `data-options` version.
 
   div
-    a.has-tip href="#" data-tip="data-tip-options=top" data-tip-options="top" [data-tip-options="top"]
+    a.has-tip.tip--top.tip--anchor-right href="#" data-tip="tip--anchor-right" .tip--anchor-right
+
   div
-    a.has-tip href="#" data-tip="data-tip-options=right" data-tip-options="right" [data-tip-options="right"]
+    a.has-tip.tip--top.tip--anchor-left href="#" data-tip="tip--anchor-left" .tip--anchor-left
+
   div
-    a.has-tip href="#" data-tip="data-tip-options=bottom" data-tip-options="bottom" [data-tip-options="bottom"]
+    a.has-tip.tip--bottom.tip--anchor-right href="#" data-tip="tip--anchor-right" .tip--anchor-right
+
   div
-    a.has-tip href="#" data-tip="data-tip-options=left" data-tip-options="left" [data-tip-options="left"]
+    a.has-tip.tip--bottom.tip--anchor-left href="#" data-tip="tip--anchor-left" .tip--anchor-left
 
   br
   div
-    ' Tooltip positions, added by data-attr:
+    ' Tooltip positions, added by class:
     =code_sample_inline_static
-      a.has-tip href="#" data-tip="data-tooltip-option=top" data-tip-options="top" "data-tip-options=top"
-
-hr
+      a.has-tip.tip--top.tip--anchor-right href="#" data-tip="tip--anchor-right" .tip--anchor-right
 
 section
   h2 Additional uses
