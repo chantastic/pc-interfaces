@@ -5,7 +5,27 @@
   %body
     .off-canvas-wrap
       .main-wrap
-        = render "layouts/interfaces/partials/header"
+        = interfaces_header do
+          %li.divider
+          %li
+            %a{ :href => "/organization"}
+              %span.icon.interfaces-services{"aria-hidden" => "true"}
+              %span.btn-label
+                Organization
+          %li.divider
+          %li
+            %a{ :href => "/subscriptions"}
+              %span.icon.interfaces-resources{"aria-hidden" => "true"}
+              %span.btn-label
+                Applications
+          %li.divider
+          %li
+            %a{ :href => "/payment_method"}
+              %span.icon.interfaces-projector{"aria-hidden" => "true"}
+              %span.btn-label
+                Payment Options
+          %li.divider
+
         -#content
         .main-content-block.inner-wrap
           %section.main-section

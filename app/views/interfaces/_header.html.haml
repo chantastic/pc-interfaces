@@ -4,7 +4,7 @@
       / Title Area
       .app-switcher-wrap.js-togglehelper
         =# link_to '<span class="icon-accounts-logo" aria-hidden="true"></span>'.html_safe, '/', id: 'logo', class: 'bookmark', :title => "Link to Planning Center Accounts Home", :tabindex => "1"
-        #logo.icon-accounts-logo.bookmark{"aria-hidden" => "true"} 
+        #logo.icon-accounts-logo.bookmark{"aria-hidden" => "true"}
         / - if current_organization.subscribed_apps.any?
         .app-switcher
           .toggle-btn
@@ -44,32 +44,13 @@
       #toggle-topbar.js-droptoggle.menu-icon.show-for-mobile
         %a{href: "#"}
           %span.title Menu
-          %span.interfaces-menu{"aria-hidden" => "true"}                                            
+          %span.interfaces-menu{"aria-hidden" => "true"}
 
     %section.top-bar-section
       / Main Navi Area
       .top-nav-options
         %nav.global-nav.lefty{"role" => "menubar", :title => "Main Site Navigation"}
-          %ul
-            %li.divider
-            %li
-              %a{ :href => "/organization"}
-                %span.icon.interfaces-services{"aria-hidden" => "true"}
-                %span.btn-label
-                  Organization              
-            %li.divider
-            %li
-              %a{ :href => "/subscriptions"}
-                %span.icon.interfaces-resources{"aria-hidden" => "true"}
-                %span.btn-label
-                  Applications
-            %li.divider
-            %li
-              %a{ :href => "/payment_method"}
-                %span.icon.interfaces-projector{"aria-hidden" => "true"}
-                %span.btn-label
-                  Payment Options
-            %li.divider
+          %ul= nav
 
         %div.account-info.righty.js-dropwrap
           %span.avatar
@@ -107,7 +88,7 @@
                     %a.log{href: "http://accounts.pco.dev/logout"}
                       logout
                     %a.unlink{"data-confirm" => "Are you sure you want to unlink these accounts?", href: "http://accounts.pco.dev/unlink"}
-                      %span.outline Unlink 
+                      %span.outline Unlink
                       the following accounts
                   %li.accounts
                     %a.acct{href: "http://accounts.pco.dev/link/new?to=1"}

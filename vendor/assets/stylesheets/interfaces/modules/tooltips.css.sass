@@ -27,7 +27,6 @@ $tip-visible-opacity: 0.8
     &:after
       visibility: hidden
 
-// default
 .has-tip
   position: relative
   line-height: ($tip-font-size + 1)
@@ -78,13 +77,21 @@ $tip-visible-opacity: 0.8
       border-width: $tip-caret-height $tip-caret-height 0 $tip-caret-height
 
 
-  // top, default
-  &.tip--top,
-  &[data-tip-options*=top],
-  &
+  &.tip--top
+  & // default
     &:before,
     &:after
       +translate(50%, -100%)
+
+    &.tip--anchor-right
+      &:before,
+      &:after
+        +translate(10%, -100%)
+
+    &.tip--anchor-left
+      &:before,
+      &:after
+        +translate(90%, -100%)
 
     &:after
       top:    auto
@@ -98,12 +105,20 @@ $tip-visible-opacity: 0.8
       bottom: auto
       left:   auto
 
-  // bottom
-  &.tip--bottom,
-  &[data-tip-options*=bottom]
+  &.tip--bottom
     &:before,
     &:after
       +translate(50%, 100%)
+
+    &.tip--anchor-right
+      &:before,
+      &:after
+        +translate(10%, 100%)
+
+    &.tip--anchor-left
+      &:before,
+      &:after
+        +translate(90%, 100%)
 
     &:after
       top:    0
@@ -118,9 +133,7 @@ $tip-visible-opacity: 0.8
       left:   auto
       border-width: 0 $tip-caret-height $tip-caret-height $tip-caret-height
 
-  // right
-  &.tip--right,
-  &[data-tip-options*=right]
+  &.tip--right
     &:before,
     &:after
       +translate(100%, 0)
@@ -141,9 +154,7 @@ $tip-visible-opacity: 0.8
     &:hover:before
       border-color: transparent $tip-background-color
 
-  // left
-  &.tip--left,
-  &[data-tip-options*=left]
+  &.tip--left
     &:before,
     &:after
       +translate(-100%, 0)
