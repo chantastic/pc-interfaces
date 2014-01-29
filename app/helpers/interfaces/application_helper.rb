@@ -1,5 +1,9 @@
 module Interfaces
   module ApplicationHelper
+    def interfaces_header(&block)
+      render partial: '/interfaces/header', locals: { nav: capture(&block) }
+    end
+
     def interfaces_footer(&block)
       content_node = content_tag :div, capture(&block), class: "content"
 
