@@ -20,10 +20,10 @@ $ =>
 
   ########### FIND AND INIT SELECT BOXES
   $("select").select2 minimumResultsForSearch: 12
-  $(".select2--nosearch").select2 minimumResultsForSearch: 999
+  $(".select2--nosearch").select2 minimumResultsForSearch: -1
 
   ########### INII SELECT 2
-  $("select").select2();
+  # $("select").select2();
 
   ########### ACCORDIONS
   $(document).on "click", ".acc__trigger", (event) ->
