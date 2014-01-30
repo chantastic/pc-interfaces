@@ -20,7 +20,7 @@
       float: left
       > a
         padding: 0 15px
-        height: 50px
+        height: $topbar-height
         &:hover, &.active
           background: adjust-color($base-color, $lightness: -12%, $saturation: -5%)
           .icon
@@ -36,12 +36,12 @@
       border: 0
       clear: none
       width: 0
-      height: 50px
+      height: $topbar-height
       border-left: 1px solid adjust-color($base-color, $lightness: -20%, $saturation: -15%)   
 
     .top-nav-options ul li
       > a
-        line-height: 48px
+        line-height: $topbar-height
       .icon
         position: relative
         top: .5rem
@@ -138,14 +138,14 @@
   .top-bar .top-bar-section .account-info
     position: relative
     width: 65px
-    height: 50px
+    height: $topbar-height
     border-left: 1px solid adjust-color($base-color, $lightness: -20%, $saturation: -15%)    
     .avatar
       display: block
       float: left
       height: 26px
       width: 26px
-      margin: 11px 8px 5px 8px
+      margin: 12px 8px 5px 8px
       background: adjust-color($base-color, $lightness: -5%, $saturation: -25%)
       border: 1px solid adjust-color($base-color, $lightness: -15%, $saturation: -45%)   
       img

@@ -8,11 +8,11 @@
 //=================================================[ TOP BAR ]
 .top-bar
   overflow: visible
-  height: $topbar-height  
+  height: $topbar-height
   margin: 0 auto
   background: $base-color
   min-height: $topbar-height
-  border-bottom: 1px solid adjust-color($base-color, $lightness: -40%, $saturation: -25%)
+  border-bottom: 1px solid adjust-color($base-color, $lightness: -25%, $saturation: -20%)
   ul
     margin: 0
     line-height: inherit
@@ -20,6 +20,9 @@
     height: 0
     overflow: hidden
     background: adjust-color($base-color, $lightness: -20%, $saturation: -48%)
+
+.top-bar__contents
+  border-bottom: 1px solid adjust-color($base-color, $lightness: -20%, $saturation: -90%)
 
 .title-area
   position: relative
