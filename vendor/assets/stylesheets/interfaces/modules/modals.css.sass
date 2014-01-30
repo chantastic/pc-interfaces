@@ -3,7 +3,7 @@
   height: 100%
   width: 100%
   background: $modal-bg-color
-  background: rgba($modal-bg-color, 0.72)
+  background: rgba($modal-bg-color, 0.85)
   z-index: 98
   display: none
   top: 0
@@ -21,7 +21,7 @@
   //if you change the max-width be sure to update the left margin in the mediaquery below
   max-width: 1200px
   background-color: $modal-window-bg-color
-  +border-radius(5px)
+  +border-radius(3px)
   +box-shadow(0 10px 11px -5px rgba(adjust-color($base-color, $lightness: -15%, $saturation: -70%), 0.1), 0 0 10px rgba(adjust-color($base-color, $lightness: -15%, $saturation: -70%), 0.15))
   top: 50px
 
@@ -31,7 +31,6 @@
 .modal__header
   padding: 1.25rem 1.5rem 1.35rem 1.5rem
   +border-top-radius(4px)
-  color: $modal-title-color
   background: $modal-header-color
   border-bottom: solid 1px adjust-color($modal-header-color, $lightness: -10%, $saturation: -5%)
   .close-reveal-modal
@@ -62,8 +61,7 @@
   margin: 0
   +truncate()
   +font-size(19)
-  // color: inherit
-  color: #fff
+  color: $modal-title-color
 
 @media only screen and (min-width: 47.95em)
   .reveal-modal

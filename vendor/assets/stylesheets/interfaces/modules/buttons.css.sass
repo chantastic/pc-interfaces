@@ -28,7 +28,7 @@ $button-border-style: solid
 // +button-variant(black)                 - button modifier with defaults and black text
 // +button-variant(black, pink)           - button modifier with black text and pink background/border
 // +button-variant(black, pick, fuchsia)  - button modifier with black text, pink background, and fuchsia border
-@mixin button-variant($color:white, $background-color:#e6e6e6, $border-color:adjust-color($background-color, $lightness: -10%, $saturation: -5%), $is-link:false)
+@mixin button-variant($color:white, $background-color:#e6e6e6, $border-color:adjust-color($background-color, $lightness: -20%, $saturation: -5%), $is-link:false)
   @if $is-link
 
   @else
@@ -135,6 +135,9 @@ $button-border-style: solid
   &.btn--tiny
     +font-size(10)
     padding: 0.625rem 1.25rem 0.6875rem 1.25rem
+    &.btn--square
+      padding-left: 0.825rem
+      padding-right: 0.825rem
 
   &.btn--micro
     +font-size(10)
@@ -144,6 +147,7 @@ $button-border-style: solid
     padding-right: 0
     padding-left: 0
     width: 100%
+
 
 
   // variants

@@ -37,7 +37,7 @@
     margin-right: 42px
   .select2-choice
     > .select2-chosen
-      margin-right: 26px
+      margin-right: 32px
       display: block
       +truncate()
     abbr
@@ -58,6 +58,14 @@
   .select2-choice abbr:hover
     background-position: right -11px
     cursor: pointer
+
+//smaller in pane headers
+.pane__header .select2-container
+  .select2-choice
+    height: 27px
+    line-height: 26px
+    +font-size(12)
+    border-radius: 3px
 
 .select2-drop-mask
   border: 0
