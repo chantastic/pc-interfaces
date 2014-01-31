@@ -1,10 +1,12 @@
+- icon_name = Rails.application.class.parent_name.underscore.dasherize
+
 .top-bar.js-dropwrap
   .top-bar__contents.clearfix
     .title-area
       / Title Area
       .app-switcher-wrap.js-togglehelper
         =# link_to '<span class="icon-accounts-logo" aria-hidden="true"></span>'.html_safe, '/', id: 'logo', class: 'bookmark', :title => "Link to Planning Center Accounts Home", :tabindex => "1"
-        #logo.icon-accounts-logo.bookmark{"aria-hidden" => "true"}
+        #logo.bookmark{ class: "icon-#{icon_name}-logo", "aria-hidden" => "true"}
         / - if current_organization.subscribed_apps.any?
         .app-switcher
           .toggle-btn
