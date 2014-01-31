@@ -104,6 +104,10 @@ $default-pane-header-radius: ($default-pane-radius - 1px)
   background: adjust-color($lighter-gray, $lightness: 7%)
   +background-image(linear-gradient(top, adjust-color($lighter-gray, $lightness: 7%), adjust-color($lighter-gray, $lightness: 5%)))
   border-top: solid 1px adjust-color($lighter-gray, $lightness: -1%)
+  .btn
+    margin-bottom: 0
+    &.left:first-child
+      margin-left: 0
 
 .pane-title
   margin: 0
