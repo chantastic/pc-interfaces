@@ -1,29 +1,27 @@
 module Interfaces
   module ApplicationHelper
     def interfaces_wrap(&block)
-      render partial: '/interfaces/wrap', locals: { content: capture(&block) }
+      render layout: '/interfaces/wrap', &block
     end
 
     def interfaces_header(&block)
-      render partial: '/interfaces/header', locals: { nav: capture(&block) }
+      render layout: '/interfaces/header', &block
     end
 
     def interfaces_content(&block)
-      render partial: '/interfaces/content', locals: { content: capture(&block) }
+      render layout: '/interfaces/content', &block
     end
 
     def interfaces_main(&block)
-      render partial: '/interfaces/main', locals: { content: capture(&block) }
+      render layout: '/interfaces/main', &block
     end
 
     def interfaces_sidebar(&block)
-      render partial: '/interfaces/sidebar', locals: { content: capture(&block) }
+      render layout: '/interfaces/sidebar', &block
     end
 
-    def interfaces_footer(&block)
-      content_node = content_tag :div, capture(&block), class: "content"
-
-      content_tag :footer, content_node, class: "site-footer", role: "contentinfo"
+    def interfaces_footer(options = {}, &block)
+      render layout: '/interfaces/footer', &block
     end
 
     def modal(modal_id, options = {}, &block)
