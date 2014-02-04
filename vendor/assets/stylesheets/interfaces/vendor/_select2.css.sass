@@ -175,6 +175,9 @@
     outline: none
     border: 1px solid adjust-color($form-color, $lightness: 15%, $saturation: 5%)
     +box-shadow(0 0 8px rgba(adjust-color($form-color, $lightness: 10%, $saturation: -15%), 0.6))
+.pane__header .select2-container-active
+  .select2-choice, .select2-choices
+    +box-shadow(none)    
 
 .select2-dropdown-open
   .select2-choice

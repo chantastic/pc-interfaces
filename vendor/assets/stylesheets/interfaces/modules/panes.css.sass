@@ -1,8 +1,6 @@
 //==================================
 // PANES, WELLS, AND ACCORDIONS
 //==================================
-$default-pane-radius: 3px
-$default-pane-header-radius: ($default-pane-radius - 1px)
 
 %block
   margin-bottom: 20px
@@ -90,9 +88,11 @@ $default-pane-header-radius: ($default-pane-radius - 1px)
     border-top: solid 1px adjust-color($border-color, $lightness: -1%)
     +border-top-radius(0)
 
-  // buttons inside the pane header do not need bottom margins, yo.
-  .btn
+  .btn, input
     margin-bottom: 0
+    +border-radius($default-pane-radius -2px)
+  input:focus
+    +box-shadow(none)
 
 
 .pane__body
