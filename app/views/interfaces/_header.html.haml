@@ -52,7 +52,9 @@
       / Main Navi Area
       .top-nav-options
         %nav.global-nav.lefty{"role" => "menubar", :title => "Main Site Navigation"}
-          %ul= nav
+          %ul
+            %li.divider
+            = nav
 
         %div.account-info.righty.js-dropwrap
           %span.avatar
