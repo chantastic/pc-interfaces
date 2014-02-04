@@ -1,12 +1,15 @@
-$tip-background-color: #111
-$tip-color: #fff
-$tip-font-size: 12px
-$tip-padding: 5px
-$tip-border-radius: 2px
-$tip-z-index: 99
-$tip-caret-height: 6px
-$tip-transition-duration: 0.3s
-$tip-visible-opacity: 0.8
+$tip-background-color:    #111 !default
+$tip-color:               #fff !default
+$tip-font-size:           12px !default
+$tip-padding:             5px  !default
+$tip-border-radius:       2px  !default
+$tip-z-index:             1000 !default
+$tip-transition-duration: 0.3s !default
+$tip-visible-opacity:     0.8  !default
+
+$tip-caret-height: ($tip-font-size / 2)   !default
+$tip-body-offset:  ($tip-font-size * 2)   !default
+$tip-caret-offset: ($tip-font-size * 1.5) !default
 
 // no implementation
 .has-tip:not([data-tip])
@@ -29,7 +32,7 @@ $tip-visible-opacity: 0.8
 
 .has-tip
   position: relative
-  line-height: ($tip-font-size + 1)
+  line-height: ($tip-font-size)
   display: inline-block
 
   &:before,
@@ -43,12 +46,12 @@ $tip-visible-opacity: 0.8
 
     font-size: $tip-font-size
 
-    +transition(opacity $tip-transition-duration ease)
-
   &:before
     content: ""
 
     border-color: $tip-background-color transparent
+    border-style: solid
+    border-width: $tip-caret-height $tip-caret-height 0 $tip-caret-height
 
   &:after
     padding: $tip-padding ($tip-padding * 3)
@@ -56,6 +59,7 @@ $tip-visible-opacity: 0.8
     content: attr(data-tip)
 
     background-color: $tip-background-color
+    color: $tip-color
     white-space: nowrap
     +border-radius($tip-border-radius)
 
@@ -67,75 +71,97 @@ $tip-visible-opacity: 0.8
       visibility: visible
       +opacity($tip-visible-opacity)
 
+
+  &.tip--multiline
     &:after
-      background-color: $tip-background-color
-      color: $tip-color
-
-    &:before
-      border-style: solid
-      border-color: $tip-background-color transparent
-      border-width: $tip-caret-height $tip-caret-height 0 $tip-caret-height
-
+      white-space: normal
+      line-height: ($tip-font-size * 1.5)
+      width: 200px
 
   &.tip--top
   & // default
-    &:before,
+    &:before
+      top: auto
+      right: 50%
+      bottom: 0
+      left: auto
+      +translate(50%, -($tip-caret-offset))
+
     &:after
-      +translate(50%, -100%)
+      top: auto
+      right: 50%
+      bottom: 0
+      left: auto
+      +translate(50%, -($tip-body-offset))
 
     &.tip--anchor-right
       &:before,
       &:after
-        +translate(10%, -100%)
+        right: 10%
 
     &.tip--anchor-left
       &:before,
       &:after
-        +translate(90%, -100%)
+        right: 90%
 
-    &:after
-      top:    auto
-      right:  50%
-      bottom: 0
-      left:   auto
+    &.tip--flow-right
+      &:before
+        +translate(90%, -($tip-caret-offset))
+      &:after
+        +translate(90%, -($tip-body-offset))
 
+    &.tip--flow-left
+      &:before
+        +translate(10%, -($tip-caret-offset))
+      &:after
+        +translate(10%, -($tip-body-offset))
+
+  &.tip--bottom
     &:before
-      top:    -($tip-font-size / 3)
+      top:    0
       right:  50%
       bottom: auto
       left:   auto
+      +translate(50%, $tip-caret-offset)
 
-  &.tip--bottom
-    &:before,
-    &:after
-      +translate(50%, 100%)
-
-    &.tip--anchor-right
-      &:before,
-      &:after
-        +translate(10%, 100%)
-
-    &.tip--anchor-left
-      &:before,
-      &:after
-        +translate(90%, 100%)
+      border-width: 0 $tip-caret-height $tip-caret-height $tip-caret-height
 
     &:after
       top:    0
       right:  50%
       bottom: auto
       left:   auto
+      +translate(50%, $tip-body-offset)
 
-    &:before
-      top:    auto
-      right:  50%
-      bottom: -($tip-font-size / 3)
-      left:   auto
-      border-width: 0 $tip-caret-height $tip-caret-height $tip-caret-height
+    &.tip--anchor-right
+      &:before,
+      &:after
+        right: 10%
+
+    &.tip--anchor-left
+      &:before,
+      &:after
+        right: 90%
+
+    &.tip--flow-right
+      &:before
+        +translate(90%, $tip-caret-offset)
+      &:after
+        +translate(90%, $tip-body-offset)
+
+    &.tip--flow-left
+      &:before
+        +translate(10%, $tip-caret-offset)
+      &:after
+        +translate(10%, $tip-body-offset)
 
   &.tip--right
-    &:before,
-    &:after
+    &:before
+      top:     ($tip-caret-height / 3)
+      right:  -($tip-caret-height)
+      bottom: auto
+      left:   auto
+      border-width: $tip-caret-height $tip-caret-height $tip-caret-height 0
       +translate(100%, 0)
 
     &:after
@@ -143,27 +169,18 @@ $tip-visible-opacity: 0.8
       right:  -($tip-caret-height * 2)
       bottom: auto
       left:   auto
-
-    &:before
-      top:     ($tip-caret-height / 3)
-      right:  -($tip-caret-height)
-      bottom: auto
-      left:   auto
-      border-width: $tip-caret-height $tip-caret-height $tip-caret-height 0
+      +translate(100%, 0)
 
     &:hover:before
       border-color: transparent $tip-background-color
 
   &.tip--left
-    &:before,
-    &:after
-      +translate(-100%, 0)
-
     &:after
       top:    -($tip-caret-height / 2)
       right:  auto
       bottom: auto
       left:   -($tip-caret-height * 2)
+      +translate(-100%, 0)
 
     &:before
       top:    ($tip-caret-height / 3)
@@ -171,6 +188,7 @@ $tip-visible-opacity: 0.8
       bottom: auto
       left:   -($tip-caret-height)
       border-width: $tip-caret-height 0 $tip-caret-height $tip-caret-height
+      +translate(-100%, 0)
 
     &:hover:before
       border-color: transparent $tip-background-color
