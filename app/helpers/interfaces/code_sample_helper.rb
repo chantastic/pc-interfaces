@@ -9,6 +9,14 @@ module Interfaces
       end
     end
 
+    def code_sample_static(&block)
+      html = capture(&block)
+
+      capture do
+        concat code_sample_node_static(html)
+      end
+    end
+
     def code_sample_inline_static(&block)
       html = capture(&block)
 
