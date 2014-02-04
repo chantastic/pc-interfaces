@@ -13,17 +13,16 @@
   visibility: hidden
   display: none
   position: absolute
-  left: 50%
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
   z-index: 99
-  height: auto
-  margin-left: -40%
-  width: 80%
   //if you change the max-width be sure to update the left margin in the mediaquery below
   max-width: 1200px
   background-color: $modal-window-bg-color
   +border-radius(3px)
   +box-shadow(0 10px 11px -5px rgba(adjust-color($base-color, $lightness: -15%, $saturation: -70%), 0.1), 0 0 10px rgba(adjust-color($base-color, $lightness: -15%, $saturation: -70%), 0.15))
-  top: 50px
 
 .modal__header, .modal__footer, .modal__body
   +clearfix
@@ -66,6 +65,12 @@
 @media only screen and (min-width: 47.95em)
   .reveal-modal
     top: 6.25rem
+    left: 50%
+    width: 80%
+    right: auto
+    bottom: auto
+    margin-left: -40%
+    height: auto
     position: fixed
     &.tiny
       margin-left: -15%
