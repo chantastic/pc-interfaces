@@ -24,6 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'high_voltage'
   spec.add_dependency 'sass-rails'
   spec.add_dependency 'slim-rails'
+  spec.add_dependency 'kramdown'
 
   # dependencies for host application
   spec.add_dependency 'select2-rails'
