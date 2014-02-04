@@ -1,3 +1,5 @@
+
+
 .reveal-modal-bg
   position: fixed
   height: 100%
@@ -21,7 +23,7 @@
   //if you change the max-width be sure to update the left margin in the mediaquery below
   max-width: 1200px
   background-color: $modal-window-bg-color
-  +border-radius(3px)
+  +border-radius($modal-radius)
   +box-shadow(0 10px 11px -5px rgba(adjust-color($base-color, $lightness: -15%, $saturation: -70%), 0.1), 0 0 10px rgba(adjust-color($base-color, $lightness: -15%, $saturation: -70%), 0.15))
 
 .modal__header, .modal__footer, .modal__body
@@ -29,7 +31,7 @@
 
 .modal__header
   padding: 1.25rem 1.5rem 1.35rem 1.5rem
-  +border-top-radius(4px)
+  +border-top-radius($modal-child-radius)
   background: $modal-header-color
   border-bottom: solid 1px adjust-color($modal-header-color, $lightness: -10%, $saturation: -5%)
   .close-reveal-modal
@@ -48,7 +50,7 @@
 .modal__footer
   padding: 1rem 1rem 1.1rem 1rem
   text-align: right
-  +border-bottom-radius(4px)
+  +border-bottom-radius($modal-child-radius)
   //background: adjust-color($modal-window-bg-color, $lightness: -3%)
   border-top: solid 1px adjust-color($modal-window-bg-color, $lightness: -10%, $saturation: -5%)
   .btn
