@@ -180,6 +180,13 @@ $button-border-style: solid
       background: none
       border-color: transparent
 
+  &.btn--checkbox
+    input[type=checkbox]
+      display: none
+    &.selected
+      background: $primary-btn-color
+      color: white
+
   &.btn--shadow
     +box-shadow(0 3px 7px -3px rgba(0,0,0,0.7))
 

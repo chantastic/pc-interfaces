@@ -5,7 +5,7 @@
   height: 100%
   width: 100%
   background: $modal-bg-color
-  background: rgba($modal-bg-color, 0.85)
+  background: rgba($modal-bg-color, 0.98)
   z-index: 98
   display: none
   top: 0
@@ -101,3 +101,7 @@
 @media only screen and (min-width: 92.5em)
   .reveal-modal
     margin-left: -600px
+
+@media only screen and (max-width: 48em)
+  .reveal-modal-bg
+    background: white
