@@ -13,9 +13,11 @@ class PCO.AppSwitcher
 
   showAppList: =>
     @node.addClass @options.activeClass
+    false
 
   hideAppList: =>
     @node.removeClass @options.activeClass
+    false
 
   # private
 
