@@ -15,13 +15,31 @@
             .toggle-btn-cover
               %span.interfaces-remove.interfaces-close
             %ul
-              - available_apps = @current_person.organization.subscribed_apps
-              - available_apps.each_with_index do |app, index|
-                %li{ class: [app.name.downcase, (:omega if index + 1 == available_apps)] }
-                  %a{ href: app.url }
+              - if defined? @current_person
+                - available_apps = @current_person.organization.subscribed_apps
+                - available_apps.each_with_index do |app, index|
+                  %li{ class: [app.name.downcase, (:omega if index + 1 == available_apps)] }
+                    %a{ href: app.url }
+                      %span.icon{ "aria-hidden" => "true" }
+                      %em planning center
+                      = app.name
+
+              - else
+                %li.services
+                  %a{ href: "#" }
                     %span.icon{ "aria-hidden" => "true" }
                     %em planning center
-                    = app.name
+                    Services (fake)
+                %li.resources
+                  %a{ href: "#" }
+                    %span.icon{ "aria-hidden" => "true" }
+                    %em planning center
+                    Resources (fake)
+                %li.check-ins
+                  %a{ href: "#" }
+                    %span.icon{ "aria-hidden" => "true" }
+                    %em planning center
+                    Check-ins (fake)
 
       #toggle-sidebar.menu-icon.show-for-mobile
         %a{href: "#"}
