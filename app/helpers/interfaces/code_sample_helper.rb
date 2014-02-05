@@ -45,7 +45,7 @@ module Interfaces
 
     def code_sample_node_static(markup)
       content_tag :div do
-        concat content_tag :pre, content_tag(:code, samplify(markup), class: "language-markup")
+        concat content_tag :pre, content_tag(:code, samplify(markup), class: "language-markup"), class: "code-sample-static"
       end
     end
 
