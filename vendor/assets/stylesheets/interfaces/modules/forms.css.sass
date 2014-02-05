@@ -52,6 +52,7 @@ input[type="checkbox"] + label, input[type="radio"] + label
   margin-right: 0.88889rem
   margin-bottom: 0
   vertical-align: baseline
+  padding-top: 5px
 
 //================================================== Labels
 label
@@ -73,3 +74,11 @@ label.right
   position: relative
   +clearfix
   margin-bottom: 1.25rem
+
+//================================================== Select2 Variations
+.select--small  
+  .select2-container
+    .select2-choice
+      +font-size(12)
+      height: 27px
+      line-height: 26px
