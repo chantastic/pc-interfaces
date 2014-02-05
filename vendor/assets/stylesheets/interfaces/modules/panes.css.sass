@@ -43,7 +43,7 @@
   .pane--split
     +box-shadow(none)
     .pane__header
-      +border-radius(0)  
+      +border-radius(0)
     &:first-of-type .pane__header
       +border-top-left-radius($default-pane-header-radius)
     &:last-of-type .pane__header
@@ -54,6 +54,8 @@
   display: table-cell
   vertical-align: top
   border-right-width: 0
+  &[class*="col--"]
+    float: none
   &:first-of-type
     +border-radius($default-pane-radius 0 0 $default-pane-radius)
     .pane__footer

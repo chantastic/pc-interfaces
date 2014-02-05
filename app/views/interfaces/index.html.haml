@@ -1,20 +1,21 @@
 %h2.section-header Meaty Forms
 %form
-  .form-group
-    %label Input Label
-    %input{placeholder: "Yo Homie. I'm Full width", type: "text"}
-  .form-group
-    .col.col--onethird
+  .row
+    .col
+      %label Input Label
+      %input{placeholder: "Yo Homie. I'm Full width", type: "text"}
+  .row
+    .col.col--third
       %label Input Label
       %input{placeholder: "Yo Homie. I'm 33.33 ad infinitum", type: "text"}
-    .col.col--onethird
+    .col.col--third
       %label Input Label
       %input{placeholder: "Yo Homie. I'm 33.33 ad infinitum", type: "text"}
-    .col.col--onethird
+    .col.col--third
       %label Input Label
       %input{placeholder: "Yo Homie. I'm 33.33 ad infinitum", type: "text"}
 
-  .form-group
+  .row
     .col.col--half
       %label Select2 Box
       %select
@@ -39,23 +40,24 @@
         %option{value: "salami"} Salami
         %option{value: "ham hocks"} Ham Hocks 
 
-  .form-group
-    %label Select2 Multi Select
-    %select{ "multiple" => "" }
-      %option{value: "capicola"} Capicola
-      %option{value: "prosciutto"} Prosciutto
-      %option{value: "kielbasa"} Kielbasa
-      %option{value: "salami"} Salami
-      %option{value: "capicola"} Strip steak
-      %option{value: "prosciutto"} Tenderloin
-      %option{value: "kielbasa"} Venison
-      %option{value: "salami"} Tri-tip
-      %option{value: "capicola"} Sirloin
-      %option{value: "prosciutto"} Bacon
-      %option{value: "kielbasa"} Biltong
-      %option{value: "salami"} Frankfurter
+  .row
+    .col
+      %label Select2 Multi Select
+      %select{ "multiple" => "" }
+        %option{value: "capicola"} Capicola
+        %option{value: "prosciutto"} Prosciutto
+        %option{value: "kielbasa"} Kielbasa
+        %option{value: "salami"} Salami
+        %option{value: "capicola"} Strip steak
+        %option{value: "prosciutto"} Tenderloin
+        %option{value: "kielbasa"} Venison
+        %option{value: "salami"} Tri-tip
+        %option{value: "capicola"} Sirloin
+        %option{value: "prosciutto"} Bacon
+        %option{value: "kielbasa"} Biltong
+        %option{value: "salami"} Frankfurter
 
-  .form-group
+  .row
     .col.col--half
       %label Choose Your Favorite
       %input#meaty1{name: "meaty", type: "radio", value: "Pastrami"}
@@ -70,9 +72,10 @@
       %input#checkbox2{type: "checkbox"}
       %label{for: "checkbox2"} Checkbox 2
   
-  .form-group
-    %label Textarea Label
-    %textarea{placeholder: "Yo Homie. I'm Full width"}
+  .row
+    .col
+      %label Textarea Label
+      %textarea{placeholder: "Yo Homie. I'm Full width"}
 
 .hr
 
@@ -150,58 +153,59 @@
       %td ???
       %td ++++
 .page-section      
-  .col.col--half
-    %h3.section-sub-header Table with Zebra Striping
-    .table-responsive
-      %table.table.table-striped
-        %thead
-          %tr
-            %th Rank
-            %th Cut Name
-            %th Animal
-            %th Flavor Index
-        %tbody
-          %tr
-            %td 1
-            %td Prosciutto
-            %td Swine
-            %td +++++
-          %tr
-            %td 2
-            %td Sirloin
-            %td Bovine
-            %td +++++      
-          %tr
-            %td 3
-            %td Salami
-            %td ???
-            %td ++++  
-  .col.col--half
-    %h3.section-sub-header Bordered, Hoverable, and TH .th-fill
-    .table-responsive
-      %table.table-th-fill.table.table-bordered.table-hover
-        %thead
-          %tr
-            %th Rank
-            %th Cut Name
-            %th Animal
-            %th Flavor Index
-        %tbody
-          %tr
-            %td 1
-            %td Prosciutto
-            %td Swine
-            %td +++++
-          %tr
-            %td 2
-            %td Sirloin
-            %td Bovine
-            %td +++++      
-          %tr
-            %td 3
-            %td Salami
-            %td ???
-            %td ++++    
+  .row
+    .col.col--half
+      %h3.section-sub-header Table with Zebra Striping
+      .table-responsive
+        %table.table.table-striped
+          %thead
+            %tr
+              %th Rank
+              %th Cut Name
+              %th Animal
+              %th Flavor Index
+          %tbody
+            %tr
+              %td 1
+              %td Prosciutto
+              %td Swine
+              %td +++++
+            %tr
+              %td 2
+              %td Sirloin
+              %td Bovine
+              %td +++++      
+            %tr
+              %td 3
+              %td Salami
+              %td ???
+              %td ++++  
+    .col.col--half
+      %h3.section-sub-header Bordered, Hoverable, and TH .th-fill
+      .table-responsive
+        %table.table-th-fill.table.table-bordered.table-hover
+          %thead
+            %tr
+              %th Rank
+              %th Cut Name
+              %th Animal
+              %th Flavor Index
+          %tbody
+            %tr
+              %td 1
+              %td Prosciutto
+              %td Swine
+              %td +++++
+            %tr
+              %td 2
+              %td Sirloin
+              %td Bovine
+              %td +++++      
+            %tr
+              %td 3
+              %td Salami
+              %td ???
+              %td ++++    
 %h3.section-sub-header Add All the Styles
 %table.table-th-fill.table.table-bordered.table-striped.table-hover.table-radius{"cellspacing" => "0"}
   %thead
