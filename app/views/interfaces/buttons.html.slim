@@ -45,20 +45,6 @@ h3.section-header Button Sizes
 = code_sample do
   a.btn.btn--primary.btn--expand href="#" expand
 
-h3.section-header Button Checkboxes
-p 
-  | In some cases, you want a checkbox to not look like a checkbox. You want it to look like a button with a checked and unchecked state.  Here. 
-  em You'll need the js in place for adding a 'selected' class to the <code>label</code> element. 
-= code_sample do
-  ul.btn-group
-    li
-      label.btn.btn--small.btn--checkbox.selected for="cool_checkbox"
-        input type="checkbox" name="cool_checkbox" id="cool_checkbox"
-        | I am cool
-    li
-      label.btn.btn--small.btn--checkbox for="uncool_checkbox"
-        input type="checkbox" name="uncool_checkbox" id="uncool_checkbox"
-        | I am uncool
 
 h3.section-header Button Groups
 = code_sample do
@@ -79,6 +65,20 @@ h3.section-header Button Groups
     li
       a.btn.btn--success href="#" Button 3
 
+h3.section-header Button Checkboxes
+p 
+  | In some cases, you want a checkbox to not look like a checkbox. You want it to look like a button with a checked and unchecked state.  Here. 
+  em You'll need the js in place for adding a 'selected' class to the <code>label</code> element. 
+= code_sample do
+  ul.btn-group
+    li
+      label.btn.btn--small.btn--checkbox.selected for="cool_checkbox"
+        input type="checkbox" name="cool_checkbox" id="cool_checkbox"
+        | I am cool
+    li
+      label.btn.btn--small.btn--checkbox for="uncool_checkbox"
+        input type="checkbox" name="uncool_checkbox" id="uncool_checkbox"
+        | I am uncool
 / pending re-implementation
 
 /*h3.section-header Split Button / Dropdown*/
