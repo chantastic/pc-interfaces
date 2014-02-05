@@ -51,3 +51,9 @@ $ =>
     e.preventDefault(); e.stopPropagation()
 
     $(this).siblings('.code-sample').toggle()
+
+  $('.btn--checkbox input[type=checkbox]').on 'change', () ->
+    if $(@).is ':checked'
+      $(@).parent().addClass('selected')
+    else
+      $(@).parent().removeClass('selected')
