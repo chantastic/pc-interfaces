@@ -50,6 +50,12 @@ If that's good enough, you're done!
 But... that's probably not good enough.  Chances are, you're going to need to
 customize a bit.  To start customizing Interfaces, keep reading...
 
+To get the stylesheet mounted to your app.  Throw this into your routes:
+
+```
+mount Interfaces::Engine => '/styleguide' if Rails.env.development?
+```
+
 ### Overrides in your application
 
 Interfaces is intended to built for extensibility.  You should be able to easily
