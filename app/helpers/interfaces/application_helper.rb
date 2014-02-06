@@ -1,5 +1,9 @@
 module Interfaces
   module ApplicationHelper
+    def interfaces(&block)
+      render layout: '/interfaces/interfaces', &block
+    end
+
     def interfaces_wrap(&block)
       render layout: '/interfaces/wrap', &block
     end
