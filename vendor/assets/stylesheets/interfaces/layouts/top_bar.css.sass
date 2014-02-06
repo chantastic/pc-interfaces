@@ -181,10 +181,12 @@
   text-align: center
   &#toggle-topbar
     right: 0
-    border-left: 1px solid adjust-color($base-color, $lightness: -20%, $saturation: -15%)   
+    border-left: 1px solid adjust-color($base-color, $lightness: -20%, $saturation: -15%)
   &#toggle-sidebar
     left: 0
     border-right: 1px solid adjust-color($base-color, $lightness: -20%, $saturation: -15%)
+    .interfaces-cog
+      +transition(all .3s linear)
   .title
     height: 1
     width: 1
