@@ -20,7 +20,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'jquery-rails'
   spec.add_dependency 'coffee-rails'
   spec.add_dependency 'compass-rails'
-  spec.add_dependency 'haml-rails'
   spec.add_dependency 'high_voltage'
   spec.add_dependency 'sass-rails'
   spec.add_dependency 'slim-rails'
