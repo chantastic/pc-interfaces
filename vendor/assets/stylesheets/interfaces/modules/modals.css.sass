@@ -69,6 +69,7 @@
   +truncate()
   +font-size(19)
   color: $modal-title-color
+  text-shadow: 0 0 2px rgba(adjust-color($modal-header-color, $lightness: -10%, $saturation: -5%), .5)
 
 @media only screen and (min-width: 47.95em)
   .reveal-modal
@@ -97,13 +98,13 @@
       width: 95%
   .modal__body
     max-height: 470px
-    overflow-y: scroll
+    overflow-y: auto
     overflow-x: hidden
 
 
 @media only screen and (min-width: 92.5em)
   .reveal-modal
-    margin-left: -600px
+    margin-left: -600px //compensates for having a max-width
 
 @media only screen and (max-width: 48em)
   .reveal-modal-bg
