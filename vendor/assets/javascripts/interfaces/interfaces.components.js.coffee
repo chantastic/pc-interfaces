@@ -11,13 +11,13 @@ class PCO.AppSwitcher
     showTriggerSelector: '.toggle-btn'
     hideTriggerSelector: '.menu-wrap'
 
-  showAppList: =>
+  showAppList: (e) =>
+    e.stopEventPropegation
     @node.addClass @options.activeClass
-    false
 
-  hideAppList: =>
+  hideAppList: (e) =>
+    e.stopEventPropegation
     @node.removeClass @options.activeClass
-    false
 
   # private
 
