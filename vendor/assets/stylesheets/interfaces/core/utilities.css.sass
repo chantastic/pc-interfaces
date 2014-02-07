@@ -86,3 +86,21 @@
   position: absolute
   height: 0
   width: 0
+
+
+@mixin media-object($first_position:'.media-item1', $second_position:'.media-item2', $margin: 10px, $position: left, $formatting-context: 'overflow')
+  #{unquote($second_position)}
+    @if $formatting-context == 'overflow'
+      overflow: hidden
+    @else
+      display: table-cell
+      width: 10000px
+      *width: auto
+      *zoom: 1
+
+  #{unquote($first_position)}
+    float: $position
+    img
+      display: block
+    @if $margin > 0
+      margin-#{opposite-position($position)}: $margin
