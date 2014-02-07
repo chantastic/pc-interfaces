@@ -6,7 +6,6 @@ PATH
       compass-rails
       es5-shim-rails
       foundation-rails
-      haml-rails
       high_voltage
       html5shiv-rails
       jquery-rails
@@ -71,13 +70,6 @@ GEM
       railties (>= 3.1.0)
       sass (>= 3.2.0)
     fssm (0.2.10)
-    haml (4.0.5)
-      tilt
-    haml-rails (0.5.3)
-      actionpack (>= 4.0.1)
-      activesupport (>= 4.0.1)
-      haml (>= 3.1, < 5.0)
-      railties (>= 4.0.1)
     high_voltage (2.1.0)
     hike (1.2.3)
     html5shiv-rails (0.0.2)
