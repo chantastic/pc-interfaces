@@ -4,12 +4,11 @@
   position: fixed
   height: 100%
   width: 100%
-  background: $modal-bg-color
-  background: rgba($modal-bg-color, 0.98)
   z-index: 98
   display: none
   top: 0
   left: 0
+  background: white
 
 .reveal-modal
   visibility: hidden
@@ -21,7 +20,7 @@
   left: 0
   z-index: 99
   //if you change the max-width be sure to update the left margin in the mediaquery below
-  max-width: 1200px
+  max-width: 900px
   background-color: $modal-window-bg-color
   +border-radius($modal-radius)
   +box-shadow(0 10px 11px -5px rgba(adjust-color($base-color, $lightness: -15%, $saturation: -70%), 0.1), 0 0 10px rgba(adjust-color($base-color, $lightness: -15%, $saturation: -70%), 0.15))
@@ -72,6 +71,9 @@
   text-shadow: 0 0 2px rgba(adjust-color($modal-header-color, $lightness: -10%, $saturation: -5%), .5)
 
 @media only screen and (min-width: 47.95em)
+  .reveal-modal-bg
+    background: $modal-bg-color
+    background: rgba($modal-bg-color, 0.98)
   .reveal-modal
     top: 6.25rem
     left: 50%
@@ -81,18 +83,9 @@
     margin-left: -40%
     height: auto
     position: fixed
-    &.tiny
-      margin-left: -15%
-      width: 30%
     &.small
-      margin-left: -20%
-      width: 40%
-    &.medium
-      margin-left: -30%
-      width: 60%
-    &.large
-      margin-left: -35%
-      width: 70%
+      margin-left: -337px
+      width: 674px
     &.xlarge
       margin-left: -47.5%
       width: 95%
@@ -104,8 +97,4 @@
 
 @media only screen and (min-width: 92.5em)
   .reveal-modal
-    margin-left: -600px //compensates for having a max-width
-
-@media only screen and (max-width: 48em)
-  .reveal-modal-bg
-    background: white
+    margin-left: -450px //compensates for having a max-width
