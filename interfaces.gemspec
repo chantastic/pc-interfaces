@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
 
   # dependencies for host application
   spec.add_dependency 'select2-rails'
-  spec.add_dependency 'foundation-rails'
+  spec.add_dependency 'foundation-rails', '~> 5.0.3'
   spec.add_dependency 'es5-shim-rails'
   spec.add_dependency 'html5shiv-rails'
   spec.add_dependency 'selectivizr-rails'
