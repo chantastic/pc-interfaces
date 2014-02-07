@@ -11,16 +11,13 @@
   &:last-child
     margin-bottom: 0
 
-.modal__body .row 
-  margin-left: 0
-  margin-right: 0
+@media (max-width: 47.95em) // < 768 :: palm--
   .col
-    &:first-child
+    &[class*=palm--]
       padding-left: 0
-    &:last-child
+    &[class*=palm--]:last-child
       padding-right: 0
 
-@media (max-width: 47.95em) // < 768 :: palm--
   .palm--hide
     display: none !important
 
@@ -77,6 +74,12 @@
     width: 80%
 
 @media (min-width: 47.95em) and (max-width: 64em) // > 767 & < 1024 :: tab--
+  .col
+    &[class*=tab--]
+      padding-left: 0
+    &[class*=tab--]:last-child
+      padding-right: 0
+
   .tab--full
     width: 100%
     padding-left: 0
