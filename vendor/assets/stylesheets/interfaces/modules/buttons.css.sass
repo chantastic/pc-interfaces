@@ -181,7 +181,9 @@ $button-border-style: solid
       border-color: transparent
 
   &.btn--checkbox
-    input[type=checkbox]
+    border-color: darken($border-color, 40)
+    input[type=checkbox],
+    input[type=radio]
       display: none
     &.selected
       background: $selected-btn-color

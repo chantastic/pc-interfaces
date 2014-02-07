@@ -5,7 +5,7 @@ PATH
       coffee-rails
       compass-rails
       es5-shim-rails
-      foundation-rails
+      foundation-rails (~> 5.0.3)
       high_voltage
       html5shiv-rails
       jquery-rails
