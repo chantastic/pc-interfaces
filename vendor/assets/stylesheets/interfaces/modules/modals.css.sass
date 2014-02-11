@@ -19,8 +19,6 @@
   bottom: 0
   left: 0
   z-index: 99
-  //if you change the max-width be sure to update the left margin in the mediaquery below
-  max-width: 900px
   background-color: $modal-window-bg-color
   +border-radius($modal-radius)
   +box-shadow(0 10px 11px -5px rgba(adjust-color($base-color, $lightness: -15%, $saturation: -70%), 0.1), 0 0 10px rgba(adjust-color($base-color, $lightness: -15%, $saturation: -70%), 0.15))
@@ -77,9 +75,9 @@
   .reveal-modal
     top: 6.25rem
     left: 50%
-    width: 80%
     right: auto
     bottom: auto
+    width: 80%
     margin-left: -40%
     height: auto
     position: fixed
@@ -91,10 +89,12 @@
     overflow-y: auto
     overflow-x: hidden
 
-
+@media only screen and (min-width: 61.25em)
+  .reveal-modal
+    max-width: 900px
+    margin-left: -450px
 @media only screen and (min-width: 92.5em)
   .reveal-modal
-    margin-left: -450px //compensates for having a max-width
     &.xlarge
       margin-left: -600px
       max-width: 1200px
