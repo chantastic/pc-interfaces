@@ -61,13 +61,13 @@ div.top-bar.js-dropwrap
 
         div.account-info.righty.js-dropwrap
           span.avatar
-            - if @current_person.avatar_url.nil?
-              a.photo href="/people/1"
-                img alt="Missing" height="24" src="https://www.planningcenteronline.com/photos/icon/missing.png" width="24"
-
-            - else
+            - if @current_person
               span.photo
                 img alt="Missing" height="24" src="#{@current_person.avatar_url}" width="24"
+
+            - else
+              a.photo href="/people/1"
+                img alt="Missing" height="24" src="https://www.planningcenteronline.com/photos/icon/missing.png" width="24"
 
           div#toggle-account-details.js-droptoggle
             span.interfaces-caret aria-hidden="true"
