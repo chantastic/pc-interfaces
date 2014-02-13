@@ -1,0 +1,17 @@
+= javascript_include_tag "//mct-helpdesk.herokuapp.com/embed.js"
+
+- app_name = Rails.application.class.parent_name.underscore.dasherize
+
+javascript:
+  if ("#{app_name}" === "account-center") {
+    Helpdesk.appName = "Accounts";
+    Helpdesk.accountCenterUserId = "#{@current_person.try(:id) or ''}";
+    Helpdesk.accountCenterOrganizationId = "#{@current_person.try(:organization_id) or ''}";
+
+    $('#jsLaunchHelpdesk').on('click', function() {
+      Helpdesk.load()
+      return false
+    });
+  } else {
+    console.warn('The interfaces_helpdesk helpr has not been implemented in this app. See `app/views/intefaces/_helpdesk.slim` in Interfaces');
+  }

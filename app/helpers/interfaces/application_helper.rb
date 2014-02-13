@@ -24,6 +24,10 @@ module Interfaces
       render layout: '/interfaces/sidebar', &block
     end
 
+    def interfaces_helpdesk
+      render partial: '/interfaces/helpdesk'
+    end
+
     def interfaces_footer(options = {}, &block)
       render layout: '/interfaces/footer', &block
     end
