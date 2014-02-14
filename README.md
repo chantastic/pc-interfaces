@@ -1,34 +1,34 @@
 ## Intro
 
-Interfaces is a white-label css framework for Planning Center Online applications.
-The goal is to abstract styles and components, used across all PCO apps, into an
-easily configurable library.
+Interfaces is a white-label css framework for Planning Center Online app. Here
+you'll find all the common components you'll need to build the next great PCO
+app!
 
 ## Installation
 
-Interfaces is a private gem, which is how it should be used in your app.
-
-Include the gem in your Gemfile:
+To start using Intterfaces in you app, include the gem in your Gemfile:
 
 ```ruby
 gem 'interfaces', git: 'git@github.com:ministrycentered/interfaces.git'
 ```
 
-If you're actively developing Interfaces, alongside your app, and you have a local
-copy of Interfaces, you should use this instead:
+Optionally, you may use a local path when developing Interfaces alongside your
+app.
+
+**Be careful not to deploy your app with the local gem path**
 
 ```ruby
 gem 'interfaces', path: '~/code/interfaces'
 ```
 
-**If committed, this will do some nasty things.**  
-In development, this allows you to see changes to Interfaces instantly without the commit, push,
-re-bundle, powder restart rain-dance.
-
 ## Usage
 
-Usage is pretty straight forward.  Once included in you Gemfile, simply add the
-following lines to your corresponding manifest files:
+Using Interfaces can be quite straight forward.  There are a number of helpers
+that get you
+
+### Requiring Assets
+
+Once included in you Gemfile, simply add the following lines to your corresponding manifest files:
 
 ```css
 /*  application.css
@@ -40,37 +40,95 @@ following lines to your corresponding manifest files:
 //= require interfaces/interfaces
 ```
 
-This will make all of the out-of-the-box styles and interaction available in
-your app.  Keep in mind that this is the firehose approach.  You're getting
-everything.  If you'd like to keep lean, you can identify only the modules you
-need and include those.  e.g. require interfaces/core/variables
+This will provide you with out-of-the-box Interfaces styles, scripts, shims,
+libraries, and components.
 
-If that's good enough, you're done!
+### For The More Conservative
 
-But... that's probably not good enough.  Chances are, you're going to need to
-customize a bit.  To start customizing Interfaces, keep reading...
+Requiring everything is a nice way to get started quickly. But it's a pretty heavy operation.
 
-To get the stylesheet mounted to your app.  Throw this into your routes:
+Interfaces is designed to be used as minimally as you like.
+
+You may include any single file stylesheet or script into your file like so:
+
+```css
+/*  application.css
+ *= require interfaces/modules/tooltips
+ *= require interfaces/core/grid
+```
+
+For a comprehensive list of the available libraries, checkout the
+[vendor/assets](https://github.com/ministrycentered/interfaces/tree/master/vendor/assets/)
+directory.
+
+### Adding Layout
+
+As with assets, there are to ways of getting a layout in your application.
+
+At first, you may like to just scaffald out the complete look of a new
+application.  For that, you'd open up `layouts/application.html.erb` file and
+wrap the `interfaces` block helper around your content `yield`.
+
+```erb
+<%= interfaces do %>
+  <%= yield %>
+<% end %>
+```
+
+#### Full Layout Control
+
+Once you need more than just the basic layout, you'll need to be a little more
+verbose in your template.
+
+_(We're working on a more elegent solution to this for future versions)_
+
+For this, you'll want to wrap your `<%= yield %>` tag like so:
+
+```erb
+<%= interfaces_wrap do %>
+  <%= interfaces_header do %>
+    <%# navagation list items here %>
+  <% end %>
+
+  <%= interfaces_content do %>
+    <%= interfaces_sidebar do %>
+      <%# sidebar content here %>
+    <% end %>
+
+    <%= interfaces_main do %>
+      <%= yield %>
+    <% end %>
+
+  <% end %>
+<% end %>
+
+<%= interfaces_footer do %>
+  Designed in CA Copyright 2013
+<% end %>
+```
+
+## Styleguides
+
+There is a guide available for implementation of all the Interfaces components.
+Adding it your app is easy, simyly add this line to your `config/routes.rb` file:
 
 ```
 mount Interfaces::Engine => '/styleguide' if Rails.env.development?
 ```
 
-### Overrides in your application
+## Application Specific Styles
 
-Interfaces is intended to built for extensibility.  You should be able to easily
-customize Interfaces with the colors and styles of your app with a single
-file.
+Interfaces is intended to be extended.  Apps that look the same are not
+interesting.
 
-Configuring everything is a little tenuous.  So, let's get
-started.
+Configuring your application styles takes a little setup.  So, hold on as I walk
+you through it.
 
-#### Create a new sass file
+#### Create an intermediate sass file
 
-To perform the magic we're about to perform, we need a new sass file.
-Personally, I use the name of my app with a '-interfaces' suffix:
+First, we need a new sass file.
 
-```$touch app/assets/stylesheets/my-special-flower-interfaces.css.sass```
+```$touch app/assets/stylesheets/myapp_interfaces.css.sass```
 
 In it, were going to add an import declaration to get Interfaces:
 
@@ -82,10 +140,10 @@ In it, were going to add an import declaration to get Interfaces:
 
 Now you have Interfaces, but how do you customize it?  Well, we're going to
 do something pretty strange.  We're going to add our Sass override variables
-*ABOVE* Interfaces:
+*ABOVE* our interfaces `import`:
 
 ```sass
-// overrides
+// new overrides
 $base-color: #725878
 
 @import interfaces/interfaces
@@ -93,29 +151,26 @@ $base-color: #725878
 
 Oh snap!  Now things are purple — MUCH ROYAL!
 
-[Look
-here](https://github.com/ministrycentered/interfaces/blob/master/vendor/assets/stylesheets/interfaces/core/_variables.css.sass) for all the variables currently available.
+You can grab all the application variables available [
+here](https://github.com/ministrycentered/interfaces/blob/master/vendor/assets/stylesheets/interfaces/core/_variables.css.sass).
 
 ### Completion
 
-Now, as Bob the Builder&reg; would remind us, the third step is "COMPLETION."
-Our code above isn't very good.  Let's give it a proper home:
+We can leave the style variable there but it's a little sloppy.  Let's throw
+them in another file.  The current convention is `{app_name}_variables`.
 
-```$touch app/assets/stylesheets/my-special-flower.css.sass```
-
-I just name it after my my project.
+```$touch app/assets/stylesheets/myapp_variables.css.sass```
 
 Now update your manifest file
 
 ```sass
-// overrides
 @import my-special-flower
 @import interfaces/interfaces
 ```
 
-Great job!  Bob would be proud!
+Great job!  Bob the Builder would be proud!
 
-#### Ummm, I'm having trouble...
+## Ummm, I'm having trouble...
 
 This setup assumes that your App is using Sprockets and your `application.css`
 has something like this:
@@ -142,13 +197,13 @@ behaves just a normal Rails app would.  However, it's not in the root of your
 project file.  Because of that, there are a few extra steps you need to take
 when developing for Interfaces.
 
-#### Running Rails generators and Rake tasks
+### Running Rails generators and Rake tasks
 
 To run Rails generators and rake tasks, for the dummy rails app, you'll need to
 run them from `./test/dummy`.  Running them from the Interfaces root directory
 will result in an error.
 
-#### Powder Link
+### Powder Link
 
 You may still use Powder/Pow to link the dummy rails app.
 
