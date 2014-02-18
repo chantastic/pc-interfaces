@@ -86,7 +86,7 @@ div.top-bar.js-dropwrap
                   | First Church Of Carlsbad (Fake)
 
             ul.utilities
-              - if @current_person.organization_id == 1
+              - if @current_person and @current_person.organization_id == 1
                 li
                   a href="/administration"
                     span.interfaces-admin
