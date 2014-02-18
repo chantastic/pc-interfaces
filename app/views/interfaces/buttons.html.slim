@@ -1,84 +1,125 @@
-h1.page-heading Sew Buttons
+h1 Sew Buttons
+hr
 
-h3.section-header Button Styles
-= code_sample do
-  a.btn href="#" default
-  a.btn.btn--primary href="#" primary
-  a.btn.btn--secondary href="#" secondary
-  a.btn.btn--success href="#" success
-  a.btn.btn--danger href="#" danger
-  a.btn.btn--link href="#" link
+section
+  markdown:
+    ## Basics [#](#basics)
+    {: #basics}
 
-= code_sample do
-  a.btn disabled="disabled" href="#" default
-  a.btn.btn--primary disabled="disabled" href="#" primary
-  a.btn.btn--secondary disabled="disabled" href="#" secondary
-  a.btn.btn--success disabled="disabled" href="#" success
-  a.btn.btn--danger disabled="disabled" href="#" danger
-  a.btn.btn--link disabled="disabled" href="#" link
+    There is only one thing required to give anchers and buttns *button* styling:
 
+    {: .pco-demo-list}
+    * Add the class `btn` to your element
 
-h3.section-header Button Styles (outline)
-= code_sample do
-  a.btn.btn--outline.btn--primary href="#" primary
-  a.btn.btn--outline.btn--secondary href="#" secondary
-  a.btn.btn--outline.btn--success href="#" success
-  a.btn.btn--outline.btn--danger href="#" danger
-  a.btn.btn--outline.btn--link href="#" link
+  =code_sample
+    a.btn href="#" Click Me!
 
-= code_sample do
-  a.btn.btn--outline.btn--primary disabled="disabled" href="#" primary
-  a.btn.btn--outline.btn--secondary disabled="disabled" href="#" secondary
-  a.btn.btn--outline.btn--success disabled="disabled" href="#" success
-  a.btn.btn--outline.btn--danger disabled="disabled" href="#" danger
-  a.btn.btn--outline.btn--link disabled="disabled" href="#" link
+  markdown:
+    You may then use modifying classes to change the characteristics of your button:
 
+  =code_sample
+    a.btn.btn--danger href="#" WARNING!
 
-h3.section-header Button Sizes
-= code_sample do
-  a.btn.btn--primary.btn--large href="#" large
-  a.btn.btn--primary href="#" (default)
-  a.btn.btn--primary.btn--small href="#" small
-  a.btn.btn--primary.btn--tiny href="#" tiny
-  a.btn.btn--primary.btn--micro href="#" micro
+  markdown:
+    Disabling a button with the `disabled` attribute will provide you a disabled look.
 
-= code_sample do
-  a.btn.btn--primary.btn--expand href="#" expand
+  = code_sample do
+    a.btn disabled="disabled" href="#" default
 
+hr
 
-h3.section-header Button Groups
-= code_sample do
-  ul.btn-group
-    li
-      a.btn href="#" Button 1
-    li
-      a.btn href="#" Button 2
-    li
-      a.btn href="#" Button 3
+section
+  markdown:
+    ## Variants [#](#variants)
+    {: #variants}
 
-= code_sample do
-  ul.btn-group
-    li
-      a.btn.btn--success href="#" Button 1
-    li
-      a.btn.btn--success href="#" Button 2
-    li
-      a.btn.btn--success href="#" Button 3
+    You have *five* button variants available to you through these classes:
 
-h3.section-header Button Checkboxes
-p 
-  | In some cases, you want a checkbox to not look like a checkbox. You want it to look like a button with a checked and unchecked state.  Here. 
-  em You'll need the js in place for adding a 'selected' class to the <code>label</code> element. 
-= code_sample do
-  ul.btn-group
-    li
-      label.btn.btn--small.btn--checkbox.selected for="cool_checkbox"
-        input type="checkbox" name="cool_checkbox" id="cool_checkbox"
-        | I am cool
-    li
-      label.btn.btn--small.btn--checkbox for="uncool_checkbox"
-        input type="checkbox" name="uncool_checkbox" id="uncool_checkbox"
-        | I am uncool
+    {: .pco-demo-list}
+    * `btn--primary`
+    * `btn--secondary`
+    * `btn--success`
+    * `btn--danger`
+    * `btn--link`
+
+  = code_sample do
+    a.btn href="#" default
+    a.btn.btn--primary href="#" primary
+    a.btn.btn--secondary href="#" secondary
+    a.btn.btn--success href="#" success
+    a.btn.btn--danger href="#" danger
+    a.btn.btn--link href="#" link
+
+hr
+
+section
+  markdown:
+    ## Outline [#](#outline)
+    {: #outline}
+  = code_sample do
+    a.btn.btn--outline href="#" default
+    a.btn.btn--outline.btn--primary href="#" primary
+    a.btn.btn--outline.btn--secondary href="#" secondary
+    a.btn.btn--outline.btn--success href="#" success
+    a.btn.btn--outline.btn--danger href="#" danger
+    a.btn.btn--outline.btn--link href="#" link
+
+hr
+
+section
+  markdown:
+    ## Size [#](#size)
+    {: #size}
+
+  h3.section-header Button Sizes
+  = code_sample do
+    a.btn.btn--primary.btn--large href="#" large
+    a.btn.btn--primary href="#" (default)
+    a.btn.btn--primary.btn--small href="#" small
+    a.btn.btn--primary.btn--tiny href="#" tiny
+    a.btn.btn--primary.btn--micro href="#" micro
+    a.btn.btn--primary.btn--expand href="#" expand
+
+hr
+
+section
+  markdown:
+    ## Groups [#](#groups)
+    {: #groups}
+
+    Groups allouw you to cobine many related buttons into a single interface element.
+
+  = code_sample do
+    ul.btn-group
+      li
+        a.btn href="#" One
+      li
+        a.btn href="#" Two
+      li
+        a.btn href="#" Three
+
+hr
+
+section
+  markdown:
+    ## Checkboxes [#](#checkboxes)
+    {: #checkboxes}
+
+    In some cases, you want a checkbox to not look like a checkbox. You want it to look like a button with a checked and unchecked state.  Here.
+
+    *You'll need the js in place for adding a `selected` class to the `label` element.*
+
+  = code_sample do
+    ul.btn-group
+      li
+        label.btn.btn--small.btn--checkbox.selected for="cool_checkbox"
+          input type="checkbox" name="cool_checkbox" id="cool_checkbox"
+          | I am cool
+      li
+        label.btn.btn--small.btn--checkbox for="uncool_checkbox"
+          input type="checkbox" name="uncool_checkbox" id="uncool_checkbox"
+          | I am uncool
+
 / pending re-implementation
 
 /*h3.section-header Split Button / Dropdown*/

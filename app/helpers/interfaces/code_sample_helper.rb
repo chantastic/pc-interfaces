@@ -5,6 +5,15 @@ module Interfaces
 
       capture do
         concat pass_through_node(html)
+        concat code_sample_node_static(html)
+      end
+    end
+
+    def code_sample_toggle(&block)
+      html = capture(&block)
+
+      capture do
+        concat pass_through_node(html)
         concat code_sample_node(html)
       end
     end
