@@ -107,3 +107,29 @@
     &.xlarge
       margin-left: -600px
       max-width: 1200px
+
+//WELLS AND OTHER LAYOUT COMPONENTS FOR MODALS
+.modal-well
+  +clearfix
+  +border-radius(2px)
+  background: #fff
+  padding: 2rem
+  border: 1px solid adjust-color($sidebar-bg-color, $lightness: -5%, $saturation: -10%)
+  p
+    padding: 0
+    &:last-child
+      margin: 0
+  .col:first-of-type
+    padding-left: 0
+  .col:last-of-type
+    padding-right: 0
+  &.push-top
+    margin-top: 1.5rem
+
+.modal-section--subtle
+  background: adjust-color($sidebar-bg-color, $lightness: 1%, $saturation: -10%)
+  padding: .75rem
+  border-radius: 3px
+
+.reveal-modal .blank-state
+  margin: 0

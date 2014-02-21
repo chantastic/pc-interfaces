@@ -55,6 +55,27 @@ $alert-border-style: solid
   font-weight: normal
   text-align: left
 
+  .alert__heading
+    +font-size(18)
+    margin: 0 auto .2em
+
+  .alert__sub-heading
+    +font-size(15)
+    margin: 0 auto .3em
+
+  ul, p
+    +font-size(13)
+  ul
+    padding-left: 1.2em
+    li
+      padding: 0.5em 0.5em 0.5em 0
+      border-bottom: 1px solid transparent
+      &:first-child
+        padding-top: 0
+      &:last-child
+        padding-bottom: 0
+        border-bottom: 0  
+
   -webkit-appearance: none
 
   +clearfix
@@ -65,6 +86,19 @@ $alert-border-style: solid
   &.alert--danger
     +alert-variant(white, $danger-color)
   &.alert--warning
-    +alert-variant(adjust-color($warning-color, $lightness: -55%, $saturation: -42%), $warning-color, adjust-color($warning-color, $lightness: -1%, $saturation: 0%))    
+    +alert-variant(adjust-color($warning-color, $lightness: -55%, $saturation: -42%), $warning-color, adjust-color($warning-color, $lightness: -1%, $saturation: 0%))
   &.alert--subtle
     +alert-variant($base-font-color, adjust-color($bg-color, $lightness: -7%))
+  //WARNINGS
+  &.alert--warning
+  .alert__heading,
+  .alert__sub-heading  
+    color: adjust-color($warning-color, $lightness: -57%, $saturation: -34%)
+    ul li
+      border-bottom-color: adjust-color($warning-color, $lightness: -10%, $saturation: -10%)
+      color: adjust-color($warning-color, $lightness: -30%, $saturation: -20%)
+
+  //MODAL ADJUSTMENTS
+  .reveal-modal &
+    margin: 1.5rem
+    padding-top: .8em
