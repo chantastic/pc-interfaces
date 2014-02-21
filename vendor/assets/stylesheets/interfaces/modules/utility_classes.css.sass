@@ -71,7 +71,7 @@
 .block-list__item
   position: relative
   display: block
-  padding: 10px 15px
+  padding: 1rem 1.5rem
   clear: both
   +clearfix
   +font-size(14)
@@ -92,9 +92,10 @@
 
 .block-list.block-links .block-list__item
   padding: 0
-  a
+  > a, .block-list__link
     display: block
-    padding: 10px 15px
+    padding: 1rem 1.5rem
+    +clearfix
     &:hover
       color: $highlighted-color
-      background: $highlighted-bg-color      
+      background: $highlighted-bg-color
