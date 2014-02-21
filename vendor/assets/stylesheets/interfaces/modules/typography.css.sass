@@ -15,8 +15,7 @@ html
   font-family: $base-font-family
   font-size: 62.5%
 body
-  // font-size: 100%
-  +font-size(14)
+  +font-size($base-font-size)
   color: $base-font-color
 
 
@@ -62,6 +61,8 @@ h1
   .icon
     color: $base-color
     margin-right: 8px
+    position: relative
+    top: .15rem
   .badge
     margin-left: 8px
   .btn
@@ -75,6 +76,9 @@ h3
 
 h4, h5, h6
   +font-size(16)
+
+h4.label
+  margin: 0 auto 1rem
 
 h5, h6
   color: $light-gray
