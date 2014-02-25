@@ -24,8 +24,12 @@
     @media (min-width: 480px)
       @content
 
-  @else if $point == lte_tablet_ls //LESS THAN AND INCLUDING TABLET SIZES
+  @else if $point == lte_tablet //LESS THAN AND INCLUDING TABLET SIZES
     @media (max-width: 767px)
+      @content
+
+  @else if $point == lte_palm //LESS THAN AND INCLUDING PALM
+    @media (max-width: 480px)
       @content
 
 

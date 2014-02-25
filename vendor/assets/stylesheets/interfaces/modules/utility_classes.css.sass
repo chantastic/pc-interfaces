@@ -32,7 +32,7 @@
 .dib
   display: inline-block
 
-//MARGINS AND SUCH
+//MARGINS
 .m0a
   margin: 0 auto !important
 .mb0
@@ -40,8 +40,12 @@
 .mt0
   margin-top: 0 !important
 .palm--m0
-  +breakpoint(lte_tablet_ls)
+  +breakpoint(lte_tablet)
     margin: 0 !important
+
+//PADDING
+.pb0
+  padding-bottom: 0 !important
 
 //Single line that will truncate with ellipsis
 .truncate
