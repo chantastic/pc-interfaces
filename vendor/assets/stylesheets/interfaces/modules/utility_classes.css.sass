@@ -49,6 +49,8 @@
     margin: 0 !important
 
 //PADDING
+.pad0
+  padding: 0 0 1px 0 !important
 .pb0
   padding-bottom: 0 !important
 
@@ -101,14 +103,6 @@
     border-bottom: 0
   &.hover-icon-trigger
     padding-right: 30px
-.hover-icon-trigger
-  .icon
-    display: none
-    position: relative
-    top: 3px
-    right: -15px
-  &:hover .icon
-    display: inline-block
 
 .block-list.block-links .block-list__item
   padding: 0
@@ -119,3 +113,26 @@
     &:hover
       color: $highlighted-color
       background: $highlighted-bg-color
+
+//Container with an icon that you want to show on hover
+.hover-icon-trigger
+  .icon
+    display: none
+    position: relative
+    top: 3px
+    right: -15px
+  &:hover .icon
+    display: inline-block
+
+//Rows of text with icons on the right
+.has-icon-right
+  position: relative
+  padding-right: 25px
+  > .icon
+    position: absolute
+    right: 8px
+    top: 50%
+    margin-top: -10px
+    width: 26px
+    height: 26px
+    text-align: center
