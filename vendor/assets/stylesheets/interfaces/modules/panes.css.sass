@@ -189,3 +189,35 @@
 
 .sb-well--padded
   padding: 10px
+
+//==================================== Blank State Messages
+.pane .pane__body .blank-state,
+.pane .blank-state,
+.blank-state
+  margin: 20px
+
+.blank-state
+  text-align: center
+  padding: 3rem
+  +border-radius(3px)
+  background: rgba(0,0,0,0.04)
+  min-height: 212px
+  &.no-btn
+    min-height: 221px
+  .btn
+    margin: 1.5rem auto 0 auto
+
+.blank-state__msg
+  +font-size(14)
+  margin: 0 auto
+  max-width: 300px
+
+.blank-state__hero
+  +font-size(50)
+  color: adjust-color($base-color, $lightness: 5%, $saturation: -13%)
+  display: block
+  margin-bottom: .3em
+  &.upsize
+    +font-size(90)
+    margin-bottom: .15em
+// @end Blank State Messages
