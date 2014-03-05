@@ -19,6 +19,15 @@ module Interfaces
       generate.template_engine :slim
     end
 
+    initializer :assets do |config|
+      Rails.application.config.assets.precompile += %w(
+        interfaces/interfaces.eot
+        interfaces/interfaces.svg
+        interfaces/interfaces.ttf
+        interfaces/interfaces.woff
+      )
+    end
+
     # Ingect helpers into parent app
     initializer 'Interfaces.action_controller' do |app|
       ActiveSupport.on_load :action_controller do
