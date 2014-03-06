@@ -15,7 +15,7 @@ div.top-bar.js-dropwrap
             div.toggle-btn-cover
               span.interfaces-remove.interfaces-close
             ul
-              - if defined? @current_person
+              - if @current_person
                 - available_apps = @current_person.organization.subscribed_apps
                 - available_apps.each_with_index do |app, index|
                   li class=[app.name.downcase, (:omega if index + 1 == available_apps)]
@@ -61,7 +61,7 @@ div.top-bar.js-dropwrap
 
         div.account-info.righty.js-dropwrap
           span.avatar
-            - if defined? @current_person
+            - if @current_person
               span.photo
                 img alt="Missing" height="24" src="#{@current_person.avatar_url}" width="24"
 
@@ -75,7 +75,7 @@ div.top-bar.js-dropwrap
           div#account-details
             ul.identity
               li.section-heading
-                - if defined? @current_person
+                - if @current_person
                   a href="#"= @current_person.name
                   span
                   = @current_person.organization.name
@@ -86,7 +86,7 @@ div.top-bar.js-dropwrap
                   | First Church Of Carlsbad (Fake)
 
             ul.utilities
-              - if defined? @current_person and @current_person.organization_id == 1
+              - if @current_person and @current_person.organization_id == 1
                 li
                   a href="/administration"
                     span.interfaces-admin
