@@ -1,18 +1,16 @@
 .grid-demo
   background: adjust-color($sidebar-bg-color, $lightness: -10%)
-  padding: 30px 10px
+  padding-top: 10px
+  padding-bottom: 10px
   text-align: center
   
 .row
   +clearfix
-  margin-right: -2rem
-  margin-left: -2rem
 
 .col
   width: 100%
   margin-bottom: 1.5rem
   position: relative
-  padding: 0 2rem
 
   &.col--full
     width: 100%
@@ -55,7 +53,7 @@
 
 @media (min-width: 47.95em) // > 767
   .row
-    margin-bottom: 1.5rem
+    margin-bottom: 2.4rem
   form.row
     margin-bottom: 0
   form
@@ -63,6 +61,7 @@
       margin-bottom: 0
   [class*="col--"]
     float: left
+    padding: 0 1.2rem
       
   .col--half
     width: 50%
