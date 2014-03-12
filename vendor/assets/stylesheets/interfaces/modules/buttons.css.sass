@@ -236,7 +236,7 @@ $button-border-style: solid
     width: 50%
 
   &.thirds .btn
-    width: 33.333%    
+    width: 33.333%
 
 .btn-group-vertical
   +clearfix
@@ -266,7 +266,7 @@ $button-border-style: solid
 
 // BUTTON CONTEXTUAL OVERRIDES
 .alert .btn
-  margin-top: -3px 
+  margin-top: -3px
 .alert .btn,
 .pane--header .btn
   margin-bottom: 0
@@ -285,3 +285,19 @@ $button-border-style: solid
 /*  .btn-dropdown__caret*/
 /*    +abs-pos(50%, 50%, auto, auto)*/
 /*    margin: -3px -3px*/
+
+
+// responsive button variants - cause sometimes you need them to behave differently
+@media (max-width: 30em) // < 480
+  .btn
+    &.palm-btn--half
+      float: left
+      width: 49%
+      &:first-of-type
+        margin-right: 2%
+        margin-left: 0
+    &.palm-btn--full
+      float: none
+      width: 100%
+      margin-left: 0
+      margin-right: 0
