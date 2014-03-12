@@ -10,20 +10,24 @@ class PCO.AppSwitcher
     activeClass: 'alt-state'
     showTriggerSelector: '.toggle-btn'
     hideTriggerSelector: '.menu-wrap'
+    mobileToggleSelector: '#logo.bookmark'
 
   showAppList: (e) =>
-    e.stopEventPropegation
     @node.addClass @options.activeClass
 
   hideAppList: (e) =>
-    e.stopEventPropegation
     @node.removeClass @options.activeClass
+
+  toggleAppList: (e) =>
+    console.log 'reache'
+    @node.toggleClass @options.activeClass
 
   # private
 
   _addEventListeners: ->
     @node.on 'click', @options.showTriggerSelector, @showAppList
     @node.on 'click', @options.hideTriggerSelector, @hideAppList
+    @node.on 'click', @options.mobileToggleSelector, @toggleAppList
 
 
 $(document).on 'ready page:loaded', ->
