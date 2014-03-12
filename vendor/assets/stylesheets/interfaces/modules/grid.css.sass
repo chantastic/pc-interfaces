@@ -1,31 +1,26 @@
+$gutter: 2rem
+
 .grid-demo
   background: adjust-color($sidebar-bg-color, $lightness: -10%)
-  padding: 30px 10px
+  padding-top: 10px
+  padding-bottom: 10px
   text-align: center
   
 .row
   +clearfix
-  margin-right: -2rem
-  margin-left: -2rem
+  position: relative
+  margin: 0 0 $gutter 0
+  &.row-pad
+    padding: $gutter 0 $gutter $gutter
+    & > [class*='col-']:last-of-type
+      padding-right: $gutter
 
 .col
   width: 100%
   margin-bottom: 1.5rem
   position: relative
-  padding: 0 2rem
-
-  &.col--full
-    width: 100%
-    padding: 0
-    float: none
 
 @media (max-width: 47.95em) // < 768 :: palm--
-  // .col
-  //   &[class*=palm--]
-  //     padding-left: 0
-  //   &[class*=palm--]:last-child
-  //     padding-right: 0
-
   .palm--hide
     display: none !important
 
@@ -54,15 +49,11 @@
     float: left
 
 @media (min-width: 47.95em) // > 767
-  .row
-    margin-bottom: 1.5rem
-  form.row
-    margin-bottom: 0
-  form
-    .col
-      margin-bottom: 0
   [class*="col--"]
     float: left
+    padding-right: $gutter
+    &:last-of-type
+      padding-right: 0
       
   .col--half
     width: 50%
@@ -90,16 +81,9 @@
     width: 80%
 
 @media (min-width: 47.95em) and (max-width: 64em) // > 767 & < 1024 :: tab--
-  .col
-    &[class*=tab--]
-      padding-left: 0
-    &[class*=tab--]:last-child
-      padding-right: 0
 
   .tab--full
     width: 100%
-    padding-left: 0
-    padding-right: 0
   .tab--half
     width: 50%
   
@@ -119,8 +103,6 @@
 @media (min-width: 64em) // > 1024 :: lap--
   .desk--full
     width: 100%
-    padding-left: 0
-    padding-right: 0
   .desk--half
     width: 50%
   
