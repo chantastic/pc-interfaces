@@ -19,7 +19,6 @@ class PCO.AppSwitcher
     @node.removeClass @options.activeClass
 
   toggleAppList: (e) =>
-    console.log 'reache'
     @node.toggleClass @options.activeClass
 
   # private
