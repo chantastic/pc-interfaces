@@ -5,15 +5,20 @@ $gutter: 2rem
   padding-top: 10px
   padding-bottom: 10px
   text-align: center
-  
+
 .row
   +clearfix
   position: relative
-  margin: 0 0 $gutter 0
   &.row-pad
     padding: $gutter 0 $gutter $gutter
     & > [class*='col-']:last-of-type
       padding-right: $gutter
+
+// so?
+.dont-dbl-my-gutters
+  .row:last-of-type
+    .col
+      margin-bottom: 0
 
 .col
   width: 100%
@@ -32,7 +37,7 @@ $gutter: 2rem
     width: 50%
     float: left
 
-  //thirds   
+  //thirds
   .palm--third
     width: 33.3%
     float: left
@@ -54,11 +59,11 @@ $gutter: 2rem
     padding-right: $gutter
     &:last-of-type
       padding-right: 0
-      
+
   .col--half
     width: 50%
 
-  //thirds   
+  //thirds
   .col--third
     width: 33.3%
   .col--two-thirds
@@ -86,8 +91,8 @@ $gutter: 2rem
     width: 100%
   .tab--half
     width: 50%
-  
-  //thirds   
+
+  //thirds
   .tab--third
     width: 33.3%
   .tab--two-thirds
@@ -105,8 +110,8 @@ $gutter: 2rem
     width: 100%
   .desk--half
     width: 50%
-  
-  //thirds   
+
+  //thirds
   .desk--third
     width: 33.3%
   .desk--two-thirds
