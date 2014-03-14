@@ -41,5 +41,17 @@ module Interfaces
 
       content_tag tag, capture(&block), class: "#{options[:class]}", data: { "reveal-id" => modal_id }
     end
+
+    def app_name
+      Rails.application.class.parent_name.underscore.dasherize
+    end
+
+    APP_NAME_TO_HELPDESK = {
+      "account-center" => "Accounts",
+      "check-ins" => "Check-Ins"
+    }
+    def helpdesk_name
+      APP_NAME_TO_HELPDESK[app_name]
+    end
   end
 end
