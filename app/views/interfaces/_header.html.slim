@@ -81,7 +81,10 @@ div.top-bar.js-dropwrap
             ul.identity
               - if Person.current.present?
                 li.section-heading
-                  a href="/people/#{Person.current.id}"= Person.current.name
+                  - if app_name == "account-center"
+                    a href='#'= Person.current.name
+                  - else
+                    a href="/people/#{Person.current.id}"= Person.current.name
                   span
                   = Person.current.organization.name
 
