@@ -1,3 +1,5 @@
+$palm-gutter: 1.5rem
+$tab-gutter: 1.5rem
 $gutter: 2rem
 
 .grid-demo
@@ -29,6 +31,12 @@ $gutter: 2rem
   .palm--hide
     display: none !important
 
+  [class*="palm--"]
+    float: left
+    padding-right: $palm-gutter
+    &:last-of-type
+      padding-right: 0
+
   .palm--full
     width: 100%
     padding: 0
@@ -41,7 +49,7 @@ $gutter: 2rem
   .palm--third
     width: 33.3%
     float: left
-  .palm--twothirds
+  .palm--two-thirds
     width: 66.6%
     float: left
 
@@ -85,8 +93,13 @@ $gutter: 2rem
   .col--four-fifths
     width: 80%
 
-@media (min-width: 47.95em) and (max-width: 64em) // > 767 & < 1024 :: tab--
-
+@media (min-width: 37.5em) and (max-width: 64em) // > 600 & < 1024 :: tab--
+  [class*="tab--"]
+    float: left
+    padding-right: $tab-gutter
+    &:last-of-type
+      padding-right: 0
+  
   .tab--full
     width: 100%
   .tab--half
@@ -106,6 +119,7 @@ $gutter: 2rem
 
 
 @media (min-width: 64em) // > 1024 :: lap--
+
   .desk--full
     width: 100%
   .desk--half
