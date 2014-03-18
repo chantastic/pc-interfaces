@@ -1,13 +1,10 @@
-- icon_name = app_name
-
 div.top-bar.js-dropwrap
   div.top-bar__contents.clearfix
     div.title-area
       / Title Area
       div.app-switcher-wrap.js-togglehelper
-        div#logo.bookmark class="icon-#{icon_name}-logo" aria-hidden="true"
+        div#logo.bookmark class="icon-#{app_name}-logo" aria-hidden="true"
 
-        / - if current_organization.subscribed_apps.any?
         div.app-switcher
           div.toggle-btn
             div.chevron
@@ -15,15 +12,23 @@ div.top-bar.js-dropwrap
             div.toggle-btn-cover
               span.interfaces-remove.interfaces-close
             ul
-              - if @current_person
-                - available_apps = @current_person.organization.subscribed_apps
-                - available_apps.each_with_index do |app, index|
-                  li class=[app.name.downcase, (:omega if index + 1 == available_apps)]
-                    a href=app.url
-                      span.icon aria-hidden="true"
-                      em planning center
-                      = app.name
-
+              - org = Organization.current
+              - if org.present?
+                - if org.respond_to?(:applications) # Serialized applications hash
+                  - available_apps = org.applications
+                  - available_apps.each_with_index do |(name, app_info), index|
+                    li class=[name.downcase, (:omega if index + 1 == available_apps.length)]
+                      a href=url_for_app_name(name)
+                        span.icon aria-hidden="true"
+                        em planning center
+                        = name
+                - elsif org.respond_to?(:apps) # org has_many :apps
+                  - org.apps.each_with_index do |app, index|
+                    li class=[app.name.downcase, (:omega if index + 1 == org.apps.length)]
+                      a href=app.url
+                        span.icon aria-hidden="true"
+                        em planning center
+                        = app.name
               - else
                 li.services
                   a href="#"
@@ -61,12 +66,12 @@ div.top-bar.js-dropwrap
 
         div.account-info.righty.js-dropwrap
           span.avatar
-            - if @current_person
+            - if Person.current.present?
               span.photo
-                img alt="Missing" height="24" src="#{@current_person.avatar_url}" width="24"
+                img alt="Avatar" height="24" src="#{Person.current.avatar_url}" width="24"
 
             - else
-              a.photo href="/people/1"
+              a.photo href="/people/#{Person.current.id}"
                 img alt="Missing" height="24" src="https://www.planningcenteronline.com/photos/icon/missing.png" width="24"
 
           div#toggle-account-details.js-droptoggle
@@ -74,19 +79,14 @@ div.top-bar.js-dropwrap
 
           div#account-details
             ul.identity
-              li.section-heading
-                - if @current_person
-                  a href="#"= @current_person.name
+              - if Person.current.present?
+                li.section-heading
+                  a href="/people/#{Person.current.id}"= Person.current.name
                   span
-                  = @current_person.organization.name
-
-                - else
-                  a href="/people/1" PiCO Das Robot (Fake)
-                  span
-                  | First Church Of Carlsbad (Fake)
+                  = Person.current.organization.name
 
             ul.utilities
-              - if @current_person and @current_person.organization_id == 1
+              - if Person.current.present? && Person.current.organization_id == 1
                 li
                   a href="/administration"
                     span.interfaces-admin

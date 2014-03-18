@@ -53,5 +53,10 @@ module Interfaces
     def helpdesk_name
       APP_NAME_TO_HELPDESK[app_name]
     end
+
+    def url_for_app_name(app_name)
+      url_suffix = Rails.env.development? ? ".pco.dev" : ".planningcenteronline.com"
+      "http://#{app_name.downcase}#{url_suffix}"
+    end
   end
 end
