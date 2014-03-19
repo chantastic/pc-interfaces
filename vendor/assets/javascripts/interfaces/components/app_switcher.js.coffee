@@ -1,4 +1,4 @@
-window.PCO ?= class PCO
+window.PCO ?= {}
 
 class PCO.AppSwitcher
   constructor: ->

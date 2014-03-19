@@ -33,13 +33,13 @@ module Interfaces
     end
 
     def modal(modal_id, options = {}, &block)
-      content_tag :div, capture(&block), id: modal_id, class: "reveal-modal #{options[:class]}", data: { reveal: "" }
+      content_tag :div, capture(&block), id: modal_id, class: "modal #{options[:class]}"
     end
 
     def modal_trigger(modal_id, options = {}, &block)
       tag = options[:tag] || :span
 
-      content_tag tag, capture(&block), class: "#{options[:class]}", data: { "reveal-id" => modal_id }
+      content_tag tag, capture(&block), class: "#{options[:class]}", data: { "modal-id" => modal_id }
     end
 
     def app_name
