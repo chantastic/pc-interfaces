@@ -9,27 +9,27 @@
 //==================================================
 @mixin breakpoint($point)
   @if $point == bp_4
-    @media (min-width: 1200px)
+    @media (min-width: 75em) // < 1200px
       @content
   
   @else if $point == bp_3
-    @media (min-width: 980px)
+    @media (min-width: 61.25em) // < 980px
       @content
   
   @else if $point == bp_2
-    @media (min-width: 767px)
+    @media (min-width: 47.95em) // < 768px
       @content
   
   @else if $point == bp_1
-    @media (min-width: 480px)
+    @media (min-width: 30em) // < 480px
       @content
 
-  @else if $point == lte_tablet //LESS THAN AND INCLUDING TABLET SIZES
-    @media (max-width: 767px)
+  @else if $point == lte_tablet //LESS THAN AND INCLUDING TABLET SIZES < 768px
+    @media (max-width: 47.95em)
       @content
 
-  @else if $point == lte_palm //LESS THAN AND INCLUDING PALM
-    @media (max-width: 480px)
+  @else if $point == lte_palm //LESS THAN AND INCLUDING PALM 480px
+    @media (max-width: 30em)
       @content
 
 
