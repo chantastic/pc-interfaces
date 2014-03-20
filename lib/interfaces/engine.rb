@@ -25,6 +25,7 @@ module Interfaces
         interfaces/interfaces.svg
         interfaces/interfaces.ttf
         interfaces/interfaces.woff
+        images/icons/app_icons.png
       )
     end
 

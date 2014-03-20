@@ -27,9 +27,11 @@ $gutter: 2rem
   margin-bottom: 1.5rem
   position: relative
 
-@media (max-width: 47.95em) // < 768 :: palm--
+@media (max-width: 37.5em) // < 600 :: palm--
   .palm--hide
     display: none !important
+  .palm--end
+    padding-right: 0 !important
 
   [class*="palm--"]
     float: left
@@ -61,7 +63,17 @@ $gutter: 2rem
     width: 75%
     float: left
 
-@media (min-width: 47.95em) // > 767
+  // fifths
+  .palm--fifth
+    width: 20%
+  .palm--two-fifths
+    width: 40%
+  .palm--three-fifths
+    width: 60%
+  .palm--four-fifths
+    width: 80%
+
+@media (min-width: 37.5em) // > 600
   [class*="col--"]
     float: left
     padding-right: $gutter
@@ -94,6 +106,9 @@ $gutter: 2rem
     width: 80%
 
 @media (min-width: 37.5em) and (max-width: 64em) // > 600 & < 1024 :: tab--
+  .tab--end
+    padding-right: 0 !important
+
   [class*="tab--"]
     float: left
     padding-right: $tab-gutter
@@ -116,6 +131,16 @@ $gutter: 2rem
     width: 25%
   .tab--three-quarters
     width: 75%
+
+  // fifths
+  .tab--fifth
+    width: 20%
+  .tab--two-fifths
+    width: 40%
+  .tab--three-fifths
+    width: 60%
+  .tab--four-fifths
+    width: 80%
 
 
 @media (min-width: 64em) // > 1024 :: lap--
