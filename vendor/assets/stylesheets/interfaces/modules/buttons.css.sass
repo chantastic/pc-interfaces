@@ -288,13 +288,16 @@ $button-border-style: solid
 
 
 // responsive button variants - cause sometimes you need them to behave differently
-@media (max-width: 30em) // < 480
+@media (max-width: 37.5em) // < 600
   .btn
     &.palm-btn--half
       float: left
       width: 49%
       &:first-of-type
         margin-right: 2%
+        margin-left: 0
+      &:last-of-type
+        margin-right: 0
         margin-left: 0
     &.palm-btn--full
       float: none
