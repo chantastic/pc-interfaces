@@ -66,12 +66,10 @@ div.top-bar.js-dropwrap
 
         div.account-info.righty.js-dropwrap
           span.avatar
-            - if Person.current.present?
-              span.photo
+            a.photo href="/people/#{Person.current.id}"
+              - if Person.current.present? && Person.current.avatar_url.present?
                 img alt="Avatar" height="24" src="#{Person.current.avatar_url}" width="24"
-
-            - else
-              a.photo href="/people/#{Person.current.id}"
+              - else
                 img alt="Missing" height="24" src="https://www.planningcenteronline.com/photos/icon/missing.png" width="24"
 
           div#toggle-account-details.js-droptoggle
