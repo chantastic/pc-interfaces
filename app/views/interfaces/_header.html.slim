@@ -66,10 +66,16 @@ div.top-bar.js-dropwrap
 
         div.account-info.righty.js-dropwrap
           span.avatar
-            a.photo href="/people/#{Person.current.id}"
-              - if Person.current.present? && Person.current.avatar_url.present?
-                img alt="Avatar" height="24" src="#{Person.current.avatar_url}" width="24"
-              - else
+            - if Person.current.present?
+              a.photo href="/people/#{Person.current.id}"
+                - if Person.current.avatar_url.present?
+                  img alt="Avatar" height="24" src="#{Person.current.avatar_url}" width="24"
+                - elsif Person.const_defined?('MISSING_AVATAR_PATH')
+                  img alt="Avatar" height="24" src="#{Person::MISSING_AVATAR_PATH}" width="24"
+                - else
+                  img alt="Missing" height="24" src="https://www.planningcenteronline.com/photos/icon/missing.png" width="24"
+            - else
+              span.photo
                 img alt="Missing" height="24" src="https://www.planningcenteronline.com/photos/icon/missing.png" width="24"
 
           div#toggle-account-details.js-droptoggle
