@@ -7,6 +7,7 @@ require "foundation-rails"
 require "html5shiv-rails"
 require "selectivizr-rails"
 require "placeholder-gem"
+require "batman-touch-rails"
 
 module Interfaces
   class Engine < ::Rails::Engine
