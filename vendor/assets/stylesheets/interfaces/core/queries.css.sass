@@ -21,15 +21,16 @@
       @content
   
   @else if $point == bp_1
-    @media (min-width: 30em) // < 480px
+    @media (min-width: 37.5em) // < 600px
       @content
 
   @else if $point == lte_tablet //LESS THAN AND INCLUDING TABLET SIZES < 768px
     @media (max-width: 47.95em)
       @content
 
-  @else if $point == lte_palm //LESS THAN AND INCLUDING PALM 480px
-    @media (max-width: 30em)
+  @else if $point == lte_palm //LESS THAN AND INCLUDING PALM 600px
+    // @media (max-width: 30em)
+    @media (max-width: 37.5em)
       @content
 
 
