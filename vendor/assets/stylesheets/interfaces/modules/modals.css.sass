@@ -1,31 +1,134 @@
+@import 'interfaces/core/queries'
+@import 'interfaces/core/utilities'
+
+// localized variables  ====================================
+$max-modal-width: $max-site-width * .95
 
 
-.reveal-modal-bg
-  position: fixed
-  height: 100%
-  width: 100%
-  z-index: 98
+// @mixins - fixed scrollable component ====================
+=fixed-scrollable-component($component)
+  .#{$component}
+    @content
+
+=fixed-scrollable-component-parent($component)
+  .#{$component}--open
+    overflow: hidden
+
+  .#{$component}--open .#{$component}-layer
+    display: block
+
+  .#{$component}--open .#{$component}-layer .#{$component}
+    display: block
+
+=fixed-scrollable-component-stage($component)
+  .#{$component}-layer
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+
+    z-index: 1000
+
+    overflow: auto
+    overflow-y: scroll
+    -webkit-overflow-scrolling: touch
+
+    @content
+
+
+// modal component - structure =============================
++fixed-scrollable-component('modal')
   display: none
-  top: 0
-  left: 0
-  background: white
 
-.reveal-modal
-  visibility: hidden
-  display: none
-  position: absolute
-  top: 0
-  right: 0
-  bottom: 0
-  left: 0
-  z-index: 99
+  margin: 5% auto
+
   background-color: $modal-window-bg-color
+
   +border-radius($modal-radius)
-  +box-shadow(0 10px 11px -5px rgba(adjust-color($base-color, $lightness: -15%, $saturation: -70%), 0.1), 0 0 10px rgba(adjust-color($base-color, $lightness: -15%, $saturation: -70%), 0.15))
+  +box-shadow(0 0 25px $dark-gray)
+
+  +breakpoint(lte_tablet)
+    margin: 3% auto !important
+    width: 94% !important
+    min-width: inherit !important
+    max-width: inherit !important
+
++fixed-scrollable-component-parent('modal')
+
++fixed-scrollable-component-stage('modal')
+  display: none
+
+  background-color: $modal-bg-color
+  background-color: $modal-bg-color
+
+
+// modal component - sizing ================================
+.modal,
+.modal--medium
+  width: 50%
+  min-width: 500px
+  max-width: 650px
+
+.modal--small
+  width: 30%
+  min-width: 400px
+  max-width: 500px
+
+.modal--large
+  width: 75%
+  min-width: 650px
+  max-width: 900px
+
+.modal--full
+  width: 95%
+  max-width: $max-modal-width
+
+
+// vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+// vvvvvv ANYTHING UNSTABLE SHOULD GO BELOW THIS LINE vvvvvv
+// vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+
+// modal component - immediate child elements ==============
+.modal__header
+  padding: 1.5rem 1.75rem 1.65rem 1.75rem
+  background: $modal-header-color
+  border: solid 3px adjust-color($modal-header-color, $lightness: -6%)
+  border-bottom-color: adjust-color($modal-header-color, $lightness: -4%)
+
+  +border-radius($modal-radius $modal-radius 0 0)
+
+.modal__body
+  padding: 1.25rem
+
+  +breakpoint(lte_tablet)
+    height: 100%
+
+.modal__footer
+  padding: 1rem 1rem 1.1rem 1rem
+
+  text-align: right
+
+  +border-bottom-radius($modal-child-radius)
+  border-top: solid 1px adjust-color($modal-window-bg-color, $lightness: -10%, $saturation: -5%)
+
+  .btn
+    margin-bottom: 0
+
+  .btn.left
+    position: relative
+
+    top: 2px
+    left: 2px
+
+    margin: 0
 
 .modal-section
   padding: 1.5rem 0
   +clearfix
+
+// modal component - immediate child elements ==============
 
 //remove padding from top of first section
 .modal-well .modal-section:first-child
@@ -43,45 +146,18 @@
 .modal__header, .modal__footer, .modal__body
   +clearfix
 
-.modal__header
-  padding: 1.5rem 1.75rem 1.65rem 1.75rem
-  +breakpoint(bp_2)
-    +border-top-radius($modal-child-radius)
-  background: $modal-header-color
-  // border: solid 3px adjust-color($modal-header-color, $lightness: -6%)
-  // border-bottom-color: adjust-color($modal-header-color, $lightness: -4%)
-  .close-reveal-modal
-    font-size: 1.375rem
-    line-height: 1
-    position: absolute
-    top: 0.5rem
-    right: 0.6875rem
-    color: #aaaaaa
-    font-weight: bold
-    cursor: pointer
+.modal-well .modal-section:last-child
+  padding-bottom: 0
 
-.modal__body
-  padding: 1.25rem
-
-.modal__footer
-  padding: 1rem 1rem 1.1rem 1rem
-  text-align: right
-  +border-bottom-radius($modal-child-radius)
-  //background: adjust-color($modal-window-bg-color, $lightness: -3%)
-  border-top: solid 1px adjust-color($modal-window-bg-color, $lightness: -10%, $saturation: -5%)
-  .btn
-    margin-bottom: 0
-  .btn.left
-    margin: 0
-    position: relative
-    top: 2px
-    left: 2px    
+.modal-section
+  padding: 1.5rem 0
 
 .modal-title
   margin: 0
-  +truncate()
+
   +font-size(19)
   color: $modal-title-color
+  +truncate()
   text-shadow: 0 0 2px rgba(adjust-color($modal-header-color, $lightness: -10%, $saturation: -5%), .5)
 
 .modal-well__heading
@@ -92,45 +168,6 @@
 .modal-well__sub-heading  
   font-size: 1.1em
   margin-bottom: .5rem
-
-@media only screen and (min-width: 47.95em)
-  .reveal-modal-bg
-    background: $modal-bg-color
-    background: rgba($modal-bg-color, 0.98)
-  .reveal-modal
-    top: 6.25rem
-    left: 50%
-    right: auto
-    bottom: auto
-    width: 80%
-    margin-left: -40%
-    height: auto
-    //NOT SURE ABOUT THIS
-    // position: fixed
-    //@end NOT SURE ABOUT THIS
-    &.modal--small
-      max-width: 500px
-      margin-left: -250px
-    &.modal--medium
-      max-width: 660px
-      margin-left: -330px          
-
-  .modal__body
-    //NOT SURE ABOUT THIS
-    // max-height: 470px
-    // overflow-y: auto
-    // overflow-x: hidden
-    //@end NOT SURE ABOUT THIS
-
-@media only screen and (min-width: 61.25em)
-  .reveal-modal
-    max-width: 900px
-    margin-left: -450px
-@media only screen and (min-width: 92.5em)
-  .reveal-modal
-    &.xlarge
-      margin-left: -600px
-      max-width: 1200px
 
 //WELLS AND OTHER LAYOUT COMPONENTS FOR MODALS
 .modal-well
@@ -158,6 +195,61 @@
   padding: 1rem
   border-radius: 3px
 
-.reveal-modal .blank-state
-  margin: 0
-  min-height: 40px
+/*.modal__header*/
+  /*.close-reveal-modal*/
+  /*  position: absolute*/
+  /*  top: 0.5rem*/
+  /*  right: 0.6875rem*/
+
+  /*  font-size: 1.375rem*/
+  /*  font-weight: bold*/
+  /*  line-height: 1*/
+  /*  color: #aaaaaa*/
+
+  /*  cursor: pointer*/
+
+  /*+breakpoint(bp_2)*/
+  /*  +border-top-radius($modal-child-radius)*/
+
+/*@media only screen and (min-width: 47.95em)*/
+/*  .reveal-modal-bg*/
+/*    background: $modal-bg-color*/
+/*    background: rgba($modal-bg-color, 0.98)*/
+/*  .reveal-modal*/
+/*    top: 6.25rem*/
+/*    left: 50%*/
+/*    right: auto*/
+/*    bottom: auto*/
+/*    width: 80%*/
+/*    margin-left: -40%*/
+/*    height: auto*/
+/*    //NOT SURE ABOUT THIS*/
+/*    // position: fixed*/
+/*    //@end NOT SURE ABOUT THIS*/
+/*    &.modal--small*/
+/*      max-width: 500px*/
+/*      margin-left: -250px*/
+/*    &.modal--medium*/
+/*      max-width: 660px*/
+/*      margin-left: -330px          */
+/**/
+/*  .modal__body*/
+/*    //NOT SURE ABOUT THIS*/
+/*    // max-height: 470px*/
+/*    // overflow-y: auto*/
+/*    // overflow-x: hidden*/
+/*    //@end NOT SURE ABOUT THIS*/
+/**/
+/*@media only screen and (min-width: 61.25em)*/
+/*  .reveal-modal*/
+/*    max-width: 900px*/
+/*    margin-left: -450px*/
+/*@media only screen and (min-width: 92.5em)*/
+/*  .reveal-modal*/
+/*    &.xlarge*/
+/*      margin-left: -600px*/
+/*      max-width: 1200px*/
+
+/*.reveal-modal .blank-state*/
+/*  margin: 0*/
+/*  min-height: 40px*/
