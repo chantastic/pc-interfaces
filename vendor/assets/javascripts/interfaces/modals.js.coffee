@@ -8,6 +8,7 @@ class PCO.ModalLayer
       .scrollTop(0)
 
     @_setupHideListeners()
+    @_focusFirstInput()
 
   hide: ->
     $('body').removeClass('modal--open')
@@ -34,6 +35,12 @@ class PCO.ModalLayer
     eventFromModalLayer = $(e.target).find('.modal').length
 
     PCO.ModalLayer::hide() if eventFromModalLayer
+
+  _focusFirstInput: ->
+    $('.modal-layer')
+      .find(':input:enabled:visible:first')
+      .first()
+      .focus()
 
 
 
