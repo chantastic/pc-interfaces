@@ -7,14 +7,14 @@
     height: 100%
 
   html
-    background: adjust-color($sidebar-bg-color, $lightness: -7%)
+    background: adjust-color($sidebar-bg-color, $lightness: -7%, $saturation: -2%)
     &:before
       content: ''
       position: absolute
       height: ($topbar-height + 1px)
       left: 0
       right: 0
-      background: adjust-color($sidebar-bg-color, $lightness: -10%) 
+      background: adjust-color($sidebar-bg-color, $lightness: -10%, $saturation: -2%) 
   body
     background: $bg-color
     max-width: $max-site-width
@@ -59,8 +59,8 @@
     position: relative
     z-index: 3
 
-  .site-footer
+  .fullwidth .site-footer
     margin-top: -25px
-    background: $bg-color
+    background: $main-content-bg
 
  
