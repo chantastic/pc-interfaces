@@ -42,51 +42,6 @@ class PCO.ModalLayer
   _focusFirstInput: ->
     $('.modal-layer')
       .find(':input:enabled:visible:first')
+      .not('.date')
       .first()
       .focus()
-
-
-
-# class PCO.Modal
-#   show: (modalId) ->
-#     modalId ?= $(this).data 'modal-id'
-# 
-#     PCO.ModalLayer::show()
-# 
-#   hide: (modalId) ->
-#     modalId ?= $(this).data 'modal-id'
-# 
-#     PCO.ModalLayer::hide()
-
-# createModalsNode = ->
-#   $('body')
-#     .append('<div class="modals">')
-#     .addClass('modals--open')
-
-# removeModalsNode = ->
-#   $('body')
-#     .removeClass('modals--open')
-#     .find('.modals')
-#     .remove()
-
-# showModal = ->
-#   createModalsNode()
-
-#   modalId = $(this).data('modal-id')
-
-#   modal = $("##{modalId}").clone()
-
-#   $('.modals').append(modal)
-
-#   false
-
-# hideModal = ->
-#   removeModalsNode()
-#   false
-
-# $(document).on 'ready page:loaded', ->
-#   $('[data-modal-id]').on 'click', PCO.Modal::show()
-#   $(document).on 'click', '[data-modals-close]', hideModal
-
-# $(document).on 'ready page:loaded', ->
-  # modals = new PCO.Modals
