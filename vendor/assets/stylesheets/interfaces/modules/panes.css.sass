@@ -187,8 +187,7 @@
 
 //==================================== Blank State Messages
 .pane .pane__body .blank-state,
-.pane .blank-state,
-.blank-state
+.pane .blank-state
   margin: 20px
 
 .blank-state
@@ -198,20 +197,22 @@
   background: rgba(0,0,0,0.04)
   min-height: 212px
   &.no-btn
-    min-height: 221px
+    min-height: 213px
   .btn
     margin: 1.5rem auto 0 auto
 
 .blank-state__msg
   +font-size(14)
   margin: 0 auto
-  max-width: 300px
+  max-width: 245px
 
 .blank-state__hero
   +font-size(50)
   color: adjust-color($base-color, $lightness: 1%, $saturation: -32%)
   display: block
   margin-bottom: .3em
+  &.push-top
+    margin-top: 3%
   &.upsize
     +font-size(90)
     margin-bottom: .15em
