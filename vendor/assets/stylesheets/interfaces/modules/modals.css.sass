@@ -41,14 +41,14 @@ $max-modal-width: $max-site-width * .95
 +fixed-scrollable-component('modal')
   display: none
 
-  margin: 5% auto
+  margin: 52px auto 0
 
   background-color: $modal-window-bg-color
 
   +border-radius(($modal-radius + 1) ($modal-radius + 1) $modal-radius $modal-radius)
   +box-shadow(0 0 25px $dark-gray)
 
-  +breakpoint(lte_tablet)
+  +breakpoint(lte_palm)
     margin: 3% auto !important
     width: 94% !important
     min-width: inherit !important
@@ -66,24 +66,21 @@ $max-modal-width: $max-site-width * .95
 // modal component - sizing ================================
 .modal,
 .modal--medium
-  width: 50%
-  min-width: 500px
-  max-width: 650px
+  max-width: 600px
 
 .modal--small
-  width: 30%
-  min-width: 400px
   max-width: 500px
 
 .modal--large
-  width: 75%
-  min-width: 650px
   max-width: 900px
 
 .modal--full
   width: 95%
   max-width: $max-modal-width
 
++breakpoint(bp_1)
+  .modal-layer
+    padding: 0 15px
 
 // vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 // vvvvvv ANYTHING UNSTABLE SHOULD GO BELOW THIS LINE vvvvvv
