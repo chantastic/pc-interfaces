@@ -18,6 +18,9 @@ class PCO.ModalLayer
   hideModals: ->
     $('.modal').hide()
 
+  showModals: ->
+    $('.modal').show()
+
   # private
 
   _setupHideListeners: ->
