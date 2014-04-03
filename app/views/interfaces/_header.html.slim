@@ -22,7 +22,14 @@ div.top-bar.js-dropwrap
                         span.icon aria-hidden="true"
                         em planning center
                         = name
-                - elsif org.respond_to?(:apps) # org has_many :apps
+                - elsif org.respond_to?(:apps)
+                  -# org has_many :apps
+                  -# as in accounts... which doesn't include itself.
+                  li class='accounts'
+                    a href="#"
+                      span.icon aria-hidden="true"
+                      em planning center
+                      | Accounts
                   - org.apps.each_with_index do |app, index|
                     li class=[app.name.downcase, (:omega if index + 1 == org.apps.length)]
                       a href=app.url
@@ -30,6 +37,11 @@ div.top-bar.js-dropwrap
                         em planning center
                         = app.name
               - else
+                li.accounts
+                  a href="#"
+                    span.icon aria-hidden="true"
+                    em planning center
+                    | Accounts (fake)
                 li.services
                   a href="#"
                     span.icon aria-hidden="true"
