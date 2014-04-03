@@ -1,18 +1,14 @@
-window.PCO ?= {}
+window.INTERFACES ?= {}
 
-class PCO.ModalLayer
+INTERFACES.modalLayer =
   show: ->
-    $('body')
-      .addClass('modal--open')
-      .find('.modal-layer')
-      .scrollTop(0)
-
+    @_domCreate()
+    @_domShow()
     @_setupHideListeners()
     @_focusFirstInput()
 
   hide: ->
-    $('body').removeClass('modal--open')
-
+    @_domHide()
     @_removeHideListeners()
 
   hideModals: ->
@@ -21,7 +17,29 @@ class PCO.ModalLayer
   showModals: ->
     $('.modal').show()
 
+  emptyAndPushModal: (modal) ->
+    @show()
+
+    $('.modal-layer')
+      .empty()
+      .append(modal)
+
   # private
+
+  _domCreate: ->
+    noModalLayerNode     = not $('.modal-layer').length
+    createModalLayerNode = -> $('body').append $('<div class="modal-layer">')
+
+    createModalLayerNode() if noModalLayerNode
+
+  _domShow: ->
+    $('body')
+      .addClass('modal--open')
+      .find('.modal-layer')
+      .scrollTop(0)
+
+  _domHide: ->
+    $('body').removeClass('modal--open')
 
   _setupHideListeners: ->
     $(document).on 'keyup', @_hideModalOnEscape
@@ -35,12 +53,12 @@ class PCO.ModalLayer
     eventKeyIsEscape         = e.keyCode is 27
     eventIsNotFromInputField = e.target.nodeName isnt 'INPUT'
 
-    PCO.ModalLayer::hide() if eventKeyIsEscape and eventIsNotFromInputField
+    INTERFACES.modalLayer.hide() if eventKeyIsEscape and eventIsNotFromInputField
 
   _hideModalOnOutsideClick: (e) ->
     eventFromModalLayer = $(e.target).find('.modal').length
 
-    PCO.ModalLayer::hide() if eventFromModalLayer
+    INTERFACES.modalLayer.hide() if eventFromModalLayer
 
   _focusFirstInput: ->
     $('.modal-layer')
