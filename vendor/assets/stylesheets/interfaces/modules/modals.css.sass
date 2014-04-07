@@ -2,7 +2,8 @@
 @import 'interfaces/core/utilities'
 
 // localized variables  ====================================
-$max-modal-width: $max-site-width * .95
+$max-modal-width:   $max-site-width * .95
+$modal-default-top: 52px
 
 
 // @mixins - fixed scrollable component ====================
@@ -39,11 +40,15 @@ $max-modal-width: $max-site-width * .95
 
 // modal component - structure =============================
 +fixed-scrollable-component('modal')
+  position: relative
+
   display: none
 
-  margin: 52px auto 0
+  margin: $modal-default-top auto 0
 
   background-color: $modal-window-bg-color
+
+  z-index: 1100
 
   +border-radius(($modal-radius + 1) ($modal-radius + 1) $modal-radius $modal-radius)
   +box-shadow(0 0 25px $dark-gray)
@@ -122,6 +127,15 @@ $max-modal-width: $max-site-width * .95
 .modal-section
   padding: 1.5rem 0
   +clearfix
+
+.modal-loader
+  position: absolute
+  left: 50%
+  top: $modal-default-top
+
+  // mogic numbers, override check-ins pre-loader__disc
+  margin-top: 50px !important   // arbitrary offset from modal top
+  margin-left: -12px !important // half of check-ins loader graphic
 
 // modal component - immediate child elements ==============
 
