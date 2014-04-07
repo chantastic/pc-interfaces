@@ -103,7 +103,7 @@ For this, you'll want to wrap your `<%= yield %>` tag like so:
 <% end %>
 
 <%= interfaces_footer do %>
-  Designed in CA Copyright 2013
+  Designed in CA Copyright 2014
 <% end %>
 ```
 

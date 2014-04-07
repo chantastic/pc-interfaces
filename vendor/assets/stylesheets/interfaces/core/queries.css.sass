@@ -28,6 +28,10 @@
     @media (max-width: 47.95em)
       @content
 
+  @else if $point == lte_tablet-wide //LESS THAN AND INCLUDING TABLET SIZES < 1024px
+    @media (max-width: 64em)
+      @content      
+
   @else if $point == lte_palm //LESS THAN AND INCLUDING PALM 600px
     // @media (max-width: 30em)
     @media (max-width: 37.5em)
