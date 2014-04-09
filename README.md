@@ -21,6 +21,8 @@ app.
 gem 'interfaces', path: '~/code/interfaces'
 ```
 
+If you have a server running (pow or otherwise), you'll need to restart it.
+
 ## Usage
 
 Using Interfaces can be quite straight forward.  There are a number of helpers
