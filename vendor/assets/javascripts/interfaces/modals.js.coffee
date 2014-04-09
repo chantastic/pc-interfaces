@@ -42,23 +42,31 @@ INTERFACES.modalLayer =
     $('body').removeClass('modal--open')
 
   _setupHideListeners: ->
-    $(document).on 'keyup', @_hideModalOnEscape
+    $(document).on 'keyup', @_dispatchKeyupActions
     $(document).on 'click', '.modal-layer', @_hideModalOnOutsideClick
 
   _removeHideListeners: ->
-    $(document).off 'keyup', @_hideModalOnEscape
+    $(document).off 'keyup', @_dispatchKeyupActions
     $(document).off 'click', '.modal-layer', @_hideModalOnOutsideClick
 
   _hideModalOnEscape: (e) ->
-    eventKeyIsEscape         = e.keyCode is 27
-    eventIsNotFromInputField = e.target.nodeName isnt 'INPUT'
+    escapedFromInput = 'INPUT' is e.target.nodeName
 
-    INTERFACES.modalLayer.hide() if eventKeyIsEscape and eventIsNotFromInputField
+    if escapedFromInput
+      INTERFACES.modalLayer._blurNode(e.target)
+    else
+      INTERFACES.modalLayer.hide()
 
   _hideModalOnOutsideClick: (e) ->
     eventFromModalLayer = $(e.target).find('.modal').length
 
-    INTERFACES.modalLayer.hide() if eventFromModalLayer
+    if eventFromModalLayer
+      INTERFACES.modalLayer.hide()
+
+  _dispatchKeyupActions: (e) ->
+    escape = e.keyCode is 27
+
+    INTERFACES.modalLayer._hideModalOnEscape(e) if escape
 
   _focusFirstInput: ->
     $('.modal-layer')
@@ -66,3 +74,6 @@ INTERFACES.modalLayer =
       .not('.date')
       .first()
       .focus()
+
+  _blurNode: (target) ->
+    $(target).blur()
