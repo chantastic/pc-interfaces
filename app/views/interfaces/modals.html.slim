@@ -1,53 +1,82 @@
-h1 Modals
-hr
+h1.docs-page-title Modals
 
-section
+section.docs-section
+  a[href="#basics"]
+    h2#basics Basics
+
   markdown:
-    ## Basics [#](#basics)
 
-  =code_sample
-    a.btn href="#" data-modal-id="simpleModal" Summon Simple Modal
+    Modals are easy.  They require two chunks of markup to get up and running:
 
-div.modal.modal--small#simpleModal
-  div.modal__header
-    i.close-reveal-modal
-    div data-modals-close="" close!
-  div.modal__body
-    p XOXO fap placeat, hoodie swag locavore magna gastropub synth. In mustache High Life, duis mlkshk forage fugiat Odd Future VHS next level Godard. IPhone Banksy tousled Wes Anderson yr qui. Tousled McSweeney's ugh ea. Occupy Vice drinking vinegar slow-carb Brooklyn sapiente. Freegan polaroid odio mustache officia, actually exercitation sed McSweeney's. Church-key Tumblr Pinterest do pariatur narwhal.
-    p Occaecat retro ad, sunt flannel roof party irure dreamcatcher shabby chic Shoreditch leggings you probably haven't heard of them organic Odd Future elit. Thundercats tofu shabby chic, authentic enim typewriter roof party chia brunch laborum labore mlkshk bicycle rights letterpress. Distillery cray Odd Future, Williamsburg hashtag kale chips mustache Cosby sweater chillwave retro dreamcatcher ex tousled slow-carb. Twee whatever Thundercats, Pinterest authentic deep v aliquip nihil church-key leggings kitsch photo booth iPhone nisi. Irony swag before they sold out Echo Park Helvetica ut. Salvia seitan elit, trust fund banh mi est Pinterest jean shorts letterpress narwhal reprehenderit keffiyeh cornhole shabby chic. Anim High Life minim, polaroid put a bird on it laborum artisan.
-    p Chambray twee deserunt, kale chips tempor qui cupidatat dreamcatcher Echo Park American Apparel brunch. Direct trade in chillwave sunt scenester +1 enim street art freegan. Yr dreamcatcher jean shorts meggings Vice chambray, slow-carb 90's aesthetic tousled fap vinyl. +1 XOXO magna vero gastropub fap. Anim tote bag Terry Richardson keffiyeh adipisicing sustainable salvia Bushwick. Proident yr banh mi, actually Austin leggings laboris paleo narwhal. Brunch eiusmod single-origin coffee aliqua, tattooed fugiat vero fashion axe commodo.
-    p Cardigan sriracha hashtag, you probably haven't heard of them id keffiyeh whatever fap. Art party XOXO High Life banh mi. Leggings mumblecore +1, farm-to-table deep v nostrud swag Cosby sweater XOXO irure chillwave. PBR&B wolf put a bird on it laborum, sriracha XOXO distillery do pork belly Schlitz retro incididunt. Pinterest gluten-free magna consequat. Squid anim cliche fugiat Schlitz, paleo nesciunt placeat. Tousled food truck lomo ad.
-  div.modal__footer
-    This is the footer
+    * [A modal trigger](#creating-a-trigger)
+    * [A modal body](#creating-a-body)
 
-/ yanked from Forms page
-/h2.section-header Modals
-/p
-/  = modal_trigger 'exModal' do
-/    Default Modal
-/
-/= modal 'exModal' do
-/  .modal__header
-/    h2.modal-title Awesome. I have it.
-/  .modal__body
-/    p.lead This is a standard sized modal.
-/    p Im a cool paragraph that lives inside of an even cooler modal. Wins
-/  .modal__footer
-/    a.btn.btn-secondary.left href="" data-reveal-id="exModalmed" Launch 2nd Modal
-/    a.btn.btn-danger.btn-outline.close-reveal-modal href="" Cancel
-/    a.btn.btn-success href="" Accept
-/
-/= modal 'exModalmed',   class: "medium"  do
-/  .modal__header
-/    h2.modal-title I am modified with a class of .medium
-/  .modal__body
-/    p.lead The dialogs are responsive by default. If you need to you can modify the size with the following classes: (This modal has been modified to be smaller than the default elastic width.)
-/    ul
-/      li small: Set the width to 30%
-/      li medium: Set the width to 40%
-/      li large: Set the width to 60%
-/      li xlarge: Set the width to 70%
-/      li expand: Set the width to 95%
-/  .modal__footer
-/    a.btn.btn-danger.btn-outline.close-reveal-modal href="#" Cancel
-/    a.btn.btn-success href="#" Accept
+    If you aren't including the entirety of the Interfaces js, you'll need to require the `interfaces/interfaces.modals` package.
+
+section.docs-section
+  a[href="#creating-a-trigger"]
+    h2#creating-a-trigger Creating a Trigger
+
+  markdown:
+    Interfaces uses a really nice data-attribute driven api to launch modals.  
+
+    You may trigger a modal by simply adding a `data-model-id` attribute with the id DOM node you are targeting.  For this example, let's target a modal with the id `#simpleModal`.  
+
+  =code_sample_static
+    span data-modal-id="myModal" Launch #simpleModal
+
+section.docs-section
+  a[href="#creating-a-modal"]
+    h2#creating-a-modal Creating a Modal
+
+  markdown:
+    The body of a modal is just as simple to implement.  Simply make a new div with class `.modal` and a unique id.
+
+  =code_sample_static
+    div.modal#myModal
+
+  markdown:
+    You may place this modal anywhere in the DOM.  The `data-api` takes care of moving it to the bottom of the DOM, when the time is right.
+
+
+/That said, you will need to take care when initializing scripts such as select2, or binding live events.
+
+section.docs-section
+  a[href="#composition"]
+    h2#composition Body Composition
+
+  markdown:
+    Modals have a number of elements you can use to take advantage of default styles
+
+  ruby:
+    modal_data = {
+      header: 'Vizzini to the Man in Black',
+      body:   'You only think I guessed wrong! That\'s what\'s so funny! I switched glasses when your back was turned! Ha ha! You fool! You fell victim to one of the classic blunders - The most famous of which is "never get involved in a land war in Asia" - but only slightly less well-known is this: "Never go in against a Sicilian when death is on the line"! Ha ha ha ha ha ha ha! Ha ha ha ha ha ha ha! Ha ha ha...',
+      footer: '[Vizzini stops suddenly...]'
+    }
+
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/modal'
+
+  = render 'interfaces/templates/modal', mustache: modal_data
+
+section.docs-section
+  a[href="#sizing"]
+    h2#sizing Sizing
+
+  markdown:
+    Modals come in four widths:
+
+  table.table
+    tr
+      td: code modal--small
+      td: span 500px wide
+    tr
+      td: code modal--medium (default)
+      td: span 600px wide
+    tr
+      td: code modal--large
+      td: span 900px wide
+    tr
+      td: code modal--full
+      td: span 95% width of application wrapper
