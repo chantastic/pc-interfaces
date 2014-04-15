@@ -22,15 +22,9 @@
   li, a
     display: block
     +font-size(12)
-  // li
-  //   &:first-child a
-  //     +border-radius(3px 3px 0 0)
-  //   &:last-child a
-  //     +border-radius(0 0 3px 3px) 
   a
     padding: 0.4rem 1rem 0.7rem
     white-space: nowrap
-    // border-bottom: 1px solid adjust-color($base-font-color, $lightness: 65%)     
     &:hover
       @extend %highlighted-state
   .dropdown__header

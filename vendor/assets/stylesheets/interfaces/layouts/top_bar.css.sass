@@ -69,6 +69,13 @@
       color: #fff
       background: adjust-color($base-color, $lightness: -42%, $saturation: -30%)
 
+    .icon
+      +breakpoint(lte_tablet)
+        display: inline-block      
+      display: none
+      +breakpoint(bp_3)
+        display: inline-block
+
   
 //Set the bar's height to auto when expanded in mobile view
 .top-bar.active-state, .top-bar.active-state .top-nav-options
