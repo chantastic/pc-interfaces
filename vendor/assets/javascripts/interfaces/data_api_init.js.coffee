@@ -12,4 +12,12 @@ if not INTERFACES?.dataAPI
                  Be sure to include INTERFACES.dataAPI
                """
 
+if not INTERFACES?.dataAPI
+  console.warn """
+               PCO Interfaces Warning:
+                 The INTERFACES.hashAPI module has not been loaded.
+                 Be sure to include INTERFACES.dataAPI
+               """
+
 INTERFACES.dataAPI.init()
+INTERFACES.hashAPI.init()
