@@ -1,124 +1,228 @@
-h1 Sew Buttons
+h1 Buttons
 hr
-
 section
   markdown:
-    ## Basics [#](#basics)
+    ## Basics
     {: #basics}
 
-    There is only one thing required to give anchers and buttns *button* styling:
+    The only thing required to give anchors and buttons *button* styling: **Add the `.btn` class to your element**. Always use it as your base class. Then add modifiers.
 
-    {: .pco-demo-list}
-    * Add the class `btn` to your element
+  table.table
+    tr
+      td
+        a.btn.btn--first.mb0 href="#" Click Me!
+      td colspan="2"
+        = code_sample_static do
+          a.btn href="#" Click Me!
+    tr
+      td
+        a.btn.btn--primary.btn--first.mb0 href="#" Click Me!
+      td
+        = code_sample_static do
+          a.btn.btn--primary href="#"
+      td
+        | button will be the primary color, specified in your project's variables file.
+    tr
+      td
+        a.btn.btn--secondary.btn--first.mb0 href="#" Click Me!
+      td
+        markdown: 
+          `.btn--secondary`
+      td
+        | button will be the secondary color, specified in your project's variables file.
+    tr
+      td
+        a.btn.btn--success.btn--first.mb0 href="#" Click Me!
+      td
+        markdown: 
+          `.btn--success`
+      td
+        | positive action
+    tr
+      td
+        a.btn.btn--danger.btn--first.mb0 href="#" Click Me!
+      td
+        markdown: 
+          `.btn--danger`
+      td
+        | dangerous action
+    tr
+      td
+        a.btn.btn--link.btn--first.mb0 href="#"
+          | Click Me!
+      td
+        markdown: 
+          `.btn--link`
+      td use this when you have a link that sits alongside a button, and should align properly.
+    tr
+      td
+        a.btn.btn--first.mb0 href="#" disabled="disabled"
+          | You can't click Me!
+      td
+        = code_sample_static do
+          a.btn disabled="disabled"
+      td disabled
 
-  =code_sample
-    a.btn href="#" Click Me!
-
-  markdown:
-    You may then use modifying classes to change the characteristics of your button:
-
-  =code_sample
-    a.btn.btn--danger href="#" WARNING!
-
-  markdown:
-    Disabling a button with the `disabled` attribute will provide you a disabled look.
-
-  = code_sample do
-    a.btn disabled="disabled" href="#" default
-
-hr
+hr.section-end
 
 section
   markdown:
-    ## Variants [#](#variants)
-    {: #variants}
-
-    You have *five* button variants available to you through these classes:
-
-    {: .pco-demo-list}
-    * `btn--primary`
-    * `btn--secondary`
-    * `btn--success`
-    * `btn--danger`
-    * `btn--link`
-
-  = code_sample do
-    a.btn href="#" default
-    a.btn.btn--primary href="#" primary
-    a.btn.btn--secondary href="#" secondary
-    a.btn.btn--success href="#" success
-    a.btn.btn--danger href="#" danger
-    a.btn.btn--link href="#" link
-
-hr
-
-section
-  markdown:
-    ## Outline [#](#outline)
+    ## Outlined Buttons
     {: #outline}
-  = code_sample do
-    a.btn.btn--outline href="#" default
-    a.btn.btn--outline.btn--primary href="#" primary
-    a.btn.btn--outline.btn--secondary href="#" secondary
-    a.btn.btn--outline.btn--success href="#" success
-    a.btn.btn--outline.btn--danger href="#" danger
-    a.btn.btn--outline.btn--link href="#" link
 
-hr
+    Add the modifying `.btn--outline` classname to any `.btn`. Except for `.btn--link`, because it doesn't need borders, yo.
+
+  table.table
+    tr
+      td
+        a.btn.btn--first.btn--outline.mb0 href="#" Click Me!
+      td colspan="2"
+        = code_sample_static do
+          a.btn.btn--outline href="#" Click Me!
+    tr
+      td
+        a.btn.btn--primary.btn--outline.btn--first.mb0 href="#" Click Me!
+      td colspan="2"
+        = code_sample_static do
+          a.btn.btn--primary.btn--outline href="#"
+
+hr.section-end
 
 section
   markdown:
-    ## Size [#](#size)
+    ## Button Sizes
     {: #size}
 
-  h3.section-header Button Sizes
-  = code_sample do
-    a.btn.btn--primary.btn--large href="#" large
-    a.btn.btn--primary href="#" (default)
-    a.btn.btn--primary.btn--small href="#" small
-    a.btn.btn--primary.btn--tiny href="#" tiny
-    a.btn.btn--primary.btn--micro href="#" micro
-    a.btn.btn--primary.btn--expand href="#" expand
+    Add the size modifier classes.
 
-hr
+  table.table
+    tr
+      td
+        a.btn.btn--primary.btn--first.mb0 href="#" Default
+      td colspan="2" 
+    tr
+      td
+        a.btn.btn--primary.btn--large.btn--first.mb0 href="#" Large
+      td colspan="2"
+        = code_sample_static do
+          a.btn.btn--primary.btn--large href="#" Large
+    tr
+      td
+        a.btn.btn--primary.btn--small.btn--first.mb0 href="#" Small
+      td colspan="2"
+        markdown:
+          `.btn--small`
+    tr
+      td
+        a.btn.btn--primary.btn--tiny.btn--first.mb0 href="#" Tiny
+      td colspan="2"
+        markdown:
+          `.btn--tiny`
+    tr
+      td
+        a.btn.btn--primary.btn--micro.btn--first.mb0 href="#" Micro
+      td colspan="2"
+        markdown:
+          `.btn--micro`
+    tr
+      td
+        a.btn.btn--primary.btn--expand.btn--first.mb0 href="#" Expand
+      td colspan="2"
+        markdown:
+          `.btn--expand`
+
+hr.section-end
 
 section
   markdown:
-    ## Groups [#](#groups)
+    ## Button Groups
     {: #groups}
 
-    Groups allouw you to cobine many related buttons into a single interface element.
+    Button groups allow you to cobine related buttons into a single interface element. Button modifier classes work too. (Just make sure your sizes are consistent, cause otherwise, ewww.)
 
-  = code_sample do
-    ul.btn-group
-      li
-        a.btn href="#" One
-      li
-        a.btn href="#" Two
-      li
-        a.btn href="#" Three
+  .row
+    .col.col--half
+      table.table
+        tr
+          td
+            ul.btn-group
+              li
+                a.btn.btn--primary href="#" Meh
+              li
+                a.btn.btn--success href="#" Do it!
+              li
+                a.btn.btn--danger href="#" Oh Noes!
+                tr
+          td
+            ul.btn-group
+              li
+                a.btn.btn--outline href="#" One
+              li
+                a.btn.btn--outline href="#" Two
+              li
+                a.btn.btn--outline href="#" Three
+        tr
+          td
+            ul.btn-group
+              li
+                a.btn.btn--small href="#" One
+              li
+                a.btn.btn--small href="#" Two
+              li
+                a.btn.btn--small href="#" Three    
+        tr
+          td
+            ul.btn-group
+              li
+                a.btn.btn--tiny href="#" One
+              li
+                a.btn.btn--tiny href="#" Two
+              li
+                a.btn.btn--tiny href="#" Three
 
-hr
+    .col.col--half
+      = code_sample_static do
+        ul.btn-group
+          li
+            a.btn href="#" One
+          li
+            a.btn href="#" Two
+          li
+            a.btn href="#" Three
+
+hr.section-end
 
 section
   markdown:
-    ## Checkboxes [#](#checkboxes)
+    ## Checkboxes
     {: #checkboxes}
 
     In some cases, you want a checkbox to not look like a checkbox. You want it to look like a button with a checked and unchecked state.  Here.
+    Modifiers can be applied.
 
     *You'll need the js in place for adding a `selected` class to the `label` element.*
-
-  = code_sample do
-    ul.btn-group
-      li
-        label.btn.btn--small.btn--checkbox.selected for="cool_checkbox"
-          input type="checkbox" name="cool_checkbox" id="cool_checkbox"
-          | I am cool
-      li
-        label.btn.btn--small.btn--checkbox for="uncool_checkbox"
-          input type="checkbox" name="uncool_checkbox" id="uncool_checkbox"
-          | I am uncool
+  .row
+    .col.col--quarter
+      ul.btn-group
+          li
+            label.btn.btn--large.btn--checkbox.selected for="cool_checkbox"
+              input type="checkbox" name="cool_checkbox" id="cool_checkbox"
+              | I am cool
+          li
+            label.btn.btn--large.btn--checkbox for="uncool_checkbox"
+              input type="checkbox" name="uncool_checkbox" id="uncool_checkbox"
+              | I am uncool
+    .col.col--three-quarters
+      = code_sample_static do
+        ul.btn-group
+          li
+            label.btn.btn--small.btn--checkbox.selected for="cool_checkbox"
+              input type="checkbox" name="cool_checkbox" id="cool_checkbox"
+              | I am cool
+          li
+            label.btn.btn--small.btn--checkbox for="uncool_checkbox"
+              input type="checkbox" name="uncool_checkbox" id="uncool_checkbox"
+              | I am uncool
 
 / pending re-implementation
 
