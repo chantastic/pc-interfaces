@@ -178,55 +178,14 @@ section
 
     Button groups allow you to cobine related buttons into a single interface element. Modifier classes work too. (Just make sure your sizes are consistent, cause otherwise, ewww.)
 
-  .row
-    .col.col--half
-      table.table
-        tr
-          td
-            ul.btn-group
-              li
-                a.btn.btn--primary href="#" Meh
-              li
-                a.btn.btn--success href="#" Do it!
-              li
-                a.btn.btn--danger href="#" Oh Noes!
-                tr
-          td
-            ul.btn-group
-              li
-                a.btn.btn--outline href="#" One
-              li
-                a.btn.btn--outline href="#" Two
-              li
-                a.btn.btn--outline href="#" Three
-        tr
-          td
-            ul.btn-group
-              li
-                a.btn.btn--small href="#" One
-              li
-                a.btn.btn--small href="#" Two
-              li
-                a.btn.btn--small href="#" Three    
-        tr
-          td
-            ul.btn-group
-              li
-                a.btn.btn--tiny href="#" One
-              li
-                a.btn.btn--tiny href="#" Two
-              li
-                a.btn.btn--tiny href="#" Three
-
-    .col.col--half
-      = code_sample_static do
-        ul.btn-group
-          li
-            a.btn href="#" One
-          li
-            a.btn href="#" Two
-          li
-            a.btn href="#" Three
+  = code_sample do 
+    ul.btn-group
+      li
+        a.btn.btn--primary href="#" Meh
+      li
+        a.btn.btn--success href="#" Do it!
+      li
+        a.btn.btn--danger href="#" Oh Noes!
 
 hr.section-end
 
