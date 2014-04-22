@@ -7,19 +7,29 @@ section
 
     The only thing required to give anchors and buttons *button* styling: **Add the `.btn` class to your element**. Always use it as your base class. Then add modifiers.
 
+  .row
+    .col.col--two-fifths
+      = code_sample_static do
+        a.btn href="#" Click Me!
+    .col.col--fifth.text-center
+      .item-centered-hr
+        h4 or
+    .col.col--two-fifths
+      = code_sample_static do
+        input.btn value="Click Me!"
   table.table
     tr
       td
         a.btn.btn--first.mb0 href="#" Click Me!
       td colspan="2"
-        = code_sample_static do
-          a.btn href="#" Click Me!
+        markdown:
+          `.btn`
     tr
       td
         a.btn.btn--primary.btn--first.mb0 href="#" Click Me!
       td
-        = code_sample_static do
-          a.btn.btn--primary href="#"
+        markdown:
+          `.btn.btn--primary`
       td
         | button will be the primary color, specified in your project's variables file.
     tr
@@ -27,7 +37,7 @@ section
         a.btn.btn--secondary.btn--first.mb0 href="#" Click Me!
       td
         markdown: 
-          `.btn--secondary`
+          `.btn.btn--secondary`
       td
         | button will be the secondary color, specified in your project's variables file.
     tr
@@ -35,7 +45,7 @@ section
         a.btn.btn--success.btn--first.mb0 href="#" Click Me!
       td
         markdown: 
-          `.btn--success`
+          `.btn.btn--success`
       td
         | positive action
     tr
@@ -43,7 +53,7 @@ section
         a.btn.btn--danger.btn--first.mb0 href="#" Click Me!
       td
         markdown: 
-          `.btn--danger`
+          `.btn.btn--danger`
       td
         | dangerous action
     tr
@@ -52,15 +62,15 @@ section
           | Click Me!
       td
         markdown: 
-          `.btn--link`
+          `.btn.btn--link`
       td use this when you have a link that sits alongside a button, and should align properly.
     tr
       td
         a.btn.btn--first.mb0 href="#" disabled="disabled"
           | You can't click Me!
       td
-        = code_sample_static do
-          a.btn disabled="disabled"
+        markdown:
+          `.btn, disabled="disabled"`
       td disabled
 
 hr.section-end
@@ -70,21 +80,47 @@ section
     ## Outlined Buttons
     {: #outline}
 
-    Add the modifying `.btn--outline` classname to any `.btn`. Except for `.btn--link`, because it doesn't need borders, yo.
+    Outlined buttons have borders but no background color. Just add the modifying `.btn--outline` classname to any `.btn`. Except for `.btn--link`, because it doesn't need borders, yo. Color modifiers work too.
 
   table.table
     tr
       td
-        a.btn.btn--first.btn--outline.mb0 href="#" Click Me!
+        a.btn.btn--outline.btn--first.mb0 href="#" Click Me!
       td colspan="2"
-        = code_sample_static do
-          a.btn.btn--outline href="#" Click Me!
+        markdown:
+          `.btn.btn--outline`
     tr
       td
-        a.btn.btn--primary.btn--outline.btn--first.mb0 href="#" Click Me!
-      td colspan="2"
-        = code_sample_static do
-          a.btn.btn--primary.btn--outline href="#"
+        a.btn.btn--outline.btn--primary.btn--first.mb0 href="#" Click Me!
+      td
+        markdown:
+          `.btn.btn--primary.btn--outline`
+      td
+        | button will be the primary color, specified in your project's variables file.
+    tr
+      td
+        a.btn.btn--outline.btn--secondary.btn--first.mb0 href="#" Click Me!
+      td
+        markdown: 
+          `.btn.btn--secondary.btn--outline`
+      td
+        | button will be the secondary color, specified in your project's variables file.
+    tr
+      td
+        a.btn.btn--outline.btn--success.btn--first.mb0 href="#" Click Me!
+      td
+        markdown: 
+          `.btn.btn--success.btn--outline`
+      td
+        | positive action
+    tr
+      td
+        a.btn.btn--outline.btn--danger.btn--first.mb0 href="#" Click Me!
+      td
+        markdown: 
+          `.btn.btn--danger.btn--outline`
+      td
+        | dangerous action
 
 hr.section-end
 
@@ -93,43 +129,45 @@ section
     ## Button Sizes
     {: #size}
 
-    Add the size modifier classes.
+    Add the size modifier class to `.btn`.
 
   table.table
     tr
       td
         a.btn.btn--primary.btn--first.mb0 href="#" Default
       td colspan="2" 
+        markdown:
+          `.btn`
     tr
       td
         a.btn.btn--primary.btn--large.btn--first.mb0 href="#" Large
       td colspan="2"
-        = code_sample_static do
-          a.btn.btn--primary.btn--large href="#" Large
+        markdown:
+          `.btn.btn--primary.btn--large`
     tr
       td
         a.btn.btn--primary.btn--small.btn--first.mb0 href="#" Small
       td colspan="2"
         markdown:
-          `.btn--small`
+          `.btn.btn--primary.btn--small`
     tr
       td
         a.btn.btn--primary.btn--tiny.btn--first.mb0 href="#" Tiny
       td colspan="2"
         markdown:
-          `.btn--tiny`
+          `.btn.btn--primary.btn--tiny`
     tr
       td
         a.btn.btn--primary.btn--micro.btn--first.mb0 href="#" Micro
       td colspan="2"
         markdown:
-          `.btn--micro`
+          `.btn.btn--primary.btn--micro`
     tr
       td
         a.btn.btn--primary.btn--expand.btn--first.mb0 href="#" Expand
       td colspan="2"
         markdown:
-          `.btn--expand`
+          `.btn.btn--primary.btn--expand`
 
 hr.section-end
 
@@ -138,7 +176,7 @@ section
     ## Button Groups
     {: #groups}
 
-    Button groups allow you to cobine related buttons into a single interface element. Button modifier classes work too. (Just make sure your sizes are consistent, cause otherwise, ewww.)
+    Button groups allow you to cobine related buttons into a single interface element. Modifier classes work too. (Just make sure your sizes are consistent, cause otherwise, ewww.)
 
   .row
     .col.col--half
@@ -201,28 +239,21 @@ section
     Modifiers can be applied.
 
     *You'll need the js in place for adding a `selected` class to the `label` element.*
-  .row
-    .col.col--quarter
-      ul.btn-group
-          li
-            label.btn.btn--large.btn--checkbox.selected for="cool_checkbox"
-              input type="checkbox" name="cool_checkbox" id="cool_checkbox"
-              | I am cool
-          li
-            label.btn.btn--large.btn--checkbox for="uncool_checkbox"
-              input type="checkbox" name="uncool_checkbox" id="uncool_checkbox"
-              | I am uncool
-    .col.col--three-quarters
-      = code_sample_static do
-        ul.btn-group
-          li
-            label.btn.btn--small.btn--checkbox.selected for="cool_checkbox"
-              input type="checkbox" name="cool_checkbox" id="cool_checkbox"
-              | I am cool
-          li
-            label.btn.btn--small.btn--checkbox for="uncool_checkbox"
-              input type="checkbox" name="uncool_checkbox" id="uncool_checkbox"
-              | I am uncool
+
+  = code_sample do
+    ul.btn-group
+      li
+        label.btn.btn--checkbox.selected for="cool_checkbox"
+          input type="checkbox" name="cool_checkbox" id="cool_checkbox"
+          | I am cool
+      li
+        label.btn.btn--checkbox for="uncool_checkbox"
+          input type="checkbox" name="uncool_checkbox" id="uncool_checkbox"
+          | I am uncool
+      li
+        label.btn.btn--checkbox for="neither_checkbox"
+          input type="checkbox" name="neither_checkbox" id="neither_checkbox"
+          | I am neither cool nor uncool
 
 / pending re-implementation
 
