@@ -102,7 +102,7 @@ div.top-bar.js-dropwrap
                   - else
                     a href="/people/#{Person.current.id}"= Person.current.name
                   span
-                  = Person.current.organization.name
+                  = Organization.current
 
             ul.utilities
               - if Person.current.present? && Person.current.organization_id == 1
