@@ -1,19 +1,20 @@
-h1 Tooltips
-hr
+h1.docs-page-title Tooltips
 
-section
+section.docs-section
   markdown:
     ## Basics
     {: #basics }
 
     There are two pieces required to implement a successful tooltip:
-
-    {: .pco-demo-list}
-    * Add the `has-tip` class to your element
-    * Add a `data-tip` attribute with your tip text
-
-  =code_sample_static
-    a.has-tip href="#" data-tip="Imma tooltip." Tooltippin
+  .row
+    .col.col--half
+      markdown:
+        {: .pco-demo-list}
+        * Add the `.has-tip` class to your element
+        * Add a `data-tip=""` attribute with your tip text
+    .col.col--half
+      =code_sample_static
+        a.has-tip href="#" data-tip="Imma tooltip." Tooltippin
 
   table.table
     tr
@@ -46,11 +47,7 @@ section
           `data-tip` is blank. Tooltip should not fire.
           An empty `data-tip` attribute will prevent the tip from displaying.  This keeps empty tips from showing on generated or asyncronous views.
 
-  
-
-hr.section-end
-
-section
+section.docs-section
   markdown:
     ## Tooltip Position
     {: #position }
@@ -91,9 +88,7 @@ section
           `.has-tip.tip--left`
       td Left
 
-hr.section-end
-
-section
+section.docs-section
   markdown:
     ## Anchor Points
     {: #anchor }
@@ -134,9 +129,13 @@ section
           `.has-tip.tip--bottom.tip--anchor-right`
       td Anchored Right, Bottom
 
-hr.section-end
+section.docs-section
+  markdown:
+    ## Tooltip Flow
+    {: #flow }
 
-section
+    Control the way tips flow in your layout.  By default, tips flow evenly from the center.  Add the modifier classes, `.tip--flow-left` and `.tip--flow-right`, to anchor to the left or right. As you might expect, anchor control only works with `.tip--top` and `.tip--bottom`. _Combine anchor and flow modifiers for more control._
+
   table.table
     tr
       td
@@ -171,119 +170,39 @@ section
           `.has-tip.tip--bottom.tip--anchor-right`
       td Anchored Right, Bottom
 
+section.docs-section
   markdown:
-    ## Tooltip Flow
-    {: #flow }
-
-    Control the way tips flow in your layout.  By default, tips flow evenly from the center.  Add the modifier classes, `.tip--flow-left` and `.tip--flow-right`, to anchor to the left or right. As you might expect, anchor control only works with `.tip--top` and `.tip--bottom`.
-
-    #### Top
-
-    [flow](#){: class="has-tip tip--flow-left" data-tip="has-tip tip--flow-left" }_: flow left_  
-    [flow](#){: class="has-tip tip--flow-right" data-tip="has-tip tip--flow-right" }_: flow right_  
-
-    #### Bottom
-
-    [flow](#){: class="has-tip tip--bottom tip--flow-left" data-tip="has-tip tip--bottom tip--flow-left" }_: flow left_  
-    [flow](#){: class="has-tip tip--bottom tip--flow-right" data-tip="has-tip tip--bottom tip--flow-right" }_: flow right_  
-
-  =code_sample_static
-    a.has-tip.tip--flow-left href="#" data-tip="SUCH LEFT" lefty tip
-
-hr
-
-section
-  markdown:
-    ## Anchor + Flow [#](#anchor-and-flow)
-    {: #anchor-and-flow }
-
-    Anchor and flow may be combined for tons of control over your tips.
-
-    #### Top: Anchored Left
-
-    [anchor + flow](#){: class="has-tip tip--anchor-left tip--flow-left" data-tip="has-tip tip--anchor-left tip--flow-left" }_: flow left_  
-    [anchor + flow](#){: class="has-tip tip--anchor-left tip--flow-right" data-tip="has-tip  tip--anchor-left tip--flow-right" }_: flow right_  
-
-    #### Top: Anchored Right
-
-    [anchor + flow](#){: class="has-tip tip--anchor-right tip--flow-left" data-tip="has-tip  tip--anchor-right tip--flow-left" }_: flow right_  
-    [anchor + flow](#){: class="has-tip tip--anchor-right tip--flow-right" data-tip="has-tip  tip--anchor-right tip--flow-right" }_: flow right_  
-
-    #### Bottom: Anchored Left
-
-    [anchor + flow](#){: class="has-tip tip--bottom tip--anchor-left tip--flow-left" data-tip="tip--anchor-left tip--flow-left" }_: flow-left_  
-    [anchor + flow](#){: class="has-tip tip--bottom tip--anchor-left tip--flow-right" data-tip="tip--anchor-left tip--flow-right" }_: flow-right_  
-
-    #### Bottom: Anchored Right
-
-    [anchor + flow](#){: class="has-tip tip--bottom tip--anchor-right tip--flow-left" data-tip="tip--anchor-right tip--flow-left" }_: flow-left_  
-    [anchor + flow](#){: class="has-tip tip--bottom tip--anchor-right tip--flow-right" data-tip="tip--anchor-right tip--flow-right" }_: flow-right_  
-
-  =code_sample_static
-    a.has-tip.tip--anchor-left.tip--flow-right href="#" data-tip="MUCH CONTROL!" To the left. To the left
-
-hr
-
-section
-  markdown:
-    ## Multiline [#](#multiline)
+    ## Multiline Tooltips
     {: #multiline }
 
-    Multiline allows you to comfortable show more than a single line tooltip.  It's pretty straight forword.  Adding class `tip--multiline` will give you tip that wraps at 200px wide. All other modifers may be used in combination
+    Multiline allows you to show more than a single line tooltip. Adding the `.tip--multiline` class will give you a tooltip that wraps at 200px wide. All other modifier classes may be used in combination with multi-line for more control.
 
-    ### Default
+  table.table
+    tr
+      td
+        markdown:
+          [Hover here](#){: class="has-tip tip--multiline" data-tip="I would never want a book's autograph. I am a proud non-reader of books. -Kanye West"}
+      td
+        markdown:
+          `.has-tip.tip--multiline`
+      td
+        markdown:
+          _Oh, Kanye..._
 
-    [miltiline](#){: class="has-tip tip--multiline" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }  
-
-    ### Top
-
-    [multiline](#){: class="has-tip tip--top tip--multiline tip--anchor-left tip--flow-left" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor left, flow left_  
-    [multiline](#){: class="has-tip tip--top tip--multiline tip--anchor-left" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor left_  
-    [multiline](#){: class="has-tip tip--top tip--multiline tip--anchor-left tip--flow-right" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor left, flow right_  
-    [multiline](#){: class="has-tip tip--top tip--multiline tip--flow-left" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: flow left_  
-    [multiline](#){: class="has-tip tip--top tip--multiline" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }  
-    [multiline](#){: class="has-tip tip--top tip--multiline tip--flow-right" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: flow right  
-    [multiline](#){: class="has-tip tip--top tip--multiline tip--anchor-right tip--flow-left" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor right, flow left_  
-    [multiline](#){: class="has-tip tip--top tip--multiline tip--anchor-right" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor right_  
-    [multiline](#){: class="has-tip tip--top tip--multiline tip--anchor-right tip--flow-right" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_:anchor right, flow right_  
-
-    ### Right
-    [multiline](#){: class="has-tip tip--right tip--multiline" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }  
-
-    ### Bottom
-
-    [multiline](#){: class="has-tip tip--bottom tip--multiline tip--anchor-right tip--flow-right" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor right, flow right_  
-    [multiline](#){: class="has-tip tip--bottom tip--multiline tip--anchor-right" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor right_  
-    [multiline](#){: class="has-tip tip--bottom tip--multiline tip--anchor-right tip--flow-left" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor right, flow left_  
-    [multiline](#){: class="has-tip tip--bottom tip--multiline tip--flow-right" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: flow right_  
-    [multiline](#){: class="has-tip tip--bottom tip--multiline" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }  
-    [multiline](#){: class="has-tip tip--bottom tip--multiline tip--flow-left" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: flow left_  
-    [multiline](#){: class="has-tip tip--bottom tip--multiline tip--anchor-left tip--flow-right" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor left, flow right_  
-    [multiline](#){: class="has-tip tip--bottom tip--multiline tip--anchor-left" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor left_  
-    [multiline](#){: class="has-tip tip--bottom tip--multiline tip--anchor-left tip--flow-left" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor left, flow left_  
-
-    ### Left
-
-    [multiline](#){: class="has-tip tip--left tip--multiline" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }  
-
-  =code_sample_static
-    a.has-tip.tip--multiline href="#" data-tip="SO MULTI!" Multiline
-
-hr
-
-section
+section.docs-section
   markdown:
-    ## Additional Uses + Edge Cases
+    ## So, in theory, if you want to control all the things, you could do something like...
 
-hr
+  = code_sample do 
+    a.has-tip.tip--bottom.tip--multiline.tip--flow-right.tip--anchor-right data-tip="I am God's vessel. But my greatest pain in life is that I will never be able to see myself perform live. - Kanye West" href="#" Another gem from Kanye
 
-section
-  markdown:
-    ## TODO [#](#todo)
-    {: #todo }
+/ section.docs-section
+/   markdown:
+/     ## TODO [#](#todo)
+/     {: #todo }
 
-    {: style="margin-left: 20px"}
-    * `anchor-top`, `anchor-bottom` for muliline `right` and `left` tips
-    * IE8 fallback
-    * Add additive `tip--disable` for programatic silencing
-    * moderizr `.touch` exlusion option
+/     {: style="margin-left: 20px"}
+/     * `anchor-top`, `anchor-bottom` for muliline `right` and `left` tips
+/     * IE8 fallback
+/     * Add additive `tip--disable` for programatic silencing
+/     * moderizr `.touch` exlusion option
