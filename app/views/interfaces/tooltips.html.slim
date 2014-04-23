@@ -98,7 +98,7 @@ section
     ## Anchor Points
     {: #anchor }
 
-    Control the anchor point of your tip.  By defualt, tips are anchored to the center point of the element you are tipping. Add the modifier classes to anchor to the left or right. As you might expect, anchor control only works with `.tip--top` and `.tip--bottom`.
+    Control the anchor point of your tip.  By defualt, tips are anchored to the center point of the element you are tipping. Add the modifier classes, `.tip--anchor-left` and `.tip--anchor-right`,  to anchor to the left or right. As you might expect, anchor control only works with `.tip--top` and `.tip--bottom`.
 
   table.table
     tr
@@ -120,34 +120,62 @@ section
     tr
       td
         markdown:
-          [Hover here](#){: class="has-tip tip--bottom tip--anchor-right" data-tip="I'm anchored on the bottom-right." }
-      td
-        markdown:
-          `.has-tip.tip--bottom.tip--anchor-right`
-      td Anchored Right, Bottom
-    tr
-      td
-        markdown:
           [Hover here](#){: class="has-tip tip--bottom tip--anchor-left" data-tip="I'm anchored on the bottom-left." }
       td
         markdown:
           `.has-tip.tip--bottom.tip--anchor-left`
       td Anchored Left, Bottom
+    tr
+      td
+        markdown:
+          [Hover here](#){: class="has-tip tip--bottom tip--anchor-right" data-tip="I'm anchored on the bottom-right." }
+      td
+        markdown:
+          `.has-tip.tip--bottom.tip--anchor-right`
+      td Anchored Right, Bottom
 
 hr.section-end
 
 section
+  table.table
+    tr
+      td
+        markdown:
+          [Hover here](#){: class="has-tip tip--flow-left" data-tip="I'm flowing to the left." }
+      td
+        markdown:
+          `.has-tip.tip--flow-left`
+      td Flowing to the Left, Top
+    tr
+      td
+        markdown:
+          [Hover here](#){: class="has-tip tip--flow-right" data-tip="I'm flowing to the right." }
+      td
+        markdown:
+          `.has-tip.tip--flow-right`
+      td Flowing to the Right, Top
+    tr
+      td
+        markdown:
+          [Hover here](#){: class="has-tip tip--bottom tip--flow-left" data-tip="I'm on the bottom, flowing to the left." }
+      td
+        markdown:
+          `.has-tip.tip--bottom.tip--flow-left`
+      td Flowing to the Left, Bottom
+    tr
+      td
+        markdown:
+          [Hover here](#){: class="has-tip tip--bottom tip--flow-right" data-tip="I'm on the bottom, flowing to the right." }
+      td
+        markdown:
+          `.has-tip.tip--bottom.tip--anchor-right`
+      td Anchored Right, Bottom
+
   markdown:
-    ## Flow [#](#flow)
+    ## Tooltip Flow
     {: #flow }
 
-    Control the way tips flow in your layout.  By default, tips flow evenly from the center.  Flow allows you to modify that with these classes:
-
-    {: style="margin-left: 20px" }
-    * `tip--flow-right`
-    * `tip--flow-left`
-
-    As you might expect, flow control only works and `top` and `bottom`.
+    Control the way tips flow in your layout.  By default, tips flow evenly from the center.  Add the modifier classes, `.tip--flow-left` and `.tip--flow-right`, to anchor to the left or right. As you might expect, anchor control only works with `.tip--top` and `.tip--bottom`.
 
     #### Top
 
