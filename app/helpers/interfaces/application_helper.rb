@@ -5,7 +5,7 @@ module Interfaces
         button_modifiers: [
           {
             modifier: "",
-            description: ""
+            description: "(default)"
           },
           {
             modifier: "btn--primary",
