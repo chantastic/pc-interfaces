@@ -40,3 +40,30 @@
 
 .code-sample--visible
   display: block
+pre
+  +font-size(12)
+td
+  pre[class*="language-"]
+    margin: 0
+.section-end
+  margin-bottom: 3rem
+
+.item-centered-hr
+  text-align: center
+  position: relative
+  margin: 1.5rem auto
+  &:before, &:after
+    content: ''
+    position: absolute
+    display: block
+    top: 50%
+    opacity: .7
+    border-bottom: 1px solid
+  &:before
+    left: 0
+    right: 60%
+  &:after
+    left: 60%
+    right: 0
+.ui-example-wrapper
+  margin-bottom: 2rem
