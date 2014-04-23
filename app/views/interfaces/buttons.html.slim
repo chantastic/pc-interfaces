@@ -1,147 +1,125 @@
-h1 Sew Buttons
-hr
+h1.docs-page-title Buttons
 
-section
-  markdown:
-    ## Basics [#](#basics)
-    {: #basics}
-
-    There is only one thing required to give anchers and buttns *button* styling:
-
-    {: .pco-demo-list}
-    * Add the class `btn` to your element
-
-  =code_sample
-    a.btn href="#" Click Me!
+section.docs-section
+  a[href="#basics"]
+    h2#basics Basics
 
   markdown:
-    You may then use modifying classes to change the characteristics of your button:
+    You can add _button_ style to any element by adding the class `btn`.  
 
-  =code_sample
-    a.btn.btn--danger href="#" WARNING!
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/button'
+
+
+section.docs-section
+  a[href="#modifiers"]
+    h2#modifiers Modifiers
 
   markdown:
-    Disabling a button with the `disabled` attribute will provide you a disabled look.
+    Modifiers can be used, in addition to `btn`, to _specialize_ your the generic button.  
 
-  = code_sample do
-    a.btn disabled="disabled" href="#" default
+    Modifiers are _additive_, so you must also provide the base `btn` class.  
 
-hr
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/button_modified'
 
-section
+
+
+section.docs-section
+  a[href="#styles"]
+    h2#styles Styles
+
   markdown:
-    ## Variants [#](#variants)
-    {: #variants}
+    Buttons come with a handful of useful styles to choose from.  Simply add the modifying clann to the defaul `btn` class.  
 
-    You have *five* button variants available to you through these classes:
+    _(Note: These button styles will pull from your application stylesheet.  This is so that they always match the host environment.)_  
 
-    {: .pco-demo-list}
-    * `btn--primary`
-    * `btn--secondary`
-    * `btn--success`
-    * `btn--danger`
-    * `btn--link`
+  .row
+    .col.col--two-fifths
+      pre.code-sample-static.language-markup:code
+        = render_source 'interfaces/templates/button_anchor'
 
-  = code_sample do
-    a.btn href="#" default
-    a.btn.btn--primary href="#" primary
-    a.btn.btn--secondary href="#" secondary
-    a.btn.btn--success href="#" success
-    a.btn.btn--danger href="#" danger
-    a.btn.btn--link href="#" link
+    .col.col--fifth.text-center
+      .item-centered-hr
+        h4 or
 
-hr
+    .col.col--two-fifths
+      pre.code-sample-static.language-markup:code
+        = render_source 'interfaces/templates/button_input'
 
-section
+  = render 'interfaces/templates/buttons/button_modifier_list', :mustache => button_styles
+
+
+section.docs-section
+  a[href="#disabled"]
+    h2#disabled Disabled
+
   markdown:
-    ## Outline [#](#outline)
-    {: #outline}
-  = code_sample do
-    a.btn.btn--outline href="#" default
-    a.btn.btn--outline.btn--primary href="#" primary
-    a.btn.btn--outline.btn--secondary href="#" secondary
-    a.btn.btn--outline.btn--success href="#" success
-    a.btn.btn--outline.btn--danger href="#" danger
-    a.btn.btn--outline.btn--link href="#" link
+    Buttons respond to being programitically disabled.  To disable a button, simply set it's `disabled` attribute to `disabled`.  
 
-hr
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/button_disabled'
 
-section
+  table.table
+    tr
+      td
+        = render 'interfaces/templates/button_disabled'
+      td
+        pre: code
+          | btn, disabled="disabled"
+      td disabled
+
+
+section.docs-section
+  a[href="#outline"]
+    h2#outline Outline
+
   markdown:
-    ## Size [#](#size)
-    {: #size}
+    Outlined buttons have borders but no background color. Just add the modifying `.btn--outline` classname to any `.btn`. Except for `.btn--link`, because it doesn't need borders, yo. Color modifiers work too.
 
-  h3.section-header Button Sizes
-  = code_sample do
-    a.btn.btn--primary.btn--large href="#" large
-    a.btn.btn--primary href="#" (default)
-    a.btn.btn--primary.btn--small href="#" small
-    a.btn.btn--primary.btn--tiny href="#" tiny
-    a.btn.btn--primary.btn--micro href="#" micro
-    a.btn.btn--primary.btn--expand href="#" expand
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/button_outline'
 
-hr
+  = render 'interfaces/templates/buttons/button_outline_modifier_list',
+            :mustache => { button_modifiers: [{ modifier: '', description: "default outline" }, { modifier: 'btn--danger', description: "outlined btn--danger" }] }
 
-section
+
+section.docs-section
+  a[href="#size"]
+    h2#size Size
+
   markdown:
-    ## Groups [#](#groups)
-    {: #groups}
+    Add the size modifier class to `.btn`.
 
-    Groups allouw you to cobine many related buttons into a single interface element.
+  = render 'interfaces/templates/buttons/button_modifier_list', :mustache => { button_modifiers: [{ modifier: 'btn--large' }, { modifier: '' }, { modifier: 'btn--small' }, { modifier: 'btn--tiny' }, { modifier: 'btn--micro' }, { modifier: 'btn--expand' }] }
 
-  = code_sample do
-    ul.btn-group
-      li
-        a.btn href="#" One
-      li
-        a.btn href="#" Two
-      li
-        a.btn href="#" Three
 
-hr
+section.docs-section
+  a[href="#group"]
+    h2#group Groups
 
-section
   markdown:
-    ## Checkboxes [#](#checkboxes)
-    {: #checkboxes}
+    Button groups allow you to cobine related buttons into a single interface element. Modifier classes work too. (Just make sure your sizes are consistent, cause otherwise, ewww.)
 
+  .row:.col
+    = render 'interfaces/templates/buttons/button_group', :mustache => { first: "one", second: "two", third: "three" }
+
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/buttons/button_group'
+
+
+section.docs-section
+  a[href="#group-checkbox"]
+    h2#group-checkbox Group Checkbox
+
+  markdown:
     In some cases, you want a checkbox to not look like a checkbox. You want it to look like a button with a checked and unchecked state.  Here.
+    Modifiers can be applied.
 
     *You'll need the js in place for adding a `selected` class to the `label` element.*
 
-  = code_sample do
-    ul.btn-group
-      li
-        label.btn.btn--small.btn--checkbox.selected for="cool_checkbox"
-          input type="checkbox" name="cool_checkbox" id="cool_checkbox"
-          | I am cool
-      li
-        label.btn.btn--small.btn--checkbox for="uncool_checkbox"
-          input type="checkbox" name="uncool_checkbox" id="uncool_checkbox"
-          | I am uncool
+  .row:.col
+    = render 'interfaces/templates/buttons/button_group_checkboxes', :mustache => { first: "crazy", second: "sexy", third: "cool" }
 
-/ pending re-implementation
-
-/*h3.section-header Split Button / Dropdown*/
-/*div.dropdown*/
-/*  a.dropdown-toggle.btn.btn-dropdown*/
-/*    | btn-dropdown*/
-/*    span.btn-dropdown__indicator*/
-/*      i.caret aria-hidden="true"*/
-/*  ul.dropdown__menu data-dropdown-content=""*/
-/*    li*/
-/*      a href="#" This is a link*/
-/*  .dropdown*/
-/*    a.btn.btn-dropdown.dropdown-togglehref="#"*/
-/*    Dropdown Button*/
-/*    span.dropdown-indicator*/
-/*      i.caret aria-hidden="true"*/
-/*  ul.dropdown__menu data-dropdown-content=""*/
-/*    / %li.dropdown__header This is an example of a header*/
-/*    li*/
-/*      a href="#" This is a link*/
-/*    / %li.divider*/
-/*    li*/
-/*      a href="#" This is another great link*/
-/*    li*/
-/*      a href="#" Yet another*/
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/buttons/button_group_checkboxes'

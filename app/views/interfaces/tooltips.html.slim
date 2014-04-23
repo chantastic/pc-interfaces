@@ -3,7 +3,7 @@ hr
 
 section
   markdown:
-    ## Basics [#](#basics)
+    ## Basics
     {: #basics }
 
     There are two pieces required to implement a successful tooltip:
@@ -12,68 +12,129 @@ section
     * Add the `has-tip` class to your element
     * Add a `data-tip` attribute with your tip text
 
-    [tip](#){: class="has-tip" data-tip="SUCH TIPS!"}_: default_  
-    [tip](#){: class="has-tip"}_: no `data-tip` attribute warning_  
-    [tip](#){: class="has-tip" data-tip=""}_: no `data-tip` text(should not fire)_  
-
-    An empty `data-tip` attribute will prevent the tip from displaying.  This keeps empty tips from showing on generated or asyncronous views.
-
   =code_sample_static
-    a.has-tip href="#" data-tip="has-tip" SUCH TIPS!
+    a.has-tip href="#" data-tip="Imma tooltip." Tooltippin
 
-hr
+  table.table
+    tr
+      td
+        markdown:
+          [Hover here](#){: class="has-tip" data-tip="SUCH TIPS!"}
+      td
+        =code_sample_static
+          a.has-tip data-tip="SUCH TIPS!" Hover here
+      td Default
+    tr
+      td
+        markdown:
+          [Hover here](#){: class="has-tip"}
+      td
+        =code_sample_static
+          a.has-tip Hover here
+      td
+        markdown:
+          no `data-tip` attribute warning
+    tr
+      td
+        markdown:
+          [Hover here](#){: class="has-tip" data-tip=""}
+      td
+        =code_sample_static
+          a.has-tip data-tip="" Hover here
+      td
+        markdown:
+          `data-tip` is blank. Tooltip should not fire.
+          An empty `data-tip` attribute will prevent the tip from displaying.  This keeps empty tips from showing on generated or asyncronous views.
+
+  
+
+hr.section-end
 
 section
   markdown:
-    ## Position [#](#position)
+    ## Tooltip Position
     {: #position }
 
-    Control the display position of your tip.  By defualt, tips are positioned above the the element you are tiping.  Positioning allows you to modify that with the these classes:
+    Control the display position of your tip.  By defualt, tips are positioned above the the element you are tiping.  Positioning allows you to modify that with the these classes. Just append modifier classes to the `.has-tip` class.
 
-    {: style="margin-left: 20px" }
-    * `tip--top`
-    * `tip--right`
-    * `tip--bottom`
-    * `tip--left`
+  table.table
+    tr
+      td
+        markdown:
+          [Hover here](#){: class="has-tip tip--top" data-tip="I'm on the top."}
+      td
+        markdown:
+          `.has-tip.tip--top`
+      td Top
+    tr
+      td
+        markdown:
+          [Hover here](#){: class="has-tip tip--right" data-tip="I'm on the right."}
+      td
+        markdown:
+          `.has-tip.tip--right`
+      td Right
+    tr
+      td
+        markdown:
+          [Hover here](#){: class="has-tip tip--bottom" data-tip="I'm on the bottom."}
+      td
+        markdown:
+          `.has-tip.tip--bottom`
+      td Bottom
+    tr
+      td
+        markdown:
+          [Hover here](#){: class="has-tip tip--left" data-tip="I'm on the left."}
+      td
+        markdown:
+          `.has-tip.tip--left`
+      td Left
 
-    [position](#){: class="has-tip" data-tip="(default positioning)" }  
-    [position](#){: class="has-tip tip--top" data-tip="has-tip tip--top" }_: top_  
-    [position](#){: class="has-tip tip--right" data-tip="has-tip tip--right" }_: right_  
-    [position](#){: class="has-tip tip--bottom" data-tip="has-tip tip-bottom" }_: bottom_  
-    [position](#){: class="has-tip tip--left" data-tip="has-tip tip-left" }_: left_  
-
-  =code_sample_static
-    a.has-tip.tip--top href="#" data-tip="has-tip tip--top" TOP TIPS!
-
-hr
+hr.section-end
 
 section
   markdown:
-    ## Anchors [#](#anchor)
+    ## Anchor Points
     {: #anchor }
 
-    Control the anchor point of your tip.  By defualt, tips are anchored to the center point of the element you are tiping. Anchoring allows you to modify that anchor point with these classes:
+    Control the anchor point of your tip.  By defualt, tips are anchored to the center point of the element you are tipping. Add the modifier classes to anchor to the left or right. As you might expect, anchor control only works with `.tip--top` and `.tip--bottom`.
 
-    {: style="margin-left: 20px" }
-    * `tip--anchor-right`
-    * `tip--anchor-left`
+  table.table
+    tr
+      td
+        markdown:
+          [Hover here](#){: class="has-tip tip--anchor-left" data-tip="I'm anchored on the left." }
+      td
+        markdown:
+          `.has-tip.tip--anchor-left`
+      td Anchored Left, Top
+    tr
+      td
+        markdown:
+          [Hover here](#){: class="has-tip tip--anchor-right" data-tip="I'm anchored on the right." }
+      td
+        markdown:
+          `.has-tip.tip--anchor-right`
+      td Anchored Right, Top
+    tr
+      td
+        markdown:
+          [Hover here](#){: class="has-tip tip--bottom tip--anchor-right" data-tip="I'm anchored on the bottom-right." }
+      td
+        markdown:
+          `.has-tip.tip--bottom.tip--anchor-right`
+      td Anchored Right, Bottom
+    tr
+      td
+        markdown:
+          [Hover here](#){: class="has-tip tip--bottom tip--anchor-left" data-tip="I'm anchored on the bottom-left." }
+      td
+        markdown:
+          `.has-tip.tip--bottom.tip--anchor-left`
+      td Anchored Left, Bottom
 
-    As you might expect, anchor control only works and `top` and `bottom`.
-
-    #### Top
-
-    [anchor](#){: class="has-tip tip--anchor-left" data-tip="has-tip tip--anchor-left" }_: anchor left_  
-    [anchor](#){: class="has-tip tip--anchor-right" data-tip="has-tip tip--anchor-right" }_: anchor right_  
-
-    #### Bottom
-
-    [anchor](#){: class="has-tip tip--bottom tip--anchor-left" data-tip="has-tip tip--bottom tip--anchor-left" }_: anchor left_  
-    [anchor](#){: class="has-tip tip--bottom tip--anchor-right" data-tip="has-tip tip--bottom tip--anchor-right" }_: anchor right_  
-
-  =code_sample_static
-    a.has-tip.tip--anchor-right href="#" data-tip="SO ANCHOR" anchored right
-
-hr
+hr.section-end
 
 section
   markdown:

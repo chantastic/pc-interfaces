@@ -38,7 +38,7 @@ module Interfaces
     private
 
     def pass_through_node(markup)
-      content_tag :div, markup
+      content_tag :div, markup, class: 'ui-example-wrapper'
     end
 
     def pass_through_node_inline(markup)

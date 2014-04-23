@@ -7,6 +7,8 @@ require "foundation-rails"
 require "html5shiv-rails"
 require "selectivizr-rails"
 require "placeholder-gem"
+require "mustache"
+require "htmlentities"
 
 module Interfaces
   class Engine < ::Rails::Engine
