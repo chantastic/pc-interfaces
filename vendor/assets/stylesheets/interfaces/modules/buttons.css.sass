@@ -214,7 +214,7 @@ $button-border-style: solid
   margin: 0
   *zoom: 1
 
-  li
+  >
     display: inline
 
   .btn
@@ -225,9 +225,11 @@ $button-border-style: solid
     margin: 0
     margin-left: -1px
 
+  > .btn:first-child,
   > :first-child .btn
     +border-radius(3px 0 0 3px)
 
+  > .btn:last-child,
   > :last-child .btn
     // IE9+ only
     +border-radius(0 3px 3px 0)
