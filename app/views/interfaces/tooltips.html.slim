@@ -1,208 +1,158 @@
 h1.docs-page-title Tooltips
 
 section.docs-section
-  markdown:
-    ## Basics
-    {: #basics }
+  a[href="#basics"]
+    h2#basics Basics
 
+  markdown:
     There are two pieces required to implement a successful tooltip:
+
   .row
     .col.col--half
-      markdown:
-        {: .pco-demo-list}
-        * Add the `.has-tip` class to your element
-        * Add a `data-tip=""` attribute with your tip text
+      ul.pco-demo-list
+        li Add the `.has-tip` class to your element
+        li Add a `data-tip=""` attribute with your tip text
+
     .col.col--half
-      =code_sample_static
-        a.has-tip href="#" data-tip="Imma tooltip." Tooltippin
+      pre.code-sample-static.language-markup:code
+        = render_source 'interfaces/templates/tooltip'
 
   table.table
     tr
       td
-        markdown:
-          [Hover here](#){: class="has-tip" data-tip="SUCH TIPS!"}
+        = render 'interfaces/templates/tooltip'
       td
-        =code_sample_static
-          a.has-tip data-tip="SUCH TIPS!" Hover here
-      td Default
+        pre.code-sample-static.language-markup:code
+          = render_source 'interfaces/templates/tooltip'
+      td
+        | (default)
+
     tr
       td
-        markdown:
-          [Hover here](#){: class="has-tip"}
+        = render 'interfaces/templates/tooltip_no_data'
       td
-        =code_sample_static
-          a.has-tip Hover here
+        pre.code-sample-static.language-markup:code
+          = render_source 'interfaces/templates/tooltip_no_data'
       td
         markdown:
           no `data-tip` attribute warning
+
     tr
       td
-        markdown:
-          [Hover here](#){: class="has-tip" data-tip=""}
+        = render 'interfaces/templates/tooltip_empty'
       td
-        =code_sample_static
-          a.has-tip data-tip="" Hover here
+        pre.code-sample-static.language-markup:code
+          = render_source 'interfaces/templates/tooltip_empty'
       td
         markdown:
           `data-tip` is blank. Tooltip should not fire.
           An empty `data-tip` attribute will prevent the tip from displaying.  This keeps empty tips from showing on generated or asyncronous views.
 
 section.docs-section
-  markdown:
-    ## Tooltip Position
-    {: #position }
+  a[href="#position"]
+    h2#position Position
 
+  markdown:
     Control the display position of your tip.  By defualt, tips are positioned above the the element you are tiping.  Positioning allows you to modify that with the these classes. Just append modifier classes to the `.has-tip` class.
 
-  table.table
-    tr
-      td
-        markdown:
-          [Hover here](#){: class="has-tip tip--top" data-tip="I'm on the top."}
-      td
-        markdown:
-          `.has-tip.tip--top`
-      td Top
-    tr
-      td
-        markdown:
-          [Hover here](#){: class="has-tip tip--right" data-tip="I'm on the right."}
-      td
-        markdown:
-          `.has-tip.tip--right`
-      td Right
-    tr
-      td
-        markdown:
-          [Hover here](#){: class="has-tip tip--bottom" data-tip="I'm on the bottom."}
-      td
-        markdown:
-          `.has-tip.tip--bottom`
-      td Bottom
-    tr
-      td
-        markdown:
-          [Hover here](#){: class="has-tip tip--left" data-tip="I'm on the left."}
-      td
-        markdown:
-          `.has-tip.tip--left`
-      td Left
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/tooltip_modified'
+
+  ruby:
+    tooltip_positions = {
+      tooltip_modifiers: [
+        { tip: 'Top (default)' },
+        { modifier: 'tip--right',  tip: 'Right' },
+        { modifier: 'tip--bottom', tip: 'Bottom' },
+        { modifier: 'tip--left',   tip: 'Left' }
+      ]
+    }
+
+  = render 'interfaces/templates/tooltips/tooltip_modified_list', :mustache => tooltip_positions
 
 section.docs-section
-  markdown:
-    ## Anchor Points
-    {: #anchor }
+  a[href="#anchor"]
+    h2#anchor Anchor Point
 
+  markdown:
     Control the anchor point of your tip.  By defualt, tips are anchored to the center point of the element you are tipping. Add the modifier classes, `.tip--anchor-left` and `.tip--anchor-right`,  to anchor to the left or right. As you might expect, anchor control only works with `.tip--top` and `.tip--bottom`.
 
-  table.table
-    tr
-      td
-        markdown:
-          [Hover here](#){: class="has-tip tip--anchor-left" data-tip="I'm anchored on the left." }
-      td
-        markdown:
-          `.has-tip.tip--anchor-left`
-      td Anchored Left, Top
-    tr
-      td
-        markdown:
-          [Hover here](#){: class="has-tip tip--anchor-right" data-tip="I'm anchored on the right." }
-      td
-        markdown:
-          `.has-tip.tip--anchor-right`
-      td Anchored Right, Top
-    tr
-      td
-        markdown:
-          [Hover here](#){: class="has-tip tip--bottom tip--anchor-left" data-tip="I'm anchored on the bottom-left." }
-      td
-        markdown:
-          `.has-tip.tip--bottom.tip--anchor-left`
-      td Anchored Left, Bottom
-    tr
-      td
-        markdown:
-          [Hover here](#){: class="has-tip tip--bottom tip--anchor-right" data-tip="I'm anchored on the bottom-right." }
-      td
-        markdown:
-          `.has-tip.tip--bottom.tip--anchor-right`
-      td Anchored Right, Bottom
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/tooltip_modified'
+
+  ruby:
+    tooltip_anchors = {
+      tooltip_modifiers: [
+        { tip: 'Anchored Center (default)' },
+        { modifier: 'tip--anchor-right', tip: 'Anchored Right' },
+        { modifier: 'tip--anchor-left',  tip: 'Anchored Left' },
+        { modifier: 'tip--anchor-right', second_modifier: 'tip--bottom', tip: 'Anchored Right, Bottom' },
+        { modifier: 'tip--anchor-left',  second_modifier: 'tip--bottom', tip: 'Anchored Left, Bottom' }
+      ]
+    }
+
+  = render 'interfaces/templates/tooltips/tooltip_modified_list', :mustache => tooltip_anchors
 
 section.docs-section
-  markdown:
-    ## Tooltip Flow
-    {: #flow }
+  a[href="#flow"]
+    h2#flow Flow
 
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/tooltip_modified'
+
+  markdown:
     Control the way tips flow in your layout.  By default, tips flow evenly from the center.  Add the modifier classes, `.tip--flow-left` and `.tip--flow-right`, to anchor to the left or right. As you might expect, anchor control only works with `.tip--top` and `.tip--bottom`. _Combine anchor and flow modifiers for more control._
 
-  table.table
-    tr
-      td
-        markdown:
-          [Hover here](#){: class="has-tip tip--flow-left" data-tip="I'm flowing to the left." }
-      td
-        markdown:
-          `.has-tip.tip--flow-left`
-      td Flowing to the Left, Top
-    tr
-      td
-        markdown:
-          [Hover here](#){: class="has-tip tip--flow-right" data-tip="I'm flowing to the right." }
-      td
-        markdown:
-          `.has-tip.tip--flow-right`
-      td Flowing to the Right, Top
-    tr
-      td
-        markdown:
-          [Hover here](#){: class="has-tip tip--bottom tip--flow-left" data-tip="I'm on the bottom, flowing to the left." }
-      td
-        markdown:
-          `.has-tip.tip--bottom.tip--flow-left`
-      td Flowing to the Left, Bottom
-    tr
-      td
-        markdown:
-          [Hover here](#){: class="has-tip tip--bottom tip--flow-right" data-tip="I'm on the bottom, flowing to the right." }
-      td
-        markdown:
-          `.has-tip.tip--bottom.tip--anchor-right`
-      td Anchored Right, Bottom
+  ruby:
+    tooltip_flows = {
+      tooltip_modifiers: [
+        { tip: 'Anchored Center (default)' },
+        { modifier: 'tip--flow-right', tip: 'Flowing Right' },
+        { modifier: 'tip--flow-left',  tip: 'Flowing Left' },
+        { modifier: 'tip--flow-right', second_modifier: 'tip--bottom', tip: 'Flowing Right, Bottom' },
+        { modifier: 'tip--flow-left',  second_modifier: 'tip--bottom', tip: 'Flowing Left, Bottom' }
+      ]
+    }
+
+  = render 'interfaces/templates/tooltips/tooltip_modified_list', :mustache => tooltip_flows
 
 section.docs-section
-  markdown:
-    ## Multiline Tooltips
-    {: #multiline }
+  a[href="#multiline"]
+    h2#multiline Multiline
 
+  markdown:
     Multiline allows you to show more than a single line tooltip. Adding the `.tip--multiline` class will give you a tooltip that wraps at 200px wide. All other modifier classes may be used in combination with multi-line for more control.
 
-  table.table
-    tr
-      td
-        markdown:
-          [Hover here](#){: class="has-tip tip--multiline" data-tip="I am God's vessel. But my greatest pain in life is that I will never be able to see myself perform live. - Kanye West"}
-      td
-        markdown:
-          `.has-tip.tip--multiline`
-      td
-        markdown:
-          _Oh, Kanye..._
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/tooltip_modified'
+
+  ruby:
+    tooltip_multiline = {
+      tooltip_modifiers: [
+        { modifier: 'tip--multiline', description: 'Multiline (default)', tip: "I am God\'s vessel. But my greatest pain in life is that I will never be able to see myself perform live. - Kanye West" },
+        { modifier: 'tip--multiline', second_modifier: "tip--right", description: 'Multiline, Anchored Right', tip: "I am God\'s vessel. But my greatest pain in life is that I will never be able to see myself perform live. -Kanye West" },
+        { modifier: 'tip--multiline', second_modifier: "tip--bottom", description: 'Multiline, Anchored Bottom', tip: "I am God\'s vessel. But my greatest pain in life is that I will never be able to see myself perform live. -Kanye West" },
+        { modifier: 'tip--multiline', second_modifier: "tip--left", description: 'Multiline, Anchored Left', tip: "I am God\'s vessel. But my greatest pain in life is that I will never be able to see myself perform live. -Kanye West" }
+      ]
+    }
+
+  = render 'interfaces/templates/tooltips/tooltip_modified_list', :mustache => tooltip_multiline
 
 section.docs-section
+  a[href="#mix-n-match"]
+    h2#mix-n-match Mix 'n Match
+
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/tooltip_modified'
+
   markdown:
-    ## So, in theory, if you want to control all the things, you could do something like...
+    So, if you want to control all the things, you could do something like...
 
-  = code_sample do 
-    a.has-tip.tip--top.tip--multiline.tip--flow-right.tip--anchor-right data-tip="We have great dinner parties at which everyone sits around talking about politics, history, art, and literature -- all this peppered with really funny jokes. But back in America, I was at a party and a girl looked at me and said, 'Oh, my God! Are those Juicy jeans that you're wearing?' and I thought, I can't stay here. I have to get back to Europe. - Gwynneth Paltrow" href="#" A link with a tooltip with modifiers.
+  ruby:
+    tooltip_mix = {
+      tooltip_modifiers: [
+        { modifier: 'tip--top tip--multiline tip--flow-right tip--anchor-left', description: "Mix 'n Match", tip: "We have great dinner parties at which everyone sits around talking about politics, history, art, and literature -- all this peppered with really funny jokes. But back in America, I was at a party and a girl looked at me and said, 'Oh, my God! Are those Juicy jeans that you're wearing?' and I thought, I can't stay here. I have to get back to Europe. - Gwynneth Paltrow" }
+      ]
+    }
 
-/ section.docs-section
-/   markdown:
-/     ## TODO [#](#todo)
-/     {: #todo }
-
-/     {: style="margin-left: 20px"}
-/     * `anchor-top`, `anchor-bottom` for muliline `right` and `left` tips
-/     * IE8 fallback
-/     * Add additive `tip--disable` for programatic silencing
-/     * moderizr `.touch` exlusion option
+  = render 'interfaces/templates/tooltips/tooltip_modified_list', :mustache => tooltip_mix
