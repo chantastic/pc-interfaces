@@ -40,11 +40,14 @@ section.docs-section.clearfix
   markdown:
     ### Breakpoint Overrides for various screen sizes
     
-    The grid is responsive, mobile-first. Therefore, all `col` and `col--` classes will be full-width and stacked on screen widths less than 600.
-    
-    You can, however, use size-specific classnames to control grid elements differently, based on the device width. For example, I may want a column to be a third width on everything, except mobile devices, in which case, I want it to be a half. Remember, by default, all columns will be full-width on mobile devices, so you must append classnames for more control.
+    The grid is responsive, mobile-first. Therefore, all `col` and `col--` classes will be full-width and stacked on screen widths less than 600px. You can, however, use breakpoint-specific classnames to control grid elements differently, based on the device width. Just add the modifiers, like so:
 
-    As with all modifiers, grid modifiers are _additive_. So, you add override modifiers to have grids display _differently_ on different screen sizes. 
+  = render 'interfaces/templates/grids_breakpoint_overrides'
+  pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/grids_breakpoint_overrides'
+
+  markdown:
+    _*Don't forget: all `cols`s in a `row` still need to equal 100% width or less. If you try to do a half col and a three-quarter col, it's not going to work the way you want._
 
   ruby:
     palm_overrides = {
@@ -81,21 +84,24 @@ section.docs-section.clearfix
       ]
     }
 
-  .col.col--third
+  .col.col--third.tab--full
     h4 Mobile Overrides
     p
       code.language-css
         | @media (max-width: 37.5em)
     = render 'interfaces/templates/grids/grid_modified_list', :mustache => palm_overrides
 
-  .col.col--third
+  .col.col--third.tab--full
     h4 Tablet Overrides
     p
       code.language-css
-        | @media (min-width: 37.5em) and (max-width: 64em)
+        | @media (min-width: 37.5em) 
+      br
+      code.language-css
+        | and (max-width: 64em)
     = render 'interfaces/templates/grids/grid_modified_list', :mustache => tablet_overrides
 
-  .col.col--third
+  .col.col--third.tab--full
     h4 Desktop Overrides 
     p
       code.language-css
