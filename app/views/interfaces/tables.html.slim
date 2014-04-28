@@ -1,109 +1,49 @@
-h2.section-header Tables
+h1.docs-page-title Tables
 
-h3.section-sub-header Default table (.table)
+section.docs-section
+  a[href="#basics"]
+    h2#basics Basics
+  
+  markdown:
+    Use the `.table` class on all `table` elements.
 
-table.table
-  thead
-    tr
-      th Rank
-      th Cut Name
-      th Animal
-      th Flavor Index
-  tbody
-    tr
-      td 1
-      td Prosciutto
-      td Swine
-      td +++++
-    tr
-      td 2
-      td Sirloin
-      td Bovine
-      td +++++
-    tr
-      td 3
-      td Salami
-      td ???
-      td ++++
+  = render 'interfaces/templates/tables_basic'
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/tables_basic'
 
-div.page-section
-  div.row
-    div.col.col--half
-      h3.section-sub-header Table with Zebra Striping
-      div.table-responsive
-        table.table.table-striped
-          thead
-            tr
-              th Rank
-              th Cut Name
-              th Animal
-              th Flavor Index
-          tbody
-            tr
-              td 1
-              td Prosciutto
-              td Swine
-              td +++++
-            tr
-              td 2
-              td Sirloin
-              td Bovine
-              td +++++
-            tr
-              td 3
-              td Salami
-              td ???
-              td ++++
+section.docs-section
+  h2 Table Modifiers
 
-    div.col.col--half
-      h3.section-sub-header Bordered, Hoverable, and TH .th-fill
-      div.table-responsive
-        table.table-th-fill.table.table-bordered.table-hover
-          thead
-            tr
-              th Rank
-              th Cut Name
-              th Animal
-              th Flavor Index
-          tbody
-            tr
-              td 1
-              td Prosciutto
-              td Swine
-              td +++++
-            tr
-              td 2
-              td Sirloin
-              td Bovine
-              td +++++
-            tr
-              td 3
-              td Salami
-              td ???
-              td ++++
+  ruby:
+    table_modifiers = {
+      table_modified_list: [
+        { modifier: 'table-bordered', description: 'table with borders'}, 
+        { modifier: 'table-th-fill', description: 'table header background filled' }, 
+        { modifier: 'table-striped', description: 'zebra-striped table'},
+        { modifier: 'table-hover', description: 'table rows are hoverable'}
+      ]
+    }
+  = render 'interfaces/templates/tables/tables_modifier_list', :mustache => table_modifiers
 
-h3.section-sub-header Add All the Styles
+section.docs-section
+  h2 Table Examples
+  
+  / would be cool to just show the opening and closing table tags with the table and table modifier classes
+  .row
+    .col.col--half
+      h4 Bordered Table
+      = render 'interfaces/templates/tables/tables_modified', :mustache => { table_modifier: 'table-bordered'}
 
-table.table-th-fill.table.table-bordered.table-striped.table-hover.table-radius [cellspacing="0"]
-  thead
-    tr
-      th Rank
-      th Cut Name
-      th Animal
-      th Flavor Index
-  tbody
-    tr
-      td 1
-      td Prosciutto
-      td Swine
-      td +++++
-    tr
-      td 2
-      td Sirloin
-      td Bovine
-      td +++++
-    tr
-      td 3
-      td Salami
-      td ???
-      td ++++
+    .col.col--half
+      h4 Filled Table Header
+      = render 'interfaces/templates/tables/tables_modified', :mustache => { table_modifier: 'table-th-fill'}
+  br
+  br
+  .row
+    .col.col--half
+      h4 Striped Table
+      = render 'interfaces/templates/tables/tables_modified', :mustache => { table_modifier: 'table-striped'}
+
+    .col.col--half
+      h4  Table With All The Things
+      = render 'interfaces/templates/tables/tables_modified', :mustache => { table_modifier: 'table-hover table-striped table-bordered table-th-fill'}
