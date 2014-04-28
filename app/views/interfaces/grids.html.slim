@@ -6,7 +6,8 @@ section.docs-section
     - Content should be placed within columns, and only columns may be immediate children of rows.
     - Columns create gutters via padding. That padding is offset in rows for the first and last column via negative margin on `row` s.
 
-  = render 'interfaces/templates/grids_full'
+  = render 'interfaces/templates/grids_full', mustache: { column: '<div class="grid-demo">I\'m a full-width column.</div>' }
+
   pre.code-sample-static.language-markup:code
     = render_source 'interfaces/templates/grids_full'
 
