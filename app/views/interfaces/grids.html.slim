@@ -1,108 +1,148 @@
-h3.section-header The Grid. A Digital Frontier.
-ul
-  li Use rows to create horizontal groups of columns.
-  li Content should be placed within columns, and only columns may be immediate children of rows.
-  li Columns create gutters via padding. That padding is offset in rows for the first and last column via negative margin on <code..rows</code>.
+h1.docs-page-title The Grid. A Digital Frontier.
 
-.page-section
-  = code_sample do
-    .row
-      .col
-        .grid-demo I'm full-width, with just a base class of <code>.col</code>
+section.docs-section
+  markdown:
+    - Use a `row` to create a horizontal group of columns.
+    - Content should be placed within columns, and only columns may be immediate children of rows.
+    - Columns create gutters via padding. That padding is offset in rows for the first and last column via negative margin on `row` s.
 
-  h3 For more options, just add more classes.  
+  ruby:
+    col_full = {
+      column: '<div class="grid-demo">I\'m a full-width column.</div>'
+    }
+  = render 'interfaces/templates/grids_full', :mustache => col_full
 
-  = code_sample do
-    .row
-      .col.col--half
-        .grid-demo <code>.col.col--half</code>
-      .col.col--half
-        .grid-demo <code>.col.col--half</code>
+  pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/grids_full'
 
-  .row
-    .col.col--third
-      .grid-demo <code>.col.col--third</code>
-    .col.col--two-thirds
-      .grid-demo <code>.col.col--two-thirds</code>
+section.docs-section
+  h3 For more options with column widths, add modifiers.
 
-  .row
-    .col.col--quarter
-      .grid-demo <code>.col.col--quarter</code>
-    .col.col--quarter
-      .grid-demo <code>.col.col--quarter</code>
-    .col.col--quarter
-      .grid-demo <code>.col.col--quarter</code>
-    .col.col--quarter
-      .grid-demo <code>.col.col--quarter</code>
+  ruby:
+    grid_modifiers = {
+      grid_modified_list: [
+        { description: '100% wide (default)' },
+        { modifier: 'col--half', description: '50% wide' },
+        { modifier: 'col--third',  description: '33% wide' },
+        { modifier: 'col--two-thirds', description: '66.6% wide' },
+        { modifier: 'col-quarter', description: '25% wide' },
+        { modifier: 'col-three-quarters', description: '75% wide' },
+        { modifier: 'col--fifth', description: '20% wide' },
+        { modifier: 'col--two-fifths', description: '40% wide' },
+        { modifier: 'col--three-fifths', description: '60% wide' },
+        { modifier: 'col--four-fifths', description: '80% wide' }
+      ]
+    }
 
-  .row
-    .col.col--three-fifths
-      .grid-demo <code>.col.col--three-fifths</code>
-    .col.col--fifth
-      .grid-demo <code>.col.col--fifth</code>
-    .col.col--fifth
-      .grid-demo <code>.col.col--fifth</code>
+  = render 'interfaces/templates/grids/grid_modified_list', :mustache => grid_modifiers
+
+section.docs-section
+
+  ruby:
+    multi_cols = {
+      col_half: '
+        <!-- your content goes here -->
+        <div class="grid-demo">
+          <code>col col--half</code>
+        </div>
+      ',
+      col_third: '
+        <!-- your content goes here -->
+        <div class="grid-demo">
+          <code>col col--third</code>
+        </div>
+      '
+    }
 
 
-  h3 Overriding for more hawtness
-  p The grid is responsive, mobile-first. Therefore, all <code>.col</code> and <code>.col--</code> classes will be full-width and stacked on screen widths less than ~768.
-  p You can, however, use size-specific classnames to control grid elements differently, based on the device width. For example, I may want a column to be a third width on everything, except mobile devices, in which case, I want it to be a half. Remember, by default, all columns will be full-width on mobile devices, so you must append classnames for more control.
-  = code_sample_static do
-    .row
-      .col.col--third.palm--half ...
+  = render 'interfaces/templates/grids_multi_cols', :mustache => multi_cols
+  pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/grids_multi_cols'
 
-  .row
-    .col.col--quarter
-      h4 Default Options
-      p
-        code.language-css
-          | @media (min-width: 47.95em)
-      ul.unstyled
-        li <code>.col--half</code>
-        li <code>.col--third</code>
-        li <code>.col--two-thirds</code>
-        li <code>.col--quarter</code>
-        li <code>.col--three-quarters</code>
-        li <code>.col--fifth</code>
-        li <code>.col--two-fifths</code>
-        li <code>.col--three-fifths</code>
-        li <code>.col--four-fifths</code>
+section.docs-section.clearfix
+  markdown:
+    ### Breakpoint Overrides for various screen sizes
+    
+    The grid is responsive, mobile-first. Therefore, all `col` and `col--` classes will be full-width and stacked on screen widths less than 600px. You can, however, use breakpoint-specific classnames to control grid elements differently, based on the device width. Just add the modifiers, like so:
 
-    .col.col--quarter
-      h4 Mobile Overrides
-      p
-        code.language-css
-          | @media (max-width: 47.95em)
-      ul.unstyled
-        li <code>.palm--half</code>
-        li <code>.palm--third</code>
-        li <code>.palm--two-thirds</code>
-        li <code>.palm--quarter</code>
-        li <code>.palm--three-quarters</code>
+  ruby:
+    breakpoint_overrides = {
+      override_1: '
+        <!-- your content goes here -->
+        <div class="grid-demo">
+          I\'m full-width on mobile, half-width on tablets, and a third on everything else.
+        </div>
+      ',
+      override_2: '
+        <!-- your content goes here -->
+        <div class="grid-demo">
+          I\'m full-width on mobile, half-width on tablets, and a two-thirds on everything else.
+        </div>
+      '
+    }
 
-    .col.col--quarter
-      h4 Tablet Overrides
-      p
-        code.language-css
-          | @media (min-width: 47.95em)
-        br
-        code.language-css
-          | and (max-width: 64em)
-      ul.unstyled
-        li <code>.tab--half</code>
-        li <code>.tab--third</code>
-        li <code>.tab--two-thirds</code>
-        li <code>.tab--quarter</code>
-        li <code>.tab--three-quarters</code>
+  = render 'interfaces/templates/grids_breakpoint_overrides', :mustache => breakpoint_overrides
+  pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/grids_breakpoint_overrides'
 
-    .col.col--quarter
-      h4 Desktop Overrides 
-      p
-        code.language-css
-          | @media (min-width: 64em)
-      ul.unstyled
-        li <code>.desk--half</code>
-        li <code>.desk--third</code>
-        li <code>.desk--two-thirds</code>
-        li <code>.desk--quarter</code>
-        li <code>.desk--three-quarters</code>
+  markdown:
+    _*Don't forget: all `cols`s in a `row` still need to equal 100% width or less. If you try to do a half col and a three-quarter col, it's not going to work the way you want._
+
+  ruby:
+    palm_overrides = {
+      grid_modified_list: [
+        { modifier: 'palm--half' },
+        { modifier: 'palm--third' },
+        { modifier: 'palm--two-thirds' },
+        { modifier: 'palm--quarter' },
+        { modifier: 'palm--three-quarters' }
+      ]
+    }
+
+    tablet_overrides = {
+      grid_modified_list: [
+        { modifier: 'tab--half' },
+        { modifier: 'tab--third' },
+        { modifier: 'tab--two-thirds' },
+        { modifier: 'tab--quarter' },
+        { modifier: 'tab--three-quarters' },
+        { modifier: 'tab--fifth' },
+        { modifier: 'tab--two-fifths' },
+        { modifier: 'tab--three-fifths' },
+        { modifier: 'tab--four-fifths' }
+      ]
+    }
+
+    desktop_overrides = {
+      grid_modified_list: [
+        { modifier: 'desk--half' },
+        { modifier: 'desk--third' },
+        { modifier: 'desk--two-thirds' },
+        { modifier: 'desk--quarter' },
+        { modifier: 'desk--three-quarters' }
+      ]
+    }
+
+  .col.col--third.tab--full
+    h4 Mobile Overrides
+    p
+      code.language-css
+        | @media (max-width: 37.5em)
+    = render 'interfaces/templates/grids/grid_modified_list', :mustache => palm_overrides
+
+  .col.col--third.tab--full
+    h4 Tablet Overrides
+    p
+      code.language-css
+        | @media (min-width: 37.5em) 
+      br
+      code.language-css
+        | and (max-width: 64em)
+    = render 'interfaces/templates/grids/grid_modified_list', :mustache => tablet_overrides
+
+  .col.col--third.tab--full
+    h4 Desktop Overrides 
+    p
+      code.language-css
+        | @media (min-width: 64em)
+    = render 'interfaces/templates/grids/grid_modified_list', :mustache => desktop_overrides
