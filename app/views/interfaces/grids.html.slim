@@ -6,7 +6,11 @@ section.docs-section
     - Content should be placed within columns, and only columns may be immediate children of rows.
     - Columns create gutters via padding. That padding is offset in rows for the first and last column via negative margin on `row` s.
 
-  = render 'interfaces/templates/grids_full', mustache: { column: '<div class="grid-demo">I\'m a full-width column.</div>' }
+  ruby:
+    col_full = {
+      column: '<div class="grid-demo">I\'m a full-width column.</div>'
+    }
+  = render 'interfaces/templates/grids_full', :mustache => col_full
 
   pre.code-sample-static.language-markup:code
     = render_source 'interfaces/templates/grids_full'
@@ -33,7 +37,25 @@ section.docs-section
   = render 'interfaces/templates/grids/grid_modified_list', :mustache => grid_modifiers
 
 section.docs-section
-  = render 'interfaces/templates/grids_multi_cols'
+
+  ruby:
+    multi_cols = {
+      col_half: '
+        <!-- your content goes here -->
+        <div class="grid-demo">
+          <code>col col--half</code>
+        </div>
+      ',
+      col_third: '
+        <!-- your content goes here -->
+        <div class="grid-demo">
+          <code>col col--third</code>
+        </div>
+      '
+    }
+
+
+  = render 'interfaces/templates/grids_multi_cols', :mustache => multi_cols
   pre.code-sample-static.language-markup:code
     = render_source 'interfaces/templates/grids_multi_cols'
 
@@ -43,7 +65,23 @@ section.docs-section.clearfix
     
     The grid is responsive, mobile-first. Therefore, all `col` and `col--` classes will be full-width and stacked on screen widths less than 600px. You can, however, use breakpoint-specific classnames to control grid elements differently, based on the device width. Just add the modifiers, like so:
 
-  = render 'interfaces/templates/grids_breakpoint_overrides'
+  ruby:
+    breakpoint_overrides = {
+      override_1: '
+        <!-- your content goes here -->
+        <div class="grid-demo">
+          I\'m full-width on mobile, half-width on tablets, and a third on everything else.
+        </div>
+      ',
+      override_2: '
+        <!-- your content goes here -->
+        <div class="grid-demo">
+          I\'m full-width on mobile, half-width on tablets, and a two-thirds on everything else.
+        </div>
+      '
+    }
+
+  = render 'interfaces/templates/grids_breakpoint_overrides', :mustache => breakpoint_overrides
   pre.code-sample-static.language-markup:code
     = render_source 'interfaces/templates/grids_breakpoint_overrides'
 
