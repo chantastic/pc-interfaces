@@ -1,261 +1,158 @@
-h1 Tooltips
-hr
+h1.docs-page-title Tooltips
 
-section
+section.docs-section
+  a[href="#basics"]
+    h2#basics Basics
+
   markdown:
-    ## Basics
-    {: #basics }
-
     There are two pieces required to implement a successful tooltip:
 
-    {: .pco-demo-list}
-    * Add the `has-tip` class to your element
-    * Add a `data-tip` attribute with your tip text
+  .row
+    .col.col--half
+      markdown:
+        - Add the `has-tip` class to your element
+        - Add a `data-tip=""` attribute with your tip text
 
-  =code_sample_static
-    a.has-tip href="#" data-tip="Imma tooltip." Tooltippin
+    .col.col--half
+      pre.code-sample-static.language-markup:code
+        = render_source 'interfaces/templates/tooltip'
 
   table.table
     tr
       td
-        markdown:
-          [Hover here](#){: class="has-tip" data-tip="SUCH TIPS!"}
+        = render 'interfaces/templates/tooltip'
       td
-        =code_sample_static
-          a.has-tip data-tip="SUCH TIPS!" Hover here
-      td Default
+        pre.code-sample-static.language-markup:code
+          = render_source 'interfaces/templates/tooltip'
+      td
+        | (default)
+
     tr
       td
-        markdown:
-          [Hover here](#){: class="has-tip"}
+        = render 'interfaces/templates/tooltip_no_data'
       td
-        =code_sample_static
-          a.has-tip Hover here
+        pre.code-sample-static.language-markup:code
+          = render_source 'interfaces/templates/tooltip_no_data'
       td
         markdown:
           no `data-tip` attribute warning
+
     tr
       td
-        markdown:
-          [Hover here](#){: class="has-tip" data-tip=""}
+        = render 'interfaces/templates/tooltip_empty'
       td
-        =code_sample_static
-          a.has-tip data-tip="" Hover here
+        pre.code-sample-static.language-markup:code
+          = render_source 'interfaces/templates/tooltip_empty'
       td
         markdown:
           `data-tip` is blank. Tooltip should not fire.
           An empty `data-tip` attribute will prevent the tip from displaying.  This keeps empty tips from showing on generated or asyncronous views.
 
-  
+section.docs-section
+  a[href="#position"]
+    h2#position Position
 
-hr.section-end
-
-section
   markdown:
-    ## Tooltip Position
-    {: #position }
-
     Control the display position of your tip.  By defualt, tips are positioned above the the element you are tiping.  Positioning allows you to modify that with the these classes. Just append modifier classes to the `.has-tip` class.
 
-  table.table
-    tr
-      td
-        markdown:
-          [Hover here](#){: class="has-tip tip--top" data-tip="I'm on the top."}
-      td
-        markdown:
-          `.has-tip.tip--top`
-      td Top
-    tr
-      td
-        markdown:
-          [Hover here](#){: class="has-tip tip--right" data-tip="I'm on the right."}
-      td
-        markdown:
-          `.has-tip.tip--right`
-      td Right
-    tr
-      td
-        markdown:
-          [Hover here](#){: class="has-tip tip--bottom" data-tip="I'm on the bottom."}
-      td
-        markdown:
-          `.has-tip.tip--bottom`
-      td Bottom
-    tr
-      td
-        markdown:
-          [Hover here](#){: class="has-tip tip--left" data-tip="I'm on the left."}
-      td
-        markdown:
-          `.has-tip.tip--left`
-      td Left
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/tooltip_modified'
 
-hr.section-end
+  ruby:
+    tooltip_positions = {
+      tooltip_modifiers: [
+        { tip: 'Top (default)' },
+        { modifier: 'tip--right',  tip: 'Right' },
+        { modifier: 'tip--bottom', tip: 'Bottom' },
+        { modifier: 'tip--left',   tip: 'Left' }
+      ]
+    }
 
-section
+  = render 'interfaces/templates/tooltips/tooltip_modified_list', :mustache => tooltip_positions
+
+section.docs-section
+  a[href="#anchor"]
+    h2#anchor Anchor Point
+
   markdown:
-    ## Anchor Points
-    {: #anchor }
+    Control the anchor point of your tip.  By defualt, tips are anchored to the center point of the element you are tipping. Add the modifier classes, `.tip--anchor-left` and `.tip--anchor-right`,  to anchor to the left or right. As you might expect, anchor control only works with `.tip--top` and `.tip--bottom`.
 
-    Control the anchor point of your tip.  By defualt, tips are anchored to the center point of the element you are tipping. Add the modifier classes to anchor to the left or right. As you might expect, anchor control only works with `.tip--top` and `.tip--bottom`.
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/tooltip_modified'
 
-  table.table
-    tr
-      td
-        markdown:
-          [Hover here](#){: class="has-tip tip--anchor-left" data-tip="I'm anchored on the left." }
-      td
-        markdown:
-          `.has-tip.tip--anchor-left`
-      td Anchored Left, Top
-    tr
-      td
-        markdown:
-          [Hover here](#){: class="has-tip tip--anchor-right" data-tip="I'm anchored on the right." }
-      td
-        markdown:
-          `.has-tip.tip--anchor-right`
-      td Anchored Right, Top
-    tr
-      td
-        markdown:
-          [Hover here](#){: class="has-tip tip--bottom tip--anchor-right" data-tip="I'm anchored on the bottom-right." }
-      td
-        markdown:
-          `.has-tip.tip--bottom.tip--anchor-right`
-      td Anchored Right, Bottom
-    tr
-      td
-        markdown:
-          [Hover here](#){: class="has-tip tip--bottom tip--anchor-left" data-tip="I'm anchored on the bottom-left." }
-      td
-        markdown:
-          `.has-tip.tip--bottom.tip--anchor-left`
-      td Anchored Left, Bottom
+  ruby:
+    tooltip_anchors = {
+      tooltip_modifiers: [
+        { tip: 'Anchored Center (default)' },
+        { modifier: 'tip--anchor-right',             tip: 'Anchored Right' },
+        { modifier: 'tip--anchor-left',              tip: 'Anchored Left' },
+        { modifier: 'tip--anchor-right tip--bottom', tip: 'Anchored Right, Bottom' },
+        { modifier: 'tip--anchor-left tip--bottom',  tip: 'Anchored Left, Bottom' }
+      ]
+    }
 
-hr.section-end
+  = render 'interfaces/templates/tooltips/tooltip_modified_list', :mustache => tooltip_anchors
 
-section
+section.docs-section
+  a[href="#flow"]
+    h2#flow Flow
+
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/tooltip_modified'
+
   markdown:
-    ## Flow [#](#flow)
-    {: #flow }
+    Control the way tips flow in your layout.  By default, tips flow evenly from the center.  Add the modifier classes, `.tip--flow-left` and `.tip--flow-right`, to anchor to the left or right. As you might expect, anchor control only works with `.tip--top` and `.tip--bottom`. _Combine anchor and flow modifiers for more control._
 
-    Control the way tips flow in your layout.  By default, tips flow evenly from the center.  Flow allows you to modify that with these classes:
+  ruby:
+    tooltip_flows = {
+      tooltip_modifiers: [
+        { tip: 'Anchored Center (default)' },
+        { modifier: 'tip--flow-right',             tip: 'Flowing Right' },
+        { modifier: 'tip--flow-left',              tip: 'Flowing Left' },
+        { modifier: 'tip--flow-right tip--bottom', tip: 'Flowing Right, Bottom' },
+        { modifier: 'tip--flow-left tip--bottom',  tip: 'Flowing Left, Bottom' }
+      ]
+    }
 
-    {: style="margin-left: 20px" }
-    * `tip--flow-right`
-    * `tip--flow-left`
+  = render 'interfaces/templates/tooltips/tooltip_modified_list', :mustache => tooltip_flows
 
-    As you might expect, flow control only works and `top` and `bottom`.
+section.docs-section
+  a[href="#multiline"]
+    h2#multiline Multiline
 
-    #### Top
-
-    [flow](#){: class="has-tip tip--flow-left" data-tip="has-tip tip--flow-left" }_: flow left_  
-    [flow](#){: class="has-tip tip--flow-right" data-tip="has-tip tip--flow-right" }_: flow right_  
-
-    #### Bottom
-
-    [flow](#){: class="has-tip tip--bottom tip--flow-left" data-tip="has-tip tip--bottom tip--flow-left" }_: flow left_  
-    [flow](#){: class="has-tip tip--bottom tip--flow-right" data-tip="has-tip tip--bottom tip--flow-right" }_: flow right_  
-
-  =code_sample_static
-    a.has-tip.tip--flow-left href="#" data-tip="SUCH LEFT" lefty tip
-
-hr
-
-section
   markdown:
-    ## Anchor + Flow [#](#anchor-and-flow)
-    {: #anchor-and-flow }
+    Multiline allows you to show more than a single line tooltip. Adding the `.tip--multiline` class will give you a tooltip that wraps at 200px wide. All other modifier classes may be used in combination with multi-line for more control.
 
-    Anchor and flow may be combined for tons of control over your tips.
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/tooltip_modified'
 
-    #### Top: Anchored Left
+  ruby:
+    tooltip_multiline = {
+      tooltip_modifiers: [
+        { modifier: 'tip--multiline',             description: 'Multiline (default)', tip: "I am God\'s vessel. But my greatest pain in life is that I will never be able to see myself perform live. - Kanye West" },
+        { modifier: 'tip--multiline tip--right',  description: 'Multiline, Anchored Right', tip: "I am God\'s vessel. But my greatest pain in life is that I will never be able to see myself perform live. -Kanye West" },
+        { modifier: 'tip--multiline tip--bottom', description: 'Multiline, Anchored Bottom', tip: "I am God\'s vessel. But my greatest pain in life is that I will never be able to see myself perform live. -Kanye West" },
+        { modifier: 'tip--multiline tip--left',   description: 'Multiline, Anchored Left', tip: "I am God\'s vessel. But my greatest pain in life is that I will never be able to see myself perform live. -Kanye West" }
+      ]
+    }
 
-    [anchor + flow](#){: class="has-tip tip--anchor-left tip--flow-left" data-tip="has-tip tip--anchor-left tip--flow-left" }_: flow left_  
-    [anchor + flow](#){: class="has-tip tip--anchor-left tip--flow-right" data-tip="has-tip  tip--anchor-left tip--flow-right" }_: flow right_  
+  = render 'interfaces/templates/tooltips/tooltip_modified_list', :mustache => tooltip_multiline
 
-    #### Top: Anchored Right
+section.docs-section
+  a[href="#mix-n-match"]
+    h2#mix-n-match Mix 'n Match
 
-    [anchor + flow](#){: class="has-tip tip--anchor-right tip--flow-left" data-tip="has-tip  tip--anchor-right tip--flow-left" }_: flow right_  
-    [anchor + flow](#){: class="has-tip tip--anchor-right tip--flow-right" data-tip="has-tip  tip--anchor-right tip--flow-right" }_: flow right_  
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/tooltip_modified'
 
-    #### Bottom: Anchored Left
-
-    [anchor + flow](#){: class="has-tip tip--bottom tip--anchor-left tip--flow-left" data-tip="tip--anchor-left tip--flow-left" }_: flow-left_  
-    [anchor + flow](#){: class="has-tip tip--bottom tip--anchor-left tip--flow-right" data-tip="tip--anchor-left tip--flow-right" }_: flow-right_  
-
-    #### Bottom: Anchored Right
-
-    [anchor + flow](#){: class="has-tip tip--bottom tip--anchor-right tip--flow-left" data-tip="tip--anchor-right tip--flow-left" }_: flow-left_  
-    [anchor + flow](#){: class="has-tip tip--bottom tip--anchor-right tip--flow-right" data-tip="tip--anchor-right tip--flow-right" }_: flow-right_  
-
-  =code_sample_static
-    a.has-tip.tip--anchor-left.tip--flow-right href="#" data-tip="MUCH CONTROL!" To the left. To the left
-
-hr
-
-section
   markdown:
-    ## Multiline [#](#multiline)
-    {: #multiline }
+    So, if you want to control all the things, you could do something like...
 
-    Multiline allows you to comfortable show more than a single line tooltip.  It's pretty straight forword.  Adding class `tip--multiline` will give you tip that wraps at 200px wide. All other modifers may be used in combination
+  ruby:
+    tooltip_mix = {
+      tooltip_modifiers: [
+        { modifier: 'tip--top tip--multiline tip--flow-right tip--anchor-left', description: "Mix 'n Match", tip: "We have great dinner parties at which everyone sits around talking about politics, history, art, and literature -- all this peppered with really funny jokes. But back in America, I was at a party and a girl looked at me and said, 'Oh, my God! Are those Juicy jeans that you're wearing?' and I thought, I can't stay here. I have to get back to Europe. - Gwynneth Paltrow" }
+      ]
+    }
 
-    ### Default
-
-    [miltiline](#){: class="has-tip tip--multiline" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }  
-
-    ### Top
-
-    [multiline](#){: class="has-tip tip--top tip--multiline tip--anchor-left tip--flow-left" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor left, flow left_  
-    [multiline](#){: class="has-tip tip--top tip--multiline tip--anchor-left" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor left_  
-    [multiline](#){: class="has-tip tip--top tip--multiline tip--anchor-left tip--flow-right" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor left, flow right_  
-    [multiline](#){: class="has-tip tip--top tip--multiline tip--flow-left" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: flow left_  
-    [multiline](#){: class="has-tip tip--top tip--multiline" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }  
-    [multiline](#){: class="has-tip tip--top tip--multiline tip--flow-right" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: flow right  
-    [multiline](#){: class="has-tip tip--top tip--multiline tip--anchor-right tip--flow-left" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor right, flow left_  
-    [multiline](#){: class="has-tip tip--top tip--multiline tip--anchor-right" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor right_  
-    [multiline](#){: class="has-tip tip--top tip--multiline tip--anchor-right tip--flow-right" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_:anchor right, flow right_  
-
-    ### Right
-    [multiline](#){: class="has-tip tip--right tip--multiline" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }  
-
-    ### Bottom
-
-    [multiline](#){: class="has-tip tip--bottom tip--multiline tip--anchor-right tip--flow-right" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor right, flow right_  
-    [multiline](#){: class="has-tip tip--bottom tip--multiline tip--anchor-right" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor right_  
-    [multiline](#){: class="has-tip tip--bottom tip--multiline tip--anchor-right tip--flow-left" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor right, flow left_  
-    [multiline](#){: class="has-tip tip--bottom tip--multiline tip--flow-right" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: flow right_  
-    [multiline](#){: class="has-tip tip--bottom tip--multiline" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }  
-    [multiline](#){: class="has-tip tip--bottom tip--multiline tip--flow-left" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: flow left_  
-    [multiline](#){: class="has-tip tip--bottom tip--multiline tip--anchor-left tip--flow-right" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor left, flow right_  
-    [multiline](#){: class="has-tip tip--bottom tip--multiline tip--anchor-left" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor left_  
-    [multiline](#){: class="has-tip tip--bottom tip--multiline tip--anchor-left tip--flow-left" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }_: anchor left, flow left_  
-
-    ### Left
-
-    [multiline](#){: class="has-tip tip--left tip--multiline" data-tip="ABCD EFGH IJKLM NOPQ RSTU VWXYZ. ABCD EFGH IJKLM NOPQ RSTU VWXYZ." }  
-
-  =code_sample_static
-    a.has-tip.tip--multiline href="#" data-tip="SO MULTI!" Multiline
-
-hr
-
-section
-  markdown:
-    ## Additional Uses + Edge Cases
-
-hr
-
-section
-  markdown:
-    ## TODO [#](#todo)
-    {: #todo }
-
-    {: style="margin-left: 20px"}
-    * `anchor-top`, `anchor-bottom` for muliline `right` and `left` tips
-    * IE8 fallback
-    * Add additive `tip--disable` for programatic silencing
-    * moderizr `.touch` exlusion option
+  = render 'interfaces/templates/tooltips/tooltip_modified_list', :mustache => tooltip_mix

@@ -1,0 +1,24 @@
+<table class="table">
+  {{#tooltip_modifiers}}
+  <tr>
+    <td>
+      {{> _tooltip_modified}}
+    </td>
+
+    <td>
+      <code>
+        has-tip {{modifier}}
+      </code>
+    </td>
+
+    <td>
+      {{#description}}
+        {{description}}
+      {{/description}}
+      {{^description}}
+        {{tip}}
+      {{/description}}
+    </td>
+  </tr>
+  {{/tooltip_modifiers}}
+</table>
