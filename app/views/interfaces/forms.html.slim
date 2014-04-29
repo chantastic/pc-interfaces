@@ -1,111 +1,85 @@
-h2.section-header Meaty Forms
-form
-  .row
-    .col
-      label Input Label
-      input placeholder="Yo Homie. I'm Full width" type="text"
-  .row
-    .col.col--third
-      label Input Label
-      input placeholder="Yo Homie. I'm 33.33 ad infinitum" type="text"
-    .col.col--third
-      label Input Label
-      input placeholder="Yo Homie. I'm 33.33 ad infinitum" type="text"
-    .col.col--third
-      label Input Label
-      input placeholder="Yo Homie. I'm 33.33 ad infinitum" type="text"
+h1.docs-page-title Forms  
+markdown:
+  Marking up form elements is very straightforward. No special classnames needed. All `input`, `select`, and `textarea` elements are globally styled at 100% wide. 
 
-  .row
-    .col.col--half
-      label Select2 Box
-      select
-        option value="capicola" Capicola
-        option value="prosciutto" Prosciutto
-        option value="kielbasa" Kielbasa
-        option value="salami" Salami
-        option value="capicola" Strip steak
-        option value="prosciutto" Tenderloin
-        option value="kielbasa" Venison
-        option value="salami" Ttri-tip
-        option value="capicola" Sirloin
-        option value="prosciutto" Bacon
-        option value="kielbasa" Biltong
-        option value="salami" Frankfurter
-    .col.col--half
-      label Select2 Box No Search Input
-      select.select2--nosearch
-        option value="capicola" Capicola
-        option value="prosciutto" Prosciutto
-        option value="kielbasa" Kielbasa
-        option value="salami" Salami
-        option value="ham hocks" Ham Hocks 
+section.docs-section
+  a[href="#text-inputs"]
+    h2#text-inputs Text Inputs
 
-  .row
-    .col
-      label Select2 Multi Select
-      select  multiple="" 
-        option value="capicola" Capicola
-        option value="prosciutto" Prosciutto
-        option value="kielbasa" Kielbasa
-        option value="salami" Salami
-        option value="capicola" Strip steak
-        option value="prosciutto" Tenderloin
-        option value="kielbasa" Venison
-        option value="salami" Tri-tip
-        option value="capicola" Sirloin
-        option value="prosciutto" Bacon
-        option value="kielbasa" Biltong
-        option value="salami" Frankfurter
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/input_text'
 
-  .row
-    .col.col--half
-      label Choose Your Favorite
-      input#meaty1 name="meaty" type="radio" value="Pastrami"
-      label for="meaty1" Pastrami
-      input#meaty2 name="meaty" type="radio" value="Pork belly"
-      label for="meaty2" Pork belly
+  form
+    .row
+      .col
+        = render 'interfaces/templates/input_text',
+                  :mustache => { label: 'A text input', placeholder: 'Put something here...' }
 
-    .col.col--half
-      label Check these out
-      input#checkbox1 type="checkbox"
-      label for="checkbox1" Checkbox 1
-      input#checkbox2 type="checkbox"
-      label for="checkbox2" Checkbox 2
-  
-  .row
-    .col
-      label Textarea Label
-      textarea placeholder="Yo Homie. I'm Full width"
+section.docs-section
+  a[href="#layout"]
+    h2#layout Layout
+  markdown:
+    For laying out your forms, use the [grid](/styleguide/grids/) to wrap your elements. 
 
-.hr
+  .row:.col:pre.code-sample-static.language-markup:code
 
-h2.section-header Modals
-p
-  = modal_trigger 'exModal' do
-    Default Modal
+    = render_source 'interfaces/templates/input_text_layout'
 
-= modal 'exModal' do
-  .modal__header
-    h2.modal-title Awesome. I have it.
-  .modal__body
-    p.lead This is a standard sized modal.
-    p Im a cool paragraph that lives inside of an even cooler modal. Wins
-  .modal__footer
-    a.btn.btn-secondary.left href="" data-reveal-id="exModalmed" Launch 2nd Modal
-    a.btn.btn-danger.btn-outline.close-reveal-modal href="" Cancel
-    a.btn.btn-success href="" Accept
+  form
+    .row
+      .col.col--half
+        = render 'interfaces/templates/input_text',
+              :mustache => { label: 'A text input', placeholder: 'Put something here...' }
+      .col.col--half
+        = render 'interfaces/templates/input_text',
+              :mustache => { label: 'A text input', placeholder: 'Put something here...' }
+    .row
+      .col
+        = render 'interfaces/templates/input_textarea',
+                  :mustache => { label: 'Lots to say?', placeholder: 'Tell us about it...' }
 
-= modal 'exModalmed',   class: "medium"  do
-  .modal__header
-    h2.modal-title I am modified with a class of .medium
-  .modal__body
-    p.lead The dialogs are responsive by default. If you need to you can modify the size with the following classes: (This modal has been modified to be smaller than the default elastic width.)
-    ul
-      li small: Set the width to 30%
-      li medium: Set the width to 40%
-      li large: Set the width to 60%
-      li xlarge: Set the width to 70%
-      li expand: Set the width to 95%
-  .modal__footer
-    a.btn.btn-danger.btn-outline.close-reveal-modal href="#" Cancel
-    a.btn.btn-success href="#" Accept
+section.docs-section
+  a[href="#select-inputs"]
+    h2#selects Selects Inputs
+
+  ruby:
+    select_options = [
+      { val: "capicola",   text: "Capicola"   },
+      { val: "proscuitto", text: "Prosciutto" },
+      { val: "kielbasa",   text: "Kielbasa"   },
+      { val: "salami",     text: "Salami"     }
+    ]
+
+  form
+    .row
+      .col.col--half
+        markdown:
+          #### Select2 Box
+          Just use a `select` tag.
+        .row:.col:pre.code-sample-static.language-markup:code
+          = render_source 'interfaces/templates/input_select'
+        = render 'interfaces/templates/input_select',
+                  :mustache => { label: 'Select2 Box', select_data: select_options }
+      .col.col--half
+        markdown:
+          #### Select2 Box With No Search Bar
+          Add the `select2--nosearch` class to the tag.
+        .row:.col:pre.code-sample-static.language-markup:code
+          = render_source 'interfaces/templates/input_select_modified'
+        = render 'interfaces/templates/input_select_modified',
+                  :mustache => { label: 'Select2 Box No Search Input', select_data: select_options }
+    .row
+      .col
+        markdown:
+          #### Select2 With Multi Select
+          No class needed. Just add the `multiple` attribute.
+        .row:.col:pre.code-sample-static.language-markup:code
+          = render_source 'interfaces/templates/input_select_multiple'
+        = render 'interfaces/templates/input_select_multiple',
+                  :mustache => { label: 'Select2 Multi Select', select_data: select_options }
+
+section.docs-section
+  markdown:
+    **TODO**
+
+    * checkbox group (extract from buttons)
