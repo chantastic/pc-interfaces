@@ -3,47 +3,67 @@ h1.docs-page-title Tables
 section.docs-section
   a[href="#basics"]
     h2#basics Basics
-  
+
   markdown:
     Use the `.table` class on all `table` elements.
 
-  = render 'interfaces/templates/tables_basic'
+  ruby:
+    table_template = {
+      table_data: '
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Cut Name</th>
+            <th>Animal</th>
+            <th>Flavor Index</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Prosciutto</td>
+            <td>Swine</td>
+            <td>+++++</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Sirloin</td>
+            <td>Bovine</td>
+            <td>+++++</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Salami</td>
+            <td>???</td>
+            <td>+++</td>
+          </tr>
+        </tbody>
+      '
+    }
+
+
   .row:.col:pre.code-sample-static.language-markup:code
-    = render_source 'interfaces/templates/tables_basic'
+    = render_source 'interfaces/templates/table'
+
+  = render 'interfaces/templates/table', :mustache => table_template
 
 section.docs-section
-  h2 Table Modifiers
+  a[href="#modifiers"]
+    h2#modifiers Modifiers
 
   ruby:
     table_modifiers = {
-      table_modified_list: [
-        { modifier: 'table-bordered', description: 'table with borders'}, 
-        { modifier: 'table-th-fill', description: 'table header background filled' }, 
-        { modifier: 'table-striped', description: 'zebra-striped table'},
-        { modifier: 'table-hover', description: 'table rows are hoverable'}
+      table_data: table_template[:table_data],
+      table_modified: [
+        { modifier: 'table-bordered', style: 'Bordered',       description: 'table with borders'},
+        { modifier: 'table-th-fill',  style: 'Filled Header',  description: 'table header background filled' },
+        { modifier: 'table-striped',  style: 'Striped',        description: 'zebra-striped table'},
+        { modifier: 'table-hover',    style: 'Hoverable Rows', description: 'table rows are hoverable'},
+        { modifier: 'table-hover table-striped table-bordered table-th-fill', style: 'ALL THE THINGS', description: 'table rows are hoverable'}
       ]
     }
-  = render 'interfaces/templates/tables/tables_modifier_list', :mustache => table_modifiers
 
-section.docs-section
-  h2 Table Examples
-  
-  / would be cool to just show the opening and closing table tags with the table and table modifier classes
-  .row
-    .col.col--half
-      h4 Bordered Table
-      = render 'interfaces/templates/tables/tables_modified', :mustache => { table_modifier: 'table-bordered'}
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/table_modified'
 
-    .col.col--half
-      h4 Filled Table Header
-      = render 'interfaces/templates/tables/tables_modified', :mustache => { table_modifier: 'table-th-fill'}
-  br
-  br
-  .row
-    .col.col--half
-      h4 Striped Table
-      = render 'interfaces/templates/tables/tables_modified', :mustache => { table_modifier: 'table-striped'}
-
-    .col.col--half
-      h4  Table With All The Things
-      = render 'interfaces/templates/tables/tables_modified', :mustache => { table_modifier: 'table-hover table-striped table-bordered table-th-fill'}
+  = render 'interfaces/templates/tables/table_modifier_list', :mustache => table_modifiers
