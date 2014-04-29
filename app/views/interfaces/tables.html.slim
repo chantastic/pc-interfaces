@@ -51,6 +51,9 @@ section.docs-section
   a[href="#modifiers"]
     h2#modifiers Modifiers
 
+  markdown:
+    Add modifier classes for adding style.
+
   ruby:
     table_modifiers = {
       table_data: table_template[:table_data],
@@ -59,11 +62,10 @@ section.docs-section
         { modifier: 'table-th-fill',  style: 'Filled Header',  description: 'table header background filled' },
         { modifier: 'table-striped',  style: 'Striped',        description: 'zebra-striped table'},
         { modifier: 'table-hover',    style: 'Hoverable Rows', description: 'table rows are hoverable'},
-        { modifier: 'table-hover table-striped table-bordered table-th-fill', style: 'ALL THE THINGS', description: 'table rows are hoverable'}
+        { modifier: 'table-hover table-striped table-bordered table-th-fill', style: 'ALL THE THINGS', description: 'put \'em all together'}
       ]
     }
 
   .row:.col:pre.code-sample-static.language-markup:code
     = render_source 'interfaces/templates/table_modified'
-
   = render 'interfaces/templates/tables/table_modifier_list', :mustache => table_modifiers

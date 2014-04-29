@@ -1,15 +1,3 @@
-{{#table_modified}}
-<row>
-  <col>
-    <h4>{{style}}</h4>
-    {{> _table_modified}}
-  </col>
-</row>
-
-</br>
-</br>
-{{/table_modified}}
-
 <table class="table">
   {{#table_modified}}
   <tr>
@@ -20,3 +8,12 @@
   </tr>
   {{/table_modified}}
 </table>
+<br/><br/>
+{{#table_modified}}
+<div class="row">
+  <div class="col">
+    <h4>{{style}}</h4>
+    {{> _table_modified}}
+  </div>
+</div>
+{{/table_modified}}
