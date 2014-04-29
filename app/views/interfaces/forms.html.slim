@@ -33,6 +33,10 @@ section.docs-section
       .col.col--half
         = render 'interfaces/templates/input_text',
               :mustache => { label: 'A text input', placeholder: 'Put something here...' }
+    .row
+      .col
+        = render 'interfaces/templates/input_textarea',
+                  :mustache => { label: 'Lots to say?', placeholder: 'Tell us about it...' }
 
 section.docs-section
   a[href="#select-inputs"]
@@ -75,58 +79,7 @@ section.docs-section
                   :mustache => { label: 'Select2 Multi Select', select_data: select_options }
 
 section.docs-section
-  a[href="#radio-inputs"]
-    h2#radio-inputs Radio Inputs
-
-  ruby:
-    radio_options = [
-      { id: "pastrami",   name: "meaty", value: "pastrami",   text: "Pastrami"   },
-      { id: "pork_belly", name: "meaty", value: "pork_belly", text: "Pork Belly" }
-    ]
-
-  .row:.col:pre.code-sample-static.language-markup:code
-    = render_source 'interfaces/templates/input_radio_option'
-
-  form
-    .row
-      .col.col--half
-        = render 'interfaces/templates/input_radio',
-                  :mustache => { label: 'Choose Your Favorite', radio_options: radio_options }
-
-section.docs-section
-  a[href="#checkbox-inputs"]
-    h2#checkbox-inputs Checkbox Inputs
-
-  ruby:
-    checkbox_options = [
-      { id: "crazy",value: "crazy", text: "Crazy" },
-      { id: "sexy", value: "sexy",  text: "Sexy"  },
-      { id: "cool", value: "cool",  text: "Cool"  }
-    ]
-
-  .row:.col:pre.code-sample-static.language-markup:code
-    = render_source 'interfaces/templates/input_checkbox_option'
-
-  form
-    .row
-      .col.col--half
-        = render 'interfaces/templates/input_checkbox',
-                  :mustache => { label: 'Choees as many as you like!', name: "name", checkbox_options: checkbox_options }
-
   markdown:
     **TODO**
 
     * checkbox group (extract from buttons)
-
-section.docs-section
-  a[href="#textarea-inputs"]
-    h2#textarea-inputs Textarea Inputs
-
-  .row:.col:pre.code-sample-static.language-markup:code
-    = render_source 'interfaces/templates/input_textarea'
-
-  form
-    .row
-      .col
-        = render 'interfaces/templates/input_textarea',
-                  :mustache => { label: 'Lots to say?', placeholder: 'Tell us about it...' }
