@@ -1,4 +1,6 @@
-h1.docs-page-title Forms
+h1.docs-page-title Forms  
+markdown:
+  Marking up form elements is very straightforward. No special classnames needed. All `input`, `select`, and `textarea` elements are globally styled at 100% wide. 
 
 section.docs-section
   a[href="#text-inputs"]
@@ -16,15 +18,21 @@ section.docs-section
 section.docs-section
   a[href="#layout"]
     h2#layout Layout
+  markdown:
+    For laying out your forms, use the [grid](/styleguide/grids/) to wrap your elements. 
 
   .row:.col:pre.code-sample-static.language-markup:code
-    = render_source 'interfaces/templates/input_text'
+
+    = render_source 'interfaces/templates/input_text_layout'
 
   form
     .row
-      .col
+      .col.col--half
         = render 'interfaces/templates/input_text',
-                  :mustache => { label: 'A text input', placeholder: 'Put something here...' }
+              :mustache => { label: 'A text input', placeholder: 'Put something here...' }
+      .col.col--half
+        = render 'interfaces/templates/input_text',
+              :mustache => { label: 'A text input', placeholder: 'Put something here...' }
 
 section.docs-section
   a[href="#select-inputs"]
@@ -39,20 +47,30 @@ section.docs-section
     ]
 
   form
-    .row:.col:pre.code-sample-static.language-markup:code
-      = render_source 'interfaces/templates/input_select_modified'
-
     .row
       .col.col--half
+        markdown:
+          #### Select2 Box
+          Just use a `select` tag.
+        .row:.col:pre.code-sample-static.language-markup:code
+          = render_source 'interfaces/templates/input_select'
         = render 'interfaces/templates/input_select',
                   :mustache => { label: 'Select2 Box', select_data: select_options }
-
       .col.col--half
+        markdown:
+          #### Select2 Box With No Search Bar
+          Add the `select2--nosearch` class to the tag.
+        .row:.col:pre.code-sample-static.language-markup:code
+          = render_source 'interfaces/templates/input_select_modified'
         = render 'interfaces/templates/input_select_modified',
                   :mustache => { label: 'Select2 Box No Search Input', select_data: select_options }
-
     .row
       .col
+        markdown:
+          #### Select2 With Multi Select
+          No class needed. Just add the `multiple` attribute.
+        .row:.col:pre.code-sample-static.language-markup:code
+          = render_source 'interfaces/templates/input_select_multiple'
         = render 'interfaces/templates/input_select_multiple',
                   :mustache => { label: 'Select2 Multi Select', select_data: select_options }
 
