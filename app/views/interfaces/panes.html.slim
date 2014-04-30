@@ -1,67 +1,88 @@
-h3.section-header Panels &amp; Wells
-= code_sample do
-  .page-section
-    .row
-      .col.col--half
-        h3.section-sub-header Default Panel
-        .pane.pane--default
-          .pane__body
-            h3 This is a basic panel with some content. Nothing fancy, just a header and some paragraph text.
-            p Bacon ipsum dolor sit amet pastrami ham tongue jerky. Corned beef short ribs short loin ham doner t-bone beef ribs pork chop brisket pancetta chuck flank chicken. Corned beef venison jerky strip steak hamburger ribeye. Bacon filet mignon ham meatball pig.
+h1.docs-page-title Panes
 
-      .col.col--half
-        h3.section-sub-header Default Panel with options
-        .pane.pane--default
-          .pane__header
-            h4.pane-title
-              This is the panel title
-          .pane__body
-            h4 This is another panel with some content, a title, and a footer.
-            p Bacon ipsum dolor sit amet pastrami ham tongue jerky. Corned beef short ribs short loin ham doner t-bone beef ribs pork chop brisket pancetta chuck flank chicken. Corned beef venison jerky strip steak hamburger ribeye. Bacon filet mignon ham meatball pig.
-          .pane__footer
-            This is the panel footer
+section.docs-section
+  a[href="#basics"]
+    h2#basics Basics
 
-h3.section-sub-header Split and naked panels
-= code_sample do
-  .pane-group
-    .pane.pane--default.pane--split.col--quarter
-      .pane__header
-        h4.pane-title
-          This is a default split panel
-      .pane__body
-        h3 This is a basic panel with some content. Nothing fancy, just a header and some paragraph text.
-        p Bacon ipsum dolor sit amet pastrami ham tongue jerky. Corned beef short ribs short loin ham doner t-bone beef ribs pork chop brisket pancetta chuck flank chicken. Corned beef venison jerky strip steak hamburger ribeye. Bacon filet mignon ham meatball pig.
+  ruby:
+    pane_data_simple = {
+      body: 'This is a basic panel with some content.</h4><p>Bacon ipsum dolor sit amet pastrami ham tongue jerky. Corned beef short ribs short loin ham doner t-bone beef ribs pork chop brisket pancetta chuck flank chicken.',
+    }
 
-    .pane.pane--naked.pane--split.col--half
-      .pane__header
-        h4.pane-title
-          This is a naked split panel
-      .pane__body
-        h3 This is a basic panel with some content. Nothing fancy, just a header and some paragraph text.
-        p Bacon ipsum dolor sit amet pastrami ham tongue jerky. Corned beef short ribs short loin ham doner t-bone beef ribs pork chop brisket pancetta chuck flank chicken. Corned beef venison jerky strip steak hamburger ribeye. Bacon filet mignon ham meatball pig.    
-    .pane.pane--naked.pane--split.col--quarter
-      .pane__header
-        h4.pane-title
-          This is a naked split panel
-      .pane__body
-        h3 This is a basic panel with some content. Nothing fancy, just a header and some paragraph text.
-        p Bacon ipsum dolor sit amet pastrami ham tongue jerky. Corned beef short ribs short loin ham doner t-bone beef ribs pork chop brisket pancetta chuck flank chicken. Corned beef venison jerky strip steak hamburger ribeye. Bacon filet mignon ham meatball pig.    
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/pane'
+
+  = render 'interfaces/templates/pane', mustache: pane_data_simple
+
+section.docs-section
+  a[href="#basics"]
+    h2#modifiers Modifiers
+
+  ruby:
+    pane_data_modified = {
+      body: 'This is a basic panel with some content.</h4><p>Bacon ipsum dolor sit amet pastrami ham tongue jerky. Corned beef short ribs short loin ham doner t-bone beef ribs pork chop brisket pancetta chuck flank chicken.',
+      pane_modifiers: [
+        { modifier: 'pane--naked', description: 'Gives the pane a translucent background so that it can blend in with its surroundings.' },
+        { modifier: 'pane--muted', description: 'Lower background contrast, for old eyes.' }
+      ]
+    }
+
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/pane_modified'
+
+  = render 'interfaces/templates/panes/pane_modifier_list', mustache: pane_data_modified
+
+section.docs-section
+  a[href="#complete"]
+    h2#complete Complete
+
+  ruby:
+    pane_data_complete = {
+      header: 'This is a simple pane',
+      body: '<h4>This is a basic panel with some content.</h4><p>Bacon ipsum dolor sit amet pastrami ham tongue jerky. Corned beef short ribs short loin ham doner t-bone beef ribs pork chop brisket pancetta chuck flank chicken.</p>',
+      footer: '...and a simple footer'
+    }
+
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/pane_complete'
+
+  = render 'interfaces/templates/pane_complete', mustache: pane_data_complete
+
+section.docs-section
+  a[href="#splits"]
+    h2#splits Splits
+
+  ruby:
+    group_pane_data = {
+      header: 'This is a simple pane',
+      body: '<h4>This is a basic panel with some content.</h4><p>Bacon ipsum dolor sit amet pastrami ham tongue jerky. Corned beef short ribs short loin ham doner t-bone beef ribs pork chop brisket pancetta chuck flank chicken.</p>',
+      footer: '...and a simple footer',
+      panes: [
+        { modifier: "col--quarter" },
+        { modifier: "col--half" },
+        { modifier: "col--quarter" }
+      ]
+    }
+
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/pane_group'
+
+  = render 'interfaces/templates/pane_group', mustache: group_pane_data
 
 
-h3.section-sub-header Default Panel with a Block List
-= code_sample do
-  .pane.pane--default
-    .pane__header
-      h4.pane-title
-        This panel has a block-list
-    .pane__body
-      h4 This is another panel with some content, a title, and a block-list.
-      p Bacon ipsum dolor sit amet pastrami ham tongue jerky. Corned beef short ribs short loin ham doner t-bone beef ribs pork chop brisket pancetta chuck flank chicken. Corned beef venison jerky strip steak hamburger ribeye. Bacon filet mignon ham meatball pig.
-    ul.block-list
-      li.block-list__item T-bone chicken
-      li.block-list__item Leberkas pork belly
-      li.block-list__item Ball tip chicken meatball
-      li.block-list__item Boudin brisket pig
-      li.block-list__item Hamburger pork chop filet mignon  
-    .pane__footer
-      This is the panel footer
+section.docs-section
+  a[href="#block-list"]
+    h2#block-list Block List
+
+  ruby:
+    block_list_items = [
+      { item: 'T-bone chicken' },
+      { item: 'Leberkas pork belly' },
+      { item: 'Ball tip chicken meatball' },
+      { item: 'Hamburger pork chop filet mignon' }
+    ]
+
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/pane_block_list'
+
+  = render 'interfaces/templates/pane_block_list', mustache: { block_list_items: block_list_items }
