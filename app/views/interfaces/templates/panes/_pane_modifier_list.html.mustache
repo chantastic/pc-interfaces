@@ -1,0 +1,14 @@
+{{#pane_modifiers}}
+  {{> _pane_modified}}
+{{/pane_modifiers}}
+
+<table class="table">
+  {{#pane_modifiers}}
+  <tr>
+    <td>
+      <code> pane {{modifier}} </code>
+    </td>
+    <td> {{description}} </td>
+  </tr>
+  {{/pane_modifiers}}
+</table>
