@@ -20,3 +20,34 @@ div.modal.modal--small#simpleModal
   div.modal__footer
     This is the footer
 
+/ yanked from Forms page
+/h2.section-header Modals
+/p
+/  = modal_trigger 'exModal' do
+/    Default Modal
+/
+/= modal 'exModal' do
+/  .modal__header
+/    h2.modal-title Awesome. I have it.
+/  .modal__body
+/    p.lead This is a standard sized modal.
+/    p Im a cool paragraph that lives inside of an even cooler modal. Wins
+/  .modal__footer
+/    a.btn.btn-secondary.left href="" data-reveal-id="exModalmed" Launch 2nd Modal
+/    a.btn.btn-danger.btn-outline.close-reveal-modal href="" Cancel
+/    a.btn.btn-success href="" Accept
+/
+/= modal 'exModalmed',   class: "medium"  do
+/  .modal__header
+/    h2.modal-title I am modified with a class of .medium
+/  .modal__body
+/    p.lead The dialogs are responsive by default. If you need to you can modify the size with the following classes: (This modal has been modified to be smaller than the default elastic width.)
+/    ul
+/      li small: Set the width to 30%
+/      li medium: Set the width to 40%
+/      li large: Set the width to 60%
+/      li xlarge: Set the width to 70%
+/      li expand: Set the width to 95%
+/  .modal__footer
+/    a.btn.btn-danger.btn-outline.close-reveal-modal href="#" Cancel
+/    a.btn.btn-success href="#" Accept
