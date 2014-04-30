@@ -7,8 +7,13 @@
   *:last-child, .pane__body *:last-child
     margin-bottom: 0
 
+  // consider a composite stylesheet for pane-block-list styles
   .block-list
     margin-bottom: 0
+
+  .pane__body
+    .block-list
+      margin: -15px
 
 .pane
   +block
