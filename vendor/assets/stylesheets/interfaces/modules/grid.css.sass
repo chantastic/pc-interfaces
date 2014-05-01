@@ -1,3 +1,8 @@
+@import "../shared-compass-dependencies"
+@import "../core/variables"
+@import "../core/utilities"
+@import "grid_cols"
+
 $palm-gutter: 1.5rem
 $tab-gutter: 1.5rem
 $gutter: 2rem
@@ -17,13 +22,10 @@ $gutter: 2rem
       margin-bottom: 0
 
 .col
-  width: 100%
   margin-bottom: 1.5rem
   position: relative
 
 @media (max-width: 37.5em) // < 600 :: palm--
-  .palm--hide
-    display: none !important
   .palm--end
     padding-right: 0 !important
 
@@ -34,38 +36,8 @@ $gutter: 2rem
       padding-right: 0
 
   .palm--full
-    width: 100%
     padding: 0
     clear: both
-  .palm--half
-    width: 50%
-    float: left
-
-  //thirds
-  .palm--third
-    width: 33.3%
-    float: left
-  .palm--two-thirds
-    width: 66.6%
-    float: left
-
-  // quarters
-  .palm--quarter
-    width: 25%
-    float: left
-  .palm--three-quarters
-    width: 75%
-    float: left
-
-  // fifths
-  .palm--fifth
-    width: 20%
-  .palm--two-fifths
-    width: 40%
-  .palm--three-fifths
-    width: 60%
-  .palm--four-fifths
-    width: 80%
 
 @media (min-width: 37.5em) // > 600
   [class*="col--"]
@@ -73,31 +45,6 @@ $gutter: 2rem
     padding-right: $gutter
     &:last-of-type
       padding-right: 0
-
-  .col--half
-    width: 50%
-
-  //thirds
-  .col--third
-    width: 33.3%
-  .col--two-thirds
-    width: 66.6%
-
-  // quarters
-  .col--quarter
-    width: 25%
-  .col--three-quarters
-    width: 75%
-
-  // fifths
-  .col--fifth
-    width: 20%
-  .col--two-fifths
-    width: 40%
-  .col--three-fifths
-    width: 60%
-  .col--four-fifths
-    width: 80%
 
 @media (min-width: 37.5em) and (max-width: 64em) // > 600 & < 1024 :: tab--
   .tab--end
@@ -108,60 +55,3 @@ $gutter: 2rem
     padding-right: $tab-gutter
     &:last-of-type
       padding-right: 0
-
-  .tab--full
-    width: 100%
-    padding: 0
-  .tab--half
-    width: 50%
-
-  //thirds
-  .tab--third
-    width: 33.3%
-  .tab--two-thirds
-    width: 66.6%
-
-  // quarters
-  .tab--quarter
-    width: 25%
-  .tab--three-quarters
-    width: 75%
-
-  // fifths
-  .tab--fifth
-    width: 20%
-  .tab--two-fifths
-    width: 40%
-  .tab--three-fifths
-    width: 60%
-  .tab--four-fifths
-    width: 80%
-
-
-@media (min-width: 64em) // > 1024 :: lap--
-
-  .desk--full
-    width: 100%
-  .desk--half
-    width: 50%
-
-  //thirds
-  .desk--third
-    width: 33.3%
-  .desk--two-thirds
-    width: 66.6%
-
-  // quarters
-  .desk--quarter
-    width: 25%
-  .desk--three-quarters
-    width: 75%
-
-@media (min-width: 100em) // > 1600 :: desk--
-
-
-//ADJUST ROW IN CERTAIN CIRCUMSTANCES
-.modal-well, .modal__band
-  .row
-    margin-left: auto
-    margin-right: auto
