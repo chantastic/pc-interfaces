@@ -27,10 +27,10 @@ INTERFACES.hashAPI =
   # HOLD LOOSELY TO THIS API
   _showModal: ->
     $ ->
-      id = window.location.hash
+      modalId       = window.location.hash.slice(1)
+      modalSelector = modalId + '.modal' if modalId
+      pageHasModal  = do -> $('#' + modalSelector).length
 
-      if $(id).length
-        modalId = id.slice(1)
-
-        modal = new INTERFACES.ModalView(modalId)
+      if pageHasModal
+        modal = new INTERFACES.ModalView(modalSelector)
         modal.show()
