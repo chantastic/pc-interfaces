@@ -3,7 +3,6 @@
 require "jquery-rails"
 require "select2-rails"
 require "es5-shim-rails"
-require "foundation-rails"
 require "html5shiv-rails"
 require "selectivizr-rails"
 require "placeholder-gem"
