@@ -13,8 +13,6 @@ module Interfaces
         append_to_file "app/assets/javascripts/application.js" do
           "//= require interfaces/interfaces"
         end
-        create_file "app/assets/stylesheets/_interfaces.sass", "@import '_variables'\n@import 'interfaces/interfaces'\n"
-        create_file "app/assets/stylesheets/_variables.sass",  "// Add interfaces variable overrides here.\n"
       end
     end
   end
