@@ -1,0 +1,45 @@
+h1.docs-page-title Icons
+
+section.docs-section.clearfix
+  markdown:
+    - Use the `interfaces` class for icons.
+    - Typically, you'll use an icon as an inline element, such as a `span`.
+    - Add the modifier class for the icon you need.
+
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/icons'
+
+  ruby:
+    icon_modifiers = {
+      icon_modified: [
+        { modifier: 'interfaces-services', description: 'Services'},
+        { modifier: 'interfaces-pico', description: 'Pico'},
+        { modifier: 'interfaces-resources', description: 'Resources'},
+        { modifier: 'interfaces-projector', description: 'Projector'},
+        { modifier: 'interfaces-music-stand', description: 'Music Stand'},
+        { modifier: 'interfaces-menu', description: 'Menu'},
+        { modifier: 'interfaces-faq', description: 'FAQ'},
+        { modifier: 'interfaces-delete', description: 'Delete'},
+        { modifier: 'interfaces-cog', description: 'Cog'},
+        { modifier: 'interfaces-accounts', description: 'Accounts'},
+        { modifier: 'interfaces-caret', description: 'Caret'},
+        { modifier: 'interfaces-caret-up', description: 'Caret Up'},
+        { modifier: 'interfaces-caret-right', description: 'Caret Right'},
+        { modifier: 'interfaces-caret-left', description: 'Caret Left'},
+        { modifier: 'interfaces-enclosed-caret', description: 'Enclosed Caret'},
+        { modifier: 'interfaces-logout', description: 'Logout'},
+        { modifier: 'interfaces-edit', description: 'Edit'},
+        { modifier: 'interfaces-admin', description: 'Admin'},
+        { modifier: 'interfaces-folder', description: 'Folder'},
+        { modifier: 'interfaces-folder-open', description: 'Folder Open'},
+        { modifier: 'interfaces-plus', description: 'Plus'},
+        { modifier: 'interfaces-check-ins', description: 'Check-Ins'},
+        { modifier: 'interfaces-logo-stack', description: 'Stack Logo'},
+        { modifier: 'interfaces-announcements', description: 'Announcements'},
+        { modifier: 'interfaces-upload', description: 'Upload'},
+        { modifier: 'interfaces-print', description: 'Print'},
+        { modifier: 'interfaces-person-edit', description: 'Edit Person'}
+      ]
+    }
+
+  = render 'interfaces/templates/icons/icon_modified_list', :mustache => icon_modifiers
