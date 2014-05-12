@@ -111,13 +111,14 @@ module Interfaces
     end
 
     def app_name
-      Rails.application.class.parent_name.underscore.dasherize
+      rails_application_name.underscore.dasherize
     end
 
     APP_NAME_TO_HELPDESK = {
       "account-center" => "Accounts",
       "check-ins" => "Check-Ins"
     }
+
     def helpdesk_name
       APP_NAME_TO_HELPDESK[app_name]
     end
@@ -128,6 +129,35 @@ module Interfaces
 
     def url_for_app_name(app_name)
       "http://#{app_name.downcase}#{url_suffix}"
+    end
+
+    def available_apps
+      [current_app] + (available_apps_for_person - [current_app])
+    end
+
+    private
+
+    def current_app
+      if 'AccountCenter' == rails_application_name
+        'Accounts'
+      else
+        rails_application_name.split(/(?=[A-Z])/).join('-')
+      end
+    end
+
+    def available_apps_for_person
+      if Person.current.respond_to? :applications
+        Person.current.applications.sort.map(&:first)
+      elsif Person.current.respond_to? :apps
+        Person.current.apps.sort.map { |app| app.name }
+      else
+        logger.debug "[INTERFACES] INTEGRATION REQUIRED: AccountCenterPersonIntegration is required for the application switcher — https://github.com/ministrycentered/account_center_integration"
+        %w[Foo Bar Baz]
+      end
+    end
+
+    def rails_application_name
+      Rails.application.class.parent_name
     end
   end
 end
