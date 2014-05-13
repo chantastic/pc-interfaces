@@ -30,7 +30,7 @@ module Interfaces
       )
     end
 
-    # Ingect helpers into parent app
+    # Inject helpers into parent app
     initializer 'Interfaces.action_controller' do |app|
       ActiveSupport.on_load :action_controller do
         helper Interfaces::CodeSampleHelper
