@@ -7,8 +7,16 @@ INTERFACES.dataAPI =
   showTriggeredModal: ->
     _id = $(@).data 'modal-id'
 
-    modal = new INTERFACES.ModalView(_id)
+    modal = new INTERFACES.ModalIdView(_id)
     modal.show()
+
+  createAndShowUrlModal: ->
+    _url = $(@).data 'modal-url'
+    _req = $.get(_url)
+
+    _req.done (res) ->
+      modal = new INTERFACES.ModalUrlView(res)
+      modal.show()
 
   hideModalLayer: ->
     INTERFACES.modalLayer.hide()
@@ -16,7 +24,8 @@ INTERFACES.dataAPI =
   # private
 
   _attachDocumentListeners: ->
-    $(document).on 'click', '[data-modal-id]', @showTriggeredModal
+    $(document).on 'click', '[data-modal-id]',    @showTriggeredModal
+    $(document).on 'click', '[data-modal-url]',   @createAndShowUrlModal
     $(document).on 'click', '[data-modal-close]', @hideModalLayer
 
 INTERFACES.hashAPI =
@@ -32,5 +41,5 @@ INTERFACES.hashAPI =
       pageHasModal  = do -> $('#' + modalSelector).length
 
       if pageHasModal
-        modal = new INTERFACES.ModalView(modalSelector)
+        modal = new INTERFACES.ModalIdView(modalSelector)
         modal.show()
