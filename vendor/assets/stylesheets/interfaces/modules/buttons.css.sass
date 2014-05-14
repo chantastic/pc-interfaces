@@ -1,6 +1,6 @@
-@import "../shared-compass-dependencies"
-@import "../core/variables"
-@import "../core/utilities"
+@import "interfaces/vendor/shared_compass_dependencies"
+@import "interfaces/core/variables"
+@import "interfaces/core/utilities"
 
 /*//SEE modules > colors for color variables*/
 $button-border-width: 1px
@@ -195,7 +195,12 @@ $button-border-style: solid
   *zoom: 1
 
   >
-    display: inline
+    float: left
+
+  li
+    +clearfix
+    float: left
+
 
   .btn
     +border-radius(0)
@@ -214,11 +219,13 @@ $button-border-style: solid
     // IE9+ only
     +border-radius(0 3px 3px 0)
 
-  &.half .btn
-    width: 50%
+  &.half
+    > 
+      width: 50%
 
-  &.thirds .btn
-    width: 33.333%
+  &.thirds
+    >
+      width: 33.333%
 
 .btn-group-vertical
   +clearfix
