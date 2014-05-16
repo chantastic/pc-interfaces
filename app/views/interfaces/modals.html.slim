@@ -18,9 +18,9 @@ section.docs-section
     h2#creating-a-trigger Creating a Trigger
 
   markdown:
-    Interfaces uses a really nice data-attribute driven api to launch modals.  
+    Interfaces uses a really nice data-attribute driven api to launch modals.
 
-    You may trigger a modal by simply adding a `data-model-id` attribute with the id DOM node you are targeting.  For this example, let's target a modal with the id `#simpleModal`.  
+    You may trigger a modal by simply adding a `data-model-id` attribute with the id DOM node you are targeting.  For this example, let's target a modal with the id `#simpleModal`.
 
   =code_sample_static
     span data-modal-id="myModal" Launch #simpleModal
@@ -59,6 +59,23 @@ section.docs-section
     = render_source 'interfaces/templates/modal'
 
   = render 'interfaces/templates/modal', mustache: modal_data
+
+section.docs-section
+  a[href="#modal-url"]
+    h2#modal-url Modal for URL
+
+  markdown:
+    Modal dialogs can also be built from an external page in your application.  You can specify the page you'd like to load with like so:
+
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/modal_url'
+
+  markdown:
+    Under the covers, Interfaces is going to `$.get()` the page at that URL and add it as a modal.
+
+    This API is intentionall dumb.  It's not going to do much magic for you.  So, you will need to give your page all the [stylings required for any other modal](#composition).  As an exapmle see, `test/dummy/public/sample_url_modal.html`.
+
+  = render 'interfaces/templates/modal_url'
 
 section.docs-section
   a[href="#sizing"]
