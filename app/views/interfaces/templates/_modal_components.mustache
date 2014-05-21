@@ -1,10 +1,235 @@
-<div class="modal" id="sampleModal">
+<div class="modal modal--person-details" id="sampleModal">
   <div class="modal__header">
     <div class="modal-title">Edit Person</div>
   </div>
 
   <div class="modal__body">
-    New componoents and awesomeness
+    <div class="modal__band modal__band--topper modal__band--person">
+      <div class="bg-img-fill">
+        <img data-bind-src="form_person.croppedAvatarURL" data-bind-alt="check_in.name" src="https://avatars.planningcenteronline.com/uploads/person/9-1346364487/avatar.3.jpg?g=68x68%23" alt="undefined">
+      </div>
+      <img class="avatar" data-bind-src="form_person.dialogAvatarUrl" data-bind-alt="check_in.name" src="https://avatars.planningcenteronline.com/uploads/person/9-1346364487/avatar.3.jpg?g=91x91%23" alt="undefined">
+      <div class="row mb0">
+        <div class="col col--half palm--full col-tighter-pad">
+          <label for="f_name">First Name</label><input class="big-input" data-bind="form_person.first_name" type="text" placeholder="First Name" id="f_name">
+        </div>
+        <div class="col col--half palm--full">
+          <label for="l_name">Last Name</label><input class="big-input" data-bind="form_person.last_name" type="text" placeholder="Last Name" id="l_name">
+        </div>
+      </div>
+    </div>
+
+    <!-- TABBED ITEMS -->
+      <div id="tab-container" class="modal__band full-width-tabs" batman-view="TabNavigationView" data-easytabs="true">
+        <ul class="nav nav-tabs nav-justified pad-offset">
+          <li class="active">
+            <a href="#contact" class="active">
+              <div class="icon interfaces-profile"></div>
+              contact</a>
+          </li>
+          <li>
+            <a href="#personal">
+              <div class="icon interfaces-admin"></div>
+              personal</a>
+          </li>
+        </ul>
+
+        <div class="panel-container">
+        <!-- PANEL CONTAINER -->
+          <div class="tab-panel modal-well modal-well--naked" id="contact">
+            <div class="phone_numbers modal-well--naked modal-well" batman-view="PersonContactDataView">
+              <h4 class="smaller">
+                Phone Numbers<a class="btn btn--outline btn--tiny btn--add-label m0a right" data-event-click="addPhoneNumber" href="#"><span class="interfaces-phone accent-icon inline-icon"></span>add</a>
+              </h4>
+              <ul class="block-list block-list--fill eq-pad mb0">
+                <li class="phone_number block-list__item field-container" batman-view="IterationView">
+                  <div class="col col--third palm--third col-tighter-pad">
+                    <div class="select2-container" id="s2id_autogen25"><a href="javascript:void(0)" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-26">Home</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen26" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-26" id="s2id_autogen26"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen26_search" class="select2-offscreen"></label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-26" id="s2id_autogen26_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-26">   </ul></div></div>
+                  </div>
+                  <div class="col col--two-thirds palm--two-thirds">
+                    <div class="has-icon-right">
+                      <input class="small-input" type="tel" data-bind="phone.number" placeholder="10-digit phone number"><a class="icon" data-event-click="remove | withArguments 'phone_numbers', phone" href="#"><span class="interfaces-delete"></span></a>
+                    </div>
+                  </div>
+                </li><!--batman-iterator-phone="form_person.phone_numbers"-->
+              </ul>
+            </div>
+            <div class="emails modal-well--naked modal-well" batman-view="PersonContactDataView">
+              <h4 class="smaller">
+                Email Addresses<a class="btn btn--outline btn--tiny btn--add-label m0a right" data-event-click="addEmail" href="#"><span class="interfaces-email accent-icon inline-icon"></span>add</a>
+              </h4>
+              <ul class="block-list block-list--fill eq-pad mb0">
+                <li class="email block-list__item field-container" batman-view="IterationView">
+                  <div class="col col--third palm--third col-tighter-pad">
+                    <div class="select2-container" id="s2id_autogen27"><a href="javascript:void(0)" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-28">Home</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen28" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-28" id="s2id_autogen28"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen28_search" class="select2-offscreen"></label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-28" id="s2id_autogen28_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-28">   </ul></div></div>
+                  </div>
+                  <div class="col col--two-thirds palm--two-thirds">
+                    <div class="has-icon-right">
+                      <input class="small-input" type="email" data-bind="email.address" placeholder="contact email address"><a class="icon" data-event-click="remove | withArguments 'email_addresses', email" href="#"><span class="interfaces-delete"></span></a>
+                    </div>
+                  </div>
+                </li><!--batman-iterator-email="form_person.email_addresses"-->
+              </ul>
+            </div>
+            <div class="addresses modal-well--naked modal-well" batman-view="PersonContactDataView">
+              <h4 class="smaller">
+                Addresses<a class="btn btn--outline btn--tiny btn--add-label m0a right" data-event-click="addAddress" href="#"><span class="interfaces-geo-location accent-icon inline-icon"></span>add</a>
+              </h4>
+              <ul class="block-list block-list--fill eq-pad mb0">
+                <li class="block-list__item field-container" batman-view="IterationView">
+                  <div class="col col--third palm--third col-tighter-pad">
+                    <div class="select2-container" id="s2id_autogen29"><a href="javascript:void(0)" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-30">Home</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen30" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-30" id="s2id_autogen30"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen30_search" class="select2-offscreen"></label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-30" id="s2id_autogen30_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-30">   </ul></div></div>
+                  </div>
+                  <div class="col col--two-thirds palm--two-thirds">
+                    <div class="has-icon-right">
+                      <input class="small-input mb8" type="text" data-bind="address.street" placeholder="street and house number">
+                      <div class="col col--half palm--full col-tighter-pad">
+                        <input class="small-input" type="text" data-bind="address.city" placeholder="city">
+                      </div>
+                      <div class="col col--quarter palm--half col-tighter-pad">
+                        <input class="small-input" type="text" data-bind="address.state" placeholder="state">
+                      </div>
+                      <div class="col col--quarter palm--half">
+                        <input class="small-input" type="text" data-bind="address.zip" placeholder="zip">
+                      </div>
+                      <a class="icon" data-event-click="remove | withArguments 'addresses', address" href="#"><span class="interfaces-delete"></span></a>
+                    </div>
+                  </div>
+                </li><!--batman-iterator-address="form_person.addresses"-->
+              </ul>
+            </div>
+          </div>
+          <div class="tab-panel modal-well modal-well--naked" id="personal" style="display: none;">
+            <div class="modal-well--naked modal-well">
+              <div class="pane-group">
+                <div class="pane pane--split col--third">
+                  <div class="pane__body subtle-bg">
+                    <label>Birthdate</label><input class="small-input hasDatepicker" data-bind="form_person.birthdate_date" type="text" data-bind-placeholder="exampleDateText | downcase | prepend &quot;Birthdate &quot;" batman-view="jQueryDatePickerView" placeholder="Birthdate mm/dd/yyyy" id="dp1400711120312">
+                  </div>
+                </div>
+                <div class="pane pane--split col--third">
+                  <div class="pane__body subtle-bg">
+                    <label>Grade</label>
+                    <div class="select2-container--small">
+                      <div class="select2-container" id="s2id_autogen19"><a href="javascript:void(0)" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-20">
+                          Select a Grade
+                        </span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen20" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-20" id="s2id_autogen20"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <label for="s2id_autogen20_search" class="select2-offscreen"></label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-20" id="s2id_autogen20_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-20">   </ul></div></div><select class="select2--nosearch select2-offscreen" batman-view="Select2View" tabindex="-1" title="">
+                        <option value="">
+                          Select a Grade
+                        </option>
+                        <option data-bind="grade" data-bind-value="grade" batman-view="IterationView" value="K">K</option><option data-bind="grade" data-bind-value="grade" batman-view="IterationView" value="1st">1st</option><option data-bind="grade" data-bind-value="grade" batman-view="IterationView" value="2nd">2nd</option><option data-bind="grade" data-bind-value="grade" batman-view="IterationView" value="3rd">3rd</option><option data-bind="grade" data-bind-value="grade" batman-view="IterationView" value="4th">4th</option><option data-bind="grade" data-bind-value="grade" batman-view="IterationView" value="5th">5th</option><option data-bind="grade" data-bind-value="grade" batman-view="IterationView" value="6th">6th</option><option data-bind="grade" data-bind-value="grade" batman-view="IterationView" value="7th">7th</option><option data-bind="grade" data-bind-value="grade" batman-view="IterationView" value="8th">8th</option><option data-bind="grade" data-bind-value="grade" batman-view="IterationView" value="9th">9th</option><option data-bind="grade" data-bind-value="grade" batman-view="IterationView" value="10th">10th</option><option data-bind="grade" data-bind-value="grade" batman-view="IterationView" value="11th">11th</option><option data-bind="grade" data-bind-value="grade" batman-view="IterationView" value="12th">12th</option><!--batman-iterator-grade="Person.GRADES"-->
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="pane pane--split col--third">
+                  <div class="pane__body subtle-bg">
+                    <label>Gender</label>
+                    <div class="select2-container--small">
+                      <div class="select2-container" id="s2id_autogen21"><a href="javascript:void(0)" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-22">
+                          Select One
+                        </span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen22" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-22" id="s2id_autogen22"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <label for="s2id_autogen22_search" class="select2-offscreen"></label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-22" id="s2id_autogen22_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-22">   </ul></div></div><select class="select2--nosearch select2-offscreen" batman-view="Select2View" tabindex="-1" title="">
+                        <option value="">
+                          Select One
+                        </option>
+                        <option data-bind="gender" data-bind-value="gender" batman-view="IterationView" value="M">M</option><option data-bind="gender" data-bind-value="gender" batman-view="IterationView" value="F">F</option><!--batman-iterator-gender="["M", "F"]"-->
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-well--naked modal-well">
+              <div data-showif="form_person.site_administrator">
+                <h4 class="smaller">
+                  Permissions:<span class="badge badge--subtle" data-bind="form_person.permission | default &quot;None&quot; ">Administrator</span>
+                </h4>
+                <div class="alert alert--warning">
+                  <p>
+                    Since&nbsp;<span data-bind="form_person.name">PiCO Das Robot</span>&nbsp;is an account administrator for&nbsp;<span data-bind="current.organization.name">First Church Of Carlsbad</span>, he/she is a Check-Ins admin, too.
+                  </p>
+                </div>
+              </div>
+              <div data-hideif="form_person.site_administrator" style="display: none !important;">
+                <h4 class="smaller">
+                  Permissions
+                </h4>
+                <div data-hideif="Person.current.isAdministrator" style="display: none !important;">
+                  <span data-bind="form_person.permission | default &quot;None&quot; ">Administrator</span>
+                </div>
+                <div data-showif="Person.current.isAdministrator">
+                  <div class="select2-container" id="s2id_autogen23"><a href="javascript:void(0)" class="select2-choice" tabindex="-1">   <span class="select2-chosen" id="select2-chosen-24">Administrator</span><abbr class="select2-search-choice-close"></abbr>   <span class="select2-arrow" role="presentation"><b role="presentation"></b></span></a><label for="s2id_autogen24" class="select2-offscreen"></label><input class="select2-focusser select2-offscreen" type="text" aria-haspopup="true" role="button" aria-labelledby="select2-chosen-24" id="s2id_autogen24"><div class="select2-drop select2-display-none select2-with-searchbox">   <div class="select2-search">       <label for="s2id_autogen24_search" class="select2-offscreen"></label>       <input type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="select2-input" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-owns="select2-results-24" id="s2id_autogen24_search" placeholder="">   </div>   <ul class="select2-results" role="listbox" id="select2-results-24">   </ul></div></div><select class="select2-container select2-container--small select2-offscreen" batman-view="Select2View" tabindex="-1" title="">
+                    <option value="">
+                      None
+                    </option>
+                    <option data-bind="perm" data-bind-value="perm" batman-view="IterationView" value="Viewer">Viewer</option><option data-bind="perm" data-bind-value="perm" batman-view="IterationView" value="Administrator">Administrator</option><!--batman-iterator-perm="Person.PERMISSIONS"-->
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="modal-well--naked modal-well pb0">
+              <h4 class="smaller">
+                Medical Notes
+              </h4>
+              <textarea data-bind="form_person.medical_notes" placeholder="Any medically related items we should be aware of?"></textarea>
+            </div>
+            <div class="modal-well--naked modal-well pb0" data-showif="form_person.isNew" style="display: none !important;">
+              <h4 class="smaller">
+                Households
+              </h4>
+              <div class="household">
+                <ul class="bordered-list striped-list mb0">
+                  <li>
+                    <span>You must save&nbsp;</span><span data-bind="form_person.name | default &quot;this person&quot;">PiCO Das Robot</span><span>&nbsp;before you can him/her to a household.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="modal-well--naked modal-well pb0" data-showif="form_person.isNew | not" batman-view="PeopleEditHouseholdsView">
+              <h4 class="smaller">
+                Households
+              </h4>
+              <div class="household" batman-view="IterationView">
+                <ul class="bordered-list striped-list mb0">
+                  <li class="bordered-list__heading">
+                    <span data-bind="household.name">Das Household 2</span><a class="right" data-event-click="editHousehold | withArguments household, form_person" href="#">Edit</a>
+                  </li>
+                  <li data-addclass-primary-contact="member.isPrimaryContact | equals true" batman-view="IterationView" class="primary-contact">
+                    <span class="badge badge--mini" data-showif="member.child" style="display: none !important;">Child</span><span data-bind="member.person_name">PiCO Das Robot</span><span class="badge badge--success badge--inline badge--mini" data-showif="member.isPrimaryContact">Primary Contact</span>
+                  </li><li data-addclass-primary-contact="member.isPrimaryContact | equals true" batman-view="IterationView" class="">
+                    <span class="badge badge--mini" data-showif="member.child" style="display: none !important;">Child</span><span data-bind="member.person_name">PiCA Das Robot</span><span class="badge badge--success badge--inline badge--mini" data-showif="member.isPrimaryContact" style="display: none !important;">Primary Contact</span>
+                  </li><!--batman-iterator-member="household.household_memberships"-->
+                </ul>
+              </div><div class="household" batman-view="IterationView">
+                <ul class="bordered-list striped-list mb0">
+                  <li class="bordered-list__heading">
+                    <span data-bind="household.name">Das Robot Household</span><a class="right" data-event-click="editHousehold | withArguments household, form_person" href="#">Edit</a>
+                  </li>
+                  <li data-addclass-primary-contact="member.isPrimaryContact | equals true" batman-view="IterationView" class="">
+                    <span class="badge badge--mini" data-showif="member.child">Child</span><span data-bind="member.person_name">Joe Das Robot</span><span class="badge badge--success badge--inline badge--mini" data-showif="member.isPrimaryContact" style="display: none !important;">Primary Contact</span>
+                  </li><li data-addclass-primary-contact="member.isPrimaryContact | equals true" batman-view="IterationView" class="primary-contact">
+                    <span class="badge badge--mini" data-showif="member.child" style="display: none !important;">Child</span><span data-bind="member.person_name">PiCO Das Robot</span><span class="badge badge--success badge--inline badge--mini" data-showif="member.isPrimaryContact">Primary Contact</span>
+                  </li><li data-addclass-primary-contact="member.isPrimaryContact | equals true" batman-view="IterationView" class="">
+                    <span class="badge badge--mini" data-showif="member.child" style="display: none !important;">Child</span><span data-bind="member.person_name">Jane Das Robot</span><span class="badge badge--success badge--inline badge--mini" data-showif="member.isPrimaryContact" style="display: none !important;">Primary Contact</span>
+                  </li><li data-addclass-primary-contact="member.isPrimaryContact | equals true" batman-view="IterationView" class="">
+                    <span class="badge badge--mini" data-showif="member.child" style="display: none !important;">Child</span><span data-bind="member.person_name">Veronica Viewer</span><span class="badge badge--success badge--inline badge--mini" data-showif="member.isPrimaryContact" style="display: none !important;">Primary Contact</span>
+                  </li><!--batman-iterator-member="household.household_memberships"-->
+                </ul>
+              </div><!--batman-iterator-household="form_person.account_center_person.households.sortedBy.sortKey"-->
+              <div class="household">
+                <ul class="bordered-list striped-list mb0">
+                  <li class="bordered-list__heading">
+                    <a data-event-click="newHousehold | withArguments form_person" href="#">New Household</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        <!-- @end PANEL CONTAINER -->
+        </div>
+      </div>
+    <!-- @end TABBED ITEMS -->
+
   </div>
 
   <div class="modal__footer">
