@@ -14,6 +14,11 @@ INTERFACES.dataAPI =
     _url = $(@).data 'modal-url'
     _req = $.get(_url)
 
+    modal = new INTERFACES.ModalView().show()
+
+    _req.fail (err) ->
+      modal.hide()
+
     _req.done (res) ->
       modal = new INTERFACES.ModalUrlView(res)
       modal.show()
