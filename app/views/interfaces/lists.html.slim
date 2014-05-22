@@ -1,0 +1,138 @@
+h1.docs-page-title Lists
+
+section.docs-section
+  a[href="#basics"]
+    h2#basics Basics
+
+  markdown:
+    Lists are something we use a lot in Planning Center applications — their kinda our thing.  For that, they need a **great** default behavior.
+
+    Here are the things a list should be:
+
+    * 100% of width of its container
+    * logicalli responsive to touch and desktop usage
+    * markup independent
+    * actionable
+    * subactionable (desktop)
+
+    ## usage
+
+    Lists do not come with a default wrapper.  They are 100% width of their containing element.  For these examples, we are using `.pane` to wrap the list.
+
+    Here is the minimum markup required for a list:
+
+  = code_sample_static
+    .pane
+      .list
+        .list-item test
+
+  markdown:
+    This example uses `div`s only to show that `.list` is markup independent.
+
+section.docs-section
+  a[href="#default"]
+    h2#default Default List
+
+  markdown:
+    `.list` is a clean way to present single-column, non-tabular data.  By default it has no anchor-styles.
+
+  = render 'interfaces/templates/list', :mustache => {}
+
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/list'
+
+section.docs-section
+  a[href="#actionable"]
+    h2#actionable Actionable List
+
+  markdown:
+    `.list--actionionable` modifies a list to to have "anchor-like" styles.  Using actial anchors is notoriously onmanageable on mobile.
+
+  = render 'interfaces/templates/lists/list_modified',
+           :mustache => { list_modifier: "list--actionable",  list_items: ['one', 'two', 'three', 'four'] }
+
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/lists/list_modified'
+
+section.docs-section
+  a[href="#mixed"]
+    h2#mixed Mixed List
+
+  markdown:
+    `.list-item--actionable` modifer gives you the same styles as `.list--actionable` but on single-item.  This allows you to compose mixed lists of actionable and non-actionable items.
+
+  ruby:
+    list_items = {
+      list_items: [
+        { text: "one", modifier: "list-item--actionable"},
+        { text: "two" },
+        { text: "three" },
+        { text: "four", modifier: "list-item--actionable"},
+        { text: "five" }
+      ]
+    }
+
+  = render 'interfaces/templates/lists/list_mixed',
+           :mustache => list_items
+
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/lists/list_mixed'
+
+section.docs-section
+  a[href="#actionable-with-action-list"]
+    h2#actionable-with-action-list Actionable List with Action List
+
+  markdown:
+    `.action-list` allows you to add shortcuts to item-specific actions.  Think "Delete", "Move", etc.
+
+    Action-lists suppert text and icons.  Both will be hidden in on mobile devices.
+
+    **Consider these when adding an `.action-list`:**
+
+    * An `.action-list` should only provide shortcut-actions available in the edit screen
+    * Action items will not (currently) be displayed on mobile devices
+
+  = code_sample
+    div.pane
+      ul.list.list--actionable
+        li.list-item
+          | one
+          ul.action-list
+            li.action-list-item
+              | Edit
+            li.action-list-item
+              | Delete
+
+        /! use with icons
+        li.list-item
+          | one
+          ul.action-list
+            li.action-list-item
+              i.interfaces.interfaces-edit
+            li.action-list-item
+              i.interfaces.interfaces-delete
+
+javascript:
+  // demo js
+
+  $(function () {
+    $('.list--actionable .list-item, .list-item--actionable').on('click', function () {
+      var itemText;
+
+      itemText = $(this).text().trim();
+
+      alert(itemText);
+    });
+
+    $('.action-list-item').on('click', function () {
+      var itemText, actionText;
+
+      actionText = $(this).text().trim();
+      itemText   = $(this).closest('.list-item').text().trim().split(' ')[0].trim();
+
+      console.log(itemText);
+
+      alert(actionText + "(" + itemText + ")");
+      return false;
+    });
+  })
