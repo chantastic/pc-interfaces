@@ -50,15 +50,34 @@ section.docs-section
 
   ruby:
     modal_data = {
-      header: 'Vizzini to the Man in Black',
+      header: '<div class="modal-title"> Vizzini to the Man in Black </div>',
       body:   'You only think I guessed wrong! That\'s what\'s so funny! I switched glasses when your back was turned! Ha ha! You fool! You fell victim to one of the classic blunders - The most famous of which is "never get involved in a land war in Asia" - but only slightly less well-known is this: "Never go in against a Sicilian when death is on the line"! Ha ha ha ha ha ha ha! Ha ha ha ha ha ha ha! Ha ha ha...',
-      footer: '[Vizzini stops suddenly...]'
+      footer: '<button class="btn btn--outline" type="button"> Walk away </button>'
     }
 
   .row:.col:pre.code-sample-static.language-markup:code
     = render_source 'interfaces/templates/modal'
 
   = render 'interfaces/templates/modal', mustache: modal_data
+
+section.docs-section
+  a[href="#closing-a-modal"]
+    h2#closing-a-modal Closing a Modal
+
+  markdown:
+    Chances are, you're going to need to close these modals. We got you covered:
+
+  =code_sample_static
+    <span data-close-modal=""> Close! </span>
+
+  markdown:
+    You can hide the etire modal stage with a call to this JS global:
+
+  .row:.col:pre.code-sample-static.language-javascript:code
+    | INTERFACES.modalLayer.hide()
+
+  markdown:
+    There isn't currently a way to target a single modal, as there can only ever be one.  This may change.
 
 section.docs-section
   a[href="#modal-url"]
