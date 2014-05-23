@@ -3,7 +3,7 @@ window.INTERFACES ?= {}
 class INTERFACES.ModalView
   constructor: (@content = '') ->
 
-  show: ->
+  show: =>
     INTERFACES.modalLayer.emptyAndPushModal @content
 
 class INTERFACES.ModalIdView extends INTERFACES.ModalView
@@ -12,3 +12,10 @@ class INTERFACES.ModalIdView extends INTERFACES.ModalView
 
 class INTERFACES.ModalUrlView extends INTERFACES.ModalView
   constructor: (@content) ->
+
+  show: =>
+    super()
+    @_publishModalLoad()
+
+  _publishModalLoad: =>
+    $(document).trigger 'modal:load'

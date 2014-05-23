@@ -78,6 +78,15 @@ section.docs-section
   = render 'interfaces/templates/modal_url'
 
 section.docs-section
+  a[href="#modal-load-event"]
+    h2#modal-load-event Modal for URL modal:load event
+  markdown:
+    When loading a modal template from a url, you may need to run some initializing scripts for select2, autocomplete, or datepicker.  For that you can tie into the `modal:load` event hook.  This will fire the moment your modal is added to the DOM.
+
+  .row:.col:pre.code-sample-static.language-javascript:code
+    | $(document).on('modal:load', function () { /* codez */ });
+
+section.docs-section
   a[href="#sizing"]
     h2#sizing Sizing
 

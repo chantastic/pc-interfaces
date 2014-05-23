@@ -1,20 +1,8 @@
 # Place all the behaviors and hooks related to site-wide utilities and helpers here
 
 $ =>
-  ########### Generic toggle helper
-  # $(document).on "click", ".app-switcher-wrap.js-togglehelper", (event) ->
-    # $(this).toggleClass("alt-state")
 
-  ########### Toggle the dropdown menus
-  # $(document).on "click", ".dropdown-toggle", (event) ->
-    # $(this).closest(".dropdown").toggleClass("active-state")    
-
-  ########### FIND AND INIT SELECT BOXES
-  $("select").select2 minimumResultsForSearch: 12
-  $(".select2--nosearch").select2 minimumResultsForSearch: -1
-
-  ########### INII SELECT 2
-  # $("select").select2();
+  INTERFACES.formInit()
 
   ########### ACCORDIONS
   $(document).on "click", ".acc__trigger", (event) ->
@@ -23,7 +11,7 @@ $ =>
     myPanelHeader = $(this)
 
     myPanel.slideToggle()
-    
+
     if (myPanel.hasClass("active-state") || myPanelHeader.hasClass("active-state"))
       myPanel.removeClass("active-state")
       myPanelHeader.removeClass("active-state")
@@ -31,10 +19,6 @@ $ =>
       myPanel.addClass("active-state")
       myPanelHeader.addClass("active-state")
       )
-
-
-
-
 
   ##DEMO CODE BELOW THIS LINE
   # generic demo toggle
