@@ -31,7 +31,7 @@
 .pane--full
   width: 100%
   display: table
-  margin-bottom: 20px  
+  margin-bottom: 20px
 
 .pane-group
   display: table
@@ -48,7 +48,7 @@
     &:first-of-type .pane__header
       +border-top-left-radius($default-pane-header-radius)
     &:last-of-type .pane__header
-      +border-top-right-radius($default-pane-header-radius)      
+      +border-top-right-radius($default-pane-header-radius)
 
 .pane--split
   +border-radius(0)
@@ -73,7 +73,7 @@
   .pane__footer
     +border-bottom-radius(0)
 
-  
+
 .pane__header, .pane__footer, .pane__body
   +clearfix
 
@@ -102,7 +102,7 @@
 
 .pane__footer
   padding: .75rem 1.25rem .9rem
-  +border-bottom-radius(3px)
+  +border-bottom-radius($default-pane-radius)
   background: adjust-color($lighter-gray, $lightness: 7%)
   +background-image(linear-gradient(top, adjust-color($lighter-gray, $lightness: 7%), adjust-color($lighter-gray, $lightness: 5%)))
   border-top: solid 1px adjust-color($lighter-gray, $lightness: -1%)
@@ -111,7 +111,7 @@
     &.left:first-child
       margin-left: -5px
     &.right:last-child
-      margin-right: -5px      
+      margin-right: -5px
 
 .pane-title
   margin: 0
@@ -173,7 +173,7 @@
 .acc__panel__inner
   padding: 20px
 
-.sidebar 
+.sidebar
   .acc__trigger
     margin-top: -1px
     border-width: 1px 0 1px 0
