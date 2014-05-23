@@ -191,20 +191,6 @@ $button-border-style: solid
   &.btn--shadow
     +box-shadow(0 3px 7px -3px rgba(0,0,0,0.7))
 
-  // pending implementation
-
-  /*&.btn--left-align*/
-  /*  text-align: left*/
-  /*  text-indent: 0.75rem*/
-
-  /*&.btn--right-align*/
-  /*  text-align: right*/
-  /*  padding-right: 0.75rem*/
-
-  /*&.btn--round*/
-  /*  +border-radius(1000px)*/
-
-
 
 // button group ===========================================
 .btn-group
@@ -273,22 +259,6 @@ $button-border-style: solid
 .pane--header .btn
   margin-bottom: 0
 
-// button dropdown ===========================================
-
-// pending implementation
-/*.btn-dropdown*/
-/*  position: relative*/
-/*  padding-right: 35px*/
-/**/
-/*  .btn-dropdown__indicator*/
-/*    +abs-pos(0, 0, 0, auto)*/
-/*    width: 35px*/
-/**/
-/*  .btn-dropdown__caret*/
-/*    +abs-pos(50%, 50%, auto, auto)*/
-/*    margin: -3px -3px*/
-
-
 // responsive button variants - cause sometimes you need them to behave differently
 @media (max-width: 37.5em) // < 600
   .btn
@@ -304,5 +274,5 @@ $button-border-style: solid
     &.palm-btn--full
       float: none
       width: 100%
-      margin-left: 0
-      margin-right: 0
+      margin-left: 0 !important
+      margin-right: 0 !important
