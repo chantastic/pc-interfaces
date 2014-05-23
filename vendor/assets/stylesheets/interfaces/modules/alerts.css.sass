@@ -35,7 +35,7 @@ $alert-border-style: solid
 
   // mixins
   +alert-variant(white, $base-color)
-  +border-radius(3px)
+  +border-radius(2px)
   +font-size(14)
   +transition(background-color 300ms ease-out)
   +user-select(none)
@@ -54,6 +54,7 @@ $alert-border-style: solid
   vertical-align: middle
   font-weight: normal
   text-align: left
+  clear: both
 
   .alert__heading
     +font-size(18)
@@ -76,7 +77,7 @@ $alert-border-style: solid
         padding-top: 0
       &:last-child
         padding-bottom: 0
-        border-bottom: 0  
+        border-bottom: 0
 
   -webkit-appearance: none
 
@@ -91,11 +92,21 @@ $alert-border-style: solid
     +alert-variant(adjust-color($warning-color, $lightness: -55%, $saturation: -42%), $warning-color, adjust-color($warning-color, $lightness: -1%, $saturation: 0%))
   &.alert--subtle
     +alert-variant($base-font-color, adjust-color($bg-color, $lightness: -7%))
+
   //WARNINGS
   &.alert--warning
-  .alert__heading,
-  .alert__sub-heading  
-    color: adjust-color($warning-color, $lightness: -57%, $saturation: -34%)
+    .alert__heading,
+    .alert__sub-heading
+      color: adjust-color($warning-color, $lightness: -57%, $saturation: -34%)
+    ul li
+      border-bottom-color: adjust-color($warning-color, $lightness: -10%, $saturation: -10%)
+      color: adjust-color($warning-color, $lightness: -30%, $saturation: -20%)
+
+  //WARNINGS
+  &.alert--danger
+    .alert__heading,
+    .alert__sub-heading
+      color: adjust-color($warning-color, $lightness: -57%, $saturation: -34%)
     ul li
       border-bottom-color: adjust-color($warning-color, $lightness: -10%, $saturation: -10%)
       color: adjust-color($warning-color, $lightness: -30%, $saturation: -20%)
