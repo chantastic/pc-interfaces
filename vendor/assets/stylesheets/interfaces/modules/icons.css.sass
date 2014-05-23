@@ -24,7 +24,6 @@
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
-
 .interfaces-services:before
   content: "\e600"
 
@@ -121,7 +120,27 @@
 .interfaces-person-edit:before
   content: "\e61e"
 
+.interfaces-profile:before
+  content: "\e61f"
+
+.interfaces-phone:before
+  content: "\e620"
+
+.interfaces-geo-location:before
+  content: "\e621"
+
+.interfaces-email:before
+  content: "\e622"
+
 /* Icon helpers =========== */
 .inline-icon
   margin-right: .5em
   font-size: 110%
+
+.inline-icon.accent-icon
+  position: relative
+  font-size: 110%
+  top: .2rem
+
+.accent-icon
+  color: adjust-color($base-color, $lightness: 7%, $saturation: -8%)
