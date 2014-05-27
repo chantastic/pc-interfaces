@@ -140,6 +140,250 @@ $modal-default-top: 46px
   margin-left: -115px
   top: ($modal-default-top + 22px)
 
+//==================================== TABS
+.nav
+  margin: 0
+  padding: 0
+  list-style: none
+  +clearfix
+
+  > li
+    position: relative
+    display: block
+
+    > a
+      position: relative
+      display: block
+      padding: 10px 15px
+
+  &.nav-justified
+    border-bottom: 0
+    width: 100%
+    > li
+      display: table-cell
+      width: 1%
+      float: none
+
+.nav-tabs
+  border-bottom: 1px solid $border-color
+
+  > li
+    float: left
+    margin-bottom: -1px
+
+    > a
+      margin-right: 2px
+      line-height: 1.42857143
+      border: 1px solid transparent
+      border-radius: 3px 3px 0 0
+
+    &.active > a,
+    &.active > a:hover,
+    &.active > a:focus
+      color: $link-color-hover
+      background-color: $modal-window-bg-color
+      border: 1px solid $border-color
+      border-bottom-color: transparent
+      cursor: default
+
+
+//@end TABS
+
+
+// MODAL BAND =================================
+.modal__band
+  margin: 0 -1.25rem
+  padding: 1.5rem 1.25rem
+  &:first-child
+    margin-top: -1.5rem
+  &:first-child:last-child
+    margin-bottom: -1px
+  &.push, .push
+    margin-bottom: 1.5rem
+  .row__child
+    margin: 2rem auto
+  &:last-child:not(.modal__band--subtle),
+  &:last-child:not(.modal__band--topper.modal__band)
+    padding-bottom: 0
+  .col:first-of-type
+    padding-left: 0
+  .col:last-of-type
+    padding-right: 0
+    margin-bottom: 0
+
+.modal__band--topper
+  background: adjust-color($base-color, $lightness: 49%, $saturation: -10%)
+  .badge
+    margin-right: .8rem
+    background: adjust-color($base-color, $lightness: 43%, $saturation: -10%)
+    border: 0
+  +breakpoint(bp_1)
+    .row.mb0 .col
+      margin-bottom: 0
+
+// PERSON MODAL =================================
+.modal__band--person
+  height: 130px
+  position: relative
+  +breakpoint(lte_palm)
+    height: 180px
+    .col
+      margin-bottom: 0
+  .row
+    margin: 0 8px 0 120px
+  label
+    margin-top: 10px
+  .palm--full
+    clear: none
+
+  .avatar
+    position: relative
+    z-index: 1
+    +border-radius(100em)
+    float: left
+    width: 91px
+    top: 5px
+    left: 7px
+
+  .bg-img-fill
+    position: absolute
+    top: 0px
+    left: 0
+    right: 0
+    bottom: 0
+    overflow: hidden
+    img
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      display: block
+      min-width: 120%
+      margin-top: -50%
+      -ms-filter: blur(30px)
+      +filter(blur(30px))
+      margin-left: -12%
+      opacity: .4
+
+//This is specific to the person modal. not sure it can be generified any more??
+.modal--person-details
+  .hover-icon-trigger .col
+    margin-bottom: 0
+  +breakpoint(lte_palm)
+    .block-list.eq-pad .hover-icon-trigger
+      padding: 0.75rem .9rem 0.75rem 0.6rem
+      .palm--third:first-child
+        padding-right: 7px
+  +breakpoint(bp_2)
+    .modal__band--subtle .palm--full
+      margin-bottom: 0
+
+/*CONTENT IN THE TABS SECTIONS*/
+h4.smaller
+  +font-size(14)
+input.mb8
+  margin-bottom: 8px
+
+.col-tighter-pad
+  +breakpoint(bp_1)
+    padding-right: 1rem
+
+.field-container.block-list__item
+  border-radius: 3px
+  .col
+    margin-bottom: 0
+
+.subtle-bg
+  background: adjust-color($sidebar-bg-color, $lightness: 1%, $saturation: -10%)
+
+/*CONTACT*/
+.modal--person-details h4.smaller a
+  +font-size(13)
+  padding: 0.2rem .6rem 0.4rem .6rem
+  [class^="icon-"], [class*=" icon-"]
+    +font-size(16)
+    color: adjust-color($success-color, $lightness: 10%, $saturation: -6%)
+    margin-right: 6px
+
+.modal--person-details .has-icon-right > .icon
+  top: 13px
+  right: -3px
+  .interfaces-delete
+    color: darken($lighter-gray, 8%)
+  &:hover .interfaces-delete
+    color: $danger-color
+
+/*PERSONAL INFO*/
+.modal--person-details
+  .pane-group
+    margin-bottom: 0
+    .pane
+      margin-bottom: -1px
+  h4 .badge
+    margin-left: .5rem
+#personal
+  .modal-well .alert
+    margin: 1.3rem auto 0
+
+/*ATTENDANCE*/
+#attendance
+  margin-bottom: -1.25rem
+  padding-bottom: 0
+
+.justified-table-wrap
+  margin: 0 -1.3rem 0 -1.4rem
+
+.modal--person-details .events.table
+  margin: 0
+  td, th
+    &:first-child
+      padding-left: 2rem
+    &:last-child
+      padding-right: 2rem
+  th
+    border-bottom-width: 1px
+    border-bottom-color: adjust-color($base-color, $lightness: 4%, $saturation: -2%)
+  td
+    +font-size(12)
+  .event-col
+    width: 160px
+  .text-center
+    text-align: center
+
+/*TABS*/
+.modal__band.full-width-tabs
+  padding: 0
+
+.full-width-tabs
+  .nav-tabs > li
+
+    &:first-child
+      a
+        box-shadow: none
+
+    > a
+      +transition(all .2s ease-in-out)
+      text-align: center
+      font-size: 1.15rem
+      border: 0 !important
+      margin: 0
+      border-radius: 0
+      box-shadow: inset 1px 0 0 rgba($light-gray, 0.8)
+
+    &:not(.active) > a
+      background: adjust-color($light-gray, $lightness: 10%)
+      color: adjust-color($light-gray, $lightness: -15%)
+      &:hover
+        color: $link-color-hover
+    .icon
+      font-size: 2.55rem
+      margin-top: .1em
+
+
+//@end PERSON MODAL
+
+
 // modal component - immediate child elements ==============
 
 //remove padding from top of first section
@@ -153,7 +397,7 @@ $modal-default-top: 46px
 .modal-well .modal-section.modal-section--subtle
   padding: 1.5rem
   &.control-group
-    padding: .75rem  
+    padding: .75rem
 
 .modal__header, .modal__footer, .modal__body
   +clearfix
@@ -175,9 +419,9 @@ $modal-default-top: 46px
 .modal-well__heading
   font-size: 1.3em
   padding-bottom: .75rem
-  // border-bottom: 1px solid #E9E9E9  
+  // border-bottom: 1px solid #E9E9E9
 
-.modal-well__sub-heading  
+.modal-well__sub-heading
   font-size: 1.1em
   margin-bottom: .5rem
 

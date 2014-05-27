@@ -121,6 +121,21 @@
 .pointer
   cursor: pointer
 
+.block-list--fill
+  .block-list__item
+    border-bottom: 0
+    background: adjust-color($pane-header-bg-bottom, $lightness: 2%)
+    margin-bottom: 1px
+
+.modal .block-list
+  &.eq-pad li
+    padding: 1rem
+  .select2-choice
+    height: 27px
+    line-height: 26px
+    +font-size(12)
+    border-radius: 3px
+
 //Container with an icon that you want to show on hover
 .hover-icon-trigger
   .icon

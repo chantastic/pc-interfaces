@@ -79,6 +79,17 @@ section.docs-section
   markdown:
     There isn't currently a way to target a single modal, as there can only ever be one.  This may change.
 
+  a[href="#components"]
+    h2#components Components
+
+  markdown:
+    [ components information ]
+
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/modal_components'
+
+  = render 'interfaces/templates/modal_components'
+
 section.docs-section
   a[href="#modal-url"]
     h2#modal-url Modal for URL
