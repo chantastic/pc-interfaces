@@ -1,33 +1,60 @@
-h3 Header
-div style="margin-top: 25px"
-  = interfaces_header do
-    li.divider
-    li
-      a href="#"
-        span.icon.interfaces-services aria-hidden="true"
-        span.btn-label Organization
-    li.divider
-    li
-      a href="#"
-        span.icon.interfaces-resources aria-hidden="true"
-        span.btn-label Applications
-    li.divider
-    li
-      a href="#"
-        span.icon.interfaces-projector aria-hidden="true"
-        span.btn-label Payment Options
-    li.divider
+h1.docs-page-title Header
+
+section.docs-section
+  markdown:
+    Wrap your header items in the `interfaces_header` helper. This gives you:
+
+    - A pretty [interfaces header](#interfaces-header) for each `<li>` you give it.
+    - The [app switcher](#app-switcher), if you implement its dependencies
 
 
-  pre.code-sample.code-sample--visible
-    code.language-ruby
-      | = interfaces_header
-          li.divider
-          li
-            a href="#"
-              span.icon.interfaces-services aria-hidden="true"
-              span.btn-label Organization
-          li.divider
+section.docs-section
+  a[href="#interfaces-header"]
+    h2#interfaces-header Header
+  div style="margin-top: 25px"
+    = interfaces_header do
+      li.divider
+      li
+        a href="#"
+          span.icon.interfaces-services aria-hidden="true"
+          span.btn-label Organization
+      li.divider
+      li
+        a href="#"
+          span.icon.interfaces-resources aria-hidden="true"
+          span.btn-label Applications
+      li.divider
+      li
+        a href="#"
+          span.icon.interfaces-projector aria-hidden="true"
+          span.btn-label Payment Options
+      li.divider
+
+
+    pre.code-sample.code-sample--visible
+      code.language-ruby
+        | = interfaces_header
+            li.divider
+            li
+              a href="#"
+                span.icon.interfaces-services aria-hidden="true"
+                span.btn-label Organization
+            li.divider
+
+section.docs-section
+  a[href="#app-switcher"]
+    h2#app-switcher App Switcher
+  markdown:
+    The app switcher is __part of `interfaces_header`__. It expects a few things to do its job:
+
+    - The signed-in person is `Person.current`.
+    - `Person` implements `#subscribed_apps` or `#applications`:
+      - `Person#subscribed_apps` returns _either_ an array of application names _or_ an array of application objects that respond to `:name`
+      - `Person#applications` returns a hash of `{application_name} => {subscription_details}` pairs.
+
+    If these requirements are met, the app switcher will render a list of returned applications. The current application will be first on the list.
+
+    __To exclude cancelled apps__, make sure `Person#subscribed_apps` (or `Person#applications`) doesn't return cancelled applications.
 
 
 h3 Footer
