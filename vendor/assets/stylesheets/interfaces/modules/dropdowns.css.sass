@@ -25,19 +25,23 @@
     +box-shadow(0 1px 6px rgba(adjust-color($base-color, $lightness: -10, $saturation: -49), 0.45))
     +abs-pos(100%, auto, auto, auto)
     min-width: 200px
-    &:after
-      content: ""
-      display: block
-      width: 0
-      height: 0
-      border: inset 6px
-      border-color: transparent transparent white transparent
-      border-bottom-style: solid
-      position: absolute
-      top: -12px
-      left: 10px
-      z-index: 99
-    &:align-right
+    // &:after
+    //   content: ""
+    //   display: block
+    //   width: 0
+    //   height: 0
+    //   border: inset 6px
+    //   border-color: transparent transparent white transparent
+    //   border-bottom-style: solid
+    //   position: absolute
+    //   top: -12px
+    //   left: 10px
+    //   z-index: 99
+    &:dropdown--align-right
+      right: 0
+      // &:after
+      //   left: auto
+      //   right: 10px
   &.active-state .dropdown__menu
     display: block
 
