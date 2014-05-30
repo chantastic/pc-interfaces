@@ -12,10 +12,10 @@ INTERFACES.modalLayer =
     @_removeHideListeners()
 
   hideModals: ->
-    $('.modal').hide()
+    $('.modal-layer .modal').hide()
 
   showModals: ->
-    $('.modal').show()
+    $('.modal-layer .modal').show()
 
   emptyAndPushModal: (modal) ->
     @show()
