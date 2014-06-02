@@ -146,10 +146,10 @@ module Interfaces
     end
 
     def available_apps_for_person
-      if Person.current.respond_to? :applications
+      if Person.current.respond_to? :subscribed_apps
+        Person.current.subscribed_apps.sort.map { |app| app.respond_to?(:name) ? app.name : app }
+      elsif Person.current.respond_to? :applications
         Person.current.applications.sort.map(&:first)
-      elsif Person.current.respond_to? :apps
-        Person.current.apps.sort.map { |app| app.name }
       else
         logger.debug "[INTERFACES] INTEGRATION REQUIRED: AccountCenterPersonIntegration is required for the application switcher — https://github.com/ministrycentered/account_center_integration"
         %w[Foo Bar Baz]
