@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'htmlentities'
 
   # dependencies for host application
-  spec.add_dependency 'select2-rails'
+  spec.add_dependency 'select2-rails', '3.5.5'
   spec.add_dependency 'es5-shim-rails'
   spec.add_dependency 'html5shiv-rails'
   spec.add_dependency 'selectivizr-rails'
