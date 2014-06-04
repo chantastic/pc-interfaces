@@ -5,6 +5,12 @@ class INTERFACES.ModalView
 
   show: =>
     INTERFACES.modalLayer.emptyAndPushModal @content
+    @_publishModalLoad()
+
+  # It is less good that this event is called `modal:load`
+  # now that it is triggered on all modals. What shold be?
+  _publishModalLoad: =>
+    $(document).trigger 'modal:load'
 
 class INTERFACES.ModalIdView extends INTERFACES.ModalView
   constructor: (@id) ->
@@ -12,10 +18,3 @@ class INTERFACES.ModalIdView extends INTERFACES.ModalView
 
 class INTERFACES.ModalUrlView extends INTERFACES.ModalView
   constructor: (@content) ->
-
-  show: =>
-    super()
-    @_publishModalLoad()
-
-  _publishModalLoad: =>
-    $(document).trigger 'modal:load'
