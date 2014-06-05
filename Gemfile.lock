@@ -14,7 +14,7 @@ PATH
       mustache
       placeholder-gem
       sass-rails
-      select2-rails (= 3.5.5)
+      select2-rails (= 3.5.2)
       selectivizr-rails
       slim-rails
 
@@ -113,7 +113,7 @@ GEM
       sass (~> 3.2.0)
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
-    select2-rails (3.5.5)
+    select2-rails (3.5.2)
       thor (~> 0.14)
     selectivizr-rails (1.1.2)
     slim (2.0.2)
