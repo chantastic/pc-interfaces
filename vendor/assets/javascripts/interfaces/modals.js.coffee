@@ -20,9 +20,10 @@ INTERFACES.modalLayer =
   emptyAndPushModal: (modal) ->
     @show()
 
-    $('.modal-layer')
-      .empty()
-      .append(modal)
+    $('.modal-layer').append(modal)
+
+    # IE9+ selector warning
+    $('.modal:not(:last-child)').remove()
 
   # private
 
