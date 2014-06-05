@@ -1,0 +1,29 @@
+h1.docs-page-title Alerts
+
+section.docs-section
+  a[href="#basics"]
+    h2#basics Basics
+
+  markdown:
+    Make alerts with `.alert`. Add a type with `.alert--{alert-type}`.
+
+  = code_sample do
+    div.alert                Nothing: Just a big box.
+    div.alert.alert--warning Warning: Don't say we didn't warn you.
+    div.alert.alert--danger  Danger: Run for your life!
+    div.alert.alert--success Success: You win 1 internet!
+    div.alert.alert--subtle  Subtle: Subtle alert is subtle...
+
+
+section.docs-section
+  a[href="#headings"]
+    h2#headings Headings
+
+  markdown:
+    Add headings with `.alert__heading` and `.alert__sub-heading`.
+
+  = code_sample do
+    div.alert.alert--danger
+      .alert__heading This is really bad!
+      .alert__sub-heading What did you even do?
+      | I'm considering cancelling your account right now. Right now!
