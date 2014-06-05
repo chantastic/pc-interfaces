@@ -14,7 +14,7 @@ PATH
       mustache
       placeholder-gem
       sass-rails
-      select2-rails
+      select2-rails (= 3.5.5)
       selectivizr-rails
       slim-rails
 
@@ -67,13 +67,13 @@ GEM
     es5-shim-rails (2.0.5.1)
       actionpack (>= 3.1)
       railties (>= 3.1)
-    execjs (2.0.2)
+    execjs (2.1.0)
     fssm (0.2.10)
     high_voltage (2.1.0)
     hike (1.2.3)
     html5shiv-rails (0.0.2)
       railties (>= 3.2.0, < 5.0)
-    htmlentities (4.3.1)
+    htmlentities (4.3.2)
     i18n (0.6.9)
     jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
@@ -113,7 +113,7 @@ GEM
       sass (~> 3.2.0)
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
-    select2-rails (3.5.4)
+    select2-rails (3.5.5)
       thor (~> 0.14)
     selectivizr-rails (1.1.2)
     slim (2.0.2)
