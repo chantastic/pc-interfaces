@@ -6,7 +6,7 @@ app!
 
 ## Installation
 
-To start using Intterfaces in you app, include the gem in your Gemfile:
+To start using Interfaces in you app, include the gem in your Gemfile:
 
 ```ruby
 gem 'interfaces', git: 'git@github.com:ministrycentered/interfaces.git'
@@ -23,45 +23,56 @@ gem 'interfaces', path: '~/code/interfaces'
 
 If you have a server running (pow or otherwise), you'll need to restart it.
 
-## Usage
+## Setup using the generator
 
-Using Interfaces can be quite straight forward.  There are a number of helpers
-that get you
+Interfaces comes with a handy generator for setting up **new** apps.
+
+`rails generate interfaces:install`
+
+### If you're already working on an app, and want to manually setup Interfaces...
+
+## Usage
 
 ### Requiring Assets
 
-Once included in you Gemfile, simply add the following lines to your corresponding manifest files:
+Once the Interfaces gem is in your Gemfile, you have a couple of options for requiring the Interfaces assets:
 
+#### Get Everything
+
+In your `application.css` file: 
 ```css
-/*  application.css
- *= require interfaces/interfaces
+*= require interfaces/interfaces
 ```
 
+In your `application.js` file:
 ```javascript
-//  application.js
 //= require interfaces/interfaces
 ```
 
-This will provide you with out-of-the-box Interfaces styles, scripts, shims,
-libraries, and components.
+This will provide you with out-of-the-box Interfaces styles, scripts, shims, libraries, and components.
 
-### For The More Conservative
+#### Get only what you want
 
-Requiring everything is a nice way to get started quickly. But it's a pretty heavy operation.
+Interfaces is designed to be used as minimally as you like. Requiring everything is a nice way to get started quickly, but you may not need all of Interfaces.
 
-Interfaces is designed to be used as minimally as you like.
-
-You may include any single file stylesheet or script into your file like so:
+To get only what you need, you'll need to require a base file, and then the modules you want. In your `application.css` file:
 
 ```css
-/*  application.css
- *= require interfaces/modules/tooltips
- *= require interfaces/core/grid
+*= require interfaces/base
+*= require interfaces/modules/grid   /* pick your modules */
 ```
 
-For a comprehensive list of the available libraries, checkout the
-[vendor/assets](https://github.com/ministrycentered/interfaces/tree/master/vendor/assets/)
-directory.
+##### Available Modules
+Here's a list of available modules:
+
+*  Buttons:   `*= require interfaces/modules/buttons`
+*  Panes:     `*= require interfaces/modules/panes`
+*  Tooltips:  `*= require interfaces/modules/tooltips`
+*  Modals:    `*= require interfaces/modules/modals`
+*  Grid:      `*= require interfaces/modules/grid`
+*  Forms:     `*= require interfaces/modules/forms` _forms also need `grid` for layout_
+*  Tables:    `*= require interfaces/modules/tables`
+
 
 ### Adding Layout
 
@@ -73,7 +84,7 @@ wrap the `interfaces` block helper around your content `yield`.
 
 ```erb
 <%= interfaces do %>
-  <%= yield %>
+<%= yield %>
 <% end %>
 ```
 
@@ -88,24 +99,24 @@ For this, you'll want to wrap your `<%= yield %>` tag like so:
 
 ```erb
 <%= interfaces_wrap do %>
-  <%= interfaces_header do %>
-    <%# navagation list items here %>
+<%= interfaces_header do %>
+  <%# navagation list items here %>
+<% end %>
+
+<%= interfaces_content do %>
+  <%= interfaces_sidebar do %>
+    <%# sidebar content here %>
   <% end %>
 
-  <%= interfaces_content do %>
-    <%= interfaces_sidebar do %>
-      <%# sidebar content here %>
-    <% end %>
-
-    <%= interfaces_main do %>
-      <%= yield %>
-    <% end %>
-
+  <%= interfaces_main do %>
+    <%= yield %>
   <% end %>
+
+<% end %>
 <% end %>
 
 <%= interfaces_footer do %>
-  Designed in CA Copyright 2014
+Designed in CA Copyright 2014
 <% end %>
 ```
 
@@ -117,75 +128,53 @@ Adding it your app is easy, simyly add this line to your `config/routes.rb` file
 ```
 mount Interfaces::Engine => '/styleguide' if Rails.env.development?
 ```
+===============================
 
-## Application Specific Styles
+## Application-Specific Styles
 
-Interfaces is intended to be extended.  Apps that look the same are not
-interesting.
+Interfaces is intended to be extended.  Apps that look the same are not interesting.
 
-Configuring your application styles takes a little setup.  So, hold on as I walk
-you through it.
+To customize Interfaces, additional setup is required.
 
-#### Create an intermediate sass file
+#### Create your own files
 
-First, we need a new sass file.
+In the `app/assets/stylesheets` directory, create 2 files:
 
-```$touch app/assets/stylesheets/myapp_interfaces.css.sass```
+`_variables.css.sass` and `_interfaces.css.sass`.
 
-In it, were going to add an import declaration to get Interfaces:
+In `_interfaces.css.sass` you must to import your local `_variables.css.sass` file, *first*. After that, you can import the Interfaces files you want to use*.
 
-```sass
-@import interfaces/interfaces
+```
+@import "_variables"
+
+@import "interfaces/base"
+@import "interfaces/modules/grid"
+@import "interfaces/modules/tooltips"
 ```
 
-#### Add override values
+<small>*If you are only using parts of Interfaces, you will always import `base` before other Interfaces modules.</small>  
 
-Now you have Interfaces, but how do you customize it?  Well, we're going to
-do something pretty strange.  We're going to add our Sass override variables
-*ABOVE* our interfaces `import`:
+In `_variables.css.sass`, you'll override the default variables with your own values. Here's an example*:
 
-```sass
-// new overrides
-$base-color: #725878
-
-@import interfaces/interfaces
 ```
-
-Oh snap!  Now things are purple — MUCH ROYAL!
+$base-color:              red
+$bg-color:                #e5e5e5
+$sidebar-bg-color:        blue
+$accent-color1:           #dfdfdf
+```
+<small>*These would be terrible color choices...</small>
 
 You can grab all the application variables available [
 here](https://github.com/ministrycentered/interfaces/blob/master/vendor/assets/stylesheets/interfaces/core/_variables.css.sass).
 
-### Completion
+#### Bring it all together
 
-We can leave the style variable there but it's a little sloppy.  Let's throw
-them in another file.  The current convention is `{app_name}_variables`.
+Now you can update your `application.css` file by requiring your new file:
 
-```$touch app/assets/stylesheets/myapp_variables.css.sass```
-
-Now update your manifest file
-
-```sass
-@import my-special-flower
-@import interfaces/interfaces
 ```
-
-Great job!  Bob the Builder would be proud!
-
-## Ummm, I'm having trouble...
-
-This setup assumes that your App is using Sprockets and your `application.css`
-has something like this:
-
-```css
-*= require_tree .
-```
-
-If not, you'll require your newly created stylesheet by adding this line:
-
-```css
-*= require my-special-flower-interfaces
-** Remember, 'my-special-flower' is the name of our fictisious app
+/*
+*= require _interfaces
+*/
 ```
 
 ## DEVELOPMENT

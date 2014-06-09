@@ -1,3 +1,9 @@
+@import "interfaces/vendor/shared_compass_dependencies"
+@import "interfaces/core/variables"
+@import "interfaces/core/utilities"
+@import "interfaces/core/queries"
+@import "interfaces/modules/grid_cols"
+
 //==================================
 // PANES, WELLS, AND ACCORDIONS
 //==================================
@@ -14,7 +20,10 @@
       margin: -15px
 
 .pane
-  +block
+  margin-bottom: 20px
+  background-color: #fff
+  border: 1px solid transparent
+  +border-radius($default-pane-radius)  
   border-color: $border-color
 
 .pane--naked

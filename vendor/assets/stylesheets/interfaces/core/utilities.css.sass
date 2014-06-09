@@ -32,12 +32,6 @@
   *display: inline
   *zoom: 1
 
-=block
-  margin-bottom: 20px
-  background-color: #fff
-  border: 1px solid transparent
-  +border-radius($default-pane-radius)  
-
 =horizontal-divider($color)
   height: 1px
   overflow: hidden
@@ -55,6 +49,15 @@
   list-style-type: none
   margin-left: 0
 
+// User select
+// For selecting text on the page
+@mixin user-select($select)
+  -webkit-user-select: $select
+  -moz-user-select: $select
+  -ms-user-select: $select // IE10+
+  -o-user-select: $select
+  user-select: $select
+  
 //This is used largely in sub navigation for the hover states
 %highlighted-state
   color: $highlighted-color
