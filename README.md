@@ -120,6 +120,17 @@ Designed in CA Copyright 2014
 <% end %>
 ```
 
+## Environment
+
+It's worth noting that the app-switcher in Interfaces is going to build URLs
+based on your environment.  It assumes the `.pco.dev` domain locally and
+defaults to `.planningcenteronline.com` otherwise.
+
+### Staging
+
+Rails new won't generate a staging environment config file.  However, Interfaces will recognize the new environment as soon as you add `config/environments/staging.rb`. The app-switcher will then draw
+its URLs using the `-staging.planningcenteronline.com` suffix.
+
 ## Styleguides
 
 There is a guide available for implementation of all the Interfaces components.
