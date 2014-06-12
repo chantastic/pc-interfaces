@@ -2,6 +2,9 @@ INTERFACES CHANGELOG
 --------------------
 
 * _new messages here_
+
+[DEPRECATE] Single `.select2` class options. Apps should update to
+multi-selector BEM-style
 [FEATURE] add `.list` style-primitive, for more appropriate cross-device lists.
 [DOC] update form docs for checkboxes
 [FEATURE] add checkbox module

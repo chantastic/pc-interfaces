@@ -50,12 +50,21 @@ section.docs-section
       { val: "salami",     text: "Salami"     }
     ]
 
+  markdown:
+    [Select2](http://ivaynberg.github.io/select2/) is a great way to interacte with `<select>` elements in desktop browsers.  All of Select2 is available to you through Interfaces, but we've added come convinince classes for the most common use cases.
+
+    #### Mobile
+
+    By default, Select2 selects are **NOT** initialzed on devices that report `touch` capabilities.  This is because most Mobile browsers have terrific native select support.  They also lack the resources to resonable support a page with a number of Select2 controlled elements.
+
+    **If you find a device that is reporting `touch` capabilities that should be an exception.  Please report an issue.**
+
   form
     .row
       .col.col--half
         markdown:
           #### Select2 Box
-          Just use a `select` tag.
+          Add the `select2` class to your `select` element.
         .row:.col:pre.code-sample-static.language-markup:code
           = render_source 'interfaces/templates/input_select'
         = render 'interfaces/templates/input_select',
@@ -63,20 +72,32 @@ section.docs-section
       .col.col--half
         markdown:
           #### Select2 Box With No Search Bar
-          Add the `select2--nosearch` class to the tag.
+          Add the `select2` class and `select2--nosearch` modifier class to your `select` element.
         .row:.col:pre.code-sample-static.language-markup:code
           = render_source 'interfaces/templates/input_select_modified'
         = render 'interfaces/templates/input_select_modified',
                   :mustache => { label: 'Select2 Box No Search Input', select_data: select_options }
     .row
-      .col
+      .col.col--half
         markdown:
           #### Select2 With Multi Select
-          No class needed. Just add the `multiple` attribute.
+          Add the `select2` class to your `select` element with the `multiple` attribute.
         .row:.col:pre.code-sample-static.language-markup:code
           = render_source 'interfaces/templates/input_select_multiple'
         = render 'interfaces/templates/input_select_multiple',
                   :mustache => { label: 'Select2 Multi Select', select_data: select_options }
+
+      .col.col--half
+        markdown:
+          #### Select2 Forcing
+          Should you need to force `select2` (e.g., on mobile). Add the `select2--force` modifier.
+
+        .row:.col:pre.code-sample-static.language-markup:code
+          = render_source 'interfaces/templates/input_select_force'
+
+        = render 'interfaces/templates/input_select_force',
+                  :mustache => { label: 'Select2 Force', select_data: select_options }
+
 
 section.docs-section
   a[href="#checkboxes"]
