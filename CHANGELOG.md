@@ -2,6 +2,12 @@ INTERFACES CHANGELOG
 --------------------
 
 * _new messages here_
+[FEATURE] add alert variant `alert--small`.
+[DOC] update documentation for alerts, adding `alert--small` variant.
+[FEATURE] add badge variant `badge--small`.
+[FEATURE] change badge variant `badge--mini` to `badge--tiny` to match button convention.
+[FEATURE] add classes for text colors based on current conventions (danger, warning, success). 
+
 [BUGFIX] `-staging.planningcenteronline.com` added back into App-Switcher
 [BREAKING FIX] Select2 is no longer targets *all* `select` elements.  Use the `.select2` class to Select2-ize a select.
 [BUGFIX] Gemlock select2-rails to pre-3.5.2 version [the bug](https://github.com/ivaynberg/select2/issues/2412)
