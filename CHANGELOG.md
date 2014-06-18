@@ -2,6 +2,7 @@ INTERFACES CHANGELOG
 --------------------
 
 * _new messages here_
+[BUXFIX] add 'select' prefix to '.select2' selector in `INTERFACES.formInit()`
 [BUGFIX] fix asset:precompile issue with comments in modals.css
 [FEATURE] add alert variant `alert--small`.
 [DOC] update documentation for alerts, adding `alert--small` variant.
