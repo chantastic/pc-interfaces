@@ -12,6 +12,11 @@ class INTERFACES.ModalView
   _publishModalLoad: =>
     $(document).trigger 'modal:load'
 
+class INTERFACES.ModalPushView extends INTERFACES.ModalView
+  show: =>
+    INTERFACES.modalLayer.pushAndEmptyModal @content
+    @_publishModalLoad()
+
 class INTERFACES.ModalIdView extends INTERFACES.ModalView
   constructor: (@id) ->
     @content = $('#' + @id).clone()

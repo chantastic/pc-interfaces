@@ -20,6 +20,12 @@ INTERFACES.modalLayer =
   emptyAndPushModal: (modal) ->
     @show()
 
+    $('.modal-layer').empty().append(modal)
+
+  # use for flickr-free transitions from modal to modal
+  pushAndEmptyModal: (modal) ->
+    @show()
+
     $('.modal-layer').append(modal)
 
     # IE9+ selector warning
