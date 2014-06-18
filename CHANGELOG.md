@@ -2,6 +2,7 @@ INTERFACES CHANGELOG
 --------------------
 
 * _new messages here_
+[BUGFIX] fix asset:precompile issue with comments in modals.css
 [FEATURE] add alert variant `alert--small`.
 [DOC] update documentation for alerts, adding `alert--small` variant.
 [FEATURE] add badge variant `badge--small`.
