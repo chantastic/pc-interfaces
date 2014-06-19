@@ -3,7 +3,7 @@ h1.docs-page-title Icons
 section.docs-section.clearfix
   markdown:
     - Use the `interfaces` class for icons.
-    - Typically, you'll use an icon as an inline element, such as a `span`.
+    - Typically, you'll use an icon as an inline element, such as a `span`. <!--- We should consider requiring aria-hidden="true" for all icon elements for accessibility niceness -->
     - Add the modifier class for the icon you need.
 
   .row:.col:pre.code-sample-static.language-markup:code
@@ -42,6 +42,7 @@ section.docs-section.clearfix
         { modifier: 'interfaces-warning', description: 'Warning'},
         { modifier: 'interfaces-check', description: 'Check'},
         { modifier: 'interfaces-event', description: 'Event'},
+        { modifier: 'interfaces-drag', description: 'Drag'},
       ]
     }
 
