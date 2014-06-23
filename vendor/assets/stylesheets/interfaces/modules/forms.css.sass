@@ -93,3 +93,46 @@ input.small-input
   padding: .5rem
   line-height: 1.25
   +font-size(12)
+
+
+// ================================================= Custom Checkboxes
+input.custom-checkbox //Hide the checkbox but still have it clickable
+  opacity: 0
+  width: 1px
+  height: 1px
+  position: absolute
+
+label.custom-checkbox-label
+  position: relative
+  padding: 0 0 0 25px
+  font-size: 14px
+  cursor: pointer
+  margin: 0
+  line-height: 1.6
+  &:before, &:after
+    position: absolute
+    top: 50%
+    margin-top: -7px
+    left: 0
+    width: 16px
+    height: 16px
+  &:before //Unchecked square
+    content: ''
+    background: adjust-color($base-color, $lightness: 49%, $saturation: -10%)
+    +border-radius(3px)
+    +box-shadow(inset 0 0 0 1px rgba(adjust-color($base-color, $lightness: 41%, $saturation: -20%),0.5))
+
+input.custom-checkbox:checked
+  + label:before
+    background: adjust-color($success-color, $lightness: -2%, $saturation: -8%)
+    +box-shadow(none)
+  + label:after
+    color: #fff
+    font-family: 'interfaces'
+    content: '\e624'
+    +font-size(8)
+    text-align: center
+    margin-top: -.28em
+    line-height: .9
+    +transition(all 0.1s)
+// @end Custom Checkboxes
