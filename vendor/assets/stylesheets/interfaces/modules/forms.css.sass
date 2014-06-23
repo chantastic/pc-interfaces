@@ -96,13 +96,26 @@ input.small-input
 
 
 // ================================================= Checkboxes
-input.checkbox //Hide the checkbox but still have it clickable
+.checkbox //Hide the checkbox but still have it clickable
   opacity: 0
   width: 1px
   height: 1px
   position: absolute
+  &:checked
+    + label:before
+      background: adjust-color($success-color, $lightness: -2%, $saturation: -8%)
+      +box-shadow(none)
+    + label:after
+      color: #fff
+      font-family: 'interfaces'
+      content: '\e624'
+      +font-size(8)
+      text-align: center
+      margin-top: -.28em
+      line-height: .9
+      +transition(all 0.1s)
 
-label.checkbox-label
+.checkbox-label
   position: relative
   padding-left: 25px
   font-size: 14px
@@ -121,18 +134,4 @@ label.checkbox-label
     background: #e6e6e6
     +border-radius(3px)
     +box-shadow(inset 0 0 0 1px rgba(120, 120, 120 ,0.2), inset 0 2px 0 rgba(120, 120, 120 ,0.15))
-
-input.checkbox:checked
-  + label:before
-    background: adjust-color($success-color, $lightness: -2%, $saturation: -8%)
-    +box-shadow(none)
-  + label:after
-    color: #fff
-    font-family: 'interfaces'
-    content: '\e624'
-    +font-size(8)
-    text-align: center
-    margin-top: -.28em
-    line-height: .9
-    +transition(all 0.1s)
 // @end Custom Checkboxes
