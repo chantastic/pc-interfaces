@@ -2,8 +2,8 @@ INTERFACES CHANGELOG
 --------------------
 
 * _new messages here_
-[DOC] update form docs for custom checkbox
-[FEATURE] add custom checkbox module
+[DOC] update form docs for checkboxes
+[FEATURE] add checkbox module
 [BUXFIX] add 'select' prefix to '.select2' selector in `INTERFACES.formInit()`
 [BUGFIX] fix asset:precompile issue with comments in modals.css
 [FEATURE] add alert variant `alert--small`.
