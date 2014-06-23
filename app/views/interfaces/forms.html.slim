@@ -1,6 +1,6 @@
-h1.docs-page-title Forms  
+h1.docs-page-title Forms
 markdown:
-  Marking up form elements is very straightforward. No special classnames needed. All `input`, `select`, and `textarea` elements are globally styled at 100% wide. 
+  Marking up form elements is very straightforward. No special classnames needed. All `input`, `select`, and `textarea` elements are globally styled at 100% wide.
 
 section.docs-section
   a[href="#text-inputs"]
@@ -19,7 +19,7 @@ section.docs-section
   a[href="#layout"]
     h2#layout Layout
   markdown:
-    For laying out your forms, use the [grid](/styleguide/grids/) to wrap your elements. 
+    For laying out your forms, use the [grid](/styleguide/grids/) to wrap your elements.
 
   .row:.col:pre.code-sample-static.language-markup:code
 
@@ -77,6 +77,18 @@ section.docs-section
           = render_source 'interfaces/templates/input_select_multiple'
         = render 'interfaces/templates/input_select_multiple',
                   :mustache => { label: 'Select2 Multi Select', select_data: select_options }
+
+section.docs-section
+  a[href="#custom-checkboxes"]
+    h2#selects Custom Checkboxes
+
+  .row
+    .col
+      .row:.col:pre.code-sample-static.language-markup:code
+        = render_source 'interfaces/templates/input_custom_checkbox'
+  .row
+    .col
+      = render 'interfaces/templates/input_custom_checkbox'
 
 section.docs-section
   markdown:
