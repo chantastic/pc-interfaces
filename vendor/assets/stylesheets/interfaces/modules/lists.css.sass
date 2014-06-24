@@ -1,0 +1,57 @@
+@import "compass/css3/transform"
+@import "interfaces/core/variables"
+
+/* list */
+
+.list
+  position: relative
+  margin: 0
+  list-style: none
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+  +translate3d(0,0,0)
+
+.list-item
+  border-top: $list-border-width solid $list-border-color
+  padding: $list-vertical-padding $list-horizontal-padding
+
+  &:first-child
+    border-top-width: 0
+
+.list-item--actionable
+  color: $primary-btn-color
+
+.list--actionable
+  .list-item
+    @extend .list-item--actionable
+
+// Depends on modernizr
+.no-touch .list-item--actionable,
+.no-touch .list--actionable .list-item
+  @extend .list-item--clickable
+
+  &:hover
+    color: $highlighted-color
+    background: $highlighted-bg-color
+    cursor: pointer
+
+/* action-list */
+
+.action-list
+  position: absolute
+  right: 0
+  visibility: hidden
+  display: inline
+  padding-right: $list-vertical-padding
+
+.action-list-item
+  display: inline
+
+  &:hover
+    // future default hover
+
+/* list action-list */
+
+.no-touch .list-item
+  &:hover
+    .action-list
+      visibility: visible

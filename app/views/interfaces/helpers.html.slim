@@ -4,6 +4,7 @@ section.docs-section
   markdown:
     Wrap your header items in the `interfaces_header` helper. This gives you:
 
+    {: .demo-list}
     - A pretty [interfaces header](#interfaces-header) for each `<li>` you give it.
     - The [app switcher](#app-switcher), if you implement its dependencies
 
@@ -47,6 +48,7 @@ section.docs-section
   markdown:
     The app switcher is __part of `interfaces_header`__. It expects a few things to do its job:
 
+    {: .demo-list}
     - The signed-in person is `Person.current`.
     - `Person` implements `#subscribed_apps` or `#applications`:
       - `Person#subscribed_apps` returns _either_ an array of application names _or_ an array of application objects that respond to `:name`

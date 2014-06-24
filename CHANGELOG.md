@@ -2,6 +2,7 @@ INTERFACES CHANGELOG
 --------------------
 
 * _new messages here_
+[FEATURE] add `.list` style-primitive, for more appropriate cross-device lists.
 [DOC] update form docs for checkboxes
 [FEATURE] add checkbox module
 [BUXFIX] add 'select' prefix to '.select2' selector in `INTERFACES.formInit()`
