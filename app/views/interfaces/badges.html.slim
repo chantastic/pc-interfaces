@@ -1,0 +1,47 @@
+h1.docs-page-title Badges
+
+section.docs-section
+  a[href="#basics"]
+    h2#basics Basics
+
+  markdown:
+    Add `.badge` to make a badge:
+
+  = code_sample do
+    div.badge                A plain badge.
+
+section.docs-section
+  a[href="#types"]
+    h2#types Types
+
+  markdown:
+    Add `.badge--{badge-type}` to give a subtype:
+
+
+  = code_sample do
+    .row
+      .badge.badge--warning Warning: Don't say we didn't warn you.
+    .row
+      .badge.badge--danger  Danger: Run for your life!
+    .row
+      .badge.badge--success Success: You win 1 internet!
+    .row
+      .badge.badge--subtle  Subtle: Just FYI.
+
+section.docs-section
+  a[href="#sizes"]
+    h2#sizes Sizes
+
+  markdown:
+    Add `.badge--{badge-size}` to give a size:
+
+  = code_sample do
+    .row
+      div.badge.badge--inline Inline
+    .row
+      div.badge.badge--small  Small
+    .row
+      div.badge.badge--tiny   Tiny
+    .row
+      div.badge.badge--square
+        span.interfaces.interfaces-check

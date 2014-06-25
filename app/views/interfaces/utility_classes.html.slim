@@ -1,0 +1,41 @@
+h1.docs-page-title Utility Classes
+
+section.docs-section
+  a[href="#text-align"]
+    h2#text-align Text-align
+
+  = code_sample do
+    .row
+      .col.col--quarter.text-left Text-Left
+      .col.col--quarter.text-center Text-Center
+      .col.col--quarter.text-right Text-Right
+      .col.col--quarter.text-justify Text-Justify
+
+section.docs-section
+  a[href="#float"]
+    h2#float Float
+
+  markdown:
+    - `.right`
+    - `.left`
+    - `.clear`
+    - `.clearfix`
+
+section.docs-section
+  a[href="#margins_and_padding"]
+    h2#margins_and_padding Margins and Padding
+
+  markdown:
+
+    Add these classes to tweak margin and padding:
+
+    - `.m0a` &rarr; `margin: 0 auto !important`
+    - `.mb0` &rarr; `margin-bottom: 0 !important`
+    - `.mr0` &rarr; `margin-right: 0 !important`
+    - `.ml0` &rarr; `margin-left: 0 !important`
+    - `.mt0` &rarr; `margin-top: 0 !important`
+    - `.palm--m0` &rarr; `+breakpoint(lte_tablet)
+                          margin: 0 !important`
+
+    - `.pad0` &rarr; `padding: 0 0 1px 0 !important`
+    - `.pb0` &rarr; `padding-bottom: 0 !important`
