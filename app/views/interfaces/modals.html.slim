@@ -80,43 +80,6 @@ section.docs-section
   markdown:
     There isn't currently a way to target a single modal, as there can only ever be one.  This may change.
 
-  a[href="#components"]
-    h2#components Components
-
-  markdown:
-    [ components information ]
-
-  .row:.col:pre.code-sample-static.language-markup:code
-    = render_source 'interfaces/templates/modal_components'
-
-  = render 'interfaces/templates/modal_components'
-
-section.docs-section
-  a[href="#modal-url"]
-    h2#modal-url Modal for URL
-
-  markdown:
-    Modal dialogs can also be built from an external page in your application.  You can specify the page you'd like to load with like so:
-
-  .row:.col:pre.code-sample-static.language-markup:code
-    = render_source 'interfaces/templates/modal_url'
-
-  markdown:
-    Under the covers, Interfaces is going to `$.get()` the page at that URL and add it as a modal.
-
-    This API is intentionall dumb.  It's not going to do much magic for you.  So, you will need to give your page all the [stylings required for any other modal](#composition).  As an exapmle see, `test/dummy/public/sample_url_modal.html`.
-
-  = render 'interfaces/templates/modal_url'
-
-section.docs-section
-  a[href="#modal-load-event"]
-    h2#modal-load-event Modal for URL modal:load event
-  markdown:
-    When loading a modal template from a url, you may need to run some initializing scripts for select2, autocomplete, or datepicker.  For that you can tie into the `modal:load` event hook.  This will fire the moment your modal is added to the DOM.
-
-  .row:.col:pre.code-sample-static.language-javascript:code
-    | $(document).on('modal:load', function () { /* codez */ });
-
 section.docs-section
   a[href="#sizing"]
     h2#sizing Sizing
@@ -137,3 +100,75 @@ section.docs-section
     tr
       td: code modal--full
       td: span 95% width of application wrapper
+
+section.docs-section
+  a[href="#expectations"]
+    h2#expectations Expectations and Gotchas
+
+  markdown:
+    Modals are intentionally simple.  There is a shocking lack of magic that happens.
+
+    This is by design.  It's a high priority to keep the API maximally flexible, as we continue to develop apps in a array of disperate frontend technologies.  Here are the current expectations:
+
+    ### *A Single Root*
+
+    Modal templates should be composed with a single root element.  Modal content will not be massaged before being presented in the UI.
+
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/modal_expectations'
+
+  markdown:
+    *While Interfaces wont correct templates, It will provide you with console errors when it encounters non-singular templates.*
+
+  markdown:
+
+    ### *Bring your own container*
+
+    Your modal templates should have this as a minimum boilerplate:
+
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/modal_boilerplate'
+
+  markdown:
+    This allows you the flexibilty to apply [sizing-modifiers](#sizing) directly on your template.
+
+section.docs-section
+  a[href="#modal-url"]
+    h2#modal-url Modal for URL
+
+  markdown:
+    Modal dialogs can also be built from an external page in your application.  You can specify the page you'd like to load with like so:
+
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/modal_url'
+
+  markdown:
+    Under the covers, Interfaces is going to `$.get()` the page at that URL and add it as a modal.
+
+    This API is intentionally dumb.  It's not going to do much magic for you.  So, you will need to give your page all the [stylings required for any other modal](#composition).  As an example see, `test/dummy/public/sample_url_modal.html`.
+
+    Additionally, be sure to read the [expectations](#expectations) section, if you are experiencing strange behaviors.
+
+  = render 'interfaces/templates/modal_url'
+
+section.docs-section
+  a[href="#modal-load-event"]
+    h2#modal-load-event Modal for URL modal:load event
+  markdown:
+    When loading a modal template from a url, you may need to run some initializing scripts for select2, autocomplete, or datepicker.  For that you can tie into the `modal:load` event hook.  This will fire the moment your modal is added to the DOM.
+
+  .row:.col:pre.code-sample-static.language-javascript:code
+    | $(document).on('modal:load', function () { /* codez */ });
+
+section.docs-section
+  a[href="#components"]
+    h2#components Components
+
+  markdown:
+    [ components information ]
+
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/modal_components'
+
+  = render 'interfaces/templates/modal_components'
+
