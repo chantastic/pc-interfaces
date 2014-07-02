@@ -64,16 +64,22 @@ INTERFACES.modalLayer =
     else
       INTERFACES.modalLayer.hide()
 
+    false
+
   _hideModalOnOutsideClick: (e) ->
     eventFromModalLayer = $(e.target).find('.modal').length
 
     if eventFromModalLayer
       INTERFACES.modalLayer.hide()
 
+    false
+
   _dispatchKeyupActions: (e) ->
     escape = e.keyCode is 27
 
     INTERFACES.modalLayer._hideModalOnEscape(e) if escape
+
+    false
 
   _focusFirstInput: ->
     $('.modal-layer')

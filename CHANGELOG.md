@@ -1,6 +1,8 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [FIX] resolve 'fires twice' bug for modal close events
+
 ### 0.0.3 (June 24, 2014)
 
 * [DEPRECATION] Single `.select2` class options. Apps should update to multi-selector BEM-style
