@@ -19,29 +19,23 @@
   .dropdown__menu
     display: none
     background: #fff
+    text-align: left
     z-index: 200
     margin-top: 5px
     +border-radius(3px)
     +box-shadow(0 1px 6px rgba(adjust-color($base-color, $lightness: -10, $saturation: -49), 0.45))
     +abs-pos(100%, auto, auto, auto)
     min-width: 200px
-    // &:after
-    //   content: ""
-    //   display: block
-    //   width: 0
-    //   height: 0
-    //   border: inset 6px
-    //   border-color: transparent transparent white transparent
-    //   border-bottom-style: solid
-    //   position: absolute
-    //   top: -12px
-    //   left: 10px
-    //   z-index: 99
+
   &.dropdown--align-right .dropdown__menu
     right: 0
-    // &:after
-    //   left: auto
-    //   right: 10px
+    text-align: right
+
   &.active-state .dropdown__menu
     display: block
 
+  a, .block-list__link
+    &:first-child
+      +border-radius(3px 3px 0 0)
+    &:last-child
+      +border-radius(0 0 3px 3px)
