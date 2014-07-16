@@ -1,5 +1,9 @@
 INTERFACES CHANGELOG
 --------------------
+* [BUGFIX] remove padding from top/bottom of dropdown__menu
+* [BUGFIX] add border-radius to first and last-children
+* [BUGFIX] clean up old commented CSS
+
 * [BUGFIX] remove `tab--full` padding ( check forms )
 * [FIX] resolve 'fires twice' bug for modal close events
 
