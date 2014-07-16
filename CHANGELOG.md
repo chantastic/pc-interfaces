@@ -1,6 +1,6 @@
 INTERFACES CHANGELOG
 --------------------
-
+* [BUGFIX] remove `tab--full` padding ( check forms )
 * [FIX] resolve 'fires twice' bug for modal close events
 
 ### 0.0.3 (June 24, 2014)
