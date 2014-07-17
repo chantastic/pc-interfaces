@@ -1,5 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
+
+* [FEATURE] add check-disc and notice-disc icons. clean up styleguide
 * [BUGFIX] Fix for app switcher close button not showing in Firefox
 * [BUGFIX] fix font weight for code samples (Firefox was rendering poorly)
 * [BUGFIX] remove padding from top/bottom of dropdown__menu
