@@ -1,5 +1,6 @@
 INTERFACES CHANGELOG
 --------------------
+* [BUGFIX] fix font weight for code samples (Firefox was rendering poorly)
 * [BUGFIX] remove padding from top/bottom of dropdown__menu
 * [BUGFIX] add border-radius to first and last-children
 * [BUGFIX] clean up old commented CSS
