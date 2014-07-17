@@ -1,5 +1,6 @@
 INTERFACES CHANGELOG
 --------------------
+* [BUGFIX] Fix for app switcher close button not showing in Firefox
 * [BUGFIX] fix font weight for code samples (Firefox was rendering poorly)
 * [BUGFIX] remove padding from top/bottom of dropdown__menu
 * [BUGFIX] add border-radius to first and last-children
