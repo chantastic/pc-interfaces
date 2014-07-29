@@ -3,6 +3,7 @@ INTERFACES CHANGELOG
 
 ### 0.0.3 (June 24, 2014)
 
+* [BUGFIX] Fix mobile and tablet breakpoint values. Use px rather than ems (ems split pixels in some cases)
 * [DEPRECATION] Single `.select2` class options. Apps should update to multi-selector BEM-style
 * [FEATURE] add `.list` style-primitive, for more appropriate cross-device lists.
 * [DOC] update form docs for checkboxes
