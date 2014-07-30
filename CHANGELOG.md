@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [FEATURE] add attendee, admin, and person icons
 * [FEATURE] add check-disc and notice-disc icons. clean up styleguide
 * [BUGFIX] Fix for app switcher close button not showing in Firefox
 * [BUGFIX] fix font weight for code samples (Firefox was rendering poorly)
