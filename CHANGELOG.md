@@ -1,5 +1,6 @@
 INTERFACES CHANGELOG
 --------------------
+* [FEATURE] Add icon for registrations
 * [FIX] fix for people logo, resize in navbar
 * [BUGFIX] Add width in mobile view to prevent icon-cropping
 * [FEATURE] add attendee, admin, and person icons
