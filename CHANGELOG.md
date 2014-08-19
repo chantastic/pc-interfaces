@@ -1,6 +1,6 @@
 INTERFACES CHANGELOG
 --------------------
-
+* [BUGFIX] Add width in mobile view to prevent icon-cropping
 * [FEATURE] add attendee, admin, and person icons
 * [FEATURE] add check-disc and notice-disc icons. clean up styleguide
 * [BUGFIX] Fix for app switcher close button not showing in Firefox
@@ -32,3 +32,4 @@ INTERFACES CHANGELOG
 ### 0.0.2 (June 9, 2014)
 
 * First shared release between Accounts and Check-ins
+
