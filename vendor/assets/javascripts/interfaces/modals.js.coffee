@@ -67,12 +67,10 @@ INTERFACES.modalLayer =
     false
 
   _hideModalOnOutsideClick: (e) ->
-    eventFromModalLayer = $(e.target).find('.modal').length
+    eventFromModalLayer = $(e.target).hasClass "modal-layer"
 
     if eventFromModalLayer
       INTERFACES.modalLayer.hide()
-
-    false
 
   _dispatchKeyupActions: (e) ->
     escape = e.keyCode is 27
