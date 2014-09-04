@@ -28,6 +28,7 @@ module Interfaces
         interfaces/interfaces.woff
         icons/app_icons.png
         icons/app_icons@2x.png
+        select2-spinner.gif
       )
     end
 

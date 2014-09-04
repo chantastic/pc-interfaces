@@ -15,6 +15,7 @@ INTERFACES CHANGELOG
 
 * [BUGFIX] remove `tab--full` padding ( check forms )
 * [FIX] resolve 'fires twice' bug for modal close events
+* [BUGFIX] add spinner gif to precompile list
 
 ### 0.0.3 (June 24, 2014)
 
