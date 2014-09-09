@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [FEATURE] Modal: short-circuit modal creation when `data-modal-url` is empty
 * [FIX] Ability to click form elements in a modal. Event listeners for closing modals via click on `modal-layer` no longer stop the event bubble.
 * [FEATURE] Add icon for registrations
 * [FIX] fix for people logo, resize in navbar
