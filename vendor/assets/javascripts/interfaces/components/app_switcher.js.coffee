@@ -29,5 +29,5 @@ class PCO.AppSwitcher
     @node.on 'click', @options.mobileToggleSelector, @toggleAppList
 
 
-$(document).on 'ready page:loaded', ->
+$(document).on 'ready page:change', ->
   appSwitcher = new PCO.AppSwitcher
