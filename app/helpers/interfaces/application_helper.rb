@@ -116,7 +116,8 @@ module Interfaces
 
     APP_NAME_TO_HELPDESK = {
       "account-center" => "Accounts",
-      "check-ins" => "Check-Ins"
+      "check-ins"      => "Check-Ins",
+      "people"         => "People"
     }
 
     def helpdesk_name
