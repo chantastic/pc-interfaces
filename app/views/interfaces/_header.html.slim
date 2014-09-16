@@ -14,7 +14,7 @@ div.top-bar.js-dropwrap
             ul
               - available_apps.each do |name|
                 li class=[name.downcase, (:omega if available_apps.length == 1)]
-                  a href=url_for_app_name(name)
+                  a href="#{PCO::URL.send(name.downcase.underscore)}"
                     span.icon aria-hidden="true"
                     em planning center
                     = name
@@ -76,6 +76,6 @@ div.top-bar.js-dropwrap
                   span.interfaces-faq
                   | help
               li
-                a.log href="#{url_for_app_name("Accounts")}/logout"
+                a.log href="#{PCO::URL.accounts}/logout"
                   span.interfaces-logout
                   | logout
