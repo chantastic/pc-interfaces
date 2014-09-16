@@ -34,6 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'selectivizr-rails'
   spec.add_dependency 'placeholder-gem'
   spec.add_dependency 'modernizr-rails'
+  spec.add_dependency 'pco-url'
 
   spec.add_development_dependency 'sqlite3'
   spec.add_development_dependency 'rails', '~> 4.0.2'

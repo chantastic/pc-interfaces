@@ -124,25 +124,6 @@ module Interfaces
       APP_NAME_TO_HELPDESK[app_name]
     end
 
-    def public_domain
-      "planningcenteronline.com"
-    end
-
-    def url_suffix
-      case Rails.env
-      when "development"
-        ".pco.dev"
-      when "staging"
-        "-staging.#{public_domain}"
-      else
-        ".#{public_domain}"
-      end
-    end
-
-    def url_for_app_name(app_name)
-      "http://#{app_name.downcase}#{url_suffix}"
-    end
-
     def available_apps
       [current_app] + (available_apps_for_person - [current_app])
     end
