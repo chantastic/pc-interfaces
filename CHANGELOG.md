@@ -1,12 +1,14 @@
 INTERFACES CHANGELOG
 --------------------
 
-* [FIX] Helpdesk: Support turbolinks by putting listener on the document
-* [FIX] App Switcher: Use `page:change` event to make it Turbolinks-friendly
+### 0.0.4 (September 17, 2014)
+
+* [BUGFIX] Helpdesk: Support turbolinks by putting listener on the document
+* [BUGFIX] App Switcher: Use `page:change` event to make it Turbolinks-friendly
 * [FEATURE] Modal: short-circuit modal creation when `data-modal-url` is empty
-* [FIX] Ability to click form elements in a modal. Event listeners for closing modals via click on `modal-layer` no longer stop the event bubble.
+* [BUGFIX] Ability to click form elements in a modal. Event listeners for closing modals via click on `modal-layer` no longer stop the event bubble.
 * [FEATURE] Add icon for registrations
-* [FIX] fix for people logo, resize in navbar
+* [BUGFIX] fix for people logo, resize in navbar
 * [BUGFIX] Add width in mobile view to prevent icon-cropping
 * [FEATURE] add attendee, admin, and person icons
 * [FEATURE] add check-disc and notice-disc icons. clean up styleguide
@@ -16,8 +18,8 @@ INTERFACES CHANGELOG
 * [BUGFIX] add border-radius to first and last-children
 * [BUGFIX] clean up old commented CSS
 
-* [BUGFIX] remove `tab--full` padding ( check forms )
-* [FIX] resolve 'fires twice' bug for modal close events
+* [BUGFIX] add `tab--full` padding
+* [BUGFIX] resolve 'fires twice' bug for modal close events
 * [BUGFIX] add spinner gif to precompile list
 
 ### 0.0.3 (June 24, 2014)
