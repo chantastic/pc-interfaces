@@ -2,16 +2,15 @@
 
 - if helpdesk_name
   javascript:
-    var enableHelpdesk = function() {
-      $('#jsLaunchHelpdesk').on('click', function() {
-        Helpdesk.load()
-        return false
-      });
-    }
+
     Helpdesk.appName = "#{helpdesk_name}";
     Helpdesk.accountCenterUserId = "#{Person.current.try(:account_center_id) || Person.current.try(:id)}";
     Helpdesk.accountCenterOrganizationId = "#{Organization.current.try(:account_center_id) || Organization.current.try(:id)}";
-    enableHelpdesk()
+
+    $(document).on('click', '#jsLaunchHelpdesk', function() {
+      Helpdesk.load()
+      return false
+    });
 
 - else
   javascript:
