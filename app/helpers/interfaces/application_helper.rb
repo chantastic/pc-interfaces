@@ -145,7 +145,7 @@ module Interfaces
         Person.current.applications.sort.map(&:first)
       else
         logger.debug "[INTERFACES] INTEGRATION REQUIRED: AccountCenterPersonIntegration is required for the application switcher — https://github.com/ministrycentered/account_center_integration"
-        %w[Foo Bar Baz]
+        []
       end
     end
 
