@@ -1,6 +1,8 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BUGFIX] Fix `image-2x` mixin. Use `image-url` to digest 2x icons
+
 ### 0.0.4 (September 17, 2014)
 
 * [BUGFIX] Helpdesk: Support turbolinks by putting listener on the document
