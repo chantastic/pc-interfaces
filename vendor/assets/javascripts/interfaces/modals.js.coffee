@@ -10,6 +10,7 @@ INTERFACES.modalLayer =
   hide: ->
     @_domHide()
     @_removeHideListeners()
+    @_publishModalHide()
 
   hideModals: ->
     $('.modal-layer .modal').hide()
@@ -88,3 +89,6 @@ INTERFACES.modalLayer =
 
   _blurNode: (target) ->
     $(target).blur()
+
+  _publishModalHide: ->
+    $(document).trigger("modal:hide")
