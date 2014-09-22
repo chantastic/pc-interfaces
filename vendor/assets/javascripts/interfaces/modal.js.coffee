@@ -27,8 +27,8 @@ class INTERFACES.ModalPushView extends INTERFACES.ModalView
 
 class INTERFACES.ModalIdView extends INTERFACES.ModalView
   constructor: (@id) ->
-    @content = $('#' + @id).clone()
-    super
+    content = $('#' + @id).clone()
+    super(content)
 
 class INTERFACES.ModalUrlView extends INTERFACES.ModalView
 

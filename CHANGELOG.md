@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BUGFIX] Modals triggered with data-modal-id work again
 * [BUGFIX] Fix `image-2x` mixin. Use `image-url` to digest 2x icons
 
 ### 0.0.4 (September 17, 2014)
