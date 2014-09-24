@@ -1,6 +1,8 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BUGFIX] Gemfile: lock sprockets to '< 2.12', lock compass-rails to '< 2'
+* [BUGFIX] [alerts, badges, forms, lists, panes] remove syntax errors and arbitrary @extends
 * [UPDATE] Change ruby-version to 2.1.2
 * [BUGFIX] Modals triggered with data-modal-id work again
 * [BUGFIX] Fix `image-2x` mixin. Use `image-url` to digest 2x icons
