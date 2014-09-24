@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [UPDATE] Change ruby-version to 2.1.2
 * [BUGFIX] Modals triggered with data-modal-id work again
 * [BUGFIX] Fix `image-2x` mixin. Use `image-url` to digest 2x icons
 
