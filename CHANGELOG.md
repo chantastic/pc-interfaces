@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [CHANGE] Add padding-top to .alert <ul>
 * [BUGFIX] Gemfile: lock sprockets to '< 2.12', lock compass-rails to '< 2'
 * [BUGFIX] [alerts, badges, forms, lists, panes] remove syntax errors and arbitrary @extends
 * [UPDATE] Change ruby-version to 2.1.2
