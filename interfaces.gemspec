@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'kramdown'
   spec.add_dependency 'mustache'
   spec.add_dependency 'htmlentities'
-  spec.add_dependency 'sprockets', '< 2.12' # https://github.com/sstephenson/sprockets/issues/540
+  spec.add_dependency 'sprockets', '2.11.0' # https://github.com/sstephenson/sprockets/issues/540
 
   # dependencies for host application
   spec.add_dependency 'select2-rails', '3.5.2'
