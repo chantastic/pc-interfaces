@@ -1,0 +1,19 @@
+<div class="pane row">
+  <ul class="tab-list col col--fifth">
+    <li data-tab-content-id="{{tab_one.id}}" class="tab-list-item is-active">
+      {{tab_one.name}}
+    </li>
+    <li data-tab-content-id="{{tab_two.id}}" class="tab-list-item">
+      {{tab_two.name}}
+    </li>
+  </ul>
+
+  <section class="tab-content-group col col--four-fifths">
+    <article id="{{tab_one.id}}" class="tab-content is-active">
+      {{{tab_one.content}}}
+    </article>
+    <article id="{{tab_two.id}}" class="tab-content">
+      {{{tab_two.content}}}
+    </article>
+  </section>
+</div>

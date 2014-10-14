@@ -4,3 +4,6 @@
 //= require interfaces/dependencies
 //= require interfaces/shims
 //= require interfaces/demos
+//
+//= require interfaces/tab_list_item
+//= require interfaces/tab_content

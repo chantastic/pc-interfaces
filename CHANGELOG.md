@@ -1,6 +1,12 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [FEATURE] Add TabList primitive, includes:
+  + .tab-list
+  + .tab-list-item
+  + .tab-content
+  + .tab-content-group
+  + [data-tab-content-id]
 * [CHANGE] Add padding-top to .alert <ul>
 * [BUGFIX] Gemfile: lock sprockets to '< 2.12', lock compass-rails to '< 2'
 * [BUGFIX] [alerts, badges, forms, lists, panes] remove syntax errors and arbitrary @extends

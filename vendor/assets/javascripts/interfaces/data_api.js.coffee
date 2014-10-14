@@ -3,6 +3,8 @@ window.INTERFACES ?= {}
 INTERFACES.dataAPI =
   init: ->
     @_attachDocumentListeners()
+    @_attachDocumentActionHandlers()
+    @_attachDocumentActionTriggers()
 
   showTriggeredModal: ->
     _id = $(@).data 'modal-id'
@@ -29,12 +31,32 @@ INTERFACES.dataAPI =
   hideModalLayer: ->
     INTERFACES.modalLayer.hide()
 
+  triggerTabChange: ->
+    $(document).trigger('tab:change', [@])
+
+  handleTabChange: (_, node) ->
+    if !node
+      return
+
+    tabContentId = node.getAttribute('data-tab-content-id')
+    tabContent   = document.getElementById(tabContentId)
+
+    new INTERFACES.TabListItem(node).activate()
+    new INTERFACES.TabContent(tabContent).activate()
+
   # private
 
   _attachDocumentListeners: ->
-    $(document).on 'click', '[data-modal-id]',    @showTriggeredModal
-    $(document).on 'click', '[data-modal-url]',   @createAndShowUrlModal
-    $(document).on 'click', '[data-modal-close]', @hideModalLayer
+    $(document)
+      .on('click', '[data-modal-id]',    @showTriggeredModal)
+      .on('click', '[data-modal-url]',   @createAndShowUrlModal)
+      .on('click', '[data-modal-close]', @hideModalLayer)
+
+  _attachDocumentActionHandlers: ->
+    $(document).on('tab:change', @handleTabChange)
+
+  _attachDocumentActionTriggers: ->
+    $(document).on('click', '[data-tab-content-id]', @triggerTabChange)
 
 INTERFACES.hashAPI =
   init: ->
