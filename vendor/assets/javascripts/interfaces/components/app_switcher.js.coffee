@@ -28,6 +28,9 @@ class PCO.AppSwitcher
     @node.on 'click', @options.hideTriggerSelector, @hideAppList
     @node.on 'click', @options.mobileToggleSelector, @toggleAppList
 
+pageEvent = if Turbolinks?.supported
+    "page:change"
+  else
+    "ready"
 
-$(document).on 'ready page:change', ->
-  appSwitcher = new PCO.AppSwitcher
+$(document).on(pageEvent, -> new PCO.AppSwitcher)

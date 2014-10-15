@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BUGFIX] App Switcher: fix app switcher on first page load with Turbolinks
 * [FEATURE] Add TabList primitive, includes:
   + .tab-list
   + .tab-list-item
