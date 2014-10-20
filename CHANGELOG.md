@@ -1,6 +1,8 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BREAKING FEATURE] added .media object. this could affect applications with
+  an existing .media class
 * [BUGFIX] App Switcher: fix app switcher on first page load with Turbolinks
 * [FEATURE] Add TabList primitive, includes:
   + .tab-list

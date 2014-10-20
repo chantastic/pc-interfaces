@@ -1,0 +1,30 @@
+h1.docs-page-title Media Object
+
+section.docs-section
+  a[href="#basics"]
+    h2#basics Basics
+
+  markdown:
+    Media Object is a class for styling an image alongside a block a vairable
+    height text-block. It's the single most beautiful peace of reusable CSS
+    that has ever been written.
+
+    [read more](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/)
+
+
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/media'
+
+  = render 'interfaces/templates/media'
+
+section.docs-section
+  a[href="#blockquotes"]
+    h2#blockquotes Blockquotes
+
+  markdown:
+    On a related note, attributed `blockquotes` should be markup like this:
+
+  .row:.col:pre.code-sample-static.language-markup:code
+    = render_source 'interfaces/templates/attributed_blockquote'
+
+  = render 'interfaces/templates/attributed_blockquote'
