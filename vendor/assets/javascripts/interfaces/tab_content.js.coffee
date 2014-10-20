@@ -14,9 +14,17 @@ class INTERFACES.TabContent
       return
 
     @node = $(node)
-    @tabContentGroup = @node.closest('.tab-content-group')
-    @tabContentNodes = @tabContentGroup.find('.tab-content')
 
   activate: =>
-    @tabContentNodes.removeClass('is-active')
+    @deactivateAll()
     @node.addClass('is-active')
+    @
+
+  deactivateAll: =>
+    @_getTabContentNodes().removeClass('is-active')
+
+  # private
+
+  _getTabContentNodes: =>
+    # .sibling() is not used to preserve markup-independence
+    @node.closest('.tab-content-group').find('.tab-content')

@@ -5,10 +5,18 @@ class INTERFACES.TabListItem
     if !node
       return
 
-    @node         = $(node)
-    @tabList      = @node.closest('.tab-list')
-    @tabListItems = @tabList.find('.tab-list-item')
+    @node = $(node)
 
   activate: =>
-    @tabListItems.removeClass('is-active')
+    @deactivateAll()
     @node.addClass('is-active')
+    @
+
+  deactivateAll: =>
+    @_getTabListItems().removeClass('is-active')
+
+  # private
+
+  _getTabListItems: =>
+    # .sibling() is not used to preserve markup-independence
+    @node.closest('.tab-list').find('.tab-list-item')

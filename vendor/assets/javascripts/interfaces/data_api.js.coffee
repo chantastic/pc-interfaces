@@ -35,14 +35,10 @@ INTERFACES.dataAPI =
     $(document).trigger('tab:change', [@])
 
   handleTabChange: (_, node) ->
-    if !node
-      return
+    return if not node
 
     tabContentId = node.getAttribute('data-tab-content-id')
-    tabContent   = document.getElementById(tabContentId)
-
-    new INTERFACES.TabListItem(node).activate()
-    new INTERFACES.TabContent(tabContent).activate()
+    new INTERFACES.Tab(tabContentId).activate()
 
   # private
 
@@ -57,19 +53,3 @@ INTERFACES.dataAPI =
 
   _attachDocumentActionTriggers: ->
     $(document).on('click', '[data-tab-content-id]', @triggerTabChange)
-
-INTERFACES.hashAPI =
-  init: ->
-    @_showModal()
-
-  # THIS MIGHT NOT BE A GOOD IDEA.
-  # HOLD LOOSELY TO THIS API
-  _showModal: ->
-    $ ->
-      modalId       = window.location.hash.slice(1)
-      modalSelector = modalId + '.modal' if modalId
-      pageHasModal  = do -> $('#' + modalSelector).length
-
-      if pageHasModal
-        modal = new INTERFACES.ModalIdView(modalSelector)
-        modal.show()
