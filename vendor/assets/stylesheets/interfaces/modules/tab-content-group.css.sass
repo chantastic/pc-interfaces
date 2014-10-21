@@ -1,5 +1,11 @@
+@import "interfaces/_mixins/respond"
+@import "interfaces/_mixins/legacy_respond"
+
 .tab-content-group
   margin:            0 // resets col
   border:            0 solid $list-border-color
-  border-left-width: $list-border-width
+  border-left-width: 0
   background-color:  white
+
+  @include legacy_respond_at(sm)
+    border-left-width: $list-border-width

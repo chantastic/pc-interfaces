@@ -15,13 +15,13 @@ class INTERFACES.TabContent
 
     @node = $(node)
 
-  activate: =>
-    @deactivateAll()
-    @node.addClass('is-active')
+  open: =>
+    @closeAll()
+    @node.addClass('is-open')
     @
 
-  deactivateAll: =>
-    @_getTabContentNodes().removeClass('is-active')
+  closeAll: =>
+    @_getTabContentNodes().removeClass('is-open')
 
   # private
 

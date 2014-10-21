@@ -38,7 +38,11 @@ INTERFACES.dataAPI =
     return if not node
 
     tabContentId = node.getAttribute('data-tab-content-id')
-    new INTERFACES.Tab(tabContentId).activate()
+
+    if __userClickedSelectedTab__ = $(node).hasClass('is-open')
+      return new INTERFACES.TabList(tabContentId).toggle()
+
+    new INTERFACES.Tab(tabContentId).open()
 
   # private
 
@@ -52,4 +56,4 @@ INTERFACES.dataAPI =
     $(document).on('tab:change', @handleTabChange)
 
   _attachDocumentActionTriggers: ->
-    $(document).on('click', '[data-tab-content-id]', @triggerTabChange)
+    $(document).on('click touchstart', '[data-tab-content-id]', @triggerTabChange)

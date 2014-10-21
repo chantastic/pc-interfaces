@@ -1,3 +1,6 @@
+@import "interfaces/_mixins/respond"
+@import "interfaces/_mixins/legacy_respond"
+
 @import "interfaces/attributes/pointable"
 @import "interfaces/core/variables"
 @import "interfaces/modules/_list_item_base"
@@ -6,6 +9,8 @@
 @import "compass/css3/transform"
 
 $class: 'tab-list-item'
+
+// base
 
 .#{$class}
   @extend %list-item-base
@@ -21,30 +26,71 @@ $class: 'tab-list-item'
   &:last-child
     border-bottom-width: $list-border-width
 
+.#{$class}::before
+  display:     none
+  position:    absolute
+  right:       1rem
+  font-family: "interfaces"
+  content:     "\e60d"
+
 .#{$class}::after
   // a shim to cover the .tab-content-group border
+  display:          none
+  position:         absolute
+  top:              0
+  right:            -.1rem
+  width:             .1rem
+  height:           100%
+  content:          " "
+  background-color: white
 
-  $border-shim-width: .1rem
+// :not(.is-open)
 
-  position:   absolute
-  top:        0
-  right:      -($border-shim-width)
-  height:     100%
-  width:      $border-shim-width
-  background: transparent
-  content:    " "
-
-.#{$class}:hover:not(.is-active)
+.#{$class}:hover:not(.is-open)
   background: #e5e5e5
   color:      $link-color-hover
 
   @include pointable
   @include transition(background-color .4s ease)
 
-.#{$class}.is-active
+// .is-open
+
+.#{$class}.is-open
   background: white
   color:      $link-color-focus
   z-index:    1000 // lift above siblings
 
-  &::after
-    background-color: white
+// respond
+
+@include legacy_respond_when(xs)
+  .#{$class}.is-open:hover
+    @include pointable
+
+  .#{$class}.is-open::before
+    display: block
+
+@include legacy_respond_at(xs)
+  .#{$class}:not(.is-open)
+    display: none
+
+  .#{$class}.is-open
+    display: block
+
+@include legacy_respond_at(sm)
+  .#{$class}::before
+    display: none
+
+  .#{$class}:not(.is-open)
+    display: block
+
+  .#{$class}.is-open::after
+    display: block
+
+// CASCADING PARENT
+
+.tab-list.is-expanded
+  .#{$class}
+    display: block
+
+  .#{$class}.is-open::before
+    content: "\e60e"

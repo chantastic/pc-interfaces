@@ -7,13 +7,13 @@ class INTERFACES.TabListItem
 
     @node = $(node)
 
-  activate: =>
-    @deactivateAll()
-    @node.addClass('is-active')
+  open: =>
+    @closeAll()
+    @node.addClass('is-open')
     @
 
-  deactivateAll: =>
-    @_getTabListItems().removeClass('is-active')
+  closeAll: =>
+    @_getTabListItems().removeClass('is-open')
 
   # private
 

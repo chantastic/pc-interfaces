@@ -4,9 +4,10 @@ class INTERFACES.Tab
   constructor: (@id = null) ->
     return if not @id
 
-  activate: =>
-    new INTERFACES.TabListItem(@_getTabListItem()).activate()
-    new INTERFACES.TabContent(@_getTabContent()).activate()
+  open: =>
+    new INTERFACES.TabList(@id).unexpand()
+    new INTERFACES.TabListItem(@_getTabListItem()).open()
+    new INTERFACES.TabContent(@_getTabContent()).open()
     @_updateURL()
     @
 

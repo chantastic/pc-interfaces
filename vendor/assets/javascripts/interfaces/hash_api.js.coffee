@@ -35,7 +35,7 @@ INTERFACES.hashAPI =
     @_getHashValue().split('=')[1]
 
   _showTab: ->
-    new INTERFACES.Tab(@_getTabId()).activate()
+    new INTERFACES.Tab(@_getTabId()).open()
 
   _getModalHashSelector: ->
     @_getHashValue() + '.modal'
