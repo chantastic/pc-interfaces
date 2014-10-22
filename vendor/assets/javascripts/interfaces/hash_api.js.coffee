@@ -38,4 +38,5 @@ INTERFACES.hashAPI =
     new INTERFACES.Tab(@_getTabId()).open()
 
   _getModalHashSelector: ->
+    return if not @_getHashValue()
     @_getHashValue() + '.modal'
