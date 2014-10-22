@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BUGFIX] remove +highlighted-state mixin to make `utilities` dependency-free
 * [BREAKING FEATURE] added .media object. this could affect applications with
   an existing .media class
 * [BUGFIX] App Switcher: fix app switcher on first page load with Turbolinks
