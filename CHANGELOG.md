@@ -1,6 +1,9 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BREAKING BUFGIX] bind `vclick` for all document-level click events.
+  + check modals in desktop and mobile devices
+  + check tab-list in desktop and mobile devices
 * [BUGFIX] remove +highlighted-state mixin to make `utilities` dependency-free
 * [BREAKING FEATURE] added .media object. this could affect applications with
   an existing .media class

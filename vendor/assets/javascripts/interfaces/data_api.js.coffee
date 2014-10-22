@@ -48,12 +48,12 @@ INTERFACES.dataAPI =
 
   _attachDocumentListeners: ->
     $(document)
-      .on('click', '[data-modal-id]',    @showTriggeredModal)
-      .on('click', '[data-modal-url]',   @createAndShowUrlModal)
-      .on('click', '[data-modal-close]', @hideModalLayer)
+      .on('vclick', '[data-modal-id]',    @showTriggeredModal)
+      .on('vclick', '[data-modal-url]',   @createAndShowUrlModal)
+      .on('vclick', '[data-modal-close]', @hideModalLayer)
 
   _attachDocumentActionHandlers: ->
     $(document).on('tab:change', @handleTabChange)
 
   _attachDocumentActionTriggers: ->
-    $(document).on('click touchstart', '[data-tab-content-id]', @triggerTabChange)
+    $(document).on('vclick', '[data-tab-content-id]', @triggerTabChange)
