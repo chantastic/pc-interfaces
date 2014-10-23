@@ -1,6 +1,8 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BREAKING CHANGE] pub-sub AppSwitcher events.
+* [BREAKING CHANGE] PCO.AppSwitcher -> INTERFACES.AppSwitcher
 * [BREAKING BUFGIX] bind `vclick` for all document-level click events.
   + check modals in desktop and mobile devices
   + check tab-list in desktop and mobile devices

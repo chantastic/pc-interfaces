@@ -1,36 +1,18 @@
-window.PCO ?= {}
+window.INTERFACES ?= {}
 
-class PCO.AppSwitcher
+# TODO: update name PCO -> INTERFACES
+class INTERFACES.AppSwitcher
   constructor: ->
-    @node = $(@options.nodeSelector)
-    @_addEventListeners()
+    @node = $('.app-switcher-wrap')
 
   options:
-    nodeSelector: '.app-switcher-wrap'
-    activeClass: 'alt-state'
-    showTriggerSelector: '.toggle-btn'
-    hideTriggerSelector: '.menu-wrap'
-    mobileToggleSelector: '#logo.bookmark'
+    activeClass:  'alt-state'
 
-  showAppList: (e) =>
+  showAppList: =>
     @node.addClass @options.activeClass
 
-  hideAppList: (e) =>
+  hideAppList: =>
     @node.removeClass @options.activeClass
 
-  toggleAppList: (e) =>
+  toggleAppList: =>
     @node.toggleClass @options.activeClass
-
-  # private
-
-  _addEventListeners: ->
-    @node.on 'click', @options.showTriggerSelector, @showAppList
-    @node.on 'click', @options.hideTriggerSelector, @hideAppList
-    @node.on 'click', @options.mobileToggleSelector, @toggleAppList
-
-pageEvent = if Turbolinks?.supported
-    "page:change"
-  else
-    "ready"
-
-$(document).on(pageEvent, -> new PCO.AppSwitcher)

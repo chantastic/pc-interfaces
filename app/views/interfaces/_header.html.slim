@@ -6,10 +6,10 @@ div.top-bar.js-dropwrap
         div#logo.bookmark class="icon-#{app_name}-logo" aria-hidden="true"
 
         div.app-switcher
-          div.toggle-btn
+          div.toggle-btn[data-app-list="show"]
             div.chevron
           div.menu-wrap
-            div.toggle-btn-cover
+            div.toggle-btn-cover[data-app-list="hide"]
               span.interfaces-remove
             ul
               - available_apps.each do |name|

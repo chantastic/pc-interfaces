@@ -44,13 +44,21 @@ INTERFACES.dataAPI =
 
     new INTERFACES.Tab(tabContentId).open()
 
+  handleAppListHide: ->
+    new INTERFACES.AppSwitcher().hideAppList()
+
+  handleAppListShow: ->
+    new INTERFACES.AppSwitcher().showAppList()
+
   # private
 
   _attachDocumentListeners: ->
     $(document)
-      .on('vclick', '[data-modal-id]',    @showTriggeredModal)
-      .on('vclick', '[data-modal-url]',   @createAndShowUrlModal)
-      .on('vclick', '[data-modal-close]', @hideModalLayer)
+      .on('vclick', '[data-modal-id]',        @showTriggeredModal)
+      .on('vclick', '[data-modal-url]',       @createAndShowUrlModal)
+      .on('vclick', '[data-modal-close]',     @hideModalLayer)
+      .on('vclick', '[data-app-list="show"]', @handleAppListShow)
+      .on('vclick', '[data-app-list="hide"]', @handleAppListHide)
 
   _attachDocumentActionHandlers: ->
     $(document).on('tab:change', @handleTabChange)
