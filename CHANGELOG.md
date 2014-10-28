@@ -1,6 +1,6 @@
 INTERFACES CHANGELOG
 --------------------
-
+* [BREAKING BUGFIX] remove `position: relative` from major modal elements. Add new mixin for clearfix (`+clfx`), without `position: relative`, to incrementally replace in our apps.
 * [BREAKING CHANGE] new dropdown API. affects *ALL* dropdowns.
 * [BREAKING CHANGE] pub-sub AppSwitcher events.
 * [BREAKING CHANGE] PCO.AppSwitcher -> INTERFACES.AppSwitcher
