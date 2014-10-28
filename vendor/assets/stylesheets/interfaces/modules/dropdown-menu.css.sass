@@ -1,0 +1,31 @@
+@import "interfaces/core/variables"
+@import "interfaces/modules/_list_base"
+
+$class: '.dropdown-menu'
+
+#{$class}
+  @extend %list-base
+
+  position: absolute
+  top: 38px
+  display: none
+  min-width: 160px
+  border: 1px solid $border-color
+  border-radius: 3px
+  padding: 3px 0
+  background: white
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15)
+  z-index: 900
+
+
+#{$class}.flush-right
+  right: 0
+
+// default presentation
+#{$class}
+  display: none
+
+// CASCADING PARENT
+
+.dropdown.is-open #{$class}
+  display: block

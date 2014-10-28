@@ -50,6 +50,11 @@ INTERFACES.dataAPI =
   handleAppListShow: ->
     new INTERFACES.AppSwitcher().showAppList()
 
+  # DANGER: THIS IS PROTOTYPE-LEVEL CODE. DO NOT USE THIS IN PRODUCTION.
+  # IT WILL BE ROMOVED WITH LITTLE WARNING
+  toggleDropdown: ({target}) ->
+    new INTERFACES.Dropdown(target).toggle()
+
   # private
 
   _attachDocumentListeners: ->
@@ -59,6 +64,10 @@ INTERFACES.dataAPI =
       .on('vclick', '[data-modal-close]',     @hideModalLayer)
       .on('vclick', '[data-app-list="show"]', @handleAppListShow)
       .on('vclick', '[data-app-list="hide"]', @handleAppListHide)
+
+    # DANGER: THIS IS PROTOTYPE-LEVEL CODE. DO NOT USE THIS IN PRODUCTION.
+    # IT WILL BE ROMOVED WITH LITTLE WARNING
+    $(document).on('vclick', '[data-dropdown-toggle]', @toggleDropdown)
 
   _attachDocumentActionHandlers: ->
     $(document).on('tab:change', @handleTabChange)

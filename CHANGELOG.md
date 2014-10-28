@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BREAKING CHANGE] new dropdown API. affects *ALL* dropdowns.
 * [BREAKING CHANGE] pub-sub AppSwitcher events.
 * [BREAKING CHANGE] PCO.AppSwitcher -> INTERFACES.AppSwitcher
 * [BREAKING BUFGIX] bind `vclick` for all document-level click events.
