@@ -1,5 +1,6 @@
 INTERFACES CHANGELOG
 --------------------
+* [CHANGE] change media queries to pixel values, rather than ems.
 * [BREAKING BUGFIX] remove `position: relative` from major modal elements. Add new mixin for clearfix (`+cf`), without `position: relative`, to incrementally replace in our apps.
 * [BREAKING CHANGE] new dropdown API. affects *ALL* dropdowns.
 * [BREAKING CHANGE] pub-sub AppSwitcher events.
