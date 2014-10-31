@@ -22,8 +22,8 @@ INTERFACES.dataAPI =
     modal = new INTERFACES.ModalView().show()
 
     _req.fail (err) ->
-      $(document).trigger('modal:error', [err])
       modal.hide()
+      $(document).trigger('modal:error', [err])
 
     _req.done (res) ->
       modal = new INTERFACES.ModalUrlView(res)
