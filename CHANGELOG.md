@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [CHANGE] config, add gem dependcies to test/dummy Gemfile
 * [FEATURE] add 'modal:error' event when modal ajax request fails
 * [CHANGE] change media queries to pixel values, rather than ems.
 * [BREAKING BUGFIX] remove `position: relative` from major modal elements. Add new mixin for clearfix (`+cf`), without `position: relative`, to incrementally replace in our apps.
