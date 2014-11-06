@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [Feature] add trash icon
 * [CHANGE] config, add gem dependcies to test/dummy Gemfile
 * [FEATURE] add 'modal:error' event when modal ajax request fails
 * [CHANGE] change media queries to pixel values, rather than ems.
