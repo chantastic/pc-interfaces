@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BUGFIX] Removed inline sass comments (they were causing probs)
 * [Feature] add trash icon
 * [CHANGE] config, add gem dependcies to test/dummy Gemfile
 * [FEATURE] add 'modal:error' event when modal ajax request fails
