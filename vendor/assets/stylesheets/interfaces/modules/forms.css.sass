@@ -39,10 +39,8 @@ input[type="file"]
 // 2. IE9- specific.
 
 input[type="checkbox"], input[type="radio"]
-  // 1
-  margin-top: -1px
-  // 2
-  margin-top: 0\9
+  margin-top: -1px /* 1 */
+  margin-top: 0\9 /* 2 */
   padding: 0
   width: auto
   border: 0 none
@@ -51,10 +49,8 @@ input[type="checkbox"], input[type="radio"]
 // 1. Radio needs a bit more negative margin.
 // 2. Again, not on IE9-.
 input[type="radio"]
-  // 1
-  margin-top: -2px
-  // 2
-  margin-top: 0\9
+  margin-top: -2px /* 1 */
+  margin-top: 0\9 /* 2 */
 
 //We'll assume here that labels after checkboxes/ radio buttons should be inline with the form control
 input[type="checkbox"] + label, input[type="radio"] + label
@@ -103,7 +99,6 @@ input.small-input
 
 
 // ================================================= Checkboxes
-//Hide the checkbox but still have it clickable
 .checkbox
   opacity: 0
   width: 1px
@@ -137,8 +132,7 @@ input.small-input
     left: 0
     width: 16px
     height: 16px
-  //Unchecked square
-  &:before
+  &:before //Unchecked square
     content: ''
     background: #e6e6e6
     +border-radius(3px)
