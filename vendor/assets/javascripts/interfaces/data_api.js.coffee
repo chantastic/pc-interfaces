@@ -47,9 +47,15 @@ INTERFACES.dataAPI =
 
   handleAppListHide: ->
     new INTERFACES.AppSwitcher().hideAppList()
+    return false
 
   handleAppListShow: ->
     new INTERFACES.AppSwitcher().showAppList()
+    return false
+
+  handleAppListToggle: ->
+    new INTERFACES.AppSwitcher().toggleAppList()
+    return false
 
   # DANGER: THIS IS PROTOTYPE-LEVEL CODE. DO NOT USE THIS IN PRODUCTION.
   # IT WILL BE ROMOVED WITH LITTLE WARNING
@@ -60,11 +66,12 @@ INTERFACES.dataAPI =
 
   _attachDocumentListeners: ->
     $(document)
-      .on('vclick', '[data-modal-id]',        @showTriggeredModal)
-      .on('vclick', '[data-modal-url]',       @createAndShowUrlModal)
-      .on('vclick', '[data-modal-close]',     @hideModalLayer)
-      .on('vclick', '[data-app-list="show"]', @handleAppListShow)
-      .on('vclick', '[data-app-list="hide"]', @handleAppListHide)
+      .on('vclick', '[data-modal-id]',          @showTriggeredModal)
+      .on('vclick', '[data-modal-url]',         @createAndShowUrlModal)
+      .on('vclick', '[data-modal-close]',       @hideModalLayer)
+      .on('vclick', '[data-app-list="show"]',   @handleAppListShow)
+      .on('vclick', '[data-app-list="hide"]',   @handleAppListHide)
+      .on('vclick', '[data-app-list="toggle"]', @handleAppListToggle)
 
     # DANGER: THIS IS PROTOTYPE-LEVEL CODE. DO NOT USE THIS IN PRODUCTION.
     # IT WILL BE ROMOVED WITH LITTLE WARNING

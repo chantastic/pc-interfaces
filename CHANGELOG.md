@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BUGFIX] add AppSwitcher triggers to mobile breakpoint
 * [BUGFIX] Removed inline sass comments (they were causing probs)
 * [Feature] add trash icon
 * [CHANGE] config, add gem dependcies to test/dummy Gemfile

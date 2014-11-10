@@ -8,11 +8,11 @@ class INTERFACES.AppSwitcher
   options:
     activeClass:  'alt-state'
 
-  showAppList: =>
-    @node.addClass @options.activeClass
-
   hideAppList: =>
     @node.removeClass @options.activeClass
+
+  showAppList: =>
+    @node.addClass @options.activeClass
 
   toggleAppList: =>
     @node.toggleClass @options.activeClass
