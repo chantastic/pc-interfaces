@@ -37,7 +37,7 @@ div.top-bar
             li.divider
             = yield
 
-        div.account-info.righty[data-account-info="toggle"]
+        div.account-info.righty
           span.avatar
             - if Person.current.present?
               a.photo href="/people/#{Person.current.id}"
@@ -51,7 +51,7 @@ div.top-bar
               span.photo
                 img alt="Missing" height="24" src="https://www.planningcenteronline.com/photos/icon/missing.png" width="24"
 
-          div#toggle-account-details
+          div#toggle-account-details[data-account-info="toggle"]
             span.interfaces-caret aria-hidden="true"
 
           div#account-details
