@@ -1,4 +1,4 @@
-div.top-bar.js-dropwrap
+div.top-bar
   div.top-bar__contents.clearfix
     div.title-area
       / Title Area
@@ -24,7 +24,7 @@ div.top-bar.js-dropwrap
           span.title Sidebar
           span.interfaces-cog aria-hidden="true"
 
-      div#toggle-topbar.js-droptoggle.menu-icon.show-for-mobile
+      div#toggle-topbar.menu-icon.show-for-mobile[data-top-bar="toggle"]
         a href="#"
           span.title Menu
           span.interfaces-menu aria-hidden="true"
@@ -37,7 +37,7 @@ div.top-bar.js-dropwrap
             li.divider
             = yield
 
-        div.account-info.righty.js-dropwrap
+        div.account-info.righty[data-account-info="toggle"]
           span.avatar
             - if Person.current.present?
               a.photo href="/people/#{Person.current.id}"
@@ -51,7 +51,7 @@ div.top-bar.js-dropwrap
               span.photo
                 img alt="Missing" height="24" src="https://www.planningcenteronline.com/photos/icon/missing.png" width="24"
 
-          div#toggle-account-details.js-droptoggle
+          div#toggle-account-details
             span.interfaces-caret aria-hidden="true"
 
           div#account-details

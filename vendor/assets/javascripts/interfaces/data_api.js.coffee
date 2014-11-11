@@ -45,6 +45,10 @@ INTERFACES.dataAPI =
 
     new INTERFACES.Tab(tabContentId).open()
 
+  handleAccountInfoToggle: ->
+    new INTERFACES.AccountInfo().toggleMenu()
+    return false
+
   handleAppListHide: ->
     new INTERFACES.AppSwitcher().hideAppList()
     return false
@@ -57,6 +61,10 @@ INTERFACES.dataAPI =
     new INTERFACES.AppSwitcher().toggleAppList()
     return false
 
+  handleTopBarToggle: ->
+    new INTERFACES.TopBar().toggleMenu()
+    return false
+
   # DANGER: THIS IS PROTOTYPE-LEVEL CODE. DO NOT USE THIS IN PRODUCTION.
   # IT WILL BE ROMOVED WITH LITTLE WARNING
   toggleDropdown: ({target}) ->
@@ -66,12 +74,14 @@ INTERFACES.dataAPI =
 
   _attachDocumentListeners: ->
     $(document)
-      .on('vclick', '[data-modal-id]',          @showTriggeredModal)
-      .on('vclick', '[data-modal-url]',         @createAndShowUrlModal)
-      .on('vclick', '[data-modal-close]',       @hideModalLayer)
-      .on('vclick', '[data-app-list="show"]',   @handleAppListShow)
-      .on('vclick', '[data-app-list="hide"]',   @handleAppListHide)
-      .on('vclick', '[data-app-list="toggle"]', @handleAppListToggle)
+      .on('vclick', '[data-modal-id]',               @showTriggeredModal)
+      .on('vclick', '[data-modal-url]',              @createAndShowUrlModal)
+      .on('vclick', '[data-modal-close]',            @hideModalLayer)
+      .on('vclick', '[data-app-list="show"]',        @handleAppListShow)
+      .on('vclick', '[data-app-list="hide"]',        @handleAppListHide)
+      .on('vclick', '[data-app-list="toggle"]',      @handleAppListToggle)
+      .on('vclick', '[data-top-bar="toggle"]',       @handleTopBarToggle)
+      .on('vclick', '[data-account-info="toggle"]',  @handleAccountInfoToggle)
 
     # DANGER: THIS IS PROTOTYPE-LEVEL CODE. DO NOT USE THIS IN PRODUCTION.
     # IT WILL BE ROMOVED WITH LITTLE WARNING
