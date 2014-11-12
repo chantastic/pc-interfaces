@@ -59,7 +59,6 @@ INTERFACES.dataAPI =
 
   handleAppListToggle: ->
     new INTERFACES.AppSwitcher().toggleAppList()
-    return false
 
   handleTopBarToggle: ->
     new INTERFACES.TopBar().toggleMenu()
