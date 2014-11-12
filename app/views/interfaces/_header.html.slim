@@ -68,7 +68,7 @@ div.top-bar
             ul.utilities
               - if Person.current.present? && Person.current.organization_id == 1
                 li
-                  a href="/administration"
+                  a href="#{PCO::URL.accounts "administration"}"
                     span.interfaces-admin
                     | admin
               li
@@ -76,6 +76,6 @@ div.top-bar
                   span.interfaces-faq
                   | help
               li
-                a.log href="#{PCO::URL.accounts}/logout"
+                a.log href="#{PCO::URL.accounts "logout"}"
                   span.interfaces-logout
                   | logout
