@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [FEATURE] Use Person#staff? for determining MCT people
 * [BUGFIX] changed sub-pixel values in buttons. x.x5rem = half pixel value. No more.
 * [BUGFIX] changed sub-pixel values in modals. x.x5rem = half pixel value. No more.
 * [BUGFIX] add AppSwitcher triggers to mobile breakpoint

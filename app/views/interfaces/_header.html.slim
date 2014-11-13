@@ -66,7 +66,7 @@ div.top-bar
                   = Organization.current
 
             ul.utilities
-              - if Person.current.present? && Person.current.organization_id == 1
+              - if Person.current.try(:staff?)
                 li
                   a href="#{PCO::URL.accounts "administration"}"
                     span.interfaces-admin
