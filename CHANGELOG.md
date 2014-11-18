@@ -1,6 +1,8 @@
 INTERFACES CHANGELOG
 --------------------
 
+### 0.1.0 (November 18, 2014)
+
 * [FEATURE] Use Person#staff? for determining MCT people
 * [BUGFIX] changed sub-pixel values in buttons. x.x5rem = half pixel value. No more.
 * [BUGFIX] changed sub-pixel values in modals. x.x5rem = half pixel value. No more.
