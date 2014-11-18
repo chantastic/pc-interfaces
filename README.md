@@ -78,20 +78,3 @@ If you'd like to see all the available components in your application, add this 
 ```
 mount Interfaces::Engine => '/styleguide' if Rails.env.development?
 ```
-
-## CONVENTIONS
-
-#### Variable naming
-
-Use snake-case to name you sass variables, using `-` (dash) instead of capitalization or `_` (underscore).
-
-```sass
-// bad
-$buttonBorderWidth: 1px
-
-// bad
-$button_border_width: 1px
-
-// good
-$button-border-width: 1px
-```
