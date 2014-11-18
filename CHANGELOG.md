@@ -1,5 +1,6 @@
 INTERFACES CHANGELOG
 --------------------
+* [BUGFIX] Remove select2 sass file (in favor of gem)
 
 ### 0.1.0 (November 18, 2014)
 
