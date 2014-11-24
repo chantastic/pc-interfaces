@@ -7,13 +7,13 @@ INTERFACES.dataAPI =
     @_attachDocumentActionTriggers()
 
   showTriggeredModal: ->
-    _id = $(@).data 'modal-id'
+    _id = @.getAttribute('data-modal-id')
 
     modal = new INTERFACES.ModalIdView(_id)
     modal.show()
 
   createAndShowUrlModal: ->
-    _url = $(@).data 'modal-url'
+    _url = .getAttribute('data-modal-url')
 
     return if not _url
 
