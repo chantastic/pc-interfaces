@@ -13,7 +13,7 @@ INTERFACES.dataAPI =
     modal.show()
 
   createAndShowUrlModal: ->
-    _url = .getAttribute('data-modal-url')
+    _url = @.getAttribute('data-modal-url')
 
     return if not _url
 
