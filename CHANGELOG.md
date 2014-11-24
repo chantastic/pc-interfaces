@@ -1,5 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
+
+* [BUGFIX] substitute .data wtih .getAttribute('data-') to sidestep caching
 * [BUGFIX] Remove select2 sass file (in favor of gem)
 
 ### 0.1.0 (November 18, 2014)
