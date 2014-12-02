@@ -1,5 +1,6 @@
 INTERFACES CHANGELOG
 --------------------
+* [BUGFIX] First input on ModalUrlViews now gets focused too
 * [BUGFIX] add select2 to form stylesheet
 * [BUGFIX] substitute .data wtih .getAttribute('data-') to sidestep caching
 * [BUGFIX] Remove select2 sass file (in favor of gem)
