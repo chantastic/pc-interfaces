@@ -23,6 +23,8 @@ INTERFACES.modalLayer =
 
     $('.modal-layer').empty().append(modal)
 
+    @_focusFirstInput()
+
   # use for flickr-free transitions from modal to modal
   pushAndEmptyModal: (modal) ->
     @show()
