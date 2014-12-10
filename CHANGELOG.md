@@ -1,5 +1,8 @@
 INTERFACES CHANGELOG
 --------------------
+
+### 0.2.0 (December 10, 2014)
+
 * [FEATURE] Apps with allow_pco_login as false do not get shown
 * [BUGFIX] First input on ModalUrlViews now gets focused too
 * [BUGFIX] add select2 to form stylesheet
