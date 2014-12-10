@@ -141,8 +141,10 @@ module Interfaces
     def available_apps_for_person
       if Person.current.respond_to? :subscribed_apps
         Person.current.subscribed_apps.sort.map { |app| app.respond_to?(:name) ? app.name : app }
+      elsif Person.current.respond_to? :visible_apps
+        Person.current.visible_apps.sort.map { |app| app.respond_to?(:name) ? app.name : app }
       elsif Person.current.respond_to? :applications
-        Person.current.applications.sort.map(&:first)
+        Person.current.applications.sort.select { |app, values| values["allow_pco_login"] != false }.map(&:first)
       else
         logger.debug "[INTERFACES] INTEGRATION REQUIRED: AccountCenterPersonIntegration is required for the application switcher — https://github.com/ministrycentered/account_center_integration"
         []
