@@ -1,5 +1,6 @@
 INTERFACES CHANGELOG
 --------------------
+* [BUGFIX] Change padding values from em to rem, in `.tab-content`.
 * [BUGFIX] First input on ModalUrlViews now gets focused too
 * [BUGFIX] add select2 to form stylesheet
 * [BUGFIX] substitute .data wtih .getAttribute('data-') to sidestep caching
