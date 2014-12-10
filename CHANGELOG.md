@@ -1,5 +1,6 @@
 INTERFACES CHANGELOG
 --------------------
+* [FEATURE] Apps with allow_pco_login as false do not get shown
 * [BUGFIX] First input on ModalUrlViews now gets focused too
 * [BUGFIX] add select2 to form stylesheet
 * [BUGFIX] substitute .data wtih .getAttribute('data-') to sidestep caching
