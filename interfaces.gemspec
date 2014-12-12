@@ -29,7 +29,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'sprockets', '2.11.0' # https://github.com/sstephenson/sprockets/issues/540
 
   # dependencies for host application
-  spec.add_dependency 'select2-rails', '3.5.2'
   spec.add_dependency 'es5-shim-rails'
   spec.add_dependency 'html5shiv-rails'
   spec.add_dependency 'selectivizr-rails'

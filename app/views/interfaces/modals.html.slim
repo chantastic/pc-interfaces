@@ -40,7 +40,6 @@ section.docs-section
     You may place this modal anywhere in the DOM.  The `data-api` takes care of moving it to the bottom of the DOM, when the time is right.
 
 
-/That said, you will need to take care when initializing scripts such as select2, or binding live events.
 
 section.docs-section
   a[href="#composition"]
@@ -155,7 +154,10 @@ section.docs-section
   a[href="#modal-load-event"]
     h2#modal-load-event Modal for URL modal:load event
   markdown:
-    When loading a modal template from a url, you may need to run some initializing scripts for select2, autocomplete, or datepicker.  For that you can tie into the `modal:load` event hook.  This will fire the moment your modal is added to the DOM.
+    When loading a modal template from a url, you might need to run initializing
+    scripts for libs like select2, autocomplete, or datepicker. You can tie into
+    the `modal:load` event hook to run these initializers.  This will fire the
+    moment your modal is added to the DOM.
 
   .row:.col:pre.code-sample-static.language-javascript:code
     | $(document).on('modal:load', function () { /* codez */ });
