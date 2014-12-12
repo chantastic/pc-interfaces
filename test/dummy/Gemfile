@@ -14,7 +14,6 @@ gem 'kramdown'
 gem 'mustache'
 gem 'htmlentities'
 gem 'sprockets', '2.11.0' # https://github.com/sstephenson/sprockets/issues/540
-gem 'select2-rails', '3.5.2'
 gem 'es5-shim-rails'
 gem 'html5shiv-rails'
 gem 'selectivizr-rails'
