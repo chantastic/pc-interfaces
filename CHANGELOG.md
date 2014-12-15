@@ -1,5 +1,6 @@
 INTERFACES CHANGELOG
 --------------------
+* [BUGFIX] Remove `demo-scripts` from interfaces.js manifest
 * [BREAKING CHANGE] add .select class and remove select2
   * Don't need select2?
     * Convert all '.select2' references to '.select'
