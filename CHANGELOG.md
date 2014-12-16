@@ -1,8 +1,23 @@
 INTERFACES CHANGELOG
 --------------------
+
+### 0.3.0 (December 16, 2014)
+
+* [BUGFIX] Remove `demo-scripts` from interfaces.js manifest
+* [BREAKING CHANGE] add .select class and remove select2
+  * Don't need select2?
+    * Convert all '.select2' references to '.select'
+    * Remove calls to `INTERFACES.formInit()`
+  * Need select2?
+    * Bundle [select2-rails](http://rubygems.org/gems/select2-rails) into your
+      application.
+    * Replace calls to `INTERFACES.formInit` with an application-level function.
+      For reference, this is how Interfaces used to handle form initialization.
+https://github.com/ministrycentered/interfaces/blob/f7540256d65b3e4d7f7bf94954ea1eb4be75a579/vendor/assets/javascripts/interfaces/select2_init.js.coffee
 * [BUGFIX] Change padding values from em to rem, in `.tab-content`.
 
 ### 0.2.0 (December 10, 2014)
+
 * [FEATURE] Apps with allow_pco_login as false do not get shown
 * [BUGFIX] First input on ModalUrlViews now gets focused too
 * [BUGFIX] add select2 to form stylesheet

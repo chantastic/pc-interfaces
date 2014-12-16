@@ -1,6 +1,13 @@
 h1.docs-page-title Forms
 markdown:
-  Marking up form elements is very straightforward. No special classnames needed. All `input`, `select`, and `textarea` elements are globally styled at 100% wide.
+  Forms are in a state of flux. Don't panic, I'm trying to make the transition
+  as painless as possible.  
+
+  What you need to know is that there are two ways to style form elements in
+  your app. `input` will get styling with additional classes. `select` requires
+  the addition of the class `.select`.  
+
+  All form elements are 100% width. Use the grid to contstrain them to a layout.
 
 section.docs-section
   a[href="#text-inputs"]
@@ -39,8 +46,8 @@ section.docs-section
                   :mustache => { label: 'Lots to say?', placeholder: 'Tell us about it...' }
 
 section.docs-section
-  a[href="#select-inputs"]
-    h2#selects Selects Inputs
+  a[href="#selects"]
+    h2#selects Selects
 
   ruby:
     select_options = [
@@ -51,53 +58,30 @@ section.docs-section
     ]
 
   markdown:
-    [Select2](http://ivaynberg.github.io/select2/) is a great way to interacte with `<select>` elements in desktop browsers.  All of Select2 is available to you through Interfaces, but we've added come convinince classes for the most common use cases.
+    Interfaces ships with CSS-only styling for native select elements. It leaves
+    more complex select interactions up to the application and product manager.
 
-    #### Mobile
-
-    By default, Select2 selects are **NOT** initialzed on devices that report `touch` capabilities.  This is because most Mobile browsers have terrific native select support.  They also lack the resources to resonable support a page with a number of Select2 controlled elements.
-
-    **If you find a device that is reporting `touch` capabilities that should be an exception.  Please report an issue.**
+    You may be surprised to find that these selects are not consistent between
+    browsers. I sacrificed cross-browser consistency-an experience that moste
+    users don't have-for browser-conformity. Older browsers will render
+    differently but all browsers should look mostly reasonable.
 
   form
     .row
-      .col.col--half
-        markdown:
-          #### Select2 Box
-          Add the `select2` class to your `select` element.
-        .row:.col:pre.code-sample-static.language-markup:code
-          = render_source 'interfaces/templates/input_select'
-        = render 'interfaces/templates/input_select',
-                  :mustache => { label: 'Select2 Box', select_data: select_options }
-      .col.col--half
-        markdown:
-          #### Select2 Box With No Search Bar
-          Add the `select2` class and `select2--nosearch` modifier class to your `select` element.
-        .row:.col:pre.code-sample-static.language-markup:code
-          = render_source 'interfaces/templates/input_select_modified'
-        = render 'interfaces/templates/input_select_modified',
-                  :mustache => { label: 'Select2 Box No Search Input', select_data: select_options }
-    .row
-      .col.col--half
-        markdown:
-          #### Select2 With Multi Select
-          Add the `select2` class to your `select` element with the `multiple` attribute.
-        .row:.col:pre.code-sample-static.language-markup:code
-          = render_source 'interfaces/templates/input_select_multiple'
-        = render 'interfaces/templates/input_select_multiple',
-                  :mustache => { label: 'Select2 Multi Select', select_data: select_options }
+      markdown:
+        #### Select
+        Add the `select` class to your `select` element.
+      .row:.col:pre.code-sample-static.language-markup:code
+        = render_source 'interfaces/templates/input_select'
+      = render 'interfaces/templates/input_select',
+                :mustache => { label: 'Select a sausage', select_data: select_options }
 
-      .col.col--half
-        markdown:
-          #### Select2 Forcing
-          Should you need to force `select2` (e.g., on mobile). Add the `select2--force` modifier.
+  markdown:
+    ### A Word on Select2
 
-        .row:.col:pre.code-sample-static.language-markup:code
-          = render_source 'interfaces/templates/input_select_force'
-
-        = render 'interfaces/templates/input_select_force',
-                  :mustache => { label: 'Select2 Force', select_data: select_options }
-
+    Select2 may still be useful for more complex selects, where search and
+    async-loading may be a requirement. However, loading and maintaining Select2
+    is now an application-level concern.
 
 section.docs-section
   a[href="#checkboxes"]
