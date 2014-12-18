@@ -1,6 +1,10 @@
 INTERFACES CHANGELOG
 --------------------
 
+### Unreleased Version
+
+* [BUGFIX] Don't push new URL state when clicking tabs. Use `replaceState()` if available.
+
 ### 0.3.0 (December 16, 2014)
 
 * [BUGFIX] Remove `demo-scripts` from interfaces.js manifest
