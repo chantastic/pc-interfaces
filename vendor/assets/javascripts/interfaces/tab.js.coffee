@@ -20,4 +20,7 @@ class INTERFACES.Tab
     document.getElementById(@id)
 
   _updateURL: =>
-    history.replaceState?({}, '', "#tab=#{@id}") or location.hash = "tab=#{@id}"
+    if history?.replaceState
+      history.replaceState({}, '', "#tab=#{@id}")
+    else
+      location.hash = "tab=#{@id}"
