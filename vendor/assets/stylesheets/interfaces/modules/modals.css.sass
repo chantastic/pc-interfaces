@@ -1,8 +1,6 @@
-@import "interfaces/vendor/shared_compass_dependencies"
 @import "interfaces/core/variables"
 @import "interfaces/core/queries"
 @import "interfaces/core/utilities"
-@import "compass/css3/filter"
 
 // localized variables  ====================================
 $max-modal-width:   $max-site-width * .95
@@ -36,8 +34,11 @@ $modal-default-top: 46px
 
     overflow: auto
     overflow-y: scroll
+
     -webkit-overflow-scrolling: touch
-    +translate3d(0,0,0)
+
+    -webkit-transform: translate3d(0,0,0)
+    transform: translate3d(0,0,0)
 
     @content
 
@@ -54,8 +55,8 @@ $modal-default-top: 46px
 
   z-index: 1100
 
-  +border-radius(($modal-radius + 1) ($modal-radius + 1) $modal-radius $modal-radius)
-  +box-shadow(0 0 25px $dark-gray)
+  border-radius: ($modal-radius + 1) ($modal-radius + 1) $modal-radius $modal-radius
+  box-shadow: 0 0 25px $dark-gray
 
   +breakpoint(lte_palm)
     margin: 3% auto !important
@@ -106,7 +107,7 @@ $modal-default-top: 46px
   padding: 1.6rem 1.8rem 2rem 1.8rem
   background: $modal-header-color
 
-  +border-radius($modal-radius $modal-radius 0 0)
+  border-radius: $modal-radius $modal-radius 0 0
 
 .modal__body
   padding: 1.2rem
@@ -119,7 +120,9 @@ $modal-default-top: 46px
 
   text-align: right
 
-  +border-bottom-radius($modal-child-radius)
+  border-bottom-right-radius: $modal-child-radius
+  border-bottom-left-radius: $modal-child-radius
+
   border-top: solid 1px adjust-color($modal-window-bg-color, $lightness: -10%, $saturation: -5%)
 
   .btn
@@ -243,7 +246,7 @@ $modal-default-top: 46px
   .avatar
     position: relative
     z-index: 1
-    +border-radius(100em)
+    border-radius: 100em
     float: left
     width: 91px
     top: 5px
@@ -265,10 +268,12 @@ $modal-default-top: 46px
       display: block
       min-width: 120%
       margin-top: -50%
-      -ms-filter: blur(30px)
-      +filter(blur(30px))
       margin-left: -12%
       opacity: .4
+
+      -ms-filter: blur(30px)
+      -webkit-filter: blur(30px)
+      filter: blur(30px)
 
 //This is specific to the person modal. not sure it can be generified any more??
 .modal--person-details
@@ -367,7 +372,7 @@ input.mb8
         box-shadow: none
 
     > a
-      +transition(all .2s ease-in-out)
+      transition: all .2s ease-in-out
       text-align: center
       font-size: 1.1rem
       border: 0 !important
@@ -432,7 +437,7 @@ input.mb8
 //WELLS AND OTHER LAYOUT COMPONENTS FOR MODALS
 .modal-well
   +clearfix
-  +border-radius(2px)
+  border-radius: 2px
   background: #fff
   padding: 1.2rem
   border: 1px solid adjust-color($sidebar-bg-color, $lightness: -3%, $saturation: -10%)

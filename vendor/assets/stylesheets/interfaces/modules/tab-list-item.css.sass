@@ -4,23 +4,18 @@
 @import "interfaces/core/variables"
 @import "interfaces/modules/_list_item_base"
 
-@import "compass/css3/transition"
-@import "compass/css3/transform"
-
 $class: 'tab-list-item'
 
 // base
 
 .#{$class}
-  @extend %list-item-base
-
   position:     relative
   border-color: $list-border-color
   padding:      $list-vertical-padding $list-horizontal-padding
   background:   #f1f1f1
   color:        $link-color
 
-  @include transition(background-color 0 ease)
+  transition: background-color 0 ease
 
   &:last-child
     border-bottom-width: $list-border-width
@@ -48,7 +43,7 @@ $class: 'tab-list-item'
   color:      $link-color-hover
 
   @include pointable
-  @include transition(background-color .4s ease)
+  transition: background-color .4s ease
 
 .#{$class}.is-open
   background: white

@@ -1,5 +1,3 @@
-@import "interfaces/vendor/shared_compass_dependencies"
-
 $tip-background-color:    #111 !default
 $tip-color:               #fff !default
 $tip-font-size:           12px !default
@@ -44,7 +42,7 @@ $tip-caret-offset: ($tip-font-size * 1.5) !default
     z-index: $tip-z-index
     display: block
     visibility: hidden
-    +opacity(0)
+    opacity: 0
 
     font-size: $tip-font-size
 
@@ -63,7 +61,7 @@ $tip-caret-offset: ($tip-font-size * 1.5) !default
     background-color: $tip-background-color
     color: $tip-color
     white-space: nowrap
-    +border-radius($tip-border-radius)
+    border-radius: $tip-border-radius
 
   &:hover
     text-decoration: none
@@ -71,7 +69,7 @@ $tip-caret-offset: ($tip-font-size * 1.5) !default
     &:before,
     &:after
       visibility: visible
-      +opacity($tip-visible-opacity)
+      opacity: $tip-visible-opacity
 
 
   &.tip--multiline
@@ -87,14 +85,16 @@ $tip-caret-offset: ($tip-font-size * 1.5) !default
       right: 50%
       bottom: 0
       left: auto
-      +translate(50%, -($tip-caret-offset))
+      -webkit-transform: translate(50%, -($tip-caret-offset))
+      transform: translate(50%, -($tip-caret-offset))
 
     &:after
       top: auto
       right: 50%
       bottom: 0
       left: auto
-      +translate(50%, -($tip-body-offset))
+      -webkit-transform: translate(50%, -($tip-body-offset))
+      transform: translate(50%, -($tip-body-offset))
 
     &.tip--anchor-right
       &:before,
@@ -108,15 +108,19 @@ $tip-caret-offset: ($tip-font-size * 1.5) !default
 
     &.tip--flow-right
       &:before
-        +translate(50%, -($tip-caret-offset))
+        -webkit-transform: translate(50%, -($tip-caret-offset))
+        transform: translate(50%, -($tip-caret-offset))
       &:after
-        +translate(90%, -($tip-body-offset))
+        -webkit-transform: translate(90%, -($tip-body-offset))
+        transform: translate(90%, -($tip-body-offset))
 
     &.tip--flow-left
       &:before
-        +translate(50%, -($tip-caret-offset))
+        -webkit-transform: translate(50%, -($tip-caret-offset))
+        transform: translate(50%, -($tip-caret-offset))
       &:after
-        +translate(10%, -($tip-body-offset))
+        -webkit-transform: translate(10%, -($tip-body-offset))
+        transform: translate(10%, -($tip-body-offset))
 
   &.tip--bottom
     &:before
@@ -124,7 +128,8 @@ $tip-caret-offset: ($tip-font-size * 1.5) !default
       right:  50%
       bottom: auto
       left:   auto
-      +translate(50%, $tip-caret-offset)
+      -webkit-transform: translate(50%, $tip-caret-offset)
+      transform: translate(50%, $tip-caret-offset)
 
       border-width: 0 $tip-caret-height $tip-caret-height $tip-caret-height
 
@@ -133,7 +138,8 @@ $tip-caret-offset: ($tip-font-size * 1.5) !default
       right:  50%
       bottom: auto
       left:   auto
-      +translate(50%, $tip-body-offset)
+      -webkit-transform: translate(50%, $tip-body-offset)
+      transform: translate(50%, $tip-body-offset)
 
     &.tip--anchor-right
       &:before,
@@ -147,15 +153,19 @@ $tip-caret-offset: ($tip-font-size * 1.5) !default
 
     &.tip--flow-right
       &:before
-        +translate(50%, $tip-caret-offset)
+        -webkit-transform: translate(50%, $tip-caret-offset)
+        transform: translate(50%, $tip-caret-offset)
       &:after
-        +translate(90%, $tip-body-offset)
+        -webkit-transform: translate(90%, $tip-body-offset)
+        transform: translate(90%, $tip-body-offset)
 
     &.tip--flow-left
       &:before
-        +translate(50%, $tip-caret-offset)
+        -webkit-transform: translate(50%, $tip-caret-offset)
+        transform: translate(50%, $tip-caret-offset)
       &:after
-        +translate(10%, $tip-body-offset)
+        -webkit-transform: translate(10%, $tip-body-offset)
+        transform: translate(10%, $tip-body-offset)
 
   &.tip--right
     &:before
@@ -164,14 +174,16 @@ $tip-caret-offset: ($tip-font-size * 1.5) !default
       bottom: auto
       left:   auto
       border-width: $tip-caret-height $tip-caret-height $tip-caret-height 0
-      +translate(100%, 0)
+      -webkit-transform: translate(100%, 0)
+      transform: translate(100%, 0)
 
     &:after
       top:    -($tip-caret-height / 2)
       right:  -($tip-caret-height * 2)
       bottom: auto
       left:   auto
-      +translate(100%, 0)
+      -webkit-transform: translate(100%, 0)
+      transform: translate(100%, 0)
 
     &:hover:before
       border-color: transparent $tip-background-color
@@ -182,7 +194,8 @@ $tip-caret-offset: ($tip-font-size * 1.5) !default
       right:  auto
       bottom: auto
       left:   -($tip-caret-height * 2)
-      +translate(-100%, 0)
+      -webkit-transform: translate(-100%, 0)
+      transform: translate(-100%, 0)
 
     &:before
       top:    ($tip-caret-height / 3)
@@ -190,7 +203,8 @@ $tip-caret-offset: ($tip-font-size * 1.5) !default
       bottom: auto
       left:   -($tip-caret-height)
       border-width: $tip-caret-height 0 $tip-caret-height $tip-caret-height
-      +translate(-100%, 0)
+      -webkit-transform: translate(-100%, 0)
+      transform: translate(-100%, 0)
 
     &:hover:before
       border-color: transparent $tip-background-color
