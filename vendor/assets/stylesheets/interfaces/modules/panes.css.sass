@@ -1,4 +1,3 @@
-@import "interfaces/vendor/shared_compass_dependencies"
 @import "interfaces/core/variables"
 @import "interfaces/core/utilities"
 @import "interfaces/core/queries"
@@ -25,9 +24,11 @@
   margin-bottom: 20px
   background-color: #fff
   border: 1px solid transparent
-  +border-radius($default-pane-radius)
+  border-radius: $default-pane-radius
   border-color: $border-color
-  +translate3d(0,0,0)
+
+  -webkit-transform: translate3d(0,0,0)
+  transform: translate3d(0,0,0)
 
 .pane--naked
   background: transparent
@@ -47,21 +48,21 @@
   display: table
   table-layout: fixed
   margin-bottom: 20px
-  +border-radius($default-pane-radius)
+  border-radius: $default-pane-radius
   width: 100%
   clear: both
 
   .pane--split
-    +box-shadow(none)
+    box-shadow: none
     .pane__header
-      +border-radius(0)
+      border-radius: 0
     &:first-of-type .pane__header
-      +border-top-left-radius($default-pane-header-radius)
+      border-top-left-radius: $default-pane-header-radius
     &:last-of-type .pane__header
-      +border-top-right-radius($default-pane-header-radius)
+      border-top-right-radius: $default-pane-header-radius
 
 .pane--split
-  +border-radius(0)
+  border-radius: 0
   display: table-cell
   vertical-align: top
   border-right-width: 0
@@ -69,19 +70,19 @@
     float: none
     padding: 0
   &:first-of-type
-    +border-radius($default-pane-radius 0 0 $default-pane-radius)
+    border-radius: $default-pane-radius 0 0 $default-pane-radius
     .pane__footer
       position: relative
       top: 0
-      +border-bottom-left-radius($default-pane-header-radius)
+      border-bottom-left-radius: $default-pane-header-radius
   &:last-of-type,
   &.last-child
-    +border-radius(0 $default-pane-radius $default-pane-radius 0)
+    border-radius: 0 $default-pane-radius $default-pane-radius 0
     border-right-width: 1px
     .pane__footer
-      +border-bottom-right-radius($default-pane-header-radius)
+      border-bottom-right-radius: $default-pane-header-radius
   .pane__footer
-    +border-bottom-radius(0)
+    border-bottom-radius: 0
 
 
 .pane__header, .pane__footer, .pane__body
@@ -89,8 +90,10 @@
 
 .pane__header
   padding: .75rem .75rem .75rem 1.25rem
-  +border-top-radius(3px)
-  +background-with-css2-fallback(linear-gradient(top, $pane-header-bg-top, $pane-header-bg-bottom), $pane-header-bg-top)
+  border-top-right-radius: 3px
+  border-top-left-radius: 3px
+  background-color: $pane-header-bg-top
+  background-image: linear-gradient(to bottom, $pane-header-bg-top, $pane-header-bg-bottom, $pane-header-bg-top)
   border-bottom: solid 1px adjust-color($pane-header-bg-bottom, $lightness: -7%)
   height: 44px
   position: relative
@@ -98,13 +101,13 @@
   // when you have multiple headers in a pane, remove the rounded top corners
   &:not(:first-child)
     border-top: solid 1px adjust-color($pane-header-bg-bottom, $lightness: -7%)
-    +border-top-radius(0)
+    border-top-radius: 0
 
   .btn, input
     margin-bottom: 0
-    +border-radius($default-pane-radius -2px)
+    border-radius: $default-pane-radius -2px
   input:focus
-    +box-shadow(none)
+    box-shadow: none
 
 
 .pane__body
@@ -112,9 +115,9 @@
 
 .pane__footer
   padding: .75rem 1.25rem .9rem
-  +border-bottom-radius($default-pane-radius)
-  background: adjust-color($lighter-gray, $lightness: 7%)
-  +background-image(linear-gradient(top, adjust-color($lighter-gray, $lightness: 7%), adjust-color($lighter-gray, $lightness: 5%)))
+  border-bottom-radius: $default-pane-radius
+  background-color: adjust-color($lighter-gray, $lightness: 7%)
+  background-image: linear-gradient(to bottom, adjust-color($lighter-gray, $lightness: 7%), adjust-color($lighter-gray, $lightness: 5%))
   border-top: solid 1px adjust-color($lighter-gray, $lightness: -1%)
   .btn
     margin-bottom: 0
@@ -134,11 +137,11 @@
 // responsive panes
 +breakpoint(lte_tablet)
   .pane-group
-    +box-shadow(none)
+    box-shadow: none
     margin: -1px auto 0 auto
     display: block
     .pane, .pane__header, .pane__footer
-      +border-radius(0)
+      border-radius: 0
     .pane
       width: auto
       display: block
@@ -164,18 +167,19 @@
     left: 8px
     top: 50%
     margin-top: -0.55rem
-    +transition(all .2s linear)
+    transition: all .2s linear
   .acc__title
     +truncate()
   &.active-state
     i
-      +rotate(90deg)
+      trans6form: rotate(90deg)
       color: $link-color-hover
 
 .acc__panel
   display: none
-  transform: translate3d(0,0,0)
   -webkit-transform: translate3d(0,0,0)
+  transform: translate3d(0,0,0)
+
   &.active-state
     border-bottom: 1px solid adjust-color($sidebar-bg-color, $lightness: -14%)
 
@@ -208,7 +212,7 @@
 .blank-state
   text-align: center
   padding: 3rem
-  +border-radius(3px)
+  border-radius: 3px
   background: rgba(0,0,0,0.04)
   min-height: 212px
   &.no-btn

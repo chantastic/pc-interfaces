@@ -78,7 +78,8 @@
       top: 5px
       left: 5px
       width: ($sidebar-width-med-screen - 8px)
-      +border-top-radius(3px)
+      border-top-right-radius: 3px
+      border-top-left-radius: 3px
 
   .menu-icon
     display: none
@@ -128,9 +129,9 @@
     min-height: 100%
     height: auto
     background: $bg-color
-    +box-shadow($sidebar-width-med-screen 0 0 $sidebar-bg-color inset)
+    box-shadow: $sidebar-width-med-screen 0 0 $sidebar-bg-color inset
   .fullwidth .off-canvas-wrap
-    +box-shadow(none)
+    box-shadow: none
 
 
   //======================================Account Info
@@ -152,7 +153,8 @@
 
   //Acct dropdown med screens
   .account-info ul li:last-child a
-    +border-bottom-radius(3px)
+    border-bottom-right-radius: 3px
+    border-bottom-left-radius: 3px
   #toggle-account-details
     position: absolute
     top: 0
@@ -185,8 +187,8 @@
       position: absolute
       display: none
       background: #fff
-      +border-radius(3px)
-      +box-shadow(0 1px 6px $dropdown-shadow)
+      border-radius: 3px
+      box-shadow: 0 1px 6px $dropdown-shadow
       &:after
         +triangle("up", #fff, 6px)
         right: 24px
@@ -218,7 +220,7 @@
           position: absolute
           top: 10px
           right: 8px
-          +border-radius(2px)
+          border-radius: 2px
           border: 1px solid $danger-color
           color: $danger-color
           padding: .15rem .35rem .35rem .35rem
@@ -237,7 +239,7 @@
           &:hover
             background: adjust-color($base-color, $lightness: 55%, $saturation: -60%)
           .outline
-            +border-radius(3px)
+            border-radius: 3px
             min-width: 60px
             border: 1px solid
             color: adjust-color($base-color, $lightness: -5%, $saturation: 0%)
@@ -266,7 +268,7 @@
         &:first-child
           border-top: 0
         &:last-child
-          +border-radius(0 0 3px 3px)
+          border-radius: 0 0 3px 3px
         &:hover
           color: $highlighted-color
           background: $highlighted-bg-color
@@ -292,8 +294,8 @@
     display: none
     +abs-pos(100%, 5px, auto, auto)
     background: white
-    +border-radius(3px)
-    +box-shadow(0 1px 6px $dropdown-shadow)
+    border-radius: 3px
+    box-shadow: 0 1px 6px $dropdown-shadow
     min-width: 220px
     &:after
       content: ""

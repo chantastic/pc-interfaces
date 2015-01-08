@@ -19,14 +19,13 @@ Gem::Specification.new do |spec|
   # dependencies for sample application
   spec.add_dependency 'jquery-rails'
   spec.add_dependency 'coffee-rails'
-  spec.add_dependency 'compass-rails', '< 2'
   spec.add_dependency 'high_voltage'
   spec.add_dependency 'sass-rails'
   spec.add_dependency 'slim-rails'
   spec.add_dependency 'kramdown'
   spec.add_dependency 'mustache'
   spec.add_dependency 'htmlentities'
-  spec.add_dependency 'sprockets', '2.11.0' # https://github.com/sstephenson/sprockets/issues/540
+  spec.add_dependency 'sprockets'
 
   # dependencies for host application
   spec.add_dependency 'es5-shim-rails'
