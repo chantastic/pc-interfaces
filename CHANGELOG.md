@@ -1,15 +1,19 @@
 INTERFACES CHANGELOG
 --------------------
-* [BUGFIX] fix breakpoint mixin value `bp_1` so that it doesn't conflict with `lte_palm`
 
 ### Unreleased Version
 
+* [BUGFIX] Use `::Person` in Engine helpers to fix ActiveSupport::Dependencies exception in Rails 4.2
 * [BREAKING CHANGE] Update Docs, remove related Gems
   + Add gems `slim-rails`, `mustache`, `kramdown`, `htmlentities` if your application requires them
 * [BREAKING CHANGE] Remove compass-rails gem and remove usage across application
   + Apps will require an update. Adding `compass-rails` to the application is not an option.
   + See [Transition guide for 0.3.0 -> 0.4.0](https://github.com/ministrycentered/interfaces/wiki/Transition:-0.3.0-to-0.4.0)
 * [BUGFIX] Use `replaceState()` for tab changes if available.
+
+### 0.3.1 (January 13, 2014)
+
+* [BUGFIX] fix breakpoint mixin value `bp_1` so that it doesn't conflict with `lte_palm`
 
 ### 0.3.0 (December 16, 2014)
 
