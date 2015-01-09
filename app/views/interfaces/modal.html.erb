@@ -1,0 +1,133 @@
+<!-- style overrides -->
+<style>
+  .modal {
+    display: block;
+  }
+</style>
+
+<h1>Modal</h1>
+<p>Spit stuff onto the page</p>
+<p>Modals are <code>display: none</code> by default. They are visible here for
+the purpose of illustration.</p>
+
+<section class="doc-section">
+  <h1>Example</h1>
+  <p>This is the dumb container </p>
+
+  <%= code_sample do %>
+<div class="modal">
+  <div class="modal__header">
+    <div class="modal-title">
+      Modal Title
+    </div>
+  </div>
+
+  <div class="modal__body">
+    My Content
+  </div>
+
+  <div class="modal__footer">
+    <button
+     class="btn btn--link"
+     type="button">
+      Cancel
+    </button>
+
+    <button
+     class="btn btn--primary"
+     type="button">
+      Submit
+    </button>
+  </div>
+</div>
+  <% end %>
+</section>
+
+<section class="doc-section">
+  <h1><pre>.modal</pre></h1>
+  <p>This is the dumb container </p>
+
+  <%= code_sample do %>
+<div class="modal">
+  .modal is a dumb box.
+</div>
+  <% end %>
+</section>
+
+<section class="doc-section">
+  <h1><pre>.modal.modal--small</pre></h1>
+
+  <%= code_sample do %>
+<div class="modal modal--small">
+  This is smaller than the default
+</div>
+  <% end %>
+</section>
+
+<section class="doc-section">
+  <h1><pre>.modal.modal--large</pre></h1>
+
+  <%= code_sample do %>
+<div class="modal modal--large">
+  This is larger than the default
+</div>
+  <% end %>
+</section>
+
+<section class="doc-section">
+  <h1><pre>.modal.modal--full</pre></h1>
+
+  <%= code_sample do %>
+<div class="modal modal--full">
+  This is 95% width on all devices.
+</div>
+  <% end %>
+</section>
+
+<section class="doc-section">
+  <h1><pre>.modal__header / .modal-title</pre></h1>
+
+  <%= code_sample do %>
+<div class="modal">
+  <div class="modal__header">
+    <div class="modal-title">
+      Modal Title
+    </div>
+  </div>
+</div>
+  <% end %>
+</section>
+
+<section class="doc-section">
+  <h1><pre>.modal__body</pre></h1>
+
+  <%= code_sample do %>
+<div class="modal">
+  <div class="modal__body">
+    Modal Content
+  </div>
+</div>
+  <% end %>
+</section>
+
+<section class="doc-section">
+  <h1><pre>.modal__footer</pre></h1>
+
+  <%= code_sample do %>
+<div class="modal">
+  <div class="modal__footer">
+    <button
+     class="btn btn--link"
+     type="button">
+      Cancel
+    </button>
+
+    <button
+    class="btn btn--primary"
+    type="button">
+      Button
+    </button>
+  </div>
+</div>
+  <% end %>
+</section>

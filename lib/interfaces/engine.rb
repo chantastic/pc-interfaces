@@ -3,10 +3,7 @@
 require "jquery-rails"
 require "es5-shim-rails"
 require "html5shiv-rails"
-require "selectivizr-rails"
 require "placeholder-gem"
-require "mustache"
-require "htmlentities"
 
 module Interfaces
   class Engine < ::Rails::Engine
@@ -16,7 +13,6 @@ module Interfaces
       generate.helper false
       generate.assets false
       generate.view_specs false
-      generate.template_engine :slim
     end
 
     initializer :assets do |config|

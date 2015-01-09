@@ -1,0 +1,145 @@
+<div class="top-bar">
+  <div class="top-bar__contents clearfix">
+    <div class="title-area">
+      <div class="app-switcher-wrap" data-app-list="toggle">
+        <div id="logo" class="bookmark icon-<%= app_name %>-logo" aria-hidden="true"></div>
+        <div class="app-switcher">
+          <div class="toggle-btn" data-app-list="show">
+            <div class="chevron"></div>
+          </div>
+
+          <div class="menu-wrap">
+            <div class="toggle-btn-cover" data-app-list="hide">
+              <span class="interfaces-remove"></span>
+            </div>
+
+            <ul>
+              <% available_apps.each do |name| %>
+                <li class="<%= name.downcase %> <%= (:omega if available_apps.length == 1) %>">
+                  <a href="<%= PCO::URL.send(name.downcase.underscore) %>">
+                    <span class="icon" aria-hidden="true"></span>
+                    <em>planning center</em>
+                    <%= name %>
+                  </a>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="toggle-sidebar" class="menu-icon show-for-mobile">
+        <a href="#"><span class="title">Sidebar</span><span class="interfaces-cog" aria-hidden="true"></span></a>
+      </div>
+
+      <div id="toggle-topbar" class="menu-icon show-for-mobile" data-top-bar="toggle">
+        <a href="#"><span class="title">Menu</span><span class="interfaces-menu" aria-hidden="true"></span></a>
+      </div>
+    </div>
+
+    <section class="top-bar-section">
+      <div class="top-nav-options">
+        <nav class="global-nav lefty" role="menubar" title="Main Site Navigation">
+          <ul>
+            <li class="divider"></li>
+
+            <%= yield %>
+          </ul>
+        </nav>
+
+        <div class="account-info righty">
+          <span class="avatar">
+            <% if Person.current.present? %>
+              <a.photo href="/people/<%= Person.current.id %>">
+                <% if Person.current.avatar_url.present? %>
+
+                  <img
+                   alt="Avatar"
+                   height="24"
+                   src="#{Person.current.avatar_url}"
+                   width="24" />
+
+                <% elsif Person.const_defined?('MISSING_AVATAR_PATH') %>
+
+                  <img
+                   alt="Avatar"
+                   height="24"
+                   src="#{Person::MISSING_AVATAR_PATH}"
+                   width="24" />
+
+                <% else %>
+
+                  <img
+                   alt="Missing"
+                   height="24"
+                   src="https://www.planningcenteronline.com/photos/icon/missing.png"
+                   width="24" />
+
+                <% end %>
+              </a>
+
+            <% else %>
+
+              <span class="photo">
+                <img
+                 alt="Missing"
+                 height="24"
+                 src="https://www.planningcenteronline.com/photos/icon/missing.png"
+                 width="24" />
+              </span>
+
+            <% end %>
+          </span>
+
+          <div id="toggle-account-details" data-account-info="toggle">
+            <span class="interfaces-caret" aria-hidden="true"></span>
+          </div>
+
+          <div id="account-details">
+            <ul class="identity">
+              <% if Person.current.present? %>
+                <li class="section-heading">
+                  <% if app_name == "account-center" %>
+                    <a href='#'><%= Person.current.name %></a>
+                  <% else %>
+                    <a href="/people/<%= Person.current.id %>">
+                      <%= Person.current.name %>
+                    </a>
+                  <% end %>
+                  <span>
+                    <%= Organization.current %>
+                  </span>
+                </li>
+              <% end %>
+            </ul>
+
+            <ul class="utilities">
+              <% if Person.current.try(:staff?) %>
+                <li>
+                  <a href="<%= PCO::URL.accounts "administration" %>">
+                    <span class="interfaces-admin"></span>
+                    admin
+                  </a>
+                </li>
+              <% end %>
+
+              <li>
+                <a id="jsLaunchHelpdesk" href="#">
+                  <span class="interfaces-faq"></span>
+                  help
+                </a>
+              </li>
+
+              <li>
+                <a class="log" href="<%= PCO::URL.accounts "logout" %>">
+                  <span class="interfaces-logout"></span>
+                  logout
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,73 +1,5 @@
 module Interfaces
   module ApplicationHelper
-    def button_styles
-      {
-        button_modifiers: [
-          {
-            modifier: "",
-            description: "(default)"
-          },
-          {
-            modifier: "btn--primary",
-            description: "button will be the primary color, specified in your project's variables file."
-          },
-          {
-            modifier: "btn--secondary",
-            description: "button will be the secondary color, specified in your project's variables file."
-          },
-          {
-            modifier: "btn--success",
-            description: "positive action."
-          },
-          {
-            modifier: "btn--danger",
-            description: "dangerous action."
-          },
-          {
-            modifier: "btn--link",
-            description: "use this when you have a link that sits alongside a button, and should align properly."
-          }
-        ]
-      }
-    end
-
-    def button_sizes
-      {
-        button_modifiers: [
-          {
-            modifier: "btn--large",
-            description: ""
-          },
-          {
-            modifier: "",
-            description: ""
-          },
-          {
-            modifier: "btn--small",
-            description: ""
-          },
-          {
-            modifier: "btn--tiny",
-            description: ""
-          },
-          {
-            modifier: "btn--micro",
-            description: ""
-          },
-          {
-            modifier: "btn--expand",
-            description: ""
-          }
-        ]
-      }
-    end
-
-    # https://coderwall.com/p/6n3rmw
-    def render_source args={}
-      @html_encoder ||= HTMLEntities.new
-      raw(@html_encoder.encode(render args))
-    end
-
     def interfaces(&block)
       render layout: '/interfaces/interfaces', &block
     end
@@ -86,10 +18,6 @@ module Interfaces
 
     def interfaces_main(&block)
       render layout: '/interfaces/main', &block
-    end
-
-    def interfaces_sidebar(&block)
-      render layout: '/interfaces/sidebar', &block
     end
 
     def interfaces_helpdesk

@@ -1,0 +1,87 @@
+<section class="doc-section">
+  <h1>Tab List</h1>
+  <p>Sometimes you just have too much good stuff to fit on one page</p>
+</section>
+
+<section class="doc-section">
+  <h1>Example</h1>
+  <p>
+    In practice <code>.tab-list</code> will likely be used in conjuction with a <code>.pane</code> (to supply a border) and the grid (to supply structure).
+  </p>
+
+  <%= code_sample do %>
+<div class="pane row">
+
+  <ul class="tab-list col col--fifth">
+    <li
+     class="tab-list-item"
+     data-tab-content-id="one">
+      Tab One
+    </li>
+
+    <li
+     class="tab-list-item is-open"
+     data-tab-content-id="two">
+      Tab Two
+    </li>
+  </ul>
+
+  <section class="tab-content-group col col--four-fifths">
+    <article
+     class="tab-content"
+     id="one">
+      Tab One Contents
+    </article>
+
+    <article
+     class="tab-content is-open"
+     id="two">
+      Tab Two Contents
+    </article>
+  </section>
+</div>
+  <% end %>
+</section>
+
+<section class="doc-section">
+  <h1><pre>.tab-list</pre></h1>
+  <p>This class offers a handful of resets but is mostly required as a common parent for data-api hooks.</p>
+
+  <%= code_sample_static do %>
+<ul class="tab-list">
+  <!-- .tab-list-items -->
+</ul>
+  <% end %>
+</section>
+
+<section class="doc-section">
+  <h1><pre>.tab-list-item / .is-open</pre></h1>
+
+  <%= code_sample do %>
+<div class="tab-list-item"> A Tab </div>
+<div class="tab-list-item is-open"> An Active Tab </div>
+<div class="tab-list-item"> Another Tab </div>
+  <% end %>
+</section>
+
+<section class="doc-section">
+  <h1><pre>.tab-content / .is-open</pre></h1>
+
+  <%= code_sample do %>
+<div class="tab-content is-open">
+  Information SO epic you decided to hide it most of the time.
+</div>
+  <% end %>
+</section>
+
+<section class="doc-section">
+  <h1><pre>.tab-list</pre></h1>
+  <p>This class offers a handful of resets but is mostly required as a common parent for data-api hooks.</p>
+
+  <%= code_sample_static do %>
+<div class="tab-content-group">
+  <!-- .tab-content -->
+</div>
+  <% end %>
+</section>
+
