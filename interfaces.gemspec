@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'coffee-rails'
   spec.add_dependency 'high_voltage'
   spec.add_dependency 'sass-rails'
-  spec.add_dependency 'sprockets', '2.11.0' # https://github.com/sstephenson/sprockets/issues/540
+  spec.add_dependency 'sprockets'
 
   # dependencies for host application
   spec.add_dependency 'es5-shim-rails'

@@ -8,7 +8,7 @@ gem 'jquery-rails'
 gem 'coffee-rails'
 gem 'high_voltage'
 gem 'sass-rails'
-gem 'sprockets', '2.11.0' # https://github.com/sstephenson/sprockets/issues/540
+gem 'sprockets'
 gem 'es5-shim-rails'
 gem 'html5shiv-rails'
 gem 'placeholder-gem'
