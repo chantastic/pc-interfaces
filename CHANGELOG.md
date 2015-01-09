@@ -3,6 +3,9 @@ INTERFACES CHANGELOG
 
 ### Unreleased Version
 
+* [BREAKING CHANGE] Remove compass-rails gem and remove usage across application
+  + Apps will require an update. Adding `compass-rails` to the application is not an option.
+  + See [Transition guide for 0.3.0 -> 0.4.0](https://github.com/ministrycentered/interfaces/wiki/Transition:-0.3.0-to-0.4.0)
 * [BUGFIX] Use `replaceState()` for tab changes if available.
 
 ### 0.3.0 (December 16, 2014)
