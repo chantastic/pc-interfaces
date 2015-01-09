@@ -3,6 +3,8 @@ INTERFACES CHANGELOG
 
 ### Unreleased Version
 
+* [BREAKING CHANGE] Update Docs, remove related Gems
+  + Add gems `slim-rails`, `mustache`, `kramdown`, `htmlentities` if your application requires them
 * [BREAKING CHANGE] Remove compass-rails gem and remove usage across application
   + Apps will require an update. Adding `compass-rails` to the application is not an option.
   + See [Transition guide for 0.3.0 -> 0.4.0](https://github.com/ministrycentered/interfaces/wiki/Transition:-0.3.0-to-0.4.0)
