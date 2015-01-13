@@ -1,5 +1,6 @@
 INTERFACES CHANGELOG
 --------------------
+* [BUGFIX] fix breakpoint mixin value `bp_1` so that it doesn't conflict with `lte_palm`
 
 ### 0.3.0 (December 16, 2014)
 
