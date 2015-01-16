@@ -11,7 +11,11 @@ INTERFACES CHANGELOG
   + See [Transition guide for 0.3.0 -> 0.4.0](https://github.com/ministrycentered/interfaces/wiki/Transition:-0.3.0-to-0.4.0)
 * [BUGFIX] Use `replaceState()` for tab changes if available.
 
-### 0.3.1 (January 13, 2014)
+### HOTFIX (January 15, 2015)
+
+* [BUGFIX] Change date 2014 -> 2015
+
+### HOTFIX (January 12, 2015)
 
 * [BUGFIX] fix breakpoint mixin value `bp_1` so that it doesn't conflict with `lte_palm`
 
