@@ -1,5 +1,10 @@
 INTERFACES CHANGELOG
 --------------------
+
+### HOTFIX (January 15, 2015)
+
+* [BUGFIX] Change helpdesk url "//mct-helpdesk.herokuapp.com/embed.js" -> "//helpdesk.planningcenteronline.com/embed.js"
+
 ### HOTFIX (January 15, 2015)
 
 * [BUGFIX] Change date 2014 -> 2015
