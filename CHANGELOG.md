@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+<<<<<<< HEAD
 ### Unreleased Version
 
 * [BUGFIX] Use `::Person` in Engine helpers to fix ActiveSupport::Dependencies exception in Rails 4.2
@@ -10,6 +11,11 @@ INTERFACES CHANGELOG
   + Apps will require an update. Adding `compass-rails` to the application is not an option.
   + See [Transition guide for 0.3.0 -> 0.4.0](https://github.com/ministrycentered/interfaces/wiki/Transition:-0.3.0-to-0.4.0)
 * [BUGFIX] Use `replaceState()` for tab changes if available.
+=======
+### HOTFIX (January 15, 2015)
+
+* [BUGFIX] Change helpdesk url "//mct-helpdesk.herokuapp.com/embed.js" -> "//helpdesk.planningcenteronline.com/embed.js"
+>>>>>>> master
 
 ### HOTFIX (January 15, 2015)
 
