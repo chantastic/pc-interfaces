@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'coffee-rails'
   spec.add_dependency 'compass-rails', '< 2'
   spec.add_dependency 'high_voltage'
-  spec.add_dependency 'sass-rails'
+  spec.add_dependency 'sass-rails', '< 5'
   spec.add_dependency 'slim-rails'
   spec.add_dependency 'kramdown'
   spec.add_dependency 'mustache'
