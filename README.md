@@ -68,7 +68,7 @@ It's likely you'll need a more complex layout. This is the current baseline. Wra
   <% end %>
 <% end %>
 
-<%= interfaces_footer do %>Designed in CA Copyright 2014<% end %>
+<%= interfaces_footer do %>Designed in CA Copyright 2015<% end %>
 ```
 
 ## Styleguide

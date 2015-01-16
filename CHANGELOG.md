@@ -1,5 +1,11 @@
 INTERFACES CHANGELOG
 --------------------
+### HOTFIX (January 15, 2015)
+
+* [BUGFIX] Change date 2014 -> 2015
+
+### HOTFIX (January 12, 2015)
+
 * [BUGFIX] fix breakpoint mixin value `bp_1` so that it doesn't conflict with `lte_palm`
 
 ### 0.3.0 (December 16, 2014)
