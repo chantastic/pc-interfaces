@@ -1,6 +1,10 @@
 INTERFACES CHANGELOG
 --------------------
 
+### HOTFIX (January 18, 2015)
+
+* [UPDATE] Use pco-url for Helpdesk
+
 ### HOTFIX (January 15, 2015)
 
 * [BUGFIX] Lock `sass-rails` gem to `< 5` version
