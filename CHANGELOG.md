@@ -11,6 +11,10 @@ INTERFACES CHANGELOG
   + See [Transition guide for 0.3.0 -> 0.4.0](https://github.com/ministrycentered/interfaces/wiki/Transition:-0.3.0-to-0.4.0)
 * [BUGFIX] Use `replaceState()` for tab changes if available.
 
+### HOTFIX (January 18, 2015)
+
+* [UPDATE] Use pco-url for Helpdesk
+
 ### HOTFIX (January 15, 2015)
 
 * [BUGFIX] Lock `sass-rails` gem to `< 5` version
