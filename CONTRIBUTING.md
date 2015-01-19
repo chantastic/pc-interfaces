@@ -1,28 +1,55 @@
 CONTRIBUTING
 ------------
 
-Contributing to Interfaces is a bit different than contributing to an app.
-Your commit might get pulled into several active branches.  So it's important
-that each commit be well-formed.
+Committing to Interfaces is a bit different than committing to a PCO app.
+Features and fixes need to be isolated so we can control the way releases are
+managed.
 
-Interfaces is now being versioned.  The goal is to allow each app to keep on a
-"safe" version, while new features are being developed.
+Submitting a Feature
+====================
 
-Pull Requests
-=============
+* Create your feature-branch from
+  [develop](https://github.com/ministrycentered/interfaces/tree/develop).
+* Name your branch with the `feature/` prefix (e.g. `feature/add-form-helper`).
+* Add an entry to `CHANGELOG.md` with a short description of your change.
 
-Pull Requests will be expected to have the following qualities:
+When your feature is done, make a PR back into `develop`. It will get cut into
+the next release of Interfaces.
 
-* **Squashed** — No more than one commit per feature/fix/update.
-* **Descriptive** — Your commit message must be well-formed.  Follow [these guidelines](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines).
-* **Updates CHANGELOG** — If your feature/fix changes Interfaces, it must include an addition to the CHANGELOG. This helps others know how to update their apps.  See [Updating the CHANGELOG](-updating-the-changelog)
+Submitting a Fix
+================
+
+* Create your fix branch from
+  [master](https://github.com/ministrycentered/interfaces)
+* Name your branch with the `hotfix/` prefix (e.g. `hotfix/fix-button-margin`).
+* Add an entry to `CHANGELOG.md` with a short description of your change.
+
+When your fix is done, make a PR back into `master`.
+
+Additional Considerations
+=========================
+
+It is helpful when your feature/fix is squashed into a single commit. It makes
+cherry-picking your feature into older releases much faster and reliable.
+
+If your feature/fix does need to be cherry picked into older releases, please
+mention that in the PR.
+
+Extra Credit
+============
+
+Having a readable history is helpful in a project like this. Commits with these
+qualities are appreciated.
+
+* **Squashed** — Feature lives in a single commit.
+* **Descriptive** — Message is well-formed.  See [these guidelines](https://github.com/planningcenter/commit-guidelines).
 
 Updating the CHANGELOG
 ======================
 
-As you add features, add them to the top of the `CHANGELOG.md` file.  As we
-develop new versions of Interfaces, the CHANGELOG acts as an roadmap for
-upgrading applications.
+With each feature/fix, please add an entry to
+[CHANGELOG.md](https://github.com/ministrycentered/interfaces/blob/master/CHANGELOG.md).
+This provides critical information as we update applications.
 
 ### Prefix your message with one of the following:
 
@@ -31,7 +58,7 @@ upgrading applications.
 * [PERFORMANCE]
 * [DOC]
 
-Here are a couple examples:
+A couple examples:
 
 [BUGFIX] Ensure App-Switcher order is consistent
 [PERFORMANCE] Remove general purpose blur filter
