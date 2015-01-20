@@ -73,21 +73,21 @@ INTERFACES.dataAPI =
 
   _attachDocumentListeners: ->
     $(document)
-      .on('vclick', '[data-modal-id]',               @showTriggeredModal)
-      .on('vclick', '[data-modal-url]',              @createAndShowUrlModal)
-      .on('vclick', '[data-modal-close]',            @hideModalLayer)
-      .on('vclick', '[data-app-list="show"]',        @handleAppListShow)
-      .on('vclick', '[data-app-list="hide"]',        @handleAppListHide)
-      .on('vclick', '[data-app-list="toggle"]',      @handleAppListToggle)
-      .on('vclick', '[data-top-bar="toggle"]',       @handleTopBarToggle)
-      .on('vclick', '[data-account-info="toggle"]',  @handleAccountInfoToggle)
+      .on('click', '[data-modal-id]',               @showTriggeredModal)
+      .on('click', '[data-modal-url]',              @createAndShowUrlModal)
+      .on('click', '[data-modal-close]',            @hideModalLayer)
+      .on('click', '[data-app-list="show"]',        @handleAppListShow)
+      .on('click', '[data-app-list="hide"]',        @handleAppListHide)
+      .on('click', '[data-app-list="toggle"]',      @handleAppListToggle)
+      .on('click', '[data-top-bar="toggle"]',       @handleTopBarToggle)
+      .on('click', '[data-account-info="toggle"]',  @handleAccountInfoToggle)
 
     # DANGER: THIS IS PROTOTYPE-LEVEL CODE. DO NOT USE THIS IN PRODUCTION.
     # IT WILL BE ROMOVED WITH LITTLE WARNING
-    $(document).on('vclick', '[data-dropdown-toggle]', @toggleDropdown)
+    $(document).on('click', '[data-dropdown-toggle]', @toggleDropdown)
 
   _attachDocumentActionHandlers: ->
     $(document).on('tab:change', @handleTabChange)
 
   _attachDocumentActionTriggers: ->
-    $(document).on('vclick', '[data-tab-content-id]', @triggerTabChange)
+    $(document).on('click', '[data-tab-content-id]', @triggerTabChange)

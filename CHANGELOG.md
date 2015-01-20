@@ -3,6 +3,9 @@ INTERFACES CHANGELOG
 
 ### Unreleased Version
 
+* [BUGFIX] Remove jQuery Mobile touch events to support new iOS 8 'slow-tap' heuristics
+  + https://pco.slack.com/files/chantastic/F03C89CTT/What_to_do_about__tap_
+  + discussion: https://pco.slack.com/archives/web-dev/p1421337260000181
 * [BUGFIX] Use `::Person` in Engine helpers to fix ActiveSupport::Dependencies exception in Rails 4.2
 * [BREAKING CHANGE] Update Docs, remove related Gems
   + Add gems `slim-rails`, `mustache`, `kramdown`, `htmlentities` if your application requires them
