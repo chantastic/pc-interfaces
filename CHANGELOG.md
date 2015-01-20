@@ -1,6 +1,10 @@
 INTERFACES CHANGELOG
 --------------------
 
+### HOTFIX (January 20, 2015)
+
+* [UPDATE] Add Registrations to Helpdesk list
+
 ### HOTFIX (January 18, 2015)
 
 * [UPDATE] Use pco-url for Helpdesk
