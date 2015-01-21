@@ -56,7 +56,7 @@
                   <img
                    alt="Avatar"
                    height="24"
-                   src="#{Person.current.avatar_url}"
+                   src="<%= Person.current.avatar_url %>"
                    width="24" />
 
                 <% elsif Person.const_defined?('MISSING_AVATAR_PATH') %>
@@ -64,7 +64,7 @@
                   <img
                    alt="Avatar"
                    height="24"
-                   src="#{Person::MISSING_AVATAR_PATH}"
+                   src="<% Person::MISSING_AVATAR_PATH %>"
                    width="24" />
 
                 <% else %>

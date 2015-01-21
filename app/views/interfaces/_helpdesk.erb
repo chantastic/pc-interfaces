@@ -3,9 +3,9 @@
 <script type="text/javascript">
 <% if helpdesk_name %>
 
-  Helpdesk.appName = "#{helpdesk_name}";
-  Helpdesk.accountCenterUserId = "#{Person.current.try(:account_center_id) || Person.current.try(:id)}";
-  Helpdesk.accountCenterOrganizationId = "#{Organization.current.try(:account_center_id) || Organization.current.try(:id)}";
+  Helpdesk.appName = "<%= helpdesk_name %>";
+  Helpdesk.accountCenterUserId = "<%= Person.current.try(:account_center_id) || Person.current.try(:id) %>";
+  Helpdesk.accountCenterOrganizationId = "<%= Organization.current.try(:account_center_id) || Organization.current.try(:id) %>";
 
   $(document).on('click', '#jsLaunchHelpdesk', function() {
     Helpdesk.load()
