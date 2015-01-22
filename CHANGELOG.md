@@ -3,6 +3,7 @@ INTERFACES CHANGELOG
 
 ### Unreleased Version
 
+* [BUGFIX] Ensure that the current user's avatar in the navbar maintains it's aspect ratio
 * [BUGFIX] Remove jQuery Mobile touch events to support new iOS 8 'slow-tap' heuristics
   + https://pco.slack.com/files/chantastic/F03C89CTT/What_to_do_about__tap_
   + discussion: https://pco.slack.com/archives/web-dev/p1421337260000181

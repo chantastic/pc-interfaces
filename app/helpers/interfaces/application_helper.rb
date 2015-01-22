@@ -57,6 +57,14 @@ module Interfaces
       [current_app] + (available_apps_for_person - [current_app])
     end
 
+    def square_avatar(avatar_url)
+      if avatar_url.index('?')
+        avatar_url
+      else
+        "#{avatar_url}?g=100x100%23"
+      end
+    end
+
     private
 
     def current_app
