@@ -33,6 +33,12 @@
     border-radius: 3px;
 }
 
+.select:disabled {
+  color: #ccc;
+  border-color: #eee;
+  cursor: default;
+}
+
 /* Hacks */
 
 /* FF(all): remove dotted inner focus ring */
