@@ -1,6 +1,4 @@
-require 'compass-rails'
 require 'sass-rails'
-require 'slim-rails'
 require 'high_voltage'
 require 'pco/url'
 require 'interfaces/engine'

@@ -1,22 +1,16 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.2'
+gem 'rails', '4.2'
 gem 'sqlite3'
 
 #Gemspec dependencies
 gem 'jquery-rails'
 gem 'coffee-rails'
-gem 'compass-rails', '< 2'
 gem 'high_voltage'
-gem 'sass-rails', '< 5'
-gem 'slim-rails'
-gem 'kramdown'
-gem 'mustache'
-gem 'htmlentities'
-gem 'sprockets', '2.11.0' # https://github.com/sstephenson/sprockets/issues/540
+gem 'sass-rails'
+gem 'sprockets'
 gem 'es5-shim-rails'
 gem 'html5shiv-rails'
-gem 'selectivizr-rails'
 gem 'placeholder-gem'
 gem 'modernizr-rails'
 gem 'pco-url', '>= 1.2.0'

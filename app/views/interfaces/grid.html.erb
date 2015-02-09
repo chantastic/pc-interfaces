@@ -1,0 +1,282 @@
+<style>
+  /* page styles */
+  .col {
+    background: #fafafa;
+    border: 1px solid #eee;
+  }
+</style>
+
+<section class="doc-section">
+  <h1>Grid</h1>
+  <p>Tell things where to go. Make 'em stay there.</p>
+  <p>( background-color for demonstration only )</p>
+</section>
+
+<section class="doc-section">
+  <h1><pre>.row</pre></h1>
+
+  <%= code_sample do %>
+<div class="row">
+  ...
+</div>
+  <% end %>
+</section>
+
+<section class="doc-section">
+  <h1><pre>.col</pre></h1>
+
+  <%= code_sample do %>
+<div class="row">
+  <div class="col">
+    ...
+  </div>
+</div>
+  <% end %>
+</section>
+
+<section class="doc-section">
+  <h1><pre>.col--half</pre></h1>
+
+  <%= code_sample_static do %>
+<div class="col col--half">
+  ...
+</div>
+  <% end %>
+
+  <div class="row">
+    <div class="col col--half">
+      .col.col--half
+    </div>
+    <div class="col col--half">
+      .col.col--half
+    </div>
+  </div>
+</section>
+
+<section class="doc-section">
+  <h1><pre>.col--third / .col--two-thirds</pre></h1>
+
+  <%= code_sample_static do %>
+<div class="col col--third">
+  ...
+</div>
+
+<div class="col col--two-thirds">
+  ...
+</div>
+  <% end %>
+
+  <div class="row">
+    <div class="col col--third">
+      .col.col--third
+    </div>
+    <div class="col col--third">
+      .col.col--third
+    </div>
+    <div class="col col--third">
+      .col.col--third
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col col--third">
+      .col.col--third
+    </div>
+    <div class="col col--two-thirds">
+      .col.col--two-thirds
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col col--two-thirds">
+      .col.col--two-thirds
+    </div>
+    <div class="col col--third">
+      .col.col--third
+    </div>
+  </div>
+</section>
+
+<section class="doc-section">
+  <h1><pre>.col--quarter / .col--three-quarters</pre></h1>
+
+  <%= code_sample_static do %>
+<div class="col col--quarter">
+  ...
+</div>
+
+<div class="col col--three-quarters">
+  ...
+</div>
+  <% end %>
+
+  <div class="row">
+    <div class="col col--quarter">
+      .col.col--quarter
+    </div>
+    <div class="col col--quarter">
+      .col.col--quarter
+    </div>
+    <div class="col col--quarter">
+      .col.col--quarter
+    </div>
+    <div class="col col--quarter">
+      .col.col--quarter
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col col--quarter">
+      .col.col--quarter
+    </div>
+    <div class="col col--three-quarters">
+      .col.col--quarter
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col col--three-quarters">
+      .col.col--quarter
+    </div>
+    <div class="col col--quarter">
+      .col.col--quarter
+    </div>
+  </div>
+</section>
+
+<section class="doc-section">
+  <h1><pre>.col--fifth / .col--two-fifths / .col--three-fifths / .col--four-fifths</pre></h1>
+
+  <%= code_sample_static do %>
+<div class="col col--fifth">
+  ...
+</div>
+
+<div class="col col--two-fifths">
+  ...
+</div>
+
+<div class="col col--three-fifths">
+  ...
+</div>
+
+<div class="col col--four-fifths">
+  ...
+</div>
+  <% end %>
+
+  <div class="row">
+    <div class="col col--fifth">
+      .col.col--fifth
+    </div>
+    <div class="col col--fifth">
+      .col.col--fifth
+    </div>
+    <div class="col col--fifth">
+      .col.col--fifth
+    </div>
+    <div class="col col--fifth">
+      .col.col--fifth
+    </div>
+    <div class="col col--fifth">
+      .col.col--fifth
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col col--fifth">
+      .col.col--fifth
+    </div>
+    <div class="col col--four-fifths">
+      .col.col--four-fifths
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col col--four-fifths">
+      .col.col--four-fifths
+    </div>
+    <div class="col col--fifth">
+      .col.col--fifth
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col col--two-fifths">
+      .col.col--two-fifths
+    </div>
+    <div class="col col--three-fifths">
+      .col.col--three-fifths
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col col--three-fifths">
+      .col.col--three-fifths
+    </div>
+    <div class="col col--two-fifths">
+      .col.col--two-fifths
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col col--three-quarters">
+      .col.col--quarter
+    </div>
+    <div class="col col--quarter">
+      .col.col--quarter
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col col--fifth">
+      .col.col--fifth
+    </div>
+    <div class="col col--three-fifths">
+      .col.col--four-fifths
+    </div>
+    <div class="col col--fifth">
+      .col.col--fifth
+    </div>
+  </div>
+</section>
+
+<section class="doc-section">
+  <h2>Overrides</h2>
+  <div class="row">
+    <div class="col col--third" style="background: transparent; border: none">
+      <h3>@media (max-width: 37.5em)</h3>
+      <ul>
+        <li>palm--half</li>
+        <li>palm--third</li>
+        <li>palm--two-thirds</li>
+        <li>palm--quarter</li>
+        <li>palm--three-quarters</li>
+      </ul>
+    </div>
+    <div class="col col--third" style="background: transparent; border: none">
+      <h3>@media (min-width: 37.5em) and (max-width: 64em)</h3>
+      <ul>
+        <li>tab--half</li>
+        <li>tab--third</li>
+        <li>tab--two-thirds</li>
+        <li>tab--quarter</li>
+        <li>tab--three-quarters</li>
+        <li>tab--fifth</li>
+        <li>tab--two-fifths</li>
+        <li>tab--three-fifths</li>
+        <li>tab--four-fifths</li>
+      </ul>
+    </div>
+    <div class="col col--third" style="background: transparent; border: none">
+      <h3>@media (min-width: 64em)</h3>
+      <ul>
+        <li>desk--half</li>
+        <li>desk--third</li>
+        <li>desk--two-thirds</li>
+        <li>desk--quarter</li>
+        <li>desk--three-quarters</li>
+      </ul>
+    </div>
+  </div>
+</section>

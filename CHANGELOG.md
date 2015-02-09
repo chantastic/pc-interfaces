@@ -1,6 +1,20 @@
 INTERFACES CHANGELOG
 --------------------
 
+### 0.4.0 (February 9 2015)
+
+* [BUGFIX] Ensure that the current user's avatar in the navbar maintains it's aspect ratio
+* [BUGFIX] Remove jQuery Mobile touch events to support new iOS 8 'slow-tap' heuristics
+  + https://pco.slack.com/files/chantastic/F03C89CTT/What_to_do_about__tap_
+  + discussion: https://pco.slack.com/archives/web-dev/p1421337260000181
+* [BUGFIX] Use `::Person` in Engine helpers to fix ActiveSupport::Dependencies exception in Rails 4.2
+* [BREAKING CHANGE] Update Docs, remove related Gems
+  + Add gems `slim-rails`, `mustache`, `kramdown`, `htmlentities` if your application requires them
+* [BREAKING CHANGE] Remove compass-rails gem and remove usage across application
+  + Apps will require an update. Adding `compass-rails` to the application is not an option.
+  + See [Transition guide for 0.3.0 -> 0.4.0](https://github.com/ministrycentered/interfaces/wiki/Transition:-0.3.0-to-0.4.0)
+* [BUGFIX] Use `replaceState()` for tab changes if available.
+
 ### HOTFIX (January 20, 2015)
 
 * [UPDATE] Add Registrations to Helpdesk list

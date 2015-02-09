@@ -1,4 +1,3 @@
-@import "interfaces/vendor/shared_compass_dependencies"
 @import "interfaces/core/variables"
 @import "interfaces/core/utilities"
 
@@ -28,7 +27,8 @@ $button-border-style: solid
   @else
     // mixins
     +_pseudo-classes($color, $background-color, $border-color)
-    +background-with-css2-fallback(linear-gradient(top, adjust-color($background-color, $lightness: 3%), $background-color), adjust-color($background-color, $lightness: 3%))
+    background-color: adjust-color($background-color, $lightness: 3%)
+    background-image: linear-gradient(to bottom, adjust-color($background-color, $lightness: 3%), $background-color)
 
     // display
     border: $button-border-width $button-border-style $border-color
@@ -46,13 +46,13 @@ $button-border-style: solid
   &:hover,
   &:focus
     background-color: $border-color
-    +background-with-css2-fallback(linear-gradient(top, $background-color, adjust-color($background-color, $lightness: -3%)), $background-color)
+    background-image: linear-gradient(to bottom, $background-color, adjust-color($background-color, $lightness: 3%), $background-color)
     color: $color
 
   &:active
     // inverse of :hover
     background-color: $border-color
-    +background-with-css2-fallback(linear-gradient(bottom, adjust-color($background-color, $lightness: -4%), adjust-color($background-color, $lightness: -6%)), adjust-color($background-color, $lightness: -4%))
+    background-image: linear-gradient(to top, adjust-color($background-color, $lightness: -4%), adjust-color($background-color, $lightness: -6%), adjust-color($background-color, $lightness: -4%))
 
   // explicitely define disabled class prevent disabled:hover
   &[disabled]
@@ -93,7 +93,7 @@ $button-border-style: solid
   // mixins
   +button-variant($dark-gray)
   +font-size(14)
-  +border-radius(3px)
+  border-radius: 3px
 
   // positioning
   vertical-align: middle
@@ -183,7 +183,7 @@ $button-border-style: solid
       color: white
 
   &.btn--shadow
-    +box-shadow(0 3px 7px -3px rgba(0,0,0,0.7))
+    box-shadow: 0 3px 7px -3px rgba(0,0,0,0.7)
 
 
 // button group ===========================================
@@ -203,7 +203,7 @@ $button-border-style: solid
 
 
   .btn
-    +border-radius(0)
+    border-radius: 0
 
     float: left
 
@@ -212,12 +212,12 @@ $button-border-style: solid
 
   > .btn:first-child,
   > :first-child .btn
-    +border-radius(3px 0 0 3px)
+    border-radius: 3px 0 0 3px
 
   > .btn:last-child,
   > :last-child .btn
     // IE9+ only
-    +border-radius(0 3px 3px 0)
+    border-radius: 0 3px 3px 0
 
   &.half
     >
@@ -238,7 +238,7 @@ $button-border-style: solid
     margin: 0
 
   .btn
-    +border-radius(0)
+    border-radius: 0
     margin: -1px 0 0 0
     display: block
     text-align: left
@@ -246,11 +246,13 @@ $button-border-style: solid
     +font-size(13)
 
   > *:first-child .btn
-    +border-top-radius(3px)
+    border-top-right-radius: 3px
+    border-top-left-radius: 3px
     margin-top: 0
 
   > *:last-child .btn
-    +border-bottom-radius(3px)
+    border-bottom-right-radius: 3px
+    border-bottom-left-radius: 3px
 
 body .btn.btn--droptoggle
   padding: 0.5rem 1.8rem 0.6rem 1.8rem

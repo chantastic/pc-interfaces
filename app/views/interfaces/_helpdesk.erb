@@ -1,0 +1,20 @@
+<%= javascript_include_tag PCO::URL.helpdesk("embed.js") %>
+
+<script type="text/javascript">
+<% if helpdesk_name %>
+
+  Helpdesk.appName = "<%= helpdesk_name %>";
+  Helpdesk.accountCenterUserId = "<%= Person.current.try(:account_center_id) || Person.current.try(:id) %>";
+  Helpdesk.accountCenterOrganizationId = "<%= Organization.current.try(:account_center_id) || Organization.current.try(:id) %>";
+
+  $(document).on('click', '#jsLaunchHelpdesk', function() {
+    Helpdesk.load()
+    return false
+  });
+
+<% else %>
+
+  console.warn('The interfaces_helpdesk helper has not been implemented in this app. See `app/views/intefaces/_helpdesk.slim` in Interfaces');
+
+<% end %>
+</script>

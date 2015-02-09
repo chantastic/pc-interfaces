@@ -4,17 +4,8 @@ module Interfaces
       html = capture(&block)
 
       capture do
-        concat pass_through_node(html)
         concat code_sample_node_static(html)
-      end
-    end
-
-    def code_sample_toggle(&block)
-      html = capture(&block)
-
-      capture do
         concat pass_through_node(html)
-        concat code_sample_node(html)
       end
     end
 
@@ -26,23 +17,10 @@ module Interfaces
       end
     end
 
-    def code_sample_inline_static(&block)
-      html = capture(&block)
-
-      capture do
-        concat pass_through_node_inline(html)
-        concat code_sample_node_static(html)
-      end
-    end
-
     private
 
     def pass_through_node(markup)
       content_tag :div, markup, class: 'ui-example-wrapper'
-    end
-
-    def pass_through_node_inline(markup)
-      content_tag :span, markup
     end
 
     def code_sample_node(markup)

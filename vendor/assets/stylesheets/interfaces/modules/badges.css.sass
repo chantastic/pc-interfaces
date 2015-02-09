@@ -1,4 +1,3 @@
-@import "interfaces/vendor/shared_compass_dependencies"
 @import "interfaces/core/variables"
 @import "interfaces/core/utilities"
 
@@ -37,9 +36,9 @@ $badge-border-style: solid
 .badge
   // mixins
   +badge-variant(white, $base-color)
-  +border-radius(3px)
+  border-radius: 3px
   +font-size(13)
-  +transition(background-color 300ms ease-out)
+  transition: background-color 300ms ease-out
   +user-select(none)
 
   // position

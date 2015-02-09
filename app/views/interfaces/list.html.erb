@@ -1,0 +1,94 @@
+<style>
+  .list { border: 1px solid #dbdbdb; border-radius: 3px; }
+</style>
+
+<section class="doc-section">
+  <h1>List</h1>
+  <p>So many lists.</p>
+  <p>(lists are given borders here for demonstration purposes)
+</section>
+
+<section class="doc-section">
+  <h1><pre>.list / .list-item</pre></h1>
+
+  <%= code_sample do %>
+<div class="list">
+  <div class="list-item">First</div>
+  <div class="list-item">Second</div>
+  <div class="list-item">Third</div>
+</div>
+  <% end %>
+</section>
+
+<section class="doc-section">
+  <h1><pre>.list.list--actionable</pre></h1>
+
+  <%= code_sample do %>
+<div class="list list--actionable">
+  <div class="list-item">First</div>
+  <div class="list-item">Second</div>
+  <div class="list-item">Third</div>
+</div>
+  <% end %>
+</section>
+
+<section class="doc-section">
+  <h1><pre>.list-item.list-item--actionable</pre></h1>
+
+  <%= code_sample do %>
+<div class="list">
+  <div class="list-item list-item--actionable">First</div>
+  <div class="list-item">Second</div>
+  <div class="list-item list-item--actionable">Third</div>
+</div>
+  <% end %>
+</section>
+
+<section class="doc-section">
+  <h1><pre>.action-list / .action-list-item</pre></h1>
+
+  <%= code_sample_static do %>
+<ul class="list list--actionable">
+  <li class="list-item">
+    one
+    <ul class="action-list">
+      <li class="action-list-item">
+        <i class="interfaces interfaces-edit"></i>
+      </li>
+      <li class="action-list-item">
+        <i class="interfaces interfaces-delete"></i>
+      </li>
+    </ul>
+  </li>
+
+  ...
+
+</ul>
+  <% end %>
+
+  <ul class="list list--actionable">
+    <li class="list-item">
+      one
+      <ul class="action-list">
+        <li class="action-list-item">
+          <i class="interfaces interfaces-edit"></i>
+        </li>
+        <li class="action-list-item">
+          <i class="interfaces interfaces-delete"></i>
+        </li>
+      </ul>
+    </li>
+
+    <li class="list-item">
+      one
+      <ul class="action-list">
+        <li class="action-list-item">
+          Edit
+        </li>
+        <li class="action-list-item">
+          Delete
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
