@@ -50,7 +50,9 @@
         <div class="account-info righty">
           <span class="avatar">
             <% if Person.current.present? %>
-              <a.photo href="/people/<%= Person.current.id %>">
+              <a
+               class="photo"
+               href="/people/<%= Person.current.id %>">
                 <% if Person.current.avatar_url.present? %>
 
                   <img
