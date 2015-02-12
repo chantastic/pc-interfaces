@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [CHORE] Remove support for Person#subscribed_apps
 * [FEATURE] add barebones .hound.yml for dev style checking
 
 ### 0.4.0 (February 9 2015)
