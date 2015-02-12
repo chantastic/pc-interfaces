@@ -1,6 +1,8 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [FEATURE] add barebones .hound.yml for dev style checking
+
 ### 0.4.0 (February 9 2015)
 
 * [BUGFIX] Ensure that the current user's avatar in the navbar maintains it's aspect ratio
