@@ -76,9 +76,7 @@ module Interfaces
     end
 
     def available_apps_for_person
-      if ::Person.current.respond_to? :subscribed_apps
-        ::Person.current.subscribed_apps.sort.map { |app| app.respond_to?(:name) ? app.name : app }
-      elsif ::Person.current.respond_to? :visible_apps
+      if ::Person.current.respond_to? :visible_apps
         ::Person.current.visible_apps.sort.map { |app| app.respond_to?(:name) ? app.name : app }
       elsif ::Person.current.respond_to? :applications
         ::Person.current.applications.sort.select { |app, values| values["allow_pco_login"] != false }.map(&:first)
