@@ -22,11 +22,24 @@
 </section>
 
 <section class="doc-section">
+  <h1><pre>.radio / .radio-label</pre></h1>
+
+  <%= code_sample do %>
+<input class="radio" id="kinda-happy" name="happy-radio-group" type="radio" />
+<label class="radio-label" for="kinda-happy">Kinda Happy</label>
+<input class="radio" id="wicked-happy" name="happy-radio-group" type="radio" />
+<label class="radio-label" for="wicked-happy">Wicked Happy</label>
+<input class="radio" id="pharrell-happy" name="happy-radio-group" type="radio" />
+<label class="radio-label" for="pharrell-happy">Pharrell Williams</label>
+  <% end %>
+</section>
+
+<section class="doc-section">
   <h1><pre>.select</pre></h1>
 
   <%= code_sample do %>
 <select class="select" name="my_select">
-  <option value="value1">Value 1</option> 
+  <option value="value1">Value 1</option>
   <option value="value2" selected>Value 2</option>
   <option value="value3">Value 3</option>
 </select>
