@@ -1,6 +1,8 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [FEATURE] modal-path url hash api
+
 ### 0.4.1 (February 12 2015)
 
 * [CHORE] Remove support for Person#subscribed_apps
