@@ -1,4 +1,6 @@
-$ ->
+pageEvent = if Turbolinks?.supported then "page:change" else "ready"
+
+$(document).on pageEvent, ->
   if not INTERFACES
     console.warn """
                  PCO Interfaces Warning:
