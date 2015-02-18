@@ -1,11 +1,12 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [FEATURE] change app icons for app switcher
+* [FEATURE] Add custom radio buttons
 * [FEATURE] modal-path url hash api
 
 ### 0.4.1 (February 12 2015)
 
-* [FEATURE] Add custom radio buttons
 * [CHORE] Remove support for Person#subscribed_apps
 * [FEATURE] add barebones .hound.yml for dev style checking
 
