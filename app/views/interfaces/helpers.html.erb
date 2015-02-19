@@ -1,0 +1,25 @@
+<section class="doc-section">
+  <h1>helpers</h1>
+  <p>Easy ways to do stuff you might want to do.</p>
+</section>
+
+<section class="doc-section">
+  <h2>Form</h2>
+
+  <pre>focusFirstInput([scope])</pre>
+
+  <p>Brings focus to the first non-date input in the provided scope. If no
+     scope-selector is provided, 'body' is used.</p>
+
+  <div>
+    <pre>
+    <code class="language-javascript">
+// focuses first input on page
+INTERFACES.helpers.form.focusFirstInput();
+
+// focuses first input in provided scope
+// any jQuery selector can be used
+INTERFACES.helpers.form.focusFirstInput('#myForm');
+</code></pre>
+  </div>
+</section>

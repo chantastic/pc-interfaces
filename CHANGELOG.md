@@ -1,6 +1,10 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BREAKING CHANGE] remove `INTERFACES.modalLayer._focusFirstInput()`
+  + autematic calling of this function is also removed from the modl APIs
+  + transition by calling `INTERFACES.helpers.form.focusFirstInput('.modal-layer')` in modal initialization for identical functionality
+* [FEATUER] Add `INTERFACES.helpers.form.focusFirstInput()`
 * [DOC] update CONTRIBUTING.md to be more flexible
 * [FEATURE] change app icons for app switcher
 * [FEATURE] Add custom radio buttons
