@@ -1,66 +1,62 @@
 CONTRIBUTING
 ------------
 
-Committing to Interfaces is a bit different than committing to a PCO app.
-Features and fixes need to be isolated so we can control the way releases are
-managed.
+Committing to Interfaces different that committing to the apps.
 
-Submitting a Feature
-====================
+Here's the cheat-sheet:
 
-* Create your feature-branch from
-  [develop](https://github.com/ministrycentered/interfaces/tree/develop).
-* Name your branch with the `feature/` prefix (e.g. `feature/add-form-helper`).
-* Add an entry to `CHANGELOG.md` with a short description of your change.
+1. create a branch off `develop`: `feature/my-feature`
+2. do your thing
+3. update [CHANGELOG.md](https://github.com/ministrycentered/interfaces/blob/master/CHANGELOG.md).
+4. PR your feature branch into `develop`
 
-When your feature is done, make a PR back into `develop`. It will get cut into
-the next release of Interfaces.
+You're done! Have some coffee.
 
-Submitting a Fix
-================
+What happens next?
+==================
 
-* Create your fix branch from
-  [master](https://github.com/ministrycentered/interfaces)
-* Name your branch with the `hotfix/` prefix (e.g. `hotfix/fix-button-margin`).
-* Add an entry to `CHANGELOG.md` with a short description of your change.
+I'll review it and merge it into `develop`.
 
-When your fix is done, make a PR back into `master`.
+When will my feature be available?
+==================================
 
-Additional Considerations
-=========================
+Once merged into `develop`, you can update the App you're working on to bundle
+in the `develop` branch.
 
-It is helpful when your feature/fix is squashed into a single commit. It makes
-cherry-picking your feature into older releases much faster and reliable.
+You`ll need to walk through the CHANGELOG for every item between the current
+version of Interfaces and the tip of `develop`.
 
-If your feature/fix does need to be cherry picked into older releases, please
-mention that in the PR.
+**caveat**: Working off of develop can be dangerous. The features there have not
+been tested in production yet. Work cautiously.
 
-Extra Credit
-============
+How could I use this new feature right away?
+============================================
 
-Having a readable history is helpful in a project like this. Commits with these
-qualities are appreciated.
+You can use your feature-branch right away in the App you are working on. The
+same caveat applies as using the `develop` branch.
 
-* **Squashed** — Feature lives in a single commit.
-* **Descriptive** — Message is well-formed.  See [these guidelines](https://github.com/planningcenter/commit-guidelines).
+I'll keep feature branches around until all apps are updated to the next
+Interfaces release.
 
-Updating the CHANGELOG
-======================
+Why are you fiddling with my commits?
+=====================================
 
-With each feature/fix, please add an entry to
-[CHANGELOG.md](https://github.com/ministrycentered/interfaces/blob/master/CHANGELOG.md).
-This provides critical information as we update applications.
+To keep contributing simple, I may massage some elements of your commit for
+uniformity and transportabliity of your feature:
 
-### Prefix your message with one of the following:
+* squash your commits into a single commit
+* update the CHANGELOG entry with a more appropriate type
+* update the commit message, for history consistency.
 
-* [BUGFIX]
-* [FEATURE <scope>]
-* [PERFORMANCE]
-* [DOC]
+The CHANGELOG and git history are super important for teams using Interfaces.
+Instead of requiring you to adhere to a strict standard, I'll just make small
+tweaks as neccessary.
 
-A couple examples:
+**This does not mean that you did anything wrong. It's just to help those that
+use your feature.**
 
-[BUGFIX] Ensure App-Switcher order is consistent
-[PERFORMANCE] Remove general purpose blur filter
-[FEATURE modals] Add API for loading server-rendered modals
-[FEATURE app-switcher] Dismiss with outside click
+How can I learn more about the process used to manage Interfaces?
+=================================================================
+
+I'll do my best to detail Interfaces process and reasoning on the
+[Interfaces Wiki](https://github.com/ministrycentered/interfaces/wiki)

@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [DOC] update CONTRIBUTING.md to be more flexible
 * [FEATURE] change app icons for app switcher
 * [FEATURE] Add custom radio buttons
 * [FEATURE] modal-path url hash api
