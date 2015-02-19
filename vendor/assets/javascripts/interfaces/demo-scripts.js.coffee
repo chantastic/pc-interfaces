@@ -1,9 +1,6 @@
 # Place all the behaviors and hooks related to site-wide utilities and helpers here
 
 $ =>
-
-  INTERFACES.formInit()
-
   ########### ACCORDIONS
   $(document).on "click", ".acc__trigger", (event) ->
 

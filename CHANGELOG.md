@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [CHORE] remove `INTERFACES.formInit()` calls
 * [BREAKING CHANGE] remove `INTERFACES.modalLayer._focusFirstInput()`
   + autematic calling of this function is also removed from the modl APIs
   + transition by calling `INTERFACES.helpers.form.focusFirstInput('.modal-layer')` in modal initialization for identical functionality
