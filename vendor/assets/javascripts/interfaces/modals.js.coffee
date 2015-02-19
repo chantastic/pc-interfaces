@@ -5,7 +5,6 @@ INTERFACES.modalLayer =
     @_domCreate()
     @_domShow()
     @_setupHideListeners()
-    @_focusFirstInput()
 
   hide: ->
     @_domHide()
@@ -22,8 +21,6 @@ INTERFACES.modalLayer =
     @show()
 
     $('.modal-layer').empty().append(modal)
-
-    @_focusFirstInput()
 
   # use for flickr-free transitions from modal to modal
   pushAndEmptyModal: (modal) ->
@@ -81,13 +78,6 @@ INTERFACES.modalLayer =
     INTERFACES.modalLayer._hideModalOnEscape(e) if escape
 
     false
-
-  _focusFirstInput: ->
-    $('.modal-layer')
-      .find(':input:enabled:visible:first')
-      .not('.date')
-      .first()
-      .focus()
 
   _blurNode: (target) ->
     $(target).blur()
