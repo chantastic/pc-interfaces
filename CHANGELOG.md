@@ -4,6 +4,7 @@ INTERFACES CHANGELOG
 * [FEATURE] change app icons for app switcher
 * [FEATURE] Add custom radio buttons
 * [FEATURE] modal-path url hash api
+* [CHORE] Move Helpdesk embed.js into Interfaces JS bundle
 
 ### 0.4.1 (February 12 2015)
 
@@ -147,4 +148,3 @@ https://github.com/ministrycentered/interfaces/blob/f7540256d65b3e4d7f7bf94954ea
 ### 0.0.2 (June 9, 2014)
 
 * First shared release between Accounts and Check-ins
-
