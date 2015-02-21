@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BUGFIX] update `helpers.form.focusFirstInput` to target first non-date, not fail if first is date
 * [CHORE] remove `INTERFACES.formInit()` calls
 * [BREAKING CHANGE] remove `INTERFACES.modalLayer._focusFirstInput()`
   + autematic calling of this function is also removed from the modl APIs
