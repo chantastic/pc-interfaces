@@ -10,15 +10,27 @@
     <p>
       [Vizzini stops suddenly...]
     </p>
+    <input type="date" />
     <select class="select">
       <option value="capicola"> Capicola </option>
       <option value="proscuitto"> Prosciutto </option>
       <option value="kielbasa"> Kielbasa </option>
       <option value="salami"> Salami </option>
     </select>
+    <select class="select">
+      <option value="capicola"> Capicola </option>
+      <option value="proscuitto"> Prosciutto </option>
+      <option value="kielbasa"> Kielbasa </option>
+      <option value="salami"> Salami </option>
+    </select>
+    <input type="text" />
   </div>
 
   <div class="modal__footer">
     <button type="button" class="btn btn--outline" data-modal-close=""> Walk Away </button>
   </div>
+
+  <script>
+    INTERFACES.helpers.form.focusFirstInput('.modal-layer');
+  </script>
 </div>
