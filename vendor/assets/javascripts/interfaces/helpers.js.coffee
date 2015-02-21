@@ -4,8 +4,6 @@ INTERFACES.helpers =
   form:
     focusFirstInput: (scope = 'body') ->
       $(scope)
-        .find(':input:enabled:visible:first')
-        .not('.date')
-        .first()
+        .find(':input:enabled:visible:not([type=date]):first')
         .focus()
 
