@@ -16,6 +16,23 @@ INTERFACES.hashAPI =
     if @_hashIsTab()
       return @_showTab()
 
+    # DUP: data_api.js.coffee
+    # make better abstraction
+    if @_hashIsModalPath()
+      _req = $.get(@_getModalPath())
+
+      modal = new INTERFACES.ModalView().show()
+
+      _req.fail (err) ->
+        INTERFACES.modalLayer.hide()
+        $(document).trigger('modal:error', [err])
+
+      _req.done (res) ->
+        modal = new INTERFACES.ModalUrlView(res)
+        modal.show()
+
+      return
+
     if @_hashIsModal()
       return @_showModal()
 
@@ -25,6 +42,9 @@ INTERFACES.hashAPI =
   _hashIsModal: ->
     $('#' + @_getModalHashSelector()).length
 
+  _hashIsModalPath: ->
+    @_getHashValue().match /^modal-path\=/
+
   _hashIsTab: ->
     @_getHashValue().match /^tab\=/
 
@@ -32,6 +52,9 @@ INTERFACES.hashAPI =
     window.location.hash.slice(1)
 
   _getTabId: ->
+    @_getHashValue().split('=')[1]
+
+  _getModalPath: ->
     @_getHashValue().split('=')[1]
 
   _showTab: ->

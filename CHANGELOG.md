@@ -1,6 +1,22 @@
 INTERFACES CHANGELOG
 --------------------
 
+### 0.5.0 (February 23 2015)
+
+* [BUGFIX] add padding to right of selects for auto-width
+* [BREAKING CHANGE] update `helpers.form.focusFirstInput` to target first non-date, not fail if first is date
+  + You will now need to call this helper after `modal:load` in your application
+* [CHORE] remove `INTERFACES.formInit()` calls
+* [BREAKING CHANGE] remove `INTERFACES.modalLayer._focusFirstInput()`
+  + automatic calling of this function is also removed from the modal APIs
+  + transition by calling `INTERFACES.helpers.form.focusFirstInput('.modal-layer')` in modal initialization for identical functionality
+* [FEATURE] Add `INTERFACES.helpers.form.focusFirstInput()`
+* [DOC] update CONTRIBUTING.md to be more flexible
+* [FEATURE] change app icons for app switcher
+* [FEATURE] Add custom radio buttons
+* [FEATURE] modal-path url hash api
+* [CHORE] Move Helpdesk embed.js into Interfaces JS bundle
+
 ### 0.4.1 (February 12 2015)
 
 * [CHORE] Remove support for Person#subscribed_apps
@@ -143,4 +159,3 @@ https://github.com/ministrycentered/interfaces/blob/f7540256d65b3e4d7f7bf94954ea
 ### 0.0.2 (June 9, 2014)
 
 * First shared release between Accounts and Check-ins
-
