@@ -10,7 +10,12 @@ window.INTERFACES ?= {}
 
 INTERFACES.hashAPI =
   init: ->
+    if INTERFACES.hashAPI.isInitialized
+      return
+
     @activateHashContent()
+
+    INTERFACES.hashAPI.isInitialized = true
 
   activateHashContent: ->
     if @_hashIsTab()

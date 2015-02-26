@@ -2,9 +2,14 @@ window.INTERFACES ?= {}
 
 INTERFACES.dataAPI =
   init: ->
+    if INTERFACES.dataAPI.isInitialized
+      return
+
     @_attachDocumentListeners()
     @_attachDocumentActionHandlers()
     @_attachDocumentActionTriggers()
+
+    INTERFACES.dataAPI.isInitialized = true
 
   showTriggeredModal: ->
     _id = @.getAttribute('data-modal-id')
