@@ -1,6 +1,8 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BUGFIX] add initialization flags to data and hash APIs to prevent re-initialization
+
 ### 0.5.0 (February 23 2015)
 
 * [BUGFIX] add padding to right of selects for auto-width
