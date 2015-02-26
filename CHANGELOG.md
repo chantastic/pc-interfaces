@@ -1,6 +1,8 @@
 INTERFACES CHANGELOG
 --------------------
 
+### 0.5.1 (February 25 2015)
+
 * [BUGFIX] add initialization flags to data and hash APIs to prevent re-initialization
 
 ### 0.5.0 (February 23 2015)
