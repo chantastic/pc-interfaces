@@ -82,7 +82,8 @@
     .pane__footer
       border-bottom-right-radius: $default-pane-header-radius
   .pane__footer
-    border-bottom-radius: 0
+    border-bottom-right-radius: 0
+    border-bottom-left-radius: 0
 
 
 .pane__header, .pane__footer, .pane__body
@@ -101,7 +102,8 @@
   // when you have multiple headers in a pane, remove the rounded top corners
   &:not(:first-child)
     border-top: solid 1px adjust-color($pane-header-bg-bottom, $lightness: -7%)
-    border-top-radius: 0
+    border-top-right-radius: 0
+    border-top-left-radius: 0
 
   .btn, input
     margin-bottom: 0
@@ -115,7 +117,8 @@
 
 .pane__footer
   padding: .75rem 1.25rem .9rem
-  border-bottom-radius: $default-pane-radius
+  border-bottom-right-radius: $default-pane-radius
+  border-bottom-left-radius: $default-pane-radius
   background-color: adjust-color($lighter-gray, $lightness: 7%)
   background-image: linear-gradient(to bottom, adjust-color($lighter-gray, $lightness: 7%), adjust-color($lighter-gray, $lightness: 5%))
   border-top: solid 1px adjust-color($lighter-gray, $lightness: -1%)

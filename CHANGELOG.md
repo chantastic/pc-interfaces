@@ -1,6 +1,8 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BUGFIX] fix remaining 'border-bottom/top-radius' shorthand
+
 ### 0.5.1 (February 25 2015)
 
 * [BUGFIX] add initialization flags to data and hash APIs to prevent re-initialization
