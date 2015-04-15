@@ -1,0 +1,25 @@
+.account-switcher {}
+
+.account-switcher-organization-list {
+  position: absolute;
+    top: calc(100% + 14px);
+    right: 0;
+  visibility: hidden;
+  background-color: rgba(0,0,0,.7);
+}
+
+.is-expanded .account-switcher-organization-list {
+  visibility: visible;
+}
+
+.account-switcher-organization-item {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.account-switcher-organization-item > a {
+  padding: 10px 20px !important;
+}
+
+.account-switcher-organization-item:hover {
+  background-color: rgba(0,0,0,.5);
+}

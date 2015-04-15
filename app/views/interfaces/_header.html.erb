@@ -131,6 +131,43 @@
                 </a>
               </li>
 
+              <% if current_person.staff? %>
+
+                <% current_person_orgs = current_person.connected_people.collect{ |person| person if !person.organization.canceled? } %>
+
+                <% if current_person_orgs.length > 0 %>
+                  <li class="account-switcher">
+                    <a onclick="console.log(
+                        $(this).closest('.account-switcher').toggleClass('is-expanded')
+                      );">
+                      <span class="interfaces-enclosed-caret"></span>
+                      accounts
+                    </a>
+
+                    <% current_person_orgs.each do |person| %>
+                      <ul class="account-switcher-organization-list">
+                        <li class="account-switcher-organization-item">
+                          <a href="<%= AppConfig.account_center %>/link/new?to=<%= person.account_center_id %>">
+                            <%= person.organization.name %>
+                          </a>
+                        </li>
+                        <li class="account-switcher-organization-item">
+                          <a href="<%= AppConfig.account_center %>/link/new?to=<%= person.account_center_id %>">
+                            <%= person.organization.name %>
+                          </a>
+                        </li>
+                        <li class="account-switcher-organization-item">
+                          <a href="<%= AppConfig.account_center %>/link/new?to=<%= person.account_center_id %>">
+                            <%= person.organization.name %>
+                          </a>
+                        </li>
+                      </ul>
+                    <% end %>
+
+                  </li>
+                <% end %>
+              <% end %>
+
               <li>
                 <a class="log" href="<%= PCO::URL.accounts "logout" %>">
                   <span class="interfaces-logout"></span>
