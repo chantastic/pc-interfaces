@@ -1,0 +1,20 @@
+.user-badge_avatar {
+  /* ^1: code will eventually go here */
+}
+
+/* ^1: temp */
+.user-badge .avatar img {
+  float: left;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px solid #666;
+}
+
+.user-badge .avatar {
+  line-height: 100%;
+}
+
+
+@media (min-width: 980px) {
+  .user-badge .avatar { margin-right: 10px }
+}

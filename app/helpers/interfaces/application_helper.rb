@@ -65,6 +65,17 @@ module Interfaces
       end
     end
 
+    def account_switcher_supported?
+      app_name == 'account-center'
+    end
+
+    def connected_people
+      current_person.connected_people
+        .collect{ |person| person if !person.organization.canceled? }
+        .sort_by{ |person| person.organization.name }
+        .unshift(Person.current)
+    end
+
     private
 
     def current_app

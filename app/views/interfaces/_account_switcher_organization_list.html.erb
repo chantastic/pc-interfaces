@@ -1,0 +1,62 @@
+<% connected_people.each do |person| %>
+  <% if Person.current.organization.name == person.organization.name %>
+
+    <div class="account-switcher-organization-item" style="line-height: 9px; padding-left: 12px">
+      <span
+        class="account-switcher-item_link-name"
+        style="color: #565656;
+
+              height:28px !important;
+              font-weight: bolder;
+
+              width: calc(100% - 75px);
+              display: inline-block;
+              height: 100%;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              padding: 0;
+              margin: 0;
+              line-height: 44px;">
+        <%= person.name %>
+      </span>
+
+      <a
+        href="<%= PCO::URL.accounts "link", "new" %>?to=<%= person.account_center_id %>&return=Accounts%2f"
+        class="account-switcher-item_link"
+        style="color: #565656;
+              width: calc(100% - 75px);
+              display: inline-block;
+              height: 100%;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              padding: 0;
+              margin: 0;
+              line-height: 44px;">
+        <%= person.organization.name %>
+      </a>
+
+      <a
+        class="account-switcher_logout_link"
+        href="<%= PCO::URL.accounts "logout" %>">logout</a>
+    </div>
+
+  <% else %>
+
+    <div class="account-switcher-organization-item">
+      <%# WARNING: hardcoded app-name, while accounts-only feature %>
+      <a
+        class="account-switcher-organization-item_link"
+        href="<%= PCO::URL.accounts "link", "new" %>?to=<%= person.account_center_id %>&return=Accounts%2f"
+        style="height: 100%;
+                width: 100%;
+                display: block;
+                line-height: 100%;">
+        <%= person.organization.name %>
+        <i class="interfaces interfaces-switch" style="float: right"></i>
+      </a>
+    </div>
+
+  <% end %>
+<% end %>

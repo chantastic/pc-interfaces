@@ -1,0 +1,28 @@
+<div
+ class="user-badge_container"
+ onclick="$('body').toggleClass('i-account-switcher-is-expanded');">
+  <div class="user-badge">
+    <% if Person.current.present? %>
+      <div class="user-badge_avatar-container">
+        <%= render "interfaces/header_avatar" %>
+
+        <div class="user-badge_user-name user-name name"><%= Person.current.name %></div>
+        <div class="user-badge_organization-name organization-name name"><%= Organization.current.name %></div>
+      </div>
+
+      <div
+      class="user-badge_trigger"
+      style="
+        float:left;
+        height: 100%;
+        padding: 0 20px;
+        font-size: 11px">
+        <i class="interfaces interfaces-caret-down-outline"></i>
+      </div>
+    <% end %>
+
+    <% if connected_people.length > 0 %>
+      <%= render "interfaces/account_switcher" %>
+    <% end %>
+  </div>
+</div>
