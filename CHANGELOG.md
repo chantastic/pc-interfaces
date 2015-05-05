@@ -1,6 +1,9 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [FEATURE] add autoprefixer-rails gem
+* [BUGFIX] rename .css.sass files to .sass
+* [BUGFIX] move interfaces assets from /vendor to /assets
 * [BUGFIX] fix remaining 'border-bottom/top-radius' shorthand
 
 ### 0.5.1 (February 25 2015)
