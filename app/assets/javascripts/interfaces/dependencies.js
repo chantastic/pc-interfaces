@@ -1,2 +1,2 @@
-//= require interfaces/vendor/device
+//= require device
 //= require interfaces/helpdesk-embed
