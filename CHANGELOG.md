@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BUGFIX] fix minor code errors in modals.sass
 * [FEATURE] add autoprefixer-rails gem
 * [BUGFIX] rename .css.sass files to .sass
 * [BUGFIX] move interfaces assets from /vendor to /assets
