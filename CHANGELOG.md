@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BUGFIX] remove all sub-pixel rem definitions: .55rem -> .6rem
 * [BUGFIX] fix minor code errors in modals.sass
 * [FEATURE] add autoprefixer-rails gem
 * [BUGFIX] rename .css.sass files to .sass
