@@ -1,4 +1,4 @@
-//= require interfaces/vendor/modernizr
+//= require modernizr
 //= require es5-shim/es5-shim
 //= require html5shiv
 //= require html5shiv-printshiv

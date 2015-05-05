@@ -1,4 +1,4 @@
-//= require interfaces/vendor/prism
+//= require prism
 //= require interfaces/demo-scripts
 
 // initialize Prism for Turbolinks
