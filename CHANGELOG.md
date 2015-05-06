@@ -1,6 +1,10 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [FEATURE] add /engine/version route for `pco interfaces` CLI
+  * Interfaces now constrains the routes based on environment.
+  * Update apps to mount the engine without constraint.
+  * All apps should now mount `/interfaces` instead of `/styleguide`
 * [BUGFIX] remove all sub-pixel rem definitions: .55rem -> .6rem
 * [BUGFIX] fix minor code errors in modals.sass
 * [FEATURE] add autoprefixer-rails gem

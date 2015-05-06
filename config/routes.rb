@@ -1,7 +1,16 @@
 Interfaces::Engine.routes.draw do
-  get 'sample_modal' => 'static_pages#sample_modal'
+  get "version" => "static_pages#version"
 
-  get '*id' => 'pages#show'
+  get \
+    "sample_modal" => "static_pages#sample_modal",
+    constraints: ->(_) { Rails.env.development? }
 
-  root to: 'pages#show', id: 'css'
+  get \
+    "*id" => "pages#show",
+    constraints: ->(_) { Rails.env.development? }
+
+  root \
+    to: "pages#show",
+    id: "css",
+    constraints: ->(_) { Rails.env.development? }
 end
