@@ -5,6 +5,7 @@ require "es5-shim-rails"
 require "html5shiv-rails"
 require "placeholder-gem"
 require "autoprefixer-rails"
+require "react-rails"
 
 module Interfaces
   class Engine < ::Rails::Engine
