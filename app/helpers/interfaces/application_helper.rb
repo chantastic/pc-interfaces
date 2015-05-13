@@ -66,7 +66,7 @@ module Interfaces
     end
 
     def account_switcher_supported?
-      app_name == 'account-center'
+      current_app == 'Accounts' || current_app == 'Check-Ins'
     end
 
     def connected_people
