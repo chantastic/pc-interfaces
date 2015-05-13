@@ -7,7 +7,7 @@
 
     fetchConnectedPeople() {
       var fetchConnectedPeople = $.ajax({
-        url: `${interfacesURLForEnv('development', 'api')}/people/v2/me/connected_people`,
+        url: `${interfacesURLForEnv(this.props.railsEnv, 'api')}/people/v2/me/connected_people`,
         xhrFields: { withCredentials: true }
       });
 
