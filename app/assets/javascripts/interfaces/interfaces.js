@@ -3,6 +3,7 @@
 //= require interfaces/interfaces.tabs
 //= require interfaces/interfaces.dropdowns
 //= require interfaces/interfaces.data_api
+//= require interfaces/interfaces.custom_events
 //= require interfaces/helpers
 //= require interfaces/utils
 //= require interfaces/interfacesURLForEnv
