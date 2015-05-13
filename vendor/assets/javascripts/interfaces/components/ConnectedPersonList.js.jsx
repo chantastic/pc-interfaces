@@ -5,12 +5,18 @@
       this.renderItem = this.renderItem.bind(this);
     }
 
-    renderItem(connectedPerson) {
-      if (parseInt(connectedPerson.id, 10) !== this.props.currentPersonId) {
+    renderItem(person) {
+      if (parseInt(person.id, 10) !== this.props.currentPersonId) {
         return (
           <ConnectedPersonListItem
-            key={connectedPerson.id}
-            connectedPerson={connectedPerson} />
+            key={person.id}
+            person={person} />
+        );
+      } else {
+        return (
+          <CurrentConnectedPersonListItem
+            key={person.id}
+            person={person} />
         );
       }
     }
@@ -25,7 +31,11 @@
   }
 
   ConnectedPersonList.propTypes = {
-    connectedPeople: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+    connectedPeople: React.PropTypes.arrayOf(
+      React.PropTypes.shape({
+        id: React.PropTypes.string.isRequired
+      })
+    ).isRequired,
     currentPersonId: React.PropTypes.number.isRequired
   };
 
