@@ -70,7 +70,7 @@ module Interfaces
     end
 
     def connected_people
-      current_person.connected_people
+      Person.current.connected_people
         .select{ |person| !person.organization.canceled? }
         .sort_by{ |person| person.organization.name }
         .unshift(Person.current)

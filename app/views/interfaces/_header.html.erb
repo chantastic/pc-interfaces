@@ -50,9 +50,9 @@
             <div class="top-bar-quarantine" style="clear: both; border-top: 1px solid #222">
               <div
                style="text-align: left; color: white; padding-left: 20px">
-                <%= current_person %> <%= current_organization %>
+                <%= Person.current %> <%= Organization.current %>
               </div>
-              <% if current_person.try(:staff?) %>
+              <% if Person.current.try(:staff?) %>
                 <a
                   style="text-align: left; color: white; padding-left: 20px; border-top: 1px solid #222"
                   href="<%= PCO::URL.accounts "administration" %>">admin</a>
