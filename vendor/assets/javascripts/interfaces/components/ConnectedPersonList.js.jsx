@@ -5,26 +5,34 @@
       this.renderItem = this.renderItem.bind(this);
     }
 
+    get styles() {
+      return {
+        backgroundColor: "white",
+        color: "#565656"
+      };
+    }
+
+    get filteredAndSortedConnectedPeople() {
+      // TODO: add lodash for apps without it
+      return  _.chain(this.props.connectedPeople)
+        .reject((person) => parseInt(person.id, 10) === this.props.currentPersonId)
+        .sortBy('organization_name')
+        .value();
+    }
+
     renderItem(person) {
-      if (parseInt(person.id, 10) !== this.props.currentPersonId) {
-        return (
-          <ConnectedPersonListItem
-            key={person.id}
-            person={person} />
-        );
-      } else {
-        return (
-          <CurrentConnectedPersonListItem
-            key={person.id}
-            person={person} />
-        );
-      }
+      return (
+        <ConnectedPersonListItem
+          key={person.id}
+          person={person} />
+      );
     }
 
     render() {
       return (
-        <div style={this.props.style}>
-          {this.props.connectedPeople.map(this.renderItem)}
+        <div style={this.styles}>
+          {this.props.children}
+          {this.filteredAndSortedConnectedPeople.map(this.renderItem)}
         </div>
       );
     }

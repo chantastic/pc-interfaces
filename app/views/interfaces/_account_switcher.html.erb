@@ -2,19 +2,13 @@
   class="account-switcher_container"
   onclick="$(this).closest('.user-badge').toggleClass('is-expanded')">
   <div class="account-switcher">
-    <%= react_component "ConnectedPersonListContainer",
+    <%= react_component "ConnectedPersonMenuContainer",
                         {
                           currentPersonId: Person.current.account_center_id,
+                          currentPersonName: Person.current.name,
+                          currentPersonOrganizationName: Person.current.organization.name,
                           railsAppName: current_app,
                           railsEnv: Rails.env
                         } %>
-    <% if connected_people.length > 1 %>
-      <a
-      class="account-switcher_unlink_link"
-      href="<%= PCO::URL.accounts "unlink" %>">
-        Unlink Accounts
-        <i class="intrefaces interfaces-unlink"></i>
-      </a>
-    <% end %>
   </div>
 </div>
