@@ -22,7 +22,8 @@
 .user-badge {
   float: right;
 
-  padding-left: 12px;
+  padding-left: 15px;
+  border-left: 1px solid #384858;
 
   cursor: pointer;
 
