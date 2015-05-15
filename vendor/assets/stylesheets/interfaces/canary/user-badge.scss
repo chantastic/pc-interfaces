@@ -112,7 +112,7 @@ body:not(.i-account-switcher-is-expanded) .user-badge .user-badge_trigger:hover 
 }
 
 .i-account-switcher-is-expanded .user-badge_trigger {
-  color: #4e7ba8;
+  color: $base-color;
   -webkit-transform: scaleY(-1);
           transform: scaleY(-1);
 }
