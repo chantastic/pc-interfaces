@@ -3,7 +3,7 @@
     constructor(props) {
       super(props);
       this.state = {tabletContext: false};
-      this.renderLogoutLink = this.renderLogoutLink.bind(this);
+      this.renderProfileLinkWhenAvailable = this.renderProfileLinkWhenAvailable.bind(this);
       this.renderUserNameWhenMatchedMediaIsMedium = this.renderUserNameWhenMatchedMediaIsMedium.bind(this);
       this.handleMatchMediaChange = this.handleMatchMediaChange.bind(this);
     }
@@ -42,24 +42,21 @@
 
     // ENDTODO
 
-    renderLogoutLink() {
-      var styles = {
-        float: "right",
-        lineHeight: "8px",
-        marginRight: 10,
-        fontSize: 12,
-        color: "white",
-        backgroundColor: "#ddd",
-        borderRadius: 3,
-        padding: 8,
-        marginTop: 8
-      };
-
-      return (
-        <a href={interfacesURLForEnv(this.context.railsEnv, 'accounts', 'logout')} style={styles}>
-          Logout
-        </a>
-      );
+    renderProfileLinkWhenAvailable() {
+      if (this.props.profilePath) {
+        return (
+          <a
+           style={{
+             padding: "13px 10px 0",
+             display: "block",
+             fontSize: "13px",
+             lineHeight: "13px"
+           }}
+           data-person-profile-link
+           data-person-id={this.props.id}
+           href={this.props.profilePath}>Profile</a>
+        );
+      }
     }
 
     renderUserNameWhenMatchedMediaIsMedium() {
@@ -83,8 +80,8 @@
     render() {
       return (
         <div>
-          {this.renderLogoutLink()}
           {this.renderUserNameWhenMatchedMediaIsMedium()}
+          {this.renderProfileLinkWhenAvailable()}
           <a href={this.link} style={this.anchorStyles}>
             {this.props.organizationName}
           </a>
@@ -96,7 +93,8 @@
   CurrentPersonListItem.propTypes = {
     id:               React.PropTypes.number.isRequired,
     name:             React.PropTypes.string.isRequired,
-    organizationName: React.PropTypes.string.isRequired
+    organizationName: React.PropTypes.string.isRequired,
+    profilePath:      React.PropTypes.string
   };
 
   CurrentPersonListItem.contextTypes = {

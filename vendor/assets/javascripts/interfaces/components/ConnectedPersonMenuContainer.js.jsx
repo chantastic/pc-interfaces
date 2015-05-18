@@ -31,6 +31,7 @@
          currentPersonId={this.props.currentPersonId}
          currentPersonName={this.props.currentPersonName}
          currentPersonOrganizationName={this.props.currentPersonOrganizationName}
+         currentPersonProfilePath={this.props.currentPersonProfilePath}
          railsAppName={this.props.railsAppName}
          railsEnv={this.props.railsEnv} />
       );
@@ -41,6 +42,7 @@
     currentPersonId:               React.PropTypes.number.isRequired,
     currentPersonName:             React.PropTypes.string.isRequired,
     currentPersonOrganizationName: React.PropTypes.string.isRequired,
+    currentPersonProfilePath:      React.PropTypes.string,
     railsAppName:                  React.PropTypes.string.isRequired,
     railsEnv:                      React.PropTypes.string.isRequired
   };

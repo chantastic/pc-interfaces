@@ -15,14 +15,13 @@
     renderUnlinkLink() {
       if (this.props.connectedPeople.length > 0) {
         return (
-          <div>
-            <a
-            className="account-switcher_unlink_link"
-            href={interfacesURLForEnv(this.props.railsEnv, 'accounts', 'unlink')}>
-              Unlink Accounts&nbsp;
-              <i className="intrefaces interfaces-unlink"></i>
-            </a>
-          </div>
+          <a
+           className="account-switcher_action"
+           id="unlink--account-switcher_action"
+           href={interfacesURLForEnv(this.props.railsEnv, 'accounts', 'unlink')}>
+            Unlink Accounts&nbsp;
+            <i className="intrefaces interfaces-unlink"></i>
+          </a>
         );
       }
     }
@@ -36,10 +35,19 @@
             <CurrentPersonListItem
              id={this.props.currentPersonId}
              name={this.props.currentPersonName}
-             organizationName={this.props.currentPersonOrganizationName} />
+             organizationName={this.props.currentPersonOrganizationName}
+             profilePath={this.props.currentPersonProfilePath} />
           </ConnectedPersonList>
 
-          {this.renderUnlinkLink()}
+          <div className="account-switcher_action-group">
+            {this.renderUnlinkLink()}
+            <a
+             className="account-switcher_action"
+             id="logout--account-switcher_action"
+             href={interfacesURLForEnv(this.props.railsEnv, 'accounts', 'logout')}>
+              Logout
+            </a>
+          </div>
         </div>
       );
     }
@@ -52,6 +60,7 @@
     currentPersonId:               React.PropTypes.number.isRequired,
     currentPersonName:             React.PropTypes.string.isRequired,
     currentPersonOrganizationName: React.PropTypes.string.isRequired,
+    currentPersonProfilePath:      React.PropTypes.string
   };
 
   ConnectedPersonMenu.childContextTypes = {
