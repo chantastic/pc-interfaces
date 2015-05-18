@@ -77,7 +77,8 @@
 
         <% if account_switcher_supported? %>
           <%= render "interfaces/user_help" %>
-          <%= render "interfaces/user_badge" %>
+          <%= render partial: "interfaces/user_badge",
+                     locals:  { profile_path: profile_path } %>
         <% else %>
           <%= render "interfaces/legacy_account_section" %>
         <% end %>

@@ -22,6 +22,7 @@
       </div>
     <% end %>
 
-    <%= render "interfaces/account_switcher" %>
+    <%= render partial: "interfaces/account_switcher",
+               locals:  { profile_path: profile_path } %>
   </div>
 </div>
