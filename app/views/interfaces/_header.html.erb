@@ -49,6 +49,8 @@
 
             <div class="top-bar-quarantine" style="clear: both; border-top: 1px solid #222">
               <div
+               data-person-profile-link
+               data-person-id="<%= Person.current.try(:id) %>"
                style="text-align: left; color: white; padding-left: 20px">
                 <%= Person.current %> <%= Organization.current %>
               </div>
