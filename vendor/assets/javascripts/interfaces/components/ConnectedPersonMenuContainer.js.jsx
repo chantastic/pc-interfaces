@@ -17,11 +17,12 @@
     }
 
     componentWillMount() {
-      document.addEventListener('user-badge:hovered', this.fetchConnectedPeople)
+      console.log('changed');
+      $(document).on('user-badge:hovered', this.fetchConnectedPeople)
     }
 
     componentWillUnmount() {
-      document.removeEventListener('user-badge:hovered', this.fetchConnectedPeople)
+      $(document).off('user-badge:hovered', this.fetchConnectedPeople)
     }
 
     render() {
