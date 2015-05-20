@@ -17,7 +17,6 @@
     }
 
     componentWillMount() {
-      console.log('changed');
       $(document).on('user-badge:hovered', this.fetchConnectedPeople)
     }
 
