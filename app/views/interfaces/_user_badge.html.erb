@@ -1,6 +1,9 @@
 <div
  class="user-badge_container"
- onclick="$('body').toggleClass('i-account-switcher-is-expanded');"
+ onclick="
+   $('body').toggleClass('i-account-switcher-is-expanded');
+   $(document).trigger('user-badge:clicked');
+ "
  onmouseenter="$(document).trigger('user-badge:hovered');">
   <div class="user-badge">
     <% if Person.current.present? %>

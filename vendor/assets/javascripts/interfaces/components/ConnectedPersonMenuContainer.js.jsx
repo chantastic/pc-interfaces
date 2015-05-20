@@ -6,6 +6,11 @@
     }
 
     fetchConnectedPeople() {
+      // this is a very niave form of caching requests
+      // needed to support touch devices, where pre-fetching
+      // on hover is not availabele
+      if (this.state.connectedPeople.length) { return; }
+
       var fetchConnectedPeople = $.ajax({
         url: `${interfacesURLForEnv(this.props.railsEnv, 'api')}/people/v2/me/connected_people`,
         xhrFields: { withCredentials: true }
@@ -18,10 +23,12 @@
 
     componentWillMount() {
       $(document).on('user-badge:hovered', this.fetchConnectedPeople)
+      $(document).on('user-badge:clicked', this.fetchConnectedPeople)
     }
 
     componentWillUnmount() {
       $(document).off('user-badge:hovered', this.fetchConnectedPeople)
+      $(document).off('user-badge:clicked', this.fetchConnectedPeople)
     }
 
     render() {
