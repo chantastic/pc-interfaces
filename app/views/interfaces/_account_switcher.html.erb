@@ -4,7 +4,8 @@
   <div class="account-switcher">
     <%= react_component "ConnectedPersonMenuContainer",
                         {
-                          currentPersonId: Person.current.account_center_id,
+                          currentPersonAccountCenterId: Person.current.account_center_id,
+                          currentPersonId: Person.current.id,
                           currentPersonName: Person.current.name,
                           currentPersonOrganizationName: Person.current.organization.name,
                           currentPersonProfilePath: profile_path,

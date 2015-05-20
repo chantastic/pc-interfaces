@@ -28,6 +28,7 @@
       return (
         <ConnectedPersonMenu
          connectedPeople={this.state.connectedPeople}
+         currentPersonAccountCenterId={this.props.currentPersonAccountCenterId}
          currentPersonId={this.props.currentPersonId}
          currentPersonName={this.props.currentPersonName}
          currentPersonOrganizationName={this.props.currentPersonOrganizationName}
@@ -39,6 +40,7 @@
   }
 
   ConnectedPersonMenuContainer.propTypes = {
+    currentPersonAccountCenterId:  React.PropTypes.number.isRequired,
     currentPersonId:               React.PropTypes.number.isRequired,
     currentPersonName:             React.PropTypes.string.isRequired,
     currentPersonOrganizationName: React.PropTypes.string.isRequired,

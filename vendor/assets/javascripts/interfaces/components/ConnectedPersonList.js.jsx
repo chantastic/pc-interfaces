@@ -15,7 +15,7 @@
     get filteredAndSortedConnectedPeople() {
       // TODO: add lodash for apps without it
       return  _.chain(this.props.connectedPeople)
-        .reject((person) => parseInt(person.id, 10) === this.props.currentPersonId)
+        .reject((person) => parseInt(person.id, 10) === this.props.currentPersonAccountCenterId)
         .sortBy('organization_name')
         .value();
     }
@@ -44,7 +44,8 @@
         id: React.PropTypes.string.isRequired
       })
     ).isRequired,
-    currentPersonId: React.PropTypes.number.isRequired
+    currentPersonAccountCenterId: React.PropTypes.number.isRequired,
+    currentPersonId:              React.PropTypes.number.isRequired
   };
 
   ConnectedPersonList.contextTypes = {

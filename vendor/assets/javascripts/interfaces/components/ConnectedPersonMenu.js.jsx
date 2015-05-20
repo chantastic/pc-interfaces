@@ -31,7 +31,8 @@
         <div>
           <ConnectedPersonList
            connectedPeople={this.props.connectedPeople}
-           currentPersonId={this.props.currentPersonId}>
+           currentPersonId={this.props.currentPersonId}
+           currentPersonAccountCenterId={this.props.currentPersonAccountCenterId}>
             <CurrentPersonListItem
              id={this.props.currentPersonId}
              name={this.props.currentPersonName}
@@ -57,6 +58,7 @@
     connectedPeople: React.PropTypes.arrayOf(
       React.PropTypes.object
     ).isRequired,
+    currentPersonAccountCenterId:  React.PropTypes.number.isRequired,
     currentPersonId:               React.PropTypes.number.isRequired,
     currentPersonName:             React.PropTypes.string.isRequired,
     currentPersonOrganizationName: React.PropTypes.string.isRequired,
