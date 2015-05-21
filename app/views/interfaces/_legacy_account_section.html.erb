@@ -1,7 +1,7 @@
 <div class="account-info righty <%= "hide-desktop" if account_switcher_supported? %>">
   <%= render partial: "interfaces/legacy_header_avatar",
              locals:  { person: person,
-                        interfaces_organization: interfaces_organization} %>
+                        organization: organization} %>
 
   <div id="toggle-account-details" data-account-info="toggle">
     <span class="interfaces-caret" aria-hidden="true"></span>
@@ -19,7 +19,7 @@
             </a>
           <% end %>
           <span></span><!-- looks like a joke but it isn't -->
-          <%= interfaces_organization %>
+          <%= organization %>
         </li>
       <% end %>
     </ul>

@@ -9,14 +9,14 @@ module Interfaces
     end
 
     def interfaces_header(person:           Interfaces::NullPerson.new,
-                          interfaces_organization:     Interfaces::NullOrganization.new,
+                          organization:     Interfaces::NullOrganization.new,
                           current_person_profile_path: "",
                           &block)
 
       render layout: '/interfaces/header',
              locals: {
                person:       person,
-               interfaces_organization: interfaces_organization,
+               organization: organization,
                profile_path:            current_person_profile_path
              },
              &block

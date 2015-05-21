@@ -52,7 +52,7 @@
                data-person-profile-link
                data-person-id="<%= person.id %>"
                style="text-align: left; color: white; padding-left: 20px">
-                <%= person %> <%= interfaces_organization %>
+                <%= person %> <%= organization %>
               </div>
               <% if person.staff? %>
                 <a
@@ -81,12 +81,12 @@
           <%= render "interfaces/user_help" %>
           <%= render partial: "interfaces/user_badge",
                      locals:  { person: person,
-                                interfaces_organization: interfaces_organization,
+                                organization: organization,
                                 profile_path: profile_path } %>
         <% else %>
           <%= render partial: "interfaces/legacy_account_section",
                      locals:  { person: person,
-                                interfaces_organization: interfaces_organization } %>
+                                organization: organization } %>
         <% end %>
 
       </div>

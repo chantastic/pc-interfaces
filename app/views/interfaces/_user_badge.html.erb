@@ -11,7 +11,7 @@
         <%= render partial: "interfaces/header_avatar",
                    locals:  { person: person } %>
         <div class="user-badge_user-name user-name name"><%= person.name %></div>
-        <div class="user-badge_organization-name organization-name name"><%= interfaces_organization.name %></div>
+        <div class="user-badge_organization-name organization-name name"><%= organization.name %></div>
       </div>
 
       <div
@@ -27,7 +27,7 @@
 
     <%= render partial: "interfaces/account_switcher",
                locals:  { person: person,
-                          interfaces_organization: interfaces_organization,
+                          organization: organization,
                           profile_path: profile_path } %>
   </div>
 </div>
