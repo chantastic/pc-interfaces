@@ -24,16 +24,24 @@
       };
     }
 
+    get isGreaterThanIE9() {
+      return !(document.all && !window.atob);
+    }
+
     // TODO: should be passed as context from top-most component
     // IE10+ warning
 
     componentWillMount() {
-      this.handleMatchMediaChange(window.matchMedia("(max-width: 979px)"));
-      window.matchMedia("(max-width: 979px)").addListener(this.handleMatchMediaChange);
+      if(this.isGreaterThanIE9) {
+        this.handleMatchMediaChange(window.matchMedia("(max-width: 979px)"));
+        window.matchMedia("(max-width: 979px)").addListener(this.handleMatchMediaChange);
+      }
     }
 
     componentWillUnmount() {
-      window.matchMedia("(max-width: 979px)").removeListener(this.handleMatchMediaChange);
+      if(this.isGreaterThanIE9) {
+        window.matchMedia("(max-width: 979px)").removeListener(this.handleMatchMediaChange);
+      }
     }
 
     handleMatchMediaChange(e) {
