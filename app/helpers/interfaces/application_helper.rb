@@ -8,13 +8,17 @@ module Interfaces
       render layout: '/interfaces/wrap', &block
     end
 
-    def interfaces_header(interfaces_person:, interfaces_organization:, current_person_profile_path: "", &block)
-      # person: id, staff, name, avatar_url, account_center_id
-      # organization: name
+    def interfaces_header(interfaces_person:           Interfaces::NullPerson.new,
+                          interfaces_organization:     Interfaces::NullOrganization.new,
+                          current_person_profile_path: "",
+                          &block)
+
       render layout: '/interfaces/header',
-             locals: { interfaces_person: interfaces_person,
-                       interfaces_organization: interfaces_organization,
-                       profile_path: current_person_profile_path },
+             locals: {
+               interfaces_person:       interfaces_person,
+               interfaces_organization: interfaces_organization,
+               profile_path:            current_person_profile_path
+             },
              &block
     end
 
