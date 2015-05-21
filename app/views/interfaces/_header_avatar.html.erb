@@ -1,13 +1,13 @@
 <span class="avatar" style="float: left; overflow: hidden; border-radius: 50%">
-  <% if interfaces_person.present? %>
+  <% if person.present? %>
     <span>
-      <% if interfaces_person.avatar_url.present? %>
+      <% if person.avatar_url.present? %>
 
         <img
           alt="Avatar"
           width="32"
           height="32"
-          src="<%= square_avatar(interfaces_person.avatar_url) %>" />
+          src="<%= square_avatar(person.avatar_url) %>" />
 
       <% elsif ::Person.const_defined?('MISSING_AVATAR_PATH') %>
 

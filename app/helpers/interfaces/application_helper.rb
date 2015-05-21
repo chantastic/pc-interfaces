@@ -8,14 +8,14 @@ module Interfaces
       render layout: '/interfaces/wrap', &block
     end
 
-    def interfaces_header(interfaces_person:           Interfaces::NullPerson.new,
+    def interfaces_header(person:           Interfaces::NullPerson.new,
                           interfaces_organization:     Interfaces::NullOrganization.new,
                           current_person_profile_path: "",
                           &block)
 
       render layout: '/interfaces/header',
              locals: {
-               interfaces_person:       interfaces_person,
+               person:       person,
                interfaces_organization: interfaces_organization,
                profile_path:            current_person_profile_path
              },

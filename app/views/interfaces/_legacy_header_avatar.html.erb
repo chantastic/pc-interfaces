@@ -1,15 +1,15 @@
 <span class="avatar">
-  <% if interfaces_person.present? %>
+  <% if person.present? %>
     <a
       class="photo"
-      href="/people/<%= interfaces_person.id %>">
-      <% if interfaces_person.avatar_url.present? %>
+      href="/people/<%= person.id %>">
+      <% if person.avatar_url.present? %>
 
         <img
           alt="Avatar"
           width="24"
           height="24"
-          src="<%= square_avatar(interfaces_person.avatar_url) %>" />
+          src="<%= square_avatar(person.avatar_url) %>" />
 
       <% elsif ::Person.const_defined?('MISSING_AVATAR_PATH') %>
 
