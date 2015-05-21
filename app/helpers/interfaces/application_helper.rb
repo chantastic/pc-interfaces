@@ -75,13 +75,6 @@ module Interfaces
       current_app == 'Accounts' || current_app == 'Check-Ins'
     end
 
-    def connected_people
-      ::Person.current.connected_people
-        .select{ |person| !person.organization.canceled? }
-        .sort_by{ |person| person.organization.name }
-        .unshift(::Person.current)
-    end
-
     private
 
     def current_app
