@@ -1,5 +1,7 @@
 <div class="account-info righty <%= "hide-desktop" if account_switcher_supported? %>">
-  <%= render "interfaces/legacy_header_avatar" %>
+  <%= render partial: "interfaces/legacy_header_avatar",
+             locals:  { interfaces_person: interfaces_person,
+                        interfaces_organization: interfaces_organization} %>
 
   <div id="toggle-account-details" data-account-info="toggle">
     <span class="interfaces-caret" aria-hidden="true"></span>
@@ -7,23 +9,23 @@
 
   <div id="account-details">
     <ul class="identity">
-      <% if Person.current.present? %>
+      <% if interfaces_person.present? %>
         <li class="section-heading">
           <% if app_name == "account-center" %>
-            <a href='#'><%= Person.current.name %></a>
+            <a href='#'><%= interfaces_person.name %></a>
           <% else %>
-            <a href="/people/<%= Person.current.id %>">
-              <%= Person.current.name %>
+            <a href="/people/<%= interfaces_person.id %>">
+              <%= interfaces_person.name %>
             </a>
           <% end %>
           <span></span><!-- looks like a joke but it isn't -->
-          <%= Organization.current %>
+          <%= interfaces_organization %>
         </li>
       <% end %>
     </ul>
 
     <ul class="utilities">
-      <% if Person.current.try(:staff?) %>
+      <% if interfaces_person.staff? %>
         <li>
           <a href="<%= PCO::URL.accounts "administration" %>">
             <span class="interfaces-admin"></span>

@@ -8,9 +8,13 @@ module Interfaces
       render layout: '/interfaces/wrap', &block
     end
 
-    def interfaces_header(current_person_profile_path, &block)
+    def interfaces_header(interfaces_person:, interfaces_organization:, current_person_profile_path: "", &block)
+      # person: id, staff, name, avatar_url, account_center_id
+      # organization: name
       render layout: '/interfaces/header',
-             locals: { profile_path: current_person_profile_path },
+             locals: { interfaces_person: interfaces_person,
+                       interfaces_organization: interfaces_organization,
+                       profile_path: current_person_profile_path },
              &block
     end
 
@@ -72,10 +76,10 @@ module Interfaces
     end
 
     def connected_people
-      Person.current.connected_people
+      ::Person.current.connected_people
         .select{ |person| !person.organization.canceled? }
         .sort_by{ |person| person.organization.name }
-        .unshift(Person.current)
+        .unshift(::Person.current)
     end
 
     private

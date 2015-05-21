@@ -1,21 +1,21 @@
 <span class="avatar" style="float: left; overflow: hidden; border-radius: 50%">
-  <% if Person.current.present? %>
+  <% if interfaces_person.present? %>
     <span>
-      <% if Person.current.avatar_url.present? %>
+      <% if interfaces_person.avatar_url.present? %>
 
         <img
           alt="Avatar"
           width="32"
           height="32"
-          src="<%= square_avatar(Person.current.avatar_url) %>" />
+          src="<%= square_avatar(interfaces_person.avatar_url) %>" />
 
-      <% elsif Person.const_defined?('MISSING_AVATAR_PATH') %>
+      <% elsif ::Person.const_defined?('MISSING_AVATAR_PATH') %>
 
         <img
           alt="Avatar"
           width="32"
           height="32"
-          src="<%= Person::MISSING_AVATAR_PATH %>" />
+          src="<%= ::Person::MISSING_AVATAR_PATH %>" />
 
       <% else %>
 
