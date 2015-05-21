@@ -20,6 +20,13 @@
 }
 
 .user-badge {
+  /* BEGIN: IE9 block */
+  /* This gets inferred in good browsers. */
+  /* Explicitness here does not affect good browsers. */
+  /* Can be removed when IE9 support is depricated. */
+  position: relative;
+  /* END: IE9 block */
+
   float: right;
 
   padding-left: 15px;
