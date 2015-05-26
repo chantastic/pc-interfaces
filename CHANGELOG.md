@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BREAKING CHANGE] update hard-coded links from /styleguide/* -> /interfaces/*
 * [FEATURE] add /engine/version route for `pco interfaces` CLI
   * Interfaces now constrains the routes based on environment.
   * Update apps to mount the engine without constraint.

@@ -54,6 +54,6 @@ INTERFACES.errors.modal =
                <p> all of your template </p>
              </div>
 
-             For more details: '/styleguide/modals#expectations'
+             For more details: '/interfaces/modals#expectations'
 
              """

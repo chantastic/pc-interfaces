@@ -73,7 +73,7 @@ It's likely you'll need a more complex layout. This is the current baseline. Wra
 
 ## Styleguide
 
-If you'd like to see all the available components in your application, add this line to `confi/routes.rb`. In development, it will make the route `/styleguide` available.
+If you'd like to see all the available components in your application, add this line to `confi/routes.rb`. In development, it will make the route `/interfaces` available.
 
 ```
 mount Interfaces::Engine => '/interfaces
