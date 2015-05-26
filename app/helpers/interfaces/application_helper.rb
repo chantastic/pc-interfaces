@@ -75,10 +75,6 @@ module Interfaces
       end
     end
 
-    def account_switcher_supported?
-      current_app == 'Accounts' || current_app == 'Check-Ins'
-    end
-
     private
 
     def current_app

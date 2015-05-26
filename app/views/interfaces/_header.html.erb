@@ -39,56 +39,39 @@
 
     <section class="top-bar-section">
       <div class="top-nav-options">
-        <% if account_switcher_supported? %>
-          <nav class="global-nav lefty" role="menubar" title="Main Site Navigation">
-            <ul>
-              <li class="divider"></li>
+        <nav class="global-nav lefty" role="menubar" title="Main Site Navigation">
+          <ul>
+            <li class="divider"></li>
 
-              <%= yield %>
-            </ul>
+            <%= yield %>
+          </ul>
 
-            <div class="top-bar-quarantine" style="clear: both; border-top: 1px solid #222">
-              <div
-               data-person-profile-link
-               data-person-id="<%= person.id %>"
-               style="text-align: left; color: white; padding-left: 20px">
-                <%= person %> <%= organization %>
-              </div>
-              <% if person.staff? %>
-                <a
-                  style="text-align: left; color: white; padding-left: 20px; border-top: 1px solid #222"
-                  href="<%= PCO::URL.accounts "administration" %>">admin</a>
-              <% end %>
-              <a
-               style="text-align: left; color: white; padding-left: 20px; border-top: 1px solid #222"
-               id="jsLaunchHelpdesk">help</a>
+          <div class="top-bar-quarantine" style="clear: both; border-top: 1px solid #222">
+            <div
+              data-person-profile-link
+              data-person-id="<%= person.id %>"
+              style="text-align: left; color: white; padding-left: 20px">
+              <%= person %> <%= organization %>
+            </div>
+            <% if person.staff? %>
               <a
                 style="text-align: left; color: white; padding-left: 20px; border-top: 1px solid #222"
-                href="<%= PCO::URL.accounts "logout" %>">logout</a>
-            </div>
-          </nav>
-        <% else %>
-          <nav class="global-nav lefty" role="menubar" title="Main Site Navigation">
-            <ul>
-              <li class="divider"></li>
+                href="<%= PCO::URL.accounts "administration" %>">admin</a>
+            <% end %>
+            <a
+              style="text-align: left; color: white; padding-left: 20px; border-top: 1px solid #222"
+              id="jsLaunchHelpdesk">help</a>
+            <a
+              style="text-align: left; color: white; padding-left: 20px; border-top: 1px solid #222"
+              href="<%= PCO::URL.accounts "logout" %>">logout</a>
+          </div>
+        </nav>
 
-              <%= yield %>
-            </ul>
-          </nav>
-        <% end %>
-
-        <% if account_switcher_supported? %>
-          <%= render "interfaces/user_help" %>
-          <%= render partial: "interfaces/user_badge",
-                     locals:  { person: person,
-                                organization: organization,
-                                profile_path: profile_path } %>
-        <% else %>
-          <%= render partial: "interfaces/legacy_account_section",
-                     locals:  { person: person,
-                                organization: organization } %>
-        <% end %>
-
+        <%= render "interfaces/user_help" %>
+        <%= render partial: "interfaces/user_badge",
+                    locals:  { person: person,
+                              organization: organization,
+                              profile_path: profile_path } %>
       </div>
     </section>
   </div>
