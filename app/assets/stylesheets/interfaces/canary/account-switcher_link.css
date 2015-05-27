@@ -1,0 +1,38 @@
+.account-switcher_link {
+  font-size: 12px;
+  display: block;
+  float: left;
+  width: 100%;
+  text-align: center;
+  background-color: #e5e5e5;
+  border-bottom: 1px solid #ddd;
+  line-height: 36px;
+  color: #888 !important;
+}
+
+.account-switcher_link:hover {
+  background-color: #ddd;
+}
+
+.account-switcher-organization-item_link .interfaces-switch {
+  color: #4E7BA8;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: all .2s ease-out;
+
+  -webkit-transform: rotate(-90deg) scale(.4);
+          transform: rotate(-90deg) scale(.4);
+}
+
+.account-switcher-organization-item_link:hover .interfaces-switch {
+  visibility: visible;
+  opacity: 1;
+
+  -webkit-transform: rotate(0) scale(1);
+          transform: rotate(0) scale(1);
+}
+
+.account-switcher_link + .account-switcher_link {
+  border-left: 1px solid #ddd;
+}

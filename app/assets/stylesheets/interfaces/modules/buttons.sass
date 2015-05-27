@@ -1,0 +1,292 @@
+@import "interfaces/core/variables"
+@import "interfaces/core/utilities"
+
+/*//SEE modules > colors for color variables*/
+$button-border-width: 1px
+$button-border-style: solid
+
+
+// @mixins ================================================
+
+// =Button variants
+// -------------------------
+// Quickly scaffold out new button styles with :hover, :focus, and `disabled` options.
+// Button variant also generates an `outline` style modifier
+//
+// +button-variant([$text-color:white], [$background-color:lightgray], [$border-color:adjust-color($background-color]))
+//
+// Usage:
+//
+// +button-variant()                      - button modifier with defaults
+// +button-variant(black)                 - button modifier with defaults and black text
+// +button-variant(black, pink)           - button modifier with black text and pink background/border
+// +button-variant(black, pick, fuchsia)  - button modifier with black text, pink background, and fuchsia border
+@mixin button-variant($color:white, $background-color:#e6e6e6, $border-color:adjust-color($background-color, $lightness: -20%, $saturation: -5%), $is-link:false)
+  @if $is-link
+
+  @else
+    // mixins
+    +_pseudo-classes($color, $background-color, $border-color)
+    background-color: adjust-color($background-color, $lightness: 3%)
+    background-image: linear-gradient(to bottom, adjust-color($background-color, $lightness: 3%), $background-color)
+
+    // display
+    border: $button-border-width $button-border-style $border-color
+
+    // other
+    color: $color
+
+    // modifiers
+    &.btn--outline
+      +_button-outline-variant($border-color)
+
+
+// PRIVATE _pseudo-classes
+@mixin _pseudo-classes($color, $background-color, $border-color)
+  &:hover,
+  &:focus
+    background-color: $border-color
+    background-image: linear-gradient(to bottom, $background-color, adjust-color($background-color, $lightness: 3%), $background-color)
+    color: $color
+
+  &:active
+    // inverse of :hover
+    background-color: $border-color
+    background-image: linear-gradient(to top, adjust-color($background-color, $lightness: -4%), adjust-color($background-color, $lightness: -6%), adjust-color($background-color, $lightness: -4%))
+
+  // explicitely define disabled class prevent disabled:hover
+  &[disabled]
+    background-image: none
+    background-color: $background-color
+    color: $color
+    opacity: 0.7
+
+@mixin _button-outline-variant($border-color)
+  background: none
+  color: darken($border-color, 20%)
+
+  &:hover
+    border-color: darken($border-color, 15%)
+    color: darken($border-color, 30%)
+
+  // explicitely define disabled class prevent disabled:hover
+  &[disabled]
+    border-color: $border-color
+    color: $border-color
+
+// button =================================================
+%btn
+  // mixins
+  +user-select(none)
+
+  // display
+  cursor: pointer
+
+  // attr
+  &[disabled]
+    cursor: default
+
+.btn
+  // @extends
+  @extend %btn
+
+  // mixins
+  +button-variant($dark-gray)
+  +font-size(14)
+  border-radius: 3px
+
+  // positioning
+  vertical-align: middle
+  /*position: relative*/
+
+  // display
+  display: inline-block
+  border-style: solid
+  margin: 0 0 2rem 1rem
+  padding: 1rem 2rem 1.1rem 2rem
+
+  // other
+  font-weight: normal
+  line-height: normal
+  text-align: center
+  text-decoration: none
+  white-space: nowrap
+
+  -webkit-appearance: none
+
+  //if floated with .right modifier
+  &.right
+    margin: 0 0 2rem 1rem
+
+  // size
+  &.btn--small
+    +font-size(12)
+    padding: 0.9rem 1.8rem
+
+  &.btn--large
+    +font-size(16.5)
+    padding: 1.1rem 2.2rem 1.2rem 2.2rem
+
+  &.btn--tiny
+    +font-size(10)
+    padding: 0.7rem 1.3rem
+    &.btn--square
+      padding-left: 0.8rem
+      padding-right: 0.8rem
+
+  &.btn--micro
+    +font-size(10)
+    padding: 0.2rem .8rem 0.3rem .8rem
+
+  &.btn--expand
+    padding-right: 0
+    padding-left: 0
+    width: 100%
+
+  &.btn--first
+    margin-left: 0
+
+
+  // variants
+  &.btn--primary
+    +button-variant(white, $primary-btn-color)
+
+  &.btn--secondary
+    +button-variant($dark-gray, $light-gray)
+
+  &.btn--success
+    +button-variant(white, $success-color)
+
+  &.btn--danger
+    +button-variant(white, $danger-color)
+
+  &.btn--warning
+    +button-variant(adjust-color($warning-color, $lightness: -47%, $saturation: -25%), adjust-color($warning-color, $lightness: -15%, $saturation: 2%), $border-color:adjust-color($warning-color, $lightness: -30%, $saturation: -8%))
+    &:hover
+      color: adjust-color($warning-color, $lightness: -47%, $saturation: -25%)
+  &.btn--link
+    +button-variant($primary-btn-color, nil, nil, true)
+
+    &,
+    &:hover,
+    &[disabled]
+      background: none
+      border-color: transparent
+
+  &.btn--checkbox
+    border-color: darken($border-color, 40)
+    input[type=checkbox],
+    input[type=radio]
+      display: none
+    &.selected
+      background: $selected-btn-color
+      color: white
+
+  &.btn--shadow
+    box-shadow: 0 3px 7px -3px rgba(0,0,0,0.7)
+
+
+// button group ===========================================
+.btn-group
+  +clearfix
+
+  list-style: none
+  margin: 0
+  *zoom: 1
+
+  >
+    float: left
+
+  li
+    +clearfix
+    float: left
+
+
+  .btn
+    border-radius: 0
+
+    float: left
+
+    margin: 0
+    margin-left: -1px
+
+  > .btn:first-child,
+  > :first-child .btn
+    border-radius: 3px 0 0 3px
+
+  > .btn:last-child,
+  > :last-child .btn
+    // IE9+ only
+    border-radius: 0 3px 3px 0
+
+  &.half
+    >
+      width: 50%
+
+  &.thirds
+    >
+      width: 33.333%
+
+.btn-group-vertical
+  +clearfix
+
+  list-style: none
+  margin: 0
+  *zoom: 1
+
+  > *
+    margin: 0
+
+  .btn
+    border-radius: 0
+    margin: -1px 0 0 0
+    display: block
+    text-align: left
+    padding: 0.9rem 1.3rem
+    +font-size(13)
+
+  > *:first-child .btn
+    border-top-right-radius: 3px
+    border-top-left-radius: 3px
+    margin-top: 0
+
+  > *:last-child .btn
+    border-bottom-right-radius: 3px
+    border-bottom-left-radius: 3px
+
+body .btn.btn--droptoggle
+  padding: 0.5rem 1.8rem 0.6rem 1.8rem
+  .interfaces-cog
+    position: relative
+    top: .06em
+    font-size: 165%
+  .interfaces-caret
+    position: relative
+    top: -0.3em
+    margin-left: .5em
+    font-size: 78%
+
+// BUTTON CONTEXTUAL OVERRIDES
+.alert .btn
+  margin-top: -3px
+.alert .btn,
+.pane--header .btn
+  margin-bottom: 0
+
+// responsive button variants - cause sometimes you need them to behave differently
+@media (max-width: 37.5em) // < 600
+  .btn
+    &.palm-btn--half
+      float: left
+      width: 49%
+      &:first-of-type
+        margin-right: 2%
+        margin-left: 0
+      &:last-of-type
+        margin-right: 0
+        margin-left: 0
+    &.palm-btn--full
+      float: none
+      width: 100%
+      margin-left: 0 !important
+      margin-right: 0 !important

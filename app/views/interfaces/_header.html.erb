@@ -45,101 +45,33 @@
 
             <%= yield %>
           </ul>
+
+          <div class="top-bar-quarantine" style="clear: both; border-top: 1px solid #222">
+            <div
+              data-person-profile-link
+              data-person-id="<%= person.id %>"
+              style="text-align: left; color: white; padding-left: 20px">
+              <%= person %> <%= organization %>
+            </div>
+            <% if person.staff? %>
+              <a
+                style="text-align: left; color: white; padding-left: 20px; border-top: 1px solid #222"
+                href="<%= PCO::URL.accounts "administration" %>">admin</a>
+            <% end %>
+            <a
+              style="text-align: left; color: white; padding-left: 20px; border-top: 1px solid #222"
+              id="jsLaunchHelpdesk">help</a>
+            <a
+              style="text-align: left; color: white; padding-left: 20px; border-top: 1px solid #222"
+              href="<%= PCO::URL.accounts "logout" %>">logout</a>
+          </div>
         </nav>
 
-        <div class="account-info righty">
-          <span class="avatar">
-            <% if Person.current.present? %>
-              <a
-               class="photo"
-               href="/people/<%= Person.current.id %>">
-                <% if Person.current.avatar_url.present? %>
-
-                  <img
-                   alt="Avatar"
-                   height="24"
-                   src="<%= square_avatar(Person.current.avatar_url) %>"
-                   width="24" />
-
-                <% elsif Person.const_defined?('MISSING_AVATAR_PATH') %>
-
-                  <img
-                   alt="Avatar"
-                   height="24"
-                   src="<%= Person::MISSING_AVATAR_PATH %>"
-                   width="24" />
-
-                <% else %>
-
-                  <img
-                   alt="Missing"
-                   height="24"
-                   src="https://www.planningcenteronline.com/photos/icon/missing.png"
-                   width="24" />
-
-                <% end %>
-              </a>
-
-            <% else %>
-
-              <span class="photo">
-                <img
-                 alt="Missing"
-                 height="24"
-                 src="https://www.planningcenteronline.com/photos/icon/missing.png"
-                 width="24" />
-              </span>
-
-            <% end %>
-          </span>
-
-          <div id="toggle-account-details" data-account-info="toggle">
-            <span class="interfaces-caret" aria-hidden="true"></span>
-          </div>
-
-          <div id="account-details">
-            <ul class="identity">
-              <% if Person.current.present? %>
-                <li class="section-heading">
-                  <% if app_name == "account-center" %>
-                    <a href='#'><%= Person.current.name %></a>
-                  <% else %>
-                    <a href="/people/<%= Person.current.id %>">
-                      <%= Person.current.name %>
-                    </a>
-                  <% end %>
-                  <span></span><!-- looks like a joke but it isn't -->
-                  <%= Organization.current %>
-                </li>
-              <% end %>
-            </ul>
-
-            <ul class="utilities">
-              <% if Person.current.try(:staff?) %>
-                <li>
-                  <a href="<%= PCO::URL.accounts "administration" %>">
-                    <span class="interfaces-admin"></span>
-                    admin
-                  </a>
-                </li>
-              <% end %>
-
-              <li>
-                <a id="jsLaunchHelpdesk" href="#">
-                  <span class="interfaces-faq"></span>
-                  help
-                </a>
-              </li>
-
-              <li>
-                <a class="log" href="<%= PCO::URL.accounts "logout" %>">
-                  <span class="interfaces-logout"></span>
-                  logout
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <%= render "interfaces/user_help" %>
+        <%= render partial: "interfaces/user_badge",
+                    locals:  { person: person,
+                              organization: organization,
+                              profile_path: profile_path } %>
       </div>
     </section>
   </div>

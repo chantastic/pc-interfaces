@@ -1,13 +1,16 @@
 <!doctype html>
-
 <html class="no-js" lang="en">
   <%= render '/layouts/interfaces/partials/head' %>
 
   <body>
     <%= interfaces_wrap do %>
-      <%= interfaces_header do %>
+      <%# find a better place for these fake objects %>
+      <% interfaces_person       = OpenStruct.new(id: 1, account_center_id: 1, name: "Interfaces User") %>
+      <% interfaces_organization = OpenStruct.new(name: "Interfaces Organization") %>
+
+      <%= interfaces_header person: interfaces_person, organization: interfaces_organization, person_profile_path: "#" do %>
         <li>
-          <a href="/styleguide">
+          <a href="/interfaces">
             <span class="icon interfaces-services" aria-hidden="true"></span>
             <span class="btn-label">CSS</span>
           </a>
@@ -16,7 +19,7 @@
         <li class="divider"></li>
 
         <li>
-          <a href="/styleguide/js">
+          <a href="/interfaces/js">
             <span class="icon interfaces-services" aria-hidden="true"></span>
             <span class="btn-label">JS</span>
           </a>

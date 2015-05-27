@@ -1,0 +1,42 @@
+<span class="avatar" style="float: left; overflow: hidden; border-radius: 50%">
+  <% if person.present? %>
+    <span>
+      <% if person.avatar_url.present? %>
+
+        <img
+          alt="Avatar"
+          width="32"
+          height="32"
+          src="<%= square_avatar(person.avatar_url) %>" />
+
+      <% elsif ::Person.const_defined?('MISSING_AVATAR_PATH') %>
+
+        <img
+          alt="Avatar"
+          width="32"
+          height="32"
+          src="<%= ::Person::MISSING_AVATAR_PATH %>" />
+
+      <% else %>
+
+        <img
+          alt="Missing"
+          width="32"
+          height="32"
+          src="https://www.planningcenteronline.com/photos/icon/missing.png" />
+
+      <% end %>
+    </span>
+
+  <% else %>
+
+    <span class="photo">
+      <img
+        alt="Missing"
+        width="32"
+        height="32"
+        src="https://www.planningcenteronline.com/photos/icon/missing.png" />
+    </span>
+
+  <% end %>
+</span>

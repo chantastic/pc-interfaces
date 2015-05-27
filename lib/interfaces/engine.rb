@@ -4,6 +4,8 @@ require "jquery-rails"
 require "es5-shim-rails"
 require "html5shiv-rails"
 require "placeholder-gem"
+require "autoprefixer-rails"
+require "react-rails"
 
 module Interfaces
   class Engine < ::Rails::Engine
@@ -15,14 +17,19 @@ module Interfaces
       generate.view_specs false
     end
 
+    config.react.jsx_transform_options = {
+      harmony: true,
+      strip_types: true
+    }
+
     initializer :assets do |config|
       Rails.application.config.assets.precompile += %w(
         interfaces/interfaces.eot
         interfaces/interfaces.svg
         interfaces/interfaces.ttf
         interfaces/interfaces.woff
-        icons/app_icons.png
-        icons/app_icons@2x.png
+        interfaces/icons/app_icons.png
+        interfaces/icons/app_icons@2x.png
         select2-spinner.gif
       )
     end

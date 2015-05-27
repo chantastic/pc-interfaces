@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount Interfaces::Engine => '/styleguide'
+  mount Interfaces::Engine => '/interfaces'
 end

@@ -7,5 +7,9 @@ module Interfaces
 
     def sample_modal
     end
+
+    def version
+      render text: `cat Gemfile.lock | grep 'interfaces (' | awk -v FS="[()]" '{print $2}'`
+    end
   end
 end

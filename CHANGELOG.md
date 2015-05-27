@@ -1,6 +1,28 @@
 INTERFACES CHANGELOG
 --------------------
 
+### 0.6.0 (May 27 2014)
+
+* [FEATURE] add AccountSwitcher with PCO-API backend
+  + update `interfaces_header` with injection of Person and Organization
+    - require current Person as `person`
+    - require current Organization as `organization`
+    - require a person's profile path as `person_profile_path`
+* [DEPENDENCY] add react-rails
+  + inject harmony config
+* [BREAKING CHANGE] apps must supply Underscore/Lodash implementation
+  + add lodash to Dummy app
+  + to update simply include Underscore/Lodash, required before interfaces
+* [BREAKING CHANGE] update hard-coded links from /styleguide/* -> /interfaces/*
+* [FEATURE] add /engine/version route for `pco interfaces` CLI
+  * Interfaces now constrains the routes based on environment.
+  * Update apps to mount the engine without constraint.
+  * All apps should now mount `/interfaces` instead of `/styleguide`
+* [BUGFIX] remove all sub-pixel rem definitions: .55rem -> .6rem
+* [BUGFIX] fix minor code errors in modals.sass
+* [FEATURE] add autoprefixer-rails gem
+* [BUGFIX] rename .css.sass files to .sass
+* [BUGFIX] move interfaces assets from /vendor to /assets
 * [BUGFIX] fix remaining 'border-bottom/top-radius' shorthand
 
 ### 0.5.1 (February 25 2015)

@@ -1,0 +1,89 @@
+//Nothing in the modules directory should output css directly.
+//This directory is reserved for variables, placeholders etc.
+
+//===============
+//  STRUCTURE
+//===============
+$max-site-width:       120em !default
+
+//===============
+//  ICON FONT
+//===============
+//change this to the name of your icon font
+$font-name: accounts !default
+
+//===============
+//  TYPOGRAPHY
+//===============
+$base-font-family:        "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif !default
+// $base-font-family:        "proxima-nova", "Lucida Sans", Arial, Helvetica, "Helvetica Neue", Verdana, sans-serif !default
+$base-font-size:          14
+$base-font-color:         #333333 !default
+$base-heading-color:      #616161 !default
+
+//===============
+//  COLORS
+//===============
+// Grayscale
+$black:                  rgb(0, 0, 0) !default
+$dark-gray:              lighten($black, 25%) !default
+$gray:                   lighten($black, 50%) !default
+$light-gray:             lighten($black, 75%) !default
+$lighter-gray:           lighten($black, 90%) !default
+
+//this is the main headr color for the app
+$base-color:              #3A7C96 !default
+$bg-color:                #ffffff !default
+$sidebar-bg-color:        #f1f1f1 !default
+$accent-color1:           #4573ad !default
+//override this for tighter control over form focus states
+$form-color:              $base-color !default
+$form-input-bg-color:     #ffffff !default
+$form-input-border-color: adjust-color($light-gray, $lightness: -6%) !default
+$main-content-bg:         $bg-color
+
+// Buttons and other alerts
+$primary-btn-color:      $base-color !default
+$success-color:          #6FB454 !default
+$danger-color:           #d65440 !default
+$warning-color:          #FFE5A3 !default
+$selected-btn-color:     $success-color !default
+
+//Modal
+$modal-title-color:           adjust-color($base-color, $lightness: 75%, $saturation: -90%) !default
+$modal-header-color:          adjust-color($base-color, $lightness: 1%, $saturation: -6%) !default
+$modal-bg-color:              rgba(adjust-color($base-color, $lightness: -50%, $saturation: -65%), .7) !default
+$modal-window-bg-color:       #fafafa !default
+$modal-radius:                3px !default
+$modal-child-radius:          ($modal-radius - 1px) !default
+
+// Links
+$link-color:             $base-color !default
+$link-color-hover:       saturate(darken($link-color, 7), 4) !default
+$link-color-focus:       saturate(darken($link-color, 15), 5) !default
+
+//NAV Highlights
+$highlighted-bg-color:   adjust-color($link-color, $lightness: 55%, $saturation: 1%) !default
+$highlighted-color:      $link-color-hover !default
+
+
+//MISC
+$dropdown-shadow:          rgba(adjust-color($base-color, $lightness: -10, $saturation: -49), 0.45)
+$topbar-height:            51px !default
+$sidebar-width-big-screen: 260px !default
+$sidebar-width-med-screen: 225px !default
+
+//PANES
+$border-color:                adjust-color($bg-color, $lightness: -14%) !default
+$pane-header-bg-top:          adjust-color($lighter-gray, $lightness: 5%) !default
+$pane-header-bg-bottom:		    adjust-color($lighter-gray, $lightness: 3%) !default
+$pane-muted-header-bg:        #e8e7e6 !default
+$pane-muted-bg:               #f4f3f1 !default
+$default-pane-radius:         2px !default
+$default-pane-header-radius:  ($default-pane-radius - 1px) !default
+
+//LISTS
+$list-border-color:       adjust-color($pane-header-bg-bottom, $lightness: -7%)
+$list-border-width:       1px
+$list-vertical-padding:   1rem
+$list-horizontal-padding: 1.5rem
