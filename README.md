@@ -33,31 +33,13 @@ Add this to your `application.js` manifest:
 
 This will provide you with out-of-the-box Interfaces styles, scripts, shims, libraries, and components.
 
-**It's possible to take only the peaces that you want out of Interfaces but not recommended. Defer complicated setups to @chantastic or @dsecrest**
-
-### Adding Layout
-
-There are to ways to setup layout in your application.
-
-#### Scaffolding
-
-Open up `layouts/application.html.erb` and wrap `yield` in the `interfaces` block helper.
-
-```erb
-...
-<%= interfaces do %>
-  <%= yield %>
-<% end %>
-...
-```
-
-#### Full Layout
+#### Adding Layout
 
 It's likely you'll need a more complex layout. This is the current baseline. Wrap your `<%= yield %>` tag like so:
 
 ```erb
 <%= interfaces_wrap do %>
-  <%= interfaces_header do %>
+  <%= interfaces_header person: current_person, organization: current_organizationdo, person_profile_path: '/path/to/profile/:id/edit' %>
     <%# navagation list items here %>
   <% end %>
 
@@ -71,10 +53,19 @@ It's likely you'll need a more complex layout. This is the current baseline. Wra
 <%= interfaces_footer do %>Designed in CA Copyright 2015<% end %>
 ```
 
-## Styleguide
+#### AccountSwitcher
 
-If you'd like to see all the available components in your application, add this line to `confi/routes.rb`. In development, it will make the route `/interfaces` available.
+To use the AccountSwitcher, you'll need to provide `interfaces_header` with both
+the current Person and Organization, however they are implemented in your app.
+This is commonly `current_person` and `current_organization`.
+
+## /interfaces route
+
+Add this line to your your `routes.rb` file.
 
 ```
 mount Interfaces::Engine => '/interfaces
 ```
+
+This provides all of the `pco` command-line tools with data about Interfaces,
+and allow you to see available Interfaces APIs in production.
