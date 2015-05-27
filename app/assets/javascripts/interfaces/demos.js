@@ -1,4 +1,5 @@
 //= require prism
+//= require lodash
 //= require interfaces/demo-scripts
 
 // initialize Prism for Turbolinks

@@ -1,0 +1,15 @@
+.account-switcher_logout_link {
+  line-height: 16px;
+  float: right;
+  background: #ddd;
+  color: white !important;
+  padding: 4px 8px;
+  margin: 10px;
+  border-radius: 3px;
+
+  transition: background-color .12s ease-in;
+}
+
+.account-switcher_logout_link:hover {
+  background-color: #ccc;
+}

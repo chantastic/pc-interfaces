@@ -8,8 +8,18 @@ module Interfaces
       render layout: '/interfaces/wrap', &block
     end
 
-    def interfaces_header(&block)
-      render layout: '/interfaces/header', &block
+    def interfaces_header(person:              Interfaces::NullPerson.new,
+                          person_profile_path: "",
+                          organization:        Interfaces::NullOrganization.new,
+                          &block)
+
+      render layout: '/interfaces/header',
+             locals: {
+               person:       person,
+               profile_path: person_profile_path,
+               organization: organization
+             },
+             &block
     end
 
     def interfaces_content(&block)

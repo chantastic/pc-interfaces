@@ -1,0 +1,7 @@
+.account-switcher_action-group {
+  display: table;
+  width: 100%;
+  height: 100%;
+  line-height: 41px;
+  background-color: rgba(0,0,0, 0.02);
+}

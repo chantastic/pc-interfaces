@@ -1,0 +1,134 @@
+@-webkit-keyframes PULSE-ALPHA {
+  0%   { color: rgba(255,255,255,  .5) };
+  50%  { color: rgba(255,255,255, 1  ) };
+  100% { color: rgba(255,255,255,  .5) };
+}
+@-moz-keyframes PULSE-ALPHA {
+  0%   { color: rgba(255,255,255,  .5) };
+  50%  { color: rgba(255,255,255, 1  ) };
+  100% { color: rgba(255,255,255,  .5) };
+}
+@-o-keyframes PULSE-ALPHA {
+  0%   { color: rgba(255,255,255,  .5) };
+  50%  { color: rgba(255,255,255, 1  ) };
+  100% { color: rgba(255,255,255,  .5) };
+}
+@keyframes PULSE-ALPHA {
+  0%   { color: rgba(255,255,255,  .5) };
+  50%  { color: rgba(255,255,255, 1  ) };
+  100% { color: rgba(255,255,255,  .5) };
+}
+
+.user-badge {
+  /* BEGIN: IE9 block */
+  /* This gets inferred in good browsers. */
+  /* Explicitness here does not affect good browsers. */
+  /* Can be removed when IE9 support is depricated. */
+  position: relative;
+  /* END: IE9 block */
+
+  float: right;
+
+  padding-left: 15px;
+  border-left: 1px solid #384858;
+
+  cursor: pointer;
+
+  transition: all .12s ease-in;
+  -webkit-transform: translate3d(0,0,0);
+          transform: translate3d(0,0,0);
+
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.i-account-switcher-is-expanded .user-badge {
+  background-color: white;
+}
+
+.i-account-switcher-is-expanded .user-badge_container::before {
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: transparent;
+}
+
+.user-badge_user-name {
+  overflow: hidden;
+
+  color: #fff;
+  text-overflow: ellipsis;
+
+  transition: all .12s ease-in;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+.i-account-switcher-is-expanded .user-badge_user-name {
+  color: #444;
+  font-size: 13px;
+
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+}
+
+.user-badge_organization-name {
+  overflow: hidden;
+
+  color: rgba(255,255,255,.7);
+  text-overflow: ellipsis;
+
+  font-size: 11px;
+
+  transition: all .12s ease-in;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+.i-account-switcher-is-expanded .user-badge_organization-name {
+  color: transparent;
+  -webkit-transform: translate(0, 30px);
+          transform: translate(0, 30px);
+}
+
+.user-badge_trigger {
+  position: relative;
+
+  color: rgba(255,255,255, .5);
+
+  cursor: pointer;
+  transition: all .24s ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body:not(.i-account-switcher-is-expanded) .user-badge .user-badge_trigger:hover {
+  color: rgba(255,255,255, 1);
+  text-shadow: 0 0 10px rgba(255,255,255, .3);
+  -webkit-animation: PULSE-ALPHA 3s infinite;
+     -moz-animation: PULSE-ALPHA 3s infinite;
+       -o-animation: PULSE-ALPHA 3s infinite;
+          animation: PULSE-ALPHA 3s infinite;
+}
+
+.i-account-switcher-is-expanded .user-badge_trigger {
+  color: $base-color;
+  -webkit-transform: scaleY(-1);
+          transform: scaleY(-1);
+}
+
+@media (max-width: 767px) {
+  .user-badge { display: none }
+}
+
+@media (max-width: 979px) {
+  .user-badge_user-name         { display: none }
+  .user-badge_organization-name { display: none }
+}

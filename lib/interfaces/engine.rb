@@ -5,6 +5,7 @@ require "es5-shim-rails"
 require "html5shiv-rails"
 require "placeholder-gem"
 require "autoprefixer-rails"
+require "react-rails"
 
 module Interfaces
   class Engine < ::Rails::Engine
@@ -15,6 +16,11 @@ module Interfaces
       generate.assets false
       generate.view_specs false
     end
+
+    config.react.jsx_transform_options = {
+      harmony: true,
+      strip_types: true
+    }
 
     initializer :assets do |config|
       Rails.application.config.assets.precompile += %w(

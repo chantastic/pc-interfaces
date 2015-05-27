@@ -1,0 +1,16 @@
+<div
+  class="account-switcher_container"
+  onclick="$(this).closest('.user-badge').toggleClass('is-expanded')">
+  <div class="account-switcher">
+    <%= react_component "ConnectedPersonMenuContainer",
+                        {
+                          currentPersonAccountCenterId: person.account_center_id,
+                          currentPersonId: person.id,
+                          currentPersonName: person.name,
+                          currentPersonOrganizationName: organization.name,
+                          currentPersonProfilePath: profile_path,
+                          railsAppName: current_app,
+                          railsEnv: Rails.env
+                        } %>
+  </div>
+</div>
