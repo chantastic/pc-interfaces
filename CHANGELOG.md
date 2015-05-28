@@ -3,6 +3,7 @@ INTERFACES CHANGELOG
 
 ### 0.6.0 (May 27 2014)
 
+* [BREAKING CHANGE] app_icons path moved to /images/interfaces/icons
 * [FEATURE] add AccountSwitcher with PCO-API backend
   + update `interfaces_header` with injection of Person and Organization
     - require current Person as `person`
