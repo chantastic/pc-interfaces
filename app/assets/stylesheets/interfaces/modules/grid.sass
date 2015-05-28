@@ -24,7 +24,7 @@ $gutter: 2rem
   margin-bottom: 1.5rem
   position: relative
 
-@media (max-width: 37.5em) // < 600 :: palm--
++breakpoint(lte_palm)
   .palm--end
     padding-right: 0 !important
 
@@ -38,23 +38,24 @@ $gutter: 2rem
     padding: 0
     clear: both
 
-@media (min-width: 37.5em) // > 600
++breakpoint(bp_1)
   [class*="col--"]
     float: left
     padding-right: $gutter
     &:last-of-type
       padding-right: 0
 
-@media (min-width: 37.5em) and (max-width: 64em) // > 600 & < 1024 :: tab--
-  .tab--end
-    padding-right: 0 !important
++breakpoint(bp_1)
+  +breakpoint(lte_tablet-wide)
+    .tab--end
+      padding-right: 0 !important
 
-  [class*="tab--"]
-    padding-right: $tab-gutter
-    float: left
-    &:last-of-type
-      padding-right: 0
+    [class*="tab--"]
+      padding-right: $tab-gutter
+      float: left
+      &:last-of-type
+        padding-right: 0
 
-  .tab--full
-    padding: 0
-    clear: both
+    .tab--full
+      padding: 0
+      clear: both

@@ -4,6 +4,7 @@ INTERFACES CHANGELOG
 ### 0.6.0 (May 27 2014)
 
 * [BREAKING CHANGE] app_icons path moved to /images/interfaces/icons
+* [BREAKING CHANGE] change media queries from ems to hard  px values. Should only affect ~980 and ~1024 breakpoint changes
 * [FEATURE] add AccountSwitcher with PCO-API backend
   + update `interfaces_header` with injection of Person and Organization
     - require current Person as `person`
