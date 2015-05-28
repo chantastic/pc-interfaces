@@ -1,7 +1,8 @@
 .col
   width: 100%
 
-@media (max-width: 37.5em) // < 600 :: palm--
++breakpoint(lte_palm)
+
   .palm--hide
     display: none !important
 
@@ -32,7 +33,8 @@
   .palm--four-fifths
     width: 80%
 
-@media (min-width: 37.5em) // > 600
++breakpoint(bp_1)
+
   .col--half
     width: 50%
 
@@ -58,36 +60,38 @@
   .col--four-fifths
     width: 80%
 
-@media (min-width: 37.5em) and (max-width: 64em) // > 600 & < 1024 :: tab--
-  .tab--full
-    width: 100%
-  .tab--half
-    width: 50%
++breakpoint(bp_1)
+  +breakpoint(lte_tablet-wide)
 
-  //thirds
-  .tab--third
-    width: 33.3%
-  .tab--two-thirds
-    width: 66.6%
+    .tab--full
+      width: 100%
+    .tab--half
+      width: 50%
 
-  // quarters
-  .tab--quarter
-    width: 25%
-  .tab--three-quarters
-    width: 75%
+    //thirds
+    .tab--third
+      width: 33.3%
+    .tab--two-thirds
+      width: 66.6%
 
-  // fifths
-  .tab--fifth
-    width: 20%
-  .tab--two-fifths
-    width: 40%
-  .tab--three-fifths
-    width: 60%
-  .tab--four-fifths
-    width: 80%
+    // quarters
+    .tab--quarter
+      width: 25%
+    .tab--three-quarters
+      width: 75%
+
+    // fifths
+    .tab--fifth
+      width: 20%
+    .tab--two-fifths
+      width: 40%
+    .tab--three-fifths
+      width: 60%
+    .tab--four-fifths
+      width: 80%
 
 
-@media (min-width: 64em) // > 1024 :: lap--
++breakpoint(bp_3)
 
   .desk--full
     width: 100%
