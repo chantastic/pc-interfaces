@@ -1,7 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
-### develop
+### 0.6.0.beta.3 (May 29 2015)
 
 * [FEATURE] app switcher icon addition for Developer API
 * [FEATURE] add ".topbar_route" for styling styling major-routes across devices
