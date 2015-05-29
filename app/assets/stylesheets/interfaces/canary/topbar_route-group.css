@@ -1,0 +1,9 @@
+.topbar_route-group {
+  float: left;
+}
+
+@media (max-width: 767px) {
+  .topbar_route-group {
+    float: none;
+  }
+}

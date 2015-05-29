@@ -1,0 +1,26 @@
+.topbar_route_icon {
+  margin-right: 8px;
+  color: black;
+  vertical-align: -5px;
+  font-size: 22px;
+
+  transition: all .12s ease-in;
+}
+
+/* parent */
+
+.topbar_route:hover .topbar_route_icon {
+  color: white;
+}
+
+@media (min-width: 0) {
+  .topbar_route_icon {
+    display: none;
+  }
+}
+
+@media (min-width: 980px) {
+  .topbar_route_icon {
+    display: initial;
+  }
+}
