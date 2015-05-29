@@ -9,32 +9,26 @@
       <% interfaces_organization = OpenStruct.new(name: "Interfaces Organization") %>
 
       <%= interfaces_header person: interfaces_person, organization: interfaces_organization, person_profile_path: "#" do %>
-        <li>
-          <a href="/interfaces">
-            <span class="icon interfaces-services" aria-hidden="true"></span>
-            <span class="btn-label">CSS</span>
-          </a>
-        </li>
+        <a
+         class="topbar_route"
+         href="/interfaces">
+          <span class="topbar_route_icon icon interfaces-services" aria-hidden="true"></span>
+          CSS
+        </a>
 
-        <li class="divider"></li>
+        <a
+         class="topbar_route"
+         href="/interfaces/js">
+          <span class="topbar_route_icon icon interfaces-services" aria-hidden="true"></span>
+          JS
+        </a>
 
-        <li>
-          <a href="/interfaces/js">
-            <span class="icon interfaces-services" aria-hidden="true"></span>
-            <span class="btn-label">JS</span>
-          </a>
-        </li>
-
-        <li class="divider"></li>
-
-        <li>
-          <a href="https://github.com/ministrycentered/interfaces/wiki/API-extensions">
-            <span class="icon interfaces-services" aria-hidden="true"></span>
-            <span class="btn-label">Wiki (Github)</span>
-          </a>
-        </li>
-
-        <li class="divider"></li>
+        <a
+         class="topbar_route"
+         href="https://github.com/ministrycentered/interfaces/wiki/API-extensions">
+          <span class="topbar_route_icon icon interfaces-services" aria-hidden="true"></span>
+          Wiki (Github)
+        </a>
       <% end %>
 
       <%= interfaces_content do %>
