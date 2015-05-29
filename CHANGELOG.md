@@ -1,17 +1,20 @@
 INTERFACES CHANGELOG
 --------------------
 
-### 0.6.0
+### develop
 
 * [FEATURE] add ".topbar_route" for styling styling major-routes across devices
   * upgrade path:
     + in `interfaces_header` update links to links to conform to the new API
       - see new syntax in `app/views/layouts/interfaces/application.html.erb`
 
-### 0.6.0.beta.1 (May 27 2015)
+### 0.6.0.beta.2 (May 28 2015)
 
 * [BREAKING CHANGE] app_icons path moved to /images/interfaces/icons
 * [BREAKING CHANGE] change media queries from ems to hard  px values. Should only affect ~980 and ~1024 breakpoint changes
+
+### 0.6.0.beta.1 (May 27 2015)
+
 * [FEATURE] add AccountSwitcher with PCO-API backend
   + update `interfaces_header` with injection of Person and Organization
     - require current Person as `person`
