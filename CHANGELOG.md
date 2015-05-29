@@ -3,6 +3,7 @@ INTERFACES CHANGELOG
 
 ### develop
 
+* [FEATURE] app switcher icon addition for Developer API
 * [FEATURE] add ".topbar_route" for styling styling major-routes across devices
   * upgrade path:
     + in `interfaces_header` update links to links to conform to the new API
