@@ -1,6 +1,10 @@
 INTERFACES CHANGELOG
 --------------------
 
+### develop
+
+* [FIX] ConnectedPersonListItem now expects json-api v1 attributes
+
 ### 0.6.0.beta.3 (May 29 2015)
 
 * [FEATURE] app switcher icon addition for Developer API
