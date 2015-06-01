@@ -1,6 +1,14 @@
 INTERFACES CHANGELOG
 --------------------
 
+### 0.6.0.beta.4 (June 1 2015)
+
+* [FIX] ConnectedPersonListItem now expects json-api v1 attributes
+* [BREAKING CHANGE] update `interfaces_header` to not have assumptions about routes-nav.
+  + applications are now required to bring their own opnion about the route-nav.
+    - the new `topbar_routes-group` API may be used
+    - applications may continue to use the same api by adding a `<ul>` wrapper to the call-site of `interfaces_header`
+
 ### 0.6.0.beta.3 (May 29 2015)
 
 * [FEATURE] app switcher icon addition for Developer API
