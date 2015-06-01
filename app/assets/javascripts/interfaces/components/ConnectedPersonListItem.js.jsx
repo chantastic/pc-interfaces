@@ -39,6 +39,14 @@
       return `${interfacesURLForEnv(this.context.railsEnv, 'accounts')}/link/new?to=${this.props.person.id}&return=${this.context.railsAppName}%2f`;
     }
 
+    get interimOrganazationName() {
+      if (this.props.person.organization_name) {
+        return this.props.person.organization_name;
+      }
+
+      return this.props.person.attributes.organization_name;
+    }
+
     render() {
       return (
         <div
@@ -46,7 +54,7 @@
          onMouseEnter={this.handleMouseEnter}
          onMouseLeave={this.handleMouseLeave}>
           <a href={this.link} style={this.anchorStyles}>
-           {this.props.person.organization_name}
+           {this.interimOrganazationName}
            {this.renderSwitchIcon()}
           </a>
         </div>
@@ -80,8 +88,10 @@
 
   ConnectedPersonListItem.propTypes = {
     person: React.PropTypes.shape({
-      id:                React.PropTypes.string.isRequired,
-      organization_name: React.PropTypes.string.isRequired
+      id: React.PropTypes.string.isRequired,
+      attributes: React.PropTypes.shape({
+        organization_name: React.PropTypes.string.isRequired
+      }).isRequired,
     }).isRequired
   };
 
