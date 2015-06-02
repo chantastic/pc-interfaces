@@ -1,6 +1,10 @@
 INTERFACES CHANGELOG
 --------------------
 
+### Develop
+
+* [Fix] update app-icon styles to reflect addition of new giving icon
+
 ### 0.6.0.beta.4 (June 1 2015)
 
 * [FIX] ConnectedPersonListItem now expects json-api v1 attributes
