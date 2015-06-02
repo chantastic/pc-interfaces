@@ -1,7 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
-### Develop
+### 0.6.0.beta.5 (June 2 2015)
 
 * [Fix] update app-icon styles to reflect addition of new giving icon
 
