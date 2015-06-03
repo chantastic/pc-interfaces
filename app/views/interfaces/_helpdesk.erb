@@ -5,10 +5,12 @@
   Helpdesk.accountCenterUserId = "<%= Person.current.try(:account_center_id) || Person.current.try(:id) %>";
   Helpdesk.accountCenterOrganizationId = "<%= Organization.current.try(:account_center_id) || Organization.current.try(:id) %>";
 
-  $(document).on('click', '#jsLaunchHelpdesk', function() {
-    Helpdesk.load()
-    return false
-  });
+  $(document)
+    .off('click', '#jsLaunchHelpdesk')
+    .on('click',  '#jsLaunchHelpdesk', function() {
+      Helpdesk.load()
+      return false
+    });
 
 <% else %>
 
