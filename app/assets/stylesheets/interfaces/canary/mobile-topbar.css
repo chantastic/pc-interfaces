@@ -1,0 +1,9 @@
+.mobile-topbar {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobile-topbar {
+    display: block;
+  }
+}
