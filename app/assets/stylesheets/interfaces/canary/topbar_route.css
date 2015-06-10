@@ -1,10 +1,12 @@
 .topbar_route {
   color: white !important;
+  font-weight: bold;
   transition: all .12s ease-in;
   transition-property: color, background-color;
 }
 
-.topbar_route:hover {
+.topbar_route:hover,
+.topbar_route.is-active {
   background-color: rgba(0,0,0,.25);
 }
 

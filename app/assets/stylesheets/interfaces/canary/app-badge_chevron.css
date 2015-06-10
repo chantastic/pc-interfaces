@@ -1,0 +1,23 @@
+.app-badge_chevron {
+  position: absolute;
+  top: 0px; right: 0px;
+  padding: 22px;
+  z-index: 10000;
+  color: white;
+  background-color: rgba(0,0,0,0);
+
+  transition: all .12s ease-in-out;
+}
+
+.i-topbar_applist-is-expanded .app-badge_chevron {
+  color: #484848;
+  -webkit-transform: scaleY(-1);
+          transform: scaleY(-1);
+}
+
+.i-topbar_applist-is-expanded .app-badge_chevron:hover {
+  margin: 9px;
+  padding: 13px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.1);
+}

@@ -9,7 +9,8 @@
 
 /* parent */
 
-.topbar_route:hover .topbar_route_icon {
+.topbar_route:hover .topbar_route_icon,
+.topbar_route.is-active .topbar_route_icon {
   color: white;
 }
 
