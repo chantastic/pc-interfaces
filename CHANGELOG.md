@@ -1,6 +1,10 @@
 INTERFACES CHANGELOG
 --------------------
 
+### 0.6.0.beta.7 (June 9 2015)
+
+* [BUGFIX] help helpdesk to be honor environment
+
 ### 0.6.0.beta.5 (June 2 2015)
 
 * [Fix] update app-icon styles to reflect addition of new giving icon
