@@ -11,7 +11,7 @@
 }
 
 @media (min-width: 0) and (max-width: 767px) {
-  .topbar_route {
+  body:not([data-app-name=services]) .topbar_route {
     display: block;
     border-bottom: 1px solid rgba(0,0,0,.5);
     text-align: center;
@@ -26,4 +26,11 @@
     border-right: 1px solid rgba(0,0,0,.5);
     font-size: 12px;
   }
+}
+
+[data-app-name=services] .topbar_route {
+  float: left;
+  padding: 0 15px;
+  border-right: 1px solid rgba(0,0,0,.5);
+  font-size: 12px;
 }

@@ -1,5 +1,9 @@
-@media (min-width: 767px) {
-  .top-bar-quarantine { display: none }
+.top-bar-quarantine {
+  display: none
+}
+
+@media (max-width: 767px) {
+  body:not([data-app-name=services]) .top-bar-quarantine { display: block }
 }
 
 @media (max-width: 700px) {

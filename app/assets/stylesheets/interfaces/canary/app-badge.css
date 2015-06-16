@@ -15,7 +15,7 @@
 }
 
 @media (min-width: 0) {
-  .app-badge[data-constraints~=non-mobile] {
+  body:not([data-app-name=services]) .app-badge[data-constraints~=non-mobile] {
     display: none;
   }
 }
@@ -32,8 +32,7 @@
   }
 }
 
-/* services demo */
-.app-badge {
+[data-app-name=services] .app-badge {
   width: 209px !important;
   height: 51px;
 }
