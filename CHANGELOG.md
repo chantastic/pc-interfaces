@@ -1,6 +1,8 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BUGFIX] top bar: add markup and css around utility links
+
 ### 0.6.0.beta.7 (June 9 2015)
 
 * [BUGFIX] help helpdesk to be honor environment
