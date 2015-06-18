@@ -49,17 +49,13 @@
               style="text-align: left; color: white; padding-left: 20px">
               <%= person %> <%= organization %>
             </div>
-            <% if person.staff? %>
-              <a
-                style="text-align: left; color: white; padding-left: 20px; border-top: 1px solid #222"
-                href="<%= PCO::URL.accounts "administration" %>">admin</a>
-            <% end %>
-            <a
-              style="text-align: left; color: white; padding-left: 20px; border-top: 1px solid #222"
-              id="jsLaunchHelpdesk">help</a>
-            <a
-              style="text-align: left; color: white; padding-left: 20px; border-top: 1px solid #222"
-              href="<%= PCO::URL.accounts "logout" %>">logout</a>
+            <div class="util-links <% if person.staff? %>with-staff-link<% end %>">
+              <% if person.staff? %>
+                <a href="<%= PCO::URL.accounts "administration" %>">admin</a>
+              <% end %>
+              <a id="jsLaunchHelpdesk">help</a>
+              <a href="<%= PCO::URL.accounts "logout" %>">logout</a>
+            </div>
           </div>
         </nav>
 
