@@ -42,13 +42,7 @@
       return (
         <ConnectedPersonMenu
          connectedPeople={this.state.connectedPeople}
-         currentPersonAccountCenterId={this.props.currentPersonAccountCenterId}
-         currentPersonId={this.props.currentPersonId}
-         currentPersonName={this.props.currentPersonName}
-         currentPersonOrganizationName={this.props.currentPersonOrganizationName}
-         currentPersonProfilePath={this.props.currentPersonProfilePath}
-         railsAppName={this.props.railsAppName}
-         railsEnv={this.props.railsEnv} />
+         {...this.props} />
       );
     }
   }
@@ -61,6 +55,7 @@
     currentPersonProfilePath: React.PropTypes.string,
     railsAppName: React.PropTypes.string.isRequired,
     railsEnv: React.PropTypes.string.isRequired,
+    showSettingsLink: React.PropTypes.bool.isRequired,
   };
 
   global.ConnectedPersonMenuContainer = (global.module || {}).exports = ConnectedPersonMenuContainer;

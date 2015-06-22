@@ -1,6 +1,6 @@
 (function (global) {
   var styles = {
-    padding: "13px 10px 0",
+    padding: 0,
     display: "block",
     fontSize: "13px",
     lineHeight: "13px",
@@ -35,7 +35,8 @@
           data-person-id={this.props.id}
           href={this.props.profilePath}
           onMouseEnter={this.handleMouseEnter}
-          onMouseLeave={this.handleMouseLeave}>
+          onMouseLeave={this.handleMouseLeave}
+          {...this.props}>
            Profile
         </a>
       );
