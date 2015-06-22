@@ -40,6 +40,10 @@
       return `${interfacesURLForEnv(this.context.railsEnv, "accounts")}/link/new?to=${this.props.id}&return=${this.context.railsAppName}%2f`;
     }
 
+    get settingsLink() {
+      return `/organization`;
+    }
+
     componentWillMount() {
       // IE10+ warning
       if(isGreaterThanIE9) {
@@ -65,9 +69,32 @@
           }
 
           {(this.props.profilePath) &&
-            <CurrentPersonListItemProfileLink
-             id={this.props.id}
-             profilePath={this.props.profilePath} />
+            <div style={{
+              display: "table",
+              width: "100%",
+              boxSizing: "border-box",
+              padding: "13px 10px 0",
+              lineHeight: "13px"
+            }}>
+              <div style={{ display: "table-cell" }}>
+                <CurrentPersonListItemProfileLink
+                 id={this.props.id}
+                 profilePath={this.props.profilePath} />
+              </div>
+
+              {(this.props.showSettingsLink) &&
+                <div style={{
+                  display: "table-cell",
+                  textAlign: "right",
+                  width: 20,
+                  paddingRight: 9
+                }}>
+                  <a href={this.settingsLink}>
+                    <i className="interfaces interfaces-cog" />
+                  </a>
+                </div>
+              }
+            </div>
           }
 
           <a href={this.link} style={anchorStyles}>
@@ -83,6 +110,7 @@
     name: React.PropTypes.string.isRequired,
     organizationName: React.PropTypes.string.isRequired,
     profilePath: React.PropTypes.string,
+    showSettingsLink: React.PropTypes.bool.isRequired,
   };
 
   CurrentPersonListItem.contextTypes = {

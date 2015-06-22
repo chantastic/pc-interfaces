@@ -10,7 +10,8 @@
                           currentPersonOrganizationName: organization.name,
                           currentPersonProfilePath: profile_path,
                           railsAppName: current_app,
-                          railsEnv: Rails.env
+                          railsEnv: Rails.env,
+                          showSettingsLink: person.owner? || false
                         } %>
   </div>
 </div>
