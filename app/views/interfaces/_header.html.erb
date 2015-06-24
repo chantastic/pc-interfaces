@@ -14,8 +14,7 @@
     onmouseenter="$(document).trigger('app-badge:hovered');">
     <div class="app-badge" data-constraints="non-mobile">
       <div class="app-badge_button">
-        <%# STATIC %>
-        <div id="logo" class="bookmark icon-services-logo" aria-hidden="true"></div>
+        <div id="logo" class="bookmark icon-<%= application_class_name %>-logo" aria-hidden="true"></div>
         <i class="app-badge_chevron interfaces interfaces-caret-down-outline"></i>
       </div>
 
