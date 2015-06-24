@@ -10,6 +10,9 @@
   <%= stylesheet_link_tag "application" %>
 
   <%# JS %>
+  <script type="text/javascript">
+    window.railsEnv = "<%= Rails.env %>";
+  </script>
   <%= javascript_include_tag "application" %>
 
   <%# Icons %>
