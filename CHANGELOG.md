@@ -1,5 +1,10 @@
 INTERFACES CHANGELOG
 --------------------
+### develop
+
+* [BUGFIX] move railsEnv assignment to head from footer
+
+### 0.6.0.beta.9 (June 23 2015)
 
 ### 0.6.0.beta.8 (June 18 2015)
 
