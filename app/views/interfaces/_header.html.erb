@@ -1,9 +1,11 @@
-<div class="mobile-topbar topbar">
-  <%= react_component "MobileTopbar", {
-        routes: yield,
-        railsAppName: "account-center"
-      } %>
-</div>
+<% if application_class_name != "services" %>
+  <div class="mobile-topbar topbar">
+    <%= react_component "MobileTopbar", {
+          routes: yield,
+          railsAppName: "account-center"
+        } %>
+  </div>
+<% end %>
 
 <div class="topbar" data-constraints="non-mobile">
   <div class="app-badge_container"
