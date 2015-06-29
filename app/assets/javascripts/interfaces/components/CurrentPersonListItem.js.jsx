@@ -8,14 +8,13 @@
     return !(document.all && !window.atob);
   }
 
-  var anchorStyles = {
-    padding: "14px 10px",
-    borderBottom: "1px solid #e5e5e5 !important",
-    boxSizing: "border-box",
-    lineHeight: "100%",
-    fontSize: 12,
+  var organizationBlockStyles = {
+    display: "table",
     width: "100%",
-    display: "block",
+    boxSizing: "border-box",
+    borderBottom: "1px solid #e5e5e5 !important",
+    padding: "14px 10px",
+    lineHeight: "13px",
     color: "#565656"
   };
 
@@ -69,37 +68,30 @@
           }
 
           {(this.props.profilePath) &&
-            <div style={{
-              display: "table",
-              width: "100%",
-              boxSizing: "border-box",
-              padding: "13px 10px 0",
-              lineHeight: "13px"
-            }}>
+            <div style={{ display: "table", width: "100%", boxSizing: "border-box", padding: "13px 10px 0", lineHeight: "13px" }}>
               <div style={{ display: "table-cell" }}>
                 <CurrentPersonListItemProfileLink
                  id={this.props.id}
                  profilePath={this.props.profilePath} />
               </div>
-
-              {(this.props.showSettingsLink) &&
-                <div style={{
-                  display: "table-cell",
-                  textAlign: "right",
-                  width: 20,
-                  paddingRight: 9
-                }}>
-                  <a href={this.settingsLink}>
-                    <i className="interfaces interfaces-cog" />
-                  </a>
-                </div>
-              }
             </div>
           }
 
-          <a href={this.link} style={anchorStyles}>
-            {this.props.organizationName}
-          </a>
+          <div style={organizationBlockStyles}>
+            <div style={{ display: "table-cell" }}>
+              <a href={this.link}>
+                {this.props.organizationName}
+              </a>
+            </div>
+
+            {(this.props.showSettingsLink) &&
+              <div style={{ display: "table-cell", textAlign: "right", width: 20, paddingRight: 9 }}>
+                <a href={this.settingsLink}>
+                  <i className="interfaces interfaces-cog" />
+                </a>
+              </div>
+            }
+          </div>
         </div>
       );
     }
