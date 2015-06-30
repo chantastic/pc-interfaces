@@ -45,7 +45,7 @@
 
     componentWillMount() {
       // IE10+ warning
-      if(isGreaterThanIE9) {
+      if(isGreaterThanIE9()) {
         this.handleMatchMediaChange(window.matchMedia("(max-width: 979px)"));
         window.matchMedia("(max-width: 979px)").addListener(this.handleMatchMediaChange);
       }
@@ -53,7 +53,7 @@
 
     componentWillUnmount() {
       // IE10+ warning
-      if(isGreaterThanIE9) {
+      if(isGreaterThanIE9()) {
         window.matchMedia("(max-width: 979px)").removeListener(this.handleMatchMediaChange);
       }
     }
