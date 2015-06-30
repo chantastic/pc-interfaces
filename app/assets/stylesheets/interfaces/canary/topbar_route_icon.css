@@ -22,6 +22,6 @@
 
 @media (min-width: 980px) {
   .topbar_route_icon {
-    display: initial;
+    display: inline;
   }
 }
