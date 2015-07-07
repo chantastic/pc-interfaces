@@ -16,7 +16,7 @@
       // TODO: add lodash for apps without it
       return  _.chain(this.props.connectedPeople)
         .reject((person) => parseInt(person.id, 10) === this.props.currentPersonAccountCenterId)
-        .sortBy('organization_name')
+        .sortBy((person) => person.attributes.organization_name)
         .value();
     }
 
