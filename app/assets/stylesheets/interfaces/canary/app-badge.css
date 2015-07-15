@@ -21,13 +21,13 @@
 }
 
 @media (min-width: 768px) {
-  .app-badge[data-constraints~=non-mobile] {
+  body:not([data-app-name=services]) .app-badge[data-constraints~=non-mobile] {
     display: initial;
   }
 }
 
 @media (min-width: 1600px) {
-  .app-badge[data-constraints~=non-mobile] {
+  body:not([data-app-name=services]) .app-badge[data-constraints~=non-mobile] {
     width: 260px;
   }
 }

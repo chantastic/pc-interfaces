@@ -20,7 +20,7 @@
 }
 
 @media (min-width: 768px) {
-  .topbar_route {
+  body:not([data-app-name=services]) .topbar_route {
     float: left;
     padding: 0 15px;
     border-right: 1px solid rgba(0,0,0,.5);

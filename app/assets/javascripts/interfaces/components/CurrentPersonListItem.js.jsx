@@ -78,8 +78,8 @@
           }
 
           <div style={organizationBlockStyles}>
-            <div style={{ display: "table-cell" }}>
-              <a href={this.link}>
+            <div style={{ display: "table-cell", color: "565656" }}>
+              <a href={this.link} style={{fontSize: 12, color: "inherit"}}>
                 {this.props.organizationName}
               </a>
             </div>
