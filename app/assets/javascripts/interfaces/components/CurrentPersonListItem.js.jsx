@@ -39,10 +39,6 @@
       return `${interfacesURLForEnv(this.context.railsEnv, "accounts")}/link/new?to=${this.props.id}&return=${this.context.railsAppName}%2f`;
     }
 
-    get settingsLink() {
-      return `/organization`;
-    }
-
     componentWillMount() {
       // IE10+ warning
       if(isGreaterThanIE9()) {
@@ -85,11 +81,7 @@
             </div>
 
             {(this.props.showSettingsLink) &&
-              <div style={{ display: "table-cell", textAlign: "right", width: 20, paddingRight: 9 }}>
-                <a href={this.settingsLink}>
-                  <i className="interfaces interfaces-cog" />
-                </a>
-              </div>
+              <CurrentPersonListItemSettingsLink />
             }
           </div>
         </div>
