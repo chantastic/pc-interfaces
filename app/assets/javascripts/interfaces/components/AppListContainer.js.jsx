@@ -20,6 +20,11 @@
     }
 
     fetchApps() {
+      // this is a very niave form of caching requests
+      // needed to support touch devices, where pre-fetching
+      // on hover is not availabele
+      if (this.state.apps.length) { return; }
+
       var fetchApps = $.ajax({
         url: `${interfacesURLForEnv(this.props.railsEnv, 'api')}/people/v2/me/apps`,
         xhrFields: { withCredentials: true }
@@ -37,7 +42,13 @@
     }
 
     componentWillMount() {
-      this.fetchApps();
+      $(document).on('app-badge:hovered', this.fetchApps);
+      $(document).on('app-badge:clicked', this.fetchApps);
+    }
+
+    componentWillUnmount() {
+      $(document).off('app-badge:hovered', this.fetchApps);
+      $(document).off('app-badge:clicked', this.fetchApps);
     }
 
     render() {
