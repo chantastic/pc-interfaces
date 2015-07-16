@@ -36,5 +36,14 @@
     }
   }
 
+  MobileTopbarRouteList.propTypes = {
+    routes: React.PropTypes.arrayOf(
+      React.PropTypes.shape({
+        name: React.PropTypes.string.isRequired,
+        href: React.PropTypes.string.isRequired
+      })
+    ).isRequired
+  }
+
   global.MobileTopbarRouteList = (global.module || {}).exports = MobileTopbarRouteList;
 })(this);
