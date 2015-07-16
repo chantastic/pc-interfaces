@@ -17,9 +17,11 @@
     }
 
     get style () {
-      return (this.state.hovered && this.props.hoverStyle)
-        ? this.props.hoverStyle
-        : null;
+      return _.extend(
+        {},
+        this.props.style,
+        this.state.hovered && this.props.hoverStyle
+      );
     }
 
     render() {
