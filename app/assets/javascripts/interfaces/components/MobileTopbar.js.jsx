@@ -27,20 +27,25 @@
       super(props);
 
       this.state = {
+        orgMenuOpen: true,
         routeMenuOpen: false
       };
 
-      this.handleClick = () => {
-        alert('hi');
-      }
+      this.handleUserButtonClick = () => {
+        this.setState({ orgMenuOpen: !this.state.orgMenuOpen });
+      };
 
       this.handleRouteButtonclick = () => {
         this.setState({ routeMenuOpen: !this.state.routeMenuOpen });
-      }
+      };
 
       this.handleMobileTopbarRouteListDismiss = () => {
         this.setState({ routeMenuOpen: false });
-      }
+      };
+
+      this.handleMobileTopbarProfileMenuDismiss = () => {
+        this.setState({ orgMenuOpen: false });
+      };
     }
 
     get appIconClassName() {
@@ -66,7 +71,7 @@
     render() {
       return (
         <div>
-          <div style={orgButtonStyles} onClick={this.handleClick} >
+          <div style={orgButtonStyles} onClick={this.handleUserButtonClick} >
             <i style={appIconStyles} className={this.appIconClassName} />
           </div>
 
@@ -74,7 +79,12 @@
            style={routeButtonStyles}
            onClick={this.handleRouteButtonclick}>
            {this.activeRailsRouteName}
-         </div>
+          </div>
+
+          {(this.state.orgMenuOpen) && 
+            <MobileTopbarProfileMenuContainer
+             onDismiss={this.handleMobileTopbarProfileMenuDismiss} />
+          }
 
           {(this.state.routeMenuOpen) &&
             <MobileTopbarRouteList
@@ -89,7 +99,7 @@
   MobileTopbar.PropTypes = {
     routes: React.PropTypes.string.isRequired,
     railsAppName: React.PropTypes.string.isRequired
-  }
+  };
 
   global.MobileTopbar = (global.module || {}).exports = MobileTopbar;
 })(this);
