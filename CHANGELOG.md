@@ -2,6 +2,7 @@ INTERFACES CHANGELOG
 --------------------
 ### develop
 
+* [FEATURE] add eslint for code quality and lint existing JS files
 * [BUGFIX] move railsEnv assignment to head from footer
 
 ### 0.6.0.beta.9 (June 23 2015)
