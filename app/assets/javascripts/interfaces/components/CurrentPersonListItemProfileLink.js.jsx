@@ -1,4 +1,8 @@
+/* global React, _ */
+
 (function (global) {
+  "use strict";
+
   var styles = {
     padding: 0,
     display: "block",
@@ -7,12 +11,14 @@
     transition: "all .2s ease-in-out",
     transform: "translateX(0)",
     ":hover": {
-      transform: "translateX(3px)"
-    }
+      transform: "translateX(3px)",
+    },
   };
 
   class CurrentPersonListItemProfileLink extends React.Component {
     constructor (props) {
+      super(props);
+
       this.state = { hovered: false };
 
       this.handleMouseEnter = () => this.setState({ hovered: true });
@@ -23,7 +29,7 @@
       return _.extend(
         {},
         styles,
-        this.state.hovered && styles[':hover']
+        this.state.hovered && styles[":hover"]
       );
     }
 
@@ -44,8 +50,8 @@
   }
 
   CurrentPersonListItemProfileLink.propTypes = {
-    id:          React.PropTypes.number.isRequired,
-    profilePath: React.PropTypes.string.isRequired
+    id: React.PropTypes.number.isRequired,
+    profilePath: React.PropTypes.string.isRequired,
   };
 
   global.CurrentPersonListItemProfileLink = (global.module || {}).exports = CurrentPersonListItemProfileLink;

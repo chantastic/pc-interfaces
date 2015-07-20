@@ -1,4 +1,8 @@
+/* global React, $, interfacesURLForEnv, railsEnv */
+
 (function (global) {
+  "use strict";
+
   function findCurrentApp(app) {
     return (app.attributes.name === "Services") ? false : true;
   }
@@ -8,8 +12,8 @@
   }
 
   function sortAppsByName(a, b) {
-    if (a.attributes.name < b.attributes.name) return -1;
-    if (a.attributes.name > b.attributes.name) return 1;
+    if (a.attributes.name < b.attributes.name) { return -1; }
+    if (a.attributes.name > b.attributes.name) { return 1; }
     return 0;
   }
 
@@ -19,7 +23,7 @@
 
       this.state = {
 	apps: [],
-	connectedPeople: []
+	connectedPeople: [],
       };
     }
 
@@ -30,12 +34,12 @@
       if (this.state.apps.length) { return; }
 
       var fetchApps = $.ajax({
-        url: `${interfacesURLForEnv(window.railsEnv, 'api')}/people/v2/me/apps`,
-        xhrFields: { withCredentials: true }
+        url: `${interfacesURLForEnv(railsEnv, "api")}/people/v2/me/apps`,
+        xhrFields: { withCredentials: true },
       });
 
       fetchApps.success(apps => {
-        var sortedApps, otherApps, currentApp;
+        var sortedApps;
 
         sortedApps = apps.data
           .filter(excludeCurrentApp)
@@ -52,8 +56,8 @@
       if (this.state.connectedPeople.length) { return; }
 
       var fetchConnectedPeople = $.ajax({
-        url: `${interfacesURLForEnv(window.railsEnv, 'api')}/people/v2/me/connected_people`,
-        xhrFields: { withCredentials: true }
+        url: `${interfacesURLForEnv(window.railsEnv, "api")}/people/v2/me/connected_people`,
+        xhrFields: { withCredentials: true },
       });
 
       fetchConnectedPeople.success((people) => {
@@ -73,7 +77,7 @@
   }
 
   MobileTopbarProfileMenuContainer.propTypes = {
-    onDismiss: React.PropTypes.func.isRequired
+    onDismiss: React.PropTypes.func.isRequired,
   };
 
   global.MobileTopbarProfileMenuContainer = (global.module || {}).exports = MobileTopbarProfileMenuContainer;

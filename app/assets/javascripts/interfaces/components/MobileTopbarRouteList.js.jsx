@@ -1,4 +1,8 @@
+/* global React */
+
 (function (global) {
+  "use strict";
+
   var rootStyles = {
     position: "fixed",
       top: 0,
@@ -6,20 +10,20 @@
       bottom: 0,
       left: 0,
     textAlign: "center",
-    backgroundColor: "transparent"
+    backgroundColor: "transparent",
   };
 
   var listStyles = {
     position: "absolute",
     top: 51,
     backgroundColor: "#565656",
-    width: "100%"
+    width: "100%",
   };
 
   var itemStyles = {
     display: "block",
     color: "white",
-    borderBottom: "1px solid #4a4a4a"
+    borderBottom: "1px solid #4a4a4a",
   };
 
   class MobileTopbarRouteList extends React.Component {
@@ -40,10 +44,10 @@
     routes: React.PropTypes.arrayOf(
       React.PropTypes.shape({
         name: React.PropTypes.string.isRequired,
-        href: React.PropTypes.string.isRequired
+        href: React.PropTypes.string.isRequired,
       })
-    ).isRequired
-  }
+    ).isRequired,
+  };
 
   global.MobileTopbarRouteList = (global.module || {}).exports = MobileTopbarRouteList;
 })(this);

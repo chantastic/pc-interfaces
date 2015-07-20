@@ -1,4 +1,4 @@
-/* global React */
+/* global React, _ */
 (function (global) {
   "use strict";
 
