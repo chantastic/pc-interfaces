@@ -1,4 +1,8 @@
+/* global React, interfacesURLForEnv */
+
 (function (global) {
+  "use strict";
+
   class CurrentPersonListItem extends React.Component {
     constructor(props) {
       super(props);
@@ -9,7 +13,7 @@
     }
 
     get link() {
-      return `${interfacesURLForEnv(this.context.railsEnv, 'accounts')}/link/new?to=${this.props.id}&return=${this.context.railsAppName}%2f`;
+      return `${interfacesURLForEnv(this.context.railsEnv, "accounts")}/link/new?to=${this.props.id}&return=${this.context.railsAppName}%2f`;
     }
 
     get anchorStyles() {
@@ -20,7 +24,7 @@
         fontSize: 12,
         width: "100%",
         display: "block",
-        color: "#565656"
+        color: "#565656",
       };
     }
 
@@ -58,7 +62,7 @@
              padding: "13px 10px 0",
              display: "block",
              fontSize: "13px",
-             lineHeight: "13px"
+             lineHeight: "13px",
            }}
            data-person-profile-link
            data-person-id={this.props.id}
@@ -74,7 +78,7 @@
           lineHeight: "40px",
           marginBottom: -15,
           fontSize: "14px",
-          color: "#888"
+          color: "#888",
         };
 
         return (
@@ -99,15 +103,15 @@
   }
 
   CurrentPersonListItem.propTypes = {
-    id:               React.PropTypes.number.isRequired,
-    name:             React.PropTypes.string.isRequired,
+    id: React.PropTypes.number.isRequired,
+    name: React.PropTypes.string.isRequired,
     organizationName: React.PropTypes.string.isRequired,
-    profilePath:      React.PropTypes.string
+    profilePath: React.PropTypes.string,
   };
 
   CurrentPersonListItem.contextTypes = {
     railsAppName: React.PropTypes.string.isRequired,
-    railsEnv:     React.PropTypes.string.isRequired
+    railsEnv: React.PropTypes.string.isRequired,
   };
 
   global.CurrentPersonListItem = (global.module || {}).exports = CurrentPersonListItem;

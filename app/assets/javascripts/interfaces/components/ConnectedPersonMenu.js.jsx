@@ -1,4 +1,8 @@
+/* global React, interfacesURLForEnv */
+
 (function (global) {
+  "use strict";
+
   class ConnectedPersonMenu extends React.Component {
     constructor(props) {
       super(props);
@@ -8,7 +12,7 @@
     getChildContext() {
       return {
         railsAppName: this.props.railsAppName,
-        railsEnv:     this.props.railsEnv
+        railsEnv: this.props.railsEnv,
       };
     }
 
@@ -18,7 +22,7 @@
           <a
            className="account-switcher_action"
            id="unlink--account-switcher_action"
-           href={interfacesURLForEnv(this.props.railsEnv, 'accounts', 'unlink')}>
+           href={interfacesURLForEnv(this.props.railsEnv, "accounts", "unlink")}>
             Unlink Accounts&nbsp;
             <i className="intrefaces interfaces-unlink"></i>
           </a>
@@ -45,7 +49,7 @@
             <a
              className="account-switcher_action"
              id="logout--account-switcher_action"
-             href={interfacesURLForEnv(this.props.railsEnv, 'accounts', 'logout')}>
+             href={interfacesURLForEnv(this.props.railsEnv, "accounts", "logout")}>
               Logout
             </a>
           </div>
@@ -58,16 +62,16 @@
     connectedPeople: React.PropTypes.arrayOf(
       React.PropTypes.object
     ).isRequired,
-    currentPersonAccountCenterId:  React.PropTypes.number.isRequired,
-    currentPersonId:               React.PropTypes.number.isRequired,
-    currentPersonName:             React.PropTypes.string.isRequired,
+    currentPersonAccountCenterId: React.PropTypes.number.isRequired,
+    currentPersonId: React.PropTypes.number.isRequired,
+    currentPersonName: React.PropTypes.string.isRequired,
     currentPersonOrganizationName: React.PropTypes.string.isRequired,
-    currentPersonProfilePath:      React.PropTypes.string
+    currentPersonProfilePath: React.PropTypes.string,
   };
 
   ConnectedPersonMenu.childContextTypes = {
     railsAppName: React.PropTypes.string,
-    railsEnv:     React.PropTypes.string
+    railsEnv: React.PropTypes.string,
   };
 
   global.ConnectedPersonMenu = (global.module || {}).exports = ConnectedPersonMenu;
