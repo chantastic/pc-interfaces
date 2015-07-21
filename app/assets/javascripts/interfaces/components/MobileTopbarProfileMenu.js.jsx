@@ -26,8 +26,7 @@
       textAlign: "left",
       backgroundColor: "#323331",
       color: "white",
-      height: 50,
-      borderBottom: "1px solid #323331",
+      height: 51,
     },
 
     appIcon: {
@@ -51,16 +50,76 @@
       borderRight: "1px solid #e4e4e4",
       width: "50%",
     },
+
+    appList: {
+      backgroundColor: "#383937",
+    },
+
+    appItem: {
+      color: "white",
+    },
+  };
+
+  const iconStyles = {
+    container: {
+      display: "block",
+      borderBottom: "1px solid #3f403e",
+      backgroundColor: "transparent",
+      height: 48,
+      lineHeight: 1.2,
+      padding: 10,
+      transition: "background-color .12s ease-in-out",
+      boxSizing: "border-box",
+      textAlign: "left",
+    },
+    appNamePrefix: {
+      color: "#bcbcbc",
+      fontSize: 10,
+      marginLeft: 35,
+    },
+    appName: {
+      color: "white",
+      fontSize: 15,
+      marginLeft: 35,
+    },
   };
 
   class MobileTopbarProfileMenu extends React.Component {
+    constructor(props) {
+      super(props);
+
+      this.state = {
+        appsShown: true,
+      };
+
+      this.handleHeaderClick = (e) => {
+        e.stopPropagation();
+        this.setState({appsShown: !this.state.appsShown});
+      };
+    }
+
     render () {
       return (
         <div style={styles.outer} onClick={this.props.onDismiss}>
           <div style={styles.root}>
-            <div style={styles.header}>
+            <div style={styles.header} onClick={this.handleHeaderClick}>
               <i className="icon-account-center-logo" style={styles.appIcon} />
             </div>
+
+            {(this.state.appsShown) ?
+             <div style={styles.appList}>
+                {this.props.apps.map(({ attributes: { name, url, id }}) => {
+                  return (
+                    <a style={iconStyles.container} href={url} key={id}>
+                      <AppIcon name={name} />
+                      <div style={iconStyles.appNamePrefix}>planning center</div>
+                      <div style={iconStyles.appName}>{name}</div>
+                    </a>
+                  );
+                })}
+              </div>
+              : null
+            }
 
             {(this.props.connectedPeople.length)
              ? <div>
@@ -75,12 +134,6 @@
               </div>
              : null
             }
-
-            <div>
-              {this.props.apps.map((app, i) => {
-                return <div key={i}>{app.attributes.name}</div>;
-              })}
-            </div>
 
             <div style={styles.bottomButtons}>
               <div style={styles.helpButton}>Help</div>
