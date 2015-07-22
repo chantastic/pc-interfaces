@@ -95,6 +95,7 @@
 
           {(this.state.routeMenuOpen) &&
             <MobileTopbarRouteList
+             activeRouteName={this.activeRailsRouteName}
              onDismiss={this.handleMobileTopbarRouteListDismiss}
              routes={this.routes} />
           }

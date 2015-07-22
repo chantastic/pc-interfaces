@@ -28,11 +28,17 @@
   };
 
   class MobileTopbarRouteList extends React.Component {
+    get routes () {
+      return this.props.routes.filter(({name}) => {
+        return name.trim() !== this.props.activeRouteName.trim();
+      });
+    }
+
     render () {
       return (
         <div style={rootStyles} onClick={this.props.onDismiss}>
           <div style={listStyles}>
-            {this.props.routes.map(({name, href}, i) => {
+            {this.routes.map(({name, href}, i) => {
               return <a key={i} style={itemStyles} href={href}>{name}</a>;
             })}
           </div>
@@ -42,6 +48,7 @@
   }
 
   MobileTopbarRouteList.propTypes = {
+    activeRouteName: React.PropTypes.string,
     routes: React.PropTypes.arrayOf(
       React.PropTypes.shape({
         name: React.PropTypes.string.isRequired,
