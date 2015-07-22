@@ -1,4 +1,4 @@
-/* global React, interfacesURLForEnv, railsEnv, Helpdesk */
+/* global React, interfacesURLForEnv, railsEnv, Helpdesk, _ */
 
 (function (global) {
   "use strict";
@@ -55,6 +55,7 @@
 
     appList: {
       backgroundColor: "#383937",
+      overflow: "hidden",
     },
 
     appItem: {
@@ -122,43 +123,40 @@
               <i className="icon-account-center-logo" style={styles.appIcon} />
             </div>
 
-            {(this.state.appsShown) ?
-             <div style={styles.appList}>
-                {this.props.apps.map(({ attributes: { name, url, id }}) => {
-                  return (
+            <div style={_.extend({}, styles.appList, !this.state.appsShown && { height: 0})}>
+            {this.props.apps.map(({ attributes: { name, url, id }}) => {
+                return (
                     <a style={iconStyles.container} href={url} key={id}>
-                      <AppIcon name={name} />
-                      <div style={iconStyles.appNamePrefix}>planning center</div>
-                      <div style={iconStyles.appName}>{name}</div>
+                    <AppIcon name={name} />
+                    <div style={iconStyles.appNamePrefix}>planning center</div>
+                    <div style={iconStyles.appName}>{name}</div>
                     </a>
-                  );
-                })}
-              </div>
-              : <noscript></noscript>
-            }
-
-            <MobileTopbarUserBadge />
-
-            {(this.props.connectedPeople.length)
-             ? <div>
-                {this.props.connectedPeople.map((connectedPerson, i) => {
-                  return <ConnectedPersonListItem key={i} person={connectedPerson} />;
-                })}
-
-                <a href={interfacesURLForEnv(railsEnv, "accounts", "unlink")} style={styles.unlinkButton}>
-                  <InterfacesIcon name="unlink" />
-                  Unlink Accounts
-                </a>
-              </div>
-             : null
-            }
-
-            <div style={styles.bottomButtons}>
-            <div style={styles.helpButton} onClick={this.handleHelpdeskClick}>Help</div>
-              <a href={interfacesURLForEnv(railsEnv, "accounts", "logout")} style={{ display: "table-cell" }}>
-                Logout
-              </a>
+                );
+            })}
             </div>
+
+          <MobileTopbarUserBadge />
+
+        {(this.props.connectedPeople.length)
+         ? <div>
+         {this.props.connectedPeople.map((connectedPerson, i) => {
+           return <ConnectedPersonListItem key={i} person={connectedPerson} />;
+         })}
+
+         <a href={interfacesURLForEnv(railsEnv, "accounts", "unlink")} style={styles.unlinkButton}>
+         <InterfacesIcon name="unlink" />
+         Unlink Accounts
+         </a>
+         </div>
+         : null
+        }
+
+          <div style={styles.bottomButtons}>
+          <div style={styles.helpButton} onClick={this.handleHelpdeskClick}>Help</div>
+          <a href={interfacesURLForEnv(railsEnv, "accounts", "logout")} style={{ display: "table-cell" }}>
+          Logout
+        </a>
+          </div>
           </div>
         </div>
       );
