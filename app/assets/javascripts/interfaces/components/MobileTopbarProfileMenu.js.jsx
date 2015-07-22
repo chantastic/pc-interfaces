@@ -58,6 +58,14 @@
     appItem: {
       color: "white",
     },
+
+    unlinkButton: {
+      border: "1px solid #e5e5e5",
+      color: "#606060",
+      display: "block",
+      margin: "30px",
+      borderRadius: "4px",
+    },
   };
 
   const iconStyles = {
@@ -89,7 +97,7 @@
       super(props);
 
       this.state = {
-        appsShown: true,
+        appsShown: false,
       };
 
       this.handleHeaderClick = (e) => {
@@ -127,7 +135,7 @@
                   return <ConnectedPersonListItem key={i} person={connectedPerson} />;
                 })}
 
-                <a href={interfacesURLForEnv(railsEnv, "accounts", "unlink")}>
+                <a href={interfacesURLForEnv(railsEnv, "accounts", "unlink")} style={styles.unlinkButton}>
                   <InterfacesIcon name="unlink" />
                   Unlink Accounts
                 </a>
