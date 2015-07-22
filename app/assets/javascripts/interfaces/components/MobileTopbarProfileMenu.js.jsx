@@ -1,4 +1,4 @@
-/* global React, interfacesURLForEnv, railsEnv */
+/* global React, interfacesURLForEnv, railsEnv, Helpdesk */
 
 (function (global) {
   "use strict";
@@ -50,6 +50,7 @@
       display: "table-cell",
       borderRight: "1px solid #e4e4e4",
       width: "50%",
+      pointer: "cursor",
     },
 
     appList: {
@@ -66,6 +67,7 @@
       display: "block",
       margin: "30px",
       borderRadius: "4px",
+      pointer: "cursor",
     },
   };
 
@@ -105,6 +107,11 @@
         e.stopPropagation();
         this.setState({appsShown: !this.state.appsShown});
       };
+
+      this.handleHelpdeskClick = (e) => {
+        e.stopPropagation();
+        Helpdesk.load();
+      };
     }
 
     render () {
@@ -130,6 +137,8 @@
               : <noscript></noscript>
             }
 
+            <MobileTopbarUserBadge />
+
             {(this.props.connectedPeople.length)
              ? <div>
                 {this.props.connectedPeople.map((connectedPerson, i) => {
@@ -145,7 +154,7 @@
             }
 
             <div style={styles.bottomButtons}>
-              <div style={styles.helpButton}>Help</div>
+            <div style={styles.helpButton} onClick={this.handleHelpdeskClick}>Help</div>
               <a href={interfacesURLForEnv(railsEnv, "accounts", "logout")} style={{ display: "table-cell" }}>
                 Logout
               </a>
