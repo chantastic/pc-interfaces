@@ -84,7 +84,8 @@
           <div
            style={routeButtonStyles}
            onClick={this.handleRouteButtonclick}>
-           {this.activeRailsRouteName}
+            {this.activeRailsRouteName}
+            <InterfacesIcon name="caret-down-outline" style={{ fontSize: 11 }}/>
           </div>
 
           {(this.state.orgMenuOpen) &&
