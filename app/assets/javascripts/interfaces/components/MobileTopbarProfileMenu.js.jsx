@@ -121,6 +121,12 @@
           <div style={styles.root}>
             <div style={styles.header} onClick={this.handleHeaderClick}>
               <i className="icon-account-center-logo" style={styles.appIcon} />
+              <InterfacesIcon name="caret-down-outline" style={
+                _.extend(
+                  {},
+                  { position: "absolute", top: 0, right: 0, padding: 20, fontSize: 12, transition: "0.3s all ease-in-out" },
+                  this.state.appsShown && { transform: "scaleY(-1)", WebkitTransform: "scaleY(-1)" }
+                )} />
             </div>
 
             <div style={_.extend({}, styles.appList, !this.state.appsShown && { height: 0})}>
