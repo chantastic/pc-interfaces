@@ -12,6 +12,7 @@
         left: 0,
       textAlign: "center",
       backgroundColor: "transparent",
+      cursor: "pointer",
     },
 
     root: {
@@ -68,7 +69,7 @@
     },
   };
 
-  const iconStyles = {
+  var iconStyles = {
     container: {
       display: "block",
       borderBottom: "1px solid #3f403e",
@@ -126,7 +127,7 @@
                   );
                 })}
               </div>
-              : null
+              : <noscript></noscript>
             }
 
             {(this.props.connectedPeople.length)

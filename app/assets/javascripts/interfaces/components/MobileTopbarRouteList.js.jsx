@@ -11,6 +11,7 @@
       left: 0,
     textAlign: "center",
     backgroundColor: "transparent",
+    cursor: "pointer",
   };
 
   var listStyles = {

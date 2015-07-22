@@ -8,6 +8,7 @@
     padding: "0 10px",
     borderRight: "1px solid rgba(0,0,0,0.2)",
     width: 51,
+    cursor: "pointer",
   };
 
   var appIconStyles = {
@@ -24,6 +25,7 @@
     float: "left",
     textAlign: "center",
     color: "white",
+    cursor: "pointer",
   };
 
   class MobileTopbar extends React.Component {
