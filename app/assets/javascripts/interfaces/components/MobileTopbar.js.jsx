@@ -33,7 +33,7 @@
       super(props);
 
       this.state = {
-        orgMenuOpen: false,
+        orgMenuOpen: true,
         routeMenuOpen: false,
       };
 
