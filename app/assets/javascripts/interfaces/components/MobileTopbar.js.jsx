@@ -3,6 +3,13 @@
 (function (global) {
   "use strict";
 
+  var rootStyles = {
+    msUserSelect: "none",
+    MozUserSelect: "none",
+    WebkitjuserSelect: "none",
+    userSelect: "none",
+  };
+
   var orgButtonStyles = {
     float: "left",
     padding: "0 10px",
@@ -76,7 +83,7 @@
 
     render() {
       return (
-        <div>
+        <div style={{rootStyles}}>
           <div style={orgButtonStyles} onClick={this.handleUserButtonClick} >
             <i style={appIconStyles} className={this.appIconClassName} />
           </div>
