@@ -1,4 +1,4 @@
-/* global React, interfacesURLForEnv, railsEnv, railsAppName */
+/* global React, interfacesURLForEnv, railsEnv, railsAppName, _ */
 
 (function (global) {
   "use strict";
@@ -58,7 +58,7 @@
          style={this.styles}
          onMouseEnter={this.handleMouseEnter}
          onMouseLeave={this.handleMouseLeave}>
-          <a href={this.link} style={this.anchorStyles}>
+          <a href={this.link} style={_.extend(this.anchorStyles, this.props.anchorStyle)}>
            {this.interimOrganazationName}
            {this.renderSwitchIcon()}
           </a>

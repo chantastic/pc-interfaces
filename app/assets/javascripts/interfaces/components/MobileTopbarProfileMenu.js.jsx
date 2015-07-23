@@ -154,7 +154,7 @@
         {(this.props.connectedPeople.length)
          ? <div>
          {this.props.connectedPeople.map((connectedPerson, i) => {
-           return <ConnectedPersonListItem key={i} person={connectedPerson} />;
+           return <ConnectedPersonListItem key={i} person={connectedPerson} anchorStyle={{ textAlign: "left", paddingLeft: 65 }} />;
          })}
 
          <a href={interfacesURLForEnv(railsEnv, "accounts", "unlink")} style={styles.unlinkButton}>
