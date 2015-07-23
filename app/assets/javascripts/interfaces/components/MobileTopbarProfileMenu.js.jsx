@@ -56,6 +56,7 @@
     appList: {
       backgroundColor: "#383937",
       overflow: "hidden",
+      transition: "0.3s all ease-in-out",
     },
 
     appItem: {
@@ -102,6 +103,7 @@
 
       this.state = {
         appsShown: false,
+        scrollHeight: 0,
       };
 
       this.handleHeaderClick = (e) => {
@@ -113,6 +115,12 @@
         e.stopPropagation();
         Helpdesk.load();
       };
+    }
+
+    componentDidUpdate () {
+      if (!this.state.scrollHeight) {
+        this.setState({ scrollHeight: React.findDOMNode(this.refs.appList).scrollHeight });
+      }
     }
 
     render () {
@@ -129,7 +137,7 @@
                 )} />
             </div>
 
-            <div style={_.extend({}, styles.appList, !this.state.appsShown && { height: 0})}>
+            <div ref="appList" style={_.extend({}, styles.appList, { maxHeight: this.state.scrollHeight }, !this.state.appsShown && { maxHeight: 0})}>
             {this.props.apps.map(({ attributes: { name, url, id }}) => {
                 return (
                     <a style={iconStyles.container} href={url} key={id}>
