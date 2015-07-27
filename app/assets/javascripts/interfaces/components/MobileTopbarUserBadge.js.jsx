@@ -21,16 +21,16 @@
     render () {
       return (
         <ReactMediaObject.Media>
-          <ReactMediaObject.MediaImg>
-           <ReactMediaObject.MediaImgExt
+          <ReactMediaObject.Img href="">
+           <ReactMediaObject.ImgExt
             src={this.props.src}
             alt={this.props.alt}
             style={styles.media.imgExt} />
-          </ReactMediaObject.MediaImg>
+          </ReactMediaObject.Img>
 
-          <ReactMediaObject.MediaBd style={styles.media.bd}>
+          <ReactMediaObject.Bd style={styles.media.bd}>
             Pico das Robot
-          </ReactMediaObject.MediaBd>
+          </ReactMediaObject.Bd>
         </ReactMediaObject.Media>
       );
     }
@@ -39,7 +39,7 @@
   MobileTopbarUserBadge.propTypes = {
     alt: React.PropTypes.string,
     src: React.PropTypes.string,
-    width: React.PropTypes.string,
+    width: React.PropTypes.number,
   };
 
   MobileTopbarUserBadge.defaultProps = {

@@ -1,4 +1,4 @@
-(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.ReactMediaObject = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!-1);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.ReactMediaObject = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -80,87 +80,87 @@ Media.propTypes = {
   children: _react.PropTypes.node.isRequired
 };
 
-var MediaImg = (function (_Component2) {
-  function MediaImg() {
-    _classCallCheck(this, MediaImg);
+var Img = (function (_Component2) {
+  function Img() {
+    _classCallCheck(this, Img);
 
     if (_Component2 != null) {
       _Component2.apply(this, arguments);
     }
   }
 
-  _inherits(MediaImg, _Component2);
+  _inherits(Img, _Component2);
 
-  _createClass(MediaImg, [{
+  _createClass(Img, [{
     key: 'render',
     value: function render() {
       return _react2['default'].createElement('a', _extends({ className: 'img', style: mediaStyles.img }, this.props));
     }
   }]);
 
-  return MediaImg;
+  return Img;
 })(_react.Component);
 
-MediaImg.propTypes = {
+Img.propTypes = {
   children: _react.PropTypes.node.isRequired,
   href: _react.PropTypes.string.isRequired
 };
 
-var MediaImgExt = (function (_Component3) {
-  function MediaImgExt() {
-    _classCallCheck(this, MediaImgExt);
+var ImgExt = (function (_Component3) {
+  function ImgExt() {
+    _classCallCheck(this, ImgExt);
 
     if (_Component3 != null) {
       _Component3.apply(this, arguments);
     }
   }
 
-  _inherits(MediaImgExt, _Component3);
+  _inherits(ImgExt, _Component3);
 
-  _createClass(MediaImgExt, [{
+  _createClass(ImgExt, [{
     key: 'render',
     value: function render() {
       return _react2['default'].createElement('img', _extends({ style: mediaStyles.imgExt }, this.props));
     }
   }]);
 
-  return MediaImgExt;
+  return ImgExt;
 })(_react.Component);
 
-MediaImgExt.propTypes = {
+ImgExt.propTypes = {
   alt: _react.PropTypes.string.isRequired,
   src: _react.PropTypes.string.isRequired
 };
 
-var MediaBd = (function (_Component4) {
-  function MediaBd() {
-    _classCallCheck(this, MediaBd);
+var Bd = (function (_Component4) {
+  function Bd() {
+    _classCallCheck(this, Bd);
 
     if (_Component4 != null) {
       _Component4.apply(this, arguments);
     }
   }
 
-  _inherits(MediaBd, _Component4);
+  _inherits(Bd, _Component4);
 
-  _createClass(MediaBd, [{
+  _createClass(Bd, [{
     key: 'render',
     value: function render() {
       return _react2['default'].createElement('div', _extends({ className: 'bd', style: mediaStyles.bd }, this.props));
     }
   }]);
 
-  return MediaBd;
+  return Bd;
 })(_react.Component);
 
-MediaBd.propTypes = {
+Bd.propTypes = {
   children: _react.PropTypes.node
 };
 
 exports.Media = Media;
-exports.MediaImg = MediaImg;
-exports.MediaImgExt = MediaImgExt;
-exports.MediaBd = MediaBd;
+exports.Img = Img;
+exports.ImgExt = ImgExt;
+exports.Bd = Bd;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}]},{},[1])(1)
