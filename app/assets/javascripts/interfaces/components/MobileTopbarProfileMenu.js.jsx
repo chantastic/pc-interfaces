@@ -53,12 +53,6 @@
       pointer: "cursor",
     },
 
-    appList: {
-      backgroundColor: "#383937",
-      overflow: "hidden",
-      transition: "0.3s all ease-in-out",
-    },
-
     appItem: {
       color: "white",
     },
@@ -73,36 +67,12 @@
     },
   };
 
-  var iconStyles = {
-    container: {
-      display: "block",
-      borderBottom: "1px solid #3f403e",
-      backgroundColor: "transparent",
-      height: 48,
-      lineHeight: 1.2,
-      padding: 10,
-      transition: "background-color .12s ease-in-out",
-      boxSizing: "border-box",
-      textAlign: "left",
-    },
-    appNamePrefix: {
-      color: "#bcbcbc",
-      fontSize: 10,
-      marginLeft: 35,
-    },
-    appName: {
-      color: "white",
-      fontSize: 15,
-      marginLeft: 35,
-    },
-  };
-
   class MobileTopbarProfileMenu extends React.Component {
     constructor(props) {
       super(props);
 
       this.state = {
-        appsShown: false,
+        appsShown: true,
         scrollHeight: 0,
       };
 
@@ -137,17 +107,12 @@
                 )} />
             </div>
 
-            <div ref="appList" style={_.extend({}, styles.appList, { maxHeight: this.state.scrollHeight }, !this.state.appsShown && { maxHeight: 0})}>
-            {this.props.apps.map(({ attributes: { name, url, id }}) => {
-                return (
-                    <a style={iconStyles.container} href={url} key={id}>
-                    <AppIcon name={name} />
-                    <div style={iconStyles.appNamePrefix}>planning center</div>
-                    <div style={iconStyles.appName}>{name}</div>
-                    </a>
-                );
-            })}
-            </div>
+          <MobileAppList
+           apps={this.props.apps}
+           height={this.state.scrollHeight}
+           ref="appList"
+           shown={this.state.appsShown}
+           />
 
           <MobileTopbarUserBadge />
 
@@ -180,11 +145,7 @@
   MobileTopbarProfileMenu.propTypes = {
     onDismiss: React.PropTypes.func.isRequired,
     apps: React.PropTypes.arrayOf(
-      React.PropTypes.shape({
-        attributes: React.PropTypes.shape({
-          name: React.PropTypes.string.isRequired,
-        }),
-      })
+      React.PropTypes.object
     ).isRequired,
     connectedPeople: React.PropTypes.arrayOf(
       React.PropTypes.shape({
