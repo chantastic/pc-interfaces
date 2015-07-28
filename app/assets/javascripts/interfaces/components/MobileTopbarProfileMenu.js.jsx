@@ -1,4 +1,4 @@
-/* global React, interfacesURLForEnv, railsEnv, Helpdesk, _ */
+/* global React, interfacesURLForEnv, railsEnv, Helpdesk */
 
 (function (global) {
   "use strict";
@@ -42,15 +42,6 @@
     appItem: {
       color: "white",
     },
-
-    unlinkButton: {
-      border: "1px solid #e5e5e5",
-      color: "#606060",
-      display: "block",
-      margin: "30px",
-      borderRadius: "4px",
-      pointer: "cursor",
-    },
   };
 
   class MobileTopbarProfileMenu extends React.Component {
@@ -58,11 +49,11 @@
       super(props);
 
       this.state = {
-        appsShown: true,
+        appsShown: false,
         scrollHeight: 0,
       };
 
-      this.handleHeaderClick = (e) => {
+      this.handleToggleApps = (e) => {
         e.stopPropagation();
         this.setState({appsShown: !this.state.appsShown});
       };
@@ -74,6 +65,9 @@
     }
 
     componentDidUpdate () {
+      if (!this.props.connectedPeople.length) {
+        return;
+      }
       if (!this.state.scrollHeight) {
         this.setState({ scrollHeight: React.findDOMNode(this.refs.appList).scrollHeight });
       }
@@ -83,37 +77,30 @@
       return (
         <div style={styles.outer} onClick={this.props.onDismiss}>
           <div style={styles.root}>
-            <MobileTopbarProfileMenuHeader />
+            <MobileTopbarProfileMenuHeader
+             appsShown={this.state.appsShown}
+             onToggleApps={this.handleToggleApps} />
 
-          <MobileAppList
-           apps={this.props.apps}
-           height={this.state.scrollHeight}
-           ref="appList"
-           shown={this.state.appsShown}
-           />
+            <MobileAppList
+             apps={this.props.apps}
+             height={this.state.scrollHeight}
+             ref="appList"
+             shown={this.state.appsShown}
+             />
 
-          <MobileTopbarUserBadge appsShown={this.state.appsShown} />
+            <MobileTopbarUserBadge appsShown={this.state.appsShown} />
 
-        {(this.props.connectedPeople.length)
-         ? <div>
-         {this.props.connectedPeople.map((connectedPerson, i) => {
-           return <ConnectedPersonListItem key={i} person={connectedPerson} anchorStyle={{ textAlign: "left", paddingLeft: 65 }} />;
-         })}
+            {(this.props.connectedPeople.length)
+              ? <MobileTopbarConnectedPeopleList people={this.props.connectedPeople} />
+              : null
+            }
 
-         <a href={interfacesURLForEnv(railsEnv, "accounts", "unlink")} style={styles.unlinkButton}>
-         <InterfacesIcon name="unlink" />
-         Unlink Accounts
-         </a>
-         </div>
-         : null
-        }
-
-          <div style={styles.bottomButtons}>
-          <div style={styles.helpButton} onClick={this.handleHelpdeskClick}>Help</div>
-          <a href={interfacesURLForEnv(railsEnv, "accounts", "logout")} style={{ display: "table-cell" }}>
-          Logout
-        </a>
-          </div>
+            <div style={styles.bottomButtons}>
+              <div style={styles.helpButton} onClick={this.handleHelpdeskClick}>Help</div>
+              <a href={interfacesURLForEnv(railsEnv, "accounts", "logout")} style={{ display: "table-cell" }}>
+              Logout
+              </a>
+            </div>
           </div>
         </div>
       );
@@ -126,11 +113,7 @@
       React.PropTypes.object
     ).isRequired,
     connectedPeople: React.PropTypes.arrayOf(
-      React.PropTypes.shape({
-        attributes: React.PropTypes.shape({
-          organization_name: React.PropTypes.string.isRequired,
-        }),
-      })
+      React.PropTypes.object
     ).isRequired,
   };
 
