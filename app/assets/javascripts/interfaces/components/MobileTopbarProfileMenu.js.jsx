@@ -23,20 +23,6 @@
       boxShadow: "0 0 100px rgba(0,0,0,0.4)",
     },
 
-    header: {
-      textAlign: "left",
-      backgroundColor: "#323331",
-      color: "white",
-      height: 51,
-    },
-
-    appIcon: {
-      fontSize: 130,
-      position: "relative",
-      top: -40,
-      paddingLeft: 10,
-    },
-
     bottomButtons: {
       position: "absolute",
       display: "table",
@@ -97,15 +83,7 @@
       return (
         <div style={styles.outer} onClick={this.props.onDismiss}>
           <div style={styles.root}>
-            <div style={styles.header} onClick={this.handleHeaderClick}>
-              <i className="icon-account-center-logo" style={styles.appIcon} />
-              <InterfacesIcon name="caret-down-outline" style={
-                _.extend(
-                  {},
-                  { position: "absolute", top: 0, right: 0, padding: 20, fontSize: 12, transition: "0.3s all ease-in-out" },
-                  this.state.appsShown && { transform: "scaleY(-1)", WebkitTransform: "scaleY(-1)" }
-                )} />
-            </div>
+            <MobileTopbarProfileMenuHeader />
 
           <MobileAppList
            apps={this.props.apps}
@@ -114,7 +92,7 @@
            shown={this.state.appsShown}
            />
 
-          <MobileTopbarUserBadge />
+          <MobileTopbarUserBadge appsShown={this.state.appsShown} />
 
         {(this.props.connectedPeople.length)
          ? <div>
