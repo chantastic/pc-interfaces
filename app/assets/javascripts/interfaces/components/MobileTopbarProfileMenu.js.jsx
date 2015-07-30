@@ -1,4 +1,4 @@
-/* global React, interfacesURLForEnv, railsEnv, Helpdesk */
+/* global React, Helpdesk */
 
 (function (global) {
   "use strict";
@@ -30,17 +30,6 @@
       bottom: "0",
       border: "1px solid #e4e4e4",
       backgroundColor: "#ededed",
-    },
-
-    helpButton: {
-      display: "table-cell",
-      borderRight: "1px solid #e4e4e4",
-      width: "50%",
-      pointer: "cursor",
-    },
-
-    appItem: {
-      color: "white",
     },
   };
 
@@ -96,10 +85,8 @@
             }
 
             <div style={styles.bottomButtons}>
-              <div style={styles.helpButton} onClick={this.handleHelpdeskClick}>Help</div>
-              <a href={interfacesURLForEnv(railsEnv, "accounts", "logout")} style={{ display: "table-cell" }}>
-              Logout
-              </a>
+              <MobileTopbarProfileHelpButton onClick={this.handleHelpdeskClick} />
+              <MobileTopbarProfileLogoutButton />
             </div>
           </div>
         </div>
