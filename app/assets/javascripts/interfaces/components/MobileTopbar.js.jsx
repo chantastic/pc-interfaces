@@ -3,36 +3,13 @@
 (function (global) {
   "use strict";
 
-  var rootStyles = {
-    msUserSelect: "none",
-    MozUserSelect: "none",
-    WebkitjuserSelect: "none",
-    userSelect: "none",
-  };
-
-  var orgButtonStyles = {
-    float: "left",
-    padding: "0 10px",
-    borderRight: "1px solid rgba(0,0,0,0.2)",
-    width: 51,
-    cursor: "pointer",
-  };
-
-  var appIconStyles = {
-    fontSize: 128,
-    lineHeight: "51px",
-    width: 30,
-    overflow: "hidden",
-    display: "block",
-    color: "white",
-  };
-
-  var routeButtonStyles = {
-    width: "calc(100% - 100px)",
-    float: "left",
-    textAlign: "center",
-    color: "white",
-    cursor: "pointer",
+  const styles = {
+    rootStyles: {
+      msUserSelect: "none",
+      MozUserSelect: "none",
+      WebkitjuserSelect: "none",
+      userSelect: "none",
+    },
   };
 
   class MobileTopbar extends React.Component {
@@ -61,10 +38,6 @@
       };
     }
 
-    get appIconClassName() {
-      return `icon icon-${this.props.railsAppName.toLowerCase()}-logo`;
-    }
-
     get activeRailsRouteName() {
       return $(this.props.routes)
         .find(".is-active .btn-label")
@@ -78,33 +51,26 @@
           .map((i, node) => {
             return { href: node.href, name: node.innerText };
           })
-        );
+      );
     }
 
     render() {
       return (
-        <div style={{rootStyles}}>
-          <div style={orgButtonStyles} onClick={this.handleUserButtonClick} >
-            <i style={appIconStyles} className={this.appIconClassName} />
-          </div>
+        <div style={styles.root}>
+          <MobileTopbarProfileButton onClick={this.handleUserButtonClick} />
 
-          <div
-           style={routeButtonStyles}
-           onClick={this.handleRouteButtonclick}>
-            {this.activeRailsRouteName}
-            <InterfacesIcon name="caret-down-outline" style={{ fontSize: 11 }}/>
-          </div>
+          <MobileTopbarRouteButton name={this.activeRailsRouteName} onClick={this.handleRouteButtonclick} />
 
           {(this.state.orgMenuOpen) &&
-            <MobileTopbarProfileMenuContainer
-             onDismiss={this.handleMobileTopbarProfileMenuDismiss} />
+            <MobileTopbarProfileMenuContainer onDismiss={this.handleMobileTopbarProfileMenuDismiss} />
           }
 
           {(this.state.routeMenuOpen) &&
             <MobileTopbarRouteList
              activeRouteName={this.activeRailsRouteName}
              onDismiss={this.handleMobileTopbarRouteListDismiss}
-             routes={this.routes} />
+             routes={this.routes}
+             />
           }
         </div>
       );
