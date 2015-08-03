@@ -4,15 +4,19 @@
   "use strict";
 
   var styles = {
-    root: {},
+    root: {
+      borderBottom: "1px solid #e5e5e5",
+      padding: "15px 10px 15px 8px",
+      margin: 0,
+    },
     media: {
       imgExt: {
         borderRadius: "50%",
+        height: 30,
       },
       bd: {
-        paddingLeft: 10,
         textAlign: "left",
-        lineHeight: "32px",
+        lineHeight: "30px",
       },
     },
   };
@@ -20,7 +24,7 @@
   class MobileTopbarUserBadge extends React.Component {
     render () {
       return (
-        <ReactMediaObject.Media>
+        <ReactMediaObject.Media style={styles.root}>
           <ReactMediaObject.Img href="">
            <ReactMediaObject.ImgExt
             src={this.props.src}

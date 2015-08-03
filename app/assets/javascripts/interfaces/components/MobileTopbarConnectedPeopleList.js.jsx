@@ -22,13 +22,12 @@
             return <ConnectedPersonListItem
                     key={i}
                     person={connectedPerson}
-                    anchorStyle={{ textAlign: "left", paddingLeft: 65 }}
+                    anchorStyle={{ textAlign: "left", paddingLeft: 48 }}
                     />;
           })}
 
           <a href={interfacesURLForEnv(railsEnv, "accounts", "unlink")} style={styles.unlinkButton}>
-            <InterfacesIcon name="unlink" />
-            Unlink Accounts
+            <InterfacesIcon name="unlink" />{' '}Unlink Accounts
           </a>
         </div>
       );

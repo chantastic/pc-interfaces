@@ -6,6 +6,7 @@
   const styles = {
     root: {
       display: "table-cell",
+      color: "#737373",
     },
   };
 

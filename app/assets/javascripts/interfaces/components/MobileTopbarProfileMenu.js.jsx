@@ -11,7 +11,7 @@
         bottom: 0,
         left: 0,
       textAlign: "center",
-      backgroundColor: "transparent",
+      backgroundColor: "rgba(0,0,0,.25)",
       cursor: "pointer",
     },
 
