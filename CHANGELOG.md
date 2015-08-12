@@ -7,6 +7,8 @@ INTERFACES CHANGELOG
 
 ### 0.6.0.beta.9 (June 23 2015)
 
+* [BUGFIX] add circle.yml for CircleCI builds, with appropriate ruby version
+
 ### 0.6.0.beta.8 (June 18 2015)
 
 * [BUGFIX] top bar: add markup and css around utility links
