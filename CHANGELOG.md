@@ -2,6 +2,7 @@ INTERFACES CHANGELOG
 --------------------
 ### develop
 
+* [BUGFIX] add ENV var for presentation of Interfaces routson Heroku
 * [FEATURE] add eslint for code quality and lint existing JS files
 * [BUGFIX] move railsEnv assignment to head from footer
 
