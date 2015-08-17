@@ -1,4 +1,4 @@
-/* global React, Helpdesk */
+/* global React, Helpdesk, interfacesPerson */
 
 (function (global) {
   "use strict";
@@ -77,7 +77,11 @@
              shown={this.state.appsShown}
              />
 
-            <MobileTopbarUserBadge appsShown={this.state.appsShown} />
+            <MobileTopbarUserBadge
+             appsShown={this.state.appsShown}
+             src={interfacesPerson.avatarPath}
+             name={interfacesPerson.name}
+            />
 
             {(this.props.connectedPeople.length)
               ? <MobileTopbarConnectedPeopleList people={this.props.connectedPeople} />

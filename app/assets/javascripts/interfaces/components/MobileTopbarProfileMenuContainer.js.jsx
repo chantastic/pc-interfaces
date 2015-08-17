@@ -22,8 +22,8 @@
       super(props);
 
       this.state = {
-	apps: [],
-	connectedPeople: [],
+        apps: [],
+        connectedPeople: [],
       };
     }
 

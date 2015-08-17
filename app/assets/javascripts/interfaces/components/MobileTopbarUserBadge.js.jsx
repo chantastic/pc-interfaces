@@ -22,18 +22,26 @@
   };
 
   class MobileTopbarUserBadge extends React.Component {
+    get altText () {
+      if(this.props.src && this.props.name) {
+        return `${this.props.name} avatar`;
+      }
+
+      return "Missing";
+    }
+
     render () {
       return (
         <ReactMediaObject.Media style={styles.root}>
           <ReactMediaObject.Img href="">
            <ReactMediaObject.ImgExt
             src={this.props.src}
-            alt={this.props.alt}
+            alt={this.altText}
             style={styles.media.imgExt} />
           </ReactMediaObject.Img>
 
           <ReactMediaObject.Bd style={styles.media.bd}>
-            Pico das Robot
+            {this.props.name}
           </ReactMediaObject.Bd>
         </ReactMediaObject.Media>
       );
@@ -41,14 +49,12 @@
   }
 
   MobileTopbarUserBadge.propTypes = {
-    alt: React.PropTypes.string,
-    src: React.PropTypes.string,
+    src: React.PropTypes.string.isRequired,
+    name: React.PropTypes.string.isRequired,
     width: React.PropTypes.number,
   };
 
   MobileTopbarUserBadge.defaultProps = {
-    alt: "Missing",
-    src: "https://www.planningcenteronline.com/photos/icon/missing.png",
     width: 32,
   };
 

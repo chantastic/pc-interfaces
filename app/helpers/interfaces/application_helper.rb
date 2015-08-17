@@ -1,3 +1,4 @@
+# coding: utf-8
 module Interfaces
   module ApplicationHelper
     def interfaces(&block)
@@ -22,6 +23,14 @@ module Interfaces
                application_class_name: application_class_name
              },
              &block
+    end
+
+    def interfaces_head(person: Interfaces::NullPerson.new)
+      render partial: "/interfaces/head", locals: { person: person }
+    end
+
+    def interfaces_js_environment(person: Interfaces::NullPerson.new)
+      render partial: "/interfaces/js_env", locals: { person: person }
     end
 
     def interfaces_content(&block)
@@ -70,10 +79,18 @@ module Interfaces
     end
 
     def square_avatar(avatar_url)
-      if avatar_url.index('?')
+      if avatar_url && avatar_url.index('?')
         avatar_url
       else
         "#{avatar_url}?g=100x100%23"
+      end
+    end
+
+    def interfaces_avatar(person)
+      if person.avatar_url.present?
+        square_url(person.avatar_url)
+      else
+        "https://www.planningcenteronline.com/photos/icon/missing.png"
       end
     end
 
