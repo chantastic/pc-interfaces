@@ -46,9 +46,9 @@ const iconStyles = {
     render () {
       return (
         <div style={_.extend({}, styles.appList, { maxHeight: this.props.height }, !this.props.shown && { maxHeight: 0})}>
-          {this.props.apps.map(({ attributes: { name, url, id }}) => {
+          {this.props.apps.map(({ attributes: { name, url }}, i) => {
             return (
-              <a style={iconStyles.container} href={url} key={id}>
+              <a style={iconStyles.container} href={url} key={i}>
                 <AppIcon name={name} />
                 <div style={iconStyles.appNamePrefix}>planning center</div>
                 <div style={iconStyles.appName}>{name}</div>
