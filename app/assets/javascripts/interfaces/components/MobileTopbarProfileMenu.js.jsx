@@ -53,11 +53,8 @@
       };
     }
 
-    componentDidUpdate () {
-      if (!this.props.connectedPeople.length) {
-        return;
-      }
-      if (!this.state.scrollHeight) {
+    componentDidUpdate ({connectedPeople}, {scrollHeight}) {
+      if(connectedPeople.length > 0 && scrollHeight === 0) {
         this.setState({ scrollHeight: React.findDOMNode(this.refs.appList).scrollHeight });
       }
     }
