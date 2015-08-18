@@ -13,6 +13,7 @@
 
   class CurrentPersonListItemProfileLink extends React.Component {
     constructor (props) {
+      super(props);
       this.state = { hovered: false };
 
       this.handleMouseEnter = () => this.setState({ hovered: true });

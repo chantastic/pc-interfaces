@@ -15,6 +15,7 @@
 
   class AppListContainer extends React.Component {
     constructor(props) {
+      super(props);
       this.state = { apps: [] };
       this.fetchApps = this.fetchApps.bind(this);
     }
