@@ -48,10 +48,18 @@
       };
 
       this.handleHelpdeskClick = (e) => {
+        this.props.onDismiss();
         e.stopPropagation();
         Helpdesk.load();
       };
+
+      this.handleBackgroundClick = (e) => {
+        if(this._pane.getDOMNode() === e.target) {
+          e.stopPropagation();
+        }
+      };
     }
+
 
     componentDidUpdate ({connectedPeople}, {scrollHeight}) {
       if(connectedPeople.length > 0 && scrollHeight === 0) {
@@ -62,7 +70,11 @@
     render () {
       return (
         <div style={styles.outer} onClick={this.props.onDismiss}>
-          <div style={styles.root}>
+          <div style={{ position: "absolute", top: 0, right: 0, width: "10%" }}>
+            <InterfacesIcon name="remove" />
+          </div>
+
+          <div style={styles.root} onClick={this.handleBackgroundClick} ref={c => this._pane = c }>
             <MobileTopbarProfileMenuHeader
              appsShown={this.state.appsShown}
              onToggleApps={this.handleToggleApps} />
