@@ -25,12 +25,14 @@ module Interfaces
              &block
     end
 
-    def interfaces_head(person: Interfaces::NullPerson.new)
-      render partial: "/interfaces/head", locals: { person: person }
+    def interfaces_head(person: Interfaces::NullPerson.new, organization: Interfaces::NullOrganization.new)
+      render partial: '/interfaces/head',
+             locals:  { person: person, organization: organization }
     end
 
-    def interfaces_js_environment(person: Interfaces::NullPerson.new)
-      render partial: "/interfaces/js_env", locals: { person: person }
+    def interfaces_js_environment(person: Interfaces::NullPerson.new, organization: Interfaces::NullOrganization.new)
+      render partial: "/interfaces/js_env",
+             locals:  { person: person, organization: organization }
     end
 
     def interfaces_content(&block)
