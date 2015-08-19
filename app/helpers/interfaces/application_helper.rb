@@ -90,7 +90,7 @@ module Interfaces
 
     def interfaces_avatar(person)
       if person.avatar_url.present?
-        square_url(person.avatar_url)
+        square_avatar(person.avatar_url)
       else
         "https://www.planningcenteronline.com/photos/icon/missing.png"
       end
