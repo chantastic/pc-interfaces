@@ -3,7 +3,7 @@
 (function (global) {
   "use strict";
 
-  const styles = {
+  var styles = {
     header: {
       textAlign: "left",
       backgroundColor: "#323331",

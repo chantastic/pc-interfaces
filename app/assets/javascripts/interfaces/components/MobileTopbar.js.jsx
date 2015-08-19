@@ -3,7 +3,7 @@
 (function (global) {
   "use strict";
 
-  const styles = {
+  var styles = {
     rootStyles: {
       msUserSelect: "none",
       MozUserSelect: "none",

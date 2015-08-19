@@ -3,7 +3,7 @@
 (function (global) {
   "use strict";
 
-  const styles = {
+  var styles = {
     root: {
       display: "table-cell",
       borderRight: "1px solid #e4e4e4",

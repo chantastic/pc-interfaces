@@ -3,7 +3,7 @@
 (function (global) {
   "use strict";
 
-  const styles = {
+  var styles = {
     unlinkButton: {
       border: "1px solid #e5e5e5",
       color: "#606060",
