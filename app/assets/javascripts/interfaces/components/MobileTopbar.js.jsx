@@ -55,11 +55,10 @@
     }
 
     componentDidUpdate () {
-      if(this.state.orgMenuOpen) {
-        document.querySelector(".main-wrap").classList.add("o-h");
-      } else {
-        document.querySelector(".main-wrap").classList.remove("o-h");
-      }
+      document
+        .querySelector(".main-wrap")
+        .classList
+        .toggle("o-h", this.state.orgMenuOpen);
     }
 
     render() {
