@@ -7,6 +7,8 @@
     appList: {
       backgroundColor: "#383937",
       overflow: "hidden",
+      overflowY: "scroll",
+      WebkitOverflowScrolling: "touch",
       transition: "0.3s all ease-in-out",
     },
   };
@@ -44,7 +46,7 @@
 
     render () {
       return (
-        <div style={_.extend({}, styles.appList, { maxHeight: this.props.height }, !this.props.shown && { maxHeight: 0})}>
+        <div style={_.extend({}, styles.appList, { height: "calc(100% - 215px)" }, !this.props.shown && { height: 0})}>
           {this.props.apps.map(({ attributes: { name, url }}, i) => {
             return (
               <a style={iconStyles.container} href={url} key={i}>
@@ -68,7 +70,6 @@
       })
     ).isRequired,
     shown: React.PropTypes.bool,
-    height: React.PropTypes.number,
   };
 
   global.MobileAppList = (global.module || {}).exports = MobileAppList;

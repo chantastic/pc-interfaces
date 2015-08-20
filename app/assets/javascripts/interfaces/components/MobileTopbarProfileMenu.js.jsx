@@ -41,7 +41,6 @@
 
       this.state = {
         appsShown: false,
-        scrollHeight: 0,
       };
 
       this.handleToggleApps = (e) => {
@@ -62,13 +61,6 @@
       };
     }
 
-
-    componentDidUpdate ({connectedPeople}, {scrollHeight}) {
-      if(connectedPeople.length > 0 && scrollHeight === 0) {
-        this.setState({ scrollHeight: React.findDOMNode(this.refs.appList).scrollHeight });
-      }
-    }
-
     render () {
       return (
         <div style={styles.outer} onClick={this.props.onDismiss}>
@@ -83,7 +75,6 @@
 
             <MobileAppList
              apps={this.props.apps}
-             height={this.state.scrollHeight}
              ref="appList"
              shown={this.state.appsShown}
              />
