@@ -13,6 +13,10 @@
       display: "block",
       paddingLeft: 16,
       color: "#565656",
+      whiteSpace: "nowrap",
+      textOverflow: "ellipsis",
+      overflow: "hidden",
+      paddingRight: 5,
     },
   };
 
