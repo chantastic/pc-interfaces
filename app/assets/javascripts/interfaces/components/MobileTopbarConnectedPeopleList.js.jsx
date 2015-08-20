@@ -4,6 +4,13 @@
   "use strict";
 
   var styles = {
+    root: {
+      height: "calc(100% - 165px)",
+      overflow: "hidden",
+      overflowY: "scroll",
+      WebkitOverflowScrolling: "touch",
+    },
+
     unlinkButton: {
       border: "1px solid #e5e5e5",
       color: "#606060",
@@ -17,7 +24,7 @@
   class MobileTopbarConnectedPeopleList extends React.Component {
     render () {
       return (
-        <div>
+        <div style={styles.root}>
           <MobileTopbarCurrentPersonListItem name={interfacesOrganization.name} />
           {this.props.people.map((connectedPerson, i) => {
             return <MobileTopbarConnectedPersonListItem

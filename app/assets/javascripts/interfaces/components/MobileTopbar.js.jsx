@@ -54,6 +54,14 @@
       );
     }
 
+    componentDidUpdate () {
+      if(this.state.orgMenuOpen) {
+        document.querySelector(".main-wrap").classList.add("o-h");
+      } else {
+        document.querySelector(".main-wrap").classList.remove("o-h");
+      }
+    }
+
     render() {
       return (
         <div style={styles.root}>
