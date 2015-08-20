@@ -3,6 +3,8 @@
 (function (global) {
   "use strict";
 
+  var MENU_GUTTER = 57;
+
   var styles = {
     outer: {
       position: "fixed",
@@ -18,7 +20,7 @@
     root: {
       position: "relative",
       height: "100%",
-      width: "90%",
+      width: `calc(100% - ${MENU_GUTTER}px)`,
       backgroundColor: "white",
       boxShadow: "0 0 100px rgba(0,0,0,0.4)",
     },
@@ -70,8 +72,8 @@
     render () {
       return (
         <div style={styles.outer} onClick={this.props.onDismiss}>
-          <div style={{ position: "absolute", top: 0, right: 0, width: "10%" }}>
-            <InterfacesIcon name="remove" />
+          <div style={{ position: "absolute", top: 0, right: 0, width: MENU_GUTTER }}>
+          <InterfacesIcon name="remove" />
           </div>
 
           <div style={styles.root} onClick={this.handleBackgroundClick} ref={c => this._pane = c }>
