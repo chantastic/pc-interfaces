@@ -7,7 +7,7 @@
     rootStyles: {
       msUserSelect: "none",
       MozUserSelect: "none",
-      WebkitjuserSelect: "none",
+      WebkitUserSelect: "none",
       userSelect: "none",
     },
   };
