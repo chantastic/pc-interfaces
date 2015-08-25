@@ -1,13 +1,21 @@
-@media (min-width: 767px) {
-  .top-bar-quarantine { display: none }
+.top-bar-quarantine {
+  display: none
+}
+
+@media (max-width: 767px) {
+  body:not([data-app-name=services]) .top-bar-quarantine { display: block }
 }
 
 @media (max-width: 700px) {
-  .top-bar-quarantine { border-top: 1px solid #222; }
+  body:not([data-app-name=services]) .top-bar-quarantine {
+    border-top: 1px solid #222;
+  }
 
-  .top-bar-quarantine .util-links { border-top: 1px solid #222; }
+  body:not([data-app-name=services]) .top-bar-quarantine .util-links {
+    border-top: 1px solid #222;
+  }
 
-  .top-bar-quarantine .util-links a {
+  body:not([data-app-name=services]) .top-bar-quarantine .util-links a {
     color: white;
     float: left;
     text-align: center;
@@ -15,7 +23,11 @@
     border-right: 1px solid #222;
   }
 
-  .top-bar-quarantine .util-links a:last-child { border-right: 0; }
+  body:not([data-app-name=services]) .top-bar-quarantine .util-links a:last-child {
+    border-right: 0;
+  }
 
-  .top-bar-quarantine .util-links.with-staff-link a { width: 33%; }
+  body:not([data-app-name=services]) .top-bar-quarantine .util-links.with-staff-link a {
+    width: 33%;
+  }
 }

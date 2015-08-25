@@ -125,7 +125,7 @@ body:not(.i-account-switcher-is-expanded) .user-badge .user-badge_trigger:hover 
 }
 
 @media (max-width: 767px) {
-  .user-badge { display: none }
+  body:not([data-app-name=services]) .user-badge { display: none }
 }
 
 @media (max-width: 979px) {

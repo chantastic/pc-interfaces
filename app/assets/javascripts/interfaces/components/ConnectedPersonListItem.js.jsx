@@ -23,6 +23,7 @@
         width: "100%",
         display: "block",
         color: "#565656",
+        boxSizing: "border-box" // Services demo
       };
     }
 

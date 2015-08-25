@@ -1,0 +1,9 @@
+.mobile-topbar {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  body:not([data-app-name=services]) .mobile-topbar {
+    display: block;
+  }
+}

@@ -41,7 +41,8 @@
              id={this.props.currentPersonId}
              name={this.props.currentPersonName}
              organizationName={this.props.currentPersonOrganizationName}
-             profilePath={this.props.currentPersonProfilePath} />
+             profilePath={this.props.currentPersonProfilePath}
+             showSettingsLink={this.props.showSettingsLink} />
           </ConnectedPersonList>
 
           <div className="account-switcher_action-group">
@@ -67,6 +68,7 @@
     currentPersonName: React.PropTypes.string.isRequired,
     currentPersonOrganizationName: React.PropTypes.string.isRequired,
     currentPersonProfilePath: React.PropTypes.string,
+    showSettingsLink: React.PropTypes.bool.isRequired,
   };
 
   ConnectedPersonMenu.childContextTypes = {

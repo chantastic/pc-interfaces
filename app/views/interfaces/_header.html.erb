@@ -1,70 +1,58 @@
-<div class="top-bar">
-  <div class="top-bar__contents clearfix">
-    <div class="title-area">
-      <div class="app-switcher-wrap" data-app-list="toggle">
-        <div id="logo" class="bookmark icon-<%= app_name %>-logo" aria-hidden="true"></div>
-        <div class="app-switcher">
-          <div class="toggle-btn" data-app-list="show">
-            <div class="chevron"></div>
-          </div>
+<% if application_class_name != "services" %>
+  <div class="mobile-topbar topbar">
+    <%= react_component "MobileTopbar", {
+          routes: yield,
+          railsAppName: "account-center"
+        } %>
+  </div>
+<% end %>
 
-          <div class="menu-wrap">
-            <div class="toggle-btn-cover" data-app-list="hide">
-              <span class="interfaces-remove"></span>
-            </div>
-
-            <ul>
-              <% available_apps.each do |name| %>
-                <li class="<%= name.downcase %> <%= (:omega if available_apps.length == 1) %>">
-                  <a href="<%= PCO::URL.send(name.downcase.underscore) %>">
-                    <span class="icon" aria-hidden="true"></span>
-                    <em>planning center</em>
-                    <%= name %>
-                  </a>
-                </li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
+<div class="topbar" data-constraints="non-mobile">
+  <div class="app-badge_container"
+    onclick="
+      $('body').toggleClass('i-topbar_applist-is-expanded');
+      $(document).trigger('app-badge:clicked');
+    "
+    onmouseenter="$(document).trigger('app-badge:hovered');">
+    <div class="app-badge" data-constraints="non-mobile">
+      <div class="app-badge_button">
+        <div id="logo" class="bookmark icon-<%= application_class_name %>-logo" aria-hidden="true"></div>
+        <i class="app-badge_chevron interfaces interfaces-caret-down-outline"></i>
       </div>
 
-      <div id="toggle-sidebar" class="menu-icon show-for-mobile">
-        <a href="#"><span class="title">Sidebar</span><span class="interfaces-cog" aria-hidden="true"></span></a>
-      </div>
-
-      <div id="toggle-topbar" class="menu-icon show-for-mobile" data-top-bar="toggle">
-        <a href="#"><span class="title">Menu</span><span class="interfaces-menu" aria-hidden="true"></span></a>
+      <div class="topbar_applist" data-constraints="non-mobile">
+        <%= react_component "AppListContainer", { railsEnv: Rails.env } %>
       </div>
     </div>
-
-    <section class="top-bar-section">
-      <div class="top-nav-options">
-        <nav class="global-nav lefty" role="menubar" title="Main Site Navigation">
-          <%= yield %>
-
-          <div class="top-bar-quarantine" style="clear: both; border-top: 1px solid #222">
-            <div
-              data-person-profile-link
-              data-person-id="<%= person.id %>"
-              style="text-align: left; color: white; padding-left: 20px">
-              <%= person %> <%= organization %>
-            </div>
-            <div class="util-links <% if person.staff? %>with-staff-link<% end %>">
-              <% if person.staff? %>
-                <a href="<%= PCO::URL.accounts "administration" %>">admin</a>
-              <% end %>
-              <a id="jsLaunchHelpdesk">help</a>
-              <a href="<%= PCO::URL.accounts "logout" %>">logout</a>
-            </div>
-          </div>
-        </nav>
-
-        <%= render "interfaces/user_help" %>
-        <%= render partial: "interfaces/user_badge",
-                    locals:  { person: person,
-                              organization: organization,
-                              profile_path: profile_path } %>
-      </div>
-    </section>
   </div>
+
+  <section class="top-bar-section">
+    <%= yield %>
+
+    <div class="top-bar-quarantine" style="clear: both; border-top: 1px solid #222">
+      <div
+        data-person-profile-link
+        data-person-id="<%= person.id %>"
+        style="text-align: left; color: white; padding-left: 20px">
+        <%= person.name %> <%= organization.name %>
+      </div>
+      <% if person.staff? %>
+        <a
+          style="text-align: left; color: white; padding-left: 20px; border-top: 1px solid #222"
+          href="<%= PCO::URL.accounts "administration" %>">admin</a>
+      <% end %>
+      <a
+        style="text-align: left; color: white; padding-left: 20px; border-top: 1px solid #222"
+        id="jsLaunchHelpdesk">help</a>
+      <a
+        style="text-align: left; color: white; padding-left: 20px; border-top: 1px solid #222"
+        href="<%= PCO::URL.accounts "logout" %>">logout</a>
+    </div>
+
+    <%= render "interfaces/user_help" %>
+    <%= render partial: "interfaces/user_badge",
+                locals:  { person: person,
+                           organization: organization,
+                           profile_path: profile_path } %>
+  </section>
 </div>
