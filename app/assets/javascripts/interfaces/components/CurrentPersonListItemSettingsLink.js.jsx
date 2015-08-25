@@ -1,13 +1,17 @@
+/* global React */
+
 (function (global) {
+  "use strict";
+
   var rootStyles = {
     display: "table-cell",
     textAlign: "right",
     width: 20,
-    paddingRight: 9
+    paddingRight: 9,
   };
 
   var iconHoverStyle = {
-    color: "#777"
+    color: "#777",
   };
 
   class CurrentPersonListItemSettingsLink extends React.Component {

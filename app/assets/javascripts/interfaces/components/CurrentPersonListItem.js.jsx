@@ -15,7 +15,7 @@
     borderBottom: "1px solid #e5e5e5 !important",
     padding: "14px 10px",
     lineHeight: "13px",
-    color: "#565656"
+    color: "#565656",
   };
 
   var mediumWidthNameStyles = {
@@ -23,13 +23,15 @@
     lineHeight: "40px",
     marginBottom: -15,
     fontSize: "14px",
-    color: "#888"
+    color: "#888",
   };
 
   class CurrentPersonListItem extends React.Component {
     constructor(props) {
       super(props);
+
       this.state = {tabletContext: false};
+
       this.handleMatchMediaChange = (e) => {
         return this.setState({tabletContext: e.matches});
       };

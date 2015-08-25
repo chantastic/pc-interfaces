@@ -1,4 +1,4 @@
-/* global React, interfacesURLForEnv */
+/* global React, interfacesURLForEnv, railsEnv, railsAppName, _ */
 
 (function (global) {
   "use strict";
@@ -23,7 +23,7 @@
         width: "100%",
         display: "block",
         color: "#565656",
-        boxSizing: "border-box" // Services demo
+        boxSizing: "border-box", // Services demo
       };
     }
 
@@ -41,7 +41,7 @@
     }
 
     get link() {
-      return `${interfacesURLForEnv(this.context.railsEnv, "accounts")}/link/new?to=${this.props.person.id}&return=${this.context.railsAppName}%2f`;
+      return `${interfacesURLForEnv(railsEnv, "accounts")}/link/new?to=${this.props.person.id}&return=${railsAppName}%2f`;
     }
 
     get interimOrganazationName() {
@@ -58,7 +58,7 @@
          style={this.styles}
          onMouseEnter={this.handleMouseEnter}
          onMouseLeave={this.handleMouseLeave}>
-          <a href={this.link} style={this.anchorStyles}>
+          <a href={this.link} style={_.extend(this.anchorStyles, this.props.anchorStyle)}>
            {this.interimOrganazationName}
            {this.renderSwitchIcon()}
           </a>
@@ -98,11 +98,6 @@
         organization_name: React.PropTypes.string.isRequired,
       }).isRequired,
     }).isRequired,
-  };
-
-  ConnectedPersonListItem.contextTypes = {
-    railsAppName: React.PropTypes.string.isRequired,
-    railsEnv: React.PropTypes.string.isRequired,
   };
 
   global.ConnectedPersonListItem = (global.module || {}).exports = ConnectedPersonListItem;

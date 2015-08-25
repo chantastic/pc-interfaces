@@ -1,4 +1,4 @@
-/* global React */
+/* global React, _ */
 (function (global) {
   "use strict";
 
@@ -38,7 +38,7 @@
 
   InterfacesIcon.propTypes = {
     name: React.PropTypes.string.isRequired,
-    hoverStyle: React.PropTypes.object
+    hoverStyle: React.PropTypes.object,
   };
 
   global.InterfacesIcon = (global.module || {}).exports = InterfacesIcon;

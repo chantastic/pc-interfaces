@@ -11,7 +11,7 @@
                           currentPersonProfilePath: profile_path,
                           railsAppName: current_app,
                           railsEnv: Rails.env,
-                          showSettingsLink: person.owner? || false
+                          showSettingsLink: person.try(:owner?) || false
                         } %>
   </div>
 </div>
