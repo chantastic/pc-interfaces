@@ -1,4 +1,4 @@
-/* global React, _ */
+/* global React, _, railsAppName */
 
 (function (global) {
   "use strict";
@@ -20,10 +20,29 @@
   };
 
   class MobileTopbarProfileMenuHeader extends React.Component {
+    get appIconName () {
+      switch (railsAppName) {
+      case "Accounts":
+        return "account-center";
+      case "Check-Ins":
+        return "check-ins";
+      case "Giving":
+        return "giving";
+      case "People":
+        return "people";
+      case "Registrations":
+        return "registrations";
+      case "RP":
+        return "resources";
+      case "PlanningCenter":
+        return "services";
+      }
+    }
+
     render () {
       return (
         <div style={styles.header} onClick={this.props.onToggleApps}>
-          <i className="icon-account-center-logo" style={styles.appIcon} />
+          <i className={`icon-${this.appIconName}-logo`} style={styles.appIcon} />
           <InterfacesIcon
            name="caret-down-outline"
            style={
