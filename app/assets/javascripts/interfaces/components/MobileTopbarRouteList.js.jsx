@@ -37,10 +37,14 @@
 
     render () {
       return (
-        <div style={rootStyles} onClick={this.props.onDismiss}>
+        <div style={rootStyles} onClick={this.props.onDismiss} data-no-turbolink>
           <div style={listStyles}>
-            {this.routes.map(({name, href}, i) => {
-              return <a key={i} style={itemStyles} href={href}>{name}</a>;
+            {this.routes.map(({classes, href, name}, i) => {
+              return (
+                <a key={i} style={itemStyles} href={href}>
+                  <span className={classes}>{name}</span>
+                </a>
+              );
             })}
           </div>
         </div>
@@ -52,8 +56,9 @@
     activeRouteName: React.PropTypes.string,
     routes: React.PropTypes.arrayOf(
       React.PropTypes.shape({
-        name: React.PropTypes.string.isRequired,
+        classes: React.PropTypes.string.isRequired,
         href: React.PropTypes.string.isRequired,
+        name: React.PropTypes.string.isRequired,
       })
     ).isRequired,
   };

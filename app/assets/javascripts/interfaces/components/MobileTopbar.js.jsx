@@ -48,8 +48,10 @@
       return $.makeArray(
         $(this.props.routes)
           .find(".topbar_route")
-          .map((i, node) => {
-            return { href: node.href, name: node.innerText };
+          .map((i, { href, innerText, classList }) => {
+            var classes = (classList.contains("floating-topbar-action")) ? "mobile-floating-topbar-action" : "";
+
+            return { href: href, name: innerText, classes: classes};
           })
       );
     }
