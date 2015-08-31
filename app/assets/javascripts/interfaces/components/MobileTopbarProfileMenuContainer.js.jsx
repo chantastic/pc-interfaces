@@ -22,9 +22,14 @@
       super(props);
 
       this.state = {
+        menu: "apps",
         apps: [],
         connectedPeople: [],
       };
+
+      this.onTabChange = (menu) => {
+        this.setState({ menu: menu });
+      }
     }
 
     fetchApps () {
@@ -72,7 +77,13 @@
     }
 
     render () {
-      return <MobileTopbarProfileMenu {...this.props} apps={this.state.apps} connectedPeople={this.state.connectedPeople} />;
+      return <MobileTopbarProfileMenu
+              {...this.props}
+              menu={this.state.menu}
+              apps={this.state.apps}
+              connectedPeople={this.state.connectedPeople}
+              onTabChange={this.onTabChange}
+             />;
     }
   }
 

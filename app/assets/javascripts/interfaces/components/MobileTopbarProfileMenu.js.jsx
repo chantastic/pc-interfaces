@@ -15,6 +15,11 @@
       textAlign: "center",
       backgroundColor: "rgba(0,0,0,.25)",
       cursor: "pointer",
+      msUserSelect: "none",
+      MozUserSelect: "none",
+      WebkitUserSelect: "none",
+      userSelect: "none",
+      WebkitTapHighlightColor: "transparent",
     },
 
     root: {
@@ -39,15 +44,6 @@
     constructor(props) {
       super(props);
 
-      this.state = {
-        appsShown: false,
-      };
-
-      this.handleToggleApps = (e) => {
-        e.stopPropagation();
-        this.setState({appsShown: !this.state.appsShown});
-      };
-
       this.handleHelpdeskClick = (e) => {
         this.props.onDismiss();
         e.stopPropagation();
@@ -58,6 +54,16 @@
         if(this._pane.getDOMNode() === e.target) {
           e.stopPropagation();
         }
+      };
+
+      this.handleAppsTabClick = (e) => {
+        e.stopPropagation();
+        this.props.onTabChange("apps");
+      };
+
+      this.handleUserTabClick = (e) => {
+        e.stopPropagation();
+        this.props.onTabChange("user");
       };
     }
 
@@ -70,24 +76,20 @@
 
           <div style={styles.root} onClick={this.handleBackgroundClick} ref={c => this._pane = c }>
             <MobileTopbarProfileMenuHeader
-             appsShown={this.state.appsShown}
-             onToggleApps={this.handleToggleApps} />
-
-            <MobileAppList
-             apps={this.props.apps}
-             ref="appList"
-             shown={this.state.appsShown}
-             />
-
-            <MobileTopbarUserBadge
-             appsShown={this.state.appsShown}
-             src={interfacesPerson.avatarPath}
-             name={interfacesPerson.name}
+             onAppsTabClick={this.handleAppsTabClick}
+             onUserTabClick={this.handleUserTabClick}
+             menu={this.props.menu}
             />
 
-            {(this.props.connectedPeople.length)
-              ? <MobileTopbarConnectedPeopleList people={this.props.connectedPeople} />
-              : null
+            {(this.props.menu === "apps") &&
+              <MobileAppList
+               apps={this.props.apps}
+               ref="appList"
+              />
+            }
+
+            {(this.props.menu === "user") &&
+              <MobileTopbarConnectedPeopleList people={this.props.connectedPeople} />
             }
 
             <div style={styles.bottomButtons}>
@@ -108,6 +110,7 @@
     connectedPeople: React.PropTypes.arrayOf(
       React.PropTypes.object
     ).isRequired,
+    onTabChange: React.PropTypes.func.isRequired,
   };
 
   global.MobileTopbarProfileMenu = (global.module || {}).exports = MobileTopbarProfileMenu;
