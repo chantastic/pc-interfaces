@@ -27,16 +27,11 @@
       textAlign: "left",
     },
 
-    appNamePrefix: {
-      color: "#bcbcbc",
-      fontSize: 10,
-      marginLeft: 35,
-    },
-
     appName: {
       color: "white",
-      fontSize: 15,
-      marginLeft: 35,
+      fontSize: 16,
+      marginLeft: 38,
+      marginTop: 4,
     },
   };
 
@@ -52,7 +47,6 @@
             return (
               <a style={iconStyles.container} href={url} key={i}>
                 <AppIcon name={name} />
-                <div style={iconStyles.appNamePrefix}>planning center</div>
                 <div style={iconStyles.appName}>{name}</div>
               </a>
             );

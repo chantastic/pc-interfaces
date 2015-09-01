@@ -9,7 +9,7 @@
       top: 49,
       right: 2,
       backgroundColor: "white",
-      width: "calc(100% - 45px)",
+      width: "calc(100% - 50px)",
       borderRadius: 2,
       borderTopRightRadius: 0,
 
