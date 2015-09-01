@@ -15,8 +15,8 @@
     appIcon: {
       fontSize: 130,
       position: "relative",
-      top: -43,
-      paddingLeft: 4,
+      top: -40,
+      paddingLeft: 10,
     },
 
     baseButton: {
@@ -51,25 +51,16 @@
     render () {
       return (
         <div style={styles.root}>
-          <button style={_.extend({}, styles.baseButton, this.props.menu !== "apps" && { flex: "1 1 52px" })} onClick={this.props.onAppsTabClick}>
+          <div style={_.extend({}, styles.baseButton)}>
             <i className={`icon-${this.appIconName}-logo`} style={styles.appIcon} />
-          </button>
-
-          <button style={_.extend({}, styles.baseButton, { borderLeft: "1px solid rgba(255,255,255,0.3)", backgroundColor: "white", color: "#323331" }, this.props.menu !== "user" && { flex: "1 1 65px"})} onClick={this.props.onUserTabClick}>
-            <MobileTopbarUserBadge
-              src={interfacesPerson.avatarPath}
-              name={interfacesPerson.name}
-            />
-          </button>
+          </div>
         </div>
       );
     }
   }
 
   MobileTopbarProfileMenuHeader.propTypes = {
-    onAppsTabClick: React.PropTypes.func.isRequired,
-    onUserTabClick: React.PropTypes.func.isRequired,
-    menu: React.PropTypes.string.isRequired,
+    onToggleUserCard: React.PropTypes.isRequired,
   };
 
   global.MobileTopbarProfileMenuHeader = (global.module || {}).exports = MobileTopbarProfileMenuHeader;

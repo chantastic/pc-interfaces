@@ -22,14 +22,15 @@
       super(props);
 
       this.state = {
-        menu: "apps",
+        userCardShown: true,
         apps: [],
         connectedPeople: [],
       };
 
-      this.onTabChange = (menu) => {
-        this.setState({ menu: menu });
-      }
+      this.handleToggleUserCard = (e) => {
+        e.stopPropagation();
+        this.setState({ userCardShown: !this.state.userCardShown });
+      };
     }
 
     fetchApps () {
@@ -79,10 +80,10 @@
     render () {
       return <MobileTopbarProfileMenu
               {...this.props}
-              menu={this.state.menu}
+              userCardShown={this.state.userCardShown}
               apps={this.state.apps}
               connectedPeople={this.state.connectedPeople}
-              onTabChange={this.onTabChange}
+              onToggleUserCard={this.handleToggleUserCard}
              />;
     }
   }

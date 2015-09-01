@@ -27,7 +27,24 @@
       height: "100%",
       width: `calc(100% - ${MENU_GUTTER}px)`,
       backgroundColor: "white",
-      boxShadow: "0 0 100px rgba(0,0,0,0.4)",
+    },
+
+    avatarButton: {
+      position: "absolute",
+      top: 2,
+      right: 2,
+      height: 47,
+      lineHeight: "47px",
+      backgroundColor: "transparent",
+      border: 0,
+      borderRadius: "2px 2px 0 0",
+    },
+
+    avatar: {
+      borderRadius: "50%",
+      height: 30,
+      border: "1px solid #7b7b7b",
+      marginTop: 6,
     },
 
     bottomButtons: {
@@ -55,16 +72,6 @@
           e.stopPropagation();
         }
       };
-
-      this.handleAppsTabClick = (e) => {
-        e.stopPropagation();
-        this.props.onTabChange("apps");
-      };
-
-      this.handleUserTabClick = (e) => {
-        e.stopPropagation();
-        this.props.onTabChange("user");
-      };
     }
 
     render () {
@@ -76,21 +83,38 @@
 
           <div style={styles.root} onClick={this.handleBackgroundClick} ref={c => this._pane = c }>
             <MobileTopbarProfileMenuHeader
-             onAppsTabClick={this.handleAppsTabClick}
-             onUserTabClick={this.handleUserTabClick}
-             menu={this.props.menu}
+             onToggleUserCard={this.props.onToggleUserCard}
+             userSelect={this.props.userCardShown}
             />
 
-            {(this.props.menu === "apps") &&
-              <MobileAppList
-               apps={this.props.apps}
-               ref="appList"
-              />
-            }
+            <MobileAppList
+              apps={this.props.apps}
+              ref="appList"
+            />
 
-            {(this.props.menu === "user") &&
-              <MobileTopbarConnectedPeopleList people={this.props.connectedPeople} />
-            }
+            <button style={_.extend({}, styles.avatarButton, this.props.userCardShown && { backgroundColor: "white" })} onClick={this.props.onToggleUserCard}>
+            <div style={_.extend(
+              {},
+              {
+                float: "left",
+                padding: "0 12px 0 6px",
+                fontSize: 11,
+              },
+              (!this.props.userCardShown) && { color: "white" },
+              (this.props.userCardShown) && { transform: "rotateX(180deg)" }
+              )}>
+                <InterfacesIcon name="caret-down-outline" />
+              </div>
+              <img src={interfacesPerson.avatarPath} style={styles.avatar} />
+            </button>
+
+            <MobileTopbarConnectedPeopleList
+             style={(this.props.userCardShown)
+              ? { visibility: "visible", opacity: "1" }
+              : { visibility: "hidden", opacity: "0" }
+             }
+             people={this.props.connectedPeople}
+            />
 
             <div style={styles.bottomButtons}>
               <MobileTopbarProfileHelpButton onClick={this.handleHelpdeskClick} />
@@ -110,7 +134,8 @@
     connectedPeople: React.PropTypes.arrayOf(
       React.PropTypes.object
     ).isRequired,
-    onTabChange: React.PropTypes.func.isRequired,
+    onToggleUserCard: React.PropTypes.func.isRequired,
+    userCardShown: React.PropTypes.bool.isRequired,
   };
 
   global.MobileTopbarProfileMenu = (global.module || {}).exports = MobileTopbarProfileMenu;
