@@ -20,11 +20,8 @@
     },
 
     unlinkButton: {
-      border: "1px solid #e5e5e5",
       color: "#606060",
       display: "block",
-      margin: "30px",
-      borderRadius: "4px",
       pointer: "cursor",
     },
   };

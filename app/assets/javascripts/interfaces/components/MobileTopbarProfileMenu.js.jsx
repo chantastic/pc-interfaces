@@ -77,8 +77,8 @@
     render () {
       return (
         <div style={styles.outer} onClick={this.props.onDismiss}>
-          <div style={{ position: "absolute", top: 0, right: 0, width: MENU_GUTTER }}>
-          <InterfacesIcon name="remove" />
+          <div style={{ position: "absolute", top: 0, right: 0, width: MENU_GUTTER, color: "white" }}>
+            <InterfacesIcon name="remove" />
           </div>
 
           <div style={styles.root} onClick={this.handleBackgroundClick} ref={c => this._pane = c }>
