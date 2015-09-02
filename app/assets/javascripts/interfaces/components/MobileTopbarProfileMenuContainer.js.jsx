@@ -1,4 +1,4 @@
-/* global React, $, interfacesURLForEnv, railsEnv, railsAppName */
+/* global React, $, interfacesURLForEnv, railsEnv, railsAppName, docCookies */
 
 (function (global) {
   "use strict";
@@ -29,7 +29,7 @@
       super(props);
 
       this.state = {
-        userCardShown: true,
+        userCardShown: false,
         apps: [],
         connectedPeople: [],
       };
@@ -74,20 +74,33 @@
       });
     }
 
+    fetchAndSetUserCardShown () {
+      this.setState({
+        userCardShown: !!+docCookies.getItem("mobile_topbar_user_card_shown"),
+      });
+    }
+
     componentWillMount () {
       // PERF: add cache
       this.fetchApps();
       this.fetchConnectedPeople();
+      this.fetchAndSetUserCardShown();
+    }
+
+    componentWillUpdate (_, { userCardShown }) {
+      docCookies.setItem("mobile_topbar_user_card_shown", +userCardShown);
     }
 
     render () {
-      return <MobileTopbarProfileMenu
-              {...this.props}
-              userCardShown={this.state.userCardShown}
-              apps={this.state.apps}
-              connectedPeople={this.state.connectedPeople}
-              onToggleUserCard={this.handleToggleUserCard}
-             />;
+      return (
+        <MobileTopbarProfileMenu
+         {...this.props}
+         userCardShown={this.state.userCardShown}
+         apps={this.state.apps}
+         connectedPeople={this.state.connectedPeople}
+         onToggleUserCard={this.handleToggleUserCard}
+        />
+      );
     }
   }
 
