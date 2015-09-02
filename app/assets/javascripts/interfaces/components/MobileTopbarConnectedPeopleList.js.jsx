@@ -3,6 +3,10 @@
 (function (global) {
   "use strict";
 
+  function ignoreClick (e) {
+    e.stopPropagation();
+  }
+
   var styles = {
     root: {
       position: "absolute",
@@ -31,7 +35,7 @@
   class MobileTopbarConnectedPeopleList extends React.Component {
     render () {
       return (
-        <div style={_.extend({}, styles.root, this.props.style)}>
+        <div style={_.extend({}, styles.root, this.props.style)} onClick={ignoreClick}>
           <MobileTopbarCurrentPersonListItem personName={interfacesPerson.name} organizationName={interfacesOrganization.name} />
 
           {this.props.people.map((connectedPerson, i) => {
@@ -43,9 +47,11 @@
             );
           })}
 
-          <a href={interfacesURLForEnv(railsEnv, "accounts", "unlink")} style={styles.unlinkButton}>
-            <InterfacesIcon name="unlink" />{' '}Unlink Accounts
-          </a>
+          {(this.props.people.length > 0) &&
+            <a href={interfacesURLForEnv(railsEnv, "accounts", "unlink")} style={styles.unlinkButton}>
+              <InterfacesIcon name="unlink" />{' '}Unlink Accounts
+            </a>
+          }
         </div>
       );
     }
