@@ -1,4 +1,4 @@
-/* global React, interfacesURLForEnv, railsEnv, interfacesOrganization */
+/* global React, _, interfacesURLForEnv, railsEnv, interfacesPerson, interfacesOrganization */
 
 (function (global) {
   "use strict";
@@ -30,12 +30,15 @@
     render () {
       return (
         <div style={_.extend({}, styles.root, this.props.style)}>
-          <MobileTopbarCurrentPersonListItem name={interfacesOrganization.name} />
+          <MobileTopbarCurrentPersonListItem personName={interfacesPerson.name} organizationName={interfacesOrganization.name} />
+
           {this.props.people.map((connectedPerson, i) => {
-            return <MobileTopbarConnectedPersonListItem
-                    key={i}
-                    person={connectedPerson}
-                   />;
+            return (
+              <MobileTopbarConnectedPersonListItem
+                key={i}
+                person={connectedPerson}
+              />
+            );
           })}
 
           <a href={interfacesURLForEnv(railsEnv, "accounts", "unlink")} style={styles.unlinkButton}>

@@ -7,16 +7,16 @@
     root: {
       textAlign: "left",
       borderBottom: "1px solid #e5e5e5 !important",
+      padding: "10px 10px 9px",
+      lineHeight: 2,
     },
 
     anchor: {
       display: "block",
-      paddingLeft: 48,
       color: "#565656",
       whiteSpace: "nowrap",
       textOverflow: "ellipsis",
       overflow: "hidden",
-      paddingRight: 5,
     },
   };
 

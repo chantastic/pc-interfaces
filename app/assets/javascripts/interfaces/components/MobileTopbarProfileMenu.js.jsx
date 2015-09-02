@@ -38,13 +38,13 @@
       backgroundColor: "transparent",
       border: 0,
       borderRadius: "2px 2px 0 0",
+      padding: "8px 12px",
     },
 
     avatar: {
       borderRadius: "50%",
       height: 30,
       border: "1px solid #7b7b7b",
-      marginTop: 6,
     },
 
     bottomButtons: {
@@ -94,8 +94,10 @@
               {},
               {
                 float: "left",
-                padding: "0 12px 0 6px",
+                padding: 0,
+                paddingRight: 12,
                 fontSize: 11,
+                lineHeight: "30px",
               },
               (!this.props.userCardShown) && { color: "white" },
               (this.props.userCardShown) && { transform: "rotateX(180deg)" }
