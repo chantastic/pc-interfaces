@@ -1,67 +1,55 @@
-/* global React, _, railsAppName, interfacesPerson */
+/* global React, railsAppName */
 
 (function (global) {
   "use strict";
 
   var styles = {
     root: {
-      display: "flex",
-      flexDirection: "row",
       height: 51,
       backgroundColor: "#323331",
       color: "white",
     },
 
-    appIcon: {
-      fontSize: 130,
-      position: "relative",
-      top: -40,
-      paddingLeft: 10,
-    },
+    appBadge: {
+      icon: {
+        padding: "12px 10px",
+        height: "100%",
+      },
 
-    baseButton: {
-      backgroundColor: "transparent",
-      border: 0,
-      overflow: "hidden",
-      flex: "1 1 100%",
-      textAlign: "left",
+      name: {
+        color: "white",
+        fontSize: 16,
+        marginLeft: 38,
+        marginTop: 4,
+        lineHeight: "19px",
+        textAlign: "left",
+      },
     },
   };
 
   class MobileTopbarProfileMenuHeader extends React.Component {
-    get appIconName () {
+    get appName () {
       switch (railsAppName) {
-      case "Accounts":
-        return "account-center";
-      case "Check-Ins":
-        return "check-ins";
-      case "Giving":
-        return "giving";
-      case "People":
-        return "people";
-      case "Registrations":
-        return "registrations";
       case "RP":
         return "resources";
       case "PlanningCenter":
         return "services";
+      default:
+        return railsAppName;
       }
     }
 
     render () {
       return (
         <div style={styles.root}>
-          <div style={_.extend({}, styles.baseButton)}>
-            <i className={`icon-${this.appIconName}-logo`} style={styles.appIcon} />
+          <div style={styles.appBadge.icon}>
+            <AppIcon name={this.appName} />
+            <div style={styles.appBadge.name} children={this.appName} />
           </div>
         </div>
       );
     }
   }
-
-  MobileTopbarProfileMenuHeader.propTypes = {
-    onToggleUserCard: React.PropTypes.isRequired,
-  };
 
   global.MobileTopbarProfileMenuHeader = (global.module || {}).exports = MobileTopbarProfileMenuHeader;
 })(this);

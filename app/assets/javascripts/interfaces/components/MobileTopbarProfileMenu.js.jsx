@@ -82,10 +82,7 @@
           </div>
 
           <div style={styles.root} onClick={this.handleBackgroundClick} ref={c => this._pane = c }>
-            <MobileTopbarProfileMenuHeader
-             onToggleUserCard={this.props.onToggleUserCard}
-             userSelect={this.props.userCardShown}
-            />
+            <MobileTopbarProfileMenuHeader />
 
             <MobileAppList
               apps={this.props.apps}
