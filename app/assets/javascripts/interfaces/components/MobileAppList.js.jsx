@@ -45,7 +45,12 @@
         <div style={styles.appList}>
           {this.props.apps.map(({ attributes: { name, url }}, i) => {
             return (
-              <a style={iconStyles.container} href={url} key={i}>
+              <a
+               href={url}
+               key={i}
+               style={iconStyles.container}
+               target={(name === "Services") ? "_blank" : "_self" }
+              >
                 <AppIcon name={name} />
                 <div style={iconStyles.appName}>{name}</div>
               </a>
