@@ -13,6 +13,7 @@
       borderRadius: 1,
       borderTopLeftRadius: 2,
       borderTopRightRadius: 0,
+      transition: "all 0.2s ease-in-out",
 
       height: "calc(100% - 106px)",
       overflow: "hidden",

@@ -39,6 +39,8 @@
       border: 0,
       borderRadius: "1px 1px 0 0",
       padding: "8px 12px",
+      backgroundColor: "transparent",
+      transition: "background-color 0.2s ease-in-out",
     },
 
     avatar: {
@@ -98,6 +100,7 @@
                 paddingRight: 12,
                 fontSize: 11,
                 lineHeight: "30px",
+                transition: "all 0.2s ease-in-out",
               },
               (!this.props.userCardShown) && { color: "white" },
               (this.props.userCardShown) && { transform: "rotateX(180deg)" }
