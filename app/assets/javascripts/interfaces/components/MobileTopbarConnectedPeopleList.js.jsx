@@ -7,13 +7,14 @@
     root: {
       position: "absolute",
       top: 49,
-      right: 2,
+      right: 4,
       backgroundColor: "white",
-      width: "calc(100% - 50px)",
-      borderRadius: 2,
+      width: "calc(100% - 52px)",
+      borderRadius: 1,
+      borderTopLeftRadius: 2,
       borderTopRightRadius: 0,
 
-      height: "calc(100% - 104px)",
+      height: "calc(100% - 106px)",
       overflow: "hidden",
       overflowY: "scroll",
       WebkitOverflowScrolling: "touch",

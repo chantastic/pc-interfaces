@@ -10,7 +10,7 @@
       overflowY: "scroll",
       WebkitOverflowScrolling: "touch",
       transition: "0.3s all ease-in-out",
-      height: "100%",
+      height: "calc(100% - 104px)",
     },
   };
 

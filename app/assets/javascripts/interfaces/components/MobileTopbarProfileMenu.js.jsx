@@ -31,13 +31,13 @@
 
     avatarButton: {
       position: "absolute",
-      top: 2,
-      right: 2,
-      height: 47,
+      top: 4,
+      right: 4,
+      height: 45,
       lineHeight: "47px",
       backgroundColor: "transparent",
       border: 0,
-      borderRadius: "2px 2px 0 0",
+      borderRadius: "1px 1px 0 0",
       padding: "8px 12px",
     },
 
