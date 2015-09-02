@@ -17,7 +17,7 @@
       super(props);
 
       this.state = {
-        orgMenuOpen: true,
+        orgMenuOpen: false,
         routeMenuOpen: false,
       };
 
