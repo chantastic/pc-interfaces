@@ -1,14 +1,21 @@
-/* global React, $, interfacesURLForEnv, railsEnv */
+/* global React, $, interfacesURLForEnv, railsEnv, railsAppName */
 
 (function (global) {
   "use strict";
 
-  function findCurrentApp(app) {
-    return (app.attributes.name === "Services") ? false : true;
+  function railsAppNameToAPIAppName (name) {
+    switch (name) {
+    case "RP":
+      return "Resources";
+    case "PlanningCenter":
+      return "Services";
+    default:
+      return name;
+    }
   }
 
   function excludeCurrentApp(app) {
-    return (app.attributes.name === "Services") ? true : false;
+    return (app.attributes.name === railsAppNameToAPIAppName(railsAppName)) ? false : true;
   }
 
   function sortAppsByName(a, b) {
@@ -45,13 +52,9 @@
       });
 
       fetchApps.success(apps => {
-        var sortedApps;
-
-        sortedApps = apps.data
-          .filter(excludeCurrentApp)
-          .concat(apps.data.filter(findCurrentApp).sort(sortAppsByName));
-
-        this.setState({apps: sortedApps});
+        this.setState({
+          apps: apps.data.filter(excludeCurrentApp).sort(sortAppsByName),
+        });
       });
     }
 

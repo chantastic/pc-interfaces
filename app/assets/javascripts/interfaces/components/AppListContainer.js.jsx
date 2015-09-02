@@ -1,14 +1,25 @@
-/* global React, $, interfacesURLForEnv */
+/* global React, $, interfacesURLForEnv, railsAppName */
 
 (function (global) {
   "use strict";
 
+  function railsAppNameToAPIAppName (name) {
+    switch (name) {
+    case "RP":
+      return "Resources";
+    case "PlanningCenter":
+      return "Services";
+    default:
+      return name;
+    }
+  }
+
   function findCurrentApp(app) {
-    return (app.attributes.name === "Services") ? false : true;
+    return (app.attributes.name === railsAppNameToAPIAppName(railsAppName)) ? false : true;
   }
 
   function excludeCurrentApp(app) {
-    return (app.attributes.name === "Services") ? true : false;
+    return (app.attributes.name === railsAppNameToAPIAppName(railsAppName)) ? true : false;
   }
 
   function sortAppsByName(a, b) {
