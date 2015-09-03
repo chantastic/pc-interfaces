@@ -22,7 +22,7 @@
 
 @media (min-width: 768px) {
   body:not([data-app-name=services]) .app-badge[data-constraints~=non-mobile] {
-    display: initial;
+    display: block;
   }
 }
 
