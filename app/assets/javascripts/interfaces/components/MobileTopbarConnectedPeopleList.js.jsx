@@ -3,10 +3,6 @@
 (function (global) {
   "use strict";
 
-  function ignoreClick (e) {
-    e.stopPropagation();
-  }
-
   var styles = {
     root: {
       position: "absolute",
@@ -33,9 +29,19 @@
   };
 
   class MobileTopbarConnectedPeopleList extends React.Component {
+    constructor (props) {
+      super(props);
+
+      this.dismissBackgroudClick = (e) => {
+        if(e.target === this._pane.getDOMNode()) {
+          e.stopPropagation();
+        }
+      };
+    }
+
     render () {
       return (
-        <div style={_.extend({}, styles.root, this.props.style)} onClick={ignoreClick}>
+        <div style={_.extend({}, styles.root, this.props.style)} ref={ c => this._pane = c } onClick={this.dismissBackgroudClick}>
           <MobileTopbarCurrentPersonListItem personName={interfacesPerson.name} organizationName={interfacesOrganization.name} />
 
           {this.props.people.map((connectedPerson, i) => {
