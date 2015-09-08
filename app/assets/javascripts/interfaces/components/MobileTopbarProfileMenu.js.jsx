@@ -40,6 +40,7 @@
       borderRadius: "1px 1px 0 0",
       padding: "8px 12px",
       transition: "background-color 0.2s ease-in-out",
+      outline: "none",
     },
 
     avatar: {
