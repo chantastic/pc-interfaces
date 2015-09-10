@@ -3,6 +3,10 @@
 (function (global) {
   "use strict";
 
+  function appIconClassName () {
+    return `icon icon-${railsAppName.toLowerCase()}-logo`;
+  }
+
   var styles = {
     root: {
       float: "left",
@@ -22,20 +26,15 @@
   };
 
   class MobileTopbarProfileButton extends React.Component {
-    get appIconClassName() {
-      return `icon icon-${railsAppName.toLowerCase()}-logo`;
-    }
-
     render() {
-      return (
-        <div style={styles.root} {...this.props}>
-          <i style={styles.appIconStyles} className={this.appIconClassName} />
-        </div>
-      );
+      return <div style={styles.root} {...this.props}>
+        <i
+         style={styles.appIconStyles}
+         className={appIconClassName()}
+        />
+      </div>;
     }
   }
-
-  MobileTopbarProfileButton.PropTypes = {};
 
   global.MobileTopbarProfileButton = (global.module || {}).exports = MobileTopbarProfileButton;
 })(this);
