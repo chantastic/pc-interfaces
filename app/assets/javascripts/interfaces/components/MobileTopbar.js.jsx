@@ -41,7 +41,7 @@
     get activeRailsRouteName() {
       return $(this.props.routes)
         .find(".is-active .btn-label")
-        .prop("innerHTML");
+        .prop("textContent");
     }
 
     get routes () {
