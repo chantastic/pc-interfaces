@@ -41,17 +41,17 @@
     get activeRailsRouteName() {
       return $(this.props.routes)
         .find(".is-active .btn-label")
-        .prop("innerHTML");
+        .prop("textContent");
     }
 
     get routes () {
       return $.makeArray(
         $(this.props.routes)
           .find(".topbar_route")
-          .map((i, { href, innerText, classList }) => {
+          .map((i, { href, textContent, classList }) => {
             var classes = (classList.contains("floating-topbar-action")) ? "mobile-floating-topbar-action" : "";
 
-            return { href: href, name: innerText, classes: classes};
+            return { href: href, name: textContent, classes: classes};
           })
       );
     }

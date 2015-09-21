@@ -1,14 +1,21 @@
-/* global React, $, interfacesURLForEnv, railsEnv */
+/* global React, $, interfacesURLForEnv, railsEnv, railsAppName, docCookies */
 
 (function (global) {
   "use strict";
 
-  function findCurrentApp(app) {
-    return (app.attributes.name === "Services") ? false : true;
+  function railsAppNameToAPIAppName (name) {
+    switch (name) {
+    case "RP":
+      return "Resources";
+    case "PlanningCenter":
+      return "Services";
+    default:
+      return name;
+    }
   }
 
   function excludeCurrentApp(app) {
-    return (app.attributes.name === "Services") ? true : false;
+    return (app.attributes.name === railsAppNameToAPIAppName(railsAppName)) ? false : true;
   }
 
   function sortAppsByName(a, b) {
@@ -22,8 +29,14 @@
       super(props);
 
       this.state = {
+        userCardShown: false,
         apps: [],
         connectedPeople: [],
+      };
+
+      this.handleToggleUserCard = (e) => {
+        e.stopPropagation();
+        this.setState({ userCardShown: !this.state.userCardShown });
       };
     }
 
@@ -39,13 +52,9 @@
       });
 
       fetchApps.success(apps => {
-        var sortedApps;
-
-        sortedApps = apps.data
-          .filter(excludeCurrentApp)
-          .concat(apps.data.filter(findCurrentApp).sort(sortAppsByName));
-
-        this.setState({apps: sortedApps});
+        this.setState({
+          apps: apps.data.filter(excludeCurrentApp).sort(sortAppsByName),
+        });
       });
     }
 
@@ -65,14 +74,33 @@
       });
     }
 
+    fetchAndSetUserCardShown () {
+      this.setState({
+        userCardShown: !!+docCookies.getItem("mobile_topbar_user_card_shown"),
+      });
+    }
+
     componentWillMount () {
       // PERF: add cache
       this.fetchApps();
       this.fetchConnectedPeople();
+      this.fetchAndSetUserCardShown();
+    }
+
+    componentWillUpdate (_, { userCardShown }) {
+      docCookies.setItem("mobile_topbar_user_card_shown", +userCardShown);
     }
 
     render () {
-      return <MobileTopbarProfileMenu {...this.props} apps={this.state.apps} connectedPeople={this.state.connectedPeople} />;
+      return (
+        <MobileTopbarProfileMenu
+         {...this.props}
+         userCardShown={this.state.userCardShown}
+         apps={this.state.apps}
+         connectedPeople={this.state.connectedPeople}
+         onToggleUserCard={this.handleToggleUserCard}
+        />
+      );
     }
   }
 

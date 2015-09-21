@@ -8,7 +8,7 @@
       display: "table-cell",
       borderRight: "1px solid #e4e4e4",
       width: "50%",
-      color: "#656565",
+      color: "#606060",
       pointer: "cursor",
     },
   };

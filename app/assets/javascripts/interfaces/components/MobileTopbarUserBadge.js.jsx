@@ -5,14 +5,16 @@
 
   var styles = {
     root: {
-      borderBottom: "1px solid #e5e5e5",
-      padding: "15px 10px 15px 8px",
+      padding: "9px 10px 15px 5px",
       margin: 0,
+      whiteSpace: "nowrap",
+      textAlign: "left",
     },
     media: {
       imgExt: {
         borderRadius: "50%",
         height: 30,
+        border: "1px solid #7b7b7b",
       },
       bd: {
         textAlign: "left",
@@ -33,7 +35,7 @@
     render () {
       return (
         <ReactMediaObject.Media style={styles.root}>
-          <ReactMediaObject.Img href="">
+          <ReactMediaObject.Img href="#">
            <ReactMediaObject.ImgExt
             src={this.props.src}
             alt={this.altText}

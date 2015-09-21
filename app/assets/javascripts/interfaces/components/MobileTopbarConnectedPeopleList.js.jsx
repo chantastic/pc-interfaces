@@ -1,41 +1,63 @@
-/* global React, interfacesURLForEnv, railsEnv, interfacesOrganization */
+/* global React, _, interfacesURLForEnv, railsEnv, interfacesPerson, interfacesOrganization */
 
 (function (global) {
   "use strict";
 
   var styles = {
     root: {
-      height: "calc(100% - 165px)",
+      position: "absolute",
+      top: 49,
+      right: 4,
+      backgroundColor: "white",
+      width: "calc(100% - 52px)",
+      borderRadius: 1,
+      borderTopLeftRadius: 2,
+      borderTopRightRadius: 0,
+      transition: "all 0.2s ease-in-out",
+
+      height: "calc(100% - 106px)",
       overflow: "hidden",
       overflowY: "scroll",
       WebkitOverflowScrolling: "touch",
     },
 
     unlinkButton: {
-      border: "1px solid #e5e5e5",
       color: "#606060",
       display: "block",
-      margin: "30px",
-      borderRadius: "4px",
       pointer: "cursor",
     },
   };
 
   class MobileTopbarConnectedPeopleList extends React.Component {
+    constructor (props) {
+      super(props);
+
+      this.dismissBackgroudClick = (e) => {
+        if(e.target === this._pane.getDOMNode()) {
+          e.stopPropagation();
+        }
+      };
+    }
+
     render () {
       return (
-        <div style={styles.root}>
-          <MobileTopbarCurrentPersonListItem name={interfacesOrganization.name} />
+        <div style={_.extend({}, styles.root, this.props.style)} ref={ c => this._pane = c } onClick={this.dismissBackgroudClick}>
+          <MobileTopbarCurrentPersonListItem personName={interfacesPerson.name} organizationName={interfacesOrganization.name} />
+
           {this.props.people.map((connectedPerson, i) => {
-            return <MobileTopbarConnectedPersonListItem
-                    key={i}
-                    person={connectedPerson}
-                   />;
+            return (
+              <MobileTopbarConnectedPersonListItem
+                key={i}
+                person={connectedPerson}
+              />
+            );
           })}
 
-          <a href={interfacesURLForEnv(railsEnv, "accounts", "unlink")} style={styles.unlinkButton}>
-            <InterfacesIcon name="unlink" />{' '}Unlink Accounts
-          </a>
+          {(this.props.people.length > 0) &&
+            <a href={interfacesURLForEnv(railsEnv, "accounts", "unlink")} style={styles.unlinkButton}>
+              <InterfacesIcon name="unlink" />{' '}Unlink Accounts
+            </a>
+          }
         </div>
       );
     }
@@ -45,6 +67,7 @@
     people: React.PropTypes.arrayOf(
       React.PropTypes.object
     ).isRequired,
+    style: React.PropTypes.object,
   };
 
   global.MobileTopbarConnectedPeopleList = (global.module || {}).exports = MobileTopbarConnectedPeopleList;

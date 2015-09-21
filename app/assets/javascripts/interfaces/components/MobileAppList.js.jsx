@@ -1,4 +1,4 @@
-/* global React, _ */
+/* global React */
 
 (function (global) {
   "use strict";
@@ -10,6 +10,7 @@
       overflowY: "scroll",
       WebkitOverflowScrolling: "touch",
       transition: "0.3s all ease-in-out",
+      height: "calc(100% - 104px)",
     },
   };
 
@@ -26,16 +27,11 @@
       textAlign: "left",
     },
 
-    appNamePrefix: {
-      color: "#bcbcbc",
-      fontSize: 10,
-      marginLeft: 35,
-    },
-
     appName: {
       color: "white",
-      fontSize: 15,
-      marginLeft: 35,
+      fontSize: 16,
+      marginLeft: 38,
+      marginTop: 4,
     },
   };
 
@@ -46,12 +42,16 @@
 
     render () {
       return (
-        <div style={_.extend({}, styles.appList, { height: "calc(100% - 215px)" }, !this.props.shown && { height: 0})}>
+        <div style={styles.appList}>
           {this.props.apps.map(({ attributes: { name, url }}, i) => {
             return (
-              <a style={iconStyles.container} href={url} key={i}>
+              <a
+               href={url}
+               key={i}
+               style={iconStyles.container}
+               target={(name === "Services") ? "_blank" : "_self" }
+              >
                 <AppIcon name={name} />
-                <div style={iconStyles.appNamePrefix}>planning center</div>
                 <div style={iconStyles.appName}>{name}</div>
               </a>
             );
@@ -69,7 +69,6 @@
         }),
       })
     ).isRequired,
-    shown: React.PropTypes.bool,
   };
 
   global.MobileAppList = (global.module || {}).exports = MobileAppList;

@@ -6,7 +6,7 @@
   var styles = {
     root: {
       display: "table-cell",
-      color: "#737373",
+      color: "#606060",
     },
   };
 
