@@ -39,9 +39,11 @@
     }
 
     get activeRailsRouteName() {
-      return $(this.props.routes)
+      var routeName = $(this.props.routes)
         .find(".is-active .btn-label")
         .prop("textContent");
+
+      return routeName || "Menu";
     }
 
     get routes () {
