@@ -2,6 +2,7 @@ INTERFACES CHANGELOG
 --------------------
 ### develop
 
+* [BUGFIX] MobileTopbar, return default `menu` where no `is-active` route is found
 * [BUGFIX] remove `leakyRoot` error reporting in support of Services
 * [BUGFIX] add ENV var for presentation of Interfaces routson Heroku
 * [FEATURE] add eslint for code quality and lint existing JS files
