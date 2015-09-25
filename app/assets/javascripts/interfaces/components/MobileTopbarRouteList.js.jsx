@@ -1,4 +1,4 @@
-/* global React */
+/* global React, _ */
 
 (function (global) {
   "use strict";
@@ -30,8 +30,17 @@
 
   class MobileTopbarRouteList extends React.Component {
     get routes () {
-      return this.props.routes.filter(({name}) => {
-        return name.trim() !== this.props.activeRouteName.trim();
+      return this.props.routes.map(route => {
+        const { name } = route;
+
+        return _.extend(
+          {},
+          route,
+          {
+            name: name.trim(),
+            active: name.trim() === this.props.activeRouteName.trim(),
+          }
+        );
       });
     }
 
@@ -39,9 +48,17 @@
       return (
         <div style={rootStyles} onClick={this.props.onDismiss} data-no-turbolink>
           <div style={listStyles}>
-            {this.routes.map(({classes, href, name}, i) => {
+            {this.routes.map(({classes, href, name, active}, i) => {
               return (
-                <a key={i} style={itemStyles} href={href}>
+                <a
+                  key={i}
+                  href={href}
+                  style={
+                    _.extend({},
+                      itemStyles,
+                      active && { backgroundColor: "rgba(0,0,0, 0.3)" }
+                    )
+                  }>
                   <span className={classes}>{name}</span>
                 </a>
               );
