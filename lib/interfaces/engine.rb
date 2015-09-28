@@ -17,13 +17,6 @@ module Interfaces
       generate.view_specs false
     end
 
-    if Gem::Version.new(React::Rails::VERSION) < Gem::Version.new("1.1.0")
-      config.react.jsx_transform_options = {
-        harmony:     true,
-        strip_types: true
-      }
-    end
-
     initializer :assets do |config|
       Rails.application.config.assets.precompile += %w(
         interfaces/interfaces.eot

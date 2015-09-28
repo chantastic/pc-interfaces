@@ -2,6 +2,12 @@ INTERFACES CHANGELOG
 --------------------
 ### develop
 
+* [BUGFIX] Fix test/dummy app to work with react-rails component helpers
+  + Remove `high_voltage` gem
+  + Update `PagesController` to display existing pages without required high_voltage
+  + Add `better_errors` gem (and related)
+  + Add `id` to `NullOrganization`
+  + Update bin-stubs
 * [BUGFIX] MobileTopbar, return default `menu` where no `is-active` route is found
 * [BUGFIX] remove `leakyRoot` error reporting in support of Services
 * [BUGFIX] add ENV var for presentation of Interfaces routson Heroku
