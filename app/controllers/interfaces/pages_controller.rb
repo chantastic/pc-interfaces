@@ -1,8 +1,11 @@
 require_dependency "interfaces/application_controller"
 
 module Interfaces
-  class PagesController < HighVoltage::PagesController
-    skip_filter *_process_action_callbacks.map(&:filter)
+  class PagesController < ActionController::Base
     layout 'interfaces/application'
+
+    def show
+      render "interfaces/#{params[:id]}"
+    end
   end
 end
