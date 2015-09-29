@@ -2,26 +2,6 @@
 // All rules pertaining to screens greater than 100em or ~1600px
 //======================================================
 @media (min-width: 100em)
-
-  html, body
-    height: 100%
-
-  html
-    background: adjust-color($sidebar-bg-color, $lightness: -7%, $saturation: -2%)
-    &:before
-      content: ''
-      position: absolute
-      height: ($topbar-height + 1px)
-      left: 0
-      right: 0
-      background: adjust-color($sidebar-bg-color, $lightness: -10%, $saturation: -2%) 
-  body
-    background: $bg-color
-    max-width: $max-site-width
-    margin: 0 auto
-    min-height: 100%
-    position: static
-
   .top-bar__contents
     background: $base-color
 

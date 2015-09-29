@@ -2,6 +2,7 @@ INTERFACES CHANGELOG
 --------------------
 ### develop
 
+* [CHORE] Move body styles into `/legacy/body` file.
 * [BUGFIX] Fix test/dummy app to work with react-rails component helpers
   + Remove `high_voltage` gem
   + Update `PagesController` to display existing pages without required high_voltage
