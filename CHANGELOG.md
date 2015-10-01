@@ -2,6 +2,7 @@ INTERFACES CHANGELOG
 --------------------
 ### develop
 
+* [FEATURE] add [minions.css](https://github.com/chantastic/minions.css) library.
 * [CHORE] Move body styles into `/legacy/body` file.
 * [BUGFIX] Fix test/dummy app to work with react-rails component helpers
   + Remove `high_voltage` gem
