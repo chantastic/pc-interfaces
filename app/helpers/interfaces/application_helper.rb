@@ -11,15 +11,17 @@ module Interfaces
 
     def interfaces_header(person:                 Interfaces::NullPerson.new,
                           person_profile_path:    "",
+                          settings_path:          "",
                           organization:           Interfaces::NullOrganization.new,
                           application_class_name: app_name,
                           &block)
 
       render layout: '/interfaces/header',
              locals: {
-               person:       person,
-               profile_path: person_profile_path,
-               organization: organization,
+               person:        person,
+               profile_path:  person_profile_path,
+               settings_path: settings_path,
+               organization:  organization,
                application_class_name: application_class_name
              },
              &block
