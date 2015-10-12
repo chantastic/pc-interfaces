@@ -1,5 +1,8 @@
 INTERFACES CHANGELOG
 --------------------
+* [BUGFIX] remove conflicting media query values from the `+breakpoint` mixin.
+  + change `lte_tablet-wide` max-width value so that it no longer conflicts with `bp_3`. 
+  + Note: the `max-width` of one media query should not be the same value as another media query's `min-width`.
 
 * [STYLE] remove dark backdrop from app-badge
 * [BUGFIX] fix app icon in engine dummy app
