@@ -1,6 +1,10 @@
 INTERFACES CHANGELOG
 --------------------
-### develop
+
+* [STYLE] remove dark backdrop from app-badge
+* [BUGFIX] fix app icon in engine dummy app
+
+### pre 0.7.0 ( because I'm a failure and 6.0 is not a thing )
 
 * [FEATURE] add [minions.css](https://github.com/chantastic/minions.css) library.
 * [CHORE] Move body styles into `/legacy/body` file.

@@ -1,9 +1,9 @@
 .app-badge {
   width: 225px;
   height: 100%;
-  background-color: #484848;
   float: left;
   position: relative;
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
   z-index: 11000;
   cursor: pointer;
 
@@ -11,7 +11,7 @@
 }
 
 .app-badge:hover {
-  background-color: #222;
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
 @media (min-width: 0) {

@@ -18,6 +18,7 @@
     appIconStyles: {
       fontSize: 128,
       lineHeight: "51px",
+      height: "51px",
       width: 30,
       overflow: "hidden",
       display: "block",
