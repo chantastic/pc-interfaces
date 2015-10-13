@@ -65,6 +65,14 @@ INTERFACES.dataAPI =
   handleAppListToggle: ->
     new INTERFACES.AppSwitcher().toggleAppList()
 
+  handleInstructionToggle: ({target: { dataset: { instructionId }}}) ->
+    instructionNode = document.getElementById(instructionId)
+
+    if !instructionNode.style.maxHeight
+      instructionNode.style.maxHeight = instructionNode.scrollHeight + "px"
+    else
+      instructionNode.style.maxHeight = ""
+
   handleTopBarToggle: ->
     new INTERFACES.TopBar().toggleMenu()
     return false
@@ -86,6 +94,8 @@ INTERFACES.dataAPI =
       .on('click', '[data-app-list="toggle"]',      @handleAppListToggle)
       .on('click', '[data-top-bar="toggle"]',       @handleTopBarToggle)
       .on('click', '[data-account-info="toggle"]',  @handleAccountInfoToggle)
+      .on('click', '[data-account-info="toggle"]',  @handleAccountInfoToggle)
+      .on('click', '[data-instruction-id]',         @handleInstructionToggle)
 
     # DANGER: THIS IS PROTOTYPE-LEVEL CODE. DO NOT USE THIS IN PRODUCTION.
     # IT WILL BE ROMOVED WITH LITTLE WARNING
