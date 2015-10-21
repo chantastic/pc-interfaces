@@ -1,7 +1,14 @@
+/* global React, $, interfacesURLForEnv */
+
 (function (global) {
+  "use strict";
+
   class ConnectedPersonMenuContainer extends React.Component {
     constructor(props) {
+      super(props);
+
       this.state = { connectedPeople: [] };
+
       this.fetchConnectedPeople = this.fetchConnectedPeople.bind(this);
     }
 
@@ -12,8 +19,8 @@
       if (this.state.connectedPeople.length) { return; }
 
       var fetchConnectedPeople = $.ajax({
-        url: `${interfacesURLForEnv(this.props.railsEnv, 'api')}/people/v2/me/connected_people`,
-        xhrFields: { withCredentials: true }
+        url: `${interfacesURLForEnv(this.props.railsEnv, "api")}/people/v2/me/connected_people`,
+        xhrFields: { withCredentials: true },
       });
 
       fetchConnectedPeople.success((people) => {
@@ -22,38 +29,33 @@
     }
 
     componentWillMount() {
-      $(document).on('user-badge:hovered', this.fetchConnectedPeople)
-      $(document).on('user-badge:clicked', this.fetchConnectedPeople)
+      $(document).on("user-badge:hovered", this.fetchConnectedPeople);
+      $(document).on("user-badge:clicked", this.fetchConnectedPeople);
     }
 
     componentWillUnmount() {
-      $(document).off('user-badge:hovered', this.fetchConnectedPeople)
-      $(document).off('user-badge:clicked', this.fetchConnectedPeople)
+      $(document).off("user-badge:hovered", this.fetchConnectedPeople);
+      $(document).off("user-badge:clicked", this.fetchConnectedPeople);
     }
 
     render() {
       return (
         <ConnectedPersonMenu
          connectedPeople={this.state.connectedPeople}
-         currentPersonAccountCenterId={this.props.currentPersonAccountCenterId}
-         currentPersonId={this.props.currentPersonId}
-         currentPersonName={this.props.currentPersonName}
-         currentPersonOrganizationName={this.props.currentPersonOrganizationName}
-         currentPersonProfilePath={this.props.currentPersonProfilePath}
-         railsAppName={this.props.railsAppName}
-         railsEnv={this.props.railsEnv} />
+         {...this.props} />
       );
     }
   }
 
   ConnectedPersonMenuContainer.propTypes = {
-    currentPersonAccountCenterId:  React.PropTypes.number.isRequired,
-    currentPersonId:               React.PropTypes.number.isRequired,
-    currentPersonName:             React.PropTypes.string.isRequired,
+    currentPersonAccountCenterId: React.PropTypes.number.isRequired,
+    currentPersonId: React.PropTypes.number.isRequired,
+    currentPersonName: React.PropTypes.string.isRequired,
     currentPersonOrganizationName: React.PropTypes.string.isRequired,
-    currentPersonProfilePath:      React.PropTypes.string,
-    railsAppName:                  React.PropTypes.string.isRequired,
-    railsEnv:                      React.PropTypes.string.isRequired
+    currentPersonProfilePath: React.PropTypes.string,
+    railsAppName: React.PropTypes.string.isRequired,
+    railsEnv: React.PropTypes.string.isRequired,
+    showSettingsLink: React.PropTypes.bool.isRequired,
   };
 
   global.ConnectedPersonMenuContainer = (global.module || {}).exports = ConnectedPersonMenuContainer;

@@ -1,19 +1,21 @@
 (function (global) {
+  "use strict";
+
   function getJoinedSegments(segments) {
     if(!segments.length) {
-      return '';
+      return "";
     }
 
-    return `/${segments.join('/')}`;
+    return `/${segments.join("/")}`;
   }
 
   function getSubdomainedAppName(appName, suffix) {
     if(!appName) {
-      return '';
+      return "";
     }
 
     if(!suffix) {
-      return `${appName}.`
+      return `${appName}.`;
     }
 
     return `${appName}${suffix}.`;
@@ -23,20 +25,20 @@
     var baseURL;
 
     switch(env) {
-      case 'production':
+      case "production":
         baseURL = `https://${getSubdomainedAppName(appName)}planningcenteronline.com`;
         break;
-      case 'staging':
-        baseURL =  `https://${getSubdomainedAppName(appName, '-staging')}planningcenteronline.com`;
+      case "staging":
+        baseURL = `https://${getSubdomainedAppName(appName, "-staging")}planningcenteronline.com`;
         break;
-      case 'development':
+      case "development":
         baseURL = `http://${getSubdomainedAppName(appName)}pco.dev`;
         break;
-      case 'test':
+      case "test":
         baseURL = `http://${getSubdomainedAppName(appName)}pco.test`;
         break;
       default:
-        baseURL = `http://${getSubdomainedAppName(appName)}planningcenteronline.com`
+      baseURL = `http://${getSubdomainedAppName(appName)}planningcenteronline.com`;
         break;
     }
 

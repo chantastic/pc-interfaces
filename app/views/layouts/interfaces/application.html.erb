@@ -1,15 +1,17 @@
+<% interfaces_person       = OpenStruct.new(id: 1,
+                                            account_center_id: 1,
+                                            avatar_url: "",
+                                            name: "Interfaces User")  %>
+<% interfaces_organization = OpenStruct.new(name: "Interfaces Organization") %>
 <!doctype html>
 <html class="no-js" lang="en">
-  <%= render '/layouts/interfaces/partials/head' %>
+  <%= interfaces_head person: interfaces_person %>
 
   <body>
     <%= interfaces_wrap do %>
       <%# find a better place for these fake objects %>
-      <% interfaces_person       = OpenStruct.new(id: 1, account_center_id: 1, name: "Interfaces User") %>
-      <% interfaces_organization = OpenStruct.new(name: "Interfaces Organization") %>
-
-      <%= interfaces_header person: interfaces_person, organization: interfaces_organization, person_profile_path: "#" do %>
-        <div class="tobap_route-group">
+      <%= interfaces_header person: interfaces_person, organization: interfaces_organization, person_profile_path: "#", settings_path: "#" do %>
+        <div class="tobar_route-group">
           <a
           class="topbar_route"
           href="/interfaces">

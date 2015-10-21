@@ -1,0 +1,14 @@
+{
+  "ecmaFeatures": {
+    "jsx": true
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+  },
+  "rules": {
+    "camelcase": [2, {"properties": "never"}],
+    "comma-dangle": [2, "always-multiline"],
+    "no-underscore-dangle": 0
+  }
+}

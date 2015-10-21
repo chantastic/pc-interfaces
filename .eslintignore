@@ -1,0 +1,4 @@
+vendor
+test
+app/assets/javascripts/interfaces/plugins.js
+app/assets/javascripts/interfaces/helpdesk-embed.js

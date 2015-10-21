@@ -1,0 +1,41 @@
+/*! minions.css | MIT License | https://github.com/chantastic/minions.css */
+
+.d-b  { display: block; }
+.d-i  { display: inline; }
+.d-ib { display: inline-block; }
+.d-n  { display: none; }
+
+.d-f  { display: flex; }
+.d-t  { display: table; }
+.d-tc { display: table-cell; }
+.d-tr { display: table-row; }
+
+/*
+ * @mn (min-width: 0)
+ * @xs (min-width: 320px)
+ * @sm (min-width: 544px)
+ * @md (min-width: 768px)
+ * @lg (min-width: 992px)
+ * @xl (min-width: 1200px)
+ *
+ * @!xs (max-width: 319px)
+ * @!sm (max-width: 543px)
+ * @!md (max-width: 776px)
+ * @!lg (max-width: 991px)
+ * @!xl (max-width: 1199px)
+ *
+ * @=mn (min-width: 0)     and (max-width: 319px)
+ * @=xs (min-width: 320px) and (max-width: 543px)
+ * @=sm (min-width: 544px) and (max-width: 767px)
+ * @=md (min-width: 768px) and (max-width: 991px)
+ * @=lg (min-width: 992px) and (max-width: 1199px)
+ * @=xl (min-width: 1200px)
+ *
+ * @!=mn (min-width: 320px)
+ * @!=xs (max-width: 319px), (min-width: 544px)
+ * @!=sm (max-width: 543px), (min-width: 768px)
+ * @!=md (max-width: 767px), (min-width: 992px)
+ * @!=lg (max-width: 991px), (min-width: 1200px)
+ * @!=xl (max-width: 1199px)
+ *
+ */

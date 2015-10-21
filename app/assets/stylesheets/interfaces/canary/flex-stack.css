@@ -1,0 +1,25 @@
+.flex-stack { display: flex }
+
+.flex-stack > * { flex: 1 }
+
+@media all and (max-width: 767px) {
+  .flex-stack { flex-direction: column }
+
+  .flex-stack > * {
+    margin-top:    .5rem;
+    margin-bottom: .5rem;
+  }
+  .flex-stack > *:first-child { margin-top: 0 }
+  .flex-stack > *:last-child  { margin-bottom: 0 }
+}
+
+@media (min-width: 768px) {
+  .flex-stack { flex-direction: row }
+
+  .flex-stack > * {
+    margin-right: .5rem;
+    margin-left:  .5rem;
+  }
+  .flex-stack > *:first-child { margin-left: 0 }
+  .flex-stack > *:last-child  { margin-right:  0 }
+}

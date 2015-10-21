@@ -1,3 +1,4 @@
+# coding: utf-8
 module Interfaces
   module ApplicationHelper
     def interfaces(&block)
@@ -8,18 +9,32 @@ module Interfaces
       render layout: '/interfaces/wrap', &block
     end
 
-    def interfaces_header(person:              Interfaces::NullPerson.new,
-                          person_profile_path: "",
-                          organization:        Interfaces::NullOrganization.new,
+    def interfaces_header(person:                 Interfaces::NullPerson.new,
+                          person_profile_path:    "",
+                          settings_path:          "",
+                          organization:           Interfaces::NullOrganization.new,
+                          application_class_name: app_name,
                           &block)
 
       render layout: '/interfaces/header',
              locals: {
-               person:       person,
-               profile_path: person_profile_path,
-               organization: organization
+               person:        person,
+               profile_path:  person_profile_path,
+               settings_path: settings_path,
+               organization:  organization,
+               application_class_name: application_class_name
              },
              &block
+    end
+
+    def interfaces_head(person: Interfaces::NullPerson.new, organization: Interfaces::NullOrganization.new)
+      render partial: '/interfaces/head',
+             locals:  { person: person, organization: organization }
+    end
+
+    def interfaces_js_environment(person: Interfaces::NullPerson.new, organization: Interfaces::NullOrganization.new)
+      render partial: "/interfaces/js_env",
+             locals:  { person: person, organization: organization }
     end
 
     def interfaces_content(&block)
@@ -68,10 +83,18 @@ module Interfaces
     end
 
     def square_avatar(avatar_url)
-      if avatar_url.index('?')
+      if avatar_url && avatar_url.index('?')
         avatar_url
       else
         "#{avatar_url}?g=100x100%23"
+      end
+    end
+
+    def interfaces_avatar(person)
+      if person.avatar_url.present?
+        square_avatar(person.avatar_url)
+      else
+        "https://www.planningcenteronline.com/photos/icon/missing.png"
       end
     end
 
