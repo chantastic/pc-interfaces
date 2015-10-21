@@ -1,5 +1,37 @@
 INTERFACES CHANGELOG
 --------------------
+
+### 0.7.0 (October 21 2015)
+
+* [CHORE] remove runtime dependencies in Dummy app
+* [FEATURE] add `instruction` lib (aka: helper-shelves)
+* [FEATURE] add `flex-stack` construct
+* [FEATURE] add `view` construct for creating views
+  + `view`
+  + `view_body`
+  + `view_content`
+  + `item-sidebar-list`
+* [FEATURE] add minions.css utilities for:
+  + `align-items`
+  + `align-self`
+  + `background-color`
+  + `background-color_lightness`
+  + `border-color_lightness`
+  + `border-width`
+  + `color_lightness`
+  + `display`
+  + `flex`
+  + `float`
+  + `justify-content`
+  + `margin`
+  + `opacity`
+  + `order`
+  + `overflow`
+  + `padding`
+  + `position`
+  + `text-align`
+  + `visibility`
+* [FEATURE] add "Settings" cog to Topbar
 * [BUGFIX] remove conflicting media query values from the `+breakpoint` mixin.
   + change `lte_tablet-wide` max-width value so that it no longer conflicts with `bp_3`. 
   + Note: the `max-width` of one media query should not be the same value as another media query's `min-width`.
