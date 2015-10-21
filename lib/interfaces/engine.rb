@@ -1,6 +1,5 @@
 # Bundle required gems into host application
 # http://stackoverflow.com/questions/5159607/rails-engine-gems-dependencies-how-to-load-them-into-the-application#answer-5850503
-require "jquery-rails"
 require "es5-shim-rails"
 require "html5shiv-rails"
 require "placeholder-gem"
@@ -16,11 +15,6 @@ module Interfaces
       generate.assets false
       generate.view_specs false
     end
-
-    config.react.jsx_transform_options = {
-      harmony: true,
-      strip_types: true
-    }
 
     initializer :assets do |config|
       Rails.application.config.assets.precompile += %w(

@@ -1,8 +1,61 @@
 INTERFACES CHANGELOG
 --------------------
+
+### 0.7.0 (October 21 2015)
+
+* [CHORE] remove runtime dependencies in Dummy app
+* [FEATURE] add `instruction` lib (aka: helper-shelves)
+* [FEATURE] add `flex-stack` construct
+* [FEATURE] add `view` construct for creating views
+  + `view`
+  + `view_body`
+  + `view_content`
+  + `item-sidebar-list`
+* [FEATURE] add minions.css utilities for:
+  + `align-items`
+  + `align-self`
+  + `background-color`
+  + `background-color_lightness`
+  + `border-color_lightness`
+  + `border-width`
+  + `color_lightness`
+  + `display`
+  + `flex`
+  + `float`
+  + `justify-content`
+  + `margin`
+  + `opacity`
+  + `order`
+  + `overflow`
+  + `padding`
+  + `position`
+  + `text-align`
+  + `visibility`
+* [FEATURE] add "Settings" cog to Topbar
 * [BUGFIX] remove conflicting media query values from the `+breakpoint` mixin.
   + change `lte_tablet-wide` max-width value so that it no longer conflicts with `bp_3`. 
   + Note: the `max-width` of one media query should not be the same value as another media query's `min-width`.
+
+* [STYLE] remove dark backdrop from app-badge
+* [BUGFIX] fix app icon in engine dummy app
+
+### pre 0.7.0 ( because I'm a failure and 6.0 is not a thing )
+
+* [FEATURE] add [minions.css](https://github.com/chantastic/minions.css) library.
+* [CHORE] Move body styles into `/legacy/body` file.
+* [BUGFIX] Fix test/dummy app to work with react-rails component helpers
+  + Remove `high_voltage` gem
+  + Update `PagesController` to display existing pages without required high_voltage
+  + Add `better_errors` gem (and related)
+  + Add `id` to `NullOrganization`
+  + Update bin-stubs
+* [BUGFIX] MobileTopbar, return default `menu` where no `is-active` route is found
+* [BUGFIX] remove `leakyRoot` error reporting in support of Services
+* [BUGFIX] add ENV var for presentation of Interfaces routson Heroku
+* [FEATURE] add eslint for code quality and lint existing JS files
+* [BUGFIX] move railsEnv assignment to head from footer
+
+### 0.6.0.beta.9 (June 23 2015)
 
 * [BUGFIX] add circle.yml for CircleCI builds, with appropriate ruby version
 

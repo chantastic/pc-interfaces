@@ -1,0 +1,15 @@
+@import "variables";
+
+.item-sidebar-list .list-item {
+  display: block;
+  border: none;
+}
+
+.item-sidebar-list .list-item:hover {
+  background-color: rgba(0,0,0,.1);
+}
+
+.item-sidebar-list .list-item.is-active {
+  background-color: $base-color;
+  color: white;
+}

@@ -16,13 +16,6 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  # dependencies for sample application
-  spec.add_dependency 'jquery-rails'
-  spec.add_dependency 'coffee-rails'
-  spec.add_dependency 'high_voltage'
-  spec.add_dependency 'sass-rails'
-  spec.add_dependency 'sprockets'
-
   # dependencies for host application
   spec.add_dependency 'es5-shim-rails'
   spec.add_dependency 'html5shiv-rails'
@@ -30,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'modernizr-rails'
   spec.add_dependency 'pco-url', '>= 1.2.0'
   spec.add_dependency 'autoprefixer-rails', '~> 5.1.11'
-  spec.add_dependency 'react-rails', '~> 1.0.0'
+  spec.add_dependency 'react-rails', '>= 1.3.1'
 
   spec.add_development_dependency 'sqlite3'
   spec.add_development_dependency 'rails', '~> 4.0.2'
