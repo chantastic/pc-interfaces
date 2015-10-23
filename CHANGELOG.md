@@ -1,6 +1,10 @@
 INTERFACES CHANGELOG
 --------------------
 
+### develop
+
+* [BREAKING] remove Interfaces into separate project InterfacesIcons
+
 ### 0.7.0 (October 21 2015)
 
 * [CHORE] remove runtime dependencies in Dummy app
