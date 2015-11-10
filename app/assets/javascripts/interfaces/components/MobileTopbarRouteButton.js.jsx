@@ -18,7 +18,7 @@
       return (
         <div style={styles.root} {...this.props}>
           {this.props.name + " "}
-          <InterfacesIcon name="caret-down-outline" style={{ fontSize: 11 }}/>
+          <InterfacesIcon name="chevron-down" style={{ fontSize: 11 }}/>
         </div>
       );
     }
