@@ -1,6 +1,10 @@
 INTERFACES CHANGELOG
 --------------------
 
+### 0.7.1 (November 17 2015)
+
+* [FIX] update variable path in item-sidebar-list
+
 ### 0.7.0 (October 21 2015)
 
 * [CHORE] remove runtime dependencies in Dummy app
