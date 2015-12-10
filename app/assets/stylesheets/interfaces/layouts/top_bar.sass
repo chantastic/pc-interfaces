@@ -35,7 +35,7 @@
   font-size: 128px
   line-height: $topbar-height
   color: #fff
-  display: block
+  display: block !important
 
 //================================================[ MODIFICATION TO PEOPLE LOGO]
 #logo.bookmark.icon-people-logo, #logo.bookmark.icon-people-logo:before
@@ -206,7 +206,7 @@
   margin: 0 auto
 
   @include breakpoint(lte_tablet)
-    .interfaces-remove
+    .ii-x
       position: absolute
       top:  0
       left: 0
@@ -226,7 +226,7 @@
     visibility: hidden // hidden while there are no applications that use it
     left: 0
     border-right: 1px solid adjust-color($base-color, $lightness: -20%, $saturation: -15%)
-    .interfaces-cog
+    .ii-cog
       transition: all .3s linear
   .title
     height: 1

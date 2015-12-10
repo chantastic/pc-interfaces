@@ -3,7 +3,9 @@ INTERFACES CHANGELOG
 
 ### develop
 
-* [BREAKING] remove Interfaces into separate project InterfacesIcons
+* [BREAKING] Update pages and layouts with new icons
+* [BREAKING] remove `icons` page
+* [BREAKING] remove Interfaces icons into separate project InterfacesIcons
 
 ### 0.7.1 (November 17 2015)
 

@@ -64,7 +64,7 @@ module Interfaces
     end
 
     def app_name
-      rails_application_name.underscore.dasherize
+      current_app.underscore.dasherize
     end
 
     APP_NAME_TO_HELPDESK = {
@@ -76,10 +76,6 @@ module Interfaces
 
     def helpdesk_name
       APP_NAME_TO_HELPDESK[app_name]
-    end
-
-    def available_apps
-      [current_app] + (available_apps_for_person - [current_app])
     end
 
     def square_avatar(avatar_url)
@@ -101,8 +97,11 @@ module Interfaces
     private
 
     def current_app
-      if 'AccountCenter' == rails_application_name
+      case rails_application_name
+      when 'AccountCenter'
         'Accounts'
+      when 'Dummy'
+        'Interfaces'
       else
         rails_application_name.split(/(?=[A-Z])/).join('-')
       end
