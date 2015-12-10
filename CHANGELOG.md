@@ -1,7 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
-### develop
+### 0.8.0 (December 10 2015)
 
 * [BREAKING] Update pages and layouts with new icons
 * [BREAKING] remove `icons` page
