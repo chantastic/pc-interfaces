@@ -55,7 +55,7 @@
 
           {(this.props.people.length > 0) &&
             <a href={interfacesURLForEnv(railsEnv, "accounts", "unlink")} style={styles.unlinkButton}>
-              <InterfacesIcon name="unlink" />{' '}Unlink Accounts
+              <InterfacesIcon name="chain-broken" />{' '}Unlink Accounts
             </a>
           }
         </div>

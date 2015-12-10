@@ -13,7 +13,7 @@
     }
 
     get classNames() {
-      return `interfaces interfaces-${this.props.name}`;
+      return `ii ii-${this.props.name}`;
     }
 
     get style () {

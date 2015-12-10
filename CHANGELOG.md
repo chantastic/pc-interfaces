@@ -1,6 +1,12 @@
 INTERFACES CHANGELOG
 --------------------
 
+### 0.8.0 (December 10 2015)
+
+* [BREAKING] Update pages and layouts with new icons
+* [BREAKING] remove `icons` page
+* [BREAKING] remove Interfaces icons into separate project InterfacesIcons
+
 ### 0.7.1 (November 17 2015)
 
 * [FIX] update variable path in item-sidebar-list
