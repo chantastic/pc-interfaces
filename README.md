@@ -1,71 +1,33 @@
-## Intro
+## About
 
-Interfaces is a white-label css framework for Planning Center Online apps.
+Interfaces is a customizable css framework for Planning Center Online apps.
 
-## Installation
+## The styleguide
 
-To add Interfaces, add this to your Gemfile:
+There are two ways to checkout the styleguide without cloning this project.
 
-```ruby
-gem 'interfaces', git: 'git@github.com:ministrycentered/interfaces.git'
+1. Visit http://pco-interfaces.herokuapp.com
+2. Visit the `/interfaces` route of your PCO app in development, e.g., `services.pco.dev/interfaces`
+
+## Development
+
+This is a conventional Rails Engine and can be worked on as such:
+```bash
+$ cd ~/Code
+$ git clone git@github.com:ministrycentered/interfaces.git
+$ cd interfaces/test/dummy
+$ bundle
+$ bundle exec rails s
 ```
 
-Restart your server.
+Visit `http://localhost:3000` in a browser.
 
-## Setup
+## Features and PRs
 
-There's a little setup required to have a happy Interfaces setup:
+Interfaces no longer uses [git-flow](https://github.com/nvie/gitflow). All features should be written against `master` and PR'd into `master`. Hit me up if you need to cut a version for use in production.
 
-`rails generate interfaces:install`
+## Installation and usage
 
-## Usage
+Installation were removed. Apps have been setup at this point. This document gets more out of date.
 
-Add this to `application.css` manifest:
-
-```css
-*= require interfaces/interfaces
-```
-
-Add this to your `application.js` manifest:
-```javascript
-//= require interfaces/interfaces
-```
-
-This will provide you with out-of-the-box Interfaces styles, scripts, shims, libraries, and components.
-
-#### Adding Layout
-
-It's likely you'll need a more complex layout. This is the current baseline. Wrap your `<%= yield %>` tag like so:
-
-```erb
-<%= interfaces_wrap do %>
-  <%= interfaces_header person: current_person, organization: current_organizationdo, person_profile_path: '/path/to/profile/:id/edit' %>
-    <%# navagation list items here %>
-  <% end %>
-
-  <%= interfaces_content do %>
-    <%= interfaces_main do %>
-      <%= yield %>
-    <% end %>
-  <% end %>
-<% end %>
-
-<%= interfaces_footer do %>Designed in CA Copyright 2015<% end %>
-```
-
-#### AccountSwitcher
-
-To use the AccountSwitcher, you'll need to provide `interfaces_header` with both
-the current Person and Organization, however they are implemented in your app.
-This is commonly `current_person` and `current_organization`.
-
-## /interfaces route
-
-Add this line to your your `routes.rb` file.
-
-```
-mount Interfaces::Engine => '/interfaces
-```
-
-This provides all of the `pco` command-line tools with data about Interfaces,
-and allow you to see available Interfaces APIs in production.
+Hit me (@chantastic) up if you're setting up a new project.
