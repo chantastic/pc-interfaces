@@ -68,7 +68,7 @@ module Interfaces
     end
 
     APP_NAME_TO_HELPDESK = {
-      "account-center" => "Accounts",
+      "accounts"       => "Accounts",
       "check-ins"      => "Check-Ins",
       "people"         => "People",
       "registrations"  => "Registrations"
