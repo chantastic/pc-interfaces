@@ -1,4 +1,1 @@
 .user-badge_user-name { min-width: 115px }
-
-@media (min-width: 1024px) { .user-badge_user-name { min-width: 150px } }
-@media (min-width: 1280px) { .user-badge_user-name { min-width: 175px } }

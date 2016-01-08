@@ -1,6 +1,8 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BUGFIX] Remove user-badge_user-name media-queries. they broke firefox
+
 ### 0.8.0 (December 10 2015)
 
 * [BREAKING] Update pages and layouts with new icons
