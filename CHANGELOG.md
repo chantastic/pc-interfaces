@@ -1,6 +1,10 @@
 INTERFACES CHANGELOG
 --------------------
 
+### 0.8.2 (January 8 2016)
+
+* [BUGFIX] APP_NAME_TO_HELPDESK, change "account-center" to "accounts"
+
 ### 0.8.1 (January 7 2016)
 
 * [BUGFIX] Remove user-badge_user-name media-queries. they broke firefox
