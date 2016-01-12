@@ -46,6 +46,7 @@
       var fetchApps = $.ajax({
         url: `${interfacesURLForEnv(this.props.railsEnv, "api")}/people/v2/me/apps`,
         xhrFields: { withCredentials: true },
+        cache: false,
       });
 
       fetchApps.success(apps => {

@@ -21,6 +21,7 @@
       var fetchConnectedPeople = $.ajax({
         url: `${interfacesURLForEnv(this.props.railsEnv, "api")}/people/v2/me/connected_people`,
         xhrFields: { withCredentials: true },
+        cache: false,
       });
 
       fetchConnectedPeople.success((people) => {
