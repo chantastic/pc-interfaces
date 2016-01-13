@@ -17,9 +17,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   # dependencies for host application
-  spec.add_dependency 'es5-shim-rails'
-  spec.add_dependency 'html5shiv-rails'
-  spec.add_dependency 'placeholder-gem'
   spec.add_dependency 'modernizr-rails'
   spec.add_dependency 'pco-url', '>= 1.2.0'
   spec.add_dependency 'autoprefixer-rails', '~> 5.1.11'

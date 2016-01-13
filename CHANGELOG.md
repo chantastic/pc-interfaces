@@ -1,6 +1,14 @@
 INTERFACES CHANGELOG
 --------------------
 
+### Master
+
+* [BREAKING CHANGE] Remove browser polyfill libs
+  + es5-shim
+  + html5shiv
+  + placeholder
+  + console
+
 ### 0.8.3 (January 12 2016)
 
 * [BUGFIX] add `cache: false` option to PCO API requests to circumvent Windows Edge caching issues
