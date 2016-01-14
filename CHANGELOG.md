@@ -3,6 +3,8 @@ INTERFACES CHANGELOG
 
 ### Master
 
+* [BREAKING CHANGE] Remove modernizr-rails gem for custom build in /vendor
+  * v3.3 removes the `.no-touch` class in favor of `.no-touchevents`
 * [BREAKING CHANGE] Remove browser polyfill libs
   + es5-shim
   + html5shiv

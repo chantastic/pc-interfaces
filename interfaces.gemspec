@@ -17,7 +17,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   # dependencies for host application
-  spec.add_dependency 'modernizr-rails'
   spec.add_dependency 'pco-url', '>= 1.2.0'
   spec.add_dependency 'autoprefixer-rails', '~> 5.1.11'
   spec.add_dependency 'react-rails', '>= 1.3.1'
