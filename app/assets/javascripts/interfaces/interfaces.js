@@ -7,4 +7,3 @@
 //= require interfaces/utils
 //= require interfaces/interfacesURLForEnv
 //= require interfaces/dependencies
-//= require interfaces/shims
