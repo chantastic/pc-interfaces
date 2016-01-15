@@ -1,7 +1,10 @@
 INTERFACES CHANGELOG
 --------------------
 
-### MASTER
+* [BREAKING CHANGE] `stylesheet/interfaces/modules` -> `stylesheets/interfaces/presets`
+  * migrating: if your apps uses the `modules` path, change it to `presets`
+
+### Master
 
 ### 0.11.2 (August 30 2016)
 
