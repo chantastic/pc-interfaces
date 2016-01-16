@@ -1,0 +1,50 @@
+@import "interfaces/core/variables"
+
+.badge
+  border-color: $base-color
+  background-color: $base-color
+  color: white
+
+  &.badge--outline
+    background: transparent
+    color: $base-color
+
+
+.badge--success
+  border-color: $success-color
+  background-color: $success-color
+  color: white
+
+  &.badge--outline
+    background: transparent
+    color: $success-color
+
+
+.badge--danger
+  border-color: $danger-color
+  background-color: $danger-color
+  color: white
+
+  &.badge--outline
+    background: transparent
+    color: $danger-color
+
+
+.badge--warning
+  border-color: $warning-color
+  background-color: $warning-color
+  color: $base-font-color
+
+  &.badge--outline
+    background: transparent
+    color: $base-font-color
+
+
+.badge--subtle
+  border-color: adjust-color($bg-color, $lightness: -7%)
+  background-color: adjust-color($bg-color, $lightness: -7%)
+  color: $base-font-color
+
+  &.badge--outline
+    background: transparent
+    color: $base-font-color

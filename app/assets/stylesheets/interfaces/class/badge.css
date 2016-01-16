@@ -1,0 +1,19 @@
+.badge {
+  border-width: 1px;
+  border-style: solid;
+  font-size: 1.3rem;
+  display: inline-block;
+  margin: 0;
+  padding: .5rem .8rem .5rem;
+  position: relative;
+  border-radius: 3px;
+  transition-property: background-color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+  user-select: none;
+
+  line-height: 1;
+  vertical-align: middle;
+  font-weight: normal;
+  text-align: center;
+}
