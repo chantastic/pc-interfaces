@@ -24,6 +24,59 @@
   <p>another p</p>
 </div>
   <% end %>
+
+  <%= code_sample do %>
+<div class="alert alert--outline alert--warning">
+  Warning
+</div>
+  <% end %>
+</section>
+
+<section class="doc-section">
+  <h1><pre>alert__heading, alert__sub-heading</pre></h1>
+
+  <%= code_sample do %>
+<div class="alert alert--danger">
+  <h1 class="alert__heading">Heading</h1>
+  <h1 class="alert__sub-heading">Sub heading</h1>
+  <div>other standard content</div>
+</div>
+  <% end %>
+
+  <%= code_sample do %>
+<div class="alert alert--warning">
+  <h1 class="alert__heading">Heading</h1>
+  <h1 class="alert__sub-heading">Sub heading</h1>
+  <div>other standard content</div>
+</div>
+  <% end %>
+
+  <%= code_sample do %>
+<div class="alert alert--outline alert--subtle">
+  Subtle
+</div>
+  <% end %>
+</section>
+
+
+<h1>Alert Extensions</h1>
+
+<section class="doc-section">
+  <h1><pre>p, ul, li</pre></h1>
+
+  <%= code_sample do %>
+<div class="alert alert--warning">
+  <div>this is content inside div.</div>
+  <p>this is content inside a p.</p>
+  <ul>
+    <li>this</li>
+    <li>is</li>
+    <li>a</li>
+    <li>list.</li>
+  </ul>
+  <p>another p</p>
+</div>
+  <% end %>
 </section>
 
 <section class="doc-section">
