@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BREAKING CHANGE] removed `.row-gutter` and `.column-gutter` minions classes
 * [BREAKING CHANGE] removed `.-text-center` class
 * [BREAKING CHANGE] `stylesheet/interfaces/modules` -> `stylesheets/interfaces/presets`
   * migrating: if your apps uses the `modules` path, change it to `presets`
