@@ -1,0 +1,12 @@
+.action-list {
+  position: absolute;
+  right: 0;
+
+  display: inline;
+  visibility: hidden;
+}
+
+.action-list-item { display: inline }
+
+/* list action-list */
+.no-touchevents .list-item:hover .action-list { visibility: visible }

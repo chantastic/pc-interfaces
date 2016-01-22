@@ -1,0 +1,6 @@
+.list-item {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.list-item:last-child { border-bottom-width: 0 }
