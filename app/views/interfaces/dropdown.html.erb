@@ -1,0 +1,34 @@
+<!-- style overrides -->
+<style>
+  .dropdown-menu {
+    display: block
+  }
+</style>
+
+<h1>Dropdown</h1>
+<p>Hide and show actions</p>
+<p>Dropdowns are <code>display: none</code> by default. They are visible here for
+the purpose of illustration.</p>
+
+<section class="doc-section">
+  <h1>Example</h1>
+  <p>This is the dumb container </p>
+
+  <%= code_sample do %>
+<div class="dropdown">
+  <button class="btn ml-0" type="button">
+    The button
+  </button>
+
+  <div class="dropdown-menu">
+    <div class="dropdown-menu-item">
+      <a href="#">Some action</a>
+    </div>
+
+    <div class="dropdown-menu-item">
+      <a href="#">Another action</a>
+    </div>
+  </div>
+</div>
+  <% end %>
+</section>
