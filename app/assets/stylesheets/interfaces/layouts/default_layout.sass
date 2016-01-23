@@ -20,7 +20,7 @@
   position: relative
   width: 100%
   transition: transform 300ms ease
-  +clearfix
+  +cf
 
 #toggle-sidebar .pco-ui-cog
   backface-visibility: hidden
@@ -37,7 +37,8 @@
     transform: rotate(610deg)
 
 .main-content-block
-  +clearfix
+  position: relative
+  +cf
 
 .top-bar
   line-height: $topbar-height
@@ -53,15 +54,17 @@
     padding: 0 10px
 
 
-  
+
 
 //main content area
 .main-section
+  position: relative
   padding: 20px
-  +clearfix
+  +cf
   .page-section
+    position: relative
     margin: 2.5rem auto
-    +clearfix
+    +cf
 
 
 //===========================================================[ IF NO SIDEBAR == FULLSCREEN add .fullwidth to body]

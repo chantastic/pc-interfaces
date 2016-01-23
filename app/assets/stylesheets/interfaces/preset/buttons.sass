@@ -187,18 +187,19 @@ $button-border-style: solid
 
 // button group ===========================================
 .btn-group
-  +clearfix
+  position: relative
+  +cf
 
   list-style: none
   margin: 0
-  *zoom: 1
 
   >
     float: left
 
   li
-    +clearfix
+    position: relative
     float: left
+    +cf
 
 
   .btn
@@ -227,11 +228,11 @@ $button-border-style: solid
       width: 33.333%
 
 .btn-group-vertical
-  +clearfix
+  position: relative
+  +cf
 
   list-style: none
   margin: 0
-  *zoom: 1
 
   > *
     margin: 0

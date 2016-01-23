@@ -7,8 +7,6 @@
 
 .media, .bd {
   overflow: hidden;
-  _overflow: visible;
-  zoom: 1;
 }
 
 .media .img {

@@ -135,8 +135,9 @@ $modal-default-top: 46px
     margin: 0
 
 .modal-section
+  position: relative
   padding: 1.5rem 0
-  +clearfix
+  +cf
 
 .modal-loader.preloader
   position: absolute
@@ -353,11 +354,13 @@ input.mb8
 
 //WELLS AND OTHER LAYOUT COMPONENTS FOR MODALS
 .modal-well
-  +clearfix
+  position: relative
   border-radius: 2px
   background: #fff
   padding: 1.2rem
   border: 1px solid adjust-color($sidebar-bg-color, $lightness: -3%, $saturation: -10%)
+  +cf
+
   p
     padding: 0
     &:last-child

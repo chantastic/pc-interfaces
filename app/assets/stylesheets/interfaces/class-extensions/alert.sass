@@ -9,6 +9,9 @@
   margin: 0 auto .3em
 
 .alert
+  position: relative
+  +cf
+
   ul, p
     +font-size(13)
 
@@ -30,8 +33,6 @@
       &:last-child
         padding-bottom: 0
         border-bottom: 0
-
-  +clearfix
 
 .alert--small
   padding: .8rem 1.5rem

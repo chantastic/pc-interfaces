@@ -17,28 +17,16 @@
   left: $left
   position: absolute
 
-=clearfix
-  position: relative
-  *zoom: 1
+=cf
   &:before,
   &:after
     display: table
-    content: ""
-  &:after
-    clear: both
-
-=cf //clearfix with no position declared
-  &:before,
-  &:after
-    display: table
-    content: ""
+    content: " "
   &:after
     clear: both
 
 %inline-block
   display: inline-block
-  *display: inline
-  *zoom: 1
 
 =horizontal-divider($color)
   height: 1px
@@ -104,8 +92,6 @@
     @else
       display: table-cell
       width: 10000px
-      *width: auto
-      *zoom: 1
 
   #{unquote($first_position)}
     float: $position
