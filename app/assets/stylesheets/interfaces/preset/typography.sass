@@ -46,11 +46,11 @@ h1, h2, h3, h4, h5, h6
     line-height: 0
 
 h1
-  +font-size(26)
+  font-size: 2.6rem
 
 //THIS WILL TYPICALLY BE AN H1. ONE PER PAGE
 .page-heading
-  +font-size(28)
+  font-size: 2.8rem
   margin: 0 0 1.5rem
   .icon
     color: $base-color
@@ -63,13 +63,13 @@ h1
     margin-bottom: 0
 
 h2
-  +font-size(20.25)
+  font-size: 2rem
 
 h3
-  +font-size(18.5)
+  font-size: 1.8
 
 h4, h5, h6
-  +font-size(16)
+  font-size: 1.6
 
 h4.label
   margin: 0 auto 1rem
@@ -110,12 +110,12 @@ code
 p
   font-family: inherit
   font-weight: normal
-  +font-size(14)
+  font-size: 1.4rem
   line-height: 1.6
   margin-bottom: 1.11111rem
   text-rendering: optimizeLegibility
   &.lead
-    +font-size(18)
+    font-size: 1.8rem
 ul, ol, dl
   line-height: 1.6
   list-style-position: outside
@@ -128,20 +128,22 @@ li
 
 //SIDEBAR
 %sb-heading
-  +truncate()
   padding: 0 10px
   margin: -1px 0 0 0
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
 
 .sb-heading1
   @extend %sb-heading
-  +font-size(18)
+  font-size: 1.8rem
   height: 4.15rem
   line-height: 4.1rem
   border-bottom: 1px solid adjust-color($sidebar-bg-color, $lightness: -12%)
 
 .sb-heading2
   @extend %sb-heading
-  +font-size(14)
+  font-size: 1.4rem
   height: 3.4rem
   line-height: 3.29rem
   margin-top: -1px
@@ -150,7 +152,7 @@ li
 
 .sb-heading3
   @extend %sb-heading
-  +font-size(13)
+  font-size: 1.3rem
   height: 3rem
   line-height: 2.89rem
   margin-top: -1px
@@ -161,11 +163,11 @@ li
 
 //Main content area
 .section-header
-  +font-size(19)
+  font-size: 1.9rem
   color: adjust-color($base-font-color, $lightness: 30)
   margin: 0 auto 1.5rem auto
 
 .section-sub-header
-  +font-size(20)
+  font-size: 2rem
   color: adjust-color($base-font-color, $lightness: 20)
   margin: 0 auto 1.25rem auto
