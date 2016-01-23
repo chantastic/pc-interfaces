@@ -14,7 +14,7 @@
   user-select: none;
   transition-timing-function: ease-out;
   transition-duration: 300ms;
-  transition-property: background-color;
+  transition-property: background-color, color, border-color;
   text-align: left;
   vertical-align: middle;
 
