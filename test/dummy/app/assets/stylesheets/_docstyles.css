@@ -1,4 +1,3 @@
-/* doc-section */
 .doc-section {
   padding: 0;
   margin-bottom: 30px;
@@ -6,13 +5,9 @@
   padding-bottom: 30px;
 }
 
-.doc-section:last-child {
-  border-bottom-width: 0;
-}
+.doc-section:last-child { border-bottom-width: 0 }
 
-.doc-section:first-child {
-  padding-top: 0;
-}
+.doc-section:first-child { padding-top: 0 }
 
 /* prism overrides */
 :not(pre) > code[class*="language-"], pre[class*="language-"] {
