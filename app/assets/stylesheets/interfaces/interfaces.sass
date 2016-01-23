@@ -4,6 +4,7 @@
 @import "normalize"
 @import "border-box"
 @import "cf"
+@import "select"
 
 // core
 @import "interfaces/core/grid"
@@ -32,7 +33,6 @@
 @import "interfaces/preset/tooltips"
 @import "interfaces/preset/topbar"
 @import "interfaces/preset/typography"
-@import "interfaces/preset/select"
 @import "interfaces/preset/view"
 @import "interfaces/preset/jquery-ui"
 
@@ -54,4 +54,5 @@
 @import "interfaces/legacy/utilities"
 
 // vendor - minions
+// * load order matters. keep these last
 @import "interfaces/preset/minions"
