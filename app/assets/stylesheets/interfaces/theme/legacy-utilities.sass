@@ -1,0 +1,25 @@
+@import "interfaces/core/variables"
+@import "interfaces/core/utilities"
+
+.instructional-caption
+  color: $light-gray
+
+.hr
+  +horizontal-divider($lighter-gray)
+
+.block-list__item
+  border-bottom-color: adjust-color($pane-header-bg-bottom, $lightness: -7%)
+
+.block-list.block-links .block-list__item
+  > a, .block-list__link
+    &:hover
+      color: $highlighted-color
+      background: $highlighted-bg-color
+
+.block-list--fill
+  .block-list__item
+    background: adjust-color($pane-header-bg-bottom, $lightness: 2%)
+
+.palm--m0
+  +breakpoint(lte_tablet)
+    margin: 0 !important
