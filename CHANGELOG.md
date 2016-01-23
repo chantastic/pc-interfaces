@@ -1,6 +1,7 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [BREAKING CHANGE] remove `=grid` mixin. it didn't look like it was being used in apps
 * [BREAKING CHANGE] clearfix modernized
   + `.clearfix` removed in favor of modern `.cf`, breaking support for IE6/7
     - migrate: places where `clearfix` was used will need to add `position: relative` for compatability.
