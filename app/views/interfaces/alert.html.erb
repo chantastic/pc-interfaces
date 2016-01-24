@@ -1,52 +1,47 @@
 <h1>Alert</h1>
 <p>Tell people they're doing it wrong... or right.</p>
+<hr />
 
 <section class="doc-section">
-  <h1><pre>alert</pre></h1>
-
-  <%= code_sample do %>
-<div class="alert">
-  Alert
-</div>
-  <% end %>
+  <%= react_component "AlertBuilder" %>
 </section>
 
+<h1>Alert Extensions (deprecated)</h1>
+
 <section class="doc-section">
-  <h1><pre>alert.alert--warning</pre></h1>
+  <h1><pre>p, ul, li</pre></h1>
 
   <%= code_sample do %>
 <div class="alert alert--warning">
-  Warning
+  <div>this is content inside div.</div>
+  <p>this is content inside a p.</p>
+  <ul>
+    <li>this</li>
+    <li>is</li>
+    <li>a</li>
+    <li>list.</li>
+  </ul>
+  <p>another p</p>
 </div>
   <% end %>
 </section>
 
 <section class="doc-section">
-  <h1><pre>alert.alert--danger</pre></h1>
+  <h1><pre>alert__heading, alert__sub-heading</pre></h1>
 
   <%= code_sample do %>
 <div class="alert alert--danger">
-  Danger
+  <h1 class="alert__heading">Heading</h1>
+  <h1 class="alert__sub-heading">Sub heading</h1>
+  <div>other standard content</div>
 </div>
   <% end %>
-</section>
-
-<section class="doc-section">
-  <h1><pre>alert.alert--success</pre></h1>
 
   <%= code_sample do %>
-<div class="alert alert--success">
-  Success
-</div>
-  <% end %>
-</section>
-
-<section class="doc-section">
-  <h1><pre>alert.alert--subtle</pre></h1>
-
-  <%= code_sample do %>
-<div class="alert alert--subtle">
-  Subtle
+<div class="alert alert--warning">
+  <h1 class="alert__heading">Heading</h1>
+  <h1 class="alert__sub-heading">Sub heading</h1>
+  <div>other standard content</div>
 </div>
   <% end %>
 </section>
