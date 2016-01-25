@@ -1,0 +1,19 @@
+<h1>Tooltip</h1>
+
+<p>Tell people they're doing it wrong... or right.</p>
+<hr />
+
+<style>
+  [data-has-tip]::before,
+  [data-has-tip]::after {
+    visibility: visible
+  }
+
+  .TipBuilder *:disabled + * {
+    font-style: oblique;
+    opacity: .5
+  }
+</style>
+<section class="doc-section">
+  <%= react_component "TipBuilder" %>
+</section>
