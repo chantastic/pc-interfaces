@@ -1,25 +1,21 @@
 .flex-stack { display: flex }
 
-.flex-stack > * { flex: 1 }
+.flex-stack > * {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
 
 @media all and (max-width: 767px) {
   .flex-stack { flex-direction: column }
-
-  .flex-stack > * {
-    margin-top:    .5rem;
-    margin-bottom: .5rem;
-  }
+  .flex-stack > * + * { margin-top: 1rem }
   .flex-stack > *:first-child { margin-top: 0 }
   .flex-stack > *:last-child  { margin-bottom: 0 }
 }
 
 @media (min-width: 768px) {
   .flex-stack { flex-direction: row }
-
-  .flex-stack > * {
-    margin-right: .5rem;
-    margin-left:  .5rem;
-  }
+  .flex-stack > * + * { margin-left: 1rem }
   .flex-stack > *:first-child { margin-left: 0 }
-  .flex-stack > *:last-child  { margin-right:  0 }
+  .flex-stack > *:last-child  { margin-right: 0 }
 }

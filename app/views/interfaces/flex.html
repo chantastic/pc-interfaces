@@ -1,3 +1,7 @@
+<style>
+  .flex-stack * { background-color: #ddd }
+</style>
+
 <h1> Flex helpers </h1>
 
 <p> There are a couple flex helpers that make layout a breeze. </p>
@@ -10,32 +14,20 @@
 
 <h4> Default stacks of 2 and 4 </h4>
 
+<%= code_sample do %>
 <div class="flex-stack p_2r">
-  <div class="gc-l.9">two</div>
-  <div class="gc-l.8">two</div>
+  <div>two</div>
+  <div>two</div>
 </div>
-
-<br />
-
-<div class="flex-stack p_2r">
-  <div class="gc-l.9">three</div>
-  <div class="gc-l.8">three</div>
-  <div class="gc-l.7">three</div>
-</div>
+<% end %>
 
 <br />
 
 <h4> bigger/small content boxes</h4>
 
+<%= code_sample do %>
 <div class="flex-stack p_2r">
-  <div class="gc-l.9">default</div>
-  <div class="gc-l.8 f-3">.f-3</div>
+  <div>default</div>
+  <div class="f-4">.f-4</div>
 </div>
-
-<br />
-
-<div class="flex-stack p_2r">
-  <div class="gc-l.9 f-3">.f-3</div>
-  <div class="gc-l.8">default</div>
-  <div class="gc-l.7 f-3">.f-3</div>
-</div>
+<% end %>
