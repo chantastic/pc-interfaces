@@ -1,11 +1,8 @@
 INTERFACES CHANGELOG
 --------------------
 
-### Master
+### 0.9.0 (January 26 2016)
 
-* [FIX] Update `.flex-stack`
-  + Make flex rules more verbose for children (thanks @jessejanderson)
-  + Don't need to spread margin for flex(thanks @souporserious)
 * [BREAKING CHANGE] Remove modernizr-rails gem for custom build in /vendor
   * v3.3 removes the `.no-touch` class in favor of `.no-touchevents`
 * [BREAKING CHANGE] Remove browser polyfill libs
@@ -13,6 +10,17 @@ INTERFACES CHANGELOG
   + html5shiv
   + placeholder
   + console
++ [BUGFIX] add `interfaces_icons` to engine Gemfile to fix tests
++ [BUGFIX] move media-object into /vendor
+* [BUGFIX] react_ujs order in dummy app
+* [BUGFIX] Update `.flex-stack`
+  + Make flex rules more verbose for children (thanks @jessejanderson)
+  + Don't need to spread margin for flex(thanks @souporserious)
++ [FEAT] add tip.css to /vendor
+* [DOCS]
+  + move pages into better categories
+  + add generative docs for button, alert, badge, and tip
+  + add "deprecated" section for APIs being phased out.
 
 ### 0.8.3 (January 12 2016)
 
