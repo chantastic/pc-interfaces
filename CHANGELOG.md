@@ -1,6 +1,13 @@
 INTERFACES CHANGELOG
 --------------------
 
+### Master
+
+* [FEAT] add new minions
+  + `cursor`
+  + `border-radius`
+  + `border-radius (direct children)`
+
 ### 0.9.0 (January 26 2016)
 
 * [BREAKING CHANGE] Remove modernizr-rails gem for custom build in /vendor
