@@ -3,13 +3,16 @@
 <p>Instructions are a simple way to provide data to you users. View source to see this example</p>
 
 <div>
-  <p>
-    Click to reveal instructions
-    <i class="ii ii-question-circle-o" data-instruction-id="yo"></i>
-  </p>
-  <div id="yo" data-instruction>
-    <div class="p-2r gc-l.9 bs-3p">
-      These are instructions on how to do the thing you're trying to do.
-    </div>
+<%= code_sample do %>
+<p>
+  Click to reveal instructions
+  <i class="ii ii-info-circle-o c-p" data-instruction-id="yo"></i>
+</p>
+
+<div id="yo" data-instruction>
+  <div class="p-2r gc-l.9 bs-3p">
+    These are instructions on how to do the thing you're trying to do.
   </div>
+</div>
+<% end %>
 </div>
