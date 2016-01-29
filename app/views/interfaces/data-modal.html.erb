@@ -1,0 +1,57 @@
+<h1>Modal</h1>
+<p>Launch, link, and close modals.</p>
+<hr />
+<br />
+<br />
+
+<section class="doc-section">
+  <h3>data-modal-url</h3>
+  <p>This is the primary API for simply launching modals. Add the <code>data-modal-url</code> attribute to your button and give it a path. Interfaces will fetch the contents and jam them into <code>.modal-layer</code> at the bottom of the page.</p>
+  <p>All modal styling will need to be provided on the requested page. See how to do that <a href="/interfaces/modal">here</a></p>
+
+  <%= code_sample do %>
+<button
+  class="btn"
+  type="button"
+  data-modal-url="/interfaces/sample_modal"
+>
+  Launch a Modal
+</button>
+  <% end %>
+</section>
+
+<section class="doc-section">
+  <h3>data-modal-close</h3>
+  <p>This attribute will close the <code>$.fn.closest</code> open <code>.modal</code>. It's primary use is for cancel buttons.</p>
+
+  <%= code_sample do %>
+<button
+  class="btn"
+  type="button"
+  data-modal-close
+>
+  Cancel
+</button>
+
+<input
+  class="btn btn--primary"
+  type="submit"
+  value="Save"
+/>
+  <% end %>
+</section>
+
+<section class="doc-section">
+  <h3>modal-path</h3>
+  <p>Modal path is a part of the data-api that allows you to link to a page and launch a remote modal simultaniously. In your page, it's just a link. An Intrfaces function is triggered on the resulting page.</p>
+  <p>For apps using Turbolinks, it's important to add <code>data-no-turbolink</code>. Otherwise the function won't fire.</p>
+  <%= code_sample do %>
+<a
+  class="btn btn--default"
+  href="/interfaces/#modal-path=/interfaces/sample_modal"
+  data-no-turbolink
+>
+  Link with modal
+</a>
+  <% end %>
+</section>
