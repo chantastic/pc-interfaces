@@ -20,8 +20,8 @@
     @extend .list-item--actionable
 
 // Depends on modernizr
-.no-touch .list-item--actionable,
-.no-touch .list--actionable .list-item
+.no-touchevents .list-item--actionable,
+.no-touchevents .list--actionable .list-item
   &:hover
     color: $highlighted-color
     background: $highlighted-bg-color
@@ -41,7 +41,7 @@
 
 /* list action-list */
 
-.no-touch .list-item
+.no-touchevents .list-item
   &:hover
     .action-list
       visibility: visible
