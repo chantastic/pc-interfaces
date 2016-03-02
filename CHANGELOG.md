@@ -3,6 +3,7 @@ INTERFACES CHANGELOG
 
 ### Master
 
+* [BUGFIX] inline `checkbox` check mark now that interfaces-icon unicode characters are unstable
 * [FEAT] add new minions
   + `cursor`
   + `border-radius`
