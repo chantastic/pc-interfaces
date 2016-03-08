@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Kevin Thompson','Michael Chan','Shane Armitage']
   spec.email         = ['web@ministrycentered.com']
   spec.description   = %q{Planning Center User Interfaces Library}
-  spec.summary       = %q{This gem contains commong elements used across all Planning Center applications.}
+  spec.summary       = %q{This gem contains common elements used across all Planning Center applications.}
   spec.homepage      = 'http://get.planningcenteronline.com'
   spec.license       = 'MIT'
 
