@@ -1,9 +1,12 @@
 INTERFACES CHANGELOG
 --------------------
 
-### Master
+### MASTER
+
+### 0.10.0 (April 18 2016)
 
 * [BREAKING CHANGE] Separate `.nav` & `.nav-tabs` from modals (this will only potentially break in apps that pick and choose parts of Interfaces to import)
+  + Note: This only affects apps that use a custom interfaces manifest. This does not affect apps importing `interfaces/interfaces` If your app uses a custom manifest, simply add `interfaces/modules/nav-tabs`.
 * [BUGFIX] update `no-touch` to `no-touchevents` (Modernizr 3)
 * [BUGFIX] inline `checkbox` check mark now that interfaces-icon unicode characters are unstable
 * [FEAT] add new minions
