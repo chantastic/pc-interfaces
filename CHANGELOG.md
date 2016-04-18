@@ -3,6 +3,7 @@ INTERFACES CHANGELOG
 
 ### Master
 
+* [BREAKING CHANGE] Separate `.nav` & `.nav-tabs` from modals (this will only potentially break in apps that pick and choose parts of Interfaces to import)
 * [BUGFIX] update `no-touch` to `no-touchevents` (Modernizr 3)
 * [BUGFIX] inline `checkbox` check mark now that interfaces-icon unicode characters are unstable
 * [FEAT] add new minions
