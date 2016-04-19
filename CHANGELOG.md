@@ -3,6 +3,8 @@ INTERFACES CHANGELOG
 
 ### MASTER
 
+* [FEATURE] Support Turbolinks 5 event names
+
 ### 0.10.0 (April 18 2016)
 
 * [BREAKING CHANGE] Separate `.nav` & `.nav-tabs` from modals (this will only potentially break in apps that pick and choose parts of Interfaces to import)

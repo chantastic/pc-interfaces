@@ -1,4 +1,9 @@
-pageEvent = if Turbolinks?.supported then "page:change" else "ready"
+pageEvent =
+  if Turbolinks?.supported
+    if Turbolinks?.controller
+    then "turbolinks:load"    # Turbolinks 5
+    else "page:change"        # Turbolinks classic
+  else "ready"
 
 $(document).on pageEvent, ->
   if not INTERFACES
