@@ -13,6 +13,7 @@
     registrations: { backgroundPosition: "0px -152px" },
     giving: { backgroundPosition: "0px -183px" },
     api: { backgroundPosition: "0px -213px" },
+    groups: { backgroundPosition: "0px -243px" },
   };
 
   class AppIcon extends React.Component {
