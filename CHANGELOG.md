@@ -3,6 +3,7 @@ INTERFACES CHANGELOG
 
 ### MASTER
 
+* [FEATURE] Add Groups icon to colored app-icons
 * [FEATURE] Support Turbolinks 5 event names
 
 ### 0.10.0 (April 18 2016)
