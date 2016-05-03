@@ -2,6 +2,10 @@
 
 Interfaces is a customizable css framework for Planning Center Online apps.
 
+## New here?
+
+Read [planningcenter/frontend-guide](https://github.com/planningcenter/frontend-guide). It's a high-level overview of frontend libraries used across PCO apps.
+
 ## The styleguide
 
 There are two ways to checkout the styleguide without cloning this project.
