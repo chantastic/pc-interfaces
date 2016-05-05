@@ -8,10 +8,7 @@ Read [planningcenter/frontend-guide](https://github.com/planningcenter/frontend-
 
 ## The styleguide
 
-There are two ways to checkout the styleguide without cloning this project.
-
-1. Visit http://pco-interfaces.herokuapp.com
-2. Visit the `/interfaces` route of your PCO app in development, e.g., `services.pco.dev/interfaces`
+Visit [Interfaces Docs](http://interfaces-docs.herokuapp.com)
 
 ## Development
 
