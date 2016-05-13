@@ -31,4 +31,16 @@ Interfaces no longer uses [git-flow](https://github.com/nvie/gitflow). All featu
 
 Installation were removed. Apps have been setup at this point. This document gets more out of date.
 
+### Including helpers
+
+Interfaces has a number of helpers that you will need to include manually in `application_controller`. Do so like so:
+
+```
+class ApplicationController < BaseController
+  helper Interfaces::Engine.helpers
+
+  # ... other controller stuff
+end
+```
+
 Hit me (@chantastic) up if you're setting up a new project.

@@ -3,6 +3,16 @@ INTERFACES CHANGELOG
 
 ### MASTER
 
+* [BREAKING CHANGE] Helpers are no longer injected into tho host application.
+```ruby
+# upgrade path: add helpers manually to application_controller
+
+class ApplicationController < BaseController
+  helper Interfaces::Engine.helpers
+
+  # ... other controller stuff
+end
+```
 * [FEATURE] Add Groups icon to colored app-icons
 * [FEATURE] Support Turbolinks 5 event names
 

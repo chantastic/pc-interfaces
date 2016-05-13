@@ -18,13 +18,5 @@ module Interfaces
         select1-spinner.gif
       )
     end
-
-    # Inject helpers into parent app
-    initializer 'Interfaces.action_controller' do |app|
-      ActiveSupport.on_load :action_controller do
-        helper Interfaces::CodeSampleHelper
-        helper Interfaces::ApplicationHelper
-      end
-    end
   end
 end
