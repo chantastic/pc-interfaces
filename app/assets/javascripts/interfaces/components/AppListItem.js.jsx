@@ -45,7 +45,7 @@
 
     get name() { return this.props.app.attributes.name; }
 
-    get url() { return this.props.app.attributes.url; }
+    get url() { return `${interfacesURLForEnv(railsEnv, "accounts")}/apps/${this.props.app.attributes.name}`; }
 
     render() {
       return (
