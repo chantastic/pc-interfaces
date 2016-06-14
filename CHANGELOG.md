@@ -3,6 +3,7 @@ INTERFACES CHANGELOG
 
 ### MASTER
 
+* [FEATURE] AppSwitcher urls direct to `accounts/apps/{app-name}`
 * [BREAKING CHANGE] Helpers are no longer injected into tho host application.
 ```ruby
 # upgrade path: add helpers manually to application_controller
