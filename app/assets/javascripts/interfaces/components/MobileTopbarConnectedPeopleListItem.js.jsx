@@ -6,7 +6,7 @@
   var styles = {
     root: {
       textAlign: "left",
-      borderBottom: "1px solid #e5e5e5 !important",
+      borderBottom: "1px solid #e5e5e5",
       padding: "10px 10px 9px",
       lineHeight: 2,
     },

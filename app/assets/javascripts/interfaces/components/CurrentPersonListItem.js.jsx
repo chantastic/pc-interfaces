@@ -12,7 +12,7 @@
     display: "table",
     width: "100%",
     boxSizing: "border-box",
-    borderBottom: "1px solid #e5e5e5 !important",
+    borderBottom: "1px solid #e5e5e5",
     padding: "14px 10px",
     lineHeight: "13px",
     color: "#565656",

@@ -17,7 +17,7 @@
     get anchorStyles() {
       return {
         padding: "14px 10px",
-        borderBottom: "1px solid #e5e5e5 !important",
+        borderBottom: "1px solid #e5e5e5",
         lineHeight: "100%",
         fontSize: 12,
         width: "100%",
