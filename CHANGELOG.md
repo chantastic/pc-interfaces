@@ -3,6 +3,8 @@ INTERFACES CHANGELOG
 
 ### MASTER
 
+* [BREAKING CHANGE] MobileTopbar uses InterfacesIcons React component icon for application button.
+  + The Application React component InterfacesIcon must be loaded in the global namespace.
 * [FEATURE] AppSwitcher urls direct to `accounts/apps/{app-name}`
 * [BREAKING CHANGE] Helpers are no longer injected into tho host application.
 ```ruby
