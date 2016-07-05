@@ -10,7 +10,6 @@
   var styles = {
     root: {
       float: "left",
-      padding: "0 10px",
       borderRight: "1px solid rgba(0,0,0,0.2)",
       width: "51px",
       height: "50px",
