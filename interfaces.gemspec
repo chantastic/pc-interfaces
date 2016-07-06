@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
 
   # dependencies for host application
   spec.add_dependency 'pco-url', '>= 1.2.0'
-  spec.add_dependency 'autoprefixer-rails', '~> 5.1.11'
+  spec.add_dependency 'autoprefixer-rails', '~> 6.3.6'
   spec.add_dependency 'react-rails', '>= 1.3.1'
   spec.add_dependency 'interfaces_icons', '>= 0.6.0'
 

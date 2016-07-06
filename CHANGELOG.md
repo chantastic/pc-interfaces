@@ -3,6 +3,7 @@ INTERFACES CHANGELOG
 
 ### MASTER
 
+* [BREAKING CHANGE] Update autoprefixer-rails dependency to `~> 5.3.6`. This drops Rails 3 and Ruby 1.9 support and updates the Can I Use database that autoprefixer uses for vendor prefixes.
 * [FIX] Add `interfaces_icons` as gemspec dependency
 * [FIX] Remove extraneous `!importants` from inline-styles
 * [BREAKING CHANGE] MobileTopbar uses InterfacesIcons React component icon for application button.
@@ -107,7 +108,7 @@ end
   + `visibility`
 * [FEATURE] add "Settings" cog to Topbar
 * [BUGFIX] remove conflicting media query values from the `+breakpoint` mixin.
-  + change `lte_tablet-wide` max-width value so that it no longer conflicts with `bp_3`. 
+  + change `lte_tablet-wide` max-width value so that it no longer conflicts with `bp_3`.
   + Note: the `max-width` of one media query should not be the same value as another media query's `min-width`.
 
 * [STYLE] remove dark backdrop from app-badge
