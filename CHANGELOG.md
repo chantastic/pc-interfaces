@@ -3,6 +3,7 @@ INTERFACES CHANGELOG
 
 ### MASTER
 
+* [FIX] Remove extraneous `!importants` from inline-styles
 * [BREAKING CHANGE] MobileTopbar uses InterfacesIcons React component icon for application button.
   + The Application React component InterfacesIcon must be loaded in the global namespace.
 * [FEATURE] AppSwitcher urls direct to `accounts/apps/{app-name}`
