@@ -3,6 +3,7 @@ INTERFACES CHANGELOG
 
 ### MASTER
 
+* [FIX] Add `interfaces_icons` as gemspec dependency
 * [FIX] Remove extraneous `!importants` from inline-styles
 * [BREAKING CHANGE] MobileTopbar uses InterfacesIcons React component icon for application button.
   + The Application React component InterfacesIcon must be loaded in the global namespace.
