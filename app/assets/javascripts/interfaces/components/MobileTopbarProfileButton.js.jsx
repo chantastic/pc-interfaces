@@ -20,8 +20,21 @@
   };
 
   class MobileTopbarProfileButton extends React.Component {
+    get appIconName() {
+      switch (railsAppName) {
+        case "Check-Ins":
+          return "CheckInsAppIcon";
+        case "PlanningCenter":
+          return "ServicesAppIcon";
+        case "RP":
+          return "ResourcesAppIcon";
+        default:
+          return `${railsAppName}AppIcon`;
+      }
+    }
+
     render() {
-      const AppIcon = global[`${railsAppName}AppIcon`];
+      const AppIcon = global[this.appIconName];
 
       return (
         <div style={styles.root} {...this.props}>

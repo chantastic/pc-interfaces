@@ -3,6 +3,8 @@ INTERFACES CHANGELOG
 
 ### MASTER
 
+* [FIX] MobileTopbar uses correct InterfacesIcon component for apps with abnormal `railsAppName` (Check-Ins, Resources, and Services)
+
 ### 0.11.0 (June 7 2016)
 
 * [BREAKING CHANGE] Update autoprefixer-rails dependency to `~> 5.3.6`. This drops Rails 3 and Ruby 1.9 support and updates the Can I Use database that autoprefixer uses for vendor prefixes.
