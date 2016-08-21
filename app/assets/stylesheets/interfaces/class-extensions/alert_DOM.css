@@ -1,0 +1,23 @@
+.alert ul, p { font-size: 1.3rem }
+
+.alert p:last-of-type { margin-bottom: 0 }
+
+.alert ul {
+  padding-top:  1em;
+  padding-left: 1em;
+  margin-left: .5em;
+}
+
+.alert li {
+  padding: 0.3em 0.5em 0.3em 0;
+  border-bottom: 1px solid transparent;
+}
+
+.alert li:first-child {
+  padding-top: 0;
+}
+
+.alert li:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
