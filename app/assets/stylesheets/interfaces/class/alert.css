@@ -23,6 +23,15 @@
   border-radius: 2px;
 }
 
+.alert:before, .alert:after {
+  display: table;
+  content: " ";
+}
+
+.alert:after {
+  clear: both;
+}
+
 .alert          { color: white; background-color: blue; }
 .alert--success { color: white; background-color: green; }
 .alert--danger  { color: white; background-color: red; }
