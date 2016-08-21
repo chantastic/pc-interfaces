@@ -1,0 +1,5 @@
+@import "interfaces/core/variables";
+
+.item-sidebar-list .list-item.is-active {
+  background-color: $base-color;
+}
