@@ -3,6 +3,10 @@ INTERFACES CHANGELOG
 
 ### MASTER
 
+### 0.11.2 (August 30 2016)
+
+* [FIX] Update autoprefixer-rails dependency to `~> 6.0`. This relaxes the version dependency, allowing dependent applications to use versions >= 6.4 which resolves a deprecation warning.
+
 ### 0.11.1 (June 7 2016)
 
 * [FIX] MobileTopbar uses correct InterfacesIcon component for apps with abnormal `railsAppName` (Check-Ins, Resources, and Services)
