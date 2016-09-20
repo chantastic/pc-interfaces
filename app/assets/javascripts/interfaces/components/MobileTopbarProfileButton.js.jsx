@@ -37,7 +37,7 @@
       const AppIcon = global[this.appIconName];
 
       return (
-        <div style={styles.root} {...this.props}>
+        <div className="mobile-topbar-app-icon" style={styles.root} {...this.props}>
           <AppIcon />
         </div>
       );
