@@ -24,7 +24,9 @@
            id="unlink--account-switcher_action"
            href={interfacesURLForEnv(this.props.railsEnv, "accounts", "unlink")}>
             Unlink Accounts&nbsp;
-            <i className="ii ii-chain-broken"></i>
+            <span style={{ paddingLeft: "5px"}}>
+              <ChainBrokenIcon />
+            </span>
           </a>
         );
       }

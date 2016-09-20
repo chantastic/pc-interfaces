@@ -80,7 +80,7 @@
       return (
         <div style={styles.outer} onClick={this.props.onDismiss}>
           <div style={{ position: "absolute", top: 0, right: 0, width: MENU_GUTTER, color: "white" }}>
-            <InterfacesIcon name="x" />
+            <XIcon />
           </div>
 
           <div style={styles.root} onClick={this.handleBackgroundClick} ref={c => this._pane = c }>
@@ -105,7 +105,7 @@
               (!this.props.userCardShown) && { color: "white" },
               (this.props.userCardShown) && { transform: "rotateX(180deg)" }
               )}>
-                <InterfacesIcon name="chevron-down" />
+                <ChevronDownIcon />
               </div>
               <img src={interfacesPerson.avatarPath} style={styles.avatar} />
             </button>
