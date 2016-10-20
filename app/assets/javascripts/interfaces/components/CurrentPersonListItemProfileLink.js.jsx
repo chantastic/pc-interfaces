@@ -34,6 +34,11 @@
     }
 
     render() {
+      const {
+        profilePath,
+        ...props,
+      } = this.props;
+
       return (
         <a
           style={this.styles}
@@ -42,7 +47,7 @@
           href={this.props.profilePath}
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
-          {...this.props}>
+          {...props}>
            Profile
         </a>
       );

@@ -40,10 +40,15 @@
     }
 
     render() {
+      const {
+        profilePath,
+        ...props,
+      } = this.props;
+
       return (
         <ConnectedPersonMenu
          connectedPeople={this.state.connectedPeople}
-         {...this.props} />
+         {...props} />
       );
     }
   }
