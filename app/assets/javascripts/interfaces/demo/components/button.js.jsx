@@ -75,11 +75,11 @@ class ButtonBuilder extends React.Component {
             <h2> Roles Modifiers </h2>
 
             <form onChange={handlePurposeChange.bind(this)}>
-              <label><input type="radio" value=""             checked={this.state.purpose === ""}/>            <code>(default)    </code></label>
-              <label><input type="radio" value="btn--primary" checked={this.state.purpose === "btn--primary"}/><code>.btn--primary</code></label>
-              <label><input type="radio" value="btn--success" checked={this.state.purpose === "btn--success"}/><code>.btn--success</code></label>
-              <label><input type="radio" value="btn--warning" checked={this.state.purpose === "btn--warning"}/><code>.btn--warning</code></label>
-              <label><input type="radio" value="btn--danger"  checked={this.state.purpose === "btn--danger"}/> <code>.btn--danger </code></label>
+              <label><input type="radio" value=""             checked={this.state.purpose === ""} readOnly />            <code>(default)    </code></label>
+              <label><input type="radio" value="btn--primary" checked={this.state.purpose === "btn--primary"} readOnly /><code>.btn--primary</code></label>
+              <label><input type="radio" value="btn--success" checked={this.state.purpose === "btn--success"} readOnly /><code>.btn--success</code></label>
+              <label><input type="radio" value="btn--warning" checked={this.state.purpose === "btn--warning"} readOnly /><code>.btn--warning</code></label>
+              <label><input type="radio" value="btn--danger"  checked={this.state.purpose === "btn--danger"} readOnly /> <code>.btn--danger </code></label>
             </form>
           </div>
 
@@ -87,11 +87,11 @@ class ButtonBuilder extends React.Component {
             <h2> Size Modifiers </h2>
 
             <form onChange={handleSizeChange.bind(this)}>
-              <label><input type="radio" value=""           checked={this.state.size === ""}/>          <code>(default)  </code></label>
-              <label><input type="radio" value="btn--large" checked={this.state.size === "btn--large"}/><code>.btn--large</code></label>
-              <label><input type="radio" value="btn--small" checked={this.state.size === "btn--small"}/><code>.btn--small</code></label>
-              <label><input type="radio" value="btn--tiny"  checked={this.state.size === "btn--tiny"}/> <code>.btn--tiny </code></label>
-              <label><input type="radio" value="btn--micro" checked={this.state.size === "btn--micro"}/><code>.btn--micro</code></label>
+              <label><input type="radio" value=""           checked={this.state.size === ""} readOnly />          <code>(default)  </code></label>
+              <label><input type="radio" value="btn--large" checked={this.state.size === "btn--large"} readOnly /><code>.btn--large</code></label>
+              <label><input type="radio" value="btn--small" checked={this.state.size === "btn--small"} readOnly /><code>.btn--small</code></label>
+              <label><input type="radio" value="btn--tiny"  checked={this.state.size === "btn--tiny"} readOnly /> <code>.btn--tiny </code></label>
+              <label><input type="radio" value="btn--micro" checked={this.state.size === "btn--micro"} readOnly /><code>.btn--micro</code></label>
             </form>
           </div>
 
@@ -111,7 +111,7 @@ class ButtonBuilder extends React.Component {
 
         <pre>
           <code className="language-markup">
-            {React.renderToStaticMarkup(button)}
+            {ReactDOMServer.renderToStaticMarkup(button)}
           </code>
         </pre>
 

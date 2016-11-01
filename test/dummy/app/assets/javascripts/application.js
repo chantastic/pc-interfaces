@@ -15,5 +15,9 @@
 //= require turbolinks
 //= require react
 //= require react_ujs
+//= require react-server
 //= require interfaces/interfaces
+//= require interfaces_icons/components/InterfacesAppIcon
+//= require interfaces_icons/components/XIcon
+//= require interfaces_icons/components/ChevronDownIcon
 //= require interfaces/demos

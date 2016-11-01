@@ -33,7 +33,7 @@
       super(props);
 
       this.dismissBackgroudClick = (e) => {
-        if(e.target === this._pane.getDOMNode()) {
+        if(e.target === this._pane) {
           e.stopPropagation();
         }
       };

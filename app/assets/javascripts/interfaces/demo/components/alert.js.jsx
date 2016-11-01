@@ -54,11 +54,11 @@ class AlertBuilder extends React.Component {
             <h2> Roles Modifiers </h2>
 
             <form onChange={handlePurposeChange.bind(this)}>
-              <label><input type="radio" value=""               checked={this.state.purpose === ""}/>              <code>(default)      </code></label>
-              <label><input type="radio" value="alert--success" checked={this.state.purpose === "alert--success"}/><code>.alert--success</code></label>
-              <label><input type="radio" value="alert--warning" checked={this.state.purpose === "alert--warning"}/><code>.alert--warning</code></label>
-              <label><input type="radio" value="alert--danger"  checked={this.state.purpose === "alert--danger"}/> <code>.alert--danger </code></label>
-              <label><input type="radio" value="alert--subtle"  checked={this.state.purpose === "alert--subtle"}/> <code>.alert--subtle </code></label>
+              <label><input type="radio" value=""               checked={this.state.purpose === ""} readOnly />              <code>(default)      </code></label>
+              <label><input type="radio" value="alert--success" checked={this.state.purpose === "alert--success"} readOnly /><code>.alert--success</code></label>
+              <label><input type="radio" value="alert--warning" checked={this.state.purpose === "alert--warning"} readOnly /><code>.alert--warning</code></label>
+              <label><input type="radio" value="alert--danger"  checked={this.state.purpose === "alert--danger"}  readOnly /> <code>.alert--danger </code></label>
+              <label><input type="radio" value="alert--subtle"  checked={this.state.purpose === "alert--subtle"}  readOnly /> <code>.alert--subtle </code></label>
             </form>
           </div>
 
@@ -75,7 +75,7 @@ class AlertBuilder extends React.Component {
 
         <pre>
           <code className="language-markup">
-            {React.renderToStaticMarkup(alert)}
+            {ReactDOMServer.renderToStaticMarkup(alert)}
           </code>
         </pre>
 

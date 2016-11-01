@@ -70,7 +70,7 @@
       };
 
       this.handleBackgroundClick = (e) => {
-        if(this._pane.getDOMNode() === e.target) {
+        if(this._pane === e.target) {
           e.stopPropagation();
         }
       };

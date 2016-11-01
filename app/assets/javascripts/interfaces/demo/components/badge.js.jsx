@@ -54,11 +54,11 @@ class BadgeBuilder extends React.Component {
             <h2> Roles Modifiers </h2>
 
             <form onChange={handlePurposeChange.bind(this)}>
-              <label><input type="radio" value=""               checked={this.state.purpose === ""}/>              <code>(default)      </code></label>
-              <label><input type="radio" value="badge--success" checked={this.state.purpose === "badge--success"}/><code>.badge--success</code></label>
-              <label><input type="radio" value="badge--warning" checked={this.state.purpose === "badge--warning"}/><code>.badge--warning</code></label>
-              <label><input type="radio" value="badge--danger"  checked={this.state.purpose === "badge--danger"}/> <code>.badge--danger </code></label>
-              <label><input type="radio" value="badge--subtle"  checked={this.state.purpose === "badge--subtle"}/> <code>.badge--subtle </code></label>
+              <label><input type="radio" value=""               checked={this.state.purpose === ""} readOnly />              <code>(default)      </code></label>
+              <label><input type="radio" value="badge--success" checked={this.state.purpose === "badge--success"} readOnly /><code>.badge--success</code></label>
+              <label><input type="radio" value="badge--warning" checked={this.state.purpose === "badge--warning"} readOnly /><code>.badge--warning</code></label>
+              <label><input type="radio" value="badge--danger"  checked={this.state.purpose === "badge--danger"} readOnly /> <code>.badge--danger </code></label>
+              <label><input type="radio" value="badge--subtle"  checked={this.state.purpose === "badge--subtle"} readOnly /> <code>.badge--subtle </code></label>
             </form>
           </div>
 
@@ -75,7 +75,7 @@ class BadgeBuilder extends React.Component {
 
         <pre>
           <code className="language-markup">
-            {React.renderToStaticMarkup(alert)}
+            {ReactDOMServer.renderToStaticMarkup(alert)}
           </code>
         </pre>
 

@@ -76,6 +76,7 @@ class TipBuilder extends React.Component {
                   type="radio"
                   value=""
                   checked={position === ""}
+                  readOnly
                 />
                 <code> (default)</code>
               </label>
@@ -84,6 +85,7 @@ class TipBuilder extends React.Component {
                   type="radio"
                   value="top"
                   checked={position === "top"}
+                  readOnly
                 />
                 <code> top</code>
               </label>
@@ -93,6 +95,7 @@ class TipBuilder extends React.Component {
                   value="right"
                   checked={position === "right"}
                   disabled={(anchor === "anchor-right" || anchor === "anchor-left")}
+                  readOnly
                 />
                 <code> right</code>
               </label>
@@ -101,6 +104,7 @@ class TipBuilder extends React.Component {
                   type="radio"
                   value="bottom"
                   checked={position === "bottom"}
+                  readOnly
                 />
                 <code> bottom</code>
               </label>
@@ -110,6 +114,7 @@ class TipBuilder extends React.Component {
                   value="left"
                   checked={position === "left"}
                   disabled={(anchor === "anchor-right" || anchor === "anchor-left")}
+                  readOnly
                 />
                 <code> left</code>
               </label>
@@ -126,6 +131,7 @@ class TipBuilder extends React.Component {
                   value=""
                   checked={anchor === ""}
                   disabled={position === "right" || anchor === "left"}
+                  readOnly
                 />
                 <code> (default)</code>
               </label>
@@ -135,6 +141,7 @@ class TipBuilder extends React.Component {
                   value="anchor-right"
                   checked={anchor === "anchor-right"}
                   disabled={position === "right" || anchor === "left"}
+                  readOnly
                 />
                 <code> anchor-right</code>
               </label>
@@ -144,6 +151,7 @@ class TipBuilder extends React.Component {
                   value="anchor-left"
                   checked={anchor === "anchor-left"}
                   disabled={position === "right" || anchor === "left"}
+                  readOnly
                 />
                 <code> anchor-left</code>
               </label>
@@ -154,7 +162,7 @@ class TipBuilder extends React.Component {
             <h2> Generic Modifiers </h2>
 
             <form onChange={handleMultilineChange.bind(this)}>
-              <label><input type="checkbox" checked={this.props.multiline}/><code> tip--multiline</code></label>
+              <label><input type="checkbox" checked={this.props.multiline} readOnly /><code> tip--multiline</code></label>
             </form>
           </div>
         </div>
@@ -165,7 +173,7 @@ class TipBuilder extends React.Component {
 
         <pre>
           <code className="language-markup">
-            {React.renderToStaticMarkup(tip)}
+            {ReactDOMServer.renderToStaticMarkup(tip)}
           </code>
         </pre>
         <em className="c-l.5">* The tip is visually persisted for customization only. You'll have to hover them in actual use.</em>
