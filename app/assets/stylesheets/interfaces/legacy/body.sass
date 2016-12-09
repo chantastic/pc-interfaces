@@ -1,8 +1,3 @@
-html
-  height: 100%
-  font-family: $base-font-family
-  font-size: 62.5%
-
 body
   height: 100%
   font-size: 1.4rem
@@ -10,18 +5,8 @@ body
 
 
 @media (min-width: 100em)
-  html, body
+  body
     height: 100%
-
-  html
-    background: adjust-color($sidebar-bg-color, $lightness: -7%, $saturation: -2%)
-    &:before
-      content: ''
-      position: absolute
-      height: ($topbar-height + 1px)
-      left: 0
-      right: 0
-      background: adjust-color($sidebar-bg-color, $lightness: -10%, $saturation: -2%)
 
   body
     background: $bg-color
