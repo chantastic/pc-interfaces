@@ -1,4 +1,7 @@
-@import "interfaces/base"
+// legacy "base"
+@import "interfaces/core/variables"
+@import "interfaces/core/utilities"
+@import "interfaces/core/queries"
 
 // vendor
 @import "normalize"
@@ -19,29 +22,120 @@
 @import "interfaces/legacy/mq/xlarge-screen"
 @import "interfaces/legacy/mq/small-screen-max"
 
-// modules
-@import "interfaces/modules/nav-tabs"
-
-// preset
-@import "interfaces/preset/alerts"
-@import "interfaces/preset/badges"
-@import "interfaces/preset/buttons"
-@import "interfaces/preset/dropdown"
-@import "interfaces/preset/forms"
-@import "interfaces/preset/grid"
-@import "interfaces/preset/item-sidebar"
-@import "interfaces/preset/lists"
-@import "interfaces/preset/modals"
-@import "interfaces/preset/panes"
-@import "interfaces/preset/tab"
-@import "interfaces/preset/tables"
-@import "interfaces/preset/tooltips"
-@import "interfaces/preset/topbar"
-@import "interfaces/preset/typography"
-@import "interfaces/preset/view"
-@import "interfaces/preset/jquery-ui"
-
 // class
 @import "interfaces/class/container"
 @import "interfaces/class/flex-stack"
 @import "interfaces/class/instruction"
+
+// alert
+@import "interfaces/class/alert"
+@import "interfaces/theme/alert"
+@import "interfaces/class-extensions/alert__heading"
+@import "interfaces/class-extensions/alert__sub-heading"
+@import "interfaces/class-extensions/alert_DOM"
+@import "interfaces/class-extensions/alert--small"
+
+// badge
+@import "interfaces/class/badge"
+@import "interfaces/theme/badge"
+@import "interfaces/class-extensions/badge--small"
+@import "interfaces/class-extensions/badge--tiny"
+@import "interfaces/class-extensions/badge--square"
+@import "interfaces/class-extensions/badge--inline"
+
+// btn
+@import "interfaces/class/btn"
+@import "interfaces/patch/legacy-btn-margin"
+@import "interfaces/theme/btn"
+
+// btn-group
+@import "interfaces/class/btn-group"
+@import "interfaces/class/btn-group-vertical"
+
+// dropdown
+@import "interfaces/class/dropdown"
+@import "interfaces/class/dropdown-menu"
+@import "interfaces/class/dropdown-menu-item"
+@import "interfaces/theme/dropdown-menu"
+
+
+// item-sidebar
+@import "interfaces/class/item-sidebar"
+@import "interfaces/class/item-sidebar-list"
+@import "interfaces/theme/item-sidebar-list"
+
+// list
+@import "interfaces/class/list"
+@import "interfaces/class/list-item"
+@import "interfaces/class/action-list"
+@import "interfaces/theme/list-item"
+@import "interfaces/theme/action-list"
+
+// tab
+@import "interfaces/class/tab-content"
+@import "interfaces/class/tab-content-group"
+@import "interfaces/class/tab-list"
+@import "interfaces/class/tab-list-item"
+@import "interfaces/theme/tab-content"
+@import "interfaces/theme/tab-content-group"
+@import "interfaces/theme/tab-list-item"
+
+// topbar
+@import "interfaces/class/account-switcher-organization-list"
+@import "interfaces/class/account-switcher-organization-item"
+@import "interfaces/class/account-switcher"
+@import "interfaces/class/account-switcher_action-group"
+@import "interfaces/class/account-switcher_action"
+@import "interfaces/class/account-switcher_link"
+@import "interfaces/class/action-account-switcher-organization-item"
+@import "interfaces/class/action"
+@import "interfaces/class/app-badge"
+@import "interfaces/class/app-badge_button"
+@import "interfaces/class/app-badge_chevron"
+@import "interfaces/class/app-badge_container"
+@import "interfaces/class/app-badge_logo"
+@import "interfaces/class/help"
+@import "interfaces/class/legacy-user-badge"
+@import "interfaces/class/logout--account-switcher_action"
+@import "interfaces/class/mobile-top-bar-section"
+@import "interfaces/class/mobile-topbar"
+@import "interfaces/class/topbar_route-group"
+@import "interfaces/class/name"
+@import "interfaces/class/non-mobile-topbar_app"
+@import "interfaces/class/organization-name"
+@import "interfaces/class/top-bar-overrides"
+@import "interfaces/class/topbar"
+@import "interfaces/class/topbar_app-list"
+@import "interfaces/class/topbar_app"
+@import "interfaces/class/topbar_applist"
+@import "interfaces/class/topbar_applist_app"
+@import "interfaces/class/topbar_applist_icon"
+@import "interfaces/class/topbar_help"
+@import "interfaces/class/mobile-topbar_route-group"
+@import "interfaces/class/topbar_route"
+@import "interfaces/class/topbar_route_icon"
+@import "interfaces/class/unlink--account-switcher_action"
+@import "interfaces/class/user-badge"
+@import "interfaces/class/user-badge_avatar-container"
+@import "interfaces/class/user-badge_avatar"
+@import "interfaces/class/user-badge_user-name"
+@import "interfaces/class/user-name"
+
+// view
+@import "interfaces/class/view"
+@import "interfaces/class/view_body"
+@import "interfaces/class/view_content"
+
+// "modules"
+@import "interfaces/preset/forms"
+@import "interfaces/preset/grid"
+@import "interfaces/preset/modals"
+@import "interfaces/preset/panes"
+@import "interfaces/preset/tables"
+@import "interfaces/preset/tooltips"
+@import "interfaces/preset/typography"
+@import "interfaces/preset/nav-tabs"
+
+// vendor extensions
+@import "interfaces/theme/jquery-ui"
+@import "interfaces/vendor-extensions/jquery-ui"
