@@ -290,7 +290,10 @@
     display: block
   #account-details
     display: none
-    +abs-pos(100%, 5px, auto, auto)
+    top: 100%
+    right: 5px
+    left: auto
+    bottom: auto
     background: white
     border-radius: 3px
     box-shadow: 0 1px 6px $dropdown-shadow
@@ -341,7 +344,10 @@
     .has-acct-dropdown
       position: relative
       &:after
-        +abs-pos(50%, 10px, auto, auto)
+        top: 50%
+        right: 10px
+        bottom: auto
+        left: auto
         +triangle("right", #ccc, 6px)
         margin-top: -5px
       > a

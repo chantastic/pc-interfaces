@@ -162,7 +162,10 @@
   // background: adjust-color($sidebar-bg-color, $lightness: -10%)
   border-top: 1px solid adjust-color($sidebar-bg-color, $lightness: -14%)
   cursor: pointer
-  +user-select(none)
+  -moz-user-select: none
+  -webkit-user-select: none
+  -ms-user-select: none
+  user-select: none
   i
     font-size: 9px
     position: absolute
