@@ -5,14 +5,14 @@
 .table
   width: 100%
   th, td
-    +font-size(13)
+    font-size: 13px
   table-layout: fixed
 
-.table>thead:first-child>tr:first-child>th, 
+.table>thead:first-child>tr:first-child>th,
 .table>thead:first-child>tr:first-child>td
   border-top: 0
 
-.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, 
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th,
 .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td
   padding: 8px
   line-height: 1.428571429
@@ -25,16 +25,16 @@
   border-bottom: 2px solid adjust-color($light-gray, $lightness: 15%)
 
 //=======================================ZEBRA STRIPED TABLES
-.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>td,
 .table-striped>tbody>tr:nth-child(odd)>th
   background-color: adjust-color($lighter-gray, $lightness: 8%)
 //reset the background color so first stripe is 2nd row offset from header
-.table-striped.table-th-fill>tbody>tr>td, 
+.table-striped.table-th-fill>tbody>tr>td,
 .table-striped.table-th-fill>tbody>tr>th
   background-color: transparent
-.table-striped.table-th-fill>tbody>tr:nth-child(even)>td, 
+.table-striped.table-th-fill>tbody>tr:nth-child(even)>td,
 .table-striped.table-th-fill>tbody>tr:nth-child(even)>th
-  background-color: adjust-color($lighter-gray, $lightness: 8%)  
+  background-color: adjust-color($lighter-gray, $lightness: 8%)
 
 //=======================================BORDERED TABLES
 .table-bordered
