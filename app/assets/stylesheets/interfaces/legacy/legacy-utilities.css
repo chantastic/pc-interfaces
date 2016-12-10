@@ -38,7 +38,7 @@
   text-overflow: ellipsis;
 }
 
-.mar-btm-baseline { margin-bottom: 1.11111rem !important }
+.mar-btm-baseline { margin-bottom: 11.1111px !important }
 
 .unstyled {
   list-style-type: none;
@@ -68,7 +68,7 @@
 .block-list__item {
   position: relative;
   display: block;
-  padding: 1rem 1.5rem;
+  padding: 10px 15px;
   clear: both;
   position: relative;
   font-size: 14px;
@@ -87,7 +87,7 @@
 .block-list.block-links .block-list__item { padding: 0 }
 .block-list.block-links .block-list__item > a, .block-list.block-links .block-list__item .block-list__link {
   display: block;
-  padding: 1rem 1.5rem;
+  padding: 10px 15px;
   cursor: pointer;
   position: relative;
 }
@@ -106,7 +106,7 @@
   margin-bottom: 1px;
 }
 
-.modal .block-list.eq-pad li { padding: 1rem }
+.modal .block-list.eq-pad li { padding: 10px }
 .modal .block-list .select2-choice {
   height: 27px;
   line-height: 26px;

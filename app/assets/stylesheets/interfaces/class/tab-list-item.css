@@ -14,7 +14,7 @@
   font-family: 'interfaces';
 
   position: absolute;
-  right: 1rem;
+  right: 10px;
 
   display: none;
 
@@ -24,11 +24,11 @@
 .tab-list-item::after {
   position: absolute;
   top: 0;
-  right: -.1rem; /* a shim to cover the .tab-content-group border */
+  right: -.10px; /* a shim to cover the .tab-content-group border */
 
   display: none;
 
-  width: .1rem;
+  width: .10px;
   height: 100%;
 
   content: ' ';

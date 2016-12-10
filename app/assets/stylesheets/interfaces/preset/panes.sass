@@ -90,7 +90,7 @@
   +cf
 
 .pane__header
-  padding: .75rem .75rem .75rem 1.25rem
+  padding: 7.5px 7.5px 7.5px 12.5px
   border-top-right-radius: 3px
   border-top-left-radius: 3px
   background-color: $pane-header-bg-top
@@ -113,10 +113,10 @@
 
 
 .pane__body
-  padding: 1.25rem 1.5rem
+  padding: 12.5px 15px
 
 .pane__footer
-  padding: .75rem 1.25rem .9rem
+  padding: 7.5px 12.5px 9px
   border-bottom-right-radius: $default-pane-radius
   border-bottom-left-radius: $default-pane-radius
   background-color: adjust-color($lighter-gray, $lightness: 7%)
@@ -132,7 +132,7 @@
 .pane-title
   margin: 0
   +truncate()
-  font-size: 1.8rem
+  font-size: 18px
   line-height: 1.6
   color: inherit
   display: inline-block
@@ -156,19 +156,19 @@
   position: relative
   margin: 0
   padding: 0 10px 0 25px
-  font-size: 1.4rem
-  height: 3.4rem
-  line-height: 3.29rem
+  font-size: 14px
+  height: 34px
+  line-height: 32.9px
   // background: adjust-color($sidebar-bg-color, $lightness: -10%)
   border-top: 1px solid adjust-color($sidebar-bg-color, $lightness: -14%)
   cursor: pointer
   +user-select(none)
   i
-    font-size: .9rem
+    font-size: 9px
     position: absolute
     left: 8px
     top: 50%
-    margin-top: -0.5rem
+    margin-top: -5px
     transition: all .2s linear
   .acc__title
     +truncate()
@@ -213,30 +213,30 @@
 
 .blank-state
   text-align: center
-  padding: 3rem
+  padding: 30px
   border-radius: 3px
   background: rgba(0,0,0,0.04)
   min-height: 212px
   &.no-btn
     min-height: 213px
   .btn
-    margin: 1.5rem auto 0 auto
+    margin: 15px auto 0 auto
   &.blank-state--push-btm
     margin-bottom: 12px
 
 .blank-state__msg
-  font-size: 1.4rem
+  font-size: 14px
   margin: 0 auto
   max-width: 245px
 
 .blank-state__hero
-  font-size: 5rem
+  font-size: 5px
   color: adjust-color($base-color, $lightness: 1%, $saturation: -32%)
   display: block
   margin-bottom: .3em
   &.push-top
     margin-top: 3%
   &.upsize
-    font-size: 9rem
+    font-size: 9px
     margin-bottom: .15em
 // @end Blank State Messages

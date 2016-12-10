@@ -1,6 +1,6 @@
 .tab-content {
   display: none;
-  padding: 1rem;
+  padding: 10px;
 }
 
 .tab-content.is-open {

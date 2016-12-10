@@ -1,12 +1,12 @@
 .btn {
-  font-size: 1.4rem;
+  font-size: 14px;
   border-radius: 3px;
 
   vertical-align: middle;
 
   display: inline-block;
   border-style: solid;
-  padding: 1rem 2rem 1.1rem 2rem;
+  padding: 10px 20px 11px 20px;
 
   font-weight: normal;
   line-height: normal;
@@ -29,32 +29,32 @@
 }
 
 .btn.right {
-  margin: 0 0 2rem 1rem;
+  margin: 0 0 20px 10px;
 }
 
 .btn.btn--small {
-  font-size: 1.2rem;
-  padding: 0.9rem 1.8rem;
+  font-size: 12px;
+  padding: 9px 18px;
 }
 
 .btn.btn--large {
-  font-size: 1.6rem;
-  padding: 1.1rem 2.2rem 1.2rem 2.2rem;
+  font-size: 16px;
+  padding: 11px 22px 12px 22px;
 }
 
 .btn.btn--tiny {
-  font-size: 1rem;
-  padding: 0.7rem 1.3rem;
+  font-size: 10px;
+  padding: 7px 13px;
 }
 
 .btn.btn--tiny.btn--square {
-  padding-left: 0.8rem;
-  padding-right: 0.8rem;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .btn.btn--micro {
-  font-size: 1rem;
-  padding: 0.2rem .8rem 0.3rem .8rem;
+  font-size: 10px;
+  padding: 2px 8px 3px 8px;
 }
 
 .btn.btn--expand {

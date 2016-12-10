@@ -64,7 +64,7 @@ _:-moz-tree-row(hover), .select { background-image: none }
 @media screen and (min-width:0\0) {
   .select {
     z-index: 1;
-    padding: .25rem !important;
+    padding: 2.5px !important;
   }
 }
 
