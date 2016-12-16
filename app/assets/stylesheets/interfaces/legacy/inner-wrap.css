@@ -1,0 +1,20 @@
+.inner-wrap {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: relative;
+  width: 100%;
+  -webkit-transition: -webkit-transform 300ms ease;
+          transition: transform 300ms ease;
+}
+.inner-wrap:before, .inner-wrap:after {
+  display: table;
+  content: " ";
+}
+.inner-wrap:after {
+  clear: both;
+}
+
+.left-off-canvas-active .inner-wrap {
+  -webkit-transform: translate3d(260px, 0, 0);
+          transform: translate3d(260px, 0, 0);
+}

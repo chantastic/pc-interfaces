@@ -1,0 +1,11 @@
+.main-section {
+  position: relative;
+  padding: 20px;
+}
+.main-section:before, .main-section:after {
+  display: table;
+  content: " ";
+}
+.main-section:after {
+  clear: both;
+}

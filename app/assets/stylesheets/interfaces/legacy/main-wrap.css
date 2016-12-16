@@ -1,0 +1,22 @@
+.main-wrap { height: 100% }
+.main-wrap:before {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: relative;
+  width: 100%;
+  -webkit-transition: -webkit-transform 300ms ease;
+          transition: transform 300ms ease;
+}
+.main-wrap:before:before,
+.main-wrap:before:after {
+  display: table;
+  content: " ";
+}
+.main-wrap:before:after {
+  clear: both;
+}
+
+.left-off-canvas-active .main-wrap:before {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
