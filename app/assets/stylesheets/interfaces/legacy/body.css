@@ -1,0 +1,14 @@
+body {
+  height: 100%;
+  font-size: 14px;
+}
+
+@media (min-width: 100em) {
+  body { height: 100% }
+
+  body {
+    margin: 0 auto;
+    min-height: 100%;
+    position: static;
+  }
+}
