@@ -18,6 +18,25 @@
   background-color: rgba(0,0,0,.03);
 }
 
+.account-switcher-organization-item_link .ii-switch {
+  color: #4E7BA8;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: all .2s ease-out;
+
+  -webkit-transform: rotate(-90deg) scale(.4);
+          transform: rotate(-90deg) scale(.4);
+}
+
+.account-switcher-organization-item_link:hover .ii-switch {
+  visibility: visible;
+  opacity: 1;
+
+  -webkit-transform: rotate(0) scale(1);
+          transform: rotate(0) scale(1);
+}
+
 @media (min-width: 979px) {
   .account-switcher-item_link-name {
     display: none !important;
