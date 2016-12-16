@@ -1,0 +1,6 @@
+@import "interfaces/mixin/default-input";
+
+textarea {
+  @include default-input;
+  resize: vertical;
+}
