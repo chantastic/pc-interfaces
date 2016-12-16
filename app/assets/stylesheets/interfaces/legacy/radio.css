@@ -1,0 +1,22 @@
+.radio {
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+}
+.radio:checked + label:before {
+  box-shadow: none;
+}
+.radio:checked + label:after {
+  content: "";
+  border-radius: 30px;
+  width: 6px;
+  height: 6px;
+  background: white;
+  position: absolute;
+  top: 50%;
+  margin-top: -2px;
+  left: 5px;
+  -webkit-transition: all 0.1s;
+          transition: all 0.1s;
+}
