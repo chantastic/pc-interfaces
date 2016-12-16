@@ -1,0 +1,23 @@
+h2 {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-weight: normal;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  margin-bottom: 6.25px;
+  line-height: 1.4;
+  font-size: 20px
+}
+h2:before, h2:after {
+  display: table;
+  content: " ";
+}
+h2:after {
+  clear: both;
+}
+h2 h1 small, h2 h2 small, h2 h3 small, h2 h4 small, h2 h5 small, h2 h6 small {
+  font-size: 60%;
+  color: #6f6f6f;
+  line-height: 0;
+}
