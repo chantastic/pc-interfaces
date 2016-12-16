@@ -1,0 +1,17 @@
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+@media (min-width: 100em) {
+  html {
+    height: 100%;
+  }
+
+  html:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+}

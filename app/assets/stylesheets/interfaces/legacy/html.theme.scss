@@ -1,0 +1,12 @@
+html { font-family: $base-font-family }
+
+@media (min-width: 100em) {
+  html {
+    background: adjust-color($sidebar-bg-color, $lightness: -7%, $saturation: -2%);
+
+    &:before {
+      height: ($topbar-height + 1px);
+      background: adjust-color($sidebar-bg-color, $lightness: -10%, $saturation: -2%);
+    }
+  }
+}

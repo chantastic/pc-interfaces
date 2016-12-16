@@ -1,0 +1,15 @@
+.has-icon-right {
+  position: relative;
+  padding-right: 32px;
+}
+.has-icon-right > .icon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -15px;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  line-height: 32px;
+}
+.has-icon-right > .icon > span { margin: 0 }

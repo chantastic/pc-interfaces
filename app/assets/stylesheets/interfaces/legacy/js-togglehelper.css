@@ -1,0 +1,3 @@
+.js-togglehelper { cursor: pointer }
+.js-togglehelper .js-toggletarget { display: none }
+.js-togglehelper.alt-state .js-toggletarget, .js-togglehelper.alt-state .js-toggletarget .popover { display: block }

@@ -1,0 +1,13 @@
+.block-list.block-links .block-list__item { padding: 0 }
+.block-list.block-links .block-list__item > a {
+  display: block;
+  padding: 10px 15px;
+  cursor: pointer;
+  position: relative;
+}
+.block-list.block-links .block-list__item > a:before,
+.block-list.block-links .block-list__item > a:after {
+  display: table;
+  content: " ";
+}
+.block-list.block-links .block-list__item > a:after { clear: both }
