@@ -1,0 +1,5 @@
+@import "interfaces/core/variables";
+
+.radio:checked + label:before {
+  background: adjust-color($success-color, $lightness: -2%, $saturation: -8%)
+}
