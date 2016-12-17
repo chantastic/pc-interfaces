@@ -237,12 +237,14 @@
 
 /* tab */
 @import "interfaces/class/tab-content";
+@import "interfaces/class/tab-content.theme";
 @import "interfaces/class/tab-content-group";
+@import "interfaces/class/tab-content-group.theme";
 @import "interfaces/class/tab-list";
 @import "interfaces/class/tab-list-item";
+@import "interfaces/class/tab-list-item.theme";
 @import "interfaces/class/tab-content.theme";
 @import "interfaces/class/tab-content-group.theme";
-@import "interfaces/class/tab-list-item";
 
 /* topbar */
 @import "interfaces/class/account-switcher-organization-list";

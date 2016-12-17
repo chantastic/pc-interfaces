@@ -24,11 +24,11 @@
 .tab-list-item::after {
   position: absolute;
   top: 0;
-  right: -.10px; /* a shim to cover the .tab-content-group border */
+  right: -1px; /* a shim to cover the .tab-content-group border */
 
   display: none;
 
-  width: .10px;
+  width: 1px;
   height: 100%;
 
   content: ' ';
