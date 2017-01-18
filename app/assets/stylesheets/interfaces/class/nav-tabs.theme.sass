@@ -1,6 +1,5 @@
 @import "interfaces/variables"
 @import "interfaces/mixin/legacy_queries"
-@import "interfaces/mixin/cf"
 
 //==================================== TABS
 .nav
@@ -8,7 +7,11 @@
   padding: 0
   list-style: none
   position: relative
-  +cf
+  &:before, &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
 
   > li
     position: relative

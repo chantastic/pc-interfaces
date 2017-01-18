@@ -1,13 +1,4 @@
 /* legacy "base" */
-@import "interfaces/variables";
-@import "interfaces/mixin/legacy_queries";
-
-@import "interfaces/mixin/cf";
-@import "interfaces/mixin/font-size";
-@import "interfaces/mixin/legacy_respond";
-@import "interfaces/mixin/respond";
-@import "interfaces/mixin/triangle";
-@import "interfaces/mixin/truncate";
 
 /* vendor */
 @import "normalize";

@@ -86,7 +86,11 @@
 
 .pane__header, .pane__footer, .pane__body
   position: relative
-  +cf
+  &:before, &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
 
 .pane__header
   padding: 7.5px 7.5px 7.5px 12.5px
@@ -203,7 +207,11 @@
 //====================================SIDEBAR
 .sb-well
   position: relative
-  +cf
+  &:before, &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
 
 .sb-well--padded
   padding: 10px

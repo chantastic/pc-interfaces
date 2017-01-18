@@ -1,5 +1,5 @@
 @import "interfaces/variables"
-@import "interfaces/mixin/cf"
+@import "interfaces/mixin/legacy_queries"
 
 $palm-gutter: 15px
 $tab-gutter: 15px
@@ -7,7 +7,12 @@ $gutter: 20px
 
 .row
   position: relative
-  +cf
+  &:before, &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
+
   &.row-pad
     padding: $gutter 0 $gutter $gutter
     & > [class*='col-']:last-of-type
