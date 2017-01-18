@@ -282,8 +282,11 @@
 @import "interfaces/class/user-badge_user-name";
 @import "interfaces/class/user-name";
 
+/* modals */
+@import "interfaces/class/modal";
+@import "interfaces/class/modal.theme";
+
 /* old "modules" */
-@import "interfaces/class/modals.theme";
 @import "interfaces/class/panes.theme";
 @import "interfaces/class/grid_cols.theme";
 @import "interfaces/class/nav-tabs.theme";

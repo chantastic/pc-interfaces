@@ -1,0 +1,57 @@
+@import "interfaces/variables";
+
+.modal {
+  background-color: $modal-window-bg-color;
+  border-radius: ($modal-radius + 1) ($modal-radius + 1) $modal-radius $modal-radius;
+  box-shadow: 0 0 25px $dark-gray;
+}
+
+.modal-layer {
+  background-color: $modal-bg-color;
+}
+
+.modal__header {
+  background: $modal-header-color;
+  border-radius: $modal-radius $modal-radius 0 0;
+}
+
+.modal__band--topper {
+  background: adjust-color($base-color, $lightness: 49%, $saturation: -10%);
+}
+.modal__band--topper .badge {
+  background: adjust-color($base-color, $lightness: 43%, $saturation: -10%);
+}
+
+.modal--person-details h4.smaller a [class^="icon-"],
+.modal--person-details h4.smaller a [class*=" icon-"] {
+  color: adjust-color($success-color, $lightness: 10%, $saturation: -6%);
+}
+
+.modal--person-details .has-icon-right > .icon .ii-x {
+  color: darken($lighter-gray, 8%);
+}
+.modal--person-details .has-icon-right > .icon:hover .ii-x {
+  color: $danger-color;
+}
+
+.modal--person-details .events.table th {
+  border-bottom-color: adjust-color($base-color, $lightness: 4%, $saturation: -2%);
+}
+
+.modal-title {
+  color: $modal-title-color;
+  text-shadow: 0 1px 4px rgba(adjust-color($modal-header-color, $lightness: -20%, $saturation: -5%), .5);
+}
+
+.modal-well {
+  border: 1px solid adjust-color($sidebar-bg-color, $lightness: -3%, $saturation: -10%);
+}
+.modal-well.modal-well--naked {
+  border-color: transparent;
+  background: transparent;
+}
+
+.modal-section--subtle {
+  background: adjust-color($sidebar-bg-color, $lightness: 1%, $saturation: -10%);
+  border-radius: 3px;
+}
