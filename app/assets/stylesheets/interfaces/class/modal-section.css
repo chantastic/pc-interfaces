@@ -1,0 +1,12 @@
+.modal-section {
+  position: relative;
+  padding: 15px 0;
+}
+.modal-section:before,
+.modal-section:after {
+  content: " ";
+  display: table;
+}
+.modal-section:after {
+  clear: both;
+}

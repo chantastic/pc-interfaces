@@ -1,0 +1,1 @@
+.modal__band:last-child:not(.modal__band--topper.modal__band) { padding-bottom: 0 }

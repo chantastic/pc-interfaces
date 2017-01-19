@@ -1,0 +1,6 @@
+.modal__footer .btn.left {
+  position: relative;
+  top: 2px;
+  left: 2px;
+  margin: 0;
+}

@@ -1,5 +1,3 @@
-/* legacy "base" */
-
 /* vendor */
 @import "normalize";
 @import "border-box";
@@ -282,9 +280,99 @@
 @import "interfaces/class/user-badge_user-name";
 @import "interfaces/class/user-name";
 
-/* modals */
+/* modal */
 @import "interfaces/class/modal";
+@import "interfaces/class/modal--max-width-600px";
+@import "interfaces/class/modal--open";
+@import "interfaces/class/modal--open*modal-layer";
+@import "interfaces/class/modal-layer";
+@import "interfaces/class/modal--medium";
+@import "interfaces/class/modal--small";
+@import "interfaces/class/modal--large";
+@import "interfaces/class/modal--full";
+@import "interfaces/class/modal-layer--601px";
+@import "interfaces/class/modal*data-modal-close";
+@import "interfaces/class/modal__header";
+@import "interfaces/class/modal__body";
+@import "interfaces/class/modal__body--767px";
+@import "interfaces/class/modal__footer";
+@import "interfaces/class/modal__footer*btn";
+@import "interfaces/class/modal__footer*btn.left";
+@import "interfaces/class/modal-loader.preloader";
+@import "interfaces/class/modal-section";
+@import "interfaces/class/modal__band";
+@import "interfaces/class/modal__band*row";
+@import "interfaces/class/modal__band:first-child";
+@import "interfaces/class/modal__band:first-child:last-child";
+@import "interfaces/class/modal__band.full-width-tabs";
+@import "interfaces/class/modal__band.push";
+@import "interfaces/class/modal__band*push";
+@import "interfaces/class/modal__band*row__child";
+@import "interfaces/class/modal__band:last-child:not-modal__band__subtle";
+@import "interfaces/class/modal__band:last-child:not-.modal__band__topper.modal__band";
+@import "interfaces/class/modal__band:last-child:not-.modal__band__topper.modal__band";
+@import "interfaces/class/modal__band*col:first-of-type";
+@import "interfaces/class/modal__band*col:last-of-type";
+@import "interfaces/class/modal__band--topper";
+@import "interfaces/class/modal__band--topper*badge";
+@import "interfaces/class/modal__band--topper*row.mb0*col--601px";
+@import "interfaces/class/modal__band--person";
+@import "interfaces/class/modal__band--person--600px";
+@import "interfaces/class/modal__band--person.modal__band*row";
+@import "interfaces/class/modal__band--person*label";
+@import "interfaces/class/modal__band--person*palm--full";
+@import "interfaces/class/modal__band--person*avatar";
+@import "interfaces/class/modal__band--person*bg-img-fill";
+@import "interfaces/class/modal__band--person*bg-img-fill*img";
+@import "interfaces/class/modal--person-details*hover-icon-trigger*col";
+@import "interfaces/class/modal--person-details*block-list.eq-pad*hover-icon-trigger--600px";
+@import "interfaces/class/modal--person-details*block-list.eq-pad*hover-icon-trigger*palm--third:first-child--600px";
+@import "interfaces/class/modal--person-details*modal__band--subtle*palm--full--768px.css";
+@import "interfaces/class/modal--person-details*h4.smaller*a";
+@import "interfaces/class/modal--person-details*h4.smaller*a*icon";
+@import "interfaces/class/modal--person-details*has-icon-right*icon*ii-x";
+@import "interfaces/class/modal--person-details*pane-group";
+@import "interfaces/class/modal--person-details*pane-group*pane";
+@import "interfaces/class/modal--person-details*h4*badge";
+@import "interfaces/class/modal--person-details*event.table";
+@import "interfaces/class/modal--person-details*events.table*td:first-child";
+@import "interfaces/class/modal--person-details*events.table*th:first-child";
+@import "interfaces/class/modal--person-details*events.table*td:last-child";
+@import "interfaces/class/modal--person-details*events.table*th:last-child";
+@import "interfaces/class/modal--person-details*events.table*th";
+@import "interfaces/class/modal--person-details*events.table*td";
+@import "interfaces/class/modal--person-details*events.table*event-col";
+@import "interfaces/class/modal--person-details*events.table*text-center";
+@import "interfaces/class/modal-well";
+@import "interfaces/class/modal-well*p";
+@import "interfaces/class/modal-well*p:last-child";
+@import "interfaces/class/modal-well*col:first-of-type";
+@import "interfaces/class/modal-well*col:last-of-type";
+@import "interfaces/class/modal-well.push-top";
+@import "interfaces/class/modal-well.modal-well--padless";
+@import "interfaces/class/modal-well.modal-well--naked";
+@import "interfaces/class/modal-well*row";
+@import "interfaces/class/modal-well*modal-section:first-child";
+@import "interfaces/class/modal-well*modal-section:last-child";
+@import "interfaces/class/modal-well*modal-section.modal-section--subtle";
+@import "interfaces/class/modal-well*modal-section.modal-section--subtle.control-group";
+@import "interfaces/class/modal-well*modal-section:last-child";
+@import "interfaces/class/modal-well__heading";
+@import "interfaces/class/modal-well__sub-heading";
+@import "interfaces/class/personal*modal-well*alert";
+@import "interfaces/class/modal-title";
+
 @import "interfaces/class/modal.theme";
+
+/* other misplaced "typography" */
+@import "interfaces/class/h4.smaller";
+@import "interfaces/class/input.mb8.css";
+@import "interfaces/class/col-tighter-pad--601px";
+@import "interfaces/class/field-container.block-list__item";
+@import "interfaces/class/field-container.block-list__item*col";
+@import "interfaces/class/subtle-bg";
+@import "interfaces/class/attendance";
+@import "interfaces/class/justified-table-wrap";
 
 /* old "modules" */
 @import "interfaces/class/panes.theme";
