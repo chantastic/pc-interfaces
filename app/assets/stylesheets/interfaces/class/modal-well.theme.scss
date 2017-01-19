@@ -1,0 +1,5 @@
+@import "interfaces/variables";
+
+.modal-well {
+  border: 1px solid adjust-color($sidebar-bg-color, $lightness: -3%, $saturation: -10%);
+}

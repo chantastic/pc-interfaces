@@ -286,6 +286,7 @@
 @import "interfaces/class/modal--open";
 @import "interfaces/class/modal--open*modal-layer";
 @import "interfaces/class/modal-layer";
+@import "interfaces/class/modal-layer.theme";
 @import "interfaces/class/modal--medium";
 @import "interfaces/class/modal--small";
 @import "interfaces/class/modal--large";
@@ -293,6 +294,7 @@
 @import "interfaces/class/modal-layer--601px";
 @import "interfaces/class/modal*data-modal-close";
 @import "interfaces/class/modal__header";
+@import "interfaces/class/modal__header.theme";
 @import "interfaces/class/modal__body";
 @import "interfaces/class/modal__body--767px";
 @import "interfaces/class/modal__footer";
@@ -314,7 +316,9 @@
 @import "interfaces/class/modal__band*col:first-of-type";
 @import "interfaces/class/modal__band*col:last-of-type";
 @import "interfaces/class/modal__band--topper";
+@import "interfaces/class/modal__band--topper.theme";
 @import "interfaces/class/modal__band--topper*badge";
+@import "interfaces/class/modal__band--topper*badge.theme";
 @import "interfaces/class/modal__band--topper*row.mb0*col--601px";
 @import "interfaces/class/modal__band--person";
 @import "interfaces/class/modal__band--person--600px";
@@ -330,7 +334,9 @@
 @import "interfaces/class/modal--person-details*modal__band--subtle*palm--full--768px.css";
 @import "interfaces/class/modal--person-details*h4.smaller*a";
 @import "interfaces/class/modal--person-details*h4.smaller*a*icon";
+@import "interfaces/class/modal--person-details*h4.smaller*a*icon.theme";
 @import "interfaces/class/modal--person-details*has-icon-right*icon*ii-x";
+@import "interfaces/class/modal--person-details*has-icon-right*icon*ii-x.theme";
 @import "interfaces/class/modal--person-details*pane-group";
 @import "interfaces/class/modal--person-details*pane-group*pane";
 @import "interfaces/class/modal--person-details*h4*badge";
@@ -340,10 +346,12 @@
 @import "interfaces/class/modal--person-details*events.table*td:last-child";
 @import "interfaces/class/modal--person-details*events.table*th:last-child";
 @import "interfaces/class/modal--person-details*events.table*th";
+@import "interfaces/class/modal--person-details*events.table*th.theme";
 @import "interfaces/class/modal--person-details*events.table*td";
 @import "interfaces/class/modal--person-details*events.table*event-col";
 @import "interfaces/class/modal--person-details*events.table*text-center";
 @import "interfaces/class/modal-well";
+@import "interfaces/class/modal-well.theme";
 @import "interfaces/class/modal-well*p";
 @import "interfaces/class/modal-well*p:last-child";
 @import "interfaces/class/modal-well*col:first-of-type";
@@ -351,6 +359,7 @@
 @import "interfaces/class/modal-well.push-top";
 @import "interfaces/class/modal-well.modal-well--padless";
 @import "interfaces/class/modal-well.modal-well--naked";
+@import "interfaces/class/modal-well.modal-well--naked.theme";
 @import "interfaces/class/modal-well*row";
 @import "interfaces/class/modal-well*modal-section:first-child";
 @import "interfaces/class/modal-well*modal-section:last-child";
@@ -361,6 +370,7 @@
 @import "interfaces/class/modal-well__sub-heading";
 @import "interfaces/class/personal*modal-well*alert";
 @import "interfaces/class/modal-title";
+@import "interfaces/class/modal-title.theme";
 
 @import "interfaces/class/modal.theme";
 

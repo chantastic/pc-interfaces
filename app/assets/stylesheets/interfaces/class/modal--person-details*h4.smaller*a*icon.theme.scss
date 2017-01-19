@@ -1,0 +1,6 @@
+@import "interfaces/variables";
+
+.modal--person-details h4.smaller a [class^="icon-"],
+.modal--person-details h4.smaller a [class*=" icon-"] {
+  color: adjust-color($success-color, $lightness: 10%, $saturation: -6%);
+}

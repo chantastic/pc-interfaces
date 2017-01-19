@@ -1,0 +1,8 @@
+@import "interfaces/variables";
+
+.modal--person-details .has-icon-right > .icon .ii-x {
+  color: darken($lighter-gray, 8%);
+}
+.modal--person-details .has-icon-right > .icon:hover .ii-x {
+  color: $danger-color;
+}

@@ -1,0 +1,6 @@
+@import "interfaces/variables";
+
+.modal__header {
+  background: $modal-header-color;
+  border-radius: $modal-radius $modal-radius 0 0;
+}
