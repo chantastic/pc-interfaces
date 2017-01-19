@@ -1,6 +1,10 @@
 INTERFACES CHANGELOG
 --------------------
 
+* [REFACTOR] move monolithic "modules" into "one-file-per-class".
+  * No opinions were inserted into this change.
+  * If you use the public API of `interfaces/interfaces`, you shouldn't be effected.
+  * If you dive into Interfaces internals, you're hosed. Sorry.
 * [BREAKING CHANGE] remove `=grid` mixin. it didn't look like it was being used in apps
 * [BREAKING CHANGE] clearfix modernized
   + `.clearfix` removed in favor of modern `.cf`, breaking support for IE6/7
