@@ -1,0 +1,10 @@
+@import "interfaces/variables";
+
+.full-width-tabs .nav-tabs > li:not(.active) > a {
+  background: adjust-color($light-gray, $lightness: 10%);
+  color: adjust-color($light-gray, $lightness: -15%);
+}
+
+.full-width-tabs .nav-tabs > li:not(.active) > a:hover {
+  color: $link-color-hover
+}

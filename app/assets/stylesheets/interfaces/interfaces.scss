@@ -386,8 +386,23 @@
 
 /* old "modules" */
 @import "interfaces/class/panes.theme";
-@import "interfaces/class/grid_cols.theme";
+@import "interfaces/class/grid_cols.theme"; /* I'm not touching this one */
+
+/* nav-tabs */
+@import "interfaces/class/nav";
+@import "interfaces/class/nav*li";
+@import "interfaces/class/nav*li*a";
+@import "interfaces/class/nav.nav-justified";
+@import "interfaces/class/nav-tabs";
 @import "interfaces/class/nav-tabs.theme";
+@import "interfaces/class/nav-tabs*li";
+@import "interfaces/class/nav-tabs*li*a";
+@import "interfaces/class/nav-tabs*li.active.theme";
+@import "interfaces/class/full-width-tabs*nav-tabs*li:first-child*a";
+@import "interfaces/class/full-width-tabs*nav-tabs*li*a";
+@import "interfaces/class/full-width-tabs*nav-tabs*li*a.theme";
+@import "interfaces/class/full-width-tabs*nav-tabs*li*a-not-active.theme";
+@import "interfaces/class/full-width-tabs*nav-tabs*li*a*icon";
 
 /* view */
 @import "interfaces/class/view";
