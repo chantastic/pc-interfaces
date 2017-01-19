@@ -1,0 +1,19 @@
+.block-list__item {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  clear: both;
+  position: relative;
+  font-size: 14px;
+  line-height: 1.6;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+.block-list__item:before,
+.block-list__item:after {
+  display: table;
+  content: " ";
+}
+.block-list__item:after { clear: both }
+.block-list__item:last-child { border-bottom: 0 }
+.block-list__item.hover-icon-trigger { padding-right: 30px }

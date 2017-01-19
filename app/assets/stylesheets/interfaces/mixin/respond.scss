@@ -1,0 +1,34 @@
+$lg-min: 1200px;
+$md-min: ($lg-min - 1px);
+$md-min: 992px;
+$sm-max: ($md-min - 1px);
+$sm-min: 768px;
+$xs-max: ($sm-min - 1px);
+
+/*
+ * respand_at
+ * rules are applied at a given breakpoint up.
+ */
+@mixin respond_at($name) {
+  @if $name == 'xs' {
+    @content;
+  }
+
+  @if $name == 'sm' {
+    @media (min-width: $sm-min) {
+      @content;
+    }
+  }
+}
+
+/*
+ * respand_when
+ * rules are applied *only* when the breakpoint is exactly met.
+ */
+@mixin respond_when($name) {
+  @if $name == 'xs' {
+    @media (max-width: $xs-max) {
+      @content;
+    }
+  }
+}

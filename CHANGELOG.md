@@ -1,7 +1,23 @@
 INTERFACES CHANGELOG
 --------------------
 
-### MASTER
+* [REFACTOR] move monolithic "modules" into "one-file-per-class".
+  * No opinions were inserted into this change.
+  * If you use the public API of `interfaces/interfaces`, you shouldn't be effected.
+  * If you dive into Interfaces internals, you're hosed. Sorry.
+* [BREAKING CHANGE] remove `=grid` mixin. it didn't look like it was being used in apps
+* [BREAKING CHANGE] clearfix modernized
+  + `.clearfix` removed in favor of modern `.cf`, breaking support for IE6/7
+    - migrate: places where `clearfix` was used will need to add `position: relative` for compatability.
+  + `=clearfix` removed in favor of modern `=cf`
+    - this clearfix used `position: relative`, which is non-standard for clearfixes.
+    - migrate: these will blow up. at every callsite, you will need to add `position: relative` to your class.
+* [BREAKING CHANGE] removed `.row-gutter` and `.column-gutter` minions classes
+* [BREAKING CHANGE] removed `.-text-center` class
+* [BREAKING CHANGE] `stylesheet/interfaces/modules` -> `stylesheets/interfaces/presets`
+  * migrating: if your apps uses the `modules` path, change it to `presets`
+
+### Master
 
 ### 0.11.2 (August 30 2016)
 

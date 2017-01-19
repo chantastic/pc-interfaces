@@ -1,0 +1,56 @@
+.tab-list-item {
+  position: relative;
+
+  transition: background-color 0 ease;
+
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  background: #f1f1f1;
+}
+
+.tab-list-item:last-child { border-bottom-width: 1px }
+
+.tab-list-item::before {
+  font-family: 'interfaces';
+
+  position: absolute;
+  right: 10px;
+
+  display: none;
+
+  content: '\e60d';
+}
+
+.tab-list-item::after {
+  position: absolute;
+  top: 0;
+  right: -1px; /* a shim to cover the .tab-content-group border */
+
+  display: none;
+
+  width: 1px;
+  height: 100%;
+
+  content: ' ';
+
+  background-color: white;
+}
+
+.tab-list-item:hover:not(.is-open) {
+  cursor: pointer;
+  transition: background-color .4s ease;
+
+  background: #e5e5e5;
+}
+
+.tab-list-item.is-open {
+  z-index: 1000; /* lift above siblings */
+
+  background: white;
+}
+
+/* CASCADING PARENT */
+
+.tab-list.is-expanded .tab-list-item {display: block }
+
+.tab-list.is-expanded .tab-list-item.is-open::before { content: '\e60e' }

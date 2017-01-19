@@ -1,0 +1,7 @@
+.modal__body { padding: 12px }
+.modal__body:before,
+.modal__body:after {
+  content: " ";
+  display: table;
+}
+.modal__body:after { clear: both }

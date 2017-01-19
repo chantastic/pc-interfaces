@@ -1,0 +1,19 @@
+.dropdown-menu-item {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+
+  cursor: pointer;
+
+  display: block;
+  padding: 8px 16px;
+  border-width: 0;
+  white-space: nowrap;
+}
+
+.dropdown-menu-item:last-child {
+  border-bottom-width: 0;
+}
+
+.dropdown-menu-item {
+  background: #eee;
+}

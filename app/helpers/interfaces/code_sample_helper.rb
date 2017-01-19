@@ -20,19 +20,12 @@ module Interfaces
     private
 
     def pass_through_node(markup)
-      content_tag :div, markup, class: 'ui-example-wrapper'
-    end
-
-    def code_sample_node(markup)
-      content_tag :div do
-        concat content_tag :p, "code sample", class: "code-sample-button"
-        concat content_tag :pre, content_tag(:code, samplify(markup), class: "language-markup"), class: "code-sample"
-      end
+      content_tag :div, markup
     end
 
     def code_sample_node_static(markup)
       content_tag :div do
-        concat content_tag :pre, content_tag(:code, samplify(markup), class: "language-markup"), class: "code-sample-static"
+        concat content_tag :pre, content_tag(:code, samplify(markup), class: "language-markup")
       end
     end
 

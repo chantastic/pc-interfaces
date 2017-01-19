@@ -1,0 +1,8 @@
+.tab-content {
+  display: none;
+  padding: 10px;
+}
+
+.tab-content.is-open {
+  display: block
+}

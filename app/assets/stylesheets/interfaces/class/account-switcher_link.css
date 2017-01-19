@@ -1,0 +1,19 @@
+.account-switcher_link {
+  font-size: 12px;
+  display: block;
+  float: left;
+  width: 100%;
+  text-align: center;
+  background-color: #e5e5e5;
+  border-bottom: 1px solid #ddd;
+  line-height: 36px;
+  color: #888 !important;
+}
+
+.account-switcher_link:hover {
+  background-color: #ddd;
+}
+
+.account-switcher_link + .account-switcher_link {
+  border-left: 1px solid #ddd;
+}

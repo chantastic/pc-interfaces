@@ -1,0 +1,134 @@
+@import "interfaces/variables"
+@import "interfaces/mixin/legacy_queries"
+
+$button-border-width: 1px
+$button-border-style: solid
+
+
+// @mixins ================================================
+
+// =Button variants
+// -------------------------
+// Quickly scaffold out new button styles with :hover, :focus, and `disabled` options.
+// Button variant also generates an `outline` style modifier
+//
+// +button-variant([$text-color:white], [$background-color:lightgray], [$border-color:adjust-color($background-color]))
+//
+// Usage:
+//
+// +button-variant()                      - button modifier with defaults
+// +button-variant(black)                 - button modifier with defaults and black text
+// +button-variant(black, pink)           - button modifier with black text and pink background/border
+// +button-variant(black, pick, fuchsia)  - button modifier with black text, pink background, and fuchsia border
+@mixin button-variant($color:white, $background-color:#e6e6e6, $border-color:adjust-color($background-color, $lightness: -20%, $saturation: -5%), $is-link:false)
+  @if $is-link
+
+  @else
+    // mixins
+    +_pseudo-classes($color, $background-color, $border-color)
+    background-color: adjust-color($background-color, $lightness: 3%)
+    background-image: linear-gradient(to bottom, adjust-color($background-color, $lightness: 3%), $background-color)
+
+    // display
+    border: $button-border-width $button-border-style $border-color
+
+    // other
+    color: $color
+
+    // modifiers
+    &.btn--outline
+      +_button-outline-variant($border-color)
+
+
+// PRIVATE _pseudo-classes
+@mixin _pseudo-classes($color, $background-color, $border-color)
+  &:hover,
+  &:focus
+    background-color: $border-color
+    background-image: linear-gradient(to bottom, $background-color, adjust-color($background-color, $lightness: 3%), $background-color)
+    color: $color
+
+  &:active
+    // inverse of :hover
+    background-color: $border-color
+    background-image: linear-gradient(to top, adjust-color($background-color, $lightness: -4%), adjust-color($background-color, $lightness: -6%), adjust-color($background-color, $lightness: -4%))
+
+  // explicitely define disabled class prevent disabled:hover
+  &[disabled]
+    background-image: none
+    background-color: $background-color
+    color: $color
+    opacity: 0.7
+
+@mixin _button-outline-variant($border-color)
+  background: none
+  color: darken($border-color, 20%)
+
+  &:hover
+    border-color: darken($border-color, 15%)
+    color: darken($border-color, 30%)
+
+  // explicitely define disabled class prevent disabled:hover
+  &[disabled]
+    border-color: $border-color
+    color: $border-color
+
+// button =================================================
+
+.btn
+
+  // bae
+  +button-variant($dark-gray)
+
+  // variants
+  &.btn--primary
+    +button-variant(white, $primary-btn-color)
+
+  &.btn--secondary
+    +button-variant($dark-gray, $light-gray)
+
+  &.btn--success
+    +button-variant(white, $success-color)
+
+  &.btn--danger
+    +button-variant(white, $danger-color)
+
+  &.btn--warning
+    +button-variant(adjust-color($warning-color, $lightness: -47%, $saturation: -25%), adjust-color($warning-color, $lightness: -15%, $saturation: 2%), $border-color:adjust-color($warning-color, $lightness: -30%, $saturation: -8%))
+    &:hover
+      color: adjust-color($warning-color, $lightness: -47%, $saturation: -25%)
+  &.btn--link
+    +button-variant($primary-btn-color, nil, nil, true)
+
+    &,
+    &:hover,
+    &[disabled]
+      background: none
+      border-color: transparent
+
+  &.btn--checkbox
+    border-color: darken($border-color, 40)
+    input[type=checkbox],
+    input[type=radio]
+      display: none
+    &.selected
+      background: $selected-btn-color
+      color: white
+
+// media queries
++breakpoint(lte_palm)
+  .btn
+    &.palm-btn--half
+      float: left
+      width: 49%
+      &:first-of-type
+        margin-right: 2%
+        margin-left: 0
+      &:last-of-type
+        margin-right: 0
+        margin-left: 0
+    &.palm-btn--full
+      float: none
+      width: 100%
+      margin-left: 0 !important
+      margin-right: 0 !important

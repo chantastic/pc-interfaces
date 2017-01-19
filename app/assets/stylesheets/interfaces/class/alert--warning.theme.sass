@@ -1,0 +1,16 @@
+@import "interfaces/variables"
+
+.alert--warning
+  border-color: adjust-color($warning-color, $lightness: -1%, $saturation: 0%)
+  color: adjust-color($warning-color, $lightness: -55%, $saturation: -42%)
+  background-color: $warning-color
+
+  .alert__heading,
+  .alert__sub-heading
+    color: adjust-color($warning-color, $lightness: -57%, $saturation: -34%)
+  ul li
+    border-bottom-color: adjust-color($warning-color, $lightness: -10%, $saturation: -10%)
+
+  &.alert--outline
+    background: transparent
+    color: adjust-color($warning-color, $lightness: -55%, $saturation: -42%)

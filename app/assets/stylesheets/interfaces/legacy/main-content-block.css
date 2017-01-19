@@ -1,0 +1,10 @@
+.main-content-block {
+  position: relative;
+}
+.main-content-block:before, .main-content-block:after {
+  display: table;
+  content: " ";
+}
+.main-content-block:after {
+  clear: both;
+}

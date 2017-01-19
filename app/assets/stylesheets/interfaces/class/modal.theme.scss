@@ -1,0 +1,7 @@
+@import "interfaces/variables";
+
+.modal {
+  background-color: $modal-window-bg-color;
+  border-radius: ($modal-radius + 1) ($modal-radius + 1) $modal-radius $modal-radius;
+  box-shadow: 0 0 25px $dark-gray;
+}

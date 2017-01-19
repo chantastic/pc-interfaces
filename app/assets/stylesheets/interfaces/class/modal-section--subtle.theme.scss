@@ -1,0 +1,6 @@
+@import "interfaces/variables";
+
+.modal-section--subtle {
+  background: adjust-color($sidebar-bg-color, $lightness: 1%, $saturation: -10%);
+  border-radius: 3px;
+}

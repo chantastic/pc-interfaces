@@ -1,0 +1,5 @@
+@import "interfaces/variables";
+
+.modal--person-details .events.table th {
+  border-bottom-color: adjust-color($base-color, $lightness: 4%, $saturation: -2%);
+}

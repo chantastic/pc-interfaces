@@ -1,0 +1,8 @@
+.modal__band--person .bg-img-fill {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}

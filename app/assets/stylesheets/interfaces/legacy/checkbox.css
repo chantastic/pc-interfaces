@@ -1,0 +1,20 @@
+.checkbox {
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+}
+.checkbox:checked + label:before {
+  box-shadow: none;
+}
+.checkbox:checked + label:after {
+  color: white;
+  font-family: "interfaces";
+  content: "\e624";
+  font-size: 8px;
+  text-align: center;
+  margin-top: -0.3em;
+  line-height: 0.9;
+  -webkit-transition: all 0.1s;
+          transition: all 0.1s;
+}

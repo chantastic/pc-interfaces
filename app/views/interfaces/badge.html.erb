@@ -1,18 +1,13 @@
-<h1>Badge</h1>
-<p>Tell people what's up.</p>
-<hr />
-
-<section class="doc-section">
-  <%= react_component "BadgeBuilder" %>
-</section>
-
-
 <section class="doc-section">
   <h1>Badge &ndash; Size and Shape (deprecated)</h1>
 </section>
 
 <section class="doc-section">
-  <h1><pre>badge.badge--small</pre></h1>
+  <%= react_component "BadgeBuilder" %>
+</section>
+
+<section class="doc-section">
+  <h1><pre>badge--small</pre></h1>
 
   <%= code_sample do %>
     <div class="badge badge--small">small</div>
@@ -20,9 +15,26 @@
 </section>
 
 <section class="doc-section">
-  <h1><pre>badge.badge--tiny</pre></h1>
+  <h1><pre>badge--tiny</pre></h1>
 
   <%= code_sample do %>
     <div class="badge badge--tiny">tiny</div>
+  <% end %>
+</section>
+
+<section class="doc-section">
+  <h1><pre>badge--square</pre></h1>
+
+  <%= code_sample do %>
+    <div class="badge badge--square"><i class="ii ii-check"></i></div>
+  <% end %>
+</section>
+
+<section class="doc-section">
+  <h1><pre>badge--inline</pre></h1>
+
+  <%= code_sample do %>
+<div class="badge">Hey</div>
+<div class="badge badge--inline">Ho</div>
   <% end %>
 </section>

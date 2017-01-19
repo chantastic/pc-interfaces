@@ -1,0 +1,6 @@
+@import "interfaces/variables";
+
+.modal-title {
+  color: $modal-title-color;
+  text-shadow: 0 1px 4px rgba(adjust-color($modal-header-color, $lightness: -20%, $saturation: -5%), .5);
+}

@@ -1,0 +1,7 @@
+.modal-loader.preloader {
+  position: absolute;
+  left: 50%;
+  width: 230px;
+  margin-left: -115px;
+  top: 68px;
+}

@@ -1,0 +1,5 @@
+@media (min-width: 768px) {
+  .modal--person-details .modal__band--subtle .palm--full {
+    margin-bottom: 0;
+  }
+}

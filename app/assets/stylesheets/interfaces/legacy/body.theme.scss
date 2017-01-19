@@ -1,0 +1,8 @@
+body { color: $base-font-color }
+
+@media (min-width: 100em) {
+  body {
+    background: $bg-color;
+    max-width: $max-site-width;
+  }
+}

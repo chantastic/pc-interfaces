@@ -1,0 +1,7 @@
+.off-canvas-wrap {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}

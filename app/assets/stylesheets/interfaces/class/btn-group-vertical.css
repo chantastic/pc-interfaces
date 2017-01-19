@@ -1,0 +1,55 @@
+.btn-group-vertical {
+  position: relative;
+
+  list-style: none;
+  margin: 0;
+}
+.btn-group-vertical:before, .btn-group-vertical:after, {
+  display: table;
+  content: " ";
+}
+.btn-group-vertical:after {
+  clear: both;
+}
+
+/* relatives */
+
+.btn-group-vertical > * {
+  margin: 0;
+}
+
+.btn-group-vertical .btn {
+  border-radius: 0;
+  margin: -1px 0 0 0;
+  display: block;
+  text-align: left;
+  padding: 9px 13px;
+  font-size: 13px;
+}
+.btn-group-vertical > *:first-child .btn {
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  margin-top: 0;
+}
+
+.btn-group-vertical > *:last-child .btn {
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.btn.btn--droptoggle {
+  padding: 5px 18px 6px 18px;
+}
+
+.btn.btn--droptoggle .ii-cog {
+  position: relative;
+  top: .06em;
+  font-size: 165%;
+}
+
+.btn.btn--droptoggle .ii-cog {
+  position: relative;
+  top: -0.3em;
+  margin-left: .5em;
+  font-size: 78%;
+}

@@ -1,0 +1,13 @@
+.modal__footer {
+  padding: 10px 10px 11px 10px;
+  text-align: right;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-top: solid 1px #e1e1e1;
+}
+.modal__footer:before,
+.modal__footer:after {
+  content: " ";
+  display: table;
+}
+.modal__footer:after { clear: both }

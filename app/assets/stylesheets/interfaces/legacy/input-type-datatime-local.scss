@@ -1,0 +1,3 @@
+@import "interfaces/mixin/default-input";
+
+input[type="datatime-local"] { @include default-input }

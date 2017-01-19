@@ -1,0 +1,14 @@
+@import "interfaces/variables"
+
+.alert--danger
+  border-color: $danger-color
+  color: white
+  background-color: $danger-color
+
+  .alert__heading,
+  .alert__sub-heading
+    color: adjust-color($danger-color, $lightness: -57%, $saturation: -34%)
+
+  &.alert--outline
+    background: transparent
+    color: $danger-color
