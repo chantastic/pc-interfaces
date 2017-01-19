@@ -384,9 +384,13 @@
 @import "interfaces/class/attendance";
 @import "interfaces/class/justified-table-wrap";
 
+/* pane */
+@import "interfaces/class/pane";
+
 /* old "modules" */
+/* I'm too tired to parse through these ones */
 @import "interfaces/class/panes.theme";
-@import "interfaces/class/grid_cols.theme"; /* I'm not touching this one */
+@import "interfaces/class/grid_cols.theme";
 
 /* nav-tabs */
 @import "interfaces/class/nav";
@@ -410,5 +414,5 @@
 @import "interfaces/class/view_content";
 
 /* vendor extensions */
-@import "interfaces/class/jquery-ui.theme";
 @import "interfaces/class/jquery-ui";
+@import "interfaces/class/jquery-ui.theme";
