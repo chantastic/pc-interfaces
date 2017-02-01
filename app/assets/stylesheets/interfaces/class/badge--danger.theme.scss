@@ -1,0 +1,12 @@
+@import "interfaces/variables";
+
+.badge--danger {
+  border-color: $danger-color;
+  background-color: $danger-color;
+  color: white;
+
+  &.badge--outline {
+    background: transparent;
+    color: $danger-color;
+  }
+}
