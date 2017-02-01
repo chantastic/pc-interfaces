@@ -1,0 +1,52 @@
+@import "interfaces/mixin/legacy_respond";
+
+@import "interfaces/variables";
+
+.tab-list-item {
+  border-color: $list-border-color;
+  padding:      $list-vertical-padding $list-horizontal-padding;
+  color:        $link-color;
+}
+
+.tab-list-item:hover:not(.is-open) {
+  color:      $link-color-hover;
+}
+
+.tab-list-item.is-open {
+  color:      $link-color-focus;
+}
+
+// respond
+@include legacy_respond_when(xs) {
+  .tab-list-item.is-open:hover {
+    cursor: pointer;
+  }
+
+  .tab-list-item.is-open::before {
+    display: block;
+  }
+}
+
+@include legacy_respond_at(xs) {
+  .tab-list-item:not(.is-open) {
+    display: none;
+  }
+
+  .tab-list-item.is-open {
+    display: block;
+  }
+}
+
+@include legacy_respond_at(sm) {
+  .tab-list-item::before {
+    display: none;
+  }
+
+  .tab-list-item:not(.is-open) {
+    display: block;
+  }
+
+  .tab-list-item.is-open::after {
+    display: block;
+  }
+}
