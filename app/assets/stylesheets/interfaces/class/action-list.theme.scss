@@ -1,0 +1,23 @@
+@import "interfaces/variables";
+
+.list--actionable {
+  .list-item {
+    color: $primary-btn-color;
+  }
+}
+
+// Depends on modernizr
+.no-touchevents {
+  .list-item--actionable,
+  .list--actionable .list-item {
+    &:hover {
+      color: $highlighted-color;
+      background: $highlighted-bg-color;
+      cursor: pointer;
+    }
+  }
+}
+
+.action-list {
+  padding-right: $list-vertical-padding;
+}
