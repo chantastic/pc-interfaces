@@ -1,0 +1,12 @@
+@import "interfaces/variables";
+
+.alert--subtle {
+  border-color: adjust-color($bg-color, $lightness: -7%);
+  color: $base-font-color;
+  background-color: adjust-color($bg-color, $lightness: -7%);
+
+  &.alert--outline {
+    background: transparent;
+    color: adjust-color($bg-color, $lightness: -7%);
+  }
+}
