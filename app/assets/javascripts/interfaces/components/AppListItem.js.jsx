@@ -9,19 +9,15 @@
       borderBottom: "1px solid #ececec",
       backgroundColor: "transparent",
       height: 48,
-      lineHeight: 1.2,
+      lineHeight: "26px",
       padding: 10,
       transition: "background-color .12s ease-in-out",
       boxSizing: "border-box", // Services demo
     },
-    appNamePrefix: {
-      color: "#4d4d4d",
-      fontSize: 10,
-      marginLeft: 35,
-    },
     appName: {
       color: "#4d4d4d",
-      fontSize: 15,
+      fontSize: 20,
+      fontWeight: "bold",
       marginLeft: 35,
     },
   };
@@ -55,7 +51,6 @@
          onMouseEnter={this.handleMouseEnter}
          onMouseLeave={this.handleMouseLeave}>
           <AppIcon name={this.name} />
-          <div style={styles.appNamePrefix}>planning center</div>
           <div style={styles.appName}>{this.name}</div>
         </a>
       );

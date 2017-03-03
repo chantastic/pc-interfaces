@@ -51,9 +51,12 @@
         $(this.props.routes)
           .find(".topbar_route")
           .map((i, { href, textContent, classList }) => {
+            const strs = textContent.split("icon")
+            const routeName = strs[strs.length - 1]
+
             var classes = (classList.contains("floating-topbar-action")) ? "mobile-floating-topbar-action" : "";
 
-            return { href: href, name: textContent, classes: classes};
+            return { href: href, name: routeName, classes: classes};
           })
       );
     }

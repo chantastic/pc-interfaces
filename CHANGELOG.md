@@ -1,6 +1,25 @@
 INTERFACES CHANGELOG
 --------------------
 
+### 0.13.0
+
+This is a transitionary branch.
+It assumes (now) that the icons being used in the topbar have the class 'icon'.
+This was the simplest way to solve my problem in People.
+I'll readdress it as other apps upgrade to this point.
+
+* [BREAKING CHANGE] update Topbar for InterfacesIcons
+  * Add `.bookmark-svg` style to override `.symbol`.
+    + "class/bookmark-svg" needs to be added to app-side manifests.
+  * Rewrite route-name logic in `MobileTopbar::routes`. (only proven to work for People)
+  * Remove "planning center" `AppiListItem`.
+
+### 0.12.1
+
+* [FIX] removes "class/pane" from manifest, which does not exist.
+
+### 0.12.0
+
 * [REFACTOR] move monolithic "modules" into "one-file-per-class".
   * No opinions were inserted into this change.
   * If you use the public API of `interfaces/interfaces`, you shouldn't be effected.
@@ -16,8 +35,6 @@ INTERFACES CHANGELOG
 * [BREAKING CHANGE] removed `.-text-center` class
 * [BREAKING CHANGE] `stylesheet/interfaces/modules` -> `stylesheets/interfaces/presets`
   * migrating: if your apps uses the `modules` path, change it to `presets`
-
-### Master
 
 ### 0.11.2 (August 30 2016)
 
