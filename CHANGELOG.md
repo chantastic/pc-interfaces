@@ -1,7 +1,13 @@
 INTERFACES CHANGELOG
 --------------------
 
+### 0.14.0-pre-2
+
+* [FIX] add "interfaces/class/modal--open*modal-layer*modal" to "interfaces/interfaces" manifest
+  - This needs to be updated in apps with exploded manifests
+
 ### 0.14.0-pre-1
+
 * [FIX] remove ".css" suffix from sass imports
 
 ### 0.14.0-pre
