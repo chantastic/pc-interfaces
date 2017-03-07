@@ -1,6 +1,9 @@
 INTERFACES CHANGELOG
 --------------------
 
+### 0.14.0-pre-1
+* [FIX] remove ".css" suffix from sass imports
+
 ### 0.14.0-pre
 
 * [BREAKING CHANGE] icons from css files
