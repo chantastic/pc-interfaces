@@ -1,6 +1,7 @@
 /* important to override .symbol, regardless of where it's imported */
-.bookmark-svg {
-  height: 30px !important;
-  width: auto !important;
-  vertical-align: middle !important;
+.bookmark-svg > svg {
+  height: 30px;
+  width: auto;
+  vertical-align: middle;
+  fill: currentColor;
 }

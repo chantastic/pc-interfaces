@@ -12,6 +12,15 @@
     },
   };
 
+  const getTextFromTopbarRoute = el => {
+    if (null == el) return ""
+
+    return el
+      .querySelector(".topbar_route_text")
+      .textContent
+      .trim()
+  }
+
   class MobileTopbar extends React.Component {
     constructor(props) {
       super(props);
@@ -39,24 +48,25 @@
     }
 
     get activeRailsRouteName() {
-      var routeName = $(this.props.routes)
-        .find(".is-active .btn-label")
-        .prop("textContent");
+      const parser = new DOMParser();
 
-      return routeName || "Menu";
+      const doc = parser.parseFromString(this.props.routes, "text/html")
+
+      return getTextFromTopbarRoute(doc.querySelector(".is-active")) || "Menu";
     }
 
     get routes () {
       return $.makeArray(
         $(this.props.routes)
           .find(".topbar_route")
-          .map((i, { href, textContent, classList }) => {
-            const strs = textContent.split("icon")
-            const routeName = strs[strs.length - 1]
+          .map((i, el) => {
+            const routeName = getTextFromTopbarRoute(el)
 
-            var classes = (classList.contains("floating-topbar-action")) ? "mobile-floating-topbar-action" : "";
+            const classes = el.classList.contains("floating-topbar-action")
+              ? "mobile-floating-topbar-action"
+              : "";
 
-            return { href: href, name: routeName, classes: classes};
+            return { href: el.href, name: routeName, classes };
           })
       );
     }

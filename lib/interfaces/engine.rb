@@ -14,10 +14,7 @@ module Interfaces
     end
 
     initializer :assets do |config|
-      Rails.application.config.assets.precompile += %w(
-        select1-spinner.gif
-        interfaces_icons/symbol.css
-      )
+      Rails.application.config.assets.precompile += %w(select1-spinner.gif)
     end
   end
 end

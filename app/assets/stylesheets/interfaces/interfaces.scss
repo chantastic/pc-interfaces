@@ -214,6 +214,9 @@
 @import "interfaces/class/dropdown-menu-item";
 @import "interfaces/class/dropdown-menu.theme";
 
+/* interfaces-symbol */
+@import "interfaces/class/interfaces-symbol";
+
 /* item-sidebar */
 @import "interfaces/class/item-sidebar";
 @import "interfaces/class/item-sidebar-list";
@@ -241,7 +244,6 @@
 
 /* topbar */
 @import "interfaces/class/account-switcher-organization-list";
-@import "interfaces/class/account-switcher-organization-item";
 @import "interfaces/class/account-switcher";
 @import "interfaces/class/account-switcher_action-group";
 @import "interfaces/class/account-switcher_action";
@@ -336,8 +338,6 @@
 @import "interfaces/class/modal--person-details*h4.smaller*a";
 @import "interfaces/class/modal--person-details*h4.smaller*a*icon";
 @import "interfaces/class/modal--person-details*h4.smaller*a*icon.theme";
-@import "interfaces/class/modal--person-details*has-icon-right*icon*ii-x";
-@import "interfaces/class/modal--person-details*has-icon-right*icon*ii-x.theme";
 @import "interfaces/class/modal--person-details*pane-group";
 @import "interfaces/class/modal--person-details*pane-group*pane";
 @import "interfaces/class/modal--person-details*h4*badge";

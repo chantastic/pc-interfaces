@@ -1,6 +1,22 @@
 INTERFACES CHANGELOG
 --------------------
 
+### 0.14.0-pre
+
+* [BREAKING CHANGE] icons from css files
+  - removed file `class/modal--person-details*has-icon-right*icon*ii-x.css`
+  - removed file `class/modal--person-details*has-icon-right*icon*ii-x.theme.scss`
+  - ii- classes only `class/account-switcher-organization-item.css`
+  - ii- classes only `legacy/top_bar.sass`
+  - ii- classes only `class/btn-group-vertical.css`
+* [BREAKING CHANGE] remove `class/account-switcher-organization-item.css`
+* [BREAKING CHANGE] update MobileTopbar menu selectors
+  - example route: <a class="topbar_route is-active" href="/interfaces"> <span class="topbar_route_text">CSS</span></a>
+* [BREAKING CHANGE] remove `InterfacesIcons` dependency
+  - inline all SVGs icon components
+* [BREAKING CHANGE] remove `_interfaces` partial.
+* [BREAKING CHANGE] remove `InterfacesIcon` component.
+
 ### 0.13.0
 
 This is a transitionary branch.

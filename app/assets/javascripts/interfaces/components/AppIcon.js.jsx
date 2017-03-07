@@ -6,7 +6,6 @@
   var styles = {
     services: { backgroundPosition: "0px 0px" },
     resources: { backgroundPosition: "0px -30px" },
-
     accounts: { backgroundPosition: "0px -60px" },
     checkins: { backgroundPosition: "0px -90px" },
     people: { backgroundPosition: "0px -121px" },
@@ -26,12 +25,16 @@
     }
 
     render() {
-      return <i className="topbar_applist_icon" style={this.styles} />;
+      return <i className="topbar_applist_icon" style={this.styles} />
     }
   }
 
   AppIcon.PropTypes = {
     name: React.PropTypes.string.isRequired,
+  };
+
+  AppIcon.defaultProps = {
+    name: "api",
   };
 
   global.AppIcon = (global.module || {}).exports = AppIcon;
