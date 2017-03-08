@@ -6,7 +6,7 @@
   var CogIcon = function CogIcon() {
     return React.createElement(
       "svg",
-      { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 16 16", "aria-labelledby": "title", role: "img", className: "symbol symbol-cog" },
+      { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 16 16", "aria-labelledby": "title", role: "img", className: "interfaces-symbol" },
       React.createElement(
         "title",
         { id: "title" },
@@ -23,17 +23,15 @@
     paddingRight: 9,
   };
 
-  var iconHoverStyle = {
-    color: "#777",
-  };
-
   class CurrentPersonListItemSettingsLink extends React.Component {
     render () {
       return (
         <div style={rootStyles}>
           <a href="/organization">
-            /* TODO: apply hoverStyle */
-            <span>
+            <style>{`
+              .__CurrentPersonListItemSettingsLink_CogIcon__:hover { color: #777 }
+            `}</style>
+            <span className="__CurrentPersonListItemSettingsLink_CogIcon__">
               <CogIcon />
             </span>
           </a>

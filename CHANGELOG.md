@@ -1,9 +1,14 @@
 INTERFACES CHANGELOG
 --------------------
 
+### master
+
+* [FIX] CogIcon and hover styles in `CurrentPersonListItemSettingsLink`
+
 ### 1.0.1
 
 * [FIX] add missing `ChainBrokenIcon` to `ConnectedPersonMenu` component
+* [FIX] change app-icon switch from "services" to "planning-center"
 
 ### 1.0.0
 
