@@ -1,6 +1,10 @@
 INTERFACES CHANGELOG
 --------------------
 
+### master
+
+* [FIX] add missing `ChainBrokenIcon` to `ConnectedPersonMenu` component
+
 ### 1.0.0
 
 LOL.
