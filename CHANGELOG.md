@@ -1,6 +1,9 @@
 INTERFACES CHANGELOG
 --------------------
 
+### 0.14.0-pre-5
+[FIX] add component icons to `MobileTopbarProfileButton` for correct icon to show on mobile.
+
 ### 0.14.0-pre-4
 ZOMG REALLY?!
 * [FIX] remove more `*` and `:` special characters from filenames for Resources compat.
