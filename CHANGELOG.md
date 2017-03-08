@@ -1,21 +1,21 @@
 INTERFACES CHANGELOG
 --------------------
 
-### 0.14.0-pre-3
+### 0.14.0-pre-4
+ZOMG REALLY?!
+* [FIX] remove more `*` and `:` special characters from filenames for Resources compat.
 
+### 0.14.0-pre-3
 * [FIX] remove `*` and `:` special characters from filenames for Resources compat.
 
 ### 0.14.0-pre-2
-
 * [FIX] add "interfaces/class/modal--open*modal-layer*modal" to "interfaces/interfaces" manifest
   - This needs to be updated in apps with exploded manifests
 
 ### 0.14.0-pre-1
-
 * [FIX] remove ".css" suffix from sass imports
 
 ### 0.14.0-pre
-
 * [BREAKING CHANGE] icons from css files
   - removed file `class/modal--person-details*has-icon-right*icon*ii-x.css`
   - removed file `class/modal--person-details*has-icon-right*icon*ii-x.theme.scss`
