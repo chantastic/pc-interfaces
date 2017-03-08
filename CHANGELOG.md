@@ -1,6 +1,10 @@
 INTERFACES CHANGELOG
 --------------------
 
+### 0.14.0-pre-3
+
+* [FIX] remove `*` and `:` special characters from filenames for Resources compat.
+
 ### 0.14.0-pre-2
 
 * [FIX] add "interfaces/class/modal--open*modal-layer*modal" to "interfaces/interfaces" manifest
