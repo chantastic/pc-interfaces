@@ -36,7 +36,7 @@
       switch (railsAppName) {
         case "Check-Ins":
           return "CheckInsAppIcon";
-        case "PlanningCenter":
+        case "Planning-Center":
           return "ServicesAppIcon";
         case "RP":
           return "ResourcesAppIcon";

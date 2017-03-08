@@ -3,6 +3,7 @@ INTERFACES CHANGELOG
 
 ### master
 
+* [FIX] Fix Services switch case in `CurrentPersonListItemSettingsLink`
 * [FIX] CogIcon and hover styles in `CurrentPersonListItemSettingsLink`
 
 ### 1.0.1
