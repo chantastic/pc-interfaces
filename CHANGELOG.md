@@ -1,6 +1,10 @@
 INTERFACES CHANGELOG
 --------------------
 
+### 1.0.0
+
+LOL.
+
 ### 0.14.0
 
 * [BREAKING CHANGE] remove `*` and `:` special characters from filenames for Resources compat.
