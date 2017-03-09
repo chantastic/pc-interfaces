@@ -3,6 +3,7 @@ INTERFACES CHANGELOG
 
 ### master
 
+* [FIX] fix transparent non-hover state in `dropdown-menu-item`
 * [FIX] Fix Services switch case in `CurrentPersonListItemSettingsLink`
 * [FIX] CogIcon and hover styles in `CurrentPersonListItemSettingsLink`
 
