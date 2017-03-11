@@ -49,6 +49,10 @@ Hit me (@chantastic) up if you're setting up a new project.
 
 ### master
 
+### 1.0.4
+
+* [FIX] AppSwitcher max-width error for IE11
+
 ### 1.0.3
 
 * [FIX] AppSwitcher width error IE11
