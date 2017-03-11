@@ -2,6 +2,7 @@
 .bookmark-svg > svg {
   height: 30px;
   width: auto;
+  max-width: 480px;
   vertical-align: middle;
   fill: currentColor;
 }
