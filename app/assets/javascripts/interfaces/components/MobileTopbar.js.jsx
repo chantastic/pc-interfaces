@@ -1,25 +1,21 @@
 /* global React, $ */
 
-(function (global) {
+(function(global) {
   "use strict";
-
   var styles = {
     rootStyles: {
       msUserSelect: "none",
       MozUserSelect: "none",
       WebkitUserSelect: "none",
-      userSelect: "none",
-    },
+      userSelect: "none"
+    }
   };
 
   const getTextFromTopbarRoute = el => {
-    if (null == el) return ""
+    if (null == el) return "";
 
-    return el
-      .querySelector(".topbar_route_text")
-      .textContent
-      .trim()
-  }
+    return el.querySelector(".topbar_route_text").textContent.trim();
+  };
 
   class MobileTopbar extends React.Component {
     constructor(props) {
@@ -27,7 +23,7 @@
 
       this.state = {
         orgMenuOpen: false,
-        routeMenuOpen: false,
+        routeMenuOpen: false
       };
 
       this.handleUserButtonClick = () => {
@@ -50,32 +46,29 @@
     get activeRailsRouteName() {
       const parser = new DOMParser();
 
-      const doc = parser.parseFromString(this.props.routes, "text/html")
+      const doc = parser.parseFromString(this.props.routes, "text/html");
 
       return getTextFromTopbarRoute(doc.querySelector(".is-active")) || "Menu";
     }
 
-    get routes () {
+    get routes() {
       return $.makeArray(
-        $(this.props.routes)
-          .find(".topbar_route")
-          .map((i, el) => {
-            const routeName = getTextFromTopbarRoute(el)
+        $(this.props.routes).find(".topbar_route").map((i, el) => {
+          const routeName = getTextFromTopbarRoute(el);
 
-            const classes = el.classList.contains("floating-topbar-action")
-              ? "mobile-floating-topbar-action"
-              : "";
+          const classes = el.classList.contains("floating-topbar-action")
+            ? "mobile-floating-topbar-action"
+            : "";
 
-            return { href: el.href, name: routeName, classes };
-          })
+          return { href: el.href, name: routeName, classes };
+        })
       );
     }
 
-    componentDidUpdate () {
+    componentDidUpdate() {
       document
         .querySelector(".main-wrap")
-        .classList
-        .toggle("o-h", this.state.orgMenuOpen);
+        .classList.toggle("o-h", this.state.orgMenuOpen);
     }
 
     render() {
@@ -83,19 +76,22 @@
         <div style={styles.root}>
           <MobileTopbarProfileButton onClick={this.handleUserButtonClick} />
 
-          <MobileTopbarRouteButton name={this.activeRailsRouteName} onClick={this.handleRouteButtonclick} />
+          <MobileTopbarRouteButton
+            name={this.activeRailsRouteName}
+            onClick={this.handleRouteButtonclick}
+          />
 
-          {(this.state.orgMenuOpen) &&
-            <MobileTopbarProfileMenuContainer onDismiss={this.handleMobileTopbarProfileMenuDismiss} />
-          }
+          {this.state.orgMenuOpen &&
+            <MobileTopbarProfileMenuContainer
+              onDismiss={this.handleMobileTopbarProfileMenuDismiss}
+            />}
 
-          {(this.state.routeMenuOpen) &&
+          {this.state.routeMenuOpen &&
             <MobileTopbarRouteList
-             activeRouteName={this.activeRailsRouteName}
-             onDismiss={this.handleMobileTopbarRouteListDismiss}
-             routes={this.routes}
-             />
-          }
+              activeRouteName={this.activeRailsRouteName}
+              onDismiss={this.handleMobileTopbarRouteListDismiss}
+              routes={this.routes}
+            />}
         </div>
       );
     }
@@ -103,8 +99,8 @@
 
   MobileTopbar.PropTypes = {
     routes: React.PropTypes.string.isRequired,
-    railsAppName: React.PropTypes.string.isRequired,
+    railsAppName: React.PropTypes.string.isRequired
   };
 
-  global.MobileTopbar = (global.module || {}).exports = MobileTopbar;
+  global.MobileTopbar = ((global.module || {}).exports = MobileTopbar);
 })(this);

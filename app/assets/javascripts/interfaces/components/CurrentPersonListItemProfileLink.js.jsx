@@ -1,8 +1,7 @@
 /* global React, _ */
 
-(function (global) {
+(function(global) {
   "use strict";
-
   var styles = {
     padding: 0,
     display: "block",
@@ -11,12 +10,12 @@
     transition: "all .2s ease-in-out",
     transform: "translateX(0)",
     ":hover": {
-      transform: "translateX(3px)",
-    },
+      transform: "translateX(3px)"
+    }
   };
 
   class CurrentPersonListItemProfileLink extends React.Component {
-    constructor (props) {
+    constructor(props) {
       super(props);
 
       this.state = { hovered: false };
@@ -25,18 +24,14 @@
       this.handleMouseLeave = () => this.setState({ hovered: false });
     }
 
-    get styles () {
-      return _.extend(
-        {},
-        styles,
-        this.state.hovered && styles[":hover"]
-      );
+    get styles() {
+      return _.extend({}, styles, this.state.hovered && styles[":hover"]);
     }
 
     render() {
       const {
         profilePath,
-        ...props,
+        ...props
       } = this.props;
 
       return (
@@ -47,8 +42,9 @@
           href={this.props.profilePath}
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
-          {...props}>
-           Profile
+          {...props}
+        >
+          Profile
         </a>
       );
     }
@@ -56,8 +52,9 @@
 
   CurrentPersonListItemProfileLink.propTypes = {
     id: React.PropTypes.number.isRequired,
-    profilePath: React.PropTypes.string.isRequired,
+    profilePath: React.PropTypes.string.isRequired
   };
 
-  global.CurrentPersonListItemProfileLink = (global.module || {}).exports = CurrentPersonListItemProfileLink;
+  global.CurrentPersonListItemProfileLink = ((global.module || {
+  }).exports = CurrentPersonListItemProfileLink);
 })(this);

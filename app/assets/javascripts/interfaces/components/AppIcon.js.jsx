@@ -1,8 +1,7 @@
 /* global React */
 
-(function (global) {
+(function(global) {
   "use strict";
-
   var styles = {
     services: { backgroundPosition: "0px 0px" },
     resources: { backgroundPosition: "0px -30px" },
@@ -12,7 +11,7 @@
     registrations: { backgroundPosition: "0px -152px" },
     giving: { backgroundPosition: "0px -183px" },
     api: { backgroundPosition: "0px -213px" },
-    groups: { backgroundPosition: "0px -243px" },
+    groups: { backgroundPosition: "0px -243px" }
   };
 
   class AppIcon extends React.Component {
@@ -25,17 +24,17 @@
     }
 
     render() {
-      return <i className="topbar_applist_icon" style={this.styles} />
+      return <i className="topbar_applist_icon" style={this.styles} />;
     }
   }
 
   AppIcon.PropTypes = {
-    name: React.PropTypes.string.isRequired,
+    name: React.PropTypes.string.isRequired
   };
 
   AppIcon.defaultProps = {
-    name: "api",
+    name: "api"
   };
 
-  global.AppIcon = (global.module || {}).exports = AppIcon;
+  global.AppIcon = ((global.module || {}).exports = AppIcon);
 })(this);

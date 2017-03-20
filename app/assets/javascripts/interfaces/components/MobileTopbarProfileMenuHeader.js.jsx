@@ -1,19 +1,18 @@
 /* global React, railsAppName */
 
-(function (global) {
+(function(global) {
   "use strict";
-
   var styles = {
     root: {
       height: 51,
       backgroundColor: "#323331",
-      color: "white",
+      color: "white"
     },
 
     appBadge: {
       icon: {
         padding: "12px 10px",
-        height: "100%",
+        height: "100%"
       },
 
       name: {
@@ -22,24 +21,24 @@
         marginLeft: 38,
         marginTop: 4,
         lineHeight: "19px",
-        textAlign: "left",
-      },
-    },
+        textAlign: "left"
+      }
+    }
   };
 
   class MobileTopbarProfileMenuHeader extends React.Component {
-    get appName () {
+    get appName() {
       switch (railsAppName) {
-      case "RP":
-        return "resources";
-      case "PlanningCenter":
-        return "services";
-      default:
-        return railsAppName;
+        case "RP":
+          return "resources";
+        case "PlanningCenter":
+          return "services";
+        default:
+          return railsAppName;
       }
     }
 
-    render () {
+    render() {
       return (
         <div style={styles.root}>
           <div style={styles.appBadge.icon}>
@@ -51,5 +50,6 @@
     }
   }
 
-  global.MobileTopbarProfileMenuHeader = (global.module || {}).exports = MobileTopbarProfileMenuHeader;
+  global.MobileTopbarProfileMenuHeader = ((global.module || {
+  }).exports = MobileTopbarProfileMenuHeader);
 })(this);

@@ -1,59 +1,66 @@
 /* global React, $, interfacesURLForEnv, railsEnv, railsAppName, docCookies */
 
-(function (global) {
+(function(global) {
   "use strict";
-
-  function railsAppNameToAPIAppName (name) {
+  function railsAppNameToAPIAppName(name) {
     switch (name) {
-    case "RP":
-      return "Resources";
-    case "PlanningCenter":
-      return "Services";
-    default:
-      return name;
+      case "RP":
+        return "Resources";
+      case "PlanningCenter":
+        return "Services";
+      default:
+        return name;
     }
   }
 
   function excludeCurrentApp(app) {
-    return (app.attributes.name === railsAppNameToAPIAppName(railsAppName)) ? false : true;
+    return app.attributes.name === railsAppNameToAPIAppName(railsAppName)
+      ? false
+      : true;
   }
 
   function sortAppsByName(a, b) {
-    if (a.attributes.name < b.attributes.name) { return -1; }
-    if (a.attributes.name > b.attributes.name) { return 1; }
+    if (a.attributes.name < b.attributes.name) {
+      return -1;
+    }
+    if (a.attributes.name > b.attributes.name) {
+      return 1;
+    }
     return 0;
   }
 
   class MobileTopbarProfileMenuContainer extends React.Component {
-    constructor (props) {
+    constructor(props) {
       super(props);
 
       this.state = {
         userCardShown: false,
         apps: [],
-        connectedPeople: [],
+        connectedPeople: []
       };
 
-      this.handleToggleUserCard = (e) => {
+      this.handleToggleUserCard = e => {
         e.stopPropagation();
         this.setState({ userCardShown: !this.state.userCardShown });
       };
     }
 
-    fetchApps () {
+    fetchApps() {
       // this is a very niave form of caching requests
       // needed to support touch devices, where pre-fetching
       // on hover is not availabele
-      if (this.state.apps.length) { return; }
+      if (this.state.apps.length) {
+        return;
+      }
 
       var fetchApps = $.ajax({
         url: `${interfacesURLForEnv(railsEnv, "api")}/people/v2/me/apps`,
-        xhrFields: { withCredentials: true },
+        xhrFields: { withCredentials: true }
       });
 
       fetchApps.success(apps => {
         this.setState({
-          apps: apps.data.filter(excludeCurrentApp).sort(sortAppsByName),
+          apps: apps.data.filter(excludeCurrentApp).sort(sortAppsByName)
         });
       });
     }
@@ -62,51 +69,54 @@
       // this is a very niave form of caching requests
       // needed to support touch devices, where pre-fetching
       // on hover is not availabele
-      if (this.state.connectedPeople.length) { return; }
+      if (this.state.connectedPeople.length) {
+        return;
+      }
 
       var fetchConnectedPeople = $.ajax({
         url: `${interfacesURLForEnv(window.railsEnv, "api")}/people/v2/me/connected_people`,
-        xhrFields: { withCredentials: true },
+        xhrFields: { withCredentials: true }
       });
 
-      fetchConnectedPeople.success((people) => {
-        this.setState({connectedPeople: people.data});
+      fetchConnectedPeople.success(people => {
+        this.setState({ connectedPeople: people.data });
       });
     }
 
-    fetchAndSetUserCardShown () {
+    fetchAndSetUserCardShown() {
       this.setState({
-        userCardShown: !!+docCookies.getItem("mobile_topbar_user_card_shown"),
+        userCardShown: !!+docCookies.getItem("mobile_topbar_user_card_shown")
       });
     }
 
-    componentWillMount () {
+    componentWillMount() {
       // PERF: add cache
       this.fetchApps();
       this.fetchConnectedPeople();
       this.fetchAndSetUserCardShown();
     }
 
-    componentWillUpdate (_, { userCardShown }) {
+    componentWillUpdate(_, { userCardShown }) {
       docCookies.setItem("mobile_topbar_user_card_shown", +userCardShown);
     }
 
-    render () {
+    render() {
       return (
         <MobileTopbarProfileMenu
-         {...this.props}
-         userCardShown={this.state.userCardShown}
-         apps={this.state.apps}
-         connectedPeople={this.state.connectedPeople}
-         onToggleUserCard={this.handleToggleUserCard}
+          {...this.props}
+          userCardShown={this.state.userCardShown}
+          apps={this.state.apps}
+          connectedPeople={this.state.connectedPeople}
+          onToggleUserCard={this.handleToggleUserCard}
         />
       );
     }
   }
 
   MobileTopbarProfileMenuContainer.propTypes = {
-    onDismiss: React.PropTypes.func.isRequired,
+    onDismiss: React.PropTypes.func.isRequired
   };
 
-  global.MobileTopbarProfileMenuContainer = (global.module || {}).exports = MobileTopbarProfileMenuContainer;
+  global.MobileTopbarProfileMenuContainer = ((global.module || {
+  }).exports = MobileTopbarProfileMenuContainer);
 })(this);

@@ -1,8 +1,7 @@
-(function (global) {
+(function(global) {
   "use strict";
-
   function getJoinedSegments(segments) {
-    if(!segments.length) {
+    if (!segments.length) {
       return "";
     }
 
@@ -10,11 +9,11 @@
   }
 
   function getSubdomainedAppName(appName, suffix) {
-    if(!appName) {
+    if (!appName) {
       return "";
     }
 
-    if(!suffix) {
+    if (!suffix) {
       return `${appName}.`;
     }
 
@@ -24,7 +23,7 @@
   function interfacesURLForEnv(env, appName, ...segments) {
     var baseURL;
 
-    switch(env) {
+    switch (env) {
       case "production":
         baseURL = `https://${getSubdomainedAppName(appName)}planningcenteronline.com`;
         break;
@@ -38,12 +37,13 @@
         baseURL = `http://${getSubdomainedAppName(appName)}pco.test`;
         break;
       default:
-      baseURL = `http://${getSubdomainedAppName(appName)}planningcenteronline.com`;
+        baseURL = `http://${getSubdomainedAppName(appName)}planningcenteronline.com`;
         break;
     }
 
     return baseURL + getJoinedSegments(segments);
   }
 
-  global.interfacesURLForEnv = (global.module || {}).exports = interfacesURLForEnv;
+  global.interfacesURLForEnv = ((global.module || {
+  }).exports = interfacesURLForEnv);
 })(this);

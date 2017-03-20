@@ -1,8 +1,7 @@
 /* global React */
 
-(function (global) {
+(function(global) {
   "use strict";
-
   var styles = {
     appList: {
       backgroundColor: "#383937",
@@ -10,8 +9,8 @@
       overflowY: "scroll",
       WebkitOverflowScrolling: "touch",
       transition: "0.3s all ease-in-out",
-      height: "calc(100% - 104px)",
-    },
+      height: "calc(100% - 104px)"
+    }
   };
 
   var iconStyles = {
@@ -24,15 +23,15 @@
       padding: 10,
       transition: "background-color .12s ease-in-out",
       boxSizing: "border-box",
-      textAlign: "left",
+      textAlign: "left"
     },
 
     appName: {
       color: "white",
       fontSize: 16,
       marginLeft: 38,
-      marginTop: 4,
-    },
+      marginTop: 4
+    }
   };
 
   class MobileAppList extends React.Component {
@@ -40,16 +39,16 @@
       super(props);
     }
 
-    render () {
+    render() {
       return (
         <div style={styles.appList}>
-          {this.props.apps.map(({ attributes: { name, url }}, i) => {
+          {this.props.apps.map(({ attributes: { name, url } }, i) => {
             return (
               <a
-               href={url}
-               key={i}
-               style={iconStyles.container}
-               target={(name === "Services") ? "_blank" : "_self" }
+                href={url}
+                key={i}
+                style={iconStyles.container}
+                target={name === "Services" ? "_blank" : "_self"}
               >
                 <AppIcon name={name} />
                 <div style={iconStyles.appName}>{name}</div>
@@ -65,11 +64,11 @@
     apps: React.PropTypes.arrayOf(
       React.PropTypes.shape({
         attributes: React.PropTypes.shape({
-          name: React.PropTypes.string.isRequired,
-        }),
+          name: React.PropTypes.string.isRequired
+        })
       })
-    ).isRequired,
+    ).isRequired
   };
 
-  global.MobileAppList = (global.module || {}).exports = MobileAppList;
+  global.MobileAppList = ((global.module || {}).exports = MobileAppList);
 })(this);

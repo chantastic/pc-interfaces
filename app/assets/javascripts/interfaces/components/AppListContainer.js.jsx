@@ -1,30 +1,37 @@
 /* global React, $, interfacesURLForEnv, railsAppName */
 
-(function (global) {
+(function(global) {
   "use strict";
-
-  function railsAppNameToAPIAppName (name) {
+  function railsAppNameToAPIAppName(name) {
     switch (name) {
-    case "RP":
-      return "Resources";
-    case "PlanningCenter":
-      return "Services";
-    default:
-      return name;
+      case "RP":
+        return "Resources";
+      case "PlanningCenter":
+        return "Services";
+      default:
+        return name;
     }
   }
 
   function findCurrentApp(app) {
-    return (app.attributes.name === railsAppNameToAPIAppName(railsAppName)) ? false : true;
+    return app.attributes.name === railsAppNameToAPIAppName(railsAppName)
+      ? false
+      : true;
   }
 
   function excludeCurrentApp(app) {
-    return (app.attributes.name === railsAppNameToAPIAppName(railsAppName)) ? true : false;
+    return app.attributes.name === railsAppNameToAPIAppName(railsAppName)
+      ? true
+      : false;
   }
 
   function sortAppsByName(a, b) {
-    if (a.attributes.name < b.attributes.name) { return -1; }
-    if (a.attributes.name > b.attributes.name) { return 1; }
+    if (a.attributes.name < b.attributes.name) {
+      return -1;
+    }
+    if (a.attributes.name > b.attributes.name) {
+      return 1;
+    }
     return 0;
   }
 
@@ -41,12 +48,14 @@
       // this is a very niave form of caching requests
       // needed to support touch devices, where pre-fetching
       // on hover is not availabele
-      if (this.state.apps.length) { return; }
+      if (this.state.apps.length) {
+        return;
+      }
 
       var fetchApps = $.ajax({
         url: `${interfacesURLForEnv(this.props.railsEnv, "api")}/people/v2/me/apps`,
         xhrFields: { withCredentials: true },
-        cache: false,
+        cache: false
       });
 
       fetchApps.success(apps => {
@@ -56,7 +65,7 @@
           .filter(excludeCurrentApp)
           .concat(apps.data.filter(findCurrentApp).sort(sortAppsByName));
 
-        this.setState({apps: sortedApps});
+        this.setState({ apps: sortedApps });
       });
     }
 
@@ -71,15 +80,13 @@
     }
 
     render() {
-      return (
-        <AppList apps={this.state.apps} />
-      );
+      return <AppList apps={this.state.apps} />;
     }
   }
 
   AppListContainer.propTypes = {
-    railsEnv: React.PropTypes.string.isRequired,
+    railsEnv: React.PropTypes.string.isRequired
   };
 
-  global.AppListContainer = (global.module || {}).exports = AppListContainer;
+  global.AppListContainer = ((global.module || {}).exports = AppListContainer);
 })(this);

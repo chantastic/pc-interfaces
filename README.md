@@ -49,6 +49,8 @@ Hit me (@chantastic) up if you're setting up a new project.
 
 ### master
 
+* [CHORE] Use prettier now that it's in dependencies [React, Babel, etc.]
+
 ### 1.0.4
 
 * [FIX] AppSwitcher max-width error for IE11

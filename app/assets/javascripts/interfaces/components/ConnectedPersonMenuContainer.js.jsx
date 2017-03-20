@@ -1,8 +1,7 @@
 /* global React, $, interfacesURLForEnv */
 
-(function (global) {
+(function(global) {
   "use strict";
-
   class ConnectedPersonMenuContainer extends React.Component {
     constructor(props) {
       super(props);
@@ -16,16 +15,18 @@
       // this is a very niave form of caching requests
       // needed to support touch devices, where pre-fetching
       // on hover is not availabele
-      if (this.state.connectedPeople.length) { return; }
+      if (this.state.connectedPeople.length) {
+        return;
+      }
 
       var fetchConnectedPeople = $.ajax({
         url: `${interfacesURLForEnv(this.props.railsEnv, "api")}/people/v2/me/connected_people`,
         xhrFields: { withCredentials: true },
-        cache: false,
+        cache: false
       });
 
-      fetchConnectedPeople.success((people) => {
-        this.setState({connectedPeople: people.data});
+      fetchConnectedPeople.success(people => {
+        this.setState({ connectedPeople: people.data });
       });
     }
 
@@ -42,13 +43,14 @@
     render() {
       const {
         profilePath,
-        ...props,
+        ...props
       } = this.props;
 
       return (
         <ConnectedPersonMenu
-         connectedPeople={this.state.connectedPeople}
-         {...props} />
+          connectedPeople={this.state.connectedPeople}
+          {...props}
+        />
       );
     }
   }
@@ -61,8 +63,9 @@
     currentPersonProfilePath: React.PropTypes.string,
     railsAppName: React.PropTypes.string.isRequired,
     railsEnv: React.PropTypes.string.isRequired,
-    showSettingsLink: React.PropTypes.bool.isRequired,
+    showSettingsLink: React.PropTypes.bool.isRequired
   };
 
-  global.ConnectedPersonMenuContainer = (global.module || {}).exports = ConnectedPersonMenuContainer;
+  global.ConnectedPersonMenuContainer = ((global.module || {
+  }).exports = ConnectedPersonMenuContainer);
 })(this);

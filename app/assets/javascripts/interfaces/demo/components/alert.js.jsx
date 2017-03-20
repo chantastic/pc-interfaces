@@ -1,89 +1,130 @@
 /* experiment: no `;` */
 
-(function () {
-
-function handlePurposeChange (e) {
-  return this.setState({purpose: e.target.value})
-}
-
-function handleOutlineChange (e) {
-  return this.setState({outline: e.target.checked})
-}
-
-function applyAlertClasses (props) {
-  return [
-    "alert",
-    props.purpose,
-    props.outline && "alert--outline",
-  ].filter(e => e).join(' ')
-}
-
-class Alert extends React.Component {
-  render () {
-    return <div className={applyAlertClasses(this.props)}> Alert Text </div>
+(function() {
+  function handlePurposeChange(e) {
+    return this.setState({ purpose: e.target.value });
   }
-}
 
-class AlertBuilder extends React.Component {
-  constructor (props) {
-    super(props)
+  function handleOutlineChange(e) {
+    return this.setState({ outline: e.target.checked });
+  }
 
-    this.state = {
-      purpose: "",
-      outline: false,
+  function applyAlertClasses(props) {
+    return ["alert", props.purpose, props.outline && "alert--outline"]
+      .filter(e => e)
+      .join(" ");
+  }
+
+  class Alert extends React.Component {
+    render() {
+      return <div className={applyAlertClasses(this.props)}> Alert Text </div>;
     }
   }
 
-  componentDidUpdate() {
-    // this could be optimized with `highlightElement`.
-    // i didn't use it because React 13.3 has a depricated DOM API
-    // and i don't want to come back and update it later.
-    Prism.highlightAll()
-  }
+  class AlertBuilder extends React.Component {
+    constructor(props) {
+      super(props);
 
-  render () {
-    let alert = <Alert
-      purpose={this.state.purpose}
-      outline={this.state.outline}
-    />
+      this.state = {
+        purpose: "",
+        outline: false
+      };
+    }
 
-    return (
-      <div>
-        <div className="d-f f_1 pb-1">
-          <div>
-            <h2> Roles Modifiers </h2>
+    componentDidUpdate() {
+      // this could be optimized with `highlightElement`.
+      // i didn't use it because React 13.3 has a depricated DOM API
+      // and i don't want to come back and update it later.
+      Prism.highlightAll();
+    }
 
-            <form onChange={handlePurposeChange.bind(this)}>
-              <label><input type="radio" value=""               checked={this.state.purpose === ""} readOnly />              <code>(default)      </code></label>
-              <label><input type="radio" value="alert--success" checked={this.state.purpose === "alert--success"} readOnly /><code>.alert--success</code></label>
-              <label><input type="radio" value="alert--warning" checked={this.state.purpose === "alert--warning"} readOnly /><code>.alert--warning</code></label>
-              <label><input type="radio" value="alert--danger"  checked={this.state.purpose === "alert--danger"}  readOnly /> <code>.alert--danger </code></label>
-              <label><input type="radio" value="alert--subtle"  checked={this.state.purpose === "alert--subtle"}  readOnly /> <code>.alert--subtle </code></label>
-            </form>
+    render() {
+      let alert = (
+        <Alert purpose={this.state.purpose} outline={this.state.outline} />
+      );
+
+      return (
+        <div>
+          <div className="d-f f_1 pb-1">
+            <div>
+              <h2> Roles Modifiers </h2>
+
+              <form onChange={handlePurposeChange.bind(this)}>
+                <label>
+                  <input
+                    type="radio"
+                    value=""
+                    checked={this.state.purpose === ""}
+                    readOnly
+                  />
+                  {" "}
+                  <code>(default) </code>
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    value="alert--success"
+                    checked={this.state.purpose === "alert--success"}
+                    readOnly
+                  />
+                  <code>.alert--success</code>
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    value="alert--warning"
+                    checked={this.state.purpose === "alert--warning"}
+                    readOnly
+                  />
+                  <code>.alert--warning</code>
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    value="alert--danger"
+                    checked={this.state.purpose === "alert--danger"}
+                    readOnly
+                  />
+                  {" "}
+                  <code>.alert--danger </code>
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    value="alert--subtle"
+                    checked={this.state.purpose === "alert--subtle"}
+                    readOnly
+                  />
+                  {" "}
+                  <code>.alert--subtle </code>
+                </label>
+              </form>
+            </div>
+
+            <div>
+              <h2> Generic Modifiers </h2>
+
+              <form onChange={handleOutlineChange.bind(this)}>
+                <label>
+                  <input type="checkbox" checked={this.props.outline} />
+                  <code>.alert--outline</code>
+                </label>
+              </form>
+            </div>
           </div>
 
-          <div>
-            <h2> Generic Modifiers </h2>
+          {alert}
 
-            <form onChange={handleOutlineChange.bind(this)}>
-              <label><input type="checkbox" checked={this.props.outline}/><code>.alert--outline</code></label>
-            </form>
-          </div>
+          <pre>
+            <code className="language-markup">
+              {ReactDOMServer.renderToStaticMarkup(alert)}
+            </code>
+          </pre>
+
         </div>
-
-        {alert}
-
-        <pre>
-          <code className="language-markup">
-            {ReactDOMServer.renderToStaticMarkup(alert)}
-          </code>
-        </pre>
-
-      </div>
-    )
+      );
+    }
   }
-}
 
-window.AlertBuilder = AlertBuilder
-
-}(this))
+  window.AlertBuilder = AlertBuilder;
+})(this);

@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/ministrycentered/interfaces.git",
+  "author": "Michael Chan <mijoch@gmail.com>",
+  "license": "NO LICENSE",
+  "dependencies": {
+    "prettier": "^0.22.0"
+  },
+  "scripts": {
+    "prettier": "prettier --write \"app/assets/javascripts/**/*.js\" && prettier --write \"app/assets/javascripts/**/*.jsx\""
+  }
+}

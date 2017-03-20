@@ -1,12 +1,10 @@
 /* global React */
 
-(function (global) {
+(function(global) {
   "use strict";
-
   class AppList extends React.Component {
     get styles() {
-      return {
-      };
+      return {};
     }
 
     render() {
@@ -21,8 +19,8 @@
   }
 
   AppList.propTypes = {
-    apps: React.PropTypes.array.isRequired,
+    apps: React.PropTypes.array.isRequired
   };
 
-  global.AppList = (global.module || {}).exports = AppList;
+  global.AppList = ((global.module || {}).exports = AppList);
 })(this);

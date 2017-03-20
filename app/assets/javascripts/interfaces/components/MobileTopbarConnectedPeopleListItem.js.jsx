@@ -1,14 +1,13 @@
 /* global React, interfacesURLForEnv, railsEnv, railsAppName */
 
-(function (global) {
+(function(global) {
   "use strict";
-
   var styles = {
     root: {
       textAlign: "left",
       borderBottom: "1px solid #e5e5e5",
       padding: "10px 10px 9px",
-      lineHeight: 2,
+      lineHeight: 2
     },
 
     anchor: {
@@ -16,8 +15,8 @@
       color: "#565656",
       whiteSpace: "nowrap",
       textOverflow: "ellipsis",
-      overflow: "hidden",
-    },
+      overflow: "hidden"
+    }
   };
 
   class MobileTopbarConnectedPersonListItem extends React.Component {
@@ -25,12 +24,14 @@
       return `${interfacesURLForEnv(railsEnv, "accounts")}/link/new?to=${this.props.person.id}&return=${railsAppName}%2f`;
     }
 
-    render () {
-      return <div style={styles.root}>
-        <a href={this.link} style={styles.anchor}>
-          {this.props.person.attributes.organization_name}
-        </a>
-      </div>;
+    render() {
+      return (
+        <div style={styles.root}>
+          <a href={this.link} style={styles.anchor}>
+            {this.props.person.attributes.organization_name}
+          </a>
+        </div>
+      );
     }
   }
 
@@ -38,10 +39,11 @@
     person: React.PropTypes.shape({
       id: React.PropTypes.string.isRequired,
       attributes: React.PropTypes.shape({
-        organization_name: React.PropTypes.string.isRequired,
-      }).isRequired,
-    }).isRequired,
+        organization_name: React.PropTypes.string.isRequired
+      }).isRequired
+    }).isRequired
   };
 
-  global.MobileTopbarConnectedPersonListItem = (global.module || {}).exports = MobileTopbarConnectedPersonListItem;
+  global.MobileTopbarConnectedPersonListItem = ((global.module || {
+  }).exports = MobileTopbarConnectedPersonListItem);
 })(this);
