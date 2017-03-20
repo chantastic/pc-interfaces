@@ -1,22 +1,24 @@
 .radio {
-  opacity: 0;
+  position: absolute;
   width: 1px;
   height: 1px;
-  position: absolute;
+  opacity: 0;
 }
+
 .radio:checked + label:before {
   box-shadow: none;
 }
+
 .radio:checked + label:after {
-  content: "";
-  border-radius: 30px;
-  width: 6px;
-  height: 6px;
-  background: white;
   position: absolute;
   top: 50%;
-  margin-top: -2px;
   left: 5px;
-  -webkit-transition: all 0.1s;
-          transition: all 0.1s;
+  width: 6px;
+  height: 6px;
+  margin-top: -2px;
+  content: '';
+  -webkit-transition: all .1s;
+  transition: all .1s;
+  border-radius: 30px;
+  background: white;
 }

@@ -1,1 +1,3 @@
-.fullwidth .main-wrap:before { display: none }
+.fullwidth .main-wrap:before {
+  display: none;
+}

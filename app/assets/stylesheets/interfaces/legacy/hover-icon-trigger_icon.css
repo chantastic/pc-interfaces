@@ -1,7 +1,10 @@
 .hover-icon-trigger .icon {
-  display: none;
   position: relative;
   top: 3px;
   right: -15px;
+  display: none;
 }
-.hover-icon-trigger:hover .icon { display: inline-block }
+
+.hover-icon-trigger:hover .icon {
+  display: inline-block;
+}

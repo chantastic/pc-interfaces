@@ -12,9 +12,9 @@
   }
 
   body:not([data-app-name=services]) .mobile-topbar-app-icon .symbol {
-    height: auto;
     width: auto;
-    fill: white;
+    height: auto;
     vertical-align: baseline;
+    fill: white;
   }
 }

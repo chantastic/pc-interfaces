@@ -1,8 +1,8 @@
 .app-badge_button {
-  color: white;
-  float:left;
+  font-size: 11px;
+  float: left;
+  overflow: hidden;
   height: 100%;
   padding: 0 10px;
-  font-size: 11px;
-  overflow: hidden;
+  color: white;
 }

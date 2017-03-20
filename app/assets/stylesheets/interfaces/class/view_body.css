@@ -1,4 +1,6 @@
-.view_body { display: flex; }
+.view_body {
+  display: flex;
+}
 
 @media (max-width: 767px) {
   .view_body {

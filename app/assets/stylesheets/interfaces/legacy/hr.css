@@ -1,7 +1,7 @@
 hr {
-  border: solid #dddddd;
-  border-width: 1px 0 0;
   clear: both;
-  margin: 12.5px 0 11.875px;
   height: 0;
+  margin: 12.5px 0 11.875px;
+  border: solid #ddd;
+  border-width: 1px 0 0;
 }

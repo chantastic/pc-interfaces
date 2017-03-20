@@ -1,6 +1,5 @@
 @import "interfaces/variables";
 @import "interfaces/mixin/legacy_queries";
-
 $button-border-width: 1px;
 $button-border-style: solid;
 
@@ -20,11 +19,9 @@ $button-border-style: solid;
 // +button-variant(black)                 - button modifier with defaults and black text
 // +button-variant(black, pink)           - button modifier with black text and pink background/border
 // +button-variant(black, pick, fuchsia)  - button modifier with black text, pink background, and fuchsia border
-@mixin button-variant($color:white, $background-color:#e6e6e6, $border-color:adjust-color($background-color, $lightness: -20%, $saturation: -5%), $is-link:false) {
+@mixin button-variant($color: white, $background-color: #e6e6e6, $border-color: adjust-color($background-color, $lightness: -20%, $saturation: -5%), $is-link: false) {
   @if $is-link {
-
-  }
-  @else {
+  } @else {
     // mixins
     @include _pseudo-classes($color, $background-color, $border-color);
     background-color: adjust-color($background-color, $lightness: 3%);
@@ -109,7 +106,7 @@ $button-border-style: solid;
   }
 
   &.btn--warning {
-    @include button-variant(adjust-color($warning-color, $lightness: -47%, $saturation: -25%), adjust-color($warning-color, $lightness: -15%, $saturation: 2%), $border-color:adjust-color($warning-color, $lightness: -30%, $saturation: -8%));
+    @include button-variant(adjust-color($warning-color, $lightness: -47%, $saturation: -25%), adjust-color($warning-color, $lightness: -15%, $saturation: 2%), $border-color: adjust-color($warning-color, $lightness: -30%, $saturation: -8%));
 
     &:hover {
       color: adjust-color($warning-color, $lightness: -47%, $saturation: -25%);

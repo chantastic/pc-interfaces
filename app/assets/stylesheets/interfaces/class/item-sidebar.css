@@ -1,3 +1,5 @@
 @media (min-width: 768px) {
-  .item-sidebar { flex: 0 0 225px }
+  .item-sidebar {
+    flex: 0 0 225px;
+  }
 }

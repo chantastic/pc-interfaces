@@ -1,7 +1,13 @@
-.modal__header { padding: 16px 18px 20px 18px }
+.modal__header {
+  padding: 16px 18px 20px 18px;
+}
+
 .modal__header:before,
 .modal__header:after {
-  content: " ";
   display: table;
+  content: ' ';
 }
-.modal__header:after { clear: both }
+
+.modal__header:after {
+  clear: both;
+}

@@ -1,3 +1,5 @@
 @media (min-width: 768px) {
-  .view_content { flex: 1 }
+  .view_content {
+    flex: 1;
+  }
 }

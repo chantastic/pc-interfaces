@@ -1,6 +1,6 @@
-input[type="checkbox"] {
+input[type='checkbox'] {
+  width: auto;
   margin-top: -1px;
   padding: 0;
-  width: auto;
   border: 0 none;
 }

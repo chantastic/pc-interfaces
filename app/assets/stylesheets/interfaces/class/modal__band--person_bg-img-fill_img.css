@@ -1,13 +1,13 @@
 .modal__band--person .bg-img-fill img {
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   display: block;
   min-width: 120%;
   margin-top: -50%;
   margin-left: -12%;
-  opacity: 0.4;
+  opacity: .4;
   filter: blur(30px);
 }

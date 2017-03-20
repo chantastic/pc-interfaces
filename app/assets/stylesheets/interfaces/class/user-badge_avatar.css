@@ -6,15 +6,16 @@
 .user-badge .avatar img {
   float: left;
   overflow: hidden;
-  border-radius: 50%;
   border: 1px solid #666;
+  border-radius: 50%;
 }
 
 .user-badge .avatar {
   line-height: 100%;
 }
 
-
 @media (min-width: 980px) {
-  .user-badge .avatar { margin-right: 10px }
+  .user-badge .avatar {
+    margin-right: 10px;
+  }
 }

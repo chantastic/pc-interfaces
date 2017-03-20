@@ -1,20 +1,22 @@
 .btn-group {
   position: relative;
-
-  list-style: none;
   margin: 0;
+  list-style: none;
 }
-.btn-group:before, .btn-group:after {
+
+.btn-group:before,
+.btn-group:after {
   display: table;
-  content: " ";
+  content: ' ';
 }
+
 .btn-group:after {
   clear: both;
 }
 
 /* relatives */
 
-.btn-group > {
+.btn-group > * {
   float: left;
 }
 
@@ -22,35 +24,39 @@
   position: relative;
   float: left;
 }
-.btn-group li:before, .btn-group li:after {
+
+.btn-group li:before,
+.btn-group li:after {
   display: table;
-  content: " ";
+  content: ' ';
 }
+
 .btn-group li:after {
   clear: both;
 }
 
 /* relatives: .btn */
 .btn-group .btn {
-  border-radius: 0;
-
   float: left;
-
   margin: 0;
   margin-left: -1px;
+  border-radius: 0;
 }
-.btn-group > .btn:first-child, .btn-group > :first-child .btn {
+
+.btn-group > .btn:first-child,
+.btn-group > :first-child .btn {
   border-radius: 3px 0 0 3px;
 }
 
-.btn-group > .btn:last-child, .btn-group > :last-child .btn {
+.btn-group > .btn:last-child,
+.btn-group > :last-child .btn {
   border-radius: 0 3px 3px 0;
 }
 
-.btn-group.half > {
+.btn-group.half > * {
   width: 50%;
 }
 
-.btn-group.thirds > {
+.btn-group.thirds > * {
   width: 33.333%;
 }

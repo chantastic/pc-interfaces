@@ -3,4 +3,6 @@
   border-bottom-style: solid;
 }
 
-.list-item:last-child { border-bottom-width: 0 }
+.list-item:last-child {
+  border-bottom-width: 0;
+}

@@ -1,8 +1,8 @@
 @media (max-width: 600px) {
   .modal {
-    margin: 3% auto !important;
     width: 94% !important;
     min-width: inherit !important;
     max-width: inherit !important;
+    margin: 3% auto !important;
   }
 }

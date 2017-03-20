@@ -2,10 +2,13 @@
   position: relative;
   margin: 25px auto;
 }
-.main-section .page-section:before, .main-section .page-section:after {
+
+.main-section .page-section:before,
+.main-section .page-section:after {
   display: table;
-  content: " ";
+  content: ' ';
 }
+
 .main-section .page-section:after {
   clear: both;
 }

@@ -1,6 +1,6 @@
 label {
-  display: block;
-  cursor: pointer;
-  margin-bottom: 4px;
   font-weight: normal;
+  display: block;
+  margin-bottom: 4px;
+  cursor: pointer;
 }

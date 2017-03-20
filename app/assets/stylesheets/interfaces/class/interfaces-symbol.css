@@ -1,7 +1,7 @@
 .interfaces-symbol {
   display: inline-block;
+  width: 1em;
+  height: 1em;
   vertical-align: text-top;
   fill: currentColor;
-  height: 1em;
-  width: 1em;
 }

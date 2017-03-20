@@ -1,1 +1,3 @@
-input[type="submit"] { outline: none }
+input[type='submit'] {
+  outline: none;
+}

@@ -1,19 +1,18 @@
 @import "interfaces/mixin/legacy_respond";
-
 @import "interfaces/variables";
 
 .tab-list-item {
   border-color: $list-border-color;
-  padding:      $list-vertical-padding $list-horizontal-padding;
-  color:        $link-color;
+  padding: $list-vertical-padding $list-horizontal-padding;
+  color: $link-color;
 }
 
 .tab-list-item:hover:not(.is-open) {
-  color:      $link-color-hover;
+  color: $link-color-hover;
 }
 
 .tab-list-item.is-open {
-  color:      $link-color-focus;
+  color: $link-color-focus;
 }
 
 // respond

@@ -3,39 +3,27 @@
     @media (min-width: 1200px) {
       @content;
     }
-  }
-
-  @else if $point == bp_3 {
+  } @else if $point == bp_3 {
     @media (min-width: 1024px) {
       @content;
     }
-  }
-
-  @else if $point == bp_2 {
+  } @else if $point == bp_2 {
     @media (min-width: 768px) {
       @content;
     }
-  }
-
-  @else if $point == bp_1 {
+  } @else if $point == bp_1 {
     @media (min-width: 601px) {
       @content;
     }
-  }
-
-  @else if $point == lte_tablet {
+  } @else if $point == lte_tablet {
     @media (max-width: 767px) {
       @content;
     }
-  }
-
-  @else if $point == lte_tablet-wide {
+  } @else if $point == lte_tablet-wide {
     @media (max-width: 1023px) {
       @content;
     }
-  }
-
-  @else if $point == lte_palm {
+  } @else if $point == lte_palm {
     @media (max-width: 600px) {
       @content;
     }
@@ -43,7 +31,7 @@
 }
 
 @mixin retina {
-  @media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
     @content;
   }
 }

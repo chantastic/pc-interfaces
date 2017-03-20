@@ -1,1 +1,3 @@
-.full-width-tabs .nav-tabs > li:first-child a { box-shadow: none }
+.full-width-tabs .nav-tabs > li:first-child a {
+  box-shadow: none;
+}

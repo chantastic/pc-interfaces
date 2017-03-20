@@ -2,30 +2,29 @@
   position: absolute;
   z-index: 900;
   top: 38px;
-
   min-width: 160px;
   margin: 0;
   padding: 3px 0;
-
   list-style: none;
-
-  transform: translate3d(0,0,0);
-
+  transform: translate3d(0, 0, 0);
   border-width: 1px;
   border-style: solid;
   border-radius: 3px;
   background: white;
   box-shadow: 0 3px 6px rgba(0, 0, 0, .15);
-
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 /* default presentation */
-.dropdown-menu { display: none }
+.dropdown-menu {
+  display: none;
+}
 
-.dropdown-menu.flush-right { right: 0 }
+.dropdown-menu.flush-right {
+  right: 0;
+}
 
 /* CASCADING PARENT */
 .dropdown.is-open .dropdown-menu {
-  display: block
+  display: block;
 }

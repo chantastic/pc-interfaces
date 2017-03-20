@@ -1,6 +1,6 @@
-input[type="radio"] {
+input[type='radio'] {
+  width: auto;
   margin-top: -2px;
   padding: 0;
-  width: auto;
   border: 0 none;
 }

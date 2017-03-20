@@ -1,6 +1,6 @@
-.modal--person-details h4.smaller a [class^="icon-"],
-.modal--person-details h4.smaller a [class*=" icon-"] {
+.modal--person-details h4.smaller a [class^='icon-'],
+.modal--person-details h4.smaller a [class*=' icon-'] {
   font-size: 16px;
-  color: #8fbe7d;
   margin-right: 6px;
+  color: #8fbe7d;
 }

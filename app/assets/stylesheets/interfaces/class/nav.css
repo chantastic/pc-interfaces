@@ -1,11 +1,16 @@
 .nav {
+  position: relative;
   margin: 0;
   padding: 0;
   list-style: none;
-  position: relative;
 }
-.nav:before, .nav:after {
-  content: " ";
+
+.nav:before,
+.nav:after {
   display: table;
+  content: ' ';
 }
-.nav:after { clear: both }
+
+.nav:after {
+  clear: both;
+}

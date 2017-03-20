@@ -1,10 +1,14 @@
 a,
-a:visited { color: $link-color }
+a:visited {
+  color: $link-color;
+}
 
 a:hover,
 a:visited:hover {
-  color: adjust-color($link-color, $lightness: -10%, $saturation: -5%)
+  color: adjust-color($link-color, $lightness: -10%, $saturation: -5%);
 }
-a:focus, a:visited:focus {
-  color: adjust-color($link-color, $lightness: -20%, $saturation: 0%)
+
+a:focus,
+a:visited:focus {
+  color: adjust-color($link-color, $lightness: -20%, $saturation: 0%);
 }

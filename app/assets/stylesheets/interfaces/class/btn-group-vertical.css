@@ -1,13 +1,15 @@
 .btn-group-vertical {
   position: relative;
-
-  list-style: none;
   margin: 0;
+  list-style: none;
 }
-.btn-group-vertical:before, .btn-group-vertical:after, {
+
+.btn-group-vertical:before,
+.btn-group-vertical:after {
   display: table;
-  content: " ";
+  content: ' ';
 }
+
 .btn-group-vertical:after {
   clear: both;
 }
@@ -19,17 +21,18 @@
 }
 
 .btn-group-vertical .btn {
-  border-radius: 0;
-  margin: -1px 0 0 0;
-  display: block;
-  text-align: left;
-  padding: 9px 13px;
   font-size: 13px;
+  display: block;
+  margin: -1px 0 0 0;
+  padding: 9px 13px;
+  text-align: left;
+  border-radius: 0;
 }
+
 .btn-group-vertical > *:first-child .btn {
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
   margin-top: 0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 
 .btn-group-vertical > *:last-child .btn {

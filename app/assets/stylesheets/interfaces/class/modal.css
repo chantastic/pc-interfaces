@@ -1,7 +1,7 @@
 .modal {
   position: relative;
-  display: none;
-  margin: 46px auto 0;
   z-index: 1100;
+  display: none;
   max-width: 600px;
+  margin: 46px auto 0;
 }

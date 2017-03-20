@@ -1,4 +1,5 @@
-.modal-well .row, .modal__band .row {
-  margin-left: auto;
+.modal-well .row,
+.modal__band .row {
   margin-right: auto;
+  margin-left: auto;
 }

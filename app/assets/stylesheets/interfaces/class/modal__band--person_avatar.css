@@ -1,9 +1,9 @@
 .modal__band--person .avatar {
   position: relative;
   z-index: 1;
-  border-radius: 100em;
-  float: left;
-  width: 91px;
   top: 5px;
   left: 7px;
+  float: left;
+  width: 91px;
+  border-radius: 100em;
 }

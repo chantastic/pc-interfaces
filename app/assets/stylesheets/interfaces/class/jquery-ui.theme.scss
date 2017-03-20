@@ -1,8 +1,7 @@
 @import "interfaces/variables";
 
 .ui-autocomplete {
-  box-shadow: 0 1px 6px -1px rgba($dark-gray,0.4);
-
+  box-shadow: 0 1px 6px -1px rgba($dark-gray, 0.4);
   border-color: adjust-color($form-color, $lightness: 17%, $saturation: -20%);
 }
 

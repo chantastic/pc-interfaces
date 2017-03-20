@@ -1,32 +1,30 @@
 .topbar_help-action {
   font-size: 24px;
-
   float: right;
-
   padding: 0 14px;
-
   transition: all .12s ease-in;
-
-  color: rgba(255,255,255,.7);
+  color: rgba(255, 255, 255, .7);
   border-left: 1px solid #384858;
 }
 
 .topbar_help-action:hover {
-  background-color: rgba(0,0,0,0.25);
-  color: rgba(255,255,255,1);
-  text-shadow: 0 0 10px rgba(255,255,255, .3);
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(0, 0, 0, .25);
+  text-shadow: 0 0 10px rgba(255, 255, 255, .3);
 }
 
 /* anchors */
 
 a.topbar_help-action {
-  color: rgba(255,255,255,.7);
+  color: rgba(255, 255, 255, .7);
 }
 
 a.topbar_help-action:hover {
-  color: rgba(255,255,255,1);
+  color: rgba(255, 255, 255, 1);
 }
 
 @media (max-width: 767px) {
-  body:not([data-app-name=services]) .topbar_help-action { display: none }
+  body:not([data-app-name=services]) .topbar_help-action {
+    display: none;
+  }
 }

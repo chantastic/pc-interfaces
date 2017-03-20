@@ -1,6 +1,6 @@
 li {
+  display: list-item;
   margin: 0;
   padding: 0;
-  display: list-item;
   text-align: -webkit-match-parent;
 }

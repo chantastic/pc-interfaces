@@ -1,3 +1,5 @@
 @media (min-width: 601px) {
-  .col-tighter-pad { padding-right: 10px }
+  .col-tighter-pad {
+    padding-right: 10px;
+  }
 }

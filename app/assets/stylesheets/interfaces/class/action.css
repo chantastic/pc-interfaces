@@ -1,3 +1,5 @@
 /* action or trigger? */
 /* reserve trigger for actions that are handled inside interfaces? */
-.action { cursor: pointer }
+.action {
+  cursor: pointer;
+}

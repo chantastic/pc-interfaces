@@ -1,1 +1,3 @@
-.modal [data-modal-close] { cursor: pointer }
+.modal [data-modal-close] {
+  cursor: pointer;
+}

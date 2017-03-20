@@ -1,13 +1,13 @@
 .account-switcher-organization-item {
-  border-bottom: 1px solid #e5e5e5 !important;
   transition: background-color .2s ease-in-out;
+  border-bottom: 1px solid #e5e5e5 !important;
 }
 
 .account-switcher-organization-item,
 .account-switcher-organization-item_link {
+  font-size: 12px !important;
   width: 100%;
   color: #565656 !important;
-  font-size: 12px !important;
 }
 
 .account-switcher-organization-item_link {
@@ -15,7 +15,7 @@
 }
 
 .account-switcher-organization-item_link:hover {
-  background-color: rgba(0,0,0,.03);
+  background-color: rgba(0, 0, 0, .03);
 }
 
 @media (min-width: 979px) {

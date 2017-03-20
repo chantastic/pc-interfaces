@@ -1,8 +1,8 @@
-input[type="checkbox"] + label {
+input[type='checkbox'] + label {
   display: inline-block;
-  margin-left: 4px;
   margin-right: 9px;
   margin-bottom: 0;
-  vertical-align: baseline;
+  margin-left: 4px;
   padding-top: 2px;
+  vertical-align: baseline;
 }

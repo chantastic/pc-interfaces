@@ -1,3 +1,5 @@
 @media (max-width: 600px) {
-  .modal__band--person { height: 180px }
+  .modal__band--person {
+    height: 180px;
+  }
 }

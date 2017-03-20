@@ -1,3 +1,5 @@
 @media (max-width: 600px) {
-  .modal--person-details .block-list.eq-pad .hover-icon-trigger .palm--third:first-child { padding-right: 7px }
+  .modal--person-details .block-list.eq-pad .hover-icon-trigger .palm--third:first-child {
+    padding-right: 7px;
+  }
 }

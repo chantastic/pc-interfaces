@@ -2,11 +2,13 @@
   position: relative;
   padding: 15px 0;
 }
+
 .modal-section:before,
 .modal-section:after {
-  content: " ";
   display: table;
+  content: ' ';
 }
+
 .modal-section:after {
   clear: both;
 }

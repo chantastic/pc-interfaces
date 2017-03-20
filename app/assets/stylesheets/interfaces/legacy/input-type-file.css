@@ -1,1 +1,3 @@
-input[type="file"] { height: 34px }
+input[type='file'] {
+  height: 34px;
+}

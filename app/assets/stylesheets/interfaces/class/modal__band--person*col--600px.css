@@ -1,3 +1,5 @@
 @media (max-width: 600px) {
-  .modal__band--person .col { margin-bottom: 0 }
+  .modal__band--person .col {
+    margin-bottom: 0;
+  }
 }

@@ -1,3 +1,5 @@
 @import "interfaces/mixin/default-input";
 
-input[type="search"] { @include default-input }
+input[type="search"] {
+  @include default-input;
+}

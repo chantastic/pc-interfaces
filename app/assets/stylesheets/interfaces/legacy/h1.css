@@ -1,21 +1,25 @@
 h1 {
-  margin: 0;
-  padding: 0;
-  position: relative;
+  font-size: 26px;
   font-weight: normal;
   font-style: normal;
-  text-rendering: optimizeLegibility;
-  margin-bottom: 6.25px;
   line-height: 1.4;
-  font-size: 26px;
+  position: relative;
+  margin: 0;
+  margin-bottom: 6.25px;
+  padding: 0;
+  text-rendering: optimizeLegibility;
 }
-h1:before, h1:after {
+
+h1:before,
+h1:after {
   display: table;
-  content: " ";
+  content: ' ';
 }
+
 h1:after {
   clear: both;
 }
+
 h1 h1 small,
 h1 h2 small,
 h1 h3 small,
@@ -23,6 +27,6 @@ h1 h4 small,
 h1 h5 small,
 h1 h6 small {
   font-size: 60%;
-  color: #6f6f6f;
   line-height: 0;
+  color: #6f6f6f;
 }

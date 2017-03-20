@@ -9,7 +9,7 @@
   border-bottom: 1px solid #313b45;
 }
 
-@media (min-width: 0)     {
+@media (min-width: 0) {
   body:not([data-app-name=services]) .topbar[data-constraints~=non-mobile] {
     display: none;
   }

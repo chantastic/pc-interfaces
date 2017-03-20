@@ -1,10 +1,13 @@
 .main-content-block {
   position: relative;
 }
-.main-content-block:before, .main-content-block:after {
+
+.main-content-block:before,
+.main-content-block:after {
   display: table;
-  content: " ";
+  content: ' ';
 }
+
 .main-content-block:after {
   clear: both;
 }

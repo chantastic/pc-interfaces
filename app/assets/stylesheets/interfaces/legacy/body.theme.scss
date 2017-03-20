@@ -1,4 +1,6 @@
-body { color: $base-font-color }
+body {
+  color: $base-font-color;
+}
 
 @media (min-width: 100em) {
   body {

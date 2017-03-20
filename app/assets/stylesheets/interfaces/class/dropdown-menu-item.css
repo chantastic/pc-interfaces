@@ -1,18 +1,21 @@
 .dropdown-menu-item {
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-
-  cursor: pointer;
-
   display: block;
   padding: 8px 16px;
-  border-width: 0;
+  cursor: pointer;
   white-space: nowrap;
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
 }
 
 .dropdown-menu-item:last-child {
   border-bottom-width: 0;
 }
 
-.dropdown-menu-item { background: transparent  }
-.dropdown-menu-item:hover { background: #eee }
+.dropdown-menu-item {
+  background: transparent;
+}
+
+.dropdown-menu-item:hover {
+  background: #eee;
+}

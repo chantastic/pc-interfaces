@@ -2,14 +2,18 @@
   position: relative;
   padding-right: 32px;
 }
+
 .has-icon-right > .icon {
+  line-height: 32px;
   position: absolute;
-  right: 0;
   top: 50%;
-  margin-top: -15px;
+  right: 0;
   width: 32px;
   height: 32px;
+  margin-top: -15px;
   text-align: center;
-  line-height: 32px;
 }
-.has-icon-right > .icon > span { margin: 0 }
+
+.has-icon-right > .icon > span {
+  margin: 0;
+}

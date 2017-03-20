@@ -1,1 +1,3 @@
-.modal--person-details .events.table th:last-child { padding-right: 20px }
+.modal--person-details .events.table th:last-child {
+  padding-right: 20px;
+}

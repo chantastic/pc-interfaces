@@ -1,15 +1,27 @@
 .user-badge_avatar-container {
-  float: left;
-  overflow: hidden;
-
-  margin: 11px 0 7px;
-  text-overflow: ellipsis;
-
-  white-space: nowrap;
   font-size: 12px;
   line-height: 16px;
+  float: left;
+  overflow: hidden;
+  margin: 11px 0 7px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-@media (min-width: 0)      { .user-badge_avatar-container { min-width: 0px   } }
-@media (min-width: 980px)  { .user-badge_avatar-container { min-width: 200px } }
-@media (min-width: 1280px) { .user-badge_avatar-container { min-width: 220px } }
+@media (min-width: 0) {
+  .user-badge_avatar-container {
+    min-width: 0;
+  }
+}
+
+@media (min-width: 980px) {
+  .user-badge_avatar-container {
+    min-width: 200px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .user-badge_avatar-container {
+    min-width: 220px;
+  }
+}
