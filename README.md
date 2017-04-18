@@ -47,8 +47,9 @@ Hit me (@chantastic) up if you're setting up a new project.
 
 ## CHANGELOG
 
-### master
+### 1.0.5
 
+* [CHORE] Use prettier now that it's in dependencies [React, Babel, etc.]
 * [CHORE] Use prettier now that it's in dependencies [React, Babel, etc.]
 
 ### 1.0.4
