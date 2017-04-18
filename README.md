@@ -49,7 +49,8 @@ Hit me (@chantastic) up if you're setting up a new project.
 
 ### 1.0.5
 
-* [CHORE] Use prettier now that it's in dependencies [React, Babel, etc.]
+* [FIX] Fix breaking global dependency on missing icon
+  - this caused the ConnectedPeople menu no to render in mobile.
 * [CHORE] Use prettier now that it's in dependencies [React, Babel, etc.]
 
 ### 1.0.4
