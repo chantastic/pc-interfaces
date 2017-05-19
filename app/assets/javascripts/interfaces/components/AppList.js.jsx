@@ -19,7 +19,7 @@
   }
 
   AppList.propTypes = {
-    apps: React.PropTypes.array.isRequired
+    apps: PropTypes.array.isRequired
   };
 
   global.AppList = ((global.module || {}).exports = AppList);

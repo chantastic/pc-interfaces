@@ -41,18 +41,18 @@
   }
 
   ConnectedPersonList.propTypes = {
-    connectedPeople: React.PropTypes.arrayOf(
-      React.PropTypes.shape({
-        id: React.PropTypes.string.isRequired
+    connectedPeople: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired
       })
     ).isRequired,
-    currentPersonAccountCenterId: React.PropTypes.number.isRequired,
-    currentPersonId: React.PropTypes.number.isRequired
+    currentPersonAccountCenterId: PropTypes.number.isRequired,
+    currentPersonId: PropTypes.number.isRequired
   };
 
   ConnectedPersonList.contextTypes = {
-    railsAppName: React.PropTypes.string.isRequired,
-    railsEnv: React.PropTypes.string.isRequired
+    railsAppName: PropTypes.string.isRequired,
+    railsEnv: PropTypes.string.isRequired
   };
 
   global.ConnectedPersonList = ((global.module || {

@@ -26,8 +26,8 @@
   }
 
   MobileTopbarCurrentPersonListItem.propTypes = {
-    organizationName: React.PropTypes.string.isRequired,
-    personName: React.PropTypes.string.isRequired
+    organizationName: PropTypes.string.isRequired,
+    personName: PropTypes.string.isRequired
   };
 
   global.MobileTopbarCurrentPersonListItem = ((global.module || {

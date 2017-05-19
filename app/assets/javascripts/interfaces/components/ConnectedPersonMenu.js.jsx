@@ -103,18 +103,18 @@
   }
 
   ConnectedPersonMenu.propTypes = {
-    connectedPeople: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
-    currentPersonAccountCenterId: React.PropTypes.number.isRequired,
-    currentPersonId: React.PropTypes.number.isRequired,
-    currentPersonName: React.PropTypes.string.isRequired,
-    currentPersonOrganizationName: React.PropTypes.string.isRequired,
-    currentPersonProfilePath: React.PropTypes.string,
-    showSettingsLink: React.PropTypes.bool.isRequired
+    connectedPeople: PropTypes.arrayOf(PropTypes.object).isRequired,
+    currentPersonAccountCenterId: PropTypes.number.isRequired,
+    currentPersonId: PropTypes.number.isRequired,
+    currentPersonName: PropTypes.string.isRequired,
+    currentPersonOrganizationName: PropTypes.string.isRequired,
+    currentPersonProfilePath: PropTypes.string,
+    showSettingsLink: PropTypes.bool.isRequired
   };
 
   ConnectedPersonMenu.childContextTypes = {
-    railsAppName: React.PropTypes.string,
-    railsEnv: React.PropTypes.string
+    railsAppName: PropTypes.string,
+    railsEnv: PropTypes.string
   };
 
   global.ConnectedPersonMenu = ((global.module || {

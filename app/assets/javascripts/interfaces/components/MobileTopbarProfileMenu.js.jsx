@@ -189,11 +189,11 @@
   }
 
   MobileTopbarProfileMenu.propTypes = {
-    onDismiss: React.PropTypes.func.isRequired,
-    apps: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
-    connectedPeople: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
-    onToggleUserCard: React.PropTypes.func.isRequired,
-    userCardShown: React.PropTypes.bool.isRequired
+    onDismiss: PropTypes.func.isRequired,
+    apps: PropTypes.arrayOf(PropTypes.object).isRequired,
+    connectedPeople: PropTypes.arrayOf(PropTypes.object).isRequired,
+    onToggleUserCard: PropTypes.func.isRequired,
+    userCardShown: PropTypes.bool.isRequired
   };
 
   global.MobileTopbarProfileMenu = ((global.module || {

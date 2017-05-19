@@ -104,8 +104,8 @@
   }
 
   MobileTopbarConnectedPeopleList.propTypes = {
-    people: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
-    style: React.PropTypes.object
+    people: PropTypes.arrayOf(PropTypes.object).isRequired,
+    style: PropTypes.object
   };
 
   global.MobileTopbarConnectedPeopleList = ((global.module || {

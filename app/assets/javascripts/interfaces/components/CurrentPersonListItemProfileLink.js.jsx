@@ -51,8 +51,8 @@
   }
 
   CurrentPersonListItemProfileLink.propTypes = {
-    id: React.PropTypes.number.isRequired,
-    profilePath: React.PropTypes.string.isRequired
+    id: PropTypes.number.isRequired,
+    profilePath: PropTypes.string.isRequired
   };
 
   global.CurrentPersonListItemProfileLink = ((global.module || {

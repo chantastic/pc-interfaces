@@ -101,16 +101,16 @@
   }
 
   CurrentPersonListItem.propTypes = {
-    id: React.PropTypes.number.isRequired,
-    name: React.PropTypes.string.isRequired,
-    organizationName: React.PropTypes.string.isRequired,
-    profilePath: React.PropTypes.string,
-    showSettingsLink: React.PropTypes.bool.isRequired
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    organizationName: PropTypes.string.isRequired,
+    profilePath: PropTypes.string,
+    showSettingsLink: PropTypes.bool.isRequired
   };
 
   CurrentPersonListItem.contextTypes = {
-    railsAppName: React.PropTypes.string.isRequired,
-    railsEnv: React.PropTypes.string.isRequired
+    railsAppName: PropTypes.string.isRequired,
+    railsEnv: PropTypes.string.isRequired
   };
 
   global.CurrentPersonListItem = ((global.module || {

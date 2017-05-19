@@ -46,7 +46,7 @@
   }
 
   MobileTopbarRouteButton.PropTypes = {
-    name: React.PropTypes.string.isRequired
+    name: PropTypes.string.isRequired
   };
 
   global.MobileTopbarRouteButton = ((global.module || {

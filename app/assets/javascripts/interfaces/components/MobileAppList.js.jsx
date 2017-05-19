@@ -61,10 +61,10 @@
   }
 
   MobileAppList.propTypes = {
-    apps: React.PropTypes.arrayOf(
-      React.PropTypes.shape({
-        attributes: React.PropTypes.shape({
-          name: React.PropTypes.string.isRequired
+    apps: PropTypes.arrayOf(
+      PropTypes.shape({
+        attributes: PropTypes.shape({
+          name: PropTypes.string.isRequired
         })
       })
     ).isRequired

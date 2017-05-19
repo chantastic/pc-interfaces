@@ -114,7 +114,7 @@
   }
 
   MobileTopbarProfileMenuContainer.propTypes = {
-    onDismiss: React.PropTypes.func.isRequired
+    onDismiss: PropTypes.func.isRequired
   };
 
   global.MobileTopbarProfileMenuContainer = ((global.module || {

@@ -51,9 +51,9 @@
   }
 
   MobileTopbarUserBadge.propTypes = {
-    src: React.PropTypes.string.isRequired,
-    name: React.PropTypes.string.isRequired,
-    width: React.PropTypes.number
+    src: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    width: PropTypes.number
   };
 
   MobileTopbarUserBadge.defaultProps = {
