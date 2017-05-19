@@ -97,7 +97,7 @@
     }
   }
 
-  MobileTopbar.PropTypes = {
+  MobileTopbar.propTypes = {
     routes: PropTypes.string.isRequired,
     railsAppName: PropTypes.string.isRequired
   };

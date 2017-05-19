@@ -28,7 +28,7 @@
     }
   }
 
-  AppIcon.PropTypes = {
+  AppIcon.propTypes = {
     name: PropTypes.string.isRequired
   };
 

@@ -45,7 +45,7 @@
     }
   }
 
-  MobileTopbarRouteButton.PropTypes = {
+  MobileTopbarRouteButton.propTypes = {
     name: PropTypes.string.isRequired
   };
 
