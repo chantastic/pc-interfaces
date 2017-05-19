@@ -47,6 +47,10 @@ Hit me (@chantastic) up if you're setting up a new project.
 
 ## CHANGELOG
 
+### 1.1.0
+
+* [FIX] Add PropTypes global for support of React v15.5
+
 ### 1.0.5
 
 * [FIX] Fix breaking global dependency on missing icon
