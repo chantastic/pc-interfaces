@@ -69,12 +69,12 @@
   }
 
   MobileTopbarRouteList.propTypes = {
-    activeRouteName: React.PropTypes.string,
-    routes: React.PropTypes.arrayOf(
-      React.PropTypes.shape({
-        classes: React.PropTypes.string.isRequired,
-        href: React.PropTypes.string.isRequired,
-        name: React.PropTypes.string.isRequired
+    activeRouteName: PropTypes.string,
+    routes: PropTypes.arrayOf(
+      PropTypes.shape({
+        classes: PropTypes.string.isRequired,
+        href: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired
       })
     ).isRequired
   };

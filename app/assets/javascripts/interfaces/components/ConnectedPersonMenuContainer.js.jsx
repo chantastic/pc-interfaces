@@ -56,14 +56,14 @@
   }
 
   ConnectedPersonMenuContainer.propTypes = {
-    currentPersonAccountCenterId: React.PropTypes.number.isRequired,
-    currentPersonId: React.PropTypes.number.isRequired,
-    currentPersonName: React.PropTypes.string.isRequired,
-    currentPersonOrganizationName: React.PropTypes.string.isRequired,
-    currentPersonProfilePath: React.PropTypes.string,
-    railsAppName: React.PropTypes.string.isRequired,
-    railsEnv: React.PropTypes.string.isRequired,
-    showSettingsLink: React.PropTypes.bool.isRequired
+    currentPersonAccountCenterId: PropTypes.number.isRequired,
+    currentPersonId: PropTypes.number.isRequired,
+    currentPersonName: PropTypes.string.isRequired,
+    currentPersonOrganizationName: PropTypes.string.isRequired,
+    currentPersonProfilePath: PropTypes.string,
+    railsAppName: PropTypes.string.isRequired,
+    railsEnv: PropTypes.string.isRequired,
+    showSettingsLink: PropTypes.bool.isRequired
   };
 
   global.ConnectedPersonMenuContainer = ((global.module || {

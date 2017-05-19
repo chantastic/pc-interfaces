@@ -121,10 +121,10 @@
   }
 
   ConnectedPersonListItem.propTypes = {
-    person: React.PropTypes.shape({
-      id: React.PropTypes.string.isRequired,
-      attributes: React.PropTypes.shape({
-        organization_name: React.PropTypes.string.isRequired
+    person: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      attributes: PropTypes.shape({
+        organization_name: PropTypes.string.isRequired
       }).isRequired
     }).isRequired
   };

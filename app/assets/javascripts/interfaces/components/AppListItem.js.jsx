@@ -67,11 +67,11 @@
   }
 
   AppListItem.propTypes = {
-    app: React.PropTypes.shape({
-      id: React.PropTypes.string.isRequired,
-      attributes: React.PropTypes.shape({
-        name: React.PropTypes.string.isRequired,
-        url: React.PropTypes.string.isRequired
+    app: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      attributes: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired
       }).isRequired
     }).isRequired
   };

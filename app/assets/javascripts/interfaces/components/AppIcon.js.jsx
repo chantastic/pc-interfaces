@@ -29,7 +29,7 @@
   }
 
   AppIcon.PropTypes = {
-    name: React.PropTypes.string.isRequired
+    name: PropTypes.string.isRequired
   };
 
   AppIcon.defaultProps = {

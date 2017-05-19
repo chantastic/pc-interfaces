@@ -85,7 +85,7 @@
   }
 
   AppListContainer.propTypes = {
-    railsEnv: React.PropTypes.string.isRequired
+    railsEnv: PropTypes.string.isRequired
   };
 
   global.AppListContainer = ((global.module || {}).exports = AppListContainer);

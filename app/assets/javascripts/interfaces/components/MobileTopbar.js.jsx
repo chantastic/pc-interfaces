@@ -98,8 +98,8 @@
   }
 
   MobileTopbar.PropTypes = {
-    routes: React.PropTypes.string.isRequired,
-    railsAppName: React.PropTypes.string.isRequired
+    routes: PropTypes.string.isRequired,
+    railsAppName: PropTypes.string.isRequired
   };
 
   global.MobileTopbar = ((global.module || {}).exports = MobileTopbar);
