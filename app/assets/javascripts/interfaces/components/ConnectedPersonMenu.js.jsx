@@ -93,8 +93,9 @@
                 "accounts",
                 "logout"
               )}
+              data-turbolinks={false}
             >
-              Logout
+              Log out
             </a>
           </div>
         </div>
