@@ -94,7 +94,7 @@
                 "logout"
               )}
             >
-              Logout
+              Log out
             </a>
           </div>
         </div>

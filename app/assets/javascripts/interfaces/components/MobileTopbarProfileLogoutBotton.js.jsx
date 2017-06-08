@@ -16,7 +16,7 @@
           href={interfacesURLForEnv(railsEnv, "accounts", "logout")}
           style={styles.root}
         >
-          Logout
+          Log out
         </a>
       );
     }
