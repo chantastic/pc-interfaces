@@ -47,6 +47,11 @@ Hit me (@chantastic) up if you're setting up a new project.
 
 ## CHANGELOG
 
+### 1.2.0
+
+* [FIX] add Turbolinks 5 opt-out on logout
+* [UPDATE] change "Logout" to "Log out"
+
 ### 1.1.0
 
 * [FIX] Add PropTypes global for support of React v15.5
