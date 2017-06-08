@@ -15,6 +15,7 @@
         <a
           href={interfacesURLForEnv(railsEnv, "accounts", "logout")}
           style={styles.root}
+          data-turbolinks={false}
         >
           Log out
         </a>
