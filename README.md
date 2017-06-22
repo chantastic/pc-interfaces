@@ -47,6 +47,10 @@ Hit me (@chantastic) up if you're setting up a new project.
 
 ## CHANGELOG
 
+### master
+* [fix] add `coffee-rails` dependency to gemspec
+* [BREAKING CHANGE] Remove IE hacks from `vendor/select.css`.
+
 ### 1.2.0
 
 * [FIX] add Turbolinks 5 opt-out on logout
