@@ -47,7 +47,7 @@ Hit me (@chantastic) up if you're setting up a new project.
 
 ## CHANGELOG
 
-### master
+### 1.3.0
 * [fix] add `coffee-rails` dependency to gemspec
 * [BREAKING CHANGE] Remove IE hacks from `vendor/select.css`.
 
