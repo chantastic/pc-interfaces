@@ -45,7 +45,8 @@ INTERFACES.hashAPI =
     new INTERFACES.ModalIdView(@_getModalHashSelector()).show()
 
   _hashIsModal: ->
-    $('#' + @_getModalHashSelector()).length
+    try
+      $('#' + @_getModalHashSelector()).length
 
   _hashIsModalPath: ->
     @_getHashValue().match /^modal-path\=/
