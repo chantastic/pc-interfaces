@@ -47,6 +47,13 @@ Hit me (@chantastic) up if you're setting up a new project.
 
 ## CHANGELOG
 
+### 1.4.0
+* [REMOVE] remove MobileTopbarUserBadge
+* [REMOVE] remove vendor/react-media-object
+
+### 1.3.1
+* [fix] guard interpreting the URL hash as a modal id
+
 ### 1.3.0
 * [fix] add `coffee-rails` dependency to gemspec
 * [BREAKING CHANGE] Remove IE hacks from `vendor/select.css`.
