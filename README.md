@@ -47,6 +47,10 @@ Hit me (@chantastic) up if you're setting up a new project.
 
 ## CHANGELOG
 
+### 1.4.1
+
+* [FIX] remove Sprockets require directive referencing the removed react-media-object
+
 ### 1.4.0
 * [REMOVE] remove MobileTopbarUserBadge
 * [REMOVE] remove vendor/react-media-object
