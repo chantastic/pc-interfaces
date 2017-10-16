@@ -34,7 +34,7 @@ $link-color-focus: saturate(darken($link-color, 15), 5) !default;
 $highlighted-bg-color: adjust-color($link-color, $lightness: 55%, $saturation: 1%) !default;
 $highlighted-color: $link-color-hover !default;
 $dropdown-shadow: rgba(adjust-color($base-color, $lightness: -10, $saturation: -49), 0.45);
-$topbar-height: 51px !default;
+$topbar-height: 48px !default;
 $sidebar-width-big-screen: 260px !default;
 $sidebar-width-med-screen: 225px !default;
 $border-color: adjust-color($bg-color, $lightness: -14%) !default;

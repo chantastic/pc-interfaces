@@ -9,7 +9,7 @@ html {
     background: adjust-color($sidebar-bg-color, $lightness: -7%, $saturation: -2%);
 
     &:before {
-      height: ($topbar-height + 1px);
+      height: $topbar-height;
       background: adjust-color($sidebar-bg-color, $lightness: -10%, $saturation: -2%);
     }
   }
