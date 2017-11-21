@@ -11,6 +11,6 @@ Interfaces::Engine.routes.draw do
 
   root \
     to: "pages#show",
-    id: "css",
+    id: "home",
     constraints: ->(_) { Rails.env.development? || ENV['SHOW_INTERFACES_ROUTES'] }
 end

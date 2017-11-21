@@ -1,5 +1,4 @@
 //= require interfaces/dependencies
-//= require interfaces/interfaces.components
 //= require interfaces/interfaces.modals
 //= require interfaces/interfaces.tabs
 //= require interfaces/interfaces.dropdowns

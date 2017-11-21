@@ -223,6 +223,7 @@
 /* list */
 @import "interfaces/class/list";
 @import "interfaces/class/list-item";
+@import "interfaces/class/action";
 @import "interfaces/class/action-list";
 @import "interfaces/class/action-list.theme";
 @import "interfaces/class/action-list-item";
@@ -239,47 +240,6 @@
 @import "interfaces/class/tab-list-item.theme";
 @import "interfaces/class/tab-content.theme";
 @import "interfaces/class/tab-content-group.theme";
-
-/* topbar */
-@import "interfaces/class/account-switcher-organization-list";
-@import "interfaces/class/account-switcher";
-@import "interfaces/class/account-switcher_action-group";
-@import "interfaces/class/account-switcher_action";
-@import "interfaces/class/account-switcher_link";
-@import "interfaces/class/action-account-switcher-organization-item";
-@import "interfaces/class/action";
-@import "interfaces/class/app-badge";
-@import "interfaces/class/app-badge_button";
-@import "interfaces/class/app-badge_chevron";
-@import "interfaces/class/app-badge_container";
-@import "interfaces/class/app-badge_logo";
-@import "interfaces/class/bookmark-svg";
-@import "interfaces/class/help";
-@import "interfaces/class/legacy-user-badge";
-@import "interfaces/class/logout--account-switcher_action";
-@import "interfaces/class/mobile-top-bar-section";
-@import "interfaces/class/mobile-topbar";
-@import "interfaces/class/topbar_route-group";
-@import "interfaces/class/name";
-@import "interfaces/class/non-mobile-topbar_app";
-@import "interfaces/class/organization-name";
-@import "interfaces/class/top-bar-overrides";
-@import "interfaces/class/topbar";
-@import "interfaces/class/topbar_app-list";
-@import "interfaces/class/topbar_app";
-@import "interfaces/class/topbar_applist";
-@import "interfaces/class/topbar_applist_app";
-@import "interfaces/class/topbar_applist_icon";
-@import "interfaces/class/topbar_help";
-@import "interfaces/class/mobile-topbar_route-group";
-@import "interfaces/class/topbar_route";
-@import "interfaces/class/topbar_route_icon";
-@import "interfaces/class/unlink--account-switcher_action";
-@import "interfaces/class/user-badge";
-@import "interfaces/class/user-badge_avatar-container";
-@import "interfaces/class/user-badge_avatar";
-@import "interfaces/class/user-badge_user-name";
-@import "interfaces/class/user-name";
 
 /* modal */
 @import "interfaces/class/modal";

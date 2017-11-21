@@ -47,6 +47,9 @@ Hit me (@chantastic) up if you're setting up a new project.
 
 ## CHANGELOG
 
+### 2.0.0
+* [BREAKING CHANGE] remove Topbar components, css, views, and helpers
+
 ### 1.4.1
 
 * [FIX] remove Sprockets require directive referencing the removed react-media-object
