@@ -1,0 +1,20 @@
+@import "interfaces/variables";
+
+.block-list__item {
+  border-bottom-color: adjust-color($pane-header-bg-bottom, $lightness: -7%);
+}
+
+.block-list.block-links .block-list__item {
+  > a, .block-list__link {
+    &:hover {
+      color: $highlighted-color;
+      background: $highlighted-bg-color;
+    }
+  }
+}
+
+.block-list--fill {
+  .block-list__item {
+    background: adjust-color($pane-header-bg-bottom, $lightness: 2%);
+  }
+}
