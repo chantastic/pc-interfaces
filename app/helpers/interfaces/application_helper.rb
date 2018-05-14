@@ -94,6 +94,36 @@ module Interfaces
       end
     end
 
+    def planningcenter_svg_use_tag(name, **attrs, &block)
+      svg, symbol = name.split("#")
+
+      if block.nil?
+        message = <<-EOF
+  use_svg expects a block for asset path resolution. Common implementation looks like this:
+  use_svg(name, attrs) { | path | localize_asset_path(asset_path(path)) }
+        EOF
+
+        raise message
+      end
+
+      content_tag(
+        "svg",
+        content_tag(
+          "use",
+          "",
+          "xlink:href": block.call("@planningcenter/icons/sprites/#{svg.gsub(/\.svg/, "")}.svg##{symbol}"),
+        ),
+        {
+          class: "symbol #{attrs[:class]}".squish,
+          role: "img",
+        }.merge(attrs.except(:class)),
+      )
+    end
+
+    def relativize_asset_path(path = "")
+      path.gsub!(/.*?(?=\/assets)/im, "")
+    end
+
     private
 
     def current_app

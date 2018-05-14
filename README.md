@@ -48,6 +48,9 @@ Hit me (@chantastic) up if you're setting up a new project.
 ## CHANGELOG
 
 ### 2.1.0
+* [FEATURE] add `@planningcenter/icons` helpers
+  - `planningcenter_svg_use_tag`
+  - `relativize_asset_path`
 
 ### 2.0.0
 * [BREAKING CHANGE] remove Topbar components, css, views, and helpers
