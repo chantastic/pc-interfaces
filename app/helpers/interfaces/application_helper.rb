@@ -116,6 +116,7 @@ module Interfaces
         {
           class: "symbol #{attrs[:class]}".squish,
           role: "img",
+          title: "#{symbol} icon",
         }.merge(attrs.except(:class)),
       )
     end
