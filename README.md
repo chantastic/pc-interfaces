@@ -47,6 +47,9 @@ Hit me (@chantastic) up if you're setting up a new project.
 
 ## CHANGELOG
 
+### 2.2.0 (prerelease)
+* [FEATURE] add new favicons
+
 ### 2.1.1
 * [FIX] add `title` attribute to `planningcenter_svg_use_tag` helper
 
