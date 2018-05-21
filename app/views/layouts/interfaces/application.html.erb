@@ -5,7 +5,35 @@
 <% interfaces_organization = OpenStruct.new(name: "Interfaces Organization") %>
 <!doctype html>
 <html class="no-js" lang="en">
-  <%= interfaces_head person: interfaces_person %>
+  <head>
+    <meta charset="utf-8">
+    <meta content="" name="description">
+    <meta content="" name="Planning Center Online UI Boilerplate">
+    <meta content="True" name="HandheldFriendly">
+    <meta content="yes" name="mobile-web-app-capable">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black-transparent" name="apple-mobile-web-app-status-bar-style">
+
+    <title><%= @page_title || '' %></title>
+
+    <%# CSS %>
+    <%= stylesheet_link_tag "application" %>
+
+    <%# JS %>
+    <%= interfaces_js_environment person: interfaces_person, organization: interfaces_organization %>
+    <%= javascript_include_tag "application" %>
+
+    <%= render "interfaces/favicons" %>
+
+    <%# iOS %>
+    <meta content="width=device-width initial-scale=1.0" name="viewport">
+    <meta content="320 and Up" name="apple-mobile-web-app-title">
+    <meta content="initial-scale=1.0" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="images/interfaces/apple-touch-icon-144x144-precomposed.png" name="msapplication-TileImage">
+    <meta content="#3476a8" name="msapplication-TileColor">
+  </head>
 
   <body>
     <%= interfaces_wrap do %>
