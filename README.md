@@ -47,6 +47,9 @@ Hit me (@chantastic) up if you're setting up a new project.
 
 ## CHANGELOG
 
+### 2.3.0
+* [FEATURE] support Safari "pinned tabs"
+
 ### 2.2.0
 * [FEATURE] add favicons for all apps
 * [FEATURE] add `favicon_asset_paths(app_name)` to assist in adding correct precompiled assets to list
