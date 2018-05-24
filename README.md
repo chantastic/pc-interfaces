@@ -47,6 +47,9 @@ Hit me (@chantastic) up if you're setting up a new project.
 
 ## CHANGELOG
 
+### 2.3.2
+* [FIX] better support for Safari Add to Homescreen
+
 ### 2.3.0
 * [FEATURE] support Safari "pinned tabs"
 
