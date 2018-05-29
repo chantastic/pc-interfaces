@@ -1,14 +1,58 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Dummy</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="" name="description">
+    <meta content="" name="Planning Center Online UI Boilerplate">
+    <meta content="True" name="HandheldFriendly">
+    <meta content="yes" name="mobile-web-app-capable">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black-transparent" name="apple-mobile-web-app-status-bar-style">
 
-<%= yield %>
+    <title><%= @page_title || '' %></title>
 
-</body>
+    <%= render "interfaces/favicons", app_name: "check-ins", app_color: "#c0ffee" %>
+
+    <%= stylesheet_link_tag "application" %>
+
+    <%= render "interfaces/js_env"  %>
+    <%= javascript_include_tag "application" %>
+
+    <meta content="width=device-width initial-scale=1.0" name="viewport">
+    <meta content="320 and Up" name="apple-mobile-web-app-title">
+    <meta content="initial-scale=1.0" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="images/interfaces/apple-touch-icon-144x144-precomposed.png" name="msapplication-TileImage">
+    <meta content="#3476a8" name="msapplication-TileColor">
+    <style>
+      .system-ui {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+      }
+    </style>
+  </head>
+
+  <body class="system-ui">
+    <div class="off-canvas-wrap">
+      <div class="main-wrap">
+        <div class="main-content-block inner-wrap">
+          <section class="main-section">
+            <div class="main-section__inner">
+              <%= yield %>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="content">
+        Designed in CA <span class="pco-ui-pco" aria-hidden="true"></span> Copyright <%= Date.current.year %>
+      </div>
+    </footer>
+
+    <%= render "interfaces/helpdesk" %>
+  </body>
 </html>

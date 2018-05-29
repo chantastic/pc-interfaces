@@ -16,12 +16,6 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  # dependencies for host application
-  spec.add_dependency 'pco-url', '>= 1.2.0'
-  spec.add_dependency 'autoprefixer-rails', '~> 6.0'
-  spec.add_dependency 'react-rails', '>= 1.3.1'
-  spec.add_dependency 'coffee-rails'
-
   spec.add_development_dependency 'sqlite3'
-  spec.add_development_dependency 'rails', '~> 4.0.2'
+  spec.add_development_dependency 'rails', '~> 4.2.0'
 end

@@ -17,4 +17,4 @@
 //= require react_ujs
 //= require react-server
 //= require interfaces/interfaces
-//= require interfaces/demos
+//= require_tree ./demo/components

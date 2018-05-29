@@ -5,4 +5,3 @@
 //= require interfaces/interfaces.data_api
 //= require interfaces/helpers
 //= require interfaces/utils
-//= require interfaces/interfacesURLForEnv

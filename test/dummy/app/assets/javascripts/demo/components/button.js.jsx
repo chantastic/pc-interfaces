@@ -49,13 +49,6 @@
       };
     }
 
-    componentDidUpdate() {
-      // this could be optimized with `highlightElement`.
-      // i didn't use it because React 13.3 has a depricated DOM API
-      // and i don't want to come back and update it later.
-      Prism.highlightAll();
-    }
-
     render() {
       let button = (
         <Button
@@ -79,8 +72,7 @@
                     value=""
                     checked={this.state.purpose === ""}
                     readOnly
-                  />
-                  {" "}
+                  />{" "}
                   <code>(default) </code>
                 </label>
                 <label>
@@ -116,8 +108,7 @@
                     value="btn--danger"
                     checked={this.state.purpose === "btn--danger"}
                     readOnly
-                  />
-                  {" "}
+                  />{" "}
                   <code>.btn--danger </code>
                 </label>
               </form>
@@ -133,8 +124,7 @@
                     value=""
                     checked={this.state.size === ""}
                     readOnly
-                  />
-                  {" "}
+                  />{" "}
                   <code>(default) </code>
                 </label>
                 <label>
@@ -161,8 +151,7 @@
                     value="btn--tiny"
                     checked={this.state.size === "btn--tiny"}
                     readOnly
-                  />
-                  {" "}
+                  />{" "}
                   <code>.btn--tiny </code>
                 </label>
                 <label>
@@ -202,7 +191,6 @@
               {ReactDOMServer.renderToStaticMarkup(button)}
             </code>
           </pre>
-
         </div>
       );
     }

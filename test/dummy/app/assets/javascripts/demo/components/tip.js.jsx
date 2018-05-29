@@ -32,7 +32,8 @@
       if (!anchor && !position && !multiline)
         return (
           <span data-has-tip data-tip-content="This is a tip">
-            {" "}Hover me for a tip{" "}
+            {" "}
+            Hover me for a tip{" "}
           </span>
         );
       return (
@@ -40,7 +41,8 @@
           data-has-tip={applyTipOptions(this.props)}
           data-tip-content={getTipContent(this.props)}
         >
-          {" "}Hover me for a tip{" "}
+          {" "}
+          Hover me for a tip{" "}
         </span>
       );
     }
@@ -55,13 +57,6 @@
         position: "",
         multiline: false
       };
-    }
-
-    componentDidUpdate() {
-      // this could be optimized with `highlightElement`.
-      // i didn't use it because React 13.3 has a depricated DOM API
-      // and i don't want to come back and update it later.
-      Prism.highlightAll();
     }
 
     render() {
@@ -189,9 +184,7 @@
             </div>
           </div>
 
-          <div className="py-2">
-            {tip}
-          </div>
+          <div className="py-2">{tip}</div>
 
           <pre>
             <code className="language-markup">
@@ -199,9 +192,9 @@
             </code>
           </pre>
           <em className="c-l.5">
-            * The tip is visually persisted for customization only. You'll have to hover them in actual use.
+            * The tip is visually persisted for customization only. You'll have
+            to hover them in actual use.
           </em>
-
         </div>
       );
     }

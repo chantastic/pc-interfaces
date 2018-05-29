@@ -15,6 +15,7 @@ Visit [Interfaces Docs](http://interfaces-docs.herokuapp.com)
 ## Development
 
 This is a conventional Rails Engine and can be worked on as such:
+
 ```bash
 $ cd ~/Code
 $ git clone git@github.com:ministrycentered/interfaces.git
@@ -50,6 +51,7 @@ Hit me (@chantastic) up if you're setting up a new project.
 ## CHANGELOG
 
 ### 3.0.0-pre
+
 * [BREAKING CHANGE] remove `modal` helper
 * [BREAKING CHANGE] remove `modal_trigger` helper
 * [BREAKING CHANGE] remove `modal_footer` helper
@@ -62,34 +64,59 @@ Hit me (@chantastic) up if you're setting up a new project.
 * [BREAKING CHANGE] remove `square_avatar` helper
 * [BREAKING CHANGE] remove `interfaces_avatar` helper
 * [BREAKING CHANGE] remove `interfaces_helpdesk` helper
-  - replace with use of `interfaces/_helpdesk` directly
+  * replace with use of `interfaces/_helpdesk` directly
 * [BREAKING CHANGE] remove `interfaces_js_environment` helper
-  - replace with use of `interfaces/_js_env` directly
+  * replace with use of `interfaces/_js_env` directly
 * [BREAKING CHANGE] remove `NullPerson` helper
 * [BREAKING CHANGE] remove `NullOrganization` helper
 * [BREAKING CHANGE] remove `window.interfacesPerson`
 * [BREAKING CHANGE] remove `window.interfacesOrganization`
 
 * [BREAKING CHANGE] remove utility classes
-  - `hide`
-  - `clear`
-  - `right`
-  - `left`
-  - `instructional-caption`
-  - `text-left`
-  - `text-center`
-  - `text-justify`
-  - `text-right`
-  - `clfx`
-  - `clearfix`
-  - `dib`
-  - `m0a`
-  - `mb0`
-  - `mr0`
-  - `ml0`
-  - `mt0`
-  - `pb0`
-  - `truncate`
-  - `mar-btm-baseline`
-  - `unstyled`
-  - `pointer`
+
+  * `hide`
+  * `clear`
+  * `right`
+  * `left`
+  * `instructional-caption`
+  * `text-left`
+  * `text-center`
+  * `text-justify`
+  * `text-right`
+  * `clfx`
+  * `clearfix`
+  * `dib`
+  * `m0a`
+  * `mb0`
+  * `mr0`
+  * `ml0`
+  * `mt0`
+  * `pb0`
+  * `truncate`
+  * `mar-btm-baseline`
+  * `unstyled`
+  * `pointer`
+
+* [BREAKING CHANGE] remove `window._` (lodash)
+
+  * bundle required lodash functions into your project
+
+* [BREAKING CHANGE] remove `window.interfacesURLForEnv`
+
+  * use `@planningcenter/url`
+
+* [BREAKING CHANGE] remove `window.docCookies`
+
+  * use [MDN's Simple cooke framework](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie/Simple_document.cookie_framework) or `localStorage` as `@planningcenter/topbar` does now
+
+* [BREAKING CHANGE] remove `device.js`
+
+  * package this into your app where needed: https://github.com/matthewhudson/current-device
+
+* [BREAKING CHANGE] remove `modernizer-custom-touch-only`
+
+  * bundle required lodash functions into your project
+
+* [BREAKING CHANGE] remove `react-rails` from gemspec
+* [BREAKING CHANGE] remove `pco-url` from gemspec
+* [BREAKING CHANGE] remove `autoprefix-rails` from gemspec

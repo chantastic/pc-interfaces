@@ -31,13 +31,6 @@
       };
     }
 
-    componentDidUpdate() {
-      // this could be optimized with `highlightElement`.
-      // i didn't use it because React 13.3 has a depricated DOM API
-      // and i don't want to come back and update it later.
-      Prism.highlightAll();
-    }
-
     render() {
       let alert = (
         <Alert purpose={this.state.purpose} outline={this.state.outline} />
@@ -56,8 +49,7 @@
                     value=""
                     checked={this.state.purpose === ""}
                     readOnly
-                  />
-                  {" "}
+                  />{" "}
                   <code>(default) </code>
                 </label>
                 <label>
@@ -84,8 +76,7 @@
                     value="alert--danger"
                     checked={this.state.purpose === "alert--danger"}
                     readOnly
-                  />
-                  {" "}
+                  />{" "}
                   <code>.alert--danger </code>
                 </label>
                 <label>
@@ -94,8 +85,7 @@
                     value="alert--subtle"
                     checked={this.state.purpose === "alert--subtle"}
                     readOnly
-                  />
-                  {" "}
+                  />{" "}
                   <code>.alert--subtle </code>
                 </label>
               </form>
@@ -120,7 +110,6 @@
               {ReactDOMServer.renderToStaticMarkup(alert)}
             </code>
           </pre>
-
         </div>
       );
     }

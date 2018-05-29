@@ -5,13 +5,10 @@
   padding-bottom: 30px;
 }
 
-.doc-section:last-child { border-bottom-width: 0 }
+.doc-section:last-child {
+  border-bottom-width: 0;
+}
 
-.doc-section:first-child { padding-top: 0 }
-
-/* prism overrides */
-:not(pre) > code[class*="language-"], pre[class*="language-"] {
-  background: #f8f8f8;
-  border: 1px solid #eaeaea;
-  border-radius: 3px;
+.doc-section:first-child {
+  padding-top: 0;
 }

@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  mount Interfaces::Engine => '/interfaces'
+  get "sample_modal" => "static_pages#sample_modal"
+  get "*id" => "pages#show"
+
+  root \
+    to: "pages#show",
+    id: "home"
 end
