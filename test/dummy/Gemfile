@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2'
+gem 'rails'
 gem 'sqlite3'
 
 #Gemspec dependencies
@@ -8,8 +8,8 @@ gem 'jquery-rails'
 gem 'coffee-rails'
 gem 'sass-rails'
 gem 'sprockets'
-gem 'turbolinks', '~> 2.5.2'
-gem 'autoprefixer-rails', '~> 5.1.11'
+gem 'turbolinks'
+gem 'autoprefixer-rails'
 gem 'react-rails'
 gem 'better_errors'
 gem 'binding_of_caller'
