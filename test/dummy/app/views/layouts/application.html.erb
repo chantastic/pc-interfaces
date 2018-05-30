@@ -34,25 +34,15 @@
     </style>
   </head>
 
-  <body class="system-ui">
-    <div class="off-canvas-wrap">
-      <div class="main-wrap">
-        <div class="main-content-block inner-wrap">
-          <section class="main-section">
-            <div class="main-section__inner">
-              <%= yield %>
-            </div>
-          </section>
-        </div>
-      </div>
+  <body class="system-ui" style="background-color: #eee">
+    <div style="display: grid; grid-template-columns: 200px auto; height: 100vh;">
+      <aside style="padding: 32px">
+        <%= render "pages/index" %>
+      </aside>
+
+      <main style="padding: 32px; background-color: #fafafa;">
+        <%= yield %>
+      </main>
     </div>
-
-    <footer class="site-footer" role="contentinfo">
-      <div class="content">
-        Designed in CA <span class="pco-ui-pco" aria-hidden="true"></span> Copyright <%= Date.current.year %>
-      </div>
-    </footer>
-
-    <%= render "interfaces/helpdesk" %>
   </body>
 </html>
