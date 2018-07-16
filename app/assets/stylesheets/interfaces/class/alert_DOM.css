@@ -1,5 +1,5 @@
-.alert ul,
-p {
+.alert p,
+.alert ul {
   font-size: 13px;
 }
 
