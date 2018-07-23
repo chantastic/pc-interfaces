@@ -1,0 +1,27 @@
+.site-footer {
+  display: none;
+  overflow: hidden;
+}
+
+
+//======================================================
+// Media Queries
+//======================================================
+@media (min-width: 768px) {
+  .site-footer {
+    position: relative;
+    z-index: 3;
+    display: block;
+    height: 25px;
+    clear: both;
+    border-top: 1px solid adjust-color($sidebar-bg-color, $lightness: -10%, $saturation: -80%);
+    background: adjust-color($sidebar-bg-color, $lightness: -5%, $saturation: -80%);
+  }
+}
+
+@media (min-width: 100em) {
+  .fullwidth .site-footer {
+    margin-top: -25px;
+    background: $main-content-bg;
+  }
+}

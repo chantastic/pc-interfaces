@@ -2,51 +2,11 @@
 // All rules pertaining to screens greater than 100em or ~1600px
 //======================================================
 @media (min-width: 100em) {
-  .top-bar__contents {
-    background: $base-color;
-  }
-
-  .app-switcher-wrap {
-    width: $sidebar-width-big-screen;
-
-    .toggle-btn {
-      left: 225px;
-    }
-  }
-
-  .app-switcher .menu-wrap {
-    top: 3px;
-    left: 3px;
-    width: $sidebar-width-big-screen - 4px;
-  }
-
   //======================================Layout
 
   .left-off-canvas {
     width: $sidebar-width-big-screen;
     margin: 0 0 0 ($sidebar-width-big-screen * -1);
     left: $sidebar-width-big-screen;
-  }
-
-  .main-wrap .main-section {
-    border-left-width: $sidebar-width-big-screen;
-  }
-
-  .off-canvas-wrap {
-    box-shadow: $sidebar-width-big-screen 0 0 $sidebar-bg-color inset;
-  }
-
-  .fullwidth .off-canvas-wrap {
-    box-shadow: none;
-  }
-
-  .main-content-block {
-    position: relative;
-    z-index: 3;
-  }
-
-  .fullwidth .site-footer {
-    margin-top: -25px;
-    background: $main-content-bg;
   }
 }

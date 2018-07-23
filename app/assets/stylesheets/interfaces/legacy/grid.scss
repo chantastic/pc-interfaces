@@ -94,3 +94,10 @@ $gutter: 20px;
     }
   }
 }
+
+@media (min-width: 768px) {
+  //GRIDS
+  .col {
+    float: left;
+  }
+}

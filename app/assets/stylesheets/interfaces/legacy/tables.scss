@@ -72,4 +72,16 @@
 
 //=======================================RESPONSIVE TABLES
 //Wrap your table in a block element with the class .table-responsive
-//See small-screen-max.sass
+//responsive tables
+@media (max-width: 767px) {
+  .table-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border: 1px solid #ddd;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+    transform: translate3d(0, 0, 0);
+  }
+}

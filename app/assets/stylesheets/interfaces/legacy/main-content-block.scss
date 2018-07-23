@@ -1,0 +1,33 @@
+.main-content-block {
+  position: relative;
+}
+
+.main-content-block:before,
+.main-content-block:after {
+  display: table;
+  content: ' ';
+}
+
+.main-content-block:after {
+  clear: both;
+}
+
+
+//======================================================
+// Media Queries
+//======================================================
+@media (min-width: 100em) {
+  .main-content-block {
+    position: relative;
+    z-index: 3;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-content-block {
+    position: relative;
+    height: 100%;
+    margin-top: -50px;
+    padding-top: 50px;
+  }
+}
