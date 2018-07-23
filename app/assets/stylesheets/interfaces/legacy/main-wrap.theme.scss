@@ -1,3 +1,9 @@
 .main-wrap {
   background: $bg-color;
 }
+
+@media (min-width: 768px) {
+  .main-wrap {
+    background: transparent;
+  }
+}
