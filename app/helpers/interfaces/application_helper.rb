@@ -44,7 +44,7 @@ module Interfaces
     end
 
     def relativize_asset_path(path = "")
-      path.gsub!(/.*?(?=\/assets)/im, "")
+      path.gsub(/.*?(?=\/assets)/im, "")
     end
 
     private
