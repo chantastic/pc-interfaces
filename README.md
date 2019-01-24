@@ -50,8 +50,9 @@ Hit me (@chantastic) up if you're setting up a new project.
 
 ## CHANGELOG
 
-### 3.0.0-pre
+### 3.0.0-* (pre releases)
 
+* [BREAKING CHANGE] remove svg favicon
 * [BREAKING CHANGE] remove `modal` helper
 * [BREAKING CHANGE] remove `modal_trigger` helper
 * [BREAKING CHANGE] remove `modal_footer` helper
