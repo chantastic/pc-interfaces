@@ -52,6 +52,7 @@ Hit me (@chantastic) up if you're setting up a new project.
 
 ### 3.0.0-* (pre releases)
 
+* [FIX] Remove `svg` favicon links. Fixes pinned tabs in Safari.
 * [BREAKING CHANGE] remove svg favicon
     * **How to update**: While not critical, you can remove `app_color` from your use of the `_favicon` partial. It is no longer used.
     * Old: `<%= render "interfaces/favicons", app_name: "check-ins", app_color: "#c0ffee" %>`
