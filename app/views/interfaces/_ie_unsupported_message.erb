@@ -1,0 +1,85 @@
+<% if request.user_agent =~ /Trident/ %>
+  <div>
+    <style>
+      .interfaces-ie-notice {
+        padding: 16px;
+        background-color: #feefae;
+        background-image: linear-gradient(#feefae, #fae692);
+        border-bottom: 1px solid #b3a569;
+        color: #211e14;
+      }
+
+      .interfaces-ie-notice__content {
+        display: flex;
+        align-items: center; 
+        flex-direction: row;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .interfaces-ie-notice p {
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        text-rendering: optimizeLegibility;  
+      }
+
+      .interfaces-ie-notice__learn-more-button {
+        font-size: 1em;
+        line-height: 2.5;
+        display: inline-block;
+        padding: 0 1em;
+        cursor: pointer;
+        white-space: nowrap;
+        text-decoration: none;
+        border-width: 1px;
+        border-style: solid;
+        border-radius: 2.5px;
+        background-color: white;
+        color: #211e14 !important;
+        font-weight: bold;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        background-image: linear-gradient(#fafafa, #dadada);
+        border-color: #aaa;
+        user-select: none;
+      }
+
+      @media (max-width: 720px) {
+        .interfaces-ie-notice {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+
+    <div class="interfaces-ie-notice">
+      <div class="interfaces-ie-notice__content">
+        <div style="display: flex; align-items: center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="38" width="38"><title>warning</title><path d="M15.932,13.638,8.472,1.181a.569.569,0,0,0-.93,0L.083,13.638a.559.559,0,0,0,.424.831h15A.559.559,0,0,0,15.932,13.638Zm-6.953-1.1H7.036V10.6H8.979Zm0-3.238H7.036V5.418H8.979Z" fill-rule="evenodd" fill="#a48605"/></svg>
+
+          <div style="margin-left: 16px">
+            <p><strong>Please note that Planning Center no longer supports Internet Explorer.</strong></p>
+            <p>
+              <span>We recommend upgrading to the latest</span> 
+              <a href="https://www.microsoft.com/en-us/windows/microsoft-edge" target="_blank">Microsoft Edge</a>, 
+              <a href="https://www.google.com/chrome" target="_blank">Google Chrome</a>,
+              or <a href="https://www.mozilla.org/en-US/firefox/" target="_blank" />Firefox</a>.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-left: auto">
+          <a href="https://planning.center/blog/2019/03/ending-support-for-internet-explorer"
+            class="interfaces-ie-notice__learn-more-button"
+            target="_blank"
+          >Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
