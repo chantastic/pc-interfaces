@@ -50,7 +50,7 @@ Hit me (@chantastic) up if you're setting up a new project.
 
 ## CHANGELOG
 
-### 3.0.0-* (pre releases)
+### 3.0.0
 
 * [FIX] Remove `svg` favicon links. Fixes pinned tabs in Safari.
 * [BREAKING CHANGE] remove svg favicon
