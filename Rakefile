@@ -32,3 +32,12 @@ end
 
 
 task default: :test
+
+namespace :assets do
+  desc 'Precompile assets within dummy app'
+  task :precompile do
+    Dir.chdir('test/dummy') do
+      system('bundle exec rake assets:precompile')
+    end
+  end
+end

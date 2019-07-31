@@ -2,23 +2,20 @@
 
 ## About
 
-Interfaces is a customizable css framework for Planning Center Online apps.
+Interfaces is a customizable css framework for Planning Center apps.
 
-## New here?
+## Unmaintained warning
 
-Read [planningcenter/frontend-guide](https://github.com/planningcenter/frontend-guide). It's a high-level overview of frontend libraries used across PCO apps.
-
-## The styleguide
-
-Visit [Interfaces Docs](http://pco-interfaces.herokuapp.com)
+Interfaces is largerly unmaintained.  
+It's still used to support legacy views in all apps.  
+However, all new cross-team efforts are being poured into [planningcenter/design](https://github.com/planningcenter/design).
 
 ## Development
 
-This is a conventional Rails Engine and can be worked on as such:
+This is a Rails Engine and can be worked on as such:
 
 ```bash
-$ cd ~/Code
-$ git clone git@github.com:ministrycentered/interfaces.git
+$ git clone git@github.com:ministrycentered/interfaces.git ~/Code/interfaces
 $ cd interfaces/test/dummy
 $ bundle
 $ bundle exec rails s
@@ -26,13 +23,10 @@ $ bundle exec rails s
 
 Visit `http://localhost:3000` in a browser.
 
-## Installation and usage
-
-Installation were removed. Apps have been setup at this point. This document gets more out of date.
-
 ### Including helpers
 
-Interfaces has a number of helpers that you will need to include manually in `application_controller`. Do so like so:
+Interfaces has a number of helpers that you will need to include manually in `application_controller`.  
+Do so like so:
 
 ```
 class ApplicationController < BaseController
@@ -48,80 +42,80 @@ Hit me (@chantastic) up if you're setting up a new project.
 
 ### 3.1.0
 
-* [FEATURE] Add `ie_unsupported_message` partial view
+- [FEATURE] Add `ie_unsupported_message` partial view
 
 ### 3.0.0
 
-* [FIX] Remove `svg` favicon links. Fixes pinned tabs in Safari.
-* [BREAKING CHANGE] remove svg favicon
-    * **How to update**: While not critical, you can remove `app_color` from your use of the `_favicon` partial. It is no longer used.
-    * Old: `<%= render "interfaces/favicons", app_name: "check-ins", app_color: "#c0ffee" %>`
-    * New: `<%= render "interfaces/favicons", app_name: "check-ins" %>`
-* [BREAKING CHANGE] remove `modal` helper
-* [BREAKING CHANGE] remove `modal_trigger` helper
-* [BREAKING CHANGE] remove `modal_footer` helper
-* [BREAKING CHANGE] remove `interfaces` helper
-* [BREAKING CHANGE] remove `interfaces_wrap` helper
-* [BREAKING CHANGE] remove `interfaces_header` helper
-* [BREAKING CHANGE] remove `interfaces_head` helper
-* [BREAKING CHANGE] remove `interfaces_content` helper
-* [BREAKING CHANGE] remove `interfaces_main` helper
-* [BREAKING CHANGE] remove `square_avatar` helper
-* [BREAKING CHANGE] remove `interfaces_avatar` helper
-* [BREAKING CHANGE] remove `interfaces_helpdesk` helper
-  * replace with use of `interfaces/_helpdesk` directly
-* [BREAKING CHANGE] remove `interfaces_js_environment` helper
-  * replace with use of `interfaces/_js_env` directly
-* [BREAKING CHANGE] remove `NullPerson` helper
-* [BREAKING CHANGE] remove `NullOrganization` helper
-* [BREAKING CHANGE] remove `window.interfacesPerson`
-* [BREAKING CHANGE] remove `window.interfacesOrganization`
+- [FIX] Remove `svg` favicon links. Fixes pinned tabs in Safari.
+- [BREAKING CHANGE] remove svg favicon
+  - **How to update**: While not critical, you can remove `app_color` from your use of the `_favicon` partial. It is no longer used.
+  - Old: `<%= render "interfaces/favicons", app_name: "check-ins", app_color: "#c0ffee" %>`
+  - New: `<%= render "interfaces/favicons", app_name: "check-ins" %>`
+- [BREAKING CHANGE] remove `modal` helper
+- [BREAKING CHANGE] remove `modal_trigger` helper
+- [BREAKING CHANGE] remove `modal_footer` helper
+- [BREAKING CHANGE] remove `interfaces` helper
+- [BREAKING CHANGE] remove `interfaces_wrap` helper
+- [BREAKING CHANGE] remove `interfaces_header` helper
+- [BREAKING CHANGE] remove `interfaces_head` helper
+- [BREAKING CHANGE] remove `interfaces_content` helper
+- [BREAKING CHANGE] remove `interfaces_main` helper
+- [BREAKING CHANGE] remove `square_avatar` helper
+- [BREAKING CHANGE] remove `interfaces_avatar` helper
+- [BREAKING CHANGE] remove `interfaces_helpdesk` helper
+  - replace with use of `interfaces/_helpdesk` directly
+- [BREAKING CHANGE] remove `interfaces_js_environment` helper
+  - replace with use of `interfaces/_js_env` directly
+- [BREAKING CHANGE] remove `NullPerson` helper
+- [BREAKING CHANGE] remove `NullOrganization` helper
+- [BREAKING CHANGE] remove `window.interfacesPerson`
+- [BREAKING CHANGE] remove `window.interfacesOrganization`
 
-* [BREAKING CHANGE] remove utility classes
+- [BREAKING CHANGE] remove utility classes
 
-  * `hide`
-  * `clear`
-  * `right`
-  * `left`
-  * `instructional-caption`
-  * `text-left`
-  * `text-center`
-  * `text-justify`
-  * `text-right`
-  * `clfx`
-  * `clearfix`
-  * `dib`
-  * `m0a`
-  * `mb0`
-  * `mr0`
-  * `ml0`
-  * `mt0`
-  * `pb0`
-  * `truncate`
-  * `mar-btm-baseline`
-  * `unstyled`
-  * `pointer`
+  - `hide`
+  - `clear`
+  - `right`
+  - `left`
+  - `instructional-caption`
+  - `text-left`
+  - `text-center`
+  - `text-justify`
+  - `text-right`
+  - `clfx`
+  - `clearfix`
+  - `dib`
+  - `m0a`
+  - `mb0`
+  - `mr0`
+  - `ml0`
+  - `mt0`
+  - `pb0`
+  - `truncate`
+  - `mar-btm-baseline`
+  - `unstyled`
+  - `pointer`
 
-* [BREAKING CHANGE] remove `window._` (lodash)
+- [BREAKING CHANGE] remove `window._` (lodash)
 
-  * bundle required lodash functions into your project
+  - bundle required lodash functions into your project
 
-* [BREAKING CHANGE] remove `window.interfacesURLForEnv`
+- [BREAKING CHANGE] remove `window.interfacesURLForEnv`
 
-  * use `@planningcenter/url`
+  - use `@planningcenter/url`
 
-* [BREAKING CHANGE] remove `window.docCookies`
+- [BREAKING CHANGE] remove `window.docCookies`
 
-  * use [MDN's Simple cooke framework](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie/Simple_document.cookie_framework) or `localStorage` as `@planningcenter/topbar` does now
+  - use [MDN's Simple cooke framework](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie/Simple_document.cookie_framework) or `localStorage` as `@planningcenter/topbar` does now
 
-* [BREAKING CHANGE] remove `device.js`
+- [BREAKING CHANGE] remove `device.js`
 
-  * package this into your app where needed: https://github.com/matthewhudson/current-device
+  - package this into your app where needed: https://github.com/matthewhudson/current-device
 
-* [BREAKING CHANGE] remove `modernizer-custom-touch-only`
+- [BREAKING CHANGE] remove `modernizer-custom-touch-only`
 
-  * bundle required lodash functions into your project
+  - bundle required lodash functions into your project
 
-* [BREAKING CHANGE] remove `react-rails` from gemspec
-* [BREAKING CHANGE] remove `pco-url` from gemspec
-* [BREAKING CHANGE] remove `autoprefix-rails` from gemspec
+- [BREAKING CHANGE] remove `react-rails` from gemspec
+- [BREAKING CHANGE] remove `pco-url` from gemspec
+- [BREAKING CHANGE] remove `autoprefix-rails` from gemspec
