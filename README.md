@@ -10,7 +10,7 @@ Read [planningcenter/frontend-guide](https://github.com/planningcenter/frontend-
 
 ## The styleguide
 
-Visit [Interfaces Docs](http://interfaces-docs.herokuapp.com)
+Visit [Interfaces Docs](http://pco-interfaces.herokuapp.com)
 
 ## Development
 
@@ -25,10 +25,6 @@ $ bundle exec rails s
 ```
 
 Visit `http://localhost:3000` in a browser.
-
-## Features and PRs
-
-Interfaces no longer uses [git-flow](https://github.com/nvie/gitflow). All features should be written against `master` and PR'd into `master`. Hit me up if you need to cut a version for use in production.
 
 ## Installation and usage
 
