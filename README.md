@@ -40,6 +40,10 @@ Hit me (@chantastic) up if you're setting up a new project.
 
 ## CHANGELOG
 
+### 3.1.1
+
+- [FIX] Add back `coffee-rails` gem dependency
+
 ### 3.1.0
 
 - [FEATURE] Add `ie_unsupported_message` partial view
