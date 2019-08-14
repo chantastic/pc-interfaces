@@ -16,6 +16,9 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
+  # dependencies for host application
+  spec.add_dependency 'coffee-rails'
+
   spec.add_development_dependency 'sqlite3'
   spec.add_development_dependency 'rails', '~> 4.2.0'
 end
