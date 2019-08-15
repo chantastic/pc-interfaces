@@ -61,7 +61,8 @@ module Interfaces
     end
 
     def rails_application_name
-      Rails.application.class.parent_name
+      return Rails.application.class.parent_name if Rails::VERSION::MAJOR < 6
+      Rails.application.class.module_parent_name
     end
   end
 end
