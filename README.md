@@ -6,7 +6,7 @@ Interfaces is a customizable css framework for Planning Center apps.
 
 ## Unmaintained warning
 
-Interfaces is largerly unmaintained.  
+Interfaces is largely unmaintained.  
 It's still used to support legacy views in all apps.  
 However, all new cross-team efforts are being poured into [planningcenter/design](https://github.com/planningcenter/design).
 
