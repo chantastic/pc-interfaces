@@ -40,6 +40,10 @@ Hit me (@chantastic) up if you're setting up a new project.
 
 ## CHANGELOG
 
+### 3.1.2
+
+- [FIX] Add support for Rails 6 for `rails_application_name` helper
+
 ### 3.1.1
 
 - [FIX] Add back `coffee-rails` gem dependency
