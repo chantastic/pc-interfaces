@@ -40,6 +40,10 @@ Hit me (@chantastic) up if you're setting up a new project.
 
 ## CHANGELOG
 
+### Next
+
+- [BREAKING CHANGE] remove `font-size: 62.5%` from `html` root
+
 ### 3.1.2
 
 - [FIX] Add support for Rails 6 for `rails_application_name` helper
