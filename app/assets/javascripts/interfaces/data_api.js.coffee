@@ -50,21 +50,6 @@ INTERFACES.dataAPI =
 
     new INTERFACES.Tab(tabContentId).open()
 
-  handleAccountInfoToggle: ->
-    new INTERFACES.AccountInfo().toggleMenu()
-    return false
-
-  handleAppListHide: ->
-    new INTERFACES.AppSwitcher().hideAppList()
-    return false
-
-  handleAppListShow: ->
-    new INTERFACES.AppSwitcher().showAppList()
-    return false
-
-  handleAppListToggle: ->
-    new INTERFACES.AppSwitcher().toggleAppList()
-
   handleInstructionToggle: ({target: { dataset: { instructionId }}}) ->
     instructionNode = document.getElementById(instructionId)
 
@@ -72,10 +57,6 @@ INTERFACES.dataAPI =
       instructionNode.style.maxHeight = instructionNode.scrollHeight + "px"
     else
       instructionNode.style.maxHeight = ""
-
-  handleTopBarToggle: ->
-    new INTERFACES.TopBar().toggleMenu()
-    return false
 
   # DANGER: THIS IS PROTOTYPE-LEVEL CODE. DO NOT USE THIS IN PRODUCTION.
   # IT WILL BE ROMOVED WITH LITTLE WARNING
@@ -89,12 +70,6 @@ INTERFACES.dataAPI =
       .on('click', '[data-modal-id]',               @showTriggeredModal)
       .on('click', '[data-modal-url]',              @createAndShowUrlModal)
       .on('click', '[data-modal-close]',            @hideModalLayer)
-      .on('click', '[data-app-list="show"]',        @handleAppListShow)
-      .on('click', '[data-app-list="hide"]',        @handleAppListHide)
-      .on('click', '[data-app-list="toggle"]',      @handleAppListToggle)
-      .on('click', '[data-top-bar="toggle"]',       @handleTopBarToggle)
-      .on('click', '[data-account-info="toggle"]',  @handleAccountInfoToggle)
-      .on('click', '[data-account-info="toggle"]',  @handleAccountInfoToggle)
       .on('click', '[data-instruction-id]',         @handleInstructionToggle)
 
     # DANGER: THIS IS PROTOTYPE-LEVEL CODE. DO NOT USE THIS IN PRODUCTION.

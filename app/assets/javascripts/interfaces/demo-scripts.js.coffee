@@ -19,11 +19,6 @@ $ =>
 
   ##DEMO CODE BELOW THIS LINE
   # generic demo toggle
-  $('.code-sample-button').on 'click', (e) ->
-    e.preventDefault(); e.stopPropagation()
-
-    $(this).siblings('.code-sample').toggle()
-
   $('.btn--checkbox input[type=checkbox]').on 'change', () ->
     if $(@).is ':checked'
       $(@).parent().addClass('selected')
