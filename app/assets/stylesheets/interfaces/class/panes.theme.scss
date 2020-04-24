@@ -25,7 +25,7 @@
 
 .pane {
   margin-bottom: 20px;
-  background-color: #fff;
+  background-color: var(--surface-1of1--background-color);
   border: 1px solid transparent;
   border-radius: $default-pane-radius;
   border-color: $border-color;
@@ -33,11 +33,11 @@
 }
 
 .pane--naked {
-  background: transparent;
+  --surface-1of1--background-color: transparent;
 }
 
 .pane--muted {
-  background: $pane-muted-bg;
+  --surface-1of1--background-color: #{$pane-muted-bg};
 
   .pane__header {
     background: $pane-muted-header-bg;
