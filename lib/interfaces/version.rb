@@ -1,3 +1,3 @@
 module Interfaces
-  VERSION = '6.0.0-transitional.1'
+  VERSION = '6.0.0-transitional.2'
 end
