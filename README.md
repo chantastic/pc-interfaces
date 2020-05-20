@@ -37,17 +37,3 @@ end
 ```
 
 Hit me (@chantastic) up if you're setting up a new project.
-
-## CHANGELOG
-
-### 5.0.0
-
-- [breaking] remove known CSS and JS top_bar assets
-
-### 4.1.0
-
-- [feature] add `calendar` favicons (by @jessejanderson)
-
-### 4.0.0
-
-- [BREAKING CHANGE] remove `font-size: 62.5%` from `html` root
