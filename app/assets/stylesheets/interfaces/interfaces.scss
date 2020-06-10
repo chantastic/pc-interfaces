@@ -63,7 +63,6 @@
 @import "interfaces/legacy/page-heading_icon";
 @import "interfaces/legacy/page-heading_icon.theme";
 @import "interfaces/legacy/page-heading_badge";
-@import "interfaces/legacy/page-heading_btn";
 @import "interfaces/legacy/hr";
 @import "interfaces/legacy/em";
 @import "interfaces/legacy/i";
@@ -145,26 +144,9 @@
 @import "interfaces/class/badge--success.theme";
 @import "interfaces/class/badge--warning.theme";
 
-/* btn */
-@import "interfaces/class/btn";
-@import "interfaces/class/btn.right";
-@import "interfaces/class/btn.btn--small";
-@import "interfaces/class/btn.btn--large";
-@import "interfaces/class/btn.btn--tiny";
-@import "interfaces/class/btn.btn--tiny.btn--square";
-@import "interfaces/class/btn.btn--tiny.btn--square";
-@import "interfaces/class/btn.btn--micro";
-@import "interfaces/class/btn.btn--expand";
-@import "interfaces/class/btn.btn--first";
-@import "interfaces/class/btn.btn--shadow";
-@import "interfaces/class/alert_btn";
-@import "interfaces/class/pane--header_btn";
-@import "interfaces/class/btn.theme";
-@import "interfaces/patch/btn";
+@import "interfaces/class/badge--warning.theme";
 
-/* btn-group */
-@import "interfaces/class/btn-group";
-@import "interfaces/class/btn-group-vertical";
+// @import "interfaces/package/buttons"; // import from app-code
 
 /* dropdown */
 @import "interfaces/class/dropdown";
@@ -220,8 +202,6 @@
 @import "interfaces/class/modal__body";
 @import "interfaces/class/modal__body--767px";
 @import "interfaces/class/modal__footer";
-@import "interfaces/class/modal__footer_btn";
-@import "interfaces/class/modal__footer_btn.left";
 @import "interfaces/class/modal-loader.preloader";
 @import "interfaces/class/modal-section";
 @import "interfaces/class/modal__band";
