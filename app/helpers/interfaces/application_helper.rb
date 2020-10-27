@@ -19,6 +19,12 @@ module Interfaces
     def planningcenter_svg_use_tag(name, **attrs, &block)
       svg, symbol = name.split("#")
 
+      title, description = attrs.values_at(:title, :description)
+
+      uid = Digest::SHA1.hexdigest([Time.now, rand].join)[0..3]
+      title_id = "title-#{symbol}-#{uid}"
+      description_id = "desc-#{symbol}-#{uid}"
+
       if block.nil?
         message = <<-EOF
   use_svg expects a block for asset path resolution. Common implementation looks like this:
@@ -29,18 +35,32 @@ module Interfaces
       end
 
       content_tag(
-        "svg",
-        content_tag(
-          "use",
-          "",
-          "xlink:href": block.call("@planningcenter/icons/sprites/#{svg.gsub(/\.svg/, "")}.svg##{symbol}"),
-        ),
+        :svg,
         {
           class: "symbol #{attrs[:class]}".squish,
           role: "img",
-          title: "#{symbol} icon",
-        }.merge(attrs.except(:class)),
-      )
+          "aria-labelledby": [
+            *(title_id if title),
+            *(description_id if description),
+          ].compact.join(" "),
+        }.compact.merge(attrs.except(:class, :title, :description)),
+      ) do
+        if title
+          concat(content_tag("title", title, id: title_id))
+        end
+
+        if description
+          concat(content_tag("desc", description, id: description_id))
+        end
+
+        concat(
+          content_tag(
+            "use",
+            "",
+            "xlink:href": block.call("@planningcenter/icons/sprites/#{svg.gsub(/\.svg/, "")}.svg##{symbol}"),
+          )
+        )
+      end
     end
 
     def relativize_asset_path(path = "")
